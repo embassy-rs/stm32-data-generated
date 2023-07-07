@@ -1855,6 +1855,17 @@ pub mod regs {
         pub fn set_tim16sw(&mut self, val: super::vals::Timsw) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
+        #[doc = "Hrtim1 clock source selection"]
+        #[inline(always)]
+        pub const fn hrtim1sw(&self) -> super::vals::Timsw {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Timsw::from_bits(val as u8)
+        }
+        #[doc = "Hrtim1 clock source selection"]
+        #[inline(always)]
+        pub fn set_hrtim1sw(&mut self, val: super::vals::Timsw) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
         #[doc = "Timer17 clock source selection"]
         #[inline(always)]
         pub const fn tim17sw(&self) -> super::vals::Timsw {

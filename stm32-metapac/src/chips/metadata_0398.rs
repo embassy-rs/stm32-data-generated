@@ -1745,7 +1745,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "FDCAN1",
         address: 1073782784,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "can",
+            version: "fdcan",
+            block: "FDCAN",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
@@ -1818,7 +1822,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "FDCAN2",
         address: 1073783808,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "can",
+            version: "fdcan",
+            block: "FDCAN",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -1861,7 +1869,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "FDCAN3",
         address: 1073796096,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "can",
+            version: "fdcan",
+            block: "FDCAN",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {

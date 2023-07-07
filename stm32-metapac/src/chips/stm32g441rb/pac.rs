@@ -386,7 +386,7 @@ pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_5c00 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6000 as usize as _) };
-pub const FDCAN1: *mut () = 0x4000_6400 as usize as _;
+pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_6400 as usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_7800 as usize as _) };
 pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
@@ -444,6 +444,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 }
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../../peripherals/can_fdcan.rs"]
+pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

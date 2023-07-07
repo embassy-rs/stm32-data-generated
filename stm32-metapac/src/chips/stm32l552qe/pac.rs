@@ -502,7 +502,7 @@ pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000 
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400 as usize as _) };
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
 pub const LPTIM3: *mut () = 0x4000_9800 as usize as _;
-pub const FDCAN1: *mut () = 0x4000_a400 as usize as _;
+pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_d400 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_d800 as usize as _) };
 pub const UCPD1: *mut () = 0x4000_dc00 as usize as _;
@@ -561,6 +561,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../../peripherals/can_fdcan.rs"]
+pub mod can;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v2.rs"]

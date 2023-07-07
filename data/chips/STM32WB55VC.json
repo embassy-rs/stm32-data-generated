@@ -2069,11 +2069,6 @@
                 {
                     "name": "RNG",
                     "address": 1476399104,
-                    "registers": {
-                        "kind": "rng",
-                        "version": "v1",
-                        "block": "RNG"
-                    },
                     "rcc": {
                         "clock": "AHB3",
                         "enable": {

@@ -705,7 +705,7 @@ pub mod i2c;
 pub mod pwr;
 #[path = "../../peripherals/rcc_h5.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rng_v2.rs"]
+#[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
 #[path = "../../peripherals/sbs_h5.rs"]
 pub mod sbs;

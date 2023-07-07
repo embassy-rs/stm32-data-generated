@@ -718,7 +718,7 @@ pub mod otg;
 pub mod pwr;
 #[path = "../../peripherals/rcc_u5.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rng_v2.rs"]
+#[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;

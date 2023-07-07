@@ -869,6 +869,11 @@
                 {
                     "name": "FDCAN1",
                     "address": 1073767424,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {

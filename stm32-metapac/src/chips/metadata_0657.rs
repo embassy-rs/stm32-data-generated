@@ -2378,7 +2378,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1342572544,
         registers: Some(PeripheralRegisters {
             kind: "rng",
-            version: "v1",
+            version: "v2",
             block: "RNG",
         }),
         rcc: Some(PeripheralRcc {

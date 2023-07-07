@@ -1941,6 +1941,11 @@
                 {
                     "name": "FDCAN1",
                     "address": 1073782784,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
@@ -2017,6 +2022,11 @@
                 {
                     "name": "FDCAN2",
                     "address": 1073783808,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "pins": [
                         {
                             "pin": "PB5",
@@ -10946,6 +10956,11 @@
                 {
                     "name": "FDCAN1",
                     "address": 1073782784,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
@@ -11022,6 +11037,11 @@
                 {
                     "name": "FDCAN2",
                     "address": 1073783808,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "pins": [
                         {
                             "pin": "PB5",

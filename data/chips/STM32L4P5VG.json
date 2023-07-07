@@ -3318,7 +3318,7 @@
                     "address": 1342572544,
                     "registers": {
                         "kind": "rng",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "RNG"
                     },
                     "rcc": {

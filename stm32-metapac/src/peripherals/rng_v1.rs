@@ -58,6 +58,17 @@ pub mod regs {
         pub fn set_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[doc = "Clock error detection"]
+        #[inline(always)]
+        pub const fn ced(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clock error detection"]
+        #[inline(always)]
+        pub fn set_ced(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
     }
     impl Default for Cr {
         #[inline(always)]

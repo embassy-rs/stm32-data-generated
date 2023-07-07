@@ -611,8 +611,8 @@ pub const SWPMI1: *mut () = 0x4000_8800 as usize as _;
 pub const OPAMP1: *mut () = 0x4000_9000 as usize as _;
 pub const OPAMP2: *mut () = 0x4000_9010 as usize as _;
 pub const MDIOS: mdios::Mdios = unsafe { mdios::Mdios::from_ptr(0x4000_9400 as usize as _) };
-pub const FDCAN1: *mut () = 0x4000_a000 as usize as _;
-pub const FDCAN2: *mut () = 0x4000_a400 as usize as _;
+pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a000 as usize as _) };
+pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_0000 as usize as _) };
 pub const TIM8: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_0400 as usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_1000 as usize as _) };
@@ -699,6 +699,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../../peripherals/can_fdcan.rs"]
+pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v2.rs"]

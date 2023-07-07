@@ -986,6 +986,11 @@
                 {
                     "name": "FDCAN1",
                     "address": 1073767424,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
@@ -1033,6 +1038,11 @@
                 {
                     "name": "FDCAN2",
                     "address": 1073768448,
+                    "registers": {
+                        "kind": "can",
+                        "version": "fdcan",
+                        "block": "FDCAN"
+                    },
                     "pins": [
                         {
                             "pin": "PB5",

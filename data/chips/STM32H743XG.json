@@ -2934,6 +2934,235 @@
                     }
                 },
                 {
+                    "name": "HRTIM",
+                    "address": 1073837056,
+                    "registers": {
+                        "kind": "hrtim",
+                        "version": "v1",
+                        "block": "HRTIM"
+                    },
+                    "rcc": {
+                        "clock": "APB2",
+                        "enable": {
+                            "register": "APB2ENR",
+                            "field": "HRTIMEN"
+                        },
+                        "reset": {
+                            "register": "APB2RSTR",
+                            "field": "HRTIMRST"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PA8",
+                            "signal": "CHB2",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "CHC1",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PA10",
+                            "signal": "CHC2",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PA11",
+                            "signal": "CHD1",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PA12",
+                            "signal": "CHD2",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PA15",
+                            "signal": "FLT1",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PB3",
+                            "signal": "FLT4",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PB4",
+                            "signal": "EEV6",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PB5",
+                            "signal": "EEV7",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PB6",
+                            "signal": "EEV8",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PB7",
+                            "signal": "EEV9",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PB10",
+                            "signal": "SCOUT",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PB11",
+                            "signal": "SCIN",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PC6",
+                            "signal": "CHA1",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PC7",
+                            "signal": "CHA2",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PC8",
+                            "signal": "CHB1",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PC10",
+                            "signal": "EEV1",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PC11",
+                            "signal": "FLT2",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PC12",
+                            "signal": "EEV2",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PD4",
+                            "signal": "FLT3",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PD5",
+                            "signal": "EEV3",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PE0",
+                            "signal": "SCIN",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PE1",
+                            "signal": "SCOUT",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PG6",
+                            "signal": "CHE1",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PG7",
+                            "signal": "CHE2",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PG10",
+                            "signal": "FLT5",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PG11",
+                            "signal": "EEV4",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PG12",
+                            "signal": "EEV5",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PG13",
+                            "signal": "EEV10",
+                            "af": 2
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "FLT",
+                            "interrupt": "HRTIM1_FLT"
+                        },
+                        {
+                            "signal": "MASTER",
+                            "interrupt": "HRTIM1_Master"
+                        },
+                        {
+                            "signal": "TIMA",
+                            "interrupt": "HRTIM1_TIMA"
+                        },
+                        {
+                            "signal": "TIMB",
+                            "interrupt": "HRTIM1_TIMB"
+                        },
+                        {
+                            "signal": "TIMC",
+                            "interrupt": "HRTIM1_TIMC"
+                        },
+                        {
+                            "signal": "TIMD",
+                            "interrupt": "HRTIM1_TIMD"
+                        },
+                        {
+                            "signal": "TIME",
+                            "interrupt": "HRTIM1_TIME"
+                        }
+                    ],
+                    "dma_channels": [
+                        {
+                            "signal": "MASTER",
+                            "dmamux": "DMAMUX1",
+                            "request": 95
+                        },
+                        {
+                            "signal": "TIMER",
+                            "dmamux": "DMAMUX1",
+                            "request": 96
+                        },
+                        {
+                            "signal": "TIMER",
+                            "dmamux": "DMAMUX1",
+                            "request": 97
+                        },
+                        {
+                            "signal": "TIMER",
+                            "dmamux": "DMAMUX1",
+                            "request": 98
+                        },
+                        {
+                            "signal": "TIMER",
+                            "dmamux": "DMAMUX1",
+                            "request": 99
+                        },
+                        {
+                            "signal": "TIMER",
+                            "dmamux": "DMAMUX1",
+                            "request": 100
+                        }
+                    ]
+                },
+                {
                     "name": "I2C1",
                     "address": 1073763328,
                     "registers": {

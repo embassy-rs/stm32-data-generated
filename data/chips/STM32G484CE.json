@@ -1525,6 +1525,11 @@
                 {
                     "name": "HRTIM1",
                     "address": 1073833984,
+                    "registers": {
+                        "kind": "hrtim",
+                        "version": "v2",
+                        "block": "HRTIM"
+                    },
                     "rcc": {
                         "clock": "APB2",
                         "enable": {

@@ -643,6 +643,7 @@ pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800 as usize as _
 pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5c00 as usize as _) };
 pub const SAI3: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_6000 as usize as _) };
 pub const DFSDM1: *mut () = 0x4001_7000 as usize as _;
+pub const HRTIM: hrtim::Hrtim = unsafe { hrtim::Hrtim::from_ptr(0x4001_7400 as usize as _) };
 pub const DMA1: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_0000 as usize as _) };
 pub const DMA2: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_0400 as usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4002_0800 as usize as _) };
@@ -740,6 +741,8 @@ pub mod flash;
 pub mod fmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hrtim_v1.rs"]
+pub mod hrtim;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]

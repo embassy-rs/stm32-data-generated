@@ -60,7 +60,7 @@ impl Hrtim {
     #[doc = "High Resolution Timer: Timing Unit"]
     #[inline(always)]
     pub const fn tim(self, n: usize) -> HrtimTimx {
-        assert!(n < 5usize);
+        assert!(n < 6usize);
         unsafe { HrtimTimx::from_ptr(self.ptr.add(128usize + n * 128usize) as _) }
     }
     #[doc = "High Resolution Timer: Control Register 1"]
@@ -355,16 +355,16 @@ pub mod regs {
         #[doc = "ADC trigger X on Timer Y Compare 2"]
         #[inline(always)]
         pub const fn adctc2(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 10usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 1usize);
+            let offs = 10usize + ([0usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Compare 2"]
         #[inline(always)]
         pub fn set_adctc2(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 10usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 1usize);
+            let offs = 10usize + ([0usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Compare 3"]
@@ -385,16 +385,16 @@ pub mod regs {
         #[doc = "ADC trigger X on Timer Y Compare 3"]
         #[inline(always)]
         pub const fn adctc4(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 12usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 12usize + ([0usize, 5usize, 10usize, 14usize, 18usize, 8usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Compare 3"]
         #[inline(always)]
         pub fn set_adctc4(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 12usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 12usize + ([0usize, 5usize, 10usize, 14usize, 18usize, 8usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Period"]
@@ -415,16 +415,16 @@ pub mod regs {
         #[doc = "ADC trigger X on Timer Y Reset"]
         #[inline(always)]
         pub const fn adctrst(&self, n: usize) -> bool {
-            assert!(n < 2usize);
-            let offs = 14usize + ([0usize, 5usize][n] as usize);
+            assert!(n < 3usize);
+            let offs = 14usize + ([0usize, 5usize, 14usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Reset"]
         #[inline(always)]
         pub fn set_adctrst(&mut self, n: usize, val: bool) {
-            assert!(n < 2usize);
-            let offs = 14usize + ([0usize, 5usize][n] as usize);
+            assert!(n < 3usize);
+            let offs = 14usize + ([0usize, 5usize, 14usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
@@ -483,31 +483,16 @@ pub mod regs {
         #[doc = "ADC trigger X on Timer Y Compare 2"]
         #[inline(always)]
         pub const fn adctc2(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 10usize + ([0usize, 4usize, 8usize, 13usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 10usize + ([0usize, 4usize, 8usize, 13usize, 18usize, 1usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Compare 2"]
         #[inline(always)]
         pub fn set_adctc2(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 10usize + ([0usize, 4usize, 8usize, 13usize, 18usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "ADC trigger X on Timer Y Compare 3"]
-        #[inline(always)]
-        pub const fn adctc3(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 11usize + ([0usize, 4usize, 8usize, 13usize, 18usize][n] as usize);
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "ADC trigger X on Timer Y Compare 3"]
-        #[inline(always)]
-        pub fn set_adctc3(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 11usize + ([0usize, 4usize, 8usize, 13usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 10usize + ([0usize, 4usize, 8usize, 13usize, 18usize, 1usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Compare 3"]
@@ -528,16 +513,31 @@ pub mod regs {
         #[doc = "ADC trigger X on Timer Y Period"]
         #[inline(always)]
         pub const fn adctper(&self, n: usize) -> bool {
-            assert!(n < 4usize);
-            let offs = 13usize + ([0usize, 4usize, 8usize, 13usize][n] as usize);
+            assert!(n < 5usize);
+            let offs = 13usize + ([0usize, 4usize, 8usize, 13usize, 11usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Period"]
         #[inline(always)]
         pub fn set_adctper(&mut self, n: usize, val: bool) {
-            assert!(n < 4usize);
-            let offs = 13usize + ([0usize, 4usize, 8usize, 13usize][n] as usize);
+            assert!(n < 5usize);
+            let offs = 13usize + ([0usize, 4usize, 8usize, 13usize, 11usize][n] as usize);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        }
+        #[doc = "ADC trigger X on Timer Y Compare 3"]
+        #[inline(always)]
+        pub const fn adctc3(&self, n: usize) -> bool {
+            assert!(n < 2usize);
+            let offs = 15usize + ([14usize, 0usize][n] as usize);
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
+        }
+        #[doc = "ADC trigger X on Timer Y Compare 3"]
+        #[inline(always)]
+        pub fn set_adctc3(&mut self, n: usize, val: bool) {
+            assert!(n < 2usize);
+            let offs = 15usize + ([14usize, 0usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Reset"]
@@ -3818,6 +3818,21 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Timxrst(pub u32);
     impl Timxrst {
+        #[doc = "Timer X compare 1 event"]
+        #[inline(always)]
+        pub const fn tcmp1(&self, n: usize) -> super::vals::Reseteffect {
+            assert!(n < 5usize);
+            let offs = 0usize + ([19usize, 22usize, 25usize, 28usize, 0usize][n] as usize);
+            let val = (self.0 >> offs) & 0x01;
+            super::vals::Reseteffect::from_bits(val as u8)
+        }
+        #[doc = "Timer X compare 1 event"]
+        #[inline(always)]
+        pub fn set_tcmp1(&mut self, n: usize, val: super::vals::Reseteffect) {
+            assert!(n < 5usize);
+            let offs = 0usize + ([19usize, 22usize, 25usize, 28usize, 0usize][n] as usize);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+        }
         #[doc = "Timer X Update reset"]
         #[inline(always)]
         pub const fn updt(&self) -> super::vals::Reseteffect {
@@ -3885,34 +3900,19 @@ pub mod regs {
             let offs = 9usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
-        #[doc = "Timer X compare 1 event"]
-        #[inline(always)]
-        pub const fn tcmp1(&self, n: usize) -> super::vals::Reseteffect {
-            assert!(n < 4usize);
-            let offs = 19usize + ([0usize, 3usize, 6usize, 9usize][n] as usize);
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Reseteffect::from_bits(val as u8)
-        }
-        #[doc = "Timer X compare 1 event"]
-        #[inline(always)]
-        pub fn set_tcmp1(&mut self, n: usize, val: super::vals::Reseteffect) {
-            assert!(n < 4usize);
-            let offs = 19usize + ([0usize, 3usize, 6usize, 9usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
         #[doc = "Timer X compare 2 event"]
         #[inline(always)]
         pub const fn tcmp2(&self, n: usize) -> super::vals::Reseteffect {
-            assert!(n < 4usize);
-            let offs = 20usize + ([0usize, 3usize, 6usize, 9usize][n] as usize);
+            assert!(n < 5usize);
+            let offs = 20usize + ([0usize, 3usize, 6usize, 9usize, 11usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             super::vals::Reseteffect::from_bits(val as u8)
         }
         #[doc = "Timer X compare 2 event"]
         #[inline(always)]
         pub fn set_tcmp2(&mut self, n: usize, val: super::vals::Reseteffect) {
-            assert!(n < 4usize);
-            let offs = 20usize + ([0usize, 3usize, 6usize, 9usize][n] as usize);
+            assert!(n < 5usize);
+            let offs = 20usize + ([0usize, 3usize, 6usize, 9usize, 11usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
         #[doc = "Timer X compare 4 event"]

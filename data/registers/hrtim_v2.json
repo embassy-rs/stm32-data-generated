@@ -64,7 +64,7 @@
         "name": "TIM",
         "description": "High Resolution Timer: Timing Unit",
         "array": {
-          "len": 5,
+          "len": 6,
           "stride": 128
         },
         "byte_offset": 128,
@@ -428,11 +428,7 @@
         "bit_size": 1,
         "array": {
           "offsets": [
-            0,
-            5,
-            10,
-            14,
-            18
+            0
           ]
         }
       },
@@ -462,7 +458,8 @@
             5,
             10,
             14,
-            18
+            18,
+            8
           ]
         }
       },
@@ -489,7 +486,8 @@
         "array": {
           "offsets": [
             0,
-            5
+            5,
+            14
           ]
         }
       }
@@ -535,22 +533,20 @@
             4,
             8,
             13,
-            18
+            18,
+            1
           ]
         }
       },
       {
         "name": "ADCTC3",
         "description": "ADC trigger X on Timer Y Compare 3",
-        "bit_offset": 11,
+        "bit_offset": 15,
         "bit_size": 1,
         "array": {
           "offsets": [
-            0,
-            4,
-            8,
-            13,
-            18
+            14,
+            0
           ]
         }
       },
@@ -579,7 +575,8 @@
             0,
             4,
             8,
-            13
+            13,
+            11
           ]
         }
       },
@@ -2690,14 +2687,15 @@
       {
         "name": "TCMP1",
         "description": "Timer X compare 1 event",
-        "bit_offset": 19,
+        "bit_offset": 0,
         "bit_size": 1,
         "array": {
           "offsets": [
-            0,
-            3,
-            6,
-            9
+            19,
+            22,
+            25,
+            28,
+            0
           ]
         },
         "enum": "RESETEFFECT"
@@ -2712,7 +2710,8 @@
             0,
             3,
             6,
-            9
+            9,
+            11
           ]
         },
         "enum": "RESETEFFECT"

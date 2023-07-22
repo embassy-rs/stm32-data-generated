@@ -282,7 +282,7 @@ pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0400 as usize
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0800 as usize as _) };
 pub const GPIOD: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0c00 as usize as _) };
 pub const GPIOF: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_1400 as usize as _) };
-pub const ADC1: *mut () = 0x5000_0000 as usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0000 as usize as _) };
 pub const ADC_COMMON: *mut () = 0x5000_0300 as usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -295,6 +295,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1207959552 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_f3.rs"]
+pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/crc_v2.rs"]

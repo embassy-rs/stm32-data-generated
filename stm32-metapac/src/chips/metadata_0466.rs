@@ -500,7 +500,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1073771520,
         registers: Some(PeripheralRegisters {
             kind: "dac",
-            version: "v2",
+            version: "v3",
             block: "DAC",
         }),
         rcc: Some(PeripheralRcc {
@@ -552,7 +552,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1476408320,
         registers: Some(PeripheralRegisters {
             kind: "dac",
-            version: "v2",
+            version: "v3",
             block: "DAC",
         }),
         rcc: Some(PeripheralRcc {

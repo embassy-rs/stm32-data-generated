@@ -959,7 +959,7 @@
                     "address": 1073771520,
                     "registers": {
                         "kind": "dac",
-                        "version": "v2",
+                        "version": "v3",
                         "block": "DAC"
                     },
                     "pins": [
@@ -10537,7 +10537,7 @@
                     "address": 1073771520,
                     "registers": {
                         "kind": "dac",
-                        "version": "v2",
+                        "version": "v3",
                         "block": "DAC"
                     },
                     "pins": [

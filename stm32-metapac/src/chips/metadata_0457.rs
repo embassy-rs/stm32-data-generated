@@ -3,7 +3,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC1",
         address: 1073881088,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -157,7 +161,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC2",
         address: 1073881344,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {

@@ -319,6 +319,11 @@
                 {
                     "name": "ADC1",
                     "address": 1073881088,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "v4",
+                        "block": "ADC"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -418,6 +423,11 @@
                 {
                     "name": "ADC2",
                     "address": 1073881344,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "v4",
+                        "block": "ADC"
+                    },
                     "pins": [
                         {
                             "pin": "PA6",

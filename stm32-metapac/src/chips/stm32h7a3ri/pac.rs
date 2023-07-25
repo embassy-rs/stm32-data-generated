@@ -623,8 +623,8 @@ pub const DFSDM1: *mut () = 0x4001_7800 as usize as _;
 pub const DMA1: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_0000 as usize as _) };
 pub const DMA2: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_0400 as usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4002_0800 as usize as _) };
-pub const ADC1: *mut () = 0x4002_2000 as usize as _;
-pub const ADC2: *mut () = 0x4002_2100 as usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4002_2000 as usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4002_2100 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4002_2300 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000 as usize as _) };
@@ -685,6 +685,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1476526080 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_v4.rs"]
+pub mod adc;
 #[path = "../../peripherals/adccommon_v4.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]

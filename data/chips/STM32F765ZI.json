@@ -3235,7 +3235,12 @@
                             "field": "RNGRST"
                         }
                     },
-                    "interrupts": []
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "RNG"
+                        }
+                    ]
                 },
                 {
                     "name": "RTC",

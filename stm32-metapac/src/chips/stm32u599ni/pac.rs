@@ -617,7 +617,7 @@ pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00 as u
 pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000 as usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
-pub const CRS: *mut () = 0x4000_6000 as usize as _;
+pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000 as usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400 as usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400 as usize as _) };
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
@@ -707,6 +707,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 }
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
+#[path = "../../peripherals/crs_v1.rs"]
+pub mod crs;
 #[path = "../../peripherals/dbgmcu_u5.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]

@@ -865,6 +865,11 @@
                 {
                     "name": "CRS",
                     "address": 1073766400,
+                    "registers": {
+                        "kind": "crs",
+                        "version": "v1",
+                        "block": "CRS"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {

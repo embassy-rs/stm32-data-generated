@@ -698,7 +698,7 @@
           "len": 9,
           "stride": 3
         },
-        "enum": "SMP"
+        "enum": "SAMPLE_TIME"
       }
     ]
   },
@@ -714,7 +714,7 @@
           "len": 9,
           "stride": 3
         },
-        "enum": "SMP"
+        "enum": "SAMPLE_TIME"
       }
     ]
   },
@@ -1140,7 +1140,7 @@
       }
     ]
   },
-  "enum/SMP": {
+  "enum/SAMPLE_TIME": {
     "bit_size": 3,
     "variants": [
       {

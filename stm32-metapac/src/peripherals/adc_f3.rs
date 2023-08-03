@@ -1099,15 +1099,15 @@ pub mod regs {
     impl Smpr1 {
         #[doc = "Channel x sampling time selection"]
         #[inline(always)]
-        pub const fn smp(&self, n: usize) -> super::vals::Smp {
+        pub const fn smp(&self, n: usize) -> super::vals::SampleTime {
             assert!(n < 9usize);
             let offs = 3usize + n * 3usize;
             let val = (self.0 >> offs) & 0x07;
-            super::vals::Smp::from_bits(val as u8)
+            super::vals::SampleTime::from_bits(val as u8)
         }
         #[doc = "Channel x sampling time selection"]
         #[inline(always)]
-        pub fn set_smp(&mut self, n: usize, val: super::vals::Smp) {
+        pub fn set_smp(&mut self, n: usize, val: super::vals::SampleTime) {
             assert!(n < 9usize);
             let offs = 3usize + n * 3usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
@@ -1126,15 +1126,15 @@ pub mod regs {
     impl Smpr2 {
         #[doc = "Channel x sampling time selection"]
         #[inline(always)]
-        pub const fn smp(&self, n: usize) -> super::vals::Smp {
+        pub const fn smp(&self, n: usize) -> super::vals::SampleTime {
             assert!(n < 9usize);
             let offs = 0usize + n * 3usize;
             let val = (self.0 >> offs) & 0x07;
-            super::vals::Smp::from_bits(val as u8)
+            super::vals::SampleTime::from_bits(val as u8)
         }
         #[doc = "Channel x sampling time selection"]
         #[inline(always)]
-        pub fn set_smp(&mut self, n: usize, val: super::vals::Smp) {
+        pub fn set_smp(&mut self, n: usize, val: super::vals::SampleTime) {
             assert!(n < 9usize);
             let offs = 0usize + n * 3usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
@@ -1738,7 +1738,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Smp {
+    pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles"]
         CYCLES1_5 = 0,
         #[doc = "2.5 ADC clock cycles"]
@@ -1756,9 +1756,9 @@ pub mod vals {
         #[doc = "601.5 ADC clock cycles"]
         CYCLES601_5 = 0x07,
     }
-    impl Smp {
+    impl SampleTime {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Smp {
+        pub const fn from_bits(val: u8) -> SampleTime {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -1766,16 +1766,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Smp {
+    impl From<u8> for SampleTime {
         #[inline(always)]
-        fn from(val: u8) -> Smp {
-            Smp::from_bits(val)
+        fn from(val: u8) -> SampleTime {
+            SampleTime::from_bits(val)
         }
     }
-    impl From<Smp> for u8 {
+    impl From<SampleTime> for u8 {
         #[inline(always)]
-        fn from(val: Smp) -> u8 {
-            Smp::to_bits(val)
+        fn from(val: SampleTime) -> u8 {
+            SampleTime::to_bits(val)
         }
     }
 }

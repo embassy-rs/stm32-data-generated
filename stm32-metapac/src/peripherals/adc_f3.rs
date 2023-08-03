@@ -1705,14 +1705,14 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
-        #[doc = "12-bit"]
-        BITS12 = 0,
-        #[doc = "10-bit"]
-        BITS10 = 0x01,
-        #[doc = "8-bit"]
-        BITS8 = 0x02,
-        #[doc = "6-bit"]
-        BITS6 = 0x03,
+        #[doc = "12-bit resolution"]
+        TWELVEBIT = 0,
+        #[doc = "10-bit resolution"]
+        TENBIT = 0x01,
+        #[doc = "8-bit resolution"]
+        EIGHTBIT = 0x02,
+        #[doc = "6-bit resolution"]
+        SIXBIT = 0x03,
     }
     impl Res {
         #[inline(always)]

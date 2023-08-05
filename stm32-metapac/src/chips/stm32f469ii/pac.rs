@@ -418,8 +418,8 @@ pub const TIM14: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_2000 
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00 as usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
-pub const SPI2: *mut () = 0x4000_3800 as usize as _;
-pub const SPI3: *mut () = 0x4000_3c00 as usize as _;
+pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800 as usize as _) };
+pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00 as usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400 as usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800 as usize as _) };
 pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00 as usize as _) };
@@ -442,15 +442,15 @@ pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2100 as usize as _
 pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2200 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4001_2300 as usize as _) };
 pub const SDIO: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4001_2c00 as usize as _) };
-pub const SPI1: *mut () = 0x4001_3000 as usize as _;
-pub const SPI4: *mut () = 0x4001_3400 as usize as _;
+pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
+pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3400 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_3800 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_3c00 as usize as _) };
 pub const TIM9: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4000 as usize as _) };
 pub const TIM10: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4400 as usize as _) };
 pub const TIM11: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4800 as usize as _) };
-pub const SPI5: *mut () = 0x4001_5000 as usize as _;
-pub const SPI6: *mut () = 0x4001_5400 as usize as _;
+pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_5000 as usize as _) };
+pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_5400 as usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800 as usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x4001_6800 as usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0000 as usize as _) };
@@ -538,6 +538,8 @@ pub mod rtc;
 pub mod sai;
 #[path = "../../peripherals/sdmmc_v1.rs"]
 pub mod sdmmc;
+#[path = "../../peripherals/spi_v1.rs"]
+pub mod spi;
 #[path = "../../peripherals/syscfg_f4.rs"]
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]

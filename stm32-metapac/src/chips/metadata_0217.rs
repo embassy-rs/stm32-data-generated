@@ -3003,7 +3003,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI1",
         address: 1073819648,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v1",
+            block: "SPI",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
@@ -3095,7 +3099,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI2",
         address: 1073756160,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v1",
+            block: "SPI",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
@@ -3268,7 +3276,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI3",
         address: 1073757184,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v1",
+            block: "SPI",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
@@ -3415,7 +3427,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI4",
         address: 1073820672,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v1",
+            block: "SPI",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
@@ -3507,7 +3523,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI6",
         address: 1073828864,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v1",
+            block: "SPI",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {

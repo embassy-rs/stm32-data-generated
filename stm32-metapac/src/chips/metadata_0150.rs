@@ -3638,6 +3638,19 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }],
     },
     Peripheral {
+        name: "VREFINTCAL",
+        address: 536868794,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefintcal",
+            version: "v1",
+            block: "VREFINTCAL",
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "WWDG",
         address: 1073753088,
         registers: Some(PeripheralRegisters {

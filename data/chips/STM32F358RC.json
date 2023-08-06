@@ -460,6 +460,15 @@
                     ]
                 },
                 {
+                    "name": "ADC3_COMMON",
+                    "address": 1342179072,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "f3",
+                        "block": "ADC_COMMON"
+                    }
+                },
+                {
                     "name": "ADC4",
                     "address": 1342178560,
                     "registers": {
@@ -500,7 +509,12 @@
                 },
                 {
                     "name": "ADC_COMMON",
-                    "address": 1342178048
+                    "address": 1342178048,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "f3",
+                        "block": "ADC_COMMON"
+                    }
                 },
                 {
                     "name": "CAN",
@@ -3662,6 +3676,15 @@
                             "channel": "DMA1_CH3"
                         }
                     ]
+                },
+                {
+                    "name": "VREFINTCAL",
+                    "address": 536868794,
+                    "registers": {
+                        "kind": "vrefintcal",
+                        "version": "v1",
+                        "block": "VREFINTCAL"
+                    }
                 },
                 {
                     "name": "WWDG",

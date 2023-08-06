@@ -269,6 +269,19 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }],
     },
     Peripheral {
+        name: "ADC3_COMMON",
+        address: 1342179072,
+        registers: Some(PeripheralRegisters {
+            kind: "adccommon",
+            version: "f3",
+            block: "ADC_COMMON",
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "ADC4",
         address: 1342178560,
         registers: Some(PeripheralRegisters {
@@ -368,7 +381,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC_COMMON",
         address: 1342178048,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adccommon",
+            version: "f3",
+            block: "ADC_COMMON",
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -4274,6 +4291,19 @@ const PERIPHERALS: &'static [Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART3",
         }],
+    },
+    Peripheral {
+        name: "VREFINTCAL",
+        address: 536868794,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefintcal",
+            version: "v1",
+            block: "VREFINTCAL",
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
     },
     Peripheral {
         name: "WWDG",

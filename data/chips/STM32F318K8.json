@@ -349,7 +349,12 @@
                 },
                 {
                     "name": "ADC_COMMON",
-                    "address": 1342178048
+                    "address": 1342178048,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "f3",
+                        "block": "ADC_COMMON"
+                    }
                 },
                 {
                     "name": "COMP2",
@@ -2083,6 +2088,15 @@
                             "channel": "DMA1_CH7"
                         }
                     ]
+                },
+                {
+                    "name": "VREFINTCAL",
+                    "address": 536868794,
+                    "registers": {
+                        "kind": "vrefintcal",
+                        "version": "v1",
+                        "block": "VREFINTCAL"
+                    }
                 },
                 {
                     "name": "WWDG",

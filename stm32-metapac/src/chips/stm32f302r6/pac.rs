@@ -279,6 +279,7 @@ mod _vectors {
     ];
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1fff_f7ac as usize as _) };
+pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x1fff_f7ba as usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000 as usize as _) };
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000 as usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
@@ -318,7 +319,7 @@ pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0800 as usize
 pub const GPIOD: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0c00 as usize as _) };
 pub const GPIOF: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_1400 as usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0000 as usize as _) };
-pub const ADC_COMMON: *mut () = 0x5000_0300 as usize as _;
+pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5000_0300 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -332,6 +333,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 }
 #[path = "../../peripherals/adc_f3.rs"]
 pub mod adc;
+#[path = "../../peripherals/adccommon_f3.rs"]
+pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/can_bxcan.rs"]
@@ -372,6 +375,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_16x2_1024.rs"]
 pub mod usbram;
+#[path = "../../peripherals/vrefintcal_v1.rs"]
+pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v1.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;

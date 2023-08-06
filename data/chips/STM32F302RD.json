@@ -446,7 +446,12 @@
                 },
                 {
                     "name": "ADC_COMMON",
-                    "address": 1342178048
+                    "address": 1342178048,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "f3",
+                        "block": "ADC_COMMON"
+                    }
                 },
                 {
                     "name": "CAN",
@@ -3402,6 +3407,15 @@
                         "kind": "usbram",
                         "version": "16x2_1024",
                         "block": "USBRAM"
+                    }
+                },
+                {
+                    "name": "VREFINTCAL",
+                    "address": 536868794,
+                    "registers": {
+                        "kind": "vrefintcal",
+                        "version": "v1",
+                        "block": "VREFINTCAL"
                     }
                 },
                 {

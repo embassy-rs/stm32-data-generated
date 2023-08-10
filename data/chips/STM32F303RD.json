@@ -329,11 +329,11 @@
                         "clock": "AHB1",
                         "enable": {
                             "register": "AHBENR",
-                            "field": "ADC1EN"
+                            "field": "ADC12EN"
                         },
                         "reset": {
                             "register": "AHBRSTR",
-                            "field": "ADC1RST"
+                            "field": "ADC12RST"
                         }
                     },
                     "pins": [
@@ -394,6 +394,17 @@
                         "kind": "adc",
                         "version": "f3",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHBENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHBRSTR",
+                            "field": "ADC12RST"
+                        }
                     },
                     "pins": [
                         {
@@ -470,6 +481,17 @@
                         "version": "f3",
                         "block": "ADC"
                     },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHBENR",
+                            "field": "ADC34EN"
+                        },
+                        "reset": {
+                            "register": "AHBRSTR",
+                            "field": "ADC34RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB0",
@@ -513,6 +535,17 @@
                         "kind": "adc",
                         "version": "f3",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHBENR",
+                            "field": "ADC34EN"
+                        },
+                        "reset": {
+                            "register": "AHBRSTR",
+                            "field": "ADC34RST"
+                        }
                     },
                     "pins": [
                         {
@@ -938,6 +971,10 @@
                         "enable": {
                             "register": "APB2ENR",
                             "field": "DBGMCUEN"
+                        },
+                        "reset": {
+                            "register": "APB2RSTR",
+                            "field": "DBGMCURST"
                         }
                     }
                 },

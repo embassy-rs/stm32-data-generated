@@ -54,6 +54,17 @@
                 {
                     "name": "ADC1",
                     "address": 1107460096,
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADC12RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -186,6 +197,17 @@
                 {
                     "name": "ADC2",
                     "address": 1107460352,
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADC12RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

@@ -396,6 +396,17 @@
                         "version": "v4",
                         "block": "ADC"
                     },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHB1ENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHB1RSTR",
+                            "field": "ADC12RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -527,6 +538,17 @@
                         "kind": "adc",
                         "version": "v4",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHB1ENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHB1RSTR",
+                            "field": "ADC12RST"
+                        }
                     },
                     "pins": [
                         {
@@ -10033,6 +10055,17 @@
                         "version": "v4",
                         "block": "ADC"
                     },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHB1ENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHB1RSTR",
+                            "field": "ADC12RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -10164,6 +10197,17 @@
                         "kind": "adc",
                         "version": "v4",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB1",
+                        "enable": {
+                            "register": "AHB1ENR",
+                            "field": "ADC12EN"
+                        },
+                        "reset": {
+                            "register": "AHB1RSTR",
+                            "field": "ADC12RST"
+                        }
                     },
                     "pins": [
                         {

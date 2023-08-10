@@ -300,15 +300,20 @@
                 {
                     "name": "ADC1",
                     "address": 1073816576,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "f3_v2",
+                        "block": "ADC"
+                    },
                     "rcc": {
-                        "clock": "AHB1",
+                        "clock": "APB2",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "ADC1EN"
+                            "register": "APB2ENR",
+                            "field": "ADCEN"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "ADC1RST"
+                            "register": "APB2RSTR",
+                            "field": "ADCRST"
                         }
                     },
                     "pins": [
@@ -679,6 +684,10 @@
                         "enable": {
                             "register": "APB2ENR",
                             "field": "DBGMCUEN"
+                        },
+                        "reset": {
+                            "register": "APB2RSTR",
+                            "field": "DBGMCURST"
                         }
                     }
                 },
@@ -1167,7 +1176,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "f3",
+                        "version": "f3_v2",
                         "block": "RCC"
                     },
                     "pins": [

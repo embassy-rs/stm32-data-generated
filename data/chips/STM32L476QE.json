@@ -531,6 +531,17 @@
                         "version": "v3",
                         "block": "ADC"
                     },
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADCEN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADCRST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -623,6 +634,17 @@
                         "kind": "adc",
                         "version": "v3",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADCEN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADCRST"
+                        }
                     },
                     "pins": [
                         {

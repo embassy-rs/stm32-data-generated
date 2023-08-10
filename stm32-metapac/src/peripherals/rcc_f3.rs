@@ -262,17 +262,6 @@ pub mod regs {
         pub fn set_adc12en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
-        #[doc = "ADC 1"]
-        #[inline(always)]
-        pub const fn adc1en(&self) -> bool {
-            let val = (self.0 >> 28usize) & 0x01;
-            val != 0
-        }
-        #[doc = "ADC 1"]
-        #[inline(always)]
-        pub fn set_adc1en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
-        }
         #[doc = "ADC3 and ADC4 clock enable"]
         #[inline(always)]
         pub const fn adc34en(&self) -> bool {
@@ -417,17 +406,6 @@ pub mod regs {
         pub fn set_adc12rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
-        #[doc = "ADC1 reset"]
-        #[inline(always)]
-        pub const fn adc1rst(&self) -> bool {
-            let val = (self.0 >> 28usize) & 0x01;
-            val != 0
-        }
-        #[doc = "ADC1 reset"]
-        #[inline(always)]
-        pub fn set_adc1rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
-        }
         #[doc = "ADC3 and ADC4 reset"]
         #[inline(always)]
         pub const fn adc34rst(&self) -> bool {
@@ -484,17 +462,6 @@ pub mod regs {
         pub fn set_tim4en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Timer 5 clock enable"]
-        #[inline(always)]
-        pub const fn tim5en(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 5 clock enable"]
-        #[inline(always)]
-        pub fn set_tim5en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
         #[doc = "Timer 6 clock enable"]
         #[inline(always)]
         pub const fn tim6en(&self) -> bool {
@@ -516,50 +483,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_tim7en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Timer 12 clock enable"]
-        #[inline(always)]
-        pub const fn tim12en(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 12 clock enable"]
-        #[inline(always)]
-        pub fn set_tim12en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Timer 13 clock enable"]
-        #[inline(always)]
-        pub const fn tim13en(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 13 clock enable"]
-        #[inline(always)]
-        pub fn set_tim13en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Timer 14 clock enable"]
-        #[inline(always)]
-        pub const fn tim14en(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 14 clock enable"]
-        #[inline(always)]
-        pub fn set_tim14en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Timer 18 clock enable"]
-        #[inline(always)]
-        pub const fn tim18en(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 18 clock enable"]
-        #[inline(always)]
-        pub fn set_tim18en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Window watchdog clock enable"]
         #[inline(always)]
@@ -715,17 +638,6 @@ pub mod regs {
         pub fn set_dacen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
-        #[doc = "HDMI CEC interface clock enable"]
-        #[inline(always)]
-        pub const fn cecen(&self) -> bool {
-            let val = (self.0 >> 30usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HDMI CEC interface clock enable"]
-        #[inline(always)]
-        pub fn set_cecen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-        }
         #[doc = "I2C3 clock enable"]
         #[inline(always)]
         pub const fn i2c3en(&self) -> bool {
@@ -782,17 +694,6 @@ pub mod regs {
         pub fn set_tim4rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Timer 5 reset"]
-        #[inline(always)]
-        pub const fn tim5rst(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 5 reset"]
-        #[inline(always)]
-        pub fn set_tim5rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
         #[doc = "Timer 6 reset"]
         #[inline(always)]
         pub const fn tim6rst(&self) -> bool {
@@ -814,50 +715,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_tim7rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Timer 12 reset"]
-        #[inline(always)]
-        pub const fn tim12rst(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 12 reset"]
-        #[inline(always)]
-        pub fn set_tim12rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Timer 13 reset"]
-        #[inline(always)]
-        pub const fn tim13rst(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 13 reset"]
-        #[inline(always)]
-        pub fn set_tim13rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Timer 14 reset"]
-        #[inline(always)]
-        pub const fn tim14rst(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 14 reset"]
-        #[inline(always)]
-        pub fn set_tim14rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Timer 18 reset"]
-        #[inline(always)]
-        pub const fn tim18rst(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer 18 reset"]
-        #[inline(always)]
-        pub fn set_tim18rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Window watchdog reset"]
         #[inline(always)]
@@ -1013,17 +870,6 @@ pub mod regs {
         pub fn set_dacrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
-        #[doc = "HDMI CEC reset"]
-        #[inline(always)]
-        pub const fn cecrst(&self) -> bool {
-            let val = (self.0 >> 30usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HDMI CEC reset"]
-        #[inline(always)]
-        pub fn set_cecrst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-        }
         #[doc = "I2C3 reset"]
         #[inline(always)]
         pub const fn i2c3rst(&self) -> bool {
@@ -1057,17 +903,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_syscfgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "ADC 1 interface clock enable"]
-        #[inline(always)]
-        pub const fn adcen(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "ADC 1 interface clock enable"]
-        #[inline(always)]
-        pub fn set_adcen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "TIM1 Timer clock enable"]
         #[inline(always)]
@@ -1190,39 +1025,6 @@ pub mod regs {
         pub fn set_dbgmcuen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
-        #[doc = "SDADC1 (Sigma Delta ADC 1) clock enable"]
-        #[inline(always)]
-        pub const fn sdadc1en(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDADC1 (Sigma Delta ADC 1) clock enable"]
-        #[inline(always)]
-        pub fn set_sdadc1en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
-        #[doc = "SDADC2 (Sigma Delta ADC 2) clock enable"]
-        #[inline(always)]
-        pub const fn sdadc2en(&self) -> bool {
-            let val = (self.0 >> 25usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDADC2 (Sigma Delta ADC 2) clock enable"]
-        #[inline(always)]
-        pub fn set_sdadc2en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
-        }
-        #[doc = "SDADC3 (Sigma Delta ADC 3) clock enable"]
-        #[inline(always)]
-        pub const fn sdadc3en(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDADC3 (Sigma Delta ADC 3) clock enable"]
-        #[inline(always)]
-        pub fn set_sdadc3en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
         #[doc = "High Resolution Timer 1 clock enable"]
         #[inline(always)]
         pub const fn hrtim1en(&self) -> bool {
@@ -1256,17 +1058,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_syscfgrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "ADC interface reset"]
-        #[inline(always)]
-        pub const fn adcrst(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "ADC interface reset"]
-        #[inline(always)]
-        pub fn set_adcrst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "TIM1 timer reset"]
         #[inline(always)]
@@ -1378,38 +1169,16 @@ pub mod regs {
         pub fn set_tim20rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
-        #[doc = "SDADC1 (Sigma delta ADC 1) reset"]
+        #[doc = "Debug MCU reset"]
         #[inline(always)]
-        pub const fn sdadc1rst(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
+        pub const fn dbgmcurst(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
             val != 0
         }
-        #[doc = "SDADC1 (Sigma delta ADC 1) reset"]
+        #[doc = "Debug MCU reset"]
         #[inline(always)]
-        pub fn set_sdadc1rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
-        #[doc = "SDADC2 (Sigma delta ADC 2) reset"]
-        #[inline(always)]
-        pub const fn sdadc2rst(&self) -> bool {
-            let val = (self.0 >> 25usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDADC2 (Sigma delta ADC 2) reset"]
-        #[inline(always)]
-        pub fn set_sdadc2rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
-        }
-        #[doc = "SDADC3 (Sigma delta ADC 3) reset"]
-        #[inline(always)]
-        pub const fn sdadc3rst(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDADC3 (Sigma delta ADC 3) reset"]
-        #[inline(always)]
-        pub fn set_sdadc3rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        pub fn set_dbgmcurst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "High Resolution Timer1 reset"]
         #[inline(always)]

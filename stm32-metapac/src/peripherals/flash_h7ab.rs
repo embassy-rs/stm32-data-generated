@@ -449,49 +449,38 @@ pub mod regs {
         pub fn set_ber(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "Bank 1 program size"]
-        #[inline(always)]
-        pub const fn psize(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x03;
-            val as u8
-        }
-        #[doc = "Bank 1 program size"]
-        #[inline(always)]
-        pub fn set_psize(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
-        }
         #[doc = "Bank 1 write forcing control bit"]
         #[inline(always)]
         pub const fn fw(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
+            let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[doc = "Bank 1 write forcing control bit"]
         #[inline(always)]
         pub fn set_fw(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Bank 1 bank or sector erase start control bit"]
         #[inline(always)]
         pub const fn start(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
+            let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[doc = "Bank 1 bank or sector erase start control bit"]
         #[inline(always)]
         pub fn set_start(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Bank 1 sector erase selection number"]
         #[inline(always)]
-        pub const fn snb(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x07;
+        pub const fn ssn(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x7f;
             val as u8
         }
         #[doc = "Bank 1 sector erase selection number"]
         #[inline(always)]
-        pub fn set_snb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        pub fn set_ssn(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 6usize)) | (((val as u32) & 0x7f) << 6usize);
         }
         #[doc = "Bank 1 CRC control bit"]
         #[inline(always)]
@@ -918,6 +907,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_mer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "OTP program control bit"]
+        #[inline(always)]
+        pub const fn pg_otp(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OTP program control bit"]
+        #[inline(always)]
+        pub fn set_pg_otp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Option byte change error interrupt enable bit"]
         #[inline(always)]

@@ -2015,7 +2015,7 @@
                     "address": 1375739904,
                     "registers": {
                         "kind": "flash",
-                        "version": "h7",
+                        "version": "h7ab",
                         "block": "FLASH"
                     },
                     "interrupts": [

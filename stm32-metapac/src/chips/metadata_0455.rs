@@ -1739,7 +1739,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1375739904,
         registers: Some(PeripheralRegisters {
             kind: "flash",
-            version: "h7",
+            version: "h7ab",
             block: "FLASH",
         }),
         rcc: None,

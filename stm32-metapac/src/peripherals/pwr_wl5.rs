@@ -276,14 +276,14 @@ pub mod regs {
         }
         #[doc = "Disable backup domain write protection"]
         #[inline(always)]
-        pub const fn dbp(&self) -> super::vals::Dbp {
+        pub const fn dbp(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Dbp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Disable backup domain write protection"]
         #[inline(always)]
-        pub fn set_dbp(&mut self, val: super::vals::Dbp) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_dbp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Voltage scaling range selection"]
         #[inline(always)]
@@ -343,14 +343,14 @@ pub mod regs {
         }
         #[doc = "Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V"]
         #[inline(always)]
-        pub const fn pvme(&self) -> super::vals::Pvme {
+        pub const fn pvme(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Pvme::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V"]
         #[inline(always)]
-        pub fn set_pvme(&mut self, val: super::vals::Pvme) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_pvme(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
     impl Default for Cr2 {
@@ -366,40 +366,40 @@ pub mod regs {
     impl Cr3 {
         #[doc = "Enable Wakeup pin WKUP1 for CPU1"]
         #[inline(always)]
-        pub const fn ewup(&self, n: usize) -> super::vals::Ewup {
+        pub const fn ewup(&self, n: usize) -> bool {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Ewup::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable Wakeup pin WKUP1 for CPU1"]
         #[inline(always)]
-        pub fn set_ewup(&mut self, n: usize, val: super::vals::Ewup) {
+        pub fn set_ewup(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Ultra-low-power enable"]
         #[inline(always)]
-        pub const fn eulpen(&self) -> super::vals::Eulpen {
+        pub const fn eulpen(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Eulpen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Ultra-low-power enable"]
         #[inline(always)]
-        pub fn set_eulpen(&mut self, val: super::vals::Eulpen) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_eulpen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Enable wakeup PVD for CPU1"]
         #[inline(always)]
-        pub const fn ewpvd(&self) -> super::vals::Ewpvd {
+        pub const fn ewpvd(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Ewpvd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable wakeup PVD for CPU1"]
         #[inline(always)]
-        pub fn set_ewpvd(&mut self, val: super::vals::Ewpvd) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_ewpvd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "SRAM2 retention in Standby mode"]
         #[inline(always)]
@@ -414,14 +414,14 @@ pub mod regs {
         }
         #[doc = "Apply pull-up and pull-down configuration from CPU1"]
         #[inline(always)]
-        pub const fn apc(&self) -> super::vals::Apc {
+        pub const fn apc(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Apc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Apply pull-up and pull-down configuration from CPU1"]
         #[inline(always)]
-        pub fn set_apc(&mut self, val: super::vals::Apc) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_apc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Enable Radio BUSY Wakeup from Standby for CPU1"]
         #[inline(always)]
@@ -458,14 +458,14 @@ pub mod regs {
         }
         #[doc = "Enable internal wakeup line for CPU1"]
         #[inline(always)]
-        pub const fn eiwul(&self) -> super::vals::Eiwul {
+        pub const fn eiwul(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Eiwul::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable internal wakeup line for CPU1"]
         #[inline(always)]
-        pub fn set_eiwul(&mut self, val: super::vals::Eiwul) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_eiwul(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Cr3 {
@@ -1087,36 +1087,6 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Apc {
-        #[doc = "I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied"]
-        DISABLED = 0,
-        #[doc = "PWR_PUCRx and PWR_PDCRx registers are NOT applied to the I/Os"]
-        ENABLED = 0x01,
-    }
-    impl Apc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Apc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Apc {
-        #[inline(always)]
-        fn from(val: u8) -> Apc {
-            Apc::from_bits(val)
-        }
-    }
-    impl From<Apc> for u8 {
-        #[inline(always)]
-        fn from(val: Apc) -> u8 {
-            Apc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cds {
         #[doc = "CPU is running or in sleep"]
         RUNNINGORSLEEP = 0,
@@ -1207,126 +1177,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dbp {
-        #[doc = "Access to RTC and backup registers disabled"]
-        DISABLED = 0,
-        #[doc = "Access to RTC and backup registers enabled"]
-        ENABLED = 0x01,
-    }
-    impl Dbp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dbp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dbp {
-        #[inline(always)]
-        fn from(val: u8) -> Dbp {
-            Dbp::from_bits(val)
-        }
-    }
-    impl From<Dbp> for u8 {
-        #[inline(always)]
-        fn from(val: Dbp) -> u8 {
-            Dbp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Eiwul {
-        #[doc = "Internal wakeup line interrupt to CPU disabled"]
-        DISABLED = 0,
-        #[doc = "Internal wakeup line interrupt to CPU enabled"]
-        ENABLED = 0x01,
-    }
-    impl Eiwul {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Eiwul {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Eiwul {
-        #[inline(always)]
-        fn from(val: u8) -> Eiwul {
-            Eiwul::from_bits(val)
-        }
-    }
-    impl From<Eiwul> for u8 {
-        #[inline(always)]
-        fn from(val: Eiwul) -> u8 {
-            Eiwul::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Eulpen {
-        #[doc = "Disable (the supply voltage is monitored continuously)"]
-        DISABLED = 0,
-        #[doc = "Enable, when set, the supply voltage is sampled for PDR/BOR reset condition only periodically"]
-        ENABLED = 0x01,
-    }
-    impl Eulpen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Eulpen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Eulpen {
-        #[inline(always)]
-        fn from(val: u8) -> Eulpen {
-            Eulpen::from_bits(val)
-        }
-    }
-    impl From<Eulpen> for u8 {
-        #[inline(always)]
-        fn from(val: Eulpen) -> u8 {
-            Eulpen::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ewpvd {
-        #[doc = "PVD not enabled by the sub-GHz radio active state"]
-        DISABLED = 0,
-        #[doc = "PVD enabled while the sub-GHz radio is active"]
-        ENABLED = 0x01,
-    }
-    impl Ewpvd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ewpvd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ewpvd {
-        #[inline(always)]
-        fn from(val: u8) -> Ewpvd {
-            Ewpvd::from_bits(val)
-        }
-    }
-    impl From<Ewpvd> for u8 {
-        #[inline(always)]
-        fn from(val: Ewpvd) -> u8 {
-            Ewpvd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ewrfbusy {
         #[doc = "Radio Busy is disabled and does not trigger a wakeup from Standby event to CPUwhen a rising or a falling edge occurs"]
         DISABLED = 0,
@@ -1385,36 +1235,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
         #[inline(always)]
         fn from(val: Ewrfirq) -> u8 {
             Ewrfirq::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ewup {
-        #[doc = "WKUP pin 3 is used for general purpose I/Os. An event on the WKUP pin 3 does not wakeup the device from Standby mode"]
-        DISABLED = 0,
-        #[doc = "WKUP pin 3 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 3wakes-up the system from Standby mode)"]
-        ENABLED = 0x01,
-    }
-    impl Ewup {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ewup {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ewup {
-        #[inline(always)]
-        fn from(val: u8) -> Ewup {
-            Ewup::from_bits(val)
-        }
-    }
-    impl From<Ewup> for u8 {
-        #[inline(always)]
-        fn from(val: Ewup) -> u8 {
-            Ewup::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1736,36 +1556,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
         #[inline(always)]
         fn from(val: Pvdo) -> u8 {
             Pvdo::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pvme {
-        #[doc = "PVM3 (VDDA monitoring versus 1.62 V threshold) disable"]
-        DISABLED = 0,
-        #[doc = "PVM3 (VDDA monitoring versus 1.62 V threshold) enable"]
-        ENABLED = 0x01,
-    }
-    impl Pvme {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pvme {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pvme {
-        #[inline(always)]
-        fn from(val: u8) -> Pvme {
-            Pvme::from_bits(val)
-        }
-    }
-    impl From<Pvme> for u8 {
-        #[inline(always)]
-        fn from(val: Pvme) -> u8 {
-            Pvme::to_bits(val)
         }
     }
     #[repr(u8)]

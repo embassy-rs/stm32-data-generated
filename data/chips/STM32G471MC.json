@@ -43,6 +43,11 @@
                 {
                     "name": "ADC1",
                     "address": 1342177280,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "v4",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {
@@ -129,6 +134,11 @@
                 {
                     "name": "ADC2",
                     "address": 1342177536,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "v4",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {
@@ -223,6 +233,11 @@
                 {
                     "name": "ADC3",
                     "address": 1342178304,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "v4",
+                        "block": "ADC"
+                    },
                     "pins": [
                         {
                             "pin": "PB0",
@@ -289,7 +304,12 @@
                 },
                 {
                     "name": "ADC_COMMON",
-                    "address": 1342178048
+                    "address": 1342178048,
+                    "registers": {
+                        "kind": "adccommon",
+                        "version": "v4",
+                        "block": "ADC_COMMON"
+                    }
                 },
                 {
                     "name": "COMP1",

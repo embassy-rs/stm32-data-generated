@@ -3,7 +3,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC1",
         address: 1342177280,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
@@ -82,7 +86,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC2",
         address: 1342177536,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
@@ -166,7 +174,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC3",
         address: 1342178304,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -200,7 +212,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC4",
         address: 1342178560,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -234,7 +250,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC5",
         address: 1342178816,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "v4",
+            block: "ADC",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -263,7 +283,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC_COMMON",
         address: 1342178048,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adccommon",
+            version: "v4",
+            block: "ADC_COMMON",
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],

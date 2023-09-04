@@ -2700,25 +2700,25 @@ pub mod regs {
         }
         #[doc = "ADCs clock source selection"]
         #[inline(always)]
-        pub const fn adc12sel(&self) -> u8 {
+        pub const fn adc12sel(&self) -> super::vals::Adcsel {
             let val = (self.0 >> 28usize) & 0x03;
-            val as u8
+            super::vals::Adcsel::from_bits(val as u8)
         }
         #[doc = "ADCs clock source selection"]
         #[inline(always)]
-        pub fn set_adc12sel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val as u32) & 0x03) << 28usize);
+        pub fn set_adc12sel(&mut self, val: super::vals::Adcsel) {
+            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
         #[doc = "ADC3/4/5 clock source selection"]
         #[inline(always)]
-        pub const fn adc345sel(&self) -> u8 {
+        pub const fn adc345sel(&self) -> super::vals::Adcsel {
             let val = (self.0 >> 30usize) & 0x03;
-            val as u8
+            super::vals::Adcsel::from_bits(val as u8)
         }
         #[doc = "ADC3/4/5 clock source selection"]
         #[inline(always)]
-        pub fn set_adc345sel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        pub fn set_adc345sel(&mut self, val: super::vals::Adcsel) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
     impl Default for Ccipr {
@@ -3575,6 +3575,39 @@ pub mod regs {
     }
 }
 pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Adcsel {
+        #[doc = "No clock selected"]
+        NOCLK = 0,
+        #[doc = "PLL 'P' clock selected as ADC clock"]
+        PLLP = 0x01,
+        #[doc = "System clock selected as ADC clock"]
+        SYSCLK = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Adcsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Adcsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Adcsel {
+        #[inline(always)]
+        fn from(val: u8) -> Adcsel {
+            Adcsel::from_bits(val)
+        }
+    }
+    impl From<Adcsel> for u8 {
+        #[inline(always)]
+        fn from(val: Adcsel) -> u8 {
+            Adcsel::to_bits(val)
+        }
+    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Clk48sel {

@@ -242,6 +242,17 @@ pub mod regs {
         pub fn set_sioo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
+        #[doc = "Free-running clock mode (not available on all chips!)"]
+        #[inline(always)]
+        pub const fn frcm(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Free-running clock mode (not available on all chips!)"]
+        #[inline(always)]
+        pub fn set_frcm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
         #[doc = "DDR hold half cycle"]
         #[inline(always)]
         pub const fn dhhc(&self) -> bool {
@@ -298,13 +309,13 @@ pub mod regs {
         pub fn set_abort(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DMA enable"]
+        #[doc = "DMA enable (not available on all chips!)"]
         #[inline(always)]
         pub const fn dmaen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DMA enable"]
+        #[doc = "DMA enable (not available on all chips!)"]
         #[inline(always)]
         pub fn set_dmaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);

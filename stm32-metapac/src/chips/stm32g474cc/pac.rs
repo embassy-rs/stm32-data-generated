@@ -538,12 +538,12 @@ pub const GPIOD: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0c00 as usize
 pub const GPIOE: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_1000 as usize as _) };
 pub const GPIOF: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_1400 as usize as _) };
 pub const GPIOG: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_1800 as usize as _) };
-pub const ADC1: *mut () = 0x5000_0000 as usize as _;
-pub const ADC2: *mut () = 0x5000_0100 as usize as _;
-pub const ADC_COMMON: *mut () = 0x5000_0300 as usize as _;
-pub const ADC3: *mut () = 0x5000_0400 as usize as _;
-pub const ADC4: *mut () = 0x5000_0500 as usize as _;
-pub const ADC5: *mut () = 0x5000_0600 as usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0000 as usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0100 as usize as _) };
+pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5000_0300 as usize as _) };
+pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0400 as usize as _) };
+pub const ADC4: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0500 as usize as _) };
+pub const ADC5: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0600 as usize as _) };
 pub const DAC1: *mut () = 0x5000_0800 as usize as _;
 pub const DAC2: *mut () = 0x5000_0c00 as usize as _;
 pub const DAC3: *mut () = 0x5000_1000 as usize as _;
@@ -560,6 +560,10 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1207959552 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_v4.rs"]
+pub mod adc;
+#[path = "../../peripherals/adccommon_v4.rs"]
+pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan.rs"]

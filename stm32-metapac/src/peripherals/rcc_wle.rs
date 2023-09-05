@@ -1778,14 +1778,14 @@ pub mod regs {
         }
         #[doc = "ADC clock source selection"]
         #[inline(always)]
-        pub const fn adcsel(&self) -> u8 {
+        pub const fn adcsel(&self) -> super::vals::Adcsel {
             let val = (self.0 >> 28usize) & 0x03;
-            val as u8
+            super::vals::Adcsel::from_bits(val as u8)
         }
         #[doc = "ADC clock source selection"]
         #[inline(always)]
-        pub fn set_adcsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val as u32) & 0x03) << 28usize);
+        pub fn set_adcsel(&mut self, val: super::vals::Adcsel) {
+            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
         #[doc = "RNG clock source selection"]
         #[inline(always)]
@@ -2802,6 +2802,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pllcfgr {
             Pllcfgr(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Adcsel {
+        _RESERVED_0 = 0,
+        #[doc = "HSI16 used as ADC clock source"]
+        HSI16 = 0x01,
+        #[doc = "PLLPCLK used as ADC clock source"]
+        PLLPCLK = 0x02,
+        #[doc = "SYSCLK used as ADC clock source"]
+        SYSCLK = 0x03,
+    }
+    impl Adcsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Adcsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Adcsel {
+        #[inline(always)]
+        fn from(val: u8) -> Adcsel {
+            Adcsel::from_bits(val)
+        }
+    }
+    impl From<Adcsel> for u8 {
+        #[inline(always)]
+        fn from(val: Adcsel) -> u8 {
+            Adcsel::to_bits(val)
         }
     }
 }

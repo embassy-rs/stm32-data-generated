@@ -230,6 +230,11 @@
                 {
                     "name": "ADC",
                     "address": 1073816576,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "g0",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "clock": "APB2",
                         "enable": {
@@ -2943,6 +2948,11 @@
                 {
                     "name": "ADC",
                     "address": 1073816576,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "g0",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "clock": "APB2",
                         "enable": {

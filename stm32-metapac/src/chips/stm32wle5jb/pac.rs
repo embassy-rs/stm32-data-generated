@@ -308,7 +308,7 @@ pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000
 pub const VREFBUF: *mut () = 0x4001_0030 as usize as _;
 pub const COMP1: *mut () = 0x4001_0200 as usize as _;
 pub const COMP2: *mut () = 0x4001_0204 as usize as _;
-pub const ADC: *mut () = 0x4001_2400 as usize as _;
+pub const ADC: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4001_2708 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00 as usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
@@ -343,6 +343,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1207959552 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_g0.rs"]
+pub mod adc;
 #[path = "../../peripherals/adccommon_v3.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]

@@ -1041,7 +1041,8 @@
         "name": "ADCSEL",
         "description": "ADC clock source selection",
         "bit_offset": 28,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "ADCSEL"
       },
       {
         "name": "RNGSEL",
@@ -1579,6 +1580,26 @@
         "description": "Main PLL division factor for PLLRCLK",
         "bit_offset": 29,
         "bit_size": 3
+      }
+    ]
+  },
+  "enum/ADCSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HSI16",
+        "description": "HSI16 used as ADC clock source",
+        "value": 1
+      },
+      {
+        "name": "PLLPCLK",
+        "description": "PLLPCLK used as ADC clock source",
+        "value": 2
+      },
+      {
+        "name": "SYSCLK",
+        "description": "SYSCLK used as ADC clock source",
+        "value": 3
       }
     ]
   }

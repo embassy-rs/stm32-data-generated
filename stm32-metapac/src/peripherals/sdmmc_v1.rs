@@ -612,6 +612,17 @@ pub mod regs {
         pub fn set_dataendc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[doc = "STBITERR flag clear bit"]
+        #[inline(always)]
+        pub const fn stbiterrc(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "STBITERR flag clear bit"]
+        #[inline(always)]
+        pub fn set_stbiterrc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
         #[doc = "DBCKEND flag clear bit"]
         #[inline(always)]
         pub const fn dbckendc(&self) -> bool {
@@ -744,6 +755,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dataendie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "STBITERR interrupt enable"]
+        #[inline(always)]
+        pub const fn stbiterre(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "STBITERR interrupt enable"]
+        #[inline(always)]
+        pub fn set_stbiterre(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Data block end interrupt enable"]
         #[inline(always)]
@@ -1136,6 +1158,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dataend(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Start bit not detected on all data signals in wide bus mode"]
+        #[inline(always)]
+        pub const fn stbiterr(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start bit not detected on all data signals in wide bus mode"]
+        #[inline(always)]
+        pub fn set_stbiterr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Data block sent/received (CRC check passed)"]
         #[inline(always)]

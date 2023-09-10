@@ -654,7 +654,7 @@ pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800 as usize as _)
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000 as usize as _) };
 pub const DBGMCU: *mut () = 0x4402_4000 as usize as _;
-pub const SDMMC1: *mut () = 0x4600_8000 as usize as _;
+pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000 as usize as _) };
 pub const FMC: *mut () = 0x6000_0000 as usize as _;
 pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -693,6 +693,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/sbs_h5.rs"]
 pub mod sbs;
+#[path = "../../peripherals/sdmmc_v2.rs"]
+pub mod sdmmc;
 #[path = "../../peripherals/spi_v4.rs"]
 pub mod spi;
 #[path = "../../peripherals/timer_v1.rs"]

@@ -4631,6 +4631,11 @@
                 {
                     "name": "SDMMC1",
                     "address": 1174437888,
+                    "registers": {
+                        "kind": "sdmmc",
+                        "version": "v2",
+                        "block": "SDMMC"
+                    },
                     "rcc": {
                         "clock": "AHB4",
                         "enable": {
@@ -4739,6 +4744,11 @@
                 {
                     "name": "SDMMC2",
                     "address": 1174440960,
+                    "registers": {
+                        "kind": "sdmmc",
+                        "version": "v2",
+                        "block": "SDMMC"
+                    },
                     "rcc": {
                         "clock": "AHB4",
                         "enable": {

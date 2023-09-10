@@ -4279,7 +4279,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SDMMC1",
         address: 1174437888,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sdmmc",
+            version: "v2",
+            block: "SDMMC",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {

@@ -567,7 +567,7 @@ pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000 as usize 
 pub const PSSI: *mut () = 0x4202_c400 as usize as _;
 pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
-pub const SDMMC1: *mut () = 0x420c_8000 as usize as _;
+pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400 as usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400 as usize as _) };
@@ -627,6 +627,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../../peripherals/sdmmc_v2.rs"]
+pub mod sdmmc;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_u5.rs"]

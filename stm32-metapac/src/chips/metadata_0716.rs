@@ -4943,7 +4943,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SDMMC1",
         address: 1108115456,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sdmmc",
+            version: "v2",
+            block: "SDMMC",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
@@ -5041,7 +5045,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SDMMC2",
         address: 1108118528,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sdmmc",
+            version: "v2",
+            block: "SDMMC",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {

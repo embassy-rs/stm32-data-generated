@@ -475,7 +475,7 @@ pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_7800 as usize as _
 pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000 as usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400 as usize as _) };
-pub const UCPD1: *mut () = 0x4000_a000 as usize as _;
+pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a000 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const COMP1: *mut () = 0x4001_0200 as usize as _;
 pub const COMP2: *mut () = 0x4001_0204 as usize as _;
@@ -584,6 +584,8 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/ucpd_v1.rs"]
+pub mod ucpd;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]

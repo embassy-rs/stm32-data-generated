@@ -598,7 +598,7 @@ pub const DTS: *mut () = 0x4000_8c00 as usize as _;
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
 pub const FDCAN1: *mut () = 0x4000_a400 as usize as _;
 pub const FDCAN2: *mut () = 0x4000_a800 as usize as _;
-pub const UCPD1: *mut () = 0x4000_dc00 as usize as _;
+pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_dc00 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00 as usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
 pub const TIM8: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_3400 as usize as _) };
@@ -699,6 +699,8 @@ pub mod sbs;
 pub mod spi;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/ucpd_v1.rs"]
+pub mod ucpd;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]

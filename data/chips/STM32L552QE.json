@@ -5181,6 +5181,11 @@
                 {
                     "name": "UCPD1",
                     "address": 1073798144,
+                    "registers": {
+                        "kind": "ucpd",
+                        "version": "v1",
+                        "block": "UCPD"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {

@@ -190,8 +190,8 @@ pub const LPUART2: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8400 
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8800 as usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_9800 as usize as _) };
-pub const UCPD1: *mut () = 0x4000_a000 as usize as _;
-pub const UCPD2: *mut () = 0x4000_a400 as usize as _;
+pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a000 as usize as _) };
+pub const UCPD2: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a400 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const COMP1: *mut () = 0x4001_0200 as usize as _;
 pub const COMP2: *mut () = 0x4001_0204 as usize as _;
@@ -271,6 +271,8 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/ucpd_v1.rs"]
+pub mod ucpd;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]

@@ -3957,6 +3957,11 @@
                 {
                     "name": "UCPD1",
                     "address": 1073782784,
+                    "registers": {
+                        "kind": "ucpd",
+                        "version": "v1",
+                        "block": "UCPD"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
@@ -4078,6 +4083,11 @@
                 {
                     "name": "UCPD2",
                     "address": 1073783808,
+                    "registers": {
+                        "kind": "ucpd",
+                        "version": "v1",
+                        "block": "UCPD"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {

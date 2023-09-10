@@ -515,7 +515,7 @@ pub const LPTIM3: *mut () = 0x4000_9800 as usize as _;
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_d400 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_d800 as usize as _) };
-pub const UCPD1: *mut () = 0x4000_dc00 as usize as _;
+pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_dc00 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const VREFBUF: *mut () = 0x4001_0100 as usize as _;
 pub const COMP1: *mut () = 0x4001_0200 as usize as _;
@@ -608,6 +608,8 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/ucpd_v1.rs"]
+pub mod ucpd;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]

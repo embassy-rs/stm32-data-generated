@@ -2319,7 +2319,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "UCPD1",
         address: 1073782784,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "ucpd",
+            version: "v1",
+            block: "UCPD",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
@@ -2427,7 +2431,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "UCPD2",
         address: 1073783808,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "ucpd",
+            version: "v1",
+            block: "UCPD",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {

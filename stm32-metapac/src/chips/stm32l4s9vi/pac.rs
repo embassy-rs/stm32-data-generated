@@ -486,7 +486,7 @@ pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x5000_0000 as usiz
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5004_0000 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5004_0300 as usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x5005_0000 as usize as _) };
-pub const AES: *mut () = 0x5006_0000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000 as usize as _) };
 pub const HASH: *mut () = 0x5006_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const OCTOSPIM: *mut () = 0x5006_1c00 as usize as _;
@@ -509,6 +509,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adc;
 #[path = "../../peripherals/adccommon_v3.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/aes_v1.rs"]
+pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/can_bxcan.rs"]

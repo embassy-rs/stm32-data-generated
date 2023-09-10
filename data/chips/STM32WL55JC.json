@@ -322,6 +322,11 @@
                 {
                     "name": "AES",
                     "address": 1476401152,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v2",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "clock": "AHB3",
                         "enable": {
@@ -3040,6 +3045,11 @@
                 {
                     "name": "AES",
                     "address": 1476401152,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v2",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "clock": "AHB3",
                         "enable": {

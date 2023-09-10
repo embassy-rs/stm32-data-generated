@@ -202,7 +202,7 @@ pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4002_1800 as usize 
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4002_5000 as usize as _) };
-pub const AES: *mut () = 0x4002_6000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x4002_6000 as usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0000 as usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0400 as usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0800 as usize as _) };
@@ -222,6 +222,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adc;
 #[path = "../../peripherals/adccommon_v3.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/aes_v2.rs"]
+pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/crc_v2.rs"]

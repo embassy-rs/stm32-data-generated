@@ -549,7 +549,7 @@ pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00 as usize
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000 as usize as _) };
 pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300 as usize as _) };
-pub const AES: *mut () = 0x420c_0000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000 as usize as _) };
 pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const PKA: *mut () = 0x420c_2000 as usize as _;
@@ -571,6 +571,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adc;
 #[path = "../../peripherals/adccommon_v3.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/aes_v2.rs"]
+pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan.rs"]

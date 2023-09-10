@@ -130,7 +130,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "AES",
         address: 1073897472,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "aes",
+            version: "v1",
+            block: "AES",
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[

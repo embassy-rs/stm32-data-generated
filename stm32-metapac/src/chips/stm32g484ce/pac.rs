@@ -551,7 +551,7 @@ pub const DAC1: *mut () = 0x5000_0800 as usize as _;
 pub const DAC2: *mut () = 0x5000_0c00 as usize as _;
 pub const DAC3: *mut () = 0x5000_1000 as usize as _;
 pub const DAC4: *mut () = 0x5000_1400 as usize as _;
-pub const AES: *mut () = 0x5006_0000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -568,6 +568,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod adc;
 #[path = "../../peripherals/adccommon_v4.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/aes_v2.rs"]
+pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan.rs"]

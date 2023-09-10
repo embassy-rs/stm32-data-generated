@@ -189,7 +189,7 @@ pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as u
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
 pub const TSC: *mut () = 0x4002_4000 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4002_5000 as usize as _) };
-pub const AES: *mut () = 0x4002_6000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x4002_6000 as usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0000 as usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0400 as usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0800 as usize as _) };
@@ -206,6 +206,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1342177280 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/aes_v1.rs"]
+pub mod aes;
 #[path = "../../peripherals/bdma_v2.rs"]
 pub mod bdma;
 #[path = "../../peripherals/crc_v3.rs"]

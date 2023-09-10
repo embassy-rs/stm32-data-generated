@@ -323,7 +323,7 @@ pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_3800 as usize as _)
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_3c00 as usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_6000 as usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_6400 as usize as _) };
-pub const AES: *mut () = 0x5006_0000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000 as usize as _) };
 pub const FSMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0xa000_0000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -336,6 +336,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1073872896 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/aes_v1.rs"]
+pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/crc_v1.rs"]

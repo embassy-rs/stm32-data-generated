@@ -238,6 +238,11 @@
                 {
                     "name": "AES",
                     "address": 1108082688,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "u5",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {

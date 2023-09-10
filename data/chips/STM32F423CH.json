@@ -438,6 +438,11 @@
                 {
                     "name": "AES",
                     "address": 1342570496,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v1",
+                        "block": "AES"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

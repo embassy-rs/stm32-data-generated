@@ -576,6 +576,11 @@
                 {
                     "name": "AES",
                     "address": 1342570496,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "f7",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {

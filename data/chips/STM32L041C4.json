@@ -116,6 +116,11 @@
                 {
                     "name": "AES",
                     "address": 1073897472,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v1",
+                        "block": "AES"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

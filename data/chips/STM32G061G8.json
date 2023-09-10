@@ -502,6 +502,11 @@
                 {
                     "name": "AES",
                     "address": 1073897472,
+                    "registers": {
+                        "kind": "aes",
+                        "version": "v2",
+                        "block": "AES"
+                    },
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {

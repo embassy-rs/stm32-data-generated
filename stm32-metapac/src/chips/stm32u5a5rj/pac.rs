@@ -644,7 +644,7 @@ pub const ADC_COMMON: *mut () = 0x4202_8300 as usize as _;
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000 as usize as _) };
 pub const PSSI: *mut () = 0x4202_c400 as usize as _;
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4204_0000 as usize as _) };
-pub const AES: *mut () = 0x420c_0000 as usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000 as usize as _) };
 pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SAES: *mut () = 0x420c_0c00 as usize as _;
@@ -688,6 +688,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/aes_u5.rs"]
+pub mod aes;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

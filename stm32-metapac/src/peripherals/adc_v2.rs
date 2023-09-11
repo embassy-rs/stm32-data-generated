@@ -106,47 +106,47 @@ pub mod regs {
         }
         #[doc = "Interrupt enable for EOC"]
         #[inline(always)]
-        pub const fn eocie(&self) -> super::vals::Eocie {
+        pub const fn eocie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Eocie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Interrupt enable for EOC"]
         #[inline(always)]
-        pub fn set_eocie(&mut self, val: super::vals::Eocie) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_eocie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Analog watchdog interrupt enable"]
         #[inline(always)]
-        pub const fn awdie(&self) -> super::vals::Awdie {
+        pub const fn awdie(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Awdie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Analog watchdog interrupt enable"]
         #[inline(always)]
-        pub fn set_awdie(&mut self, val: super::vals::Awdie) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_awdie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Interrupt enable for injected channels"]
         #[inline(always)]
-        pub const fn jeocie(&self) -> super::vals::Jeocie {
+        pub const fn jeocie(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Jeocie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Interrupt enable for injected channels"]
         #[inline(always)]
-        pub fn set_jeocie(&mut self, val: super::vals::Jeocie) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_jeocie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Scan mode"]
         #[inline(always)]
-        pub const fn scan(&self) -> super::vals::Scan {
+        pub const fn scan(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Scan::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Scan mode"]
         #[inline(always)]
-        pub fn set_scan(&mut self, val: super::vals::Scan) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_scan(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Enable the watchdog on a single channel in scan mode"]
         #[inline(always)]
@@ -161,36 +161,36 @@ pub mod regs {
         }
         #[doc = "Automatic injected group conversion"]
         #[inline(always)]
-        pub const fn jauto(&self) -> super::vals::Jauto {
+        pub const fn jauto(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Jauto::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Automatic injected group conversion"]
         #[inline(always)]
-        pub fn set_jauto(&mut self, val: super::vals::Jauto) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_jauto(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Discontinuous mode on regular channels"]
         #[inline(always)]
-        pub const fn discen(&self) -> super::vals::Discen {
+        pub const fn discen(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Discen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Discontinuous mode on regular channels"]
         #[inline(always)]
-        pub fn set_discen(&mut self, val: super::vals::Discen) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_discen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Discontinuous mode on injected channels"]
         #[inline(always)]
-        pub const fn jdiscen(&self) -> super::vals::Jdiscen {
+        pub const fn jdiscen(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Jdiscen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Discontinuous mode on injected channels"]
         #[inline(always)]
-        pub fn set_jdiscen(&mut self, val: super::vals::Jdiscen) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_jdiscen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Discontinuous mode channel count"]
         #[inline(always)]
@@ -205,25 +205,25 @@ pub mod regs {
         }
         #[doc = "Analog watchdog enable on injected channels"]
         #[inline(always)]
-        pub const fn jawden(&self) -> super::vals::Jawden {
+        pub const fn jawden(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::Jawden::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Analog watchdog enable on injected channels"]
         #[inline(always)]
-        pub fn set_jawden(&mut self, val: super::vals::Jawden) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub fn set_jawden(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Analog watchdog enable on regular channels"]
         #[inline(always)]
-        pub const fn awden(&self) -> super::vals::Awden {
+        pub const fn awden(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::Awden::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Analog watchdog enable on regular channels"]
         #[inline(always)]
-        pub fn set_awden(&mut self, val: super::vals::Awden) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        pub fn set_awden(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Resolution"]
         #[inline(always)]
@@ -238,14 +238,14 @@ pub mod regs {
         }
         #[doc = "Overrun interrupt enable"]
         #[inline(always)]
-        pub const fn ovrie(&self) -> super::vals::Ovrie {
+        pub const fn ovrie(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
-            super::vals::Ovrie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Overrun interrupt enable"]
         #[inline(always)]
-        pub fn set_ovrie(&mut self, val: super::vals::Ovrie) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        pub fn set_ovrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
     }
     impl Default for Cr1 {
@@ -261,14 +261,14 @@ pub mod regs {
     impl Cr2 {
         #[doc = "A/D Converter ON / OFF"]
         #[inline(always)]
-        pub const fn adon(&self) -> super::vals::Adon {
+        pub const fn adon(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Adon::from_bits(val as u8)
+            val != 0
         }
         #[doc = "A/D Converter ON / OFF"]
         #[inline(always)]
-        pub fn set_adon(&mut self, val: super::vals::Adon) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_adon(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Continuous conversion"]
         #[inline(always)]
@@ -283,14 +283,14 @@ pub mod regs {
         }
         #[doc = "Direct memory access mode (for single ADC mode)"]
         #[inline(always)]
-        pub const fn dma(&self) -> super::vals::Dma {
+        pub const fn dma(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Dma::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Direct memory access mode (for single ADC mode)"]
         #[inline(always)]
-        pub fn set_dma(&mut self, val: super::vals::Dma) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_dma(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "DMA disable selection (for single ADC mode)"]
         #[inline(always)]
@@ -801,36 +801,6 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Adon {
-        #[doc = "Disable ADC conversion and go to power down mode"]
-        DISABLED = 0,
-        #[doc = "Enable ADC"]
-        ENABLED = 0x01,
-    }
-    impl Adon {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Adon {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Adon {
-        #[inline(always)]
-        fn from(val: u8) -> Adon {
-            Adon::from_bits(val)
-        }
-    }
-    impl From<Adon> for u8 {
-        #[inline(always)]
-        fn from(val: Adon) -> u8 {
-            Adon::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Align {
         #[doc = "Right alignment"]
         RIGHT = 0,
@@ -887,66 +857,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Awd) -> u8 {
             Awd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Awden {
-        #[doc = "Analog watchdog disabled on regular channels"]
-        DISABLED = 0,
-        #[doc = "Analog watchdog enabled on regular channels"]
-        ENABLED = 0x01,
-    }
-    impl Awden {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Awden {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Awden {
-        #[inline(always)]
-        fn from(val: u8) -> Awden {
-            Awden::from_bits(val)
-        }
-    }
-    impl From<Awden> for u8 {
-        #[inline(always)]
-        fn from(val: Awden) -> u8 {
-            Awden::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Awdie {
-        #[doc = "Analogue watchdog interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "Analogue watchdog interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Awdie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Awdie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Awdie {
-        #[inline(always)]
-        fn from(val: u8) -> Awdie {
-            Awdie::from_bits(val)
-        }
-    }
-    impl From<Awdie> for u8 {
-        #[inline(always)]
-        fn from(val: Awdie) -> u8 {
-            Awdie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1041,66 +951,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Discen {
-        #[doc = "Discontinuous mode on regular channels disabled"]
-        DISABLED = 0,
-        #[doc = "Discontinuous mode on regular channels enabled"]
-        ENABLED = 0x01,
-    }
-    impl Discen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Discen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Discen {
-        #[inline(always)]
-        fn from(val: u8) -> Discen {
-            Discen::from_bits(val)
-        }
-    }
-    impl From<Discen> for u8 {
-        #[inline(always)]
-        fn from(val: Discen) -> u8 {
-            Discen::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dma {
-        #[doc = "DMA mode disabled"]
-        DISABLED = 0,
-        #[doc = "DMA mode enabled"]
-        ENABLED = 0x01,
-    }
-    impl Dma {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dma {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dma {
-        #[inline(always)]
-        fn from(val: u8) -> Dma {
-            Dma::from_bits(val)
-        }
-    }
-    impl From<Dma> for u8 {
-        #[inline(always)]
-        fn from(val: Dma) -> u8 {
-            Dma::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eoc {
         #[doc = "Conversion is not complete"]
         NOTCOMPLETE = 0,
@@ -1127,36 +977,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Eoc) -> u8 {
             Eoc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Eocie {
-        #[doc = "EOC interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "EOC interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Eocie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Eocie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Eocie {
-        #[inline(always)]
-        fn from(val: u8) -> Eocie {
-            Eocie::from_bits(val)
-        }
-    }
-    impl From<Eocie> for u8 {
-        #[inline(always)]
-        fn from(val: Eocie) -> u8 {
-            Eocie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1274,96 +1094,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jauto {
-        #[doc = "Automatic injected group conversion disabled"]
-        DISABLED = 0,
-        #[doc = "Automatic injected group conversion enabled"]
-        ENABLED = 0x01,
-    }
-    impl Jauto {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jauto {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jauto {
-        #[inline(always)]
-        fn from(val: u8) -> Jauto {
-            Jauto::from_bits(val)
-        }
-    }
-    impl From<Jauto> for u8 {
-        #[inline(always)]
-        fn from(val: Jauto) -> u8 {
-            Jauto::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jawden {
-        #[doc = "Analog watchdog disabled on injected channels"]
-        DISABLED = 0,
-        #[doc = "Analog watchdog enabled on injected channels"]
-        ENABLED = 0x01,
-    }
-    impl Jawden {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jawden {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jawden {
-        #[inline(always)]
-        fn from(val: u8) -> Jawden {
-            Jawden::from_bits(val)
-        }
-    }
-    impl From<Jawden> for u8 {
-        #[inline(always)]
-        fn from(val: Jawden) -> u8 {
-            Jawden::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jdiscen {
-        #[doc = "Discontinuous mode on injected channels disabled"]
-        DISABLED = 0,
-        #[doc = "Discontinuous mode on injected channels enabled"]
-        ENABLED = 0x01,
-    }
-    impl Jdiscen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jdiscen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jdiscen {
-        #[inline(always)]
-        fn from(val: u8) -> Jdiscen {
-            Jdiscen::from_bits(val)
-        }
-    }
-    impl From<Jdiscen> for u8 {
-        #[inline(always)]
-        fn from(val: Jdiscen) -> u8 {
-            Jdiscen::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Jeoc {
         #[doc = "Conversion is not complete"]
         NOTCOMPLETE = 0,
@@ -1390,36 +1120,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Jeoc) -> u8 {
             Jeoc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jeocie {
-        #[doc = "JEOC interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "JEOC interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Jeocie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jeocie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jeocie {
-        #[inline(always)]
-        fn from(val: u8) -> Jeocie {
-            Jeocie::from_bits(val)
-        }
-    }
-    impl From<Jeocie> for u8 {
-        #[inline(always)]
-        fn from(val: Jeocie) -> u8 {
-            Jeocie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1574,36 +1274,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ovrie {
-        #[doc = "Overrun interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "Overrun interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Ovrie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ovrie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ovrie {
-        #[inline(always)]
-        fn from(val: u8) -> Ovrie {
-            Ovrie::from_bits(val)
-        }
-    }
-    impl From<Ovrie> for u8 {
-        #[inline(always)]
-        fn from(val: Ovrie) -> u8 {
-            Ovrie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Res {
         #[doc = "12-bit (15 ADCCLK cycles)"]
         TWELVEBIT = 0,
@@ -1676,36 +1346,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: SampleTime) -> u8 {
             SampleTime::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Scan {
-        #[doc = "Scan mode disabled"]
-        DISABLED = 0,
-        #[doc = "Scan mode enabled"]
-        ENABLED = 0x01,
-    }
-    impl Scan {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Scan {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Scan {
-        #[inline(always)]
-        fn from(val: u8) -> Scan {
-            Scan::from_bits(val)
-        }
-    }
-    impl From<Scan> for u8 {
-        #[inline(always)]
-        fn from(val: Scan) -> u8 {
-            Scan::to_bits(val)
         }
     }
     #[repr(transparent)]

@@ -449,6 +449,17 @@
                         "version": "v4",
                         "block": "ADC"
                     },
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADC345EN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADC345RST"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB0",
@@ -520,6 +531,17 @@
                         "kind": "adc",
                         "version": "v4",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADC345EN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADC345RST"
+                        }
                     },
                     "pins": [
                         {
@@ -596,6 +618,17 @@
                         "kind": "adc",
                         "version": "v4",
                         "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "AHB2ENR",
+                            "field": "ADC345EN"
+                        },
+                        "reset": {
+                            "register": "AHB2RSTR",
+                            "field": "ADC345RST"
+                        }
                     },
                     "pins": [
                         {

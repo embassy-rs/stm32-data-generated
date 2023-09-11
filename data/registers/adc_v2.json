@@ -111,29 +111,25 @@
         "name": "EOCIE",
         "description": "Interrupt enable for EOC",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "EOCIE"
+        "bit_size": 1
       },
       {
         "name": "AWDIE",
         "description": "Analog watchdog interrupt enable",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "AWDIE"
+        "bit_size": 1
       },
       {
         "name": "JEOCIE",
         "description": "Interrupt enable for injected channels",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "JEOCIE"
+        "bit_size": 1
       },
       {
         "name": "SCAN",
         "description": "Scan mode",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "SCAN"
+        "bit_size": 1
       },
       {
         "name": "AWDSGL",
@@ -146,22 +142,19 @@
         "name": "JAUTO",
         "description": "Automatic injected group conversion",
         "bit_offset": 10,
-        "bit_size": 1,
-        "enum": "JAUTO"
+        "bit_size": 1
       },
       {
         "name": "DISCEN",
         "description": "Discontinuous mode on regular channels",
         "bit_offset": 11,
-        "bit_size": 1,
-        "enum": "DISCEN"
+        "bit_size": 1
       },
       {
         "name": "JDISCEN",
         "description": "Discontinuous mode on injected channels",
         "bit_offset": 12,
-        "bit_size": 1,
-        "enum": "JDISCEN"
+        "bit_size": 1
       },
       {
         "name": "DISCNUM",
@@ -173,15 +166,13 @@
         "name": "JAWDEN",
         "description": "Analog watchdog enable on injected channels",
         "bit_offset": 22,
-        "bit_size": 1,
-        "enum": "JAWDEN"
+        "bit_size": 1
       },
       {
         "name": "AWDEN",
         "description": "Analog watchdog enable on regular channels",
         "bit_offset": 23,
-        "bit_size": 1,
-        "enum": "AWDEN"
+        "bit_size": 1
       },
       {
         "name": "RES",
@@ -194,8 +185,7 @@
         "name": "OVRIE",
         "description": "Overrun interrupt enable",
         "bit_offset": 26,
-        "bit_size": 1,
-        "enum": "OVRIE"
+        "bit_size": 1
       }
     ]
   },
@@ -206,8 +196,7 @@
         "name": "ADON",
         "description": "A/D Converter ON / OFF",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "ADON"
+        "bit_size": 1
       },
       {
         "name": "CONT",
@@ -220,8 +209,7 @@
         "name": "DMA",
         "description": "Direct memory access mode (for single ADC mode)",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "DMA"
+        "bit_size": 1
       },
       {
         "name": "DDS",
@@ -506,21 +494,6 @@
       }
     ]
   },
-  "enum/ADON": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Disable ADC conversion and go to power down mode",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Enable ADC",
-        "value": 1
-      }
-    ]
-  },
   "enum/ALIGN": {
     "bit_size": 1,
     "variants": [
@@ -547,36 +520,6 @@
       {
         "name": "Event",
         "description": "Analog watchdog event occurred",
-        "value": 1
-      }
-    ]
-  },
-  "enum/AWDEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Analog watchdog disabled on regular channels",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Analog watchdog enabled on regular channels",
-        "value": 1
-      }
-    ]
-  },
-  "enum/AWDIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Analogue watchdog interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Analogue watchdog interrupt enabled",
         "value": 1
       }
     ]
@@ -626,36 +569,6 @@
       }
     ]
   },
-  "enum/DISCEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Discontinuous mode on regular channels disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Discontinuous mode on regular channels enabled",
-        "value": 1
-      }
-    ]
-  },
-  "enum/DMA": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "DMA mode disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "DMA mode enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/EOC": {
     "bit_size": 1,
     "variants": [
@@ -667,21 +580,6 @@
       {
         "name": "Complete",
         "description": "Conversion complete",
-        "value": 1
-      }
-    ]
-  },
-  "enum/EOCIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "EOC interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "EOC interrupt enabled",
         "value": 1
       }
     ]
@@ -766,51 +664,6 @@
       }
     ]
   },
-  "enum/JAUTO": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Automatic injected group conversion disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Automatic injected group conversion enabled",
-        "value": 1
-      }
-    ]
-  },
-  "enum/JAWDEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Analog watchdog disabled on injected channels",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Analog watchdog enabled on injected channels",
-        "value": 1
-      }
-    ]
-  },
-  "enum/JDISCEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Discontinuous mode on injected channels disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Discontinuous mode on injected channels enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/JEOC": {
     "bit_size": 1,
     "variants": [
@@ -822,21 +675,6 @@
       {
         "name": "Complete",
         "description": "Conversion complete",
-        "value": 1
-      }
-    ]
-  },
-  "enum/JEOCIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "JEOC interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "JEOC interrupt enabled",
         "value": 1
       }
     ]
@@ -971,21 +809,6 @@
       }
     ]
   },
-  "enum/OVRIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Overrun interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Overrun interrupt enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/RES": {
     "bit_size": 2,
     "variants": [
@@ -1053,21 +876,6 @@
         "name": "Cycles480",
         "description": "480 cycles",
         "value": 7
-      }
-    ]
-  },
-  "enum/SCAN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Scan mode disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Scan mode enabled",
-        "value": 1
       }
     ]
   },

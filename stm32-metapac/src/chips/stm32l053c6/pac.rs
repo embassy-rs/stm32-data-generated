@@ -154,7 +154,7 @@ pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_5c00 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6000 as usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6c00 as usize as _) };
-pub const PWR: *mut () = 0x4000_7000 as usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
 pub const DAC: *mut () = 0x4000_7400 as usize as _;
 pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
@@ -207,6 +207,8 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../../peripherals/lcd_v2.rs"]
 pub mod lcd;
+#[path = "../../peripherals/pwr_l0.rs"]
+pub mod pwr;
 #[path = "../../peripherals/rcc_l0.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]

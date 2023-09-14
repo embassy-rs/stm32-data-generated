@@ -93,25 +93,25 @@ pub mod regs {
         }
         #[doc = "VBAT enable"]
         #[inline(always)]
-        pub const fn vbate(&self) -> super::vals::Vbate {
+        pub const fn vbate(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::Vbate::from_bits(val as u8)
+            val != 0
         }
         #[doc = "VBAT enable"]
         #[inline(always)]
-        pub fn set_vbate(&mut self, val: super::vals::Vbate) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub fn set_vbate(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Temperature sensor and VREFINT enable"]
         #[inline(always)]
-        pub const fn tsvrefe(&self) -> super::vals::Tsvrefe {
+        pub const fn tsvrefe(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::Tsvrefe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Temperature sensor and VREFINT enable"]
         #[inline(always)]
-        pub fn set_tsvrefe(&mut self, val: super::vals::Tsvrefe) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        pub fn set_tsvrefe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
     impl Default for Ccr {
@@ -598,66 +598,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Strt) -> u8 {
             Strt::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tsvrefe {
-        #[doc = "Temperature sensor and V_REFINT channel disabled"]
-        DISABLED = 0,
-        #[doc = "Temperature sensor and V_REFINT channel enabled"]
-        ENABLED = 0x01,
-    }
-    impl Tsvrefe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tsvrefe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tsvrefe {
-        #[inline(always)]
-        fn from(val: u8) -> Tsvrefe {
-            Tsvrefe::from_bits(val)
-        }
-    }
-    impl From<Tsvrefe> for u8 {
-        #[inline(always)]
-        fn from(val: Tsvrefe) -> u8 {
-            Tsvrefe::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vbate {
-        #[doc = "V_BAT channel disabled"]
-        DISABLED = 0,
-        #[doc = "V_BAT channel enabled"]
-        ENABLED = 0x01,
-    }
-    impl Vbate {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vbate {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vbate {
-        #[inline(always)]
-        fn from(val: u8) -> Vbate {
-            Vbate::from_bits(val)
-        }
-    }
-    impl From<Vbate> for u8 {
-        #[inline(always)]
-        fn from(val: Vbate) -> u8 {
-            Vbate::to_bits(val)
         }
     }
 }

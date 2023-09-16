@@ -971,16 +971,6 @@
                             "af": 11
                         },
                         {
-                            "pin": "PB13",
-                            "signal": "TXD1",
-                            "af": 11
-                        },
-                        {
-                            "pin": "PB14",
-                            "signal": "TX_EN",
-                            "af": 11
-                        },
-                        {
                             "pin": "PB15",
                             "signal": "TXD1",
                             "af": 11

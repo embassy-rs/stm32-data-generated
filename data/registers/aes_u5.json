@@ -27,24 +27,6 @@
         "fieldset": "DOUTR"
       },
       {
-        "name": "IER",
-        "description": "interrupt enable register",
-        "byte_offset": 768,
-        "fieldset": "IER"
-      },
-      {
-        "name": "ISR",
-        "description": "interrupt status register",
-        "byte_offset": 772,
-        "fieldset": "ISR"
-      },
-      {
-        "name": "ICR",
-        "description": "interrupt clear register",
-        "byte_offset": 776,
-        "fieldset": "ICR"
-      },
-      {
         "name": "KEYR",
         "description": "Key register",
         "array": {
@@ -81,6 +63,24 @@
         },
         "byte_offset": 64,
         "fieldset": "SUSPR"
+      },
+      {
+        "name": "IER",
+        "description": "interrupt enable register",
+        "byte_offset": 768,
+        "fieldset": "IER"
+      },
+      {
+        "name": "ISR",
+        "description": "interrupt status register",
+        "byte_offset": 772,
+        "fieldset": "ISR"
+      },
+      {
+        "name": "ICR",
+        "description": "interrupt clear register",
+        "byte_offset": 776,
+        "fieldset": "ICR"
       }
     ]
   },

@@ -4,91 +4,91 @@
     "items": [
       {
         "name": "CR1",
-        "description": "PWR control register 1",
+        "description": "control register 1",
         "byte_offset": 0,
         "fieldset": "CR1"
       },
       {
         "name": "CR2",
-        "description": "PWR control register 2",
+        "description": "control register 2",
         "byte_offset": 4,
         "fieldset": "CR2"
       },
       {
         "name": "CR3",
-        "description": "PWR control register 3",
+        "description": "control register 3",
         "byte_offset": 8,
         "fieldset": "CR3"
       },
       {
         "name": "VOSR",
-        "description": "PWR voltage scaling register",
+        "description": "voltage scaling register",
         "byte_offset": 12,
         "fieldset": "VOSR"
       },
       {
         "name": "SVMCR",
-        "description": "PWR supply voltage monitoring control register",
+        "description": "supply voltage monitoring control register",
         "byte_offset": 16,
         "fieldset": "SVMCR"
       },
       {
         "name": "WUCR1",
-        "description": "PWR wakeup control register 1",
+        "description": "wakeup control register 1",
         "byte_offset": 20,
         "fieldset": "WUCR1"
       },
       {
         "name": "WUCR2",
-        "description": "PWR wakeup control register 2",
+        "description": "wakeup control register 2",
         "byte_offset": 24,
         "fieldset": "WUCR2"
       },
       {
         "name": "WUCR3",
-        "description": "PWR wakeup control register 3",
+        "description": "wakeup control register 3",
         "byte_offset": 28,
         "fieldset": "WUCR3"
       },
       {
         "name": "BDCR1",
-        "description": "PWR Backup domain control register 1",
+        "description": "Backup domain control register 1",
         "byte_offset": 32,
         "fieldset": "BDCR1"
       },
       {
         "name": "BDCR2",
-        "description": "PWR Backup domain control register 2",
+        "description": "Backup domain control register 2",
         "byte_offset": 36,
         "fieldset": "BDCR2"
       },
       {
         "name": "DBPR",
-        "description": "PWR disable Backup domain register",
+        "description": "disable Backup domain register",
         "byte_offset": 40,
         "fieldset": "DBPR"
       },
       {
         "name": "UCPDR",
-        "description": "PWR USB Type-C™ and Power Delivery register",
+        "description": "USB Type-C™ and Power Delivery register",
         "byte_offset": 44,
         "fieldset": "UCPDR"
       },
       {
         "name": "SECCFGR",
-        "description": "PWR security configuration register",
+        "description": "security configuration register",
         "byte_offset": 48,
         "fieldset": "SECCFGR"
       },
       {
         "name": "PRIVCFGR",
-        "description": "PWR privilege control register",
+        "description": "privilege control register",
         "byte_offset": 52,
         "fieldset": "PRIVCFGR"
       },
       {
         "name": "SR",
-        "description": "PWR status register",
+        "description": "status register",
         "byte_offset": 56,
         "fieldset": "SR"
       },
@@ -99,25 +99,25 @@
       },
       {
         "name": "BDSR",
-        "description": "PWR Backup domain status register",
+        "description": "Backup domain status register",
         "byte_offset": 64,
         "fieldset": "BDSR"
       },
       {
         "name": "WUSR",
-        "description": "PWR wakeup status register",
+        "description": "wakeup status register",
         "byte_offset": 68,
         "fieldset": "WUSR"
       },
       {
         "name": "WUSCR",
-        "description": "PWR wakeup status clear register",
+        "description": "wakeup status clear register",
         "byte_offset": 72,
         "fieldset": "WUSCR"
       },
       {
         "name": "APCR",
-        "description": "PWR apply pull configuration register",
+        "description": "apply pull configuration register",
         "byte_offset": 76,
         "fieldset": "APCR"
       },
@@ -144,7 +144,7 @@
     ]
   },
   "fieldset/APCR": {
-    "description": "PWR apply pull configuration register",
+    "description": "apply pull configuration register",
     "fields": [
       {
         "name": "APC",
@@ -155,7 +155,7 @@
     ]
   },
   "fieldset/BDCR1": {
-    "description": "PWR Backup domain control register 1",
+    "description": "Backup domain control register 1",
     "fields": [
       {
         "name": "BREN",
@@ -172,7 +172,7 @@
     ]
   },
   "fieldset/BDCR2": {
-    "description": "PWR Backup domain control register 2",
+    "description": "Backup domain control register 2",
     "fields": [
       {
         "name": "VBE",
@@ -191,7 +191,7 @@
     ]
   },
   "fieldset/BDSR": {
-    "description": "PWR Backup domain status register",
+    "description": "Backup domain status register",
     "fields": [
       {
         "name": "VBATH",
@@ -217,7 +217,7 @@
     ]
   },
   "fieldset/CR1": {
-    "description": "PWR control register 1",
+    "description": "control register 1",
     "fields": [
       {
         "name": "LPMS",
@@ -277,7 +277,7 @@
     ]
   },
   "fieldset/CR2": {
-    "description": "PWR control register 2",
+    "description": "control register 2",
     "fields": [
       {
         "name": "SRAM1PDS1",
@@ -435,7 +435,7 @@
     ]
   },
   "fieldset/CR3": {
-    "description": "PWR control register 3",
+    "description": "control register 3",
     "fields": [
       {
         "name": "REGSEL",
@@ -453,7 +453,7 @@
     ]
   },
   "fieldset/DBPR": {
-    "description": "PWR disable Backup domain register",
+    "description": "disable Backup domain register",
     "fields": [
       {
         "name": "DBP",
@@ -480,18 +480,18 @@
     ]
   },
   "fieldset/PRIVCFGR": {
-    "description": "PWR privilege control register",
+    "description": "privilege control register",
     "fields": [
       {
         "name": "SPRIV",
-        "description": "PWR secure functions privilege configuration\r This bit is set and reset by software. It can be written only by a secure privileged access.",
+        "description": "secure functions privilege configuration\r This bit is set and reset by software. It can be written only by a secure privileged access.",
         "bit_offset": 0,
         "bit_size": 1,
         "enum": "PRIV"
       },
       {
         "name": "NSPRIV",
-        "description": "PWR non-secure functions privilege configuration\r This bit is set and reset by software. It can be written only by privileged access, secure or non-secure.",
+        "description": "non-secure functions privilege configuration\r This bit is set and reset by software. It can be written only by privileged access, secure or non-secure.",
         "bit_offset": 1,
         "bit_size": 1,
         "enum": "PRIV"
@@ -499,62 +499,17 @@
     ]
   },
   "fieldset/SECCFGR": {
-    "description": "PWR security configuration register",
+    "description": "security configuration register",
     "fields": [
       {
         "name": "WUP1SEC",
         "description": "WUP1 secure protection",
         "bit_offset": 0,
         "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP2SEC",
-        "description": "WUP2 secure protection",
-        "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP3SEC",
-        "description": "WUP3 secure protection",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP4SEC",
-        "description": "WUP4 secure protection",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP5SEC",
-        "description": "WUP5 secure protection",
-        "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP6SEC",
-        "description": "WUP6 secure protection",
-        "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP7SEC",
-        "description": "WUP7 secure protection",
-        "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "SEC"
-      },
-      {
-        "name": "WUP8SEC",
-        "description": "WUP8 secure protection",
-        "bit_offset": 7,
-        "bit_size": 1,
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
         "enum": "SEC"
       },
       {
@@ -588,7 +543,7 @@
     ]
   },
   "fieldset/SR": {
-    "description": "PWR status register",
+    "description": "status register",
     "fields": [
       {
         "name": "CSSF",
@@ -611,7 +566,7 @@
     ]
   },
   "fieldset/SVMCR": {
-    "description": "PWR supply voltage monitoring control register",
+    "description": "supply voltage monitoring control register",
     "fields": [
       {
         "name": "PVDE",
@@ -726,7 +681,7 @@
     ]
   },
   "fieldset/UCPDR": {
-    "description": "PWR USB Type-C™ and Power Delivery register",
+    "description": "USB Type-C™ and Power Delivery register",
     "fields": [
       {
         "name": "UCPD_DBDIS",
@@ -743,7 +698,7 @@
     ]
   },
   "fieldset/VOSR": {
-    "description": "PWR voltage scaling register",
+    "description": "voltage scaling register",
     "fields": [
       {
         "name": "BOOSTRDY",
@@ -773,121 +728,38 @@
     ]
   },
   "fieldset/WUCR1": {
-    "description": "PWR wakeup control register 1",
+    "description": "wakeup control register 1",
     "fields": [
       {
-        "name": "WUPEN1",
+        "name": "WUPEN",
         "description": "Wakeup pin WKUP1 enable",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN2",
-        "description": "Wakeup pin WKUP2 enable",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN3",
-        "description": "Wakeup pin WKUP3 enable",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN4",
-        "description": "Wakeup pin WKUP4 enable",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN5",
-        "description": "Wakeup pin WKUP5 enable",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN6",
-        "description": "Wakeup pin WKUP6 enable",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN7",
-        "description": "Wakeup pin WKUP7 enable",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "WUPEN8",
-        "description": "Wakeup pin WKUP8 enable",
-        "bit_offset": 7,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 8,
+          "stride": 1
+        }
       }
     ]
   },
   "fieldset/WUCR2": {
-    "description": "PWR wakeup control register 2",
+    "description": "wakeup control register 2",
     "fields": [
       {
-        "name": "WUPP1",
+        "name": "WUPP",
         "description": "Wakeup pin WKUP1 polarity.\r This bit must be configured when WUPEN1 = 0.",
         "bit_offset": 0,
         "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP2",
-        "description": "Wakeup pin WKUP2 polarity\r This bit must be configured when WUPEN2 = 0.",
-        "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP3",
-        "description": "Wakeup pin WKUP3 polarity\r This bit must be configured when WUPEN3 = 0.",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP4",
-        "description": "Wakeup pin WKUP4 polarity\r This bit must be configured when WUPEN4 = 0.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP5",
-        "description": "Wakeup pin WKUP5 polarity\r This bit must be configured when WUPEN5 = 0.",
-        "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP6",
-        "description": "Wakeup pin WKUP6 polarity\r This bit must be configured when WUPEN6 = 0.",
-        "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP7",
-        "description": "Wakeup pin WKUP7 polarity\r This bit must be configured when WUPEN7 = 0.",
-        "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "WUPP"
-      },
-      {
-        "name": "WUPP8",
-        "description": "Wakeup pin WKUP8 polarity\r This bit must be configured when WUPEN8=0.",
-        "bit_offset": 7,
-        "bit_size": 1,
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
         "enum": "WUPP"
       }
     ]
   },
   "fieldset/WUCR3": {
-    "description": "PWR wakeup control register 3",
+    "description": "wakeup control register 3",
     "fields": [
       {
         "name": "WUSEL1",
@@ -948,7 +820,7 @@
     ]
   },
   "fieldset/WUSCR": {
-    "description": "PWR wakeup status clear register",
+    "description": "wakeup status clear register",
     "fields": [
       {
         "name": "CWUF1",
@@ -1001,7 +873,7 @@
     ]
   },
   "fieldset/WUSR": {
-    "description": "PWR wakeup status register",
+    "description": "wakeup status register",
     "fields": [
       {
         "name": "WUF1",
@@ -1153,12 +1025,12 @@
     "variants": [
       {
         "name": "Unprivileged",
-        "description": "Read and write to PWR non-secure functions can be done by privileged or unprivileged access.",
+        "description": "Read and write to non-secure functions can be done by privileged or unprivileged access.",
         "value": 0
       },
       {
         "name": "Privileged",
-        "description": "Read and write to PWR non-secure functions can be done by privileged access only.",
+        "description": "Read and write to non-secure functions can be done by privileged access only.",
         "value": 1
       }
     ]
@@ -1167,42 +1039,42 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "v20",
         "description": "VPVD0 around 2.0 V",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "v22",
         "description": "VPVD1 around 2.2 V",
         "value": 1
       },
       {
-        "name": "B_0x2",
+        "name": "v24",
         "description": "VPVD2 around 2.4 V",
         "value": 2
       },
       {
-        "name": "B_0x3",
+        "name": "v25",
         "description": "VPVD3 around 2.5 V",
         "value": 3
       },
       {
-        "name": "B_0x4",
+        "name": "v26",
         "description": "VPVD4 around 2.6 V",
         "value": 4
       },
       {
-        "name": "B_0x5",
+        "name": "v28",
         "description": "VPVD5 around 2.8 V",
         "value": 5
       },
       {
-        "name": "B_0x6",
+        "name": "v29",
         "description": "VPVD6 around 2.9 V",
         "value": 6
       },
       {
-        "name": "B_0x7",
+        "name": "pvd_in",
         "description": "External input analog voltage PVD_IN (compared internally to VREFINT)",
         "value": 7
       }
@@ -1402,12 +1274,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "High",
         "description": "Detection on high level (rising edge)",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Low",
         "description": "Detection on low level (falling edge)",
         "value": 1
       }

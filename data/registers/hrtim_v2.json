@@ -539,18 +539,6 @@
         }
       },
       {
-        "name": "ADCTC3",
-        "description": "ADC trigger X on Timer Y Compare 3",
-        "bit_offset": 15,
-        "bit_size": 1,
-        "array": {
-          "offsets": [
-            14,
-            0
-          ]
-        }
-      },
-      {
         "name": "ADCTC4",
         "description": "ADC trigger X on Timer Y Compare 3",
         "bit_offset": 12,
@@ -577,6 +565,18 @@
             8,
             13,
             11
+          ]
+        }
+      },
+      {
+        "name": "ADCTC3",
+        "description": "ADC trigger X on Timer Y Compare 3",
+        "bit_offset": 15,
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            14,
+            0
           ]
         }
       },
@@ -2638,6 +2638,22 @@
     "description": "Timerx Reset Register",
     "fields": [
       {
+        "name": "TCMP1",
+        "description": "Timer X compare 1 event",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            19,
+            22,
+            25,
+            28,
+            0
+          ]
+        },
+        "enum": "RESETEFFECT"
+      },
+      {
         "name": "UPDT",
         "description": "Timer X Update reset",
         "bit_offset": 1,
@@ -2681,22 +2697,6 @@
         "array": {
           "len": 10,
           "stride": 1
-        },
-        "enum": "RESETEFFECT"
-      },
-      {
-        "name": "TCMP1",
-        "description": "Timer X compare 1 event",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "offsets": [
-            19,
-            22,
-            25,
-            28,
-            0
-          ]
         },
         "enum": "RESETEFFECT"
       },

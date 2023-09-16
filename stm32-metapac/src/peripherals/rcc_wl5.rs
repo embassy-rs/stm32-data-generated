@@ -1682,14 +1682,14 @@ pub mod regs {
         }
         #[doc = "RTC clock source selection"]
         #[inline(always)]
-        pub const fn rtcsel(&self) -> u8 {
+        pub const fn rtcsel(&self) -> super::vals::Rtcsel {
             let val = (self.0 >> 8usize) & 0x03;
-            val as u8
+            super::vals::Rtcsel::from_bits(val as u8)
         }
         #[doc = "RTC clock source selection"]
         #[inline(always)]
-        pub fn set_rtcsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        pub fn set_rtcsel(&mut self, val: super::vals::Rtcsel) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "LSE system clock ready"]
         #[inline(always)]
@@ -3847,6 +3847,40 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Adcsel) -> u8 {
             Adcsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Rtcsel {
+        #[doc = "No clock selected"]
+        NOCLOCK = 0,
+        #[doc = "LSE oscillator clock selected"]
+        LSE = 0x01,
+        #[doc = "LSI oscillator clock selected"]
+        LSI = 0x02,
+        #[doc = "HSE oscillator clock divided by 32 selected"]
+        HSE = 0x03,
+    }
+    impl Rtcsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Rtcsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Rtcsel {
+        #[inline(always)]
+        fn from(val: u8) -> Rtcsel {
+            Rtcsel::from_bits(val)
+        }
+    }
+    impl From<Rtcsel> for u8 {
+        #[inline(always)]
+        fn from(val: Rtcsel) -> u8 {
+            Rtcsel::to_bits(val)
         }
     }
 }

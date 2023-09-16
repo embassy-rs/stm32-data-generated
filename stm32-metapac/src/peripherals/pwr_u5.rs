@@ -14,77 +14,77 @@ impl Pwr {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "PWR control register 1"]
+    #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
     }
-    #[doc = "PWR control register 2"]
+    #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
     }
-    #[doc = "PWR control register 3"]
+    #[doc = "control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
-    #[doc = "PWR voltage scaling register"]
+    #[doc = "voltage scaling register"]
     #[inline(always)]
     pub const fn vosr(self) -> crate::common::Reg<regs::Vosr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
-    #[doc = "PWR supply voltage monitoring control register"]
+    #[doc = "supply voltage monitoring control register"]
     #[inline(always)]
     pub const fn svmcr(self) -> crate::common::Reg<regs::Svmcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
     }
-    #[doc = "PWR wakeup control register 1"]
+    #[doc = "wakeup control register 1"]
     #[inline(always)]
     pub const fn wucr1(self) -> crate::common::Reg<regs::Wucr1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
     }
-    #[doc = "PWR wakeup control register 2"]
+    #[doc = "wakeup control register 2"]
     #[inline(always)]
     pub const fn wucr2(self) -> crate::common::Reg<regs::Wucr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
     }
-    #[doc = "PWR wakeup control register 3"]
+    #[doc = "wakeup control register 3"]
     #[inline(always)]
     pub const fn wucr3(self) -> crate::common::Reg<regs::Wucr3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
     }
-    #[doc = "PWR Backup domain control register 1"]
+    #[doc = "Backup domain control register 1"]
     #[inline(always)]
     pub const fn bdcr1(self) -> crate::common::Reg<regs::Bdcr1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
     }
-    #[doc = "PWR Backup domain control register 2"]
+    #[doc = "Backup domain control register 2"]
     #[inline(always)]
     pub const fn bdcr2(self) -> crate::common::Reg<regs::Bdcr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
     }
-    #[doc = "PWR disable Backup domain register"]
+    #[doc = "disable Backup domain register"]
     #[inline(always)]
     pub const fn dbpr(self) -> crate::common::Reg<regs::Dbpr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
     }
-    #[doc = "PWR USB Type-C™ and Power Delivery register"]
+    #[doc = "USB Type-C™ and Power Delivery register"]
     #[inline(always)]
     pub const fn ucpdr(self) -> crate::common::Reg<regs::Ucpdr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
     }
-    #[doc = "PWR security configuration register"]
+    #[doc = "security configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
     }
-    #[doc = "PWR privilege control register"]
+    #[doc = "privilege control register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
     }
-    #[doc = "PWR status register"]
+    #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
@@ -93,22 +93,22 @@ impl Pwr {
     pub const fn svmsr(self) -> crate::common::Reg<regs::Svmsr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
     }
-    #[doc = "PWR Backup domain status register"]
+    #[doc = "Backup domain status register"]
     #[inline(always)]
     pub const fn bdsr(self) -> crate::common::Reg<regs::Bdsr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
     }
-    #[doc = "PWR wakeup status register"]
+    #[doc = "wakeup status register"]
     #[inline(always)]
     pub const fn wusr(self) -> crate::common::Reg<regs::Wusr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
     }
-    #[doc = "PWR wakeup status clear register"]
+    #[doc = "wakeup status clear register"]
     #[inline(always)]
     pub const fn wuscr(self) -> crate::common::Reg<regs::Wuscr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
     }
-    #[doc = "PWR apply pull configuration register"]
+    #[doc = "apply pull configuration register"]
     #[inline(always)]
     pub const fn apcr(self) -> crate::common::Reg<regs::Apcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
@@ -127,7 +127,7 @@ impl Pwr {
     }
 }
 pub mod regs {
-    #[doc = "PWR apply pull configuration register"]
+    #[doc = "apply pull configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Apcr(pub u32);
@@ -150,7 +150,7 @@ pub mod regs {
             Apcr(0)
         }
     }
-    #[doc = "PWR Backup domain control register 1"]
+    #[doc = "Backup domain control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Bdcr1(pub u32);
@@ -184,7 +184,7 @@ pub mod regs {
             Bdcr1(0)
         }
     }
-    #[doc = "PWR Backup domain control register 2"]
+    #[doc = "Backup domain control register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Bdcr2(pub u32);
@@ -218,7 +218,7 @@ pub mod regs {
             Bdcr2(0)
         }
     }
-    #[doc = "PWR Backup domain status register"]
+    #[doc = "Backup domain status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Bdsr(pub u32);
@@ -263,7 +263,7 @@ pub mod regs {
             Bdsr(0)
         }
     }
-    #[doc = "PWR control register 1"]
+    #[doc = "control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr1(pub u32);
@@ -363,7 +363,7 @@ pub mod regs {
             Cr1(0)
         }
     }
-    #[doc = "PWR control register 2"]
+    #[doc = "control register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr2(pub u32);
@@ -617,7 +617,7 @@ pub mod regs {
             Cr2(0)
         }
     }
-    #[doc = "PWR control register 3"]
+    #[doc = "control register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr3(pub u32);
@@ -651,7 +651,7 @@ pub mod regs {
             Cr3(0)
         }
     }
-    #[doc = "PWR disable Backup domain register"]
+    #[doc = "disable Backup domain register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dbpr(pub u32);
@@ -701,29 +701,29 @@ pub mod regs {
             Pcr(0)
         }
     }
-    #[doc = "PWR privilege control register"]
+    #[doc = "privilege control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Privcfgr(pub u32);
     impl Privcfgr {
-        #[doc = "PWR secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
+        #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
         pub const fn spriv(&self) -> super::vals::Priv {
             let val = (self.0 >> 0usize) & 0x01;
             super::vals::Priv::from_bits(val as u8)
         }
-        #[doc = "PWR secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
+        #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
         pub fn set_spriv(&mut self, val: super::vals::Priv) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
-        #[doc = "PWR non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
+        #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
         pub const fn nspriv(&self) -> super::vals::Priv {
             let val = (self.0 >> 1usize) & 0x01;
             super::vals::Priv::from_bits(val as u8)
         }
-        #[doc = "PWR non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
+        #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
         pub fn set_nspriv(&mut self, val: super::vals::Priv) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
@@ -735,98 +735,25 @@ pub mod regs {
             Privcfgr(0)
         }
     }
-    #[doc = "PWR security configuration register"]
+    #[doc = "security configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Seccfgr(pub u32);
     impl Seccfgr {
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub const fn wup1sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn wup1sec(&self, n: usize) -> super::vals::Sec {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             super::vals::Sec::from_bits(val as u8)
         }
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub fn set_wup1sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
-        }
-        #[doc = "WUP2 secure protection"]
-        #[inline(always)]
-        pub const fn wup2sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP2 secure protection"]
-        #[inline(always)]
-        pub fn set_wup2sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
-        }
-        #[doc = "WUP3 secure protection"]
-        #[inline(always)]
-        pub const fn wup3sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP3 secure protection"]
-        #[inline(always)]
-        pub fn set_wup3sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
-        }
-        #[doc = "WUP4 secure protection"]
-        #[inline(always)]
-        pub const fn wup4sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP4 secure protection"]
-        #[inline(always)]
-        pub fn set_wup4sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
-        }
-        #[doc = "WUP5 secure protection"]
-        #[inline(always)]
-        pub const fn wup5sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP5 secure protection"]
-        #[inline(always)]
-        pub fn set_wup5sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
-        }
-        #[doc = "WUP6 secure protection"]
-        #[inline(always)]
-        pub const fn wup6sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP6 secure protection"]
-        #[inline(always)]
-        pub fn set_wup6sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
-        #[doc = "WUP7 secure protection"]
-        #[inline(always)]
-        pub const fn wup7sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP7 secure protection"]
-        #[inline(always)]
-        pub fn set_wup7sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
-        #[doc = "WUP8 secure protection"]
-        #[inline(always)]
-        pub const fn wup8sec(&self) -> super::vals::Sec {
-            let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
-        }
-        #[doc = "WUP8 secure protection"]
-        #[inline(always)]
-        pub fn set_wup8sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_wup1sec(&mut self, n: usize, val: super::vals::Sec) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
@@ -879,7 +806,7 @@ pub mod regs {
             Seccfgr(0)
         }
     }
-    #[doc = "PWR status register"]
+    #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sr(pub u32);
@@ -924,7 +851,7 @@ pub mod regs {
             Sr(0)
         }
     }
-    #[doc = "PWR supply voltage monitoring control register"]
+    #[doc = "supply voltage monitoring control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Svmcr(pub u32);
@@ -1134,7 +1061,7 @@ pub mod regs {
             Svmsr(0)
         }
     }
-    #[doc = "PWR USB Type-C™ and Power Delivery register"]
+    #[doc = "USB Type-C™ and Power Delivery register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ucpdr(pub u32);
@@ -1168,7 +1095,7 @@ pub mod regs {
             Ucpdr(0)
         }
     }
-    #[doc = "PWR voltage scaling register"]
+    #[doc = "voltage scaling register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Vosr(pub u32);
@@ -1224,98 +1151,25 @@ pub mod regs {
             Vosr(0)
         }
     }
-    #[doc = "PWR wakeup control register 1"]
+    #[doc = "wakeup control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr1(pub u32);
     impl Wucr1 {
         #[doc = "Wakeup pin WKUP1 enable"]
         #[inline(always)]
-        pub const fn wupen1(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn wupen(&self, n: usize) -> bool {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Wakeup pin WKUP1 enable"]
         #[inline(always)]
-        pub fn set_wupen1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Wakeup pin WKUP2 enable"]
-        #[inline(always)]
-        pub const fn wupen2(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP2 enable"]
-        #[inline(always)]
-        pub fn set_wupen2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Wakeup pin WKUP3 enable"]
-        #[inline(always)]
-        pub const fn wupen3(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP3 enable"]
-        #[inline(always)]
-        pub fn set_wupen3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Wakeup pin WKUP4 enable"]
-        #[inline(always)]
-        pub const fn wupen4(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP4 enable"]
-        #[inline(always)]
-        pub fn set_wupen4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Wakeup pin WKUP5 enable"]
-        #[inline(always)]
-        pub const fn wupen5(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP5 enable"]
-        #[inline(always)]
-        pub fn set_wupen5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Wakeup pin WKUP6 enable"]
-        #[inline(always)]
-        pub const fn wupen6(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP6 enable"]
-        #[inline(always)]
-        pub fn set_wupen6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Wakeup pin WKUP7 enable"]
-        #[inline(always)]
-        pub const fn wupen7(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP7 enable"]
-        #[inline(always)]
-        pub fn set_wupen7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Wakeup pin WKUP8 enable"]
-        #[inline(always)]
-        pub const fn wupen8(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP8 enable"]
-        #[inline(always)]
-        pub fn set_wupen8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        pub fn set_wupen(&mut self, n: usize, val: bool) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Wucr1 {
@@ -1324,98 +1178,25 @@ pub mod regs {
             Wucr1(0)
         }
     }
-    #[doc = "PWR wakeup control register 2"]
+    #[doc = "wakeup control register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr2(pub u32);
     impl Wucr2 {
         #[doc = "Wakeup pin WKUP1 polarity. This bit must be configured when WUPEN1 = 0."]
         #[inline(always)]
-        pub const fn wupp1(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn wupp(&self, n: usize) -> super::vals::Wupp {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             super::vals::Wupp::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP1 polarity. This bit must be configured when WUPEN1 = 0."]
         #[inline(always)]
-        pub fn set_wupp1(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Wakeup pin WKUP2 polarity This bit must be configured when WUPEN2 = 0."]
-        #[inline(always)]
-        pub const fn wupp2(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP2 polarity This bit must be configured when WUPEN2 = 0."]
-        #[inline(always)]
-        pub fn set_wupp2(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Wakeup pin WKUP3 polarity This bit must be configured when WUPEN3 = 0."]
-        #[inline(always)]
-        pub const fn wupp3(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP3 polarity This bit must be configured when WUPEN3 = 0."]
-        #[inline(always)]
-        pub fn set_wupp3(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Wakeup pin WKUP4 polarity This bit must be configured when WUPEN4 = 0."]
-        #[inline(always)]
-        pub const fn wupp4(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP4 polarity This bit must be configured when WUPEN4 = 0."]
-        #[inline(always)]
-        pub fn set_wupp4(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Wakeup pin WKUP5 polarity This bit must be configured when WUPEN5 = 0."]
-        #[inline(always)]
-        pub const fn wupp5(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP5 polarity This bit must be configured when WUPEN5 = 0."]
-        #[inline(always)]
-        pub fn set_wupp5(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Wakeup pin WKUP6 polarity This bit must be configured when WUPEN6 = 0."]
-        #[inline(always)]
-        pub const fn wupp6(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP6 polarity This bit must be configured when WUPEN6 = 0."]
-        #[inline(always)]
-        pub fn set_wupp6(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Wakeup pin WKUP7 polarity This bit must be configured when WUPEN7 = 0."]
-        #[inline(always)]
-        pub const fn wupp7(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP7 polarity This bit must be configured when WUPEN7 = 0."]
-        #[inline(always)]
-        pub fn set_wupp7(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Wakeup pin WKUP8 polarity This bit must be configured when WUPEN8=0."]
-        #[inline(always)]
-        pub const fn wupp8(&self) -> super::vals::Wupp {
-            let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Wupp::from_bits(val as u8)
-        }
-        #[doc = "Wakeup pin WKUP8 polarity This bit must be configured when WUPEN8=0."]
-        #[inline(always)]
-        pub fn set_wupp8(&mut self, val: super::vals::Wupp) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_wupp(&mut self, n: usize, val: super::vals::Wupp) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
     }
     impl Default for Wucr2 {
@@ -1424,7 +1205,7 @@ pub mod regs {
             Wucr2(0)
         }
     }
-    #[doc = "PWR wakeup control register 3"]
+    #[doc = "wakeup control register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr3(pub u32);
@@ -1524,7 +1305,7 @@ pub mod regs {
             Wucr3(0)
         }
     }
-    #[doc = "PWR wakeup status clear register"]
+    #[doc = "wakeup status clear register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wuscr(pub u32);
@@ -1624,7 +1405,7 @@ pub mod regs {
             Wuscr(0)
         }
     }
-    #[doc = "PWR wakeup status register"]
+    #[doc = "wakeup status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wusr(pub u32);
@@ -1891,9 +1672,9 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Priv {
-        #[doc = "Read and write to PWR non-secure functions can be done by privileged or unprivileged access."]
+        #[doc = "Read and write to non-secure functions can be done by privileged or unprivileged access."]
         UNPRIVILEGED = 0,
-        #[doc = "Read and write to PWR non-secure functions can be done by privileged access only."]
+        #[doc = "Read and write to non-secure functions can be done by privileged access only."]
         PRIVILEGED = 0x01,
     }
     impl Priv {
@@ -1922,21 +1703,21 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pvdls {
         #[doc = "VPVD0 around 2.0 V"]
-        B_0X0 = 0,
+        V20 = 0,
         #[doc = "VPVD1 around 2.2 V"]
-        B_0X1 = 0x01,
+        V22 = 0x01,
         #[doc = "VPVD2 around 2.4 V"]
-        B_0X2 = 0x02,
+        V24 = 0x02,
         #[doc = "VPVD3 around 2.5 V"]
-        B_0X3 = 0x03,
+        V25 = 0x03,
         #[doc = "VPVD4 around 2.6 V"]
-        B_0X4 = 0x04,
+        V26 = 0x04,
         #[doc = "VPVD5 around 2.8 V"]
-        B_0X5 = 0x05,
+        V28 = 0x05,
         #[doc = "VPVD6 around 2.9 V"]
-        B_0X6 = 0x06,
+        V29 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
-        B_0X7 = 0x07,
+        PVD_IN = 0x07,
     }
     impl Pvdls {
         #[inline(always)]
@@ -2328,9 +2109,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wupp {
         #[doc = "Detection on high level (rising edge)"]
-        B_0X0 = 0,
+        HIGH = 0,
         #[doc = "Detection on low level (falling edge)"]
-        B_0X1 = 0x01,
+        LOW = 0x01,
     }
     impl Wupp {
         #[inline(always)]

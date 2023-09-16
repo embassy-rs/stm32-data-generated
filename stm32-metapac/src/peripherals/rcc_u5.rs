@@ -6686,7 +6686,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dpre {
         #[doc = "DCLK not divided"]
-        NONE = 0,
+        DIV1 = 0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -6788,7 +6788,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hpre {
         #[doc = "SYSCLK not divided"]
-        NONE = 0,
+        DIV1 = 0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -7108,9 +7108,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsiprediv {
         #[doc = "LSI not divided"]
-        NONE = 0,
+        DIV1 = 0,
         #[doc = "LSI divided by 128"]
-        DIV_128 = 0x01,
+        DIV128 = 0x01,
     }
     impl Lsiprediv {
         #[inline(always)]
@@ -7168,7 +7168,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcopre {
         #[doc = "MCO divided by 1"]
-        NONE = 0,
+        DIV1 = 0,
         #[doc = "MCO divided by 2"]
         DIV2 = 0x01,
         #[doc = "MCO divided by 4"]
@@ -7758,7 +7758,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
-        NONE = 0,
+        DIV1 = 0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -7860,7 +7860,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock selected"]
-        NONE = 0,
+        NOCLOCK = 0,
         #[doc = "LSE oscillator clock selected"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock selected"]
@@ -8123,7 +8123,7 @@ in RCC_ICSCR1"]
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
         #[doc = "PLL pll1_r_ck selected as system clock"]
-        PLL1R = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

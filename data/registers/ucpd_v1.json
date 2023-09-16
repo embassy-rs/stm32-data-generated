@@ -4,61 +4,61 @@
     "items": [
       {
         "name": "CFGR1",
-        "description": "configuration register 1 ",
+        "description": "configuration register 1",
         "byte_offset": 0,
         "fieldset": "CFGR1"
       },
       {
         "name": "CFGR2",
-        "description": "configuration register 2 ",
+        "description": "configuration register 2",
         "byte_offset": 4,
         "fieldset": "CFGR2"
       },
       {
         "name": "CFGR3",
-        "description": "configuration register 3 ",
+        "description": "configuration register 3",
         "byte_offset": 8,
         "fieldset": "CFGR3"
       },
       {
         "name": "CR",
-        "description": "control register ",
+        "description": "control register",
         "byte_offset": 12,
         "fieldset": "CR"
       },
       {
         "name": "IMR",
-        "description": "interrupt mask register ",
+        "description": "interrupt mask register",
         "byte_offset": 16,
         "fieldset": "IMR"
       },
       {
         "name": "SR",
-        "description": "status register ",
+        "description": "status register",
         "byte_offset": 20,
         "fieldset": "SR"
       },
       {
         "name": "ICR",
-        "description": "interrupt clear register ",
+        "description": "interrupt clear register",
         "byte_offset": 24,
         "fieldset": "ICR"
       },
       {
         "name": "TX_ORDSETR",
-        "description": "Tx ordered set type register ",
+        "description": "Tx ordered set type register",
         "byte_offset": 28,
         "fieldset": "TX_ORDSETR"
       },
       {
         "name": "TX_PAYSZR",
-        "description": "Tx payload size register ",
+        "description": "Tx payload size register",
         "byte_offset": 32,
         "fieldset": "TX_PAYSZR"
       },
       {
         "name": "TXDR",
-        "description": "Tx data register ",
+        "description": "Tx data register",
         "byte_offset": 36,
         "fieldset": "TXDR"
       },
@@ -79,13 +79,13 @@
       },
       {
         "name": "RX_ORDEXTR1",
-        "description": "Rx ordered set extension register 1 \t",
+        "description": "Rx ordered set extension register 1",
         "byte_offset": 52,
         "fieldset": "RX_ORDEXTR1"
       },
       {
         "name": "RX_ORDEXTR2",
-        "description": "Rx ordered set extension register 2 \t",
+        "description": "Rx ordered set extension register 2",
         "byte_offset": 56,
         "fieldset": "RX_ORDEXTR2"
       },
@@ -113,7 +113,7 @@
     ]
   },
   "fieldset/CFGR1": {
-    "description": "configuration register 1 ",
+    "description": "configuration register 1",
     "fields": [
       {
         "name": "HBITCLKDIV",
@@ -167,7 +167,7 @@
     ]
   },
   "fieldset/CFGR2": {
-    "description": "configuration register 2 ",
+    "description": "configuration register 2",
     "fields": [
       {
         "name": "RXFILTDIS",
@@ -196,7 +196,7 @@
     ]
   },
   "fieldset/CFGR3": {
-    "description": "configuration register 3 ",
+    "description": "configuration register 3",
     "fields": [
       {
         "name": "TRIM_CC1_RD",
@@ -225,7 +225,7 @@
     ]
   },
   "fieldset/CR": {
-    "description": "control register ",
+    "description": "control register",
     "fields": [
       {
         "name": "TXMODE",
@@ -336,7 +336,7 @@
     ]
   },
   "fieldset/ICR": {
-    "description": "interrupt clear register ",
+    "description": "interrupt clear register",
     "fields": [
       {
         "name": "TXMSGDISCCF",
@@ -419,7 +419,7 @@
     ]
   },
   "fieldset/IMR": {
-    "description": "interrupt mask register ",
+    "description": "interrupt mask register",
     "fields": [
       {
         "name": "TXISIE",
@@ -557,7 +557,7 @@
     ]
   },
   "fieldset/RX_ORDEXTR1": {
-    "description": "Rx ordered set extension register 1 \t",
+    "description": "Rx ordered set extension register 1",
     "fields": [
       {
         "name": "RXSOPX1",
@@ -568,7 +568,7 @@
     ]
   },
   "fieldset/RX_ORDEXTR2": {
-    "description": "Rx ordered set extension register 2 \t",
+    "description": "Rx ordered set extension register 2",
     "fields": [
       {
         "name": "RXSOPX2",
@@ -613,7 +613,7 @@
     ]
   },
   "fieldset/SR": {
-    "description": "status register ",
+    "description": "status register",
     "fields": [
       {
         "name": "TXIS",
@@ -728,7 +728,7 @@
     ]
   },
   "fieldset/TXDR": {
-    "description": "Tx data register ",
+    "description": "Tx data register",
     "fields": [
       {
         "name": "TXDATA",
@@ -739,7 +739,7 @@
     ]
   },
   "fieldset/TX_ORDSETR": {
-    "description": "Tx ordered set type register ",
+    "description": "Tx ordered set type register",
     "fields": [
       {
         "name": "TXORDSET",
@@ -750,7 +750,7 @@
     ]
   },
   "fieldset/TX_PAYSZR": {
-    "description": "Tx payload size register ",
+    "description": "Tx payload size register",
     "fields": [
       {
         "name": "TXPAYSZ",
@@ -780,7 +780,7 @@
     "variants": [
       {
         "name": "Disabled",
-        "description": "Disable both PHYs ",
+        "description": "Disable both PHYs",
         "value": 0
       },
       {

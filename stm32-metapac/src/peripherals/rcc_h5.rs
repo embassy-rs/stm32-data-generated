@@ -6288,7 +6288,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "no clock (default after Backup domain reset)"]
-        NONE = 0,
+        NOCLOCK = 0,
         #[doc = "LSE selected as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI selected as RTC clock"]

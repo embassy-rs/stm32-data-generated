@@ -90,7 +90,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "ADC",
+            interrupt: "ADC_COMP_DAC",
         }],
     },
     Peripheral {
@@ -144,7 +144,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "AES",
+            interrupt: "AES_PKA",
         }],
     },
     Peripheral {
@@ -202,7 +202,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "WKUP",
-            interrupt: "COMP",
+            interrupt: "ADC_COMP_DAC",
         }],
     },
     Peripheral {
@@ -270,7 +270,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "WKUP",
-            interrupt: "COMP",
+            interrupt: "ADC_COMP_DAC",
         }],
     },
     Peripheral {
@@ -315,21 +315,8 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "DAC",
+            interrupt: "ADC_COMP_DAC",
         }],
-    },
-    Peripheral {
-        name: "DBGMCU",
-        address: 3758366720,
-        registers: Some(PeripheralRegisters {
-            kind: "dbgmcu",
-            version: "wl",
-            block: "DBGMCU",
-        }),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
     },
     Peripheral {
         name: "DMA1",
@@ -355,31 +342,31 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "CH1",
-                interrupt: "DMA1_CHANNEL1",
+                interrupt: "DMA1_CHANNEL1_2_3",
             },
             PeripheralInterrupt {
                 signal: "CH2",
-                interrupt: "DMA1_CHANNEL2",
+                interrupt: "DMA1_CHANNEL1_2_3",
             },
             PeripheralInterrupt {
                 signal: "CH3",
-                interrupt: "DMA1_CHANNEL3",
+                interrupt: "DMA1_CHANNEL1_2_3",
             },
             PeripheralInterrupt {
                 signal: "CH4",
-                interrupt: "DMA1_CHANNEL4",
+                interrupt: "DMA1_CHANNEL4_5_6_7",
             },
             PeripheralInterrupt {
                 signal: "CH5",
-                interrupt: "DMA1_CHANNEL5",
+                interrupt: "DMA1_CHANNEL4_5_6_7",
             },
             PeripheralInterrupt {
                 signal: "CH6",
-                interrupt: "DMA1_CHANNEL6",
+                interrupt: "DMA1_CHANNEL4_5_6_7",
             },
             PeripheralInterrupt {
                 signal: "CH7",
-                interrupt: "DMA1_CHANNEL7",
+                interrupt: "DMA1_CHANNEL4_5_6_7",
             },
         ],
     },
@@ -407,31 +394,31 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "CH1",
-                interrupt: "DMA2_CHANNEL1",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
             PeripheralInterrupt {
                 signal: "CH2",
-                interrupt: "DMA2_CHANNEL2",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
             PeripheralInterrupt {
                 signal: "CH3",
-                interrupt: "DMA2_CHANNEL3",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
             PeripheralInterrupt {
                 signal: "CH4",
-                interrupt: "DMA2_CHANNEL4",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
             PeripheralInterrupt {
                 signal: "CH5",
-                interrupt: "DMA2_CHANNEL5",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
             PeripheralInterrupt {
                 signal: "CH6",
-                interrupt: "DMA2_CHANNEL6",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
             PeripheralInterrupt {
                 signal: "CH7",
-                interrupt: "DMA2_CHANNEL7",
+                interrupt: "DMA2_DMAMUX1_OVR",
             },
         ],
     },
@@ -456,17 +443,14 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "OVR",
-            interrupt: "DMAMUX1_OVR",
-        }],
+        interrupts: &[],
     },
     Peripheral {
         name: "EXTI",
         address: 1476397056,
         registers: Some(PeripheralRegisters {
             kind: "exti",
-            version: "wle",
+            version: "w",
             block: "EXTI",
         }),
         rcc: None,
@@ -475,67 +459,67 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "EXTI0",
-                interrupt: "EXTI0",
+                interrupt: "EXTI1_0",
             },
             PeripheralInterrupt {
                 signal: "EXTI1",
-                interrupt: "EXTI1",
+                interrupt: "EXTI1_0",
             },
             PeripheralInterrupt {
                 signal: "EXTI10",
-                interrupt: "EXTI15_10",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI11",
-                interrupt: "EXTI15_10",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI12",
-                interrupt: "EXTI15_10",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI13",
-                interrupt: "EXTI15_10",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI14",
-                interrupt: "EXTI15_10",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI15",
-                interrupt: "EXTI15_10",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI2",
-                interrupt: "EXTI2",
+                interrupt: "EXTI3_2",
             },
             PeripheralInterrupt {
                 signal: "EXTI3",
-                interrupt: "EXTI3",
+                interrupt: "EXTI3_2",
             },
             PeripheralInterrupt {
                 signal: "EXTI4",
-                interrupt: "EXTI4",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI5",
-                interrupt: "EXTI9_5",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI6",
-                interrupt: "EXTI9_5",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI7",
-                interrupt: "EXTI9_5",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI8",
-                interrupt: "EXTI9_5",
+                interrupt: "EXTI15_4",
             },
             PeripheralInterrupt {
                 signal: "EXTI9",
-                interrupt: "EXTI9_5",
+                interrupt: "EXTI15_4",
             },
         ],
     },
@@ -560,10 +544,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "FLASH",
-        }],
+        interrupts: &[],
     },
     Peripheral {
         name: "GPIOA",
@@ -764,11 +745,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
-                interrupt: "I2C1_ER",
+                interrupt: "I2C1",
             },
             PeripheralInterrupt {
                 signal: "EV",
-                interrupt: "I2C1_EV",
+                interrupt: "I2C1",
             },
         ],
     },
@@ -842,11 +823,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
-                interrupt: "I2C2_ER",
+                interrupt: "I2C2",
             },
             PeripheralInterrupt {
                 signal: "EV",
-                interrupt: "I2C2_EV",
+                interrupt: "I2C2",
             },
         ],
     },
@@ -945,11 +926,43 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
-                interrupt: "I2C3_ER",
+                interrupt: "I2C3",
             },
             PeripheralInterrupt {
                 signal: "EV",
-                interrupt: "I2C3_EV",
+                interrupt: "I2C3",
+            },
+        ],
+    },
+    Peripheral {
+        name: "IPCC",
+        address: 1476398080,
+        registers: Some(PeripheralRegisters {
+            kind: "ipcc",
+            version: "v1",
+            block: "IPCC",
+        }),
+        rcc: Some(PeripheralRcc {
+            clock: "AHB3",
+            enable: Some(PeripheralRccRegister {
+                register: "AHB3ENR",
+                field: "IPCCEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB3RSTR",
+                field: "IPCCRST",
+            }),
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "C2_RX",
+                interrupt: "IPCC_C2_RX_C2_TX",
+            },
+            PeripheralInterrupt {
+                signal: "C2_TX",
+                interrupt: "IPCC_C2_RX_C2_TX",
             },
         ],
     },
@@ -1251,7 +1264,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "PKA",
+            interrupt: "AES_PKA",
         }],
     },
     Peripheral {
@@ -1293,7 +1306,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1476395008,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
-            version: "wle",
+            version: "wl5",
             block: "RCC",
         }),
         rcc: None,
@@ -1320,16 +1333,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "RCC",
-            },
-            PeripheralInterrupt {
-                signal: "LSECSS",
-                interrupt: "TAMP_STAMP_LSECSS_SSRU",
-            },
-        ],
+        interrupts: &[],
     },
     Peripheral {
         name: "RNG",
@@ -1404,28 +1408,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "ALARM",
-                interrupt: "RTC_ALARM",
-            },
-            PeripheralInterrupt {
-                signal: "SSRU",
-                interrupt: "TAMP_STAMP_LSECSS_SSRU",
-            },
-            PeripheralInterrupt {
-                signal: "STAMP",
-                interrupt: "TAMP_STAMP_LSECSS_SSRU",
-            },
-            PeripheralInterrupt {
-                signal: "TAMP",
-                interrupt: "TAMP_STAMP_LSECSS_SSRU",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
-                interrupt: "RTC_WKUP",
-            },
-        ],
+        interrupts: &[],
     },
     Peripheral {
         name: "SPI1",
@@ -1775,7 +1758,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1073807360,
         registers: Some(PeripheralRegisters {
             kind: "syscfg",
-            version: "wle",
+            version: "wl5",
             block: "SYSCFG",
         }),
         rcc: None,
@@ -1933,23 +1916,23 @@ const PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
-                interrupt: "TIM1_BRK",
+                interrupt: "TIM1",
             },
             PeripheralInterrupt {
                 signal: "CC",
-                interrupt: "TIM1_CC",
+                interrupt: "TIM1",
             },
             PeripheralInterrupt {
                 signal: "COM",
-                interrupt: "TIM1_TRG_COM",
+                interrupt: "TIM1",
             },
             PeripheralInterrupt {
                 signal: "TRG",
-                interrupt: "TIM1_TRG_COM",
+                interrupt: "TIM1",
             },
             PeripheralInterrupt {
                 signal: "UP",
-                interrupt: "TIM1_UP",
+                interrupt: "TIM1",
             },
         ],
     },
@@ -2484,21 +2467,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "WWDG",
-            },
-            PeripheralInterrupt {
-                signal: "RST",
-                interrupt: "WWDG",
-            },
-        ],
+        interrupts: &[],
     },
 ];
 const INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
-        name: "WWDG",
+        name: "TZIC_ILA",
         number: 0,
     },
     Interrupt {
@@ -2506,229 +2480,120 @@ const INTERRUPTS: &'static [Interrupt] = &[
         number: 1,
     },
     Interrupt {
-        name: "TAMP_STAMP_LSECSS_SSRU",
-        number: 2,
-    },
-    Interrupt {
-        name: "RTC_WKUP",
+        name: "RCC_FLASH_C1SEV",
         number: 3,
     },
     Interrupt {
-        name: "FLASH",
+        name: "EXTI1_0",
         number: 4,
     },
-    Interrupt { name: "RCC", number: 5 },
     Interrupt {
-        name: "EXTI0",
+        name: "EXTI3_2",
+        number: 5,
+    },
+    Interrupt {
+        name: "EXTI15_4",
         number: 6,
     },
     Interrupt {
-        name: "EXTI1",
+        name: "ADC_COMP_DAC",
         number: 7,
     },
     Interrupt {
-        name: "EXTI2",
+        name: "DMA1_CHANNEL1_2_3",
         number: 8,
     },
     Interrupt {
-        name: "EXTI3",
+        name: "DMA1_CHANNEL4_5_6_7",
         number: 9,
     },
     Interrupt {
-        name: "EXTI4",
+        name: "DMA2_DMAMUX1_OVR",
         number: 10,
     },
     Interrupt {
-        name: "DMA1_CHANNEL1",
+        name: "LPTIM1",
         number: 11,
     },
     Interrupt {
-        name: "DMA1_CHANNEL2",
+        name: "LPTIM2",
         number: 12,
     },
     Interrupt {
-        name: "DMA1_CHANNEL3",
+        name: "LPTIM3",
         number: 13,
     },
     Interrupt {
-        name: "DMA1_CHANNEL4",
+        name: "TIM1",
         number: 14,
     },
     Interrupt {
-        name: "DMA1_CHANNEL5",
+        name: "TIM2",
         number: 15,
     },
     Interrupt {
-        name: "DMA1_CHANNEL6",
+        name: "TIM16",
         number: 16,
     },
     Interrupt {
-        name: "DMA1_CHANNEL7",
+        name: "TIM17",
         number: 17,
     },
     Interrupt {
-        name: "ADC",
+        name: "IPCC_C2_RX_C2_TX",
         number: 18,
     },
     Interrupt {
-        name: "DAC",
+        name: "HSEM",
         number: 19,
     },
     Interrupt {
-        name: "COMP",
+        name: "RNG",
+        number: 20,
+    },
+    Interrupt {
+        name: "AES_PKA",
         number: 21,
     },
     Interrupt {
-        name: "EXTI9_5",
+        name: "I2C1",
         number: 22,
     },
     Interrupt {
-        name: "TIM1_BRK",
+        name: "I2C2",
         number: 23,
     },
     Interrupt {
-        name: "TIM1_UP",
+        name: "I2C3",
         number: 24,
     },
     Interrupt {
-        name: "TIM1_TRG_COM",
+        name: "SPI1",
         number: 25,
     },
     Interrupt {
-        name: "TIM1_CC",
+        name: "SPI2",
         number: 26,
     },
     Interrupt {
-        name: "TIM2",
+        name: "USART1",
         number: 27,
     },
     Interrupt {
-        name: "TIM16",
+        name: "USART2",
         number: 28,
     },
     Interrupt {
-        name: "TIM17",
+        name: "LPUART1",
         number: 29,
     },
     Interrupt {
-        name: "I2C1_EV",
+        name: "SUBGHZSPI",
         number: 30,
     },
     Interrupt {
-        name: "I2C1_ER",
-        number: 31,
-    },
-    Interrupt {
-        name: "I2C2_EV",
-        number: 32,
-    },
-    Interrupt {
-        name: "I2C2_ER",
-        number: 33,
-    },
-    Interrupt {
-        name: "SPI1",
-        number: 34,
-    },
-    Interrupt {
-        name: "SPI2",
-        number: 35,
-    },
-    Interrupt {
-        name: "USART1",
-        number: 36,
-    },
-    Interrupt {
-        name: "USART2",
-        number: 37,
-    },
-    Interrupt {
-        name: "LPUART1",
-        number: 38,
-    },
-    Interrupt {
-        name: "LPTIM1",
-        number: 39,
-    },
-    Interrupt {
-        name: "LPTIM2",
-        number: 40,
-    },
-    Interrupt {
-        name: "EXTI15_10",
-        number: 41,
-    },
-    Interrupt {
-        name: "RTC_ALARM",
-        number: 42,
-    },
-    Interrupt {
-        name: "LPTIM3",
-        number: 43,
-    },
-    Interrupt {
-        name: "SUBGHZSPI",
-        number: 44,
-    },
-    Interrupt {
-        name: "HSEM",
-        number: 47,
-    },
-    Interrupt {
-        name: "I2C3_EV",
-        number: 48,
-    },
-    Interrupt {
-        name: "I2C3_ER",
-        number: 49,
-    },
-    Interrupt {
         name: "SUBGHZ_RADIO",
-        number: 50,
-    },
-    Interrupt {
-        name: "AES",
-        number: 51,
-    },
-    Interrupt {
-        name: "RNG",
-        number: 52,
-    },
-    Interrupt {
-        name: "PKA",
-        number: 53,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL1",
-        number: 54,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL2",
-        number: 55,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL3",
-        number: 56,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL4",
-        number: 57,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL5",
-        number: 58,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL6",
-        number: 59,
-    },
-    Interrupt {
-        name: "DMA2_CHANNEL7",
-        number: 60,
-    },
-    Interrupt {
-        name: "DMAMUX1_OVR",
-        number: 61,
+        number: 31,
     },
 ];
 const DMA_CHANNELS: &'static [DmaChannel] = &[

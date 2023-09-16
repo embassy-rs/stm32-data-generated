@@ -661,7 +661,7 @@
       },
       {
         "name": "STBITERR",
-        "description": " Start bit not detected on all data signals in wide bus mode",
+        "description": "Start bit not detected on all data signals in wide bus mode",
         "bit_offset": 9,
         "bit_size": 1
       },

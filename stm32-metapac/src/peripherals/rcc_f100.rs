@@ -1129,24 +1129,24 @@ pub mod regs {
         }
         #[doc = "APB Low speed prescaler (APB1)"]
         #[inline(always)]
-        pub const fn ppre1(&self) -> super::vals::Ppre1 {
+        pub const fn ppre1(&self) -> super::vals::Ppre {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Ppre1::from_bits(val as u8)
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "APB Low speed prescaler (APB1)"]
         #[inline(always)]
-        pub fn set_ppre1(&mut self, val: super::vals::Ppre1) {
+        pub fn set_ppre1(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "APB High speed prescaler (APB2)"]
         #[inline(always)]
-        pub const fn ppre2(&self) -> super::vals::Ppre1 {
+        pub const fn ppre2(&self) -> super::vals::Ppre {
             let val = (self.0 >> 11usize) & 0x07;
-            super::vals::Ppre1::from_bits(val as u8)
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "APB High speed prescaler (APB2)"]
         #[inline(always)]
-        pub fn set_ppre2(&mut self, val: super::vals::Ppre1) {
+        pub fn set_ppre2(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 11usize)) | (((val.to_bits() as u32) & 0x07) << 11usize);
         }
         #[doc = "ADC prescaler"]
@@ -1912,7 +1912,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ppre1 {
+    pub enum Ppre {
         #[doc = "HCLK not divided"]
         DIV1 = 0,
         _RESERVED_1 = 0x01,
@@ -1927,9 +1927,9 @@ pub mod vals {
         #[doc = "HCLK divided by 16"]
         DIV16 = 0x07,
     }
-    impl Ppre1 {
+    impl Ppre {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ppre1 {
+        pub const fn from_bits(val: u8) -> Ppre {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -1937,16 +1937,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ppre1 {
+    impl From<u8> for Ppre {
         #[inline(always)]
-        fn from(val: u8) -> Ppre1 {
-            Ppre1::from_bits(val)
+        fn from(val: u8) -> Ppre {
+            Ppre::from_bits(val)
         }
     }
-    impl From<Ppre1> for u8 {
+    impl From<Ppre> for u8 {
         #[inline(always)]
-        fn from(val: Ppre1) -> u8 {
-            Ppre1::to_bits(val)
+        fn from(val: Ppre) -> u8 {
+            Ppre::to_bits(val)
         }
     }
     #[repr(u8)]

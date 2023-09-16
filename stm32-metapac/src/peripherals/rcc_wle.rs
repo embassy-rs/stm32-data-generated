@@ -1834,36 +1834,36 @@ pub mod regs {
         }
         #[doc = "HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
         #[inline(always)]
-        pub const fn hpre(&self) -> u8 {
+        pub const fn hpre(&self) -> super::vals::Hpre {
             let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
+            super::vals::Hpre::from_bits(val as u8)
         }
         #[doc = "HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
         #[inline(always)]
-        pub fn set_hpre(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        pub fn set_hpre(&mut self, val: super::vals::Hpre) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "PCLK1 low-speed prescaler (APB1)"]
         #[inline(always)]
-        pub const fn ppre1(&self) -> u8 {
+        pub const fn ppre1(&self) -> super::vals::Ppre {
             let val = (self.0 >> 8usize) & 0x07;
-            val as u8
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "PCLK1 low-speed prescaler (APB1)"]
         #[inline(always)]
-        pub fn set_ppre1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        pub fn set_ppre1(&mut self, val: super::vals::Ppre) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "PCLK2 high-speed prescaler (APB2)"]
         #[inline(always)]
-        pub const fn ppre2(&self) -> u8 {
+        pub const fn ppre2(&self) -> super::vals::Ppre {
             let val = (self.0 >> 11usize) & 0x07;
-            val as u8
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "PCLK2 high-speed prescaler (APB2)"]
         #[inline(always)]
-        pub fn set_ppre2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 11usize)) | (((val as u32) & 0x07) << 11usize);
+        pub fn set_ppre2(&mut self, val: super::vals::Ppre) {
+            self.0 = (self.0 & !(0x07 << 11usize)) | (((val.to_bits() as u32) & 0x07) << 11usize);
         }
         #[doc = "Wakeup from Stop and CSS backup clock selection"]
         #[inline(always)]
@@ -2837,6 +2837,101 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Adcsel) -> u8 {
             Adcsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Hpre {
+        #[doc = "DCLK not divided"]
+        DIV1 = 0,
+        #[doc = "hclk = SYSCLK divided by 3"]
+        DIV3 = 0x01,
+        #[doc = "hclk = SYSCLK divided by 5"]
+        DIV5 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        #[doc = "hclk = SYSCLK divided by 6"]
+        DIV6 = 0x05,
+        #[doc = "hclk = SYSCLK divided by 8"]
+        DIV10 = 0x06,
+        #[doc = "hclk = SYSCLK divided by 32"]
+        DIV32 = 0x07,
+        #[doc = "hclk = SYSCLK divided by 2"]
+        DIV2 = 0x08,
+        #[doc = "hclk = SYSCLK divided by 4"]
+        DIV4 = 0x09,
+        #[doc = "hclk = SYSCLK divided by 8"]
+        DIV8 = 0x0a,
+        #[doc = "hclk = SYSCLK divided by 16"]
+        DIV16 = 0x0b,
+        #[doc = "hclk = SYSCLK divided by 64"]
+        DIV64 = 0x0c,
+        #[doc = "hclk = SYSCLK divided by 128"]
+        DIV128 = 0x0d,
+        #[doc = "hclk = SYSCLK divided by 256"]
+        DIV256 = 0x0e,
+        #[doc = "hclk = SYSCLK divided by 256"]
+        DIV512 = 0x0f,
+    }
+    impl Hpre {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Hpre {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Hpre {
+        #[inline(always)]
+        fn from(val: u8) -> Hpre {
+            Hpre::from_bits(val)
+        }
+    }
+    impl From<Hpre> for u8 {
+        #[inline(always)]
+        fn from(val: Hpre) -> u8 {
+            Hpre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Ppre {
+        #[doc = "HCLK not divided"]
+        DIV1 = 0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        #[doc = "HCLK divided by 2"]
+        DIV2 = 0x04,
+        #[doc = "HCLK divided by 4"]
+        DIV4 = 0x05,
+        #[doc = "HCLK divided by 8"]
+        DIV8 = 0x06,
+        #[doc = "HCLK divided by 16"]
+        DIV16 = 0x07,
+    }
+    impl Ppre {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ppre {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ppre {
+        #[inline(always)]
+        fn from(val: u8) -> Ppre {
+            Ppre::from_bits(val)
+        }
+    }
+    impl From<Ppre> for u8 {
+        #[inline(always)]
+        fn from(val: Ppre) -> u8 {
+            Ppre::to_bits(val)
         }
     }
     #[repr(u8)]

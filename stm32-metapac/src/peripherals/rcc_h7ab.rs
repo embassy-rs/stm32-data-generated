@@ -5364,13 +5364,13 @@ pub mod regs {
         }
         #[doc = "D1 domain APB3 prescaler"]
         #[inline(always)]
-        pub const fn d1ppre(&self) -> super::vals::Dppre {
+        pub const fn d1ppre(&self) -> super::vals::Ppre {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Dppre::from_bits(val as u8)
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "D1 domain APB3 prescaler"]
         #[inline(always)]
-        pub fn set_d1ppre(&mut self, val: super::vals::Dppre) {
+        pub fn set_d1ppre(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "D1 domain Core prescaler"]
@@ -5598,24 +5598,24 @@ pub mod regs {
     impl D2cfgr {
         #[doc = "D2 domain APB1 prescaler"]
         #[inline(always)]
-        pub const fn d2ppre1(&self) -> super::vals::Dppre {
+        pub const fn d2ppre1(&self) -> super::vals::Ppre {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Dppre::from_bits(val as u8)
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "D2 domain APB1 prescaler"]
         #[inline(always)]
-        pub fn set_d2ppre1(&mut self, val: super::vals::Dppre) {
+        pub fn set_d2ppre1(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "D2 domain APB2 prescaler"]
         #[inline(always)]
-        pub const fn d2ppre2(&self) -> super::vals::Dppre {
+        pub const fn d2ppre2(&self) -> super::vals::Ppre {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Dppre::from_bits(val as u8)
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "D2 domain APB2 prescaler"]
         #[inline(always)]
-        pub fn set_d2ppre2(&mut self, val: super::vals::Dppre) {
+        pub fn set_d2ppre2(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
     }
@@ -5942,13 +5942,13 @@ pub mod regs {
     impl D3cfgr {
         #[doc = "D3 domain APB4 prescaler"]
         #[inline(always)]
-        pub const fn d3ppre(&self) -> super::vals::Dppre {
+        pub const fn d3ppre(&self) -> super::vals::Ppre {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Dppre::from_bits(val as u8)
+            super::vals::Ppre::from_bits(val as u8)
         }
         #[doc = "D3 domain APB4 prescaler"]
         #[inline(always)]
-        pub fn set_d3ppre(&mut self, val: super::vals::Dppre) {
+        pub fn set_d3ppre(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
     }
@@ -6877,45 +6877,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dppre {
-        #[doc = "rcc_hclk not divided"]
-        DIV1 = 0,
-        _RESERVED_1 = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-        #[doc = "rcc_hclk divided by 2"]
-        DIV2 = 0x04,
-        #[doc = "rcc_hclk divided by 4"]
-        DIV4 = 0x05,
-        #[doc = "rcc_hclk divided by 8"]
-        DIV8 = 0x06,
-        #[doc = "rcc_hclk divided by 16"]
-        DIV16 = 0x07,
-    }
-    impl Dppre {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dppre {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dppre {
-        #[inline(always)]
-        fn from(val: u8) -> Dppre {
-            Dppre::from_bits(val)
-        }
-    }
-    impl From<Dppre> for u8 {
-        #[inline(always)]
-        fn from(val: Dppre) -> u8 {
-            Dppre::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fdcansel {
         #[doc = "HSE selected as peripheral clock"]
         HSE = 0,
@@ -7493,6 +7454,45 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllvcosel) -> u8 {
             Pllvcosel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Ppre {
+        #[doc = "rcc_hclk not divided"]
+        DIV1 = 0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        #[doc = "rcc_hclk divided by 2"]
+        DIV2 = 0x04,
+        #[doc = "rcc_hclk divided by 4"]
+        DIV4 = 0x05,
+        #[doc = "rcc_hclk divided by 8"]
+        DIV8 = 0x06,
+        #[doc = "rcc_hclk divided by 16"]
+        DIV16 = 0x07,
+    }
+    impl Ppre {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ppre {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ppre {
+        #[inline(always)]
+        fn from(val: u8) -> Ppre {
+            Ppre::from_bits(val)
+        }
+    }
+    impl From<Ppre> for u8 {
+        #[inline(always)]
+        fn from(val: Ppre) -> u8 {
+            Ppre::to_bits(val)
         }
     }
     #[repr(u8)]

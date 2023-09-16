@@ -4628,7 +4628,7 @@
         "description": "D1 domain APB3 prescaler",
         "bit_offset": 4,
         "bit_size": 3,
-        "enum": "DPPRE"
+        "enum": "PPRE"
       },
       {
         "name": "D1CPRE",
@@ -4762,14 +4762,14 @@
         "description": "D2 domain APB1 prescaler",
         "bit_offset": 4,
         "bit_size": 3,
-        "enum": "DPPRE"
+        "enum": "PPRE"
       },
       {
         "name": "D2PPRE2",
         "description": "D2 domain APB2 prescaler",
         "bit_offset": 8,
         "bit_size": 3,
-        "enum": "DPPRE"
+        "enum": "PPRE"
       }
     ]
   },
@@ -4961,7 +4961,7 @@
         "description": "D3 domain APB4 prescaler",
         "bit_offset": 4,
         "bit_size": 3,
-        "enum": "DPPRE"
+        "enum": "PPRE"
       }
     ]
   },
@@ -5726,36 +5726,6 @@
       }
     ]
   },
-  "enum/DPPRE": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "Div1",
-        "description": "rcc_hclk not divided",
-        "value": 0
-      },
-      {
-        "name": "Div2",
-        "description": "rcc_hclk divided by 2",
-        "value": 4
-      },
-      {
-        "name": "Div4",
-        "description": "rcc_hclk divided by 4",
-        "value": 5
-      },
-      {
-        "name": "Div8",
-        "description": "rcc_hclk divided by 8",
-        "value": 6
-      },
-      {
-        "name": "Div16",
-        "description": "rcc_hclk divided by 16",
-        "value": 7
-      }
-    ]
-  },
   "enum/FDCANSEL": {
     "bit_size": 2,
     "variants": [
@@ -6198,6 +6168,36 @@
         "name": "MediumVCO",
         "description": "VCO frequency range 150 to 420 MHz",
         "value": 1
+      }
+    ]
+  },
+  "enum/PPRE": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "rcc_hclk not divided",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "rcc_hclk divided by 2",
+        "value": 4
+      },
+      {
+        "name": "Div4",
+        "description": "rcc_hclk divided by 4",
+        "value": 5
+      },
+      {
+        "name": "Div8",
+        "description": "rcc_hclk divided by 8",
+        "value": 6
+      },
+      {
+        "name": "Div16",
+        "description": "rcc_hclk divided by 16",
+        "value": 7
       }
     ]
   },

@@ -2075,13 +2075,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {
         #[doc = "Range 4 (lowest power)"]
-        B_0X0 = 0,
+        RANGE4 = 0,
         #[doc = "Range 3"]
-        B_0X1 = 0x01,
+        RANGE3 = 0x01,
         #[doc = "Range 2"]
-        B_0X2 = 0x02,
+        RANGE2 = 0x02,
         #[doc = "Range 1 (highest frequency). This value cannot be written when VCOREMEN = 1 in TAMP_OR register."]
-        B_0X3 = 0x03,
+        RANGE1 = 0x03,
     }
     impl Vos {
         #[inline(always)]

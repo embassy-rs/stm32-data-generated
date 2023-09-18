@@ -1404,7 +1404,7 @@
                     "address": 1476396032,
                     "registers": {
                         "kind": "pwr",
-                        "version": "wb55",
+                        "version": "wb",
                         "block": "PWR"
                     }
                 },

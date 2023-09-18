@@ -321,14 +321,14 @@ pub mod regs {
     impl Cr2 {
         #[doc = "Power voltage detector enable"]
         #[inline(always)]
-        pub const fn pvde(&self) -> super::vals::Pvde {
+        pub const fn pvde(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Pvde::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Power voltage detector enable"]
         #[inline(always)]
-        pub fn set_pvde(&mut self, val: super::vals::Pvde) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_pvde(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Power voltage detector level selection."]
         #[inline(always)]
@@ -403,14 +403,14 @@ pub mod regs {
         }
         #[doc = "SRAM2 retention in Standby mode"]
         #[inline(always)]
-        pub const fn rrs(&self) -> super::vals::Rrs {
+        pub const fn rrs(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Rrs::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 retention in Standby mode"]
         #[inline(always)]
-        pub fn set_rrs(&mut self, val: super::vals::Rrs) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_rrs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Apply pull-up and pull-down configuration from CPU1"]
         #[inline(always)]
@@ -425,25 +425,25 @@ pub mod regs {
         }
         #[doc = "Enable Radio BUSY Wakeup from Standby for CPU1"]
         #[inline(always)]
-        pub const fn ewrfbusy(&self) -> super::vals::Ewrfbusy {
+        pub const fn ewrfbusy(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Ewrfbusy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable Radio BUSY Wakeup from Standby for CPU1"]
         #[inline(always)]
-        pub fn set_ewrfbusy(&mut self, val: super::vals::Ewrfbusy) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_ewrfbusy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
-        #[doc = "akeup for CPU1"]
+        #[doc = "Wakeup for CPU1"]
         #[inline(always)]
-        pub const fn ewrfirq(&self) -> super::vals::Ewrfirq {
+        pub const fn ewrfirq(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Ewrfirq::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "akeup for CPU1"]
+        #[doc = "Wakeup for CPU1"]
         #[inline(always)]
-        pub fn set_ewrfirq(&mut self, val: super::vals::Ewrfirq) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_ewrfirq(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "nable CPU2 Hold interrupt for CPU1"]
         #[inline(always)]
@@ -496,14 +496,14 @@ pub mod regs {
         }
         #[doc = "VBAT battery charging enable"]
         #[inline(always)]
-        pub const fn vbe(&self) -> super::vals::Vbe {
+        pub const fn vbe(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vbe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "VBAT battery charging enable"]
         #[inline(always)]
-        pub fn set_vbe(&mut self, val: super::vals::Vbe) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_vbe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "VBAT battery charging resistor selection"]
         #[inline(always)]
@@ -518,14 +518,14 @@ pub mod regs {
         }
         #[doc = "Wakeup Radio BUSY polarity"]
         #[inline(always)]
-        pub const fn wrfbusyp(&self) -> super::vals::Wrfbusyp {
+        pub const fn wrfbusyp(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Wrfbusyp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Wakeup Radio BUSY polarity"]
         #[inline(always)]
-        pub fn set_wrfbusyp(&mut self, val: super::vals::Wrfbusyp) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_wrfbusyp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "oot CPU2 after reset or wakeup from Stop or Standby modes."]
         #[inline(always)]
@@ -552,25 +552,25 @@ pub mod regs {
     impl Cr5 {
         #[doc = "Enable Radio End Of Life detector enabled"]
         #[inline(always)]
-        pub const fn rfeolen(&self) -> super::vals::Rfeolen {
+        pub const fn rfeolen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Rfeolen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable Radio End Of Life detector enabled"]
         #[inline(always)]
-        pub fn set_rfeolen(&mut self, val: super::vals::Rfeolen) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_rfeolen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Enable SMPS Step Down converter SMPS mode enabled."]
         #[inline(always)]
-        pub const fn smpsen(&self) -> super::vals::Smpsen {
+        pub const fn smpsen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Smpsen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable SMPS Step Down converter SMPS mode enabled."]
         #[inline(always)]
-        pub fn set_smpsen(&mut self, val: super::vals::Smpsen) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_smpsen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Cr5 {
@@ -608,36 +608,36 @@ pub mod regs {
         }
         #[doc = "System Standby flag for CPU1. (no core states retained)"]
         #[inline(always)]
-        pub const fn c1sbf(&self) -> super::vals::Csbf {
+        pub const fn c1sbf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Csbf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "System Standby flag for CPU1. (no core states retained)"]
         #[inline(always)]
-        pub fn set_c1sbf(&mut self, val: super::vals::Csbf) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_c1sbf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "System Stop2 flag for CPU1. (partial core states retained)"]
         #[inline(always)]
-        pub const fn c1stop2f(&self) -> super::vals::Cstopf {
+        pub const fn c1stop2f(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Cstopf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "System Stop2 flag for CPU1. (partial core states retained)"]
         #[inline(always)]
-        pub fn set_c1stop2f(&mut self, val: super::vals::Cstopf) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_c1stop2f(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "System Stop0, 1 flag for CPU1. (All core states retained)"]
         #[inline(always)]
-        pub const fn c1stopf(&self) -> super::vals::Cstopf {
+        pub const fn c1stopf(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Cstopf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "System Stop0, 1 flag for CPU1. (All core states retained)"]
         #[inline(always)]
-        pub fn set_c1stopf(&mut self, val: super::vals::Cstopf) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_c1stopf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "ystem Standby flag for CPU2. (no core states retained)"]
         #[inline(always)]
@@ -841,40 +841,40 @@ pub mod regs {
     impl Sr1 {
         #[doc = "Wakeup flag 1"]
         #[inline(always)]
-        pub const fn wuf(&self, n: usize) -> super::vals::Wuf {
+        pub const fn wuf(&self, n: usize) -> bool {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Wuf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Wakeup flag 1"]
         #[inline(always)]
-        pub fn set_wuf(&mut self, n: usize, val: super::vals::Wuf) {
+        pub fn set_wuf(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Wakeup PVD flag"]
         #[inline(always)]
-        pub const fn wpvdf(&self) -> super::vals::Wpvdf {
+        pub const fn wpvdf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Wpvdf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Wakeup PVD flag"]
         #[inline(always)]
-        pub fn set_wpvdf(&mut self, val: super::vals::Wpvdf) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_wpvdf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Radio BUSY wakeup flag"]
         #[inline(always)]
-        pub const fn wrfbusyf(&self) -> super::vals::Wrfbusyf {
+        pub const fn wrfbusyf(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Wrfbusyf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Radio BUSY wakeup flag"]
         #[inline(always)]
-        pub fn set_wrfbusyf(&mut self, val: super::vals::Wrfbusyf) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_wrfbusyf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "PU2 Hold interrupt flag"]
         #[inline(always)]
@@ -889,14 +889,14 @@ pub mod regs {
         }
         #[doc = "Internal wakeup interrupt flag"]
         #[inline(always)]
-        pub const fn wufi(&self) -> super::vals::Wufi {
+        pub const fn wufi(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Wufi::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Internal wakeup interrupt flag"]
         #[inline(always)]
-        pub fn set_wufi(&mut self, val: super::vals::Wufi) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_wufi(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Sr1 {
@@ -923,135 +923,135 @@ pub mod regs {
         }
         #[doc = "Radio BUSY signal status"]
         #[inline(always)]
-        pub const fn rfbusys(&self) -> super::vals::Rfbusys {
+        pub const fn rfbusys(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Rfbusys::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Radio BUSY signal status"]
         #[inline(always)]
-        pub fn set_rfbusys(&mut self, val: super::vals::Rfbusys) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_rfbusys(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Radio BUSY masked signal status"]
         #[inline(always)]
-        pub const fn rfbusyms(&self) -> super::vals::Rfbusyms {
+        pub const fn rfbusyms(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Rfbusyms::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Radio BUSY masked signal status"]
         #[inline(always)]
-        pub fn set_rfbusyms(&mut self, val: super::vals::Rfbusyms) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_rfbusyms(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "SMPS ready flag"]
         #[inline(always)]
-        pub const fn smpsrdy(&self) -> super::vals::Smpsrdy {
+        pub const fn smpsrdy(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Smpsrdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SMPS ready flag"]
         #[inline(always)]
-        pub fn set_smpsrdy(&mut self, val: super::vals::Smpsrdy) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_smpsrdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "LDO ready flag"]
         #[inline(always)]
-        pub const fn ldordy(&self) -> super::vals::Ldordy {
+        pub const fn ldordy(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Ldordy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LDO ready flag"]
         #[inline(always)]
-        pub fn set_ldordy(&mut self, val: super::vals::Ldordy) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_ldordy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Radio end of life flag"]
         #[inline(always)]
-        pub const fn rfeolf(&self) -> super::vals::Rfeolf {
+        pub const fn rfeolf(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Rfeolf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Radio end of life flag"]
         #[inline(always)]
-        pub fn set_rfeolf(&mut self, val: super::vals::Rfeolf) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_rfeolf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "regulator2 low power flag"]
         #[inline(always)]
-        pub const fn regmrs(&self) -> super::vals::Regmrs {
+        pub const fn regmrs(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Regmrs::from_bits(val as u8)
+            val != 0
         }
         #[doc = "regulator2 low power flag"]
         #[inline(always)]
-        pub fn set_regmrs(&mut self, val: super::vals::Regmrs) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_regmrs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Flash ready"]
         #[inline(always)]
-        pub const fn flashrdy(&self) -> super::vals::Flashrdy {
+        pub const fn flashrdy(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Flashrdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Flash ready"]
         #[inline(always)]
-        pub fn set_flashrdy(&mut self, val: super::vals::Flashrdy) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_flashrdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "regulator1 started"]
         #[inline(always)]
-        pub const fn reglps(&self) -> super::vals::Reglps {
+        pub const fn reglps(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Reglps::from_bits(val as u8)
+            val != 0
         }
         #[doc = "regulator1 started"]
         #[inline(always)]
-        pub fn set_reglps(&mut self, val: super::vals::Reglps) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_reglps(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "regulator1 low power flag"]
         #[inline(always)]
-        pub const fn reglpf(&self) -> super::vals::Reglpf {
+        pub const fn reglpf(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Reglpf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "regulator1 low power flag"]
         #[inline(always)]
-        pub fn set_reglpf(&mut self, val: super::vals::Reglpf) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_reglpf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Voltage scaling flag"]
         #[inline(always)]
-        pub const fn vosf(&self) -> super::vals::Vosf {
+        pub const fn vosf(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Vosf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Voltage scaling flag"]
         #[inline(always)]
-        pub fn set_vosf(&mut self, val: super::vals::Vosf) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_vosf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Power voltage detector output"]
         #[inline(always)]
-        pub const fn pvdo(&self) -> super::vals::Pvdo {
+        pub const fn pvdo(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Pvdo::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Power voltage detector output"]
         #[inline(always)]
-        pub fn set_pvdo(&mut self, val: super::vals::Pvdo) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_pvdo(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Peripheral voltage monitoring output: VDDA vs. 1.62 V"]
         #[inline(always)]
-        pub const fn pvmo(&self) -> super::vals::Pvmo {
+        pub const fn pvmo(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Pvmo::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Peripheral voltage monitoring output: VDDA vs. 1.62 V"]
         #[inline(always)]
-        pub fn set_pvmo(&mut self, val: super::vals::Pvmo) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_pvmo(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Sr2 {
@@ -1067,14 +1067,14 @@ pub mod regs {
     impl Subghzspicr {
         #[doc = "sub-GHz SPI NSS control"]
         #[inline(always)]
-        pub const fn nss(&self) -> super::vals::Nss {
+        pub const fn nss(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Nss::from_bits(val as u8)
+            val != 0
         }
         #[doc = "sub-GHz SPI NSS control"]
         #[inline(always)]
-        pub fn set_nss(&mut self, val: super::vals::Nss) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_nss(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Subghzspicr {
@@ -1113,158 +1113,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cds) -> u8 {
             Cds::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Csbf {
-        #[doc = "System has not been in Standby mode"]
-        NOSTANDBY = 0,
-        #[doc = "System has been in Standby mode"]
-        STANDBY = 0x01,
-    }
-    impl Csbf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Csbf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Csbf {
-        #[inline(always)]
-        fn from(val: u8) -> Csbf {
-            Csbf::from_bits(val)
-        }
-    }
-    impl From<Csbf> for u8 {
-        #[inline(always)]
-        fn from(val: Csbf) -> u8 {
-            Csbf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Cstopf {
-        #[doc = "System has not been in Stop 2 mode"]
-        NOSTOP = 0,
-        #[doc = "System has been in Stop 2 mode"]
-        STOP = 0x01,
-    }
-    impl Cstopf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cstopf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Cstopf {
-        #[inline(always)]
-        fn from(val: u8) -> Cstopf {
-            Cstopf::from_bits(val)
-        }
-    }
-    impl From<Cstopf> for u8 {
-        #[inline(always)]
-        fn from(val: Cstopf) -> u8 {
-            Cstopf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ewrfbusy {
-        #[doc = "Radio Busy is disabled and does not trigger a wakeup from Standby event to CPUwhen a rising or a falling edge occurs"]
-        DISABLED = 0,
-        #[doc = "Radio Busy is enabled and triggers a wakeup from Standby event to CPUwhen a rising or a falling edge occurs. The active edge is configured via the WRFBUSYP bit in PWR_CR4"]
-        ENABLED = 0x01,
-    }
-    impl Ewrfbusy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ewrfbusy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ewrfbusy {
-        #[inline(always)]
-        fn from(val: u8) -> Ewrfbusy {
-            Ewrfbusy::from_bits(val)
-        }
-    }
-    impl From<Ewrfbusy> for u8 {
-        #[inline(always)]
-        fn from(val: Ewrfbusy) -> u8 {
-            Ewrfbusy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ewrfirq {
-        #[doc = "Radio IRQ\\[2:0\\]
-is disabled and does not trigger a wakeup from Standby event to CPU."]
-        DISABLED = 0,
-        #[doc = "Radio IRQ\\[2:0\\]
-is enabled and triggers a wakeup from Standby event to CPU."]
-        ENABLED = 0x01,
-    }
-    impl Ewrfirq {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ewrfirq {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ewrfirq {
-        #[inline(always)]
-        fn from(val: u8) -> Ewrfirq {
-            Ewrfirq::from_bits(val)
-        }
-    }
-    impl From<Ewrfirq> for u8 {
-        #[inline(always)]
-        fn from(val: Ewrfirq) -> u8 {
-            Ewrfirq::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Flashrdy {
-        #[doc = "Flash memory not ready to be accessed"]
-        NOTREADY = 0,
-        #[doc = "Flash memory ready to be accessed"]
-        READY = 0x01,
-    }
-    impl Flashrdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Flashrdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Flashrdy {
-        #[inline(always)]
-        fn from(val: u8) -> Flashrdy {
-            Flashrdy::from_bits(val)
-        }
-    }
-    impl From<Flashrdy> for u8 {
-        #[inline(always)]
-        fn from(val: Flashrdy) -> u8 {
-            Flashrdy::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1325,36 +1173,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
         #[inline(always)]
         fn from(val: Fpds) -> u8 {
             Fpds::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ldordy {
-        #[doc = "LDO not ready or off"]
-        NOTREADY = 0,
-        #[doc = "LDO ready"]
-        READY = 0x01,
-    }
-    impl Ldordy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ldordy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ldordy {
-        #[inline(always)]
-        fn from(val: u8) -> Ldordy {
-            Ldordy::from_bits(val)
-        }
-    }
-    impl From<Ldordy> for u8 {
-        #[inline(always)]
-        fn from(val: Ldordy) -> u8 {
-            Ldordy::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1428,36 +1246,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Nss {
-        #[doc = "Sub-GHz SPI NSS signal at level low"]
-        LOW = 0,
-        #[doc = "Sub-GHz SPI NSS signal is at level high"]
-        HIGH = 0x01,
-    }
-    impl Nss {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Nss {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Nss {
-        #[inline(always)]
-        fn from(val: u8) -> Nss {
-            Nss::from_bits(val)
-        }
-    }
-    impl From<Nss> for u8 {
-        #[inline(always)]
-        fn from(val: Nss) -> u8 {
-            Nss::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pls {
         #[doc = "2.0V"]
         V2_0 = 0,
@@ -1500,396 +1288,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pvde {
-        #[doc = "PVD Disabled"]
-        DISABLED = 0,
-        #[doc = "PVD Enabled"]
-        ENABLED = 0x01,
-    }
-    impl Pvde {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pvde {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pvde {
-        #[inline(always)]
-        fn from(val: u8) -> Pvde {
-            Pvde::from_bits(val)
-        }
-    }
-    impl From<Pvde> for u8 {
-        #[inline(always)]
-        fn from(val: Pvde) -> u8 {
-            Pvde::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pvdo {
-        #[doc = "VDD or voltage level on PVD_IN above the selected PVD threshold"]
-        ABOVE = 0,
-        #[doc = "VDD or voltage level on PVD_IN below the selected PVD threshold"]
-        BELOW = 0x01,
-    }
-    impl Pvdo {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pvdo {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pvdo {
-        #[inline(always)]
-        fn from(val: u8) -> Pvdo {
-            Pvdo::from_bits(val)
-        }
-    }
-    impl From<Pvdo> for u8 {
-        #[inline(always)]
-        fn from(val: Pvdo) -> u8 {
-            Pvdo::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pvmo {
-        #[doc = "VDDA voltage above PVM3 threshold (around 1.62 V)"]
-        ABOVE = 0,
-        #[doc = "VDDA voltage below PVM3 threshold (around 1.62 V)"]
-        BELOW = 0x01,
-    }
-    impl Pvmo {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pvmo {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pvmo {
-        #[inline(always)]
-        fn from(val: u8) -> Pvmo {
-            Pvmo::from_bits(val)
-        }
-    }
-    impl From<Pvmo> for u8 {
-        #[inline(always)]
-        fn from(val: Pvmo) -> u8 {
-            Pvmo::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Reglpf {
-        #[doc = "Main regulator (MR) ready and used"]
-        MAIN = 0,
-        #[doc = "Low-power regulator (LPR) used"]
-        LOWPOWER = 0x01,
-    }
-    impl Reglpf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Reglpf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Reglpf {
-        #[inline(always)]
-        fn from(val: u8) -> Reglpf {
-            Reglpf::from_bits(val)
-        }
-    }
-    impl From<Reglpf> for u8 {
-        #[inline(always)]
-        fn from(val: Reglpf) -> u8 {
-            Reglpf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Reglps {
-        #[doc = "LPR not ready"]
-        NOTREADY = 0,
-        #[doc = "LPR ready"]
-        READY = 0x01,
-    }
-    impl Reglps {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Reglps {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Reglps {
-        #[inline(always)]
-        fn from(val: u8) -> Reglps {
-            Reglps::from_bits(val)
-        }
-    }
-    impl From<Reglps> for u8 {
-        #[inline(always)]
-        fn from(val: Reglps) -> u8 {
-            Reglps::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Regmrs {
-        #[doc = "Main regulator supplied directly from VDD"]
-        V_DD = 0,
-        #[doc = "Main regulator supplied through LDO or SMPS"]
-        LDO_SMPS = 0x01,
-    }
-    impl Regmrs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Regmrs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Regmrs {
-        #[inline(always)]
-        fn from(val: u8) -> Regmrs {
-            Regmrs::from_bits(val)
-        }
-    }
-    impl From<Regmrs> for u8 {
-        #[inline(always)]
-        fn from(val: Regmrs) -> u8 {
-            Regmrs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rfbusyms {
-        #[doc = "radio busy masked signal low (not busy)"]
-        NOTBUSY = 0,
-        #[doc = "radio busy masked signal high (busy)"]
-        BUSY = 0x01,
-    }
-    impl Rfbusyms {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rfbusyms {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rfbusyms {
-        #[inline(always)]
-        fn from(val: u8) -> Rfbusyms {
-            Rfbusyms::from_bits(val)
-        }
-    }
-    impl From<Rfbusyms> for u8 {
-        #[inline(always)]
-        fn from(val: Rfbusyms) -> u8 {
-            Rfbusyms::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rfbusys {
-        #[doc = "radio busy signal low (not busy)"]
-        NOTBUSY = 0,
-        #[doc = "radio busy signal high (busy)"]
-        BUSY = 0x01,
-    }
-    impl Rfbusys {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rfbusys {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rfbusys {
-        #[inline(always)]
-        fn from(val: u8) -> Rfbusys {
-            Rfbusys::from_bits(val)
-        }
-    }
-    impl From<Rfbusys> for u8 {
-        #[inline(always)]
-        fn from(val: Rfbusys) -> u8 {
-            Rfbusys::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rfeolen {
-        #[doc = "Radio end-of-life detector disabled"]
-        DISABLED = 0,
-        #[doc = "Radio end-of-life detector enabled"]
-        ENABLED = 0x01,
-    }
-    impl Rfeolen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rfeolen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rfeolen {
-        #[inline(always)]
-        fn from(val: u8) -> Rfeolen {
-            Rfeolen::from_bits(val)
-        }
-    }
-    impl From<Rfeolen> for u8 {
-        #[inline(always)]
-        fn from(val: Rfeolen) -> u8 {
-            Rfeolen::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rfeolf {
-        #[doc = "Supply voltage above radio end-of-life operating low level"]
-        ABOVE = 0,
-        #[doc = "Supply voltage below radio end-of-life operating low level"]
-        BELOW = 0x01,
-    }
-    impl Rfeolf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rfeolf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rfeolf {
-        #[inline(always)]
-        fn from(val: u8) -> Rfeolf {
-            Rfeolf::from_bits(val)
-        }
-    }
-    impl From<Rfeolf> for u8 {
-        #[inline(always)]
-        fn from(val: Rfeolf) -> u8 {
-            Rfeolf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rrs {
-        #[doc = "SRAM2 powered off in Standby mode (SRAM2 content lost)"]
-        POWEROFF = 0,
-        #[doc = "SRAM2 powered by the low-power regulator in Standby mode (SRAM2 content kept)"]
-        ONLPR = 0x01,
-    }
-    impl Rrs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rrs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rrs {
-        #[inline(always)]
-        fn from(val: u8) -> Rrs {
-            Rrs::from_bits(val)
-        }
-    }
-    impl From<Rrs> for u8 {
-        #[inline(always)]
-        fn from(val: Rrs) -> u8 {
-            Rrs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Smpsen {
-        #[doc = "SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
-        DISABLED = 0,
-        #[doc = "SMPS step-down converter SMPS mode enabled"]
-        ENABLED = 0x01,
-    }
-    impl Smpsen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Smpsen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Smpsen {
-        #[inline(always)]
-        fn from(val: u8) -> Smpsen {
-            Smpsen::from_bits(val)
-        }
-    }
-    impl From<Smpsen> for u8 {
-        #[inline(always)]
-        fn from(val: Smpsen) -> u8 {
-            Smpsen::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Smpsrdy {
-        #[doc = "SMPS step-down converter not ready or off"]
-        NOTREADY = 0,
-        #[doc = "SMPS step-down converter ready"]
-        READY = 0x01,
-    }
-    impl Smpsrdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Smpsrdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Smpsrdy {
-        #[inline(always)]
-        fn from(val: u8) -> Smpsrdy {
-            Smpsrdy::from_bits(val)
-        }
-    }
-    impl From<Smpsrdy> for u8 {
-        #[inline(always)]
-        fn from(val: Smpsrdy) -> u8 {
-            Smpsrdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Subghzspinsssel {
         #[doc = "sub-GHz SPI NSS signal driven from PWR_SUBGHZSPICR.NSS (RFBUSYMS functionality enabled)"]
         SUBGHZSPICR = 0,
@@ -1916,36 +1314,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
         #[inline(always)]
         fn from(val: Subghzspinsssel) -> u8 {
             Subghzspinsssel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vbe {
-        #[doc = "VBAT battery charging disabled"]
-        DISABLED = 0,
-        #[doc = "VBAT battery charging enabled"]
-        ENABLED = 0x01,
-    }
-    impl Vbe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vbe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vbe {
-        #[inline(always)]
-        fn from(val: u8) -> Vbe {
-            Vbe::from_bits(val)
-        }
-    }
-    impl From<Vbe> for u8 {
-        #[inline(always)]
-        fn from(val: Vbe) -> u8 {
-            Vbe::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1983,9 +1351,9 @@ is enabled and triggers a wakeup from Standby event to CPU."]
     pub enum Vos {
         _RESERVED_0 = 0,
         #[doc = "1.2 V (range 1)"]
-        V1_2 = 0x01,
+        RANGE1 = 0x01,
         #[doc = "1.0 V (range 2)"]
-        V1_0 = 0x02,
+        RANGE2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Vos {
@@ -2008,36 +1376,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
         #[inline(always)]
         fn from(val: Vos) -> u8 {
             Vos::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vosf {
-        #[doc = "Regulator ready in the selected voltage range"]
-        READY = 0,
-        #[doc = "Regulator output voltage changed to the required voltage level"]
-        CHANGE = 0x01,
-    }
-    impl Vosf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vosf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vosf {
-        #[inline(always)]
-        fn from(val: u8) -> Vosf {
-            Vosf::from_bits(val)
-        }
-    }
-    impl From<Vosf> for u8 {
-        #[inline(always)]
-        fn from(val: Vosf) -> u8 {
-            Vosf::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2068,156 +1406,6 @@ is enabled and triggers a wakeup from Standby event to CPU."]
         #[inline(always)]
         fn from(val: Wp) -> u8 {
             Wp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wpvdf {
-        #[doc = "No wakeup event detected on PVD"]
-        CLEAR = 0,
-        #[doc = "Wakeup event detected on PVD"]
-        WAKEUP = 0x01,
-    }
-    impl Wpvdf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wpvdf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wpvdf {
-        #[inline(always)]
-        fn from(val: u8) -> Wpvdf {
-            Wpvdf::from_bits(val)
-        }
-    }
-    impl From<Wpvdf> for u8 {
-        #[inline(always)]
-        fn from(val: Wpvdf) -> u8 {
-            Wpvdf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wrfbusyf {
-        #[doc = "No wakeup event detected on radio busy"]
-        CLEAR = 0,
-        #[doc = "Wakeup event detected on radio busy"]
-        WAKEUP = 0x01,
-    }
-    impl Wrfbusyf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wrfbusyf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wrfbusyf {
-        #[inline(always)]
-        fn from(val: u8) -> Wrfbusyf {
-            Wrfbusyf::from_bits(val)
-        }
-    }
-    impl From<Wrfbusyf> for u8 {
-        #[inline(always)]
-        fn from(val: Wrfbusyf) -> u8 {
-            Wrfbusyf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wrfbusyp {
-        #[doc = "Detection on high level (rising edge)"]
-        RISINGEDGE = 0,
-        #[doc = "Detection on low level (falling edge)"]
-        FALLINGEDGE = 0x01,
-    }
-    impl Wrfbusyp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wrfbusyp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wrfbusyp {
-        #[inline(always)]
-        fn from(val: u8) -> Wrfbusyp {
-            Wrfbusyp::from_bits(val)
-        }
-    }
-    impl From<Wrfbusyp> for u8 {
-        #[inline(always)]
-        fn from(val: Wrfbusyp) -> u8 {
-            Wrfbusyp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wuf {
-        #[doc = "No wakeup event detected on WKUP3"]
-        CLEAR = 0,
-        #[doc = "Wakeup event detected on WKUP3"]
-        WAKEUP = 0x01,
-    }
-    impl Wuf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wuf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wuf {
-        #[inline(always)]
-        fn from(val: u8) -> Wuf {
-            Wuf::from_bits(val)
-        }
-    }
-    impl From<Wuf> for u8 {
-        #[inline(always)]
-        fn from(val: Wuf) -> u8 {
-            Wuf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wufi {
-        #[doc = "All internal wakeup sources are cleared"]
-        CLEAR = 0,
-        #[doc = "wakeup is detected on the internal wakeup line"]
-        WAKEUP = 0x01,
-    }
-    impl Wufi {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wufi {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wufi {
-        #[inline(always)]
-        fn from(val: u8) -> Wufi {
-            Wufi::from_bits(val)
-        }
-    }
-    impl From<Wufi> for u8 {
-        #[inline(always)]
-        fn from(val: Wufi) -> u8 {
-            Wufi::to_bits(val)
         }
     }
 }

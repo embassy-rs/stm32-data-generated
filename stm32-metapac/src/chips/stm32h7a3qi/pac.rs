@@ -734,7 +734,7 @@ pub mod jpeg;
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
-#[path = "../../peripherals/pwr_h7smps.rs"]
+#[path = "../../peripherals/pwr_h7rm0455.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h7ab.rs"]
 pub mod rcc;

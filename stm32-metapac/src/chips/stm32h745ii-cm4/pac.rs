@@ -767,7 +767,7 @@ pub mod jpeg;
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
-#[path = "../../peripherals/pwr_h7smps.rs"]
+#[path = "../../peripherals/pwr_h7rm0399.rs"]
 pub mod pwr;
 #[path = "../../peripherals/quadspi_v1.rs"]
 pub mod quadspi;
@@ -783,7 +783,7 @@ pub mod sai;
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
-#[path = "../../peripherals/syscfg_h7.rs"]
+#[path = "../../peripherals/syscfg_h7od.rs"]
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;

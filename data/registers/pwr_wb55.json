@@ -57,73 +57,73 @@
         "name": "PUCRA",
         "description": "Power Port A pull-up control register",
         "byte_offset": 32,
-        "fieldset": "PUCRA"
+        "fieldset": "PXCR"
       },
       {
         "name": "PDCRA",
         "description": "Power Port A pull-down control register",
         "byte_offset": 36,
-        "fieldset": "PDCRA"
+        "fieldset": "PXCR"
       },
       {
         "name": "PUCRB",
         "description": "Power Port B pull-up control register",
         "byte_offset": 40,
-        "fieldset": "PUCRB"
+        "fieldset": "PXCR"
       },
       {
         "name": "PDCRB",
         "description": "Power Port B pull-down control register",
         "byte_offset": 44,
-        "fieldset": "PDCRB"
+        "fieldset": "PXCR"
       },
       {
         "name": "PUCRC",
         "description": "Power Port C pull-up control register",
         "byte_offset": 48,
-        "fieldset": "PUCRC"
+        "fieldset": "PXCR"
       },
       {
         "name": "PDCRC",
         "description": "Power Port C pull-down control register",
         "byte_offset": 52,
-        "fieldset": "PDCRC"
+        "fieldset": "PXCR"
       },
       {
         "name": "PUCRD",
         "description": "Power Port D pull-up control register",
         "byte_offset": 56,
-        "fieldset": "PUCRD"
+        "fieldset": "PXCR"
       },
       {
         "name": "PDCRD",
         "description": "Power Port D pull-down control register",
         "byte_offset": 60,
-        "fieldset": "PDCRD"
+        "fieldset": "PXCR"
       },
       {
         "name": "PUCRE",
         "description": "Power Port E pull-up control register",
         "byte_offset": 64,
-        "fieldset": "PUCRE"
+        "fieldset": "PXCR"
       },
       {
         "name": "PDCRE",
         "description": "Power Port E pull-down control register",
         "byte_offset": 68,
-        "fieldset": "PDCRE"
+        "fieldset": "PXCR"
       },
       {
         "name": "PUCRH",
         "description": "Power Port H pull-up control register",
         "byte_offset": 88,
-        "fieldset": "PUCRH"
+        "fieldset": "PXCR"
       },
       {
         "name": "PDCRH",
         "description": "Power Port H pull-down control register",
         "byte_offset": 92,
-        "fieldset": "PDCRH"
+        "fieldset": "PXCR"
       },
       {
         "name": "C2CR1",
@@ -184,34 +184,14 @@
     "description": "CPU2 Power control register 3",
     "fields": [
       {
-        "name": "EWUP1",
-        "description": "Enable Wakeup pin WKUP1 for CPU2",
+        "name": "EWUP",
+        "description": "Enable Wakeup pin",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP2",
-        "description": "Enable Wakeup pin WKUP2 for CPU2",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP3",
-        "description": "Enable Wakeup pin WKUP3 for CPU2",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP4",
-        "description": "Enable Wakeup pin WKUP4 for CPU2",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP5",
-        "description": "Enable Wakeup pin WKUP5 for CPU2",
-        "bit_offset": 4,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
       },
       {
         "name": "EBLEWUP",
@@ -270,7 +250,8 @@
         "name": "VOS",
         "description": "Voltage scaling range selection",
         "bit_offset": 9,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "VOS"
       },
       {
         "name": "LPR",
@@ -319,34 +300,14 @@
     "description": "Power control register 3",
     "fields": [
       {
-        "name": "EWUP1",
-        "description": "Enable Wakeup pin WKUP1",
+        "name": "EWUP",
+        "description": "Enable Wakeup pin",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP2",
-        "description": "Enable Wakeup pin WKUP2",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP3",
-        "description": "Enable Wakeup pin WKUP3",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP4",
-        "description": "Enable Wakeup pin WKUP4",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "EWUP5",
-        "description": "Enable Wakeup pin WKUP5",
-        "bit_offset": 4,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
       },
       {
         "name": "EBORHSDFB",
@@ -405,31 +366,11 @@
         "name": "WP1",
         "description": "Wakeup pin WKUP1 polarity",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "WP2",
-        "description": "Wakeup pin WKUP2 polarity",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "WP3",
-        "description": "Wakeup pin WKUP3 polarity",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "WP4",
-        "description": "Wakeup pin WKUP4 polarity",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "WP5",
-        "description": "Wakeup pin WKUP5 polarity",
-        "bit_offset": 4,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
       },
       {
         "name": "VBE",
@@ -557,903 +498,18 @@
       }
     ]
   },
-  "fieldset/PDCRA": {
-    "description": "Power Port A pull-down control register",
+  "fieldset/PXCR": {
+    "description": "Power Port pull-up/down control register",
     "fields": [
       {
-        "name": "PD0",
-        "description": "Port A pull-down bit y (y=0..15)",
+        "name": "PD",
+        "description": "Port A pull-up/down bit y (y=0..15)",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PD1",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PD2",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PD3",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PD4",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PD5",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PD6",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PD7",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PD8",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PD9",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PD10",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PD11",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PD12",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PD14",
-        "description": "Port A pull-down bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PDCRB": {
-    "description": "Power Port B pull-down control register",
-    "fields": [
-      {
-        "name": "PD0",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PD1",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PD2",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PD3",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PD5",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PD6",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PD7",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PD8",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PD9",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PD10",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PD11",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PD12",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PD13",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PD14",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "PD15",
-        "description": "Port B pull-down bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PDCRC": {
-    "description": "Power Port C pull-down control register",
-    "fields": [
-      {
-        "name": "PD0",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PD1",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PD2",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PD3",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PD4",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PD5",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PD6",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PD7",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PD8",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PD9",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PD10",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PD11",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PD12",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PD13",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PD14",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "PD15",
-        "description": "Port C pull-down bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PDCRD": {
-    "description": "Power Port D pull-down control register",
-    "fields": [
-      {
-        "name": "PD0",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PD1",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PD2",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PD3",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PD4",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PD5",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PD6",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PD7",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PD8",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PD9",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PD10",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PD11",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PD12",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PD13",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PD14",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "PD15",
-        "description": "Port D pull-down bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PDCRE": {
-    "description": "Power Port E pull-down control register",
-    "fields": [
-      {
-        "name": "PD0",
-        "description": "Port E pull-down bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PD1",
-        "description": "Port E pull-down bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PD2",
-        "description": "Port E pull-down bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PD3",
-        "description": "Port E pull-down bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PD4",
-        "description": "Port E pull-down bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PDCRH": {
-    "description": "Power Port H pull-down control register",
-    "fields": [
-      {
-        "name": "PD0",
-        "description": "Port H pull-down bit y (y=0..1)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PD1",
-        "description": "Port H pull-down bit y (y=0..1)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PD3",
-        "description": "Port H pull-down bit y (y=0..1)",
-        "bit_offset": 3,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PUCRA": {
-    "description": "Power Port A pull-up control register",
-    "fields": [
-      {
-        "name": "PU0",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PU1",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PU2",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PU3",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PU4",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PU5",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PU6",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PU7",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PU8",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PU9",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PU10",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PU11",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PU12",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PU13",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PU15",
-        "description": "Port A pull-up bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PUCRB": {
-    "description": "Power Port B pull-up control register",
-    "fields": [
-      {
-        "name": "PU0",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PU1",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PU2",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PU3",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PU4",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PU5",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PU6",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PU7",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PU8",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PU9",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PU10",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PU11",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PU12",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PU13",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PU14",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "PU15",
-        "description": "Port B pull-up bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PUCRC": {
-    "description": "Power Port C pull-up control register",
-    "fields": [
-      {
-        "name": "PU0",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PU1",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PU2",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PU3",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PU4",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PU5",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PU6",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PU7",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PU8",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PU9",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PU10",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PU11",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PU12",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PU13",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PU14",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "PU15",
-        "description": "Port C pull-up bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PUCRD": {
-    "description": "Power Port D pull-up control register",
-    "fields": [
-      {
-        "name": "PU0",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PU1",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PU2",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PU3",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PU4",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "PU5",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "PU6",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "PU7",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "PU8",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "PU9",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "PU10",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "PU11",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "PU12",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "PU13",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "PU14",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "PU15",
-        "description": "Port D pull-up bit y (y=0..15)",
-        "bit_offset": 15,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PUCRE": {
-    "description": "Power Port E pull-up control register",
-    "fields": [
-      {
-        "name": "PU0",
-        "description": "Port E pull-up bit y (y=0..15)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PU1",
-        "description": "Port E pull-up bit y (y=0..15)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PU2",
-        "description": "Port E pull-up bit y (y=0..15)",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "PU3",
-        "description": "Port E pull-up bit y (y=0..15)",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "PU4",
-        "description": "Port E pull-up bit y (y=0..15)",
-        "bit_offset": 4,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PUCRH": {
-    "description": "Power Port H pull-up control register",
-    "fields": [
-      {
-        "name": "PU0",
-        "description": "Port H pull-up bit y (y=0..1)",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "PU1",
-        "description": "Port H pull-up bit y (y=0..1)",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PU3",
-        "description": "Port H pull-up bit y (y=0..1)",
-        "bit_offset": 3,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 16,
+          "stride": 1
+        }
       }
     ]
   },
@@ -1461,34 +517,14 @@
     "description": "Power status clear register",
     "fields": [
       {
-        "name": "CWUF1",
+        "name": "CWUF",
         "description": "Clear wakeup flag 1",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF2",
-        "description": "Clear wakeup flag 2",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF3",
-        "description": "Clear wakeup flag 3",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF4",
-        "description": "Clear wakeup flag 4",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF5",
-        "description": "Clear wakeup flag 5",
-        "bit_offset": 4,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
       },
       {
         "name": "CSMPSFBF",
@@ -1544,34 +580,14 @@
     "description": "Power status register 1",
     "fields": [
       {
-        "name": "CWUF1",
+        "name": "CWUF",
         "description": "Wakeup flag 1",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF2",
-        "description": "Wakeup flag 2",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF3",
-        "description": "Wakeup flag 3",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF4",
-        "description": "Wakeup flag 4",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "CWUF5",
-        "description": "Wakeup flag 5",
-        "bit_offset": 4,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
       },
       {
         "name": "SDFBF",
@@ -1679,6 +695,21 @@
         "description": "Peripheral voltage monitoring output: VDDA vs. 1.62 V",
         "bit_offset": 14,
         "bit_size": 1
+      }
+    ]
+  },
+  "enum/VOS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Range1",
+        "description": "Range 1",
+        "value": 1
+      },
+      {
+        "name": "Range2",
+        "description": "Range 2",
+        "value": 2
       }
     ]
   }

@@ -388,13 +388,13 @@ pub mod regs {
         pub fn set_ldoen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "SD converter Enable"]
+        #[doc = "Supply configuration update enable"]
         #[inline(always)]
         pub const fn scuen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "SD converter Enable"]
+        #[doc = "Supply configuration update enable"]
         #[inline(always)]
         pub fn set_scuen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
@@ -535,14 +535,14 @@ pub mod regs {
         }
         #[doc = "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling."]
         #[inline(always)]
-        pub const fn vos(&self) -> u8 {
+        pub const fn vos(&self) -> super::vals::Vos {
             let val = (self.0 >> 14usize) & 0x03;
-            val as u8
+            super::vals::Vos::from_bits(val as u8)
         }
         #[doc = "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling."]
         #[inline(always)]
-        pub fn set_vos(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+        pub fn set_vos(&mut self, val: super::vals::Vos) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
     }
     impl Default for D3cr {
@@ -656,6 +656,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Wkupfr {
             Wkupfr(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Vos {
+        _RESERVED_0 = 0,
+        SCALE3 = 0x01,
+        SCALE2 = 0x02,
+        SCALE1 = 0x03,
+    }
+    impl Vos {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Vos {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Vos {
+        #[inline(always)]
+        fn from(val: u8) -> Vos {
+            Vos::from_bits(val)
+        }
+    }
+    impl From<Vos> for u8 {
+        #[inline(always)]
+        fn from(val: Vos) -> u8 {
+            Vos::to_bits(val)
         }
     }
 }

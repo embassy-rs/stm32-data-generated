@@ -3743,7 +3743,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1476544512,
         registers: Some(PeripheralRegisters {
             kind: "pwr",
-            version: "h7smps",
+            version: "h7rm0468",
             block: "PWR",
         }),
         rcc: None,

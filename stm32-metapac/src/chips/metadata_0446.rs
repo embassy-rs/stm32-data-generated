@@ -3609,7 +3609,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1476544512,
         registers: Some(PeripheralRegisters {
             kind: "pwr",
-            version: "h7smps",
+            version: "h7rm0399",
             block: "PWR",
         }),
         rcc: None,
@@ -5404,7 +5404,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1476396032,
         registers: Some(PeripheralRegisters {
             kind: "syscfg",
-            version: "h7",
+            version: "h7od",
             block: "SYSCFG",
         }),
         rcc: Some(PeripheralRcc {

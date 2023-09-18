@@ -40,11 +40,6 @@ impl Syscfg {
     pub const fn cccr(self) -> crate::common::Reg<regs::Cccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
     }
-    #[doc = "SYSCFG power control register"]
-    #[inline(always)]
-    pub const fn pwrcr(self) -> crate::common::Reg<regs::Pwrcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
-    }
     #[doc = "SYSCFG package register"]
     #[inline(always)]
     pub const fn pkgr(self) -> crate::common::Reg<regs::Pkgr, crate::common::R> {
@@ -486,29 +481,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pmcr {
             Pmcr(0)
-        }
-    }
-    #[doc = "SYSCFG power control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pwrcr(pub u32);
-    impl Pwrcr {
-        #[doc = "Overdrive enable"]
-        #[inline(always)]
-        pub const fn oden(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Overdrive enable"]
-        #[inline(always)]
-        pub fn set_oden(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
-        }
-    }
-    impl Default for Pwrcr {
-        #[inline(always)]
-        fn default() -> Pwrcr {
-            Pwrcr(0)
         }
     }
     #[doc = "SYSCFG user register 0"]

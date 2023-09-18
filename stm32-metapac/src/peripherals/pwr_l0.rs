@@ -428,106 +428,14 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pvdor {
-        #[doc = "VDD is higher than the PVD threshold selected with the PLS\\[2:0\\]
-bits"]
-        ABOVETHRESHOLD = 0,
-        #[doc = "VDD is lower than the PVD threshold selected with the PLS\\[2:0\\]
-bits"]
-        BELOWTHRESHOLD = 0x01,
-    }
-    impl Pvdor {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pvdor {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pvdor {
-        #[inline(always)]
-        fn from(val: u8) -> Pvdor {
-            Pvdor::from_bits(val)
-        }
-    }
-    impl From<Pvdor> for u8 {
-        #[inline(always)]
-        fn from(val: Pvdor) -> u8 {
-            Pvdor::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Reglpfr {
-        #[doc = "Regulator is ready in Main mode"]
-        READY = 0,
-        #[doc = "Regulator voltage is in low-power mode"]
-        NOTREADY = 0x01,
-    }
-    impl Reglpfr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Reglpfr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Reglpfr {
-        #[inline(always)]
-        fn from(val: u8) -> Reglpfr {
-            Reglpfr::from_bits(val)
-        }
-    }
-    impl From<Reglpfr> for u8 {
-        #[inline(always)]
-        fn from(val: Reglpfr) -> u8 {
-            Reglpfr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sbfr {
-        #[doc = "Device has not been in Standby mode"]
-        NOSTANDBYEVENT = 0,
-        #[doc = "Device has been in Standby mode"]
-        STANDBYEVENT = 0x01,
-    }
-    impl Sbfr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sbfr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sbfr {
-        #[inline(always)]
-        fn from(val: u8) -> Sbfr {
-            Sbfr::from_bits(val)
-        }
-    }
-    impl From<Sbfr> for u8 {
-        #[inline(always)]
-        fn from(val: Sbfr) -> u8 {
-            Sbfr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {
         _RESERVED_0 = 0,
         #[doc = "1.8 V (range 1)"]
-        V1_8 = 0x01,
+        RANGE1 = 0x01,
         #[doc = "1.5 V (range 2)"]
-        V1_5 = 0x02,
+        RANGE2 = 0x02,
         #[doc = "1.2 V (range 3)"]
-        V1_2 = 0x03,
+        RANGE3 = 0x03,
     }
     impl Vos {
         #[inline(always)]
@@ -549,96 +457,6 @@ bits"]
         #[inline(always)]
         fn from(val: Vos) -> u8 {
             Vos::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vosfr {
-        #[doc = "Regulator is ready in the selected voltage range"]
-        READY = 0,
-        #[doc = "Regulator voltage output is changing to the required VOS level"]
-        NOTREADY = 0x01,
-    }
-    impl Vosfr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vosfr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vosfr {
-        #[inline(always)]
-        fn from(val: u8) -> Vosfr {
-            Vosfr::from_bits(val)
-        }
-    }
-    impl From<Vosfr> for u8 {
-        #[inline(always)]
-        fn from(val: Vosfr) -> u8 {
-            Vosfr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vrefintrdyfr {
-        #[doc = "VREFINT is OFF"]
-        NOTREADY = 0,
-        #[doc = "VREFINT is ready"]
-        READY = 0x01,
-    }
-    impl Vrefintrdyfr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vrefintrdyfr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vrefintrdyfr {
-        #[inline(always)]
-        fn from(val: u8) -> Vrefintrdyfr {
-            Vrefintrdyfr::from_bits(val)
-        }
-    }
-    impl From<Vrefintrdyfr> for u8 {
-        #[inline(always)]
-        fn from(val: Vrefintrdyfr) -> u8 {
-            Vrefintrdyfr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wufr {
-        #[doc = "No wakeup event occurred"]
-        NOWAKEUPEVENT = 0,
-        #[doc = "A wakeup event was received from the WKUP pin or from the RTC alarm (Alarm A or Alarm B), RTC Tamper event, RTC TimeStamp event or RTC Wakeup)"]
-        WAKEUPEVENT = 0x01,
-    }
-    impl Wufr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wufr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wufr {
-        #[inline(always)]
-        fn from(val: u8) -> Wufr {
-            Wufr::from_bits(val)
-        }
-    }
-    impl From<Wufr> for u8 {
-        #[inline(always)]
-        fn from(val: Wufr) -> u8 {
-            Wufr::to_bits(val)
         }
     }
 }

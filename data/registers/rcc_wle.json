@@ -1616,19 +1616,9 @@
         "value": 0
       },
       {
-        "name": "Div2",
-        "description": "hclk = SYSCLK divided by 2",
-        "value": 8
-      },
-      {
         "name": "Div3",
         "description": "hclk = SYSCLK divided by 3",
         "value": 1
-      },
-      {
-        "name": "Div4",
-        "description": "hclk = SYSCLK divided by 4",
-        "value": 9
       },
       {
         "name": "Div5",
@@ -1641,24 +1631,34 @@
         "value": 5
       },
       {
-        "name": "Div8",
-        "description": "hclk = SYSCLK divided by 8",
-        "value": 10
-      },
-      {
         "name": "Div10",
         "description": "hclk = SYSCLK divided by 8",
         "value": 6
       },
       {
-        "name": "Div16",
-        "description": "hclk = SYSCLK divided by 16",
-        "value": 11
-      },
-      {
         "name": "Div32",
         "description": "hclk = SYSCLK divided by 32",
         "value": 7
+      },
+      {
+        "name": "Div2",
+        "description": "hclk = SYSCLK divided by 2",
+        "value": 8
+      },
+      {
+        "name": "Div4",
+        "description": "hclk = SYSCLK divided by 4",
+        "value": 9
+      },
+      {
+        "name": "Div8",
+        "description": "hclk = SYSCLK divided by 8",
+        "value": 10
+      },
+      {
+        "name": "Div16",
+        "description": "hclk = SYSCLK divided by 16",
+        "value": 11
       },
       {
         "name": "Div64",

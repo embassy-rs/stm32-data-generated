@@ -56,62 +56,62 @@ impl Pwr {
     }
     #[doc = "Power Port A pull-up control register"]
     #[inline(always)]
-    pub const fn pucra(self) -> crate::common::Reg<regs::Pucra, crate::common::RW> {
+    pub const fn pucra(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
     }
     #[doc = "Power Port A pull-down control register"]
     #[inline(always)]
-    pub const fn pdcra(self) -> crate::common::Reg<regs::Pdcra, crate::common::RW> {
+    pub const fn pdcra(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
     }
     #[doc = "Power Port B pull-up control register"]
     #[inline(always)]
-    pub const fn pucrb(self) -> crate::common::Reg<regs::Pucrb, crate::common::RW> {
+    pub const fn pucrb(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
     }
     #[doc = "Power Port B pull-down control register"]
     #[inline(always)]
-    pub const fn pdcrb(self) -> crate::common::Reg<regs::Pdcrb, crate::common::RW> {
+    pub const fn pdcrb(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
     }
     #[doc = "Power Port C pull-up control register"]
     #[inline(always)]
-    pub const fn pucrc(self) -> crate::common::Reg<regs::Pucrc, crate::common::RW> {
+    pub const fn pucrc(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
     }
     #[doc = "Power Port C pull-down control register"]
     #[inline(always)]
-    pub const fn pdcrc(self) -> crate::common::Reg<regs::Pdcrc, crate::common::RW> {
+    pub const fn pdcrc(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
     }
     #[doc = "Power Port D pull-up control register"]
     #[inline(always)]
-    pub const fn pucrd(self) -> crate::common::Reg<regs::Pucrd, crate::common::RW> {
+    pub const fn pucrd(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
     }
     #[doc = "Power Port D pull-down control register"]
     #[inline(always)]
-    pub const fn pdcrd(self) -> crate::common::Reg<regs::Pdcrd, crate::common::RW> {
+    pub const fn pdcrd(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
     }
     #[doc = "Power Port E pull-up control register"]
     #[inline(always)]
-    pub const fn pucre(self) -> crate::common::Reg<regs::Pucre, crate::common::RW> {
+    pub const fn pucre(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
     }
     #[doc = "Power Port E pull-down control register"]
     #[inline(always)]
-    pub const fn pdcre(self) -> crate::common::Reg<regs::Pdcre, crate::common::RW> {
+    pub const fn pdcre(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
     }
     #[doc = "Power Port H pull-up control register"]
     #[inline(always)]
-    pub const fn pucrh(self) -> crate::common::Reg<regs::Pucrh, crate::common::RW> {
+    pub const fn pucrh(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
     }
     #[doc = "Power Port H pull-down control register"]
     #[inline(always)]
-    pub const fn pdcrh(self) -> crate::common::Reg<regs::Pdcrh, crate::common::RW> {
+    pub const fn pdcrh(self) -> crate::common::Reg<regs::Pxcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
     }
     #[doc = "CPU2 Power control register 1"]
@@ -203,60 +203,20 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct C2cr3(pub u32);
     impl C2cr3 {
-        #[doc = "Enable Wakeup pin WKUP1 for CPU2"]
+        #[doc = "Enable Wakeup pin"]
         #[inline(always)]
-        pub const fn ewup1(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn ewup(&self, n: usize) -> bool {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Enable Wakeup pin WKUP1 for CPU2"]
+        #[doc = "Enable Wakeup pin"]
         #[inline(always)]
-        pub fn set_ewup1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP2 for CPU2"]
-        #[inline(always)]
-        pub const fn ewup2(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP2 for CPU2"]
-        #[inline(always)]
-        pub fn set_ewup2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP3 for CPU2"]
-        #[inline(always)]
-        pub const fn ewup3(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP3 for CPU2"]
-        #[inline(always)]
-        pub fn set_ewup3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP4 for CPU2"]
-        #[inline(always)]
-        pub const fn ewup4(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP4 for CPU2"]
-        #[inline(always)]
-        pub fn set_ewup4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP5 for CPU2"]
-        #[inline(always)]
-        pub const fn ewup5(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP5 for CPU2"]
-        #[inline(always)]
-        pub fn set_ewup5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        pub fn set_ewup(&mut self, n: usize, val: bool) {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Enable BLE host wakeup interrupt for CPU2"]
         #[inline(always)]
@@ -360,14 +320,14 @@ pub mod regs {
         }
         #[doc = "Voltage scaling range selection"]
         #[inline(always)]
-        pub const fn vos(&self) -> u8 {
+        pub const fn vos(&self) -> super::vals::Vos {
             let val = (self.0 >> 9usize) & 0x03;
-            val as u8
+            super::vals::Vos::from_bits(val as u8)
         }
         #[doc = "Voltage scaling range selection"]
         #[inline(always)]
-        pub fn set_vos(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 9usize)) | (((val as u32) & 0x03) << 9usize);
+        pub fn set_vos(&mut self, val: super::vals::Vos) {
+            self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
         }
         #[doc = "Low-power run"]
         #[inline(always)]
@@ -459,60 +419,20 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr3(pub u32);
     impl Cr3 {
-        #[doc = "Enable Wakeup pin WKUP1"]
+        #[doc = "Enable Wakeup pin"]
         #[inline(always)]
-        pub const fn ewup1(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn ewup(&self, n: usize) -> bool {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Enable Wakeup pin WKUP1"]
+        #[doc = "Enable Wakeup pin"]
         #[inline(always)]
-        pub fn set_ewup1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP2"]
-        #[inline(always)]
-        pub const fn ewup2(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP2"]
-        #[inline(always)]
-        pub fn set_ewup2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP3"]
-        #[inline(always)]
-        pub const fn ewup3(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP3"]
-        #[inline(always)]
-        pub fn set_ewup3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP4"]
-        #[inline(always)]
-        pub const fn ewup4(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP4"]
-        #[inline(always)]
-        pub fn set_ewup4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Enable Wakeup pin WKUP5"]
-        #[inline(always)]
-        pub const fn ewup5(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Wakeup pin WKUP5"]
-        #[inline(always)]
-        pub fn set_ewup5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        pub fn set_ewup(&mut self, n: usize, val: bool) {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Enable BORH and Step Down counverter forced in Bypass interrups for CPU1"]
         #[inline(always)]
@@ -616,58 +536,18 @@ pub mod regs {
     impl Cr4 {
         #[doc = "Wakeup pin WKUP1 polarity"]
         #[inline(always)]
-        pub const fn wp1(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn wp1(&self, n: usize) -> bool {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Wakeup pin WKUP1 polarity"]
         #[inline(always)]
-        pub fn set_wp1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Wakeup pin WKUP2 polarity"]
-        #[inline(always)]
-        pub const fn wp2(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP2 polarity"]
-        #[inline(always)]
-        pub fn set_wp2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Wakeup pin WKUP3 polarity"]
-        #[inline(always)]
-        pub const fn wp3(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP3 polarity"]
-        #[inline(always)]
-        pub fn set_wp3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Wakeup pin WKUP4 polarity"]
-        #[inline(always)]
-        pub const fn wp4(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP4 polarity"]
-        #[inline(always)]
-        pub fn set_wp4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Wakeup pin WKUP5 polarity"]
-        #[inline(always)]
-        pub const fn wp5(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup pin WKUP5 polarity"]
-        #[inline(always)]
-        pub fn set_wp5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        pub fn set_wp1(&mut self, n: usize, val: bool) {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "VBAT battery charging enable"]
         #[inline(always)]
@@ -909,1688 +789,31 @@ pub mod regs {
             Extscr(0)
         }
     }
-    #[doc = "Power Port A pull-down control register"]
+    #[doc = "Power Port pull-up/down control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdcra(pub u32);
-    impl Pdcra {
-        #[doc = "Port A pull-down bit y (y=0..15)"]
+    pub struct Pxcr(pub u32);
+    impl Pxcr {
+        #[doc = "Port A pull-up/down bit y (y=0..15)"]
         #[inline(always)]
-        pub const fn pd0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn pd(&self, n: usize) -> bool {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
+        #[doc = "Port A pull-up/down bit y (y=0..15)"]
         #[inline(always)]
-        pub fn set_pd0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        pub fn set_pd(&mut self, n: usize, val: bool) {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
-    impl Default for Pdcra {
+    impl Default for Pxcr {
         #[inline(always)]
-        fn default() -> Pdcra {
-            Pdcra(0)
-        }
-    }
-    #[doc = "Power Port B pull-down control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdcrb(pub u32);
-    impl Pdcrb {
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pdcrb {
-        #[inline(always)]
-        fn default() -> Pdcrb {
-            Pdcrb(0)
-        }
-    }
-    #[doc = "Power Port C pull-down control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdcrc(pub u32);
-    impl Pdcrc {
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pdcrc {
-        #[inline(always)]
-        fn default() -> Pdcrc {
-            Pdcrc(0)
-        }
-    }
-    #[doc = "Power Port D pull-down control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdcrd(pub u32);
-    impl Pdcrd {
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pdcrd {
-        #[inline(always)]
-        fn default() -> Pdcrd {
-            Pdcrd(0)
-        }
-    }
-    #[doc = "Power Port E pull-down control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdcre(pub u32);
-    impl Pdcre {
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pd4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-down bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pd4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-    }
-    impl Default for Pdcre {
-        #[inline(always)]
-        fn default() -> Pdcre {
-            Pdcre(0)
-        }
-    }
-    #[doc = "Power Port H pull-down control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdcrh(pub u32);
-    impl Pdcrh {
-        #[doc = "Port H pull-down bit y (y=0..1)"]
-        #[inline(always)]
-        pub const fn pd0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port H pull-down bit y (y=0..1)"]
-        #[inline(always)]
-        pub fn set_pd0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port H pull-down bit y (y=0..1)"]
-        #[inline(always)]
-        pub const fn pd1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port H pull-down bit y (y=0..1)"]
-        #[inline(always)]
-        pub fn set_pd1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port H pull-down bit y (y=0..1)"]
-        #[inline(always)]
-        pub const fn pd3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port H pull-down bit y (y=0..1)"]
-        #[inline(always)]
-        pub fn set_pd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-    }
-    impl Default for Pdcrh {
-        #[inline(always)]
-        fn default() -> Pdcrh {
-            Pdcrh(0)
-        }
-    }
-    #[doc = "Power Port A pull-up control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pucra(pub u32);
-    impl Pucra {
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port A pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pucra {
-        #[inline(always)]
-        fn default() -> Pucra {
-            Pucra(0)
-        }
-    }
-    #[doc = "Power Port B pull-up control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pucrb(pub u32);
-    impl Pucrb {
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port B pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pucrb {
-        #[inline(always)]
-        fn default() -> Pucrb {
-            Pucrb(0)
-        }
-    }
-    #[doc = "Power Port C pull-up control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pucrc(pub u32);
-    impl Pucrc {
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port C pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pucrc {
-        #[inline(always)]
-        fn default() -> Pucrc {
-            Pucrc(0)
-        }
-    }
-    #[doc = "Power Port D pull-up control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pucrd(pub u32);
-    impl Pucrd {
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu5(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu6(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu7(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu8(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu9(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu10(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu11(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu12(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu13(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu14(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu15(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port D pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Pucrd {
-        #[inline(always)]
-        fn default() -> Pucrd {
-            Pucrd(0)
-        }
-    }
-    #[doc = "Power Port E pull-up control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pucre(pub u32);
-    impl Pucre {
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu2(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub const fn pu4(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port E pull-up bit y (y=0..15)"]
-        #[inline(always)]
-        pub fn set_pu4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-    }
-    impl Default for Pucre {
-        #[inline(always)]
-        fn default() -> Pucre {
-            Pucre(0)
-        }
-    }
-    #[doc = "Power Port H pull-up control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pucrh(pub u32);
-    impl Pucrh {
-        #[doc = "Port H pull-up bit y (y=0..1)"]
-        #[inline(always)]
-        pub const fn pu0(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port H pull-up bit y (y=0..1)"]
-        #[inline(always)]
-        pub fn set_pu0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Port H pull-up bit y (y=0..1)"]
-        #[inline(always)]
-        pub const fn pu1(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port H pull-up bit y (y=0..1)"]
-        #[inline(always)]
-        pub fn set_pu1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Port H pull-up bit y (y=0..1)"]
-        #[inline(always)]
-        pub const fn pu3(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Port H pull-up bit y (y=0..1)"]
-        #[inline(always)]
-        pub fn set_pu3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-    }
-    impl Default for Pucrh {
-        #[inline(always)]
-        fn default() -> Pucrh {
-            Pucrh(0)
+        fn default() -> Pxcr {
+            Pxcr(0)
         }
     }
     #[doc = "Power status clear register"]
@@ -2600,58 +823,18 @@ pub mod regs {
     impl Scr {
         #[doc = "Clear wakeup flag 1"]
         #[inline(always)]
-        pub const fn cwuf1(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn cwuf(&self, n: usize) -> bool {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Clear wakeup flag 1"]
         #[inline(always)]
-        pub fn set_cwuf1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Clear wakeup flag 2"]
-        #[inline(always)]
-        pub const fn cwuf2(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clear wakeup flag 2"]
-        #[inline(always)]
-        pub fn set_cwuf2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Clear wakeup flag 3"]
-        #[inline(always)]
-        pub const fn cwuf3(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clear wakeup flag 3"]
-        #[inline(always)]
-        pub fn set_cwuf3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Clear wakeup flag 4"]
-        #[inline(always)]
-        pub const fn cwuf4(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clear wakeup flag 4"]
-        #[inline(always)]
-        pub fn set_cwuf4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Clear wakeup flag 5"]
-        #[inline(always)]
-        pub const fn cwuf5(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Clear wakeup flag 5"]
-        #[inline(always)]
-        pub fn set_cwuf5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        pub fn set_cwuf(&mut self, n: usize, val: bool) {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Clear SMPS Step Down converter forced in Bypass interrupt flag"]
         #[inline(always)]
@@ -2755,58 +938,18 @@ pub mod regs {
     impl Sr1 {
         #[doc = "Wakeup flag 1"]
         #[inline(always)]
-        pub const fn cwuf1(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn cwuf(&self, n: usize) -> bool {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Wakeup flag 1"]
         #[inline(always)]
-        pub fn set_cwuf1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Wakeup flag 2"]
-        #[inline(always)]
-        pub const fn cwuf2(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup flag 2"]
-        #[inline(always)]
-        pub fn set_cwuf2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Wakeup flag 3"]
-        #[inline(always)]
-        pub const fn cwuf3(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup flag 3"]
-        #[inline(always)]
-        pub fn set_cwuf3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Wakeup flag 4"]
-        #[inline(always)]
-        pub const fn cwuf4(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup flag 4"]
-        #[inline(always)]
-        pub fn set_cwuf4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Wakeup flag 5"]
-        #[inline(always)]
-        pub const fn cwuf5(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Wakeup flag 5"]
-        #[inline(always)]
-        pub fn set_cwuf5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        pub fn set_cwuf(&mut self, n: usize, val: bool) {
+            assert!(n < 5usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Step Down converter forced in Bypass interrupt flag"]
         #[inline(always)]
@@ -3012,6 +1155,40 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sr2 {
             Sr2(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Vos {
+        _RESERVED_0 = 0,
+        #[doc = "Range 1"]
+        RANGE1 = 0x01,
+        #[doc = "Range 2"]
+        RANGE2 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Vos {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Vos {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Vos {
+        #[inline(always)]
+        fn from(val: u8) -> Vos {
+            Vos::from_bits(val)
+        }
+    }
+    impl From<Vos> for u8 {
+        #[inline(always)]
+        fn from(val: Vos) -> u8 {
+            Vos::to_bits(val)
         }
     }
 }

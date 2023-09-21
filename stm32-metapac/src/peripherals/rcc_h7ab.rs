@@ -66,13 +66,13 @@ impl Rcc {
     }
     #[doc = "RCC PLL1 Dividers Configuration Register"]
     #[inline(always)]
-    pub const fn plldivr(self, n: usize) -> crate::common::Reg<regs::Pll1divr, crate::common::RW> {
+    pub const fn plldivr(self, n: usize) -> crate::common::Reg<regs::Plldivr, crate::common::RW> {
         assert!(n < 3usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize + n * 8usize) as _) }
     }
     #[doc = "RCC PLL1 Fractional Divider Register"]
     #[inline(always)]
-    pub const fn pllfracr(self, n: usize) -> crate::common::Reg<regs::Pll1fracr, crate::common::RW> {
+    pub const fn pllfracr(self, n: usize) -> crate::common::Reg<regs::Pllfracr, crate::common::RW> {
         assert!(n < 3usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize + n * 8usize) as _) }
     }
@@ -4521,13 +4521,13 @@ pub mod regs {
         }
         #[doc = "System clock switch status"]
         #[inline(always)]
-        pub const fn sws(&self) -> super::vals::Sws {
+        pub const fn sws(&self) -> super::vals::Sw {
             let val = (self.0 >> 3usize) & 0x07;
-            super::vals::Sws::from_bits(val as u8)
+            super::vals::Sw::from_bits(val as u8)
         }
         #[doc = "System clock switch status"]
         #[inline(always)]
-        pub fn set_sws(&mut self, val: super::vals::Sws) {
+        pub fn set_sws(&mut self, val: super::vals::Sw) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val.to_bits() as u32) & 0x07) << 3usize);
         }
         #[doc = "System clock selection after a wake up from system Stop"]
@@ -6015,243 +6015,6 @@ pub mod regs {
             Hsicfgr(0)
         }
     }
-    #[doc = "RCC PLL1 Dividers Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1divr(pub u32);
-    impl Pll1divr {
-        #[doc = "Multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub const fn divn1(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
-        }
-        #[doc = "Multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub fn set_divn1(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
-        }
-        #[doc = "PLL1 DIVP division factor"]
-        #[inline(always)]
-        pub const fn divp1(&self) -> super::vals::Divp {
-            let val = (self.0 >> 9usize) & 0x7f;
-            super::vals::Divp::from_bits(val as u8)
-        }
-        #[doc = "PLL1 DIVP division factor"]
-        #[inline(always)]
-        pub fn set_divp1(&mut self, val: super::vals::Divp) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val.to_bits() as u32) & 0x7f) << 9usize);
-        }
-        #[doc = "PLL1 DIVQ division factor"]
-        #[inline(always)]
-        pub const fn divq1(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL1 DIVQ division factor"]
-        #[inline(always)]
-        pub fn set_divq1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-        #[doc = "PLL1 DIVR division factor"]
-        #[inline(always)]
-        pub const fn divr1(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL1 DIVR division factor"]
-        #[inline(always)]
-        pub fn set_divr1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
-        }
-    }
-    impl Default for Pll1divr {
-        #[inline(always)]
-        fn default() -> Pll1divr {
-            Pll1divr(0)
-        }
-    }
-    #[doc = "RCC PLL1 Fractional Divider Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1fracr(pub u32);
-    impl Pll1fracr {
-        #[doc = "Fractional part of the multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub const fn fracn1(&self) -> u16 {
-            let val = (self.0 >> 3usize) & 0x1fff;
-            val as u16
-        }
-        #[doc = "Fractional part of the multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub fn set_fracn1(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
-        }
-    }
-    impl Default for Pll1fracr {
-        #[inline(always)]
-        fn default() -> Pll1fracr {
-            Pll1fracr(0)
-        }
-    }
-    #[doc = "RCC PLL2 Dividers Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2divr(pub u32);
-    impl Pll2divr {
-        #[doc = "Multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub const fn divn2(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
-        }
-        #[doc = "Multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub fn set_divn2(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
-        }
-        #[doc = "PLL1 DIVP division factor"]
-        #[inline(always)]
-        pub const fn divp2(&self) -> u8 {
-            let val = (self.0 >> 9usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL1 DIVP division factor"]
-        #[inline(always)]
-        pub fn set_divp2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
-        }
-        #[doc = "PLL1 DIVQ division factor"]
-        #[inline(always)]
-        pub const fn divq2(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL1 DIVQ division factor"]
-        #[inline(always)]
-        pub fn set_divq2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-        #[doc = "PLL1 DIVR division factor"]
-        #[inline(always)]
-        pub const fn divr2(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL1 DIVR division factor"]
-        #[inline(always)]
-        pub fn set_divr2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
-        }
-    }
-    impl Default for Pll2divr {
-        #[inline(always)]
-        fn default() -> Pll2divr {
-            Pll2divr(0)
-        }
-    }
-    #[doc = "RCC PLL2 Fractional Divider Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2fracr(pub u32);
-    impl Pll2fracr {
-        #[doc = "Fractional part of the multiplication factor for PLL VCO"]
-        #[inline(always)]
-        pub const fn fracn2(&self) -> u16 {
-            let val = (self.0 >> 3usize) & 0x1fff;
-            val as u16
-        }
-        #[doc = "Fractional part of the multiplication factor for PLL VCO"]
-        #[inline(always)]
-        pub fn set_fracn2(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
-        }
-    }
-    impl Default for Pll2fracr {
-        #[inline(always)]
-        fn default() -> Pll2fracr {
-            Pll2fracr(0)
-        }
-    }
-    #[doc = "RCC PLL3 Dividers Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3divr(pub u32);
-    impl Pll3divr {
-        #[doc = "Multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub const fn divn3(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
-        }
-        #[doc = "Multiplication factor for PLL1 VCO"]
-        #[inline(always)]
-        pub fn set_divn3(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
-        }
-        #[doc = "PLL DIVP division factor"]
-        #[inline(always)]
-        pub const fn divp3(&self) -> u8 {
-            let val = (self.0 >> 9usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL DIVP division factor"]
-        #[inline(always)]
-        pub fn set_divp3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
-        }
-        #[doc = "PLL DIVQ division factor"]
-        #[inline(always)]
-        pub const fn divq3(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL DIVQ division factor"]
-        #[inline(always)]
-        pub fn set_divq3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-        #[doc = "PLL DIVR division factor"]
-        #[inline(always)]
-        pub const fn divr3(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL DIVR division factor"]
-        #[inline(always)]
-        pub fn set_divr3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
-        }
-    }
-    impl Default for Pll3divr {
-        #[inline(always)]
-        fn default() -> Pll3divr {
-            Pll3divr(0)
-        }
-    }
-    #[doc = "RCC PLL3 Fractional Divider Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3fracr(pub u32);
-    impl Pll3fracr {
-        #[doc = "Fractional part of the multiplication factor for PLL3 VCO"]
-        #[inline(always)]
-        pub const fn fracn3(&self) -> u16 {
-            let val = (self.0 >> 3usize) & 0x1fff;
-            val as u16
-        }
-        #[doc = "Fractional part of the multiplication factor for PLL3 VCO"]
-        #[inline(always)]
-        pub fn set_fracn3(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
-        }
-    }
-    impl Default for Pll3fracr {
-        #[inline(always)]
-        fn default() -> Pll3fracr {
-            Pll3fracr(0)
-        }
-    }
     #[doc = "RCC PLLs Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6390,6 +6153,85 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pllckselr {
             Pllckselr(0)
+        }
+    }
+    #[doc = "RCC PLL1 Dividers Configuration Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Plldivr(pub u32);
+    impl Plldivr {
+        #[doc = "Multiplication factor for PLL1 VCO"]
+        #[inline(always)]
+        pub const fn plln(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "Multiplication factor for PLL1 VCO"]
+        #[inline(always)]
+        pub fn set_plln(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+        #[doc = "PLL DIVP division factor"]
+        #[inline(always)]
+        pub const fn pllp(&self) -> u8 {
+            let val = (self.0 >> 9usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "PLL DIVP division factor"]
+        #[inline(always)]
+        pub fn set_pllp(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
+        }
+        #[doc = "PLL DIVQ division factor"]
+        #[inline(always)]
+        pub const fn pllq(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "PLL DIVQ division factor"]
+        #[inline(always)]
+        pub fn set_pllq(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+        #[doc = "PLL DIVR division factor"]
+        #[inline(always)]
+        pub const fn pllr(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "PLL DIVR division factor"]
+        #[inline(always)]
+        pub fn set_pllr(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
+        }
+    }
+    impl Default for Plldivr {
+        #[inline(always)]
+        fn default() -> Plldivr {
+            Plldivr(0)
+        }
+    }
+    #[doc = "RCC PLL Fractional Divider Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pllfracr(pub u32);
+    impl Pllfracr {
+        #[doc = "Fractional part of the multiplication factor for PLL VCO"]
+        #[inline(always)]
+        pub const fn fracn(&self) -> u16 {
+            let val = (self.0 >> 3usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "Fractional part of the multiplication factor for PLL VCO"]
+        #[inline(always)]
+        pub fn set_fracn(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
+        }
+    }
+    impl Default for Pllfracr {
+        #[inline(always)]
+        fn default() -> Pllfracr {
+            Pllfracr(0)
         }
     }
     #[doc = "RCC Reset Status Register"]
@@ -6654,225 +6496,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dfsdmsel) -> u8 {
             Dfsdmsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Divp {
-        #[doc = "pll_p_ck = vco_ck"]
-        DIV1 = 0,
-        #[doc = "pll_p_ck = vco_ck / 2"]
-        DIV2 = 0x01,
-        _RESERVED_2 = 0x02,
-        #[doc = "pll_p_ck = vco_ck / 4"]
-        DIV4 = 0x03,
-        _RESERVED_4 = 0x04,
-        #[doc = "pll_p_ck = vco_ck / 6"]
-        DIV6 = 0x05,
-        _RESERVED_6 = 0x06,
-        #[doc = "pll_p_ck = vco_ck / 8"]
-        DIV8 = 0x07,
-        _RESERVED_8 = 0x08,
-        #[doc = "pll_p_ck = vco_ck / 10"]
-        DIV10 = 0x09,
-        _RESERVED_a = 0x0a,
-        #[doc = "pll_p_ck = vco_ck / 12"]
-        DIV12 = 0x0b,
-        _RESERVED_c = 0x0c,
-        #[doc = "pll_p_ck = vco_ck / 14"]
-        DIV14 = 0x0d,
-        _RESERVED_e = 0x0e,
-        #[doc = "pll_p_ck = vco_ck / 16"]
-        DIV16 = 0x0f,
-        _RESERVED_10 = 0x10,
-        #[doc = "pll_p_ck = vco_ck / 18"]
-        DIV18 = 0x11,
-        _RESERVED_12 = 0x12,
-        #[doc = "pll_p_ck = vco_ck / 20"]
-        DIV20 = 0x13,
-        _RESERVED_14 = 0x14,
-        #[doc = "pll_p_ck = vco_ck / 22"]
-        DIV22 = 0x15,
-        _RESERVED_16 = 0x16,
-        #[doc = "pll_p_ck = vco_ck / 24"]
-        DIV24 = 0x17,
-        _RESERVED_18 = 0x18,
-        #[doc = "pll_p_ck = vco_ck / 26"]
-        DIV26 = 0x19,
-        _RESERVED_1a = 0x1a,
-        #[doc = "pll_p_ck = vco_ck / 28"]
-        DIV28 = 0x1b,
-        _RESERVED_1c = 0x1c,
-        #[doc = "pll_p_ck = vco_ck / 30"]
-        DIV30 = 0x1d,
-        _RESERVED_1e = 0x1e,
-        #[doc = "pll_p_ck = vco_ck / 32"]
-        DIV32 = 0x1f,
-        _RESERVED_20 = 0x20,
-        #[doc = "pll_p_ck = vco_ck / 34"]
-        DIV34 = 0x21,
-        _RESERVED_22 = 0x22,
-        #[doc = "pll_p_ck = vco_ck / 36"]
-        DIV36 = 0x23,
-        _RESERVED_24 = 0x24,
-        #[doc = "pll_p_ck = vco_ck / 38"]
-        DIV38 = 0x25,
-        _RESERVED_26 = 0x26,
-        #[doc = "pll_p_ck = vco_ck / 40"]
-        DIV40 = 0x27,
-        _RESERVED_28 = 0x28,
-        #[doc = "pll_p_ck = vco_ck / 42"]
-        DIV42 = 0x29,
-        _RESERVED_2a = 0x2a,
-        #[doc = "pll_p_ck = vco_ck / 44"]
-        DIV44 = 0x2b,
-        _RESERVED_2c = 0x2c,
-        #[doc = "pll_p_ck = vco_ck / 46"]
-        DIV46 = 0x2d,
-        _RESERVED_2e = 0x2e,
-        #[doc = "pll_p_ck = vco_ck / 48"]
-        DIV48 = 0x2f,
-        _RESERVED_30 = 0x30,
-        #[doc = "pll_p_ck = vco_ck / 50"]
-        DIV50 = 0x31,
-        _RESERVED_32 = 0x32,
-        #[doc = "pll_p_ck = vco_ck / 52"]
-        DIV52 = 0x33,
-        _RESERVED_34 = 0x34,
-        #[doc = "pll_p_ck = vco_ck / 54"]
-        DIV54 = 0x35,
-        _RESERVED_36 = 0x36,
-        #[doc = "pll_p_ck = vco_ck / 56"]
-        DIV56 = 0x37,
-        _RESERVED_38 = 0x38,
-        #[doc = "pll_p_ck = vco_ck / 58"]
-        DIV58 = 0x39,
-        _RESERVED_3a = 0x3a,
-        #[doc = "pll_p_ck = vco_ck / 60"]
-        DIV60 = 0x3b,
-        _RESERVED_3c = 0x3c,
-        #[doc = "pll_p_ck = vco_ck / 62"]
-        DIV62 = 0x3d,
-        _RESERVED_3e = 0x3e,
-        #[doc = "pll_p_ck = vco_ck / 64"]
-        DIV64 = 0x3f,
-        _RESERVED_40 = 0x40,
-        #[doc = "pll_p_ck = vco_ck / 66"]
-        DIV66 = 0x41,
-        _RESERVED_42 = 0x42,
-        #[doc = "pll_p_ck = vco_ck / 68"]
-        DIV68 = 0x43,
-        _RESERVED_44 = 0x44,
-        #[doc = "pll_p_ck = vco_ck / 70"]
-        DIV70 = 0x45,
-        _RESERVED_46 = 0x46,
-        #[doc = "pll_p_ck = vco_ck / 72"]
-        DIV72 = 0x47,
-        _RESERVED_48 = 0x48,
-        #[doc = "pll_p_ck = vco_ck / 74"]
-        DIV74 = 0x49,
-        _RESERVED_4a = 0x4a,
-        #[doc = "pll_p_ck = vco_ck / 76"]
-        DIV76 = 0x4b,
-        _RESERVED_4c = 0x4c,
-        #[doc = "pll_p_ck = vco_ck / 78"]
-        DIV78 = 0x4d,
-        _RESERVED_4e = 0x4e,
-        #[doc = "pll_p_ck = vco_ck / 80"]
-        DIV80 = 0x4f,
-        _RESERVED_50 = 0x50,
-        #[doc = "pll_p_ck = vco_ck / 82"]
-        DIV82 = 0x51,
-        _RESERVED_52 = 0x52,
-        #[doc = "pll_p_ck = vco_ck / 84"]
-        DIV84 = 0x53,
-        _RESERVED_54 = 0x54,
-        #[doc = "pll_p_ck = vco_ck / 86"]
-        DIV86 = 0x55,
-        _RESERVED_56 = 0x56,
-        #[doc = "pll_p_ck = vco_ck / 88"]
-        DIV88 = 0x57,
-        _RESERVED_58 = 0x58,
-        #[doc = "pll_p_ck = vco_ck / 90"]
-        DIV90 = 0x59,
-        _RESERVED_5a = 0x5a,
-        #[doc = "pll_p_ck = vco_ck / 92"]
-        DIV92 = 0x5b,
-        _RESERVED_5c = 0x5c,
-        #[doc = "pll_p_ck = vco_ck / 94"]
-        DIV94 = 0x5d,
-        _RESERVED_5e = 0x5e,
-        #[doc = "pll_p_ck = vco_ck / 96"]
-        DIV96 = 0x5f,
-        _RESERVED_60 = 0x60,
-        #[doc = "pll_p_ck = vco_ck / 98"]
-        DIV98 = 0x61,
-        _RESERVED_62 = 0x62,
-        #[doc = "pll_p_ck = vco_ck / 100"]
-        DIV100 = 0x63,
-        _RESERVED_64 = 0x64,
-        #[doc = "pll_p_ck = vco_ck / 102"]
-        DIV102 = 0x65,
-        _RESERVED_66 = 0x66,
-        #[doc = "pll_p_ck = vco_ck / 104"]
-        DIV104 = 0x67,
-        _RESERVED_68 = 0x68,
-        #[doc = "pll_p_ck = vco_ck / 106"]
-        DIV106 = 0x69,
-        _RESERVED_6a = 0x6a,
-        #[doc = "pll_p_ck = vco_ck / 108"]
-        DIV108 = 0x6b,
-        _RESERVED_6c = 0x6c,
-        #[doc = "pll_p_ck = vco_ck / 110"]
-        DIV110 = 0x6d,
-        _RESERVED_6e = 0x6e,
-        #[doc = "pll_p_ck = vco_ck / 112"]
-        DIV112 = 0x6f,
-        _RESERVED_70 = 0x70,
-        #[doc = "pll_p_ck = vco_ck / 114"]
-        DIV114 = 0x71,
-        _RESERVED_72 = 0x72,
-        #[doc = "pll_p_ck = vco_ck / 116"]
-        DIV116 = 0x73,
-        _RESERVED_74 = 0x74,
-        #[doc = "pll_p_ck = vco_ck / 118"]
-        DIV118 = 0x75,
-        _RESERVED_76 = 0x76,
-        #[doc = "pll_p_ck = vco_ck / 120"]
-        DIV120 = 0x77,
-        _RESERVED_78 = 0x78,
-        #[doc = "pll_p_ck = vco_ck / 122"]
-        DIV122 = 0x79,
-        _RESERVED_7a = 0x7a,
-        #[doc = "pll_p_ck = vco_ck / 124"]
-        DIV124 = 0x7b,
-        _RESERVED_7c = 0x7c,
-        #[doc = "pll_p_ck = vco_ck / 126"]
-        DIV126 = 0x7d,
-        _RESERVED_7e = 0x7e,
-        #[doc = "pll_p_ck = vco_ck / 128"]
-        DIV128 = 0x7f,
-    }
-    impl Divp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Divp {
-            unsafe { core::mem::transmute(val & 0x7f) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Divp {
-        #[inline(always)]
-        fn from(val: u8) -> Divp {
-            Divp::from_bits(val)
-        }
-    }
-    impl From<Divp> for u8 {
-        #[inline(always)]
-        fn from(val: Divp) -> u8 {
-            Divp::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -7881,44 +7504,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Swpsel) -> u8 {
             Swpsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sws {
-        #[doc = "HSI oscillator used as system clock"]
-        HSI = 0,
-        #[doc = "CSI oscillator used as system clock"]
-        CSI = 0x01,
-        #[doc = "HSE oscillator used as system clock"]
-        HSE = 0x02,
-        #[doc = "PLL1 used as system clock"]
-        PLL1 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Sws {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sws {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sws {
-        #[inline(always)]
-        fn from(val: u8) -> Sws {
-            Sws::from_bits(val)
-        }
-    }
-    impl From<Sws> for u8 {
-        #[inline(always)]
-        fn from(val: Sws) -> u8 {
-            Sws::to_bits(val)
         }
     }
     #[repr(u8)]

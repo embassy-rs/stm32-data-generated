@@ -1305,13 +1305,13 @@ pub mod regs {
         }
         #[doc = "System Clock Switch Status"]
         #[inline(always)]
-        pub const fn sws(&self) -> super::vals::Sws {
+        pub const fn sws(&self) -> super::vals::Sw {
             let val = (self.0 >> 2usize) & 0x03;
-            super::vals::Sws::from_bits(val as u8)
+            super::vals::Sw::from_bits(val as u8)
         }
         #[doc = "System Clock Switch Status"]
         #[inline(always)]
-        pub fn set_sws(&mut self, val: super::vals::Sws) {
+        pub fn set_sws(&mut self, val: super::vals::Sw) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "AHB prescaler"]
@@ -2908,11 +2908,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
-        #[doc = "HSI selected as system clock"]
+        #[doc = "HSI oscillator used as system clock"]
         HSI = 0,
-        #[doc = "HSE selected as system clock"]
+        #[doc = "HSE oscillator used as system clock"]
         HSE = 0x01,
-        #[doc = "PLL selected as system clock"]
+        #[doc = "PLL used as system clock"]
         PLL = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2936,39 +2936,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Sw) -> u8 {
             Sw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sws {
-        #[doc = "HSI oscillator used as system clock"]
-        HSI = 0,
-        #[doc = "HSE oscillator used as system clock"]
-        HSE = 0x01,
-        #[doc = "PLL used as system clock"]
-        PLL = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Sws {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sws {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sws {
-        #[inline(always)]
-        fn from(val: u8) -> Sws {
-            Sws::from_bits(val)
-        }
-    }
-    impl From<Sws> for u8 {
-        #[inline(always)]
-        fn from(val: Sws) -> u8 {
-            Sws::to_bits(val)
         }
     }
     #[repr(u8)]

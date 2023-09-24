@@ -754,7 +754,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "PWR",
         address: 1073770496,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pwr",
+            version: "f1",
+            block: "PWR",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {

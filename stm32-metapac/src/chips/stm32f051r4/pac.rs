@@ -156,7 +156,7 @@ pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00 as usize 
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800 as usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
-pub const PWR: *mut () = 0x4000_7000 as usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _) };
 pub const CEC: *mut () = 0x4000_7800 as usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
@@ -212,6 +212,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/pwr_f0.rs"]
+pub mod pwr;
 #[path = "../../peripherals/rcc_f0.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rtc_v2f0.rs"]

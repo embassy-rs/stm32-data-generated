@@ -175,7 +175,7 @@ pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_5c00 as usize as _)
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6000 as usize as _) };
 pub const CAN: can::Can = unsafe { can::Can::from_ptr(0x4000_6400 as usize as _) };
 pub const CRS: *mut () = 0x4000_6c00 as usize as _;
-pub const PWR: *mut () = 0x4000_7000 as usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
 pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _) };
 pub const CEC: *mut () = 0x4000_7800 as usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
@@ -234,6 +234,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/pwr_f0.rs"]
+pub mod pwr;
 #[path = "../../peripherals/rcc_f0.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rtc_v2f0.rs"]

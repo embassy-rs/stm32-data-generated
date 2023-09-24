@@ -136,7 +136,7 @@ pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400 as 
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_5c00 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6000 as usize as _) };
-pub const PWR: *mut () = 0x4000_7000 as usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400 as usize as _) };
 pub const ADC: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400 as usize as _) };
@@ -184,6 +184,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/pwr_f0x0.rs"]
+pub mod pwr;
 #[path = "../../peripherals/rcc_f0.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rtc_v2f0.rs"]

@@ -575,7 +575,14 @@ const PERIPHERALS: &'static [Peripheral] = &[
         name: "RTC",
         address: 1073752064,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "APB1",
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR1",
+                field: "RTCAPBEN",
+            }),
+            reset: None,
+        }),
         pins: &[PeripheralPin {
             pin: "PB7",
             signal: "REFIN",

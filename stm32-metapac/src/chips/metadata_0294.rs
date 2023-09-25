@@ -1011,7 +1011,14 @@ const PERIPHERALS: &'static [Peripheral] = &[
             version: "v3",
             block: "RTC",
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "APB1",
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR1",
+                field: "RTCAPBEN",
+            }),
+            reset: None,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA0",

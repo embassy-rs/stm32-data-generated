@@ -2732,6 +2732,13 @@
                         "version": "v3u5",
                         "block": "RTC"
                     },
+                    "rcc": {
+                        "clock": "APB3",
+                        "enable": {
+                            "register": "APB3ENR",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB2",

@@ -4650,6 +4650,13 @@
                         "version": "v2h7",
                         "block": "RTC"
                     },
+                    "rcc": {
+                        "clock": "APB4",
+                        "enable": {
+                            "register": "APB4ENR",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB2",
@@ -13915,6 +13922,13 @@
                         "kind": "rtc",
                         "version": "v2h7",
                         "block": "RTC"
+                    },
+                    "rcc": {
+                        "clock": "APB4",
+                        "enable": {
+                            "register": "APB4ENR",
+                            "field": "RTCAPBEN"
+                        }
                     },
                     "pins": [
                         {

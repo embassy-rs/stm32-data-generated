@@ -1398,6 +1398,13 @@
                         "version": "v3",
                         "block": "RTC"
                     },
+                    "rcc": {
+                        "clock": "APB1",
+                        "enable": {
+                            "register": "APB1ENR1",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -3839,6 +3846,13 @@
                         "kind": "rtc",
                         "version": "v3",
                         "block": "RTC"
+                    },
+                    "rcc": {
+                        "clock": "APB1",
+                        "enable": {
+                            "register": "APB1ENR1",
+                            "field": "RTCAPBEN"
+                        }
                     },
                     "pins": [
                         {

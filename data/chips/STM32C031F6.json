@@ -596,6 +596,13 @@
                 {
                     "name": "RTC",
                     "address": 1073752064,
+                    "rcc": {
+                        "clock": "APB1",
+                        "enable": {
+                            "register": "APBENR1",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA4",

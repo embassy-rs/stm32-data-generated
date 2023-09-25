@@ -1587,6 +1587,13 @@
                         "version": "v3",
                         "block": "RTC"
                     },
+                    "rcc": {
+                        "clock": "APB1",
+                        "enable": {
+                            "register": "APBENR1",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

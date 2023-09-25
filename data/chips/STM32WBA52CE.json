@@ -1049,6 +1049,13 @@
                         "version": "v3u5",
                         "block": "RTC"
                     },
+                    "rcc": {
+                        "clock": "APB7",
+                        "enable": {
+                            "register": "APB7ENR",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB2",

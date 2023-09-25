@@ -1066,6 +1066,13 @@
                         "version": "v2f4",
                         "block": "RTC"
                     },
+                    "rcc": {
+                        "clock": "APB1",
+                        "enable": {
+                            "register": "APB1ENR",
+                            "field": "RTCAPBEN"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PC13",

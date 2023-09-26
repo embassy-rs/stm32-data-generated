@@ -260,7 +260,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "FLASH",
         address: 1073881088,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "flash",
+            version: "l0",
+            block: "FLASH",
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],

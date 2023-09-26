@@ -187,7 +187,7 @@ pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800 as 
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4001_5800 as usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_1000 as usize as _) };
-pub const FLASH: *mut () = 0x4002_2000 as usize as _;
+pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
 pub const TSC: *mut () = 0x4002_4000 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4002_5000 as usize as _) };
@@ -219,6 +219,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/exti_v1.rs"]
 pub mod exti;
+#[path = "../../peripherals/flash_l0.rs"]
+pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]

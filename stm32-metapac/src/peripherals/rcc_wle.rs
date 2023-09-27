@@ -1911,25 +1911,25 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub const fn mcosel(&self) -> u8 {
+        pub const fn mcosel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
+            super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub fn set_mcosel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
+        pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
-        pub const fn mcopre(&self) -> u8 {
+        pub const fn mcopre(&self) -> super::vals::Mcopre {
             let val = (self.0 >> 28usize) & 0x07;
-            val as u8
+            super::vals::Mcopre::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
-        pub fn set_mcopre(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val as u32) & 0x07) << 28usize);
+        pub fn set_mcopre(&mut self, val: super::vals::Mcopre) {
+            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }
     impl Default for Cfgr {
@@ -2893,6 +2893,97 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hpre) -> u8 {
             Hpre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Mcopre {
+        #[doc = "No division"]
+        DIV1 = 0,
+        #[doc = "Division by 2"]
+        DIV2 = 0x01,
+        #[doc = "Division by 4"]
+        DIV4 = 0x02,
+        #[doc = "Division by 8"]
+        DIV8 = 0x03,
+        #[doc = "Division by 16"]
+        DIV16 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Mcopre {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mcopre {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mcopre {
+        #[inline(always)]
+        fn from(val: u8) -> Mcopre {
+            Mcopre::from_bits(val)
+        }
+    }
+    impl From<Mcopre> for u8 {
+        #[inline(always)]
+        fn from(val: Mcopre) -> u8 {
+            Mcopre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Mcosel {
+        #[doc = "No clock"]
+        NOCLOCK = 0,
+        #[doc = "SYSCLK clock selected"]
+        SYSCLK = 0x01,
+        #[doc = "MSI oscillator clock selected"]
+        MSI = 0x02,
+        #[doc = "HSI oscillator clock selected"]
+        HSI16 = 0x03,
+        #[doc = "HSE32 oscillator clock selected"]
+        HSE32 = 0x04,
+        #[doc = "Main PLLRCLK clock selected"]
+        PLLRCLK = 0x05,
+        #[doc = "LSI oscillator clock selected"]
+        LSI = 0x06,
+        _RESERVED_7 = 0x07,
+        #[doc = "LSE oscillator clock selected"]
+        LSE = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        #[doc = "Main PLLCLK oscillator clock selected"]
+        PLLPCLK = 0x0d,
+        #[doc = "Main PLLQCLK oscillator clock selected"]
+        PLLQCLK = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Mcosel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mcosel {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mcosel {
+        #[inline(always)]
+        fn from(val: u8) -> Mcosel {
+            Mcosel::from_bits(val)
+        }
+    }
+    impl From<Mcosel> for u8 {
+        #[inline(always)]
+        fn from(val: Mcosel) -> u8 {
+            Mcosel::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -804,7 +804,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1073773568,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "g0",
+            version: "v1",
             block: "LPTIM",
         }),
         rcc: Some(PeripheralRcc {
@@ -856,7 +856,7 @@ const PERIPHERALS: &'static [Peripheral] = &[
         address: 1073779712,
         registers: Some(PeripheralRegisters {
             kind: "lptim",
-            version: "g0",
+            version: "v1",
             block: "LPTIM",
         }),
         rcc: Some(PeripheralRcc {

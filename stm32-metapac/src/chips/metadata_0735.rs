@@ -621,7 +621,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 1073773568,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
@@ -669,7 +673,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM2",
         address: 1073779712,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {

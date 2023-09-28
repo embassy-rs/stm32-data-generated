@@ -630,6 +630,11 @@
                 {
                     "name": "LPTIM1",
                     "address": 1174422528,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "APB7",
                         "enable": {
@@ -705,6 +710,11 @@
                 {
                     "name": "LPTIM2",
                     "address": 1073779712,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {

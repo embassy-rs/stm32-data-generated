@@ -237,8 +237,8 @@ pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _)
 pub const WWDG: *mut () = 0x4000_2c00 as usize as _;
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
-pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
-pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
+pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_7c00 as usize as _) };
+pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const ADC1: *mut () = 0x4001_2400 as usize as _;
 pub const ADC_COMMON: *mut () = 0x4001_2700 as usize as _;
@@ -294,6 +294,8 @@ pub mod i2c;
 pub mod ipcc;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../../peripherals/pwr_wb.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_wb.rs"]

@@ -235,7 +235,7 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
-#[path = "../../peripherals/lptim_g0.rs"]
+#[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
 #[path = "../../peripherals/pwr_g0.rs"]
 pub mod pwr;

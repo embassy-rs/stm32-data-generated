@@ -2176,7 +2176,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP1",
         address: 1073808128,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "g4",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -2251,7 +2255,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP2",
         address: 1073808132,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "g4",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -2326,7 +2334,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP3",
         address: 1073808136,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "g4",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -2401,7 +2413,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP4",
         address: 1073808140,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "g4",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -2476,7 +2492,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP5",
         address: 1073808144,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "g4",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -2541,7 +2561,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP6",
         address: 1073808148,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "g4",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {

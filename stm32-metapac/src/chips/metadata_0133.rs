@@ -1385,7 +1385,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP1",
         address: 1073807416,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "f3",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -1460,7 +1464,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP2",
         address: 1073807420,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "f3",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -1525,7 +1533,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP3",
         address: 1073807424,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "f3",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -1600,7 +1612,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OPAMP4",
         address: 1073807428,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "f3",
+            block: "OPAMP",
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {

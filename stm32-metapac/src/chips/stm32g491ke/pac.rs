@@ -442,10 +442,10 @@ pub const COMP1: *mut () = 0x4001_0200 as usize as _;
 pub const COMP2: *mut () = 0x4001_0204 as usize as _;
 pub const COMP3: *mut () = 0x4001_0208 as usize as _;
 pub const COMP4: *mut () = 0x4001_020c as usize as _;
-pub const OPAMP1: *mut () = 0x4001_0300 as usize as _;
-pub const OPAMP2: *mut () = 0x4001_0304 as usize as _;
-pub const OPAMP3: *mut () = 0x4001_0308 as usize as _;
-pub const OPAMP6: *mut () = 0x4001_0314 as usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_0300 as usize as _) };
+pub const OPAMP2: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_0304 as usize as _) };
+pub const OPAMP3: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_0308 as usize as _) };
+pub const OPAMP6: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_0314 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00 as usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
@@ -517,6 +517,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/opamp_g4.rs"]
+pub mod opamp;
 #[path = "../../peripherals/pwr_g4.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_g4.rs"]

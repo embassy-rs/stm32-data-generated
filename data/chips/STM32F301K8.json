@@ -945,6 +945,11 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073807420,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "f3",
+                        "block": "OPAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA5",

@@ -2089,6 +2089,11 @@
                 {
                     "name": "OPAMP1",
                     "address": 1073807416,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "f3",
+                        "block": "OPAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA1",
@@ -2147,6 +2152,11 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073807420,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "f3",
+                        "block": "OPAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA5",
@@ -2205,6 +2215,11 @@
                 {
                     "name": "OPAMP3",
                     "address": 1073807424,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "f3",
+                        "block": "OPAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA1",
@@ -2263,6 +2278,11 @@
                 {
                     "name": "OPAMP4",
                     "address": 1073807428,
+                    "registers": {
+                        "kind": "opamp",
+                        "version": "f3",
+                        "block": "OPAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA4",

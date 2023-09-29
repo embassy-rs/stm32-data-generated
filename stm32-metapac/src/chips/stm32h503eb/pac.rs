@@ -457,7 +457,7 @@ pub const ADC_COMMON: *mut () = 0x4202_8300 as usize as _;
 pub const DAC1: *mut () = 0x4202_8400 as usize as _;
 pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
-pub const SBS: sbs::Sbs = unsafe { sbs::Sbs::from_ptr(0x4400_0400 as usize as _) };
+pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400 as usize as _) };
 pub const I3C2: *mut () = 0x4400_3000 as usize as _;
 pub const LPTIM1: *mut () = 0x4400_4400 as usize as _;
@@ -495,10 +495,10 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
-#[path = "../../peripherals/sbs_h50.rs"]
-pub mod sbs;
 #[path = "../../peripherals/spi_v4.rs"]
 pub mod spi;
+#[path = "../../peripherals/syscfg_h50.rs"]
+pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

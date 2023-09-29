@@ -653,7 +653,7 @@ pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SAES: *mut () = 0x420c_0c00 as usize as _;
 pub const PKA: *mut () = 0x420c_2000 as usize as _;
-pub const SBS: sbs::Sbs = unsafe { sbs::Sbs::from_ptr(0x4400_0400 as usize as _) };
+pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400 as usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4400_2000 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400 as usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4400_2800 as usize as _) };
@@ -709,12 +709,12 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
-#[path = "../../peripherals/sbs_h5.rs"]
-pub mod sbs;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v4.rs"]
 pub mod spi;
+#[path = "../../peripherals/syscfg_h5.rs"]
+pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]

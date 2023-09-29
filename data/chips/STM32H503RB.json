@@ -1966,26 +1966,6 @@
                     ]
                 },
                 {
-                    "name": "SBS",
-                    "address": 1140851712,
-                    "registers": {
-                        "kind": "sbs",
-                        "version": "h50",
-                        "block": "SBS"
-                    },
-                    "rcc": {
-                        "clock": "APB3",
-                        "enable": {
-                            "register": "APB3ENR",
-                            "field": "SBSEN"
-                        },
-                        "reset": {
-                            "register": "APB3RSTR",
-                            "field": "SBSRST"
-                        }
-                    }
-                },
-                {
                     "name": "SPI1",
                     "address": 1073819648,
                     "registers": {
@@ -2919,6 +2899,26 @@
                             "request": 11
                         }
                     ]
+                },
+                {
+                    "name": "SYSCFG",
+                    "address": 1140851712,
+                    "registers": {
+                        "kind": "syscfg",
+                        "version": "h50",
+                        "block": "SYSCFG"
+                    },
+                    "rcc": {
+                        "clock": "APB3",
+                        "enable": {
+                            "register": "APB3ENR",
+                            "field": "SBSEN"
+                        },
+                        "reset": {
+                            "register": "APB3RSTR",
+                            "field": "SBSRST"
+                        }
+                    }
                 },
                 {
                     "name": "TAMP",

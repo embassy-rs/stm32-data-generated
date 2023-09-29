@@ -3634,26 +3634,6 @@
                     ]
                 },
                 {
-                    "name": "SBS",
-                    "address": 1140851712,
-                    "registers": {
-                        "kind": "sbs",
-                        "version": "h5",
-                        "block": "SBS"
-                    },
-                    "rcc": {
-                        "clock": "APB3",
-                        "enable": {
-                            "register": "APB3ENR",
-                            "field": "SBSEN"
-                        },
-                        "reset": {
-                            "register": "APB3RSTR",
-                            "field": "SBSRST"
-                        }
-                    }
-                },
-                {
                     "name": "SDMMC1",
                     "address": 1174437888,
                     "registers": {
@@ -4500,6 +4480,26 @@
                             "request": 52
                         }
                     ]
+                },
+                {
+                    "name": "SYSCFG",
+                    "address": 1140851712,
+                    "registers": {
+                        "kind": "syscfg",
+                        "version": "h5",
+                        "block": "SYSCFG"
+                    },
+                    "rcc": {
+                        "clock": "APB3",
+                        "enable": {
+                            "register": "APB3ENR",
+                            "field": "SBSEN"
+                        },
+                        "reset": {
+                            "register": "APB3RSTR",
+                            "field": "SBSRST"
+                        }
+                    }
                 },
                 {
                     "name": "TAMP",

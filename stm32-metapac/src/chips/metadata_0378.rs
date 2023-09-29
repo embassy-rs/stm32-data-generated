@@ -4912,29 +4912,6 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }],
     },
     Peripheral {
-        name: "SBS",
-        address: 1140851712,
-        registers: Some(PeripheralRegisters {
-            kind: "sbs",
-            version: "h5",
-            block: "SBS",
-        }),
-        rcc: Some(PeripheralRcc {
-            clock: "APB3",
-            enable: Some(PeripheralRccRegister {
-                register: "APB3ENR",
-                field: "SBSEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB3RSTR",
-                field: "SBSRST",
-            }),
-        }),
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "SDMMC1",
         address: 1174437888,
         registers: Some(PeripheralRegisters {
@@ -6193,6 +6170,29 @@ const PERIPHERALS: &'static [Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI6",
         }],
+    },
+    Peripheral {
+        name: "SYSCFG",
+        address: 1140851712,
+        registers: Some(PeripheralRegisters {
+            kind: "syscfg",
+            version: "h5",
+            block: "SYSCFG",
+        }),
+        rcc: Some(PeripheralRcc {
+            clock: "APB3",
+            enable: Some(PeripheralRccRegister {
+                register: "APB3ENR",
+                field: "SBSEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB3RSTR",
+                field: "SBSRST",
+            }),
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
     },
     Peripheral {
         name: "TAMP",

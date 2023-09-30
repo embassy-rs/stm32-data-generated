@@ -152,11 +152,6 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PF10",
-                signal: "IN31",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PF11",
                 signal: "IN1b",
                 af: None,
@@ -376,11 +371,6 @@ const PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PF9",
-                signal: "INP",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PF10",
                 signal: "INP",
                 af: None,
             },
@@ -1074,11 +1064,6 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA2",
-                signal: "VINM",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PA3",
                 signal: "VOUT",
                 af: None,
@@ -1096,11 +1081,6 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PA6",
                 signal: "VINP",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA7",
-                signal: "VINM",
                 af: None,
             },
             PeripheralPin {

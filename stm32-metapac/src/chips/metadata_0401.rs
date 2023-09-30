@@ -21,6 +21,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "INN1",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "INP0",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "INP16",
                 af: None,
@@ -28,6 +38,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PA1",
                 signal: "INN16",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA1_C",
+                signal: "INP1",
                 af: None,
             },
             PeripheralPin {
@@ -188,6 +203,21 @@ const PERIPHERALS: &'static [Peripheral] = &[
             }),
         }),
         pins: &[
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "INN1",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "INP0",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA1_C",
+                signal: "INP1",
+                af: None,
+            },
             PeripheralPin {
                 pin: "PA2",
                 signal: "INP14",
@@ -357,13 +387,28 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "INN1",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PC2",
                 signal: "INN11",
                 af: None,
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "INP0",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PC2",
                 signal: "INP12",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "INP1",
                 af: None,
             },
             PeripheralPin {
@@ -424,6 +469,21 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PF10",
                 signal: "INP6",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "INP13",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "INN13",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "INP14",
                 af: None,
             },
         ],
@@ -989,6 +1049,26 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "D13",
                 af: Some(13),
             },
+            PeripheralPin {
+                pin: "PH10",
+                signal: "D1",
+                af: Some(13),
+            },
+            PeripheralPin {
+                pin: "PH11",
+                signal: "D2",
+                af: Some(13),
+            },
+            PeripheralPin {
+                pin: "PH12",
+                signal: "D3",
+                af: Some(13),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "D4",
+                af: Some(13),
+            },
         ],
         dma_channels: &[PeripheralDmaChannel {
             signal: "PSSI",
@@ -1109,9 +1189,24 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(3),
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "CKIN1",
+                af: Some(3),
+            },
+            PeripheralPin {
                 pin: "PC2",
                 signal: "CKOUT",
                 af: Some(6),
+            },
+            PeripheralPin {
+                pin: "PC2_C",
+                signal: "CKOUT",
+                af: Some(6),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "DATIN1",
+                af: Some(3),
             },
             PeripheralPin {
                 pin: "PC3",
@@ -1483,6 +1578,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         rcc: None,
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "CRS",
+                af: Some(11),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "CRS",
                 af: Some(11),
@@ -1493,7 +1593,17 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(11),
             },
             PeripheralPin {
+                pin: "PA1_C",
+                signal: "REF_CLK",
+                af: Some(11),
+            },
+            PeripheralPin {
                 pin: "PA1",
+                signal: "RX_CLK",
+                af: Some(11),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "RX_CLK",
                 af: Some(11),
             },
@@ -1578,6 +1688,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "TXD2",
+                af: Some(11),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "TX_CLK",
+                af: Some(11),
+            },
+            PeripheralPin {
                 pin: "PC3",
                 signal: "TX_CLK",
                 af: None,
@@ -1620,6 +1740,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PG14",
                 signal: "TXD1",
+                af: Some(11),
+            },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "CRS",
+                af: Some(11),
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "COL",
                 af: Some(11),
             },
         ],
@@ -1765,6 +1895,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PD1",
                 signal: "TX",
+                af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "TX",
+                af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "RX",
                 af: Some(9),
             },
         ],
@@ -1962,6 +2102,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "A19",
+                af: Some(12),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "A19",
                 af: Some(12),
@@ -2049,6 +2194,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PC2",
                 signal: "SDNE0",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PC2_C",
+                signal: "SDNE0",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "SDCKE0",
                 af: Some(12),
             },
             PeripheralPin {
@@ -2504,6 +2659,41 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PG15",
                 signal: "SDNCAS",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "SDCKE0",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "SDNE0",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH10",
+                signal: "D18",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH11",
+                signal: "D19",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH12",
+                signal: "D20",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "D21",
+                af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "D22",
                 af: Some(12),
             },
         ],
@@ -3065,6 +3255,21 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "SDA",
                 af: Some(4),
             },
+            PeripheralPin {
+                pin: "PH10",
+                signal: "SMBA",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PH11",
+                signal: "SCL",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PH12",
+                signal: "SDA",
+                af: Some(4),
+            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -3255,6 +3460,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "ETR",
                 af: Some(1),
             },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "IN2",
+                af: Some(1),
+            },
         ],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
@@ -3330,11 +3540,18 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 field: "LPTIM3RST",
             }),
         }),
-        pins: &[PeripheralPin {
-            pin: "PA1",
-            signal: "OUT",
-            af: Some(3),
-        }],
+        pins: &[
+            PeripheralPin {
+                pin: "PA1",
+                signal: "OUT",
+                af: Some(3),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
+                signal: "OUT",
+                af: Some(3),
+            },
+        ],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
@@ -3488,6 +3705,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA1",
+                signal: "R2",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "R2",
                 af: Some(14),
             },
@@ -3826,6 +4048,41 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "B0",
                 af: Some(14),
             },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "R0",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "R1",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PH10",
+                signal: "R4",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PH11",
+                signal: "R5",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PH12",
+                signal: "R6",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "G2",
+                af: Some(14),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "G3",
+                af: Some(14),
+            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -3968,7 +4225,17 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(12),
             },
             PeripheralPin {
+                pin: "PA1_C",
+                signal: "P1_DQS",
+                af: Some(12),
+            },
+            PeripheralPin {
                 pin: "PA1",
+                signal: "P1_IO3",
+                af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "P1_IO3",
                 af: Some(9),
             },
@@ -4053,14 +4320,34 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(9),
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "P1_IO2",
+                af: Some(9),
+            },
+            PeripheralPin {
                 pin: "PC2",
                 signal: "P1_IO5",
                 af: Some(4),
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "P1_IO5",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "P1_IO0",
+                af: Some(9),
+            },
+            PeripheralPin {
                 pin: "PC3",
                 signal: "P1_IO0",
                 af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "P1_IO6",
+                af: Some(4),
             },
             PeripheralPin {
                 pin: "PC3",
@@ -4265,6 +4552,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PG15",
                 signal: "P2_DQS",
+                af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "P1_IO4",
+                af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "P1_IO5",
                 af: Some(9),
             },
         ],
@@ -4561,6 +4858,26 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "D13",
                 af: Some(13),
             },
+            PeripheralPin {
+                pin: "PH10",
+                signal: "D1",
+                af: Some(13),
+            },
+            PeripheralPin {
+                pin: "PH11",
+                signal: "D2",
+                af: Some(13),
+            },
+            PeripheralPin {
+                pin: "PH12",
+                signal: "D3",
+                af: Some(13),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "D4",
+                af: Some(13),
+            },
         ],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
@@ -4578,6 +4895,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         rcc: None,
         pins: &[
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "WKUP1",
+                af: None,
+            },
             PeripheralPin {
                 pin: "PA0",
                 signal: "WKUP1",
@@ -4606,6 +4928,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PC2",
                 signal: "CSTOP",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PC2_C",
+                signal: "CSTOP",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "CSLEEP",
                 af: None,
             },
             PeripheralPin {
@@ -4952,12 +5284,22 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "SD_B",
+                af: Some(10),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "SD_B",
                 af: Some(10),
             },
             PeripheralPin {
                 pin: "PA1",
+                signal: "MCLK_B",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "MCLK_B",
                 af: Some(10),
             },
@@ -5141,6 +5483,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "SD_B",
                 af: Some(10),
             },
+            PeripheralPin {
+                pin: "PH2",
+                signal: "SCK_B",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PH3",
+                signal: "MCLK_B",
+                af: Some(10),
+            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -5285,6 +5637,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
             }),
         }),
         pins: &[
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "CMD",
+                af: Some(9),
+            },
             PeripheralPin {
                 pin: "PA0",
                 signal: "CMD",
@@ -5635,6 +5992,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(5),
             },
             PeripheralPin {
+                pin: "PC2_C",
+                signal: "MISO",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "MOSI",
+                af: Some(5),
+            },
+            PeripheralPin {
                 pin: "PC3",
                 signal: "MOSI",
                 af: Some(5),
@@ -5702,6 +6069,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PC2",
                 signal: "I2S_SDI",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PC2_C",
+                signal: "I2S_SDI",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "I2S_SDO",
                 af: Some(5),
             },
             PeripheralPin {
@@ -6058,6 +6435,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "NSS",
+                af: Some(5),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "NSS",
                 af: Some(5),
@@ -6125,6 +6507,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PG14",
                 signal: "MOSI",
+                af: Some(5),
+            },
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "I2S_WS",
                 af: Some(5),
             },
             PeripheralPin {
@@ -6746,12 +7133,22 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "BKIN",
+                af: Some(4),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "BKIN",
                 af: Some(4),
             },
             PeripheralPin {
                 pin: "PA1",
+                signal: "CH1N",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "CH1N",
                 af: Some(4),
             },
@@ -7050,8 +7447,18 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "CH1",
+                af: Some(1),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "CH1",
+                af: Some(1),
+            },
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "ETR",
                 af: Some(1),
             },
             PeripheralPin {
@@ -7061,6 +7468,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA1",
+                signal: "CH2",
+                af: Some(1),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "CH2",
                 af: Some(1),
             },
@@ -7724,12 +8136,22 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "CH1",
+                af: Some(2),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "CH1",
                 af: Some(2),
             },
             PeripheralPin {
                 pin: "PA1",
+                signal: "CH2",
+                af: Some(2),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "CH2",
                 af: Some(2),
             },
@@ -7746,6 +8168,21 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PA4",
                 signal: "ETR",
+                af: Some(2),
+            },
+            PeripheralPin {
+                pin: "PH10",
+                signal: "CH1",
+                af: Some(2),
+            },
+            PeripheralPin {
+                pin: "PH11",
+                signal: "CH2",
+                af: Some(2),
+            },
+            PeripheralPin {
+                pin: "PH12",
+                signal: "CH3",
                 af: Some(2),
             },
         ],
@@ -7937,6 +8374,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "ETR",
+                af: Some(3),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "ETR",
                 af: Some(3),
@@ -8056,6 +8498,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 signal: "ETR",
                 af: Some(3),
             },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "CH1N",
+                af: Some(3),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "CH2N",
+                af: Some(3),
+            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -8152,12 +8604,22 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "TX",
+                af: Some(8),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "TX",
                 af: Some(8),
             },
             PeripheralPin {
                 pin: "PA1",
+                signal: "RX",
+                af: Some(8),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "RX",
                 af: Some(8),
             },
@@ -8229,6 +8691,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PD1",
                 signal: "TX",
+                af: Some(8),
+            },
+            PeripheralPin {
+                pin: "PH13",
+                signal: "TX",
+                af: Some(8),
+            },
+            PeripheralPin {
+                pin: "PH14",
+                signal: "RX",
                 af: Some(8),
             },
         ],
@@ -8819,8 +9291,18 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA0_C",
+                signal: "CTS",
+                af: Some(7),
+            },
+            PeripheralPin {
                 pin: "PA0",
                 signal: "CTS",
+                af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PA0_C",
+                signal: "NSS",
                 af: Some(7),
             },
             PeripheralPin {
@@ -8834,7 +9316,17 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(7),
             },
             PeripheralPin {
+                pin: "PA1_C",
+                signal: "DE",
+                af: Some(7),
+            },
+            PeripheralPin {
                 pin: "PA1",
+                signal: "RTS",
+                af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PA1_C",
                 signal: "RTS",
                 af: Some(7),
             },
@@ -9248,6 +9740,16 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 pin: "PC2",
                 signal: "ULPI_DIR",
                 af: None,
+            },
+            PeripheralPin {
+                pin: "PC2_C",
+                signal: "ULPI_DIR",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "ULPI_NXT",
+                af: Some(10),
             },
             PeripheralPin {
                 pin: "PC3",

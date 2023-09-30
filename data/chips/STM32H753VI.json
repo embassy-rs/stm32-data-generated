@@ -653,6 +653,18 @@
                         {
                             "pin": "PC1",
                             "signal": "INP11"
+                        },
+                        {
+                            "pin": "PC2_C",
+                            "signal": "INN1"
+                        },
+                        {
+                            "pin": "PC2_C",
+                            "signal": "INP0"
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "INP1"
                         }
                     ],
                     "interrupts": [
@@ -1193,6 +1205,21 @@
                             "af": 3
                         },
                         {
+                            "pin": "PC2_C",
+                            "signal": "CKIN1",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PC2_C",
+                            "signal": "CKOUT",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "DATIN1",
+                            "af": 3
+                        },
+                        {
                             "pin": "PC4",
                             "signal": "CKIN2",
                             "af": 3
@@ -1586,6 +1613,16 @@
                             "af": 11
                         },
                         {
+                            "pin": "PC2_C",
+                            "signal": "TXD2",
+                            "af": 11
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "TX_CLK",
+                            "af": 11
+                        },
+                        {
                             "pin": "PC4",
                             "signal": "RXD0",
                             "af": 11
@@ -1860,6 +1897,16 @@
                         {
                             "pin": "PC0",
                             "signal": "SDNWE",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PC2_C",
+                            "signal": "SDNE0",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "SDCKE0",
                             "af": 12
                         },
                         {
@@ -3541,6 +3588,14 @@
                             "signal": "WKUP6"
                         },
                         {
+                            "pin": "PC2_C",
+                            "signal": "CSTOP"
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "CSLEEP"
+                        },
+                        {
                             "pin": "PC13",
                             "signal": "WKUP4"
                         }
@@ -4616,6 +4671,16 @@
                             "af": 5
                         },
                         {
+                            "pin": "PC2_C",
+                            "signal": "MISO",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "MOSI",
+                            "af": 5
+                        },
+                        {
                             "pin": "PD3",
                             "signal": "SCK",
                             "af": 5
@@ -4672,6 +4737,16 @@
                         },
                         {
                             "pin": "PC1",
+                            "signal": "I2S_SDO",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PC2_C",
+                            "signal": "I2S_SDI",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PC3_C",
                             "signal": "I2S_SDO",
                             "af": 5
                         },
@@ -7352,6 +7427,16 @@
                         {
                             "pin": "PC0",
                             "signal": "ULPI_STP",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PC2_C",
+                            "signal": "ULPI_DIR",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PC3_C",
+                            "signal": "ULPI_NXT",
                             "af": 10
                         }
                     ],

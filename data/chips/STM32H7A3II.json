@@ -5246,12 +5246,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "SD_B",
                             "af": 10
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "SD_B",
                             "af": 10
                         },
@@ -5514,12 +5514,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "CMD",
                             "af": 9
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "CMD",
                             "af": 9
                         },
@@ -6427,12 +6427,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "NSS",
                             "af": 5
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "NSS",
                             "af": 5
                         },
@@ -6502,12 +6502,12 @@
                             "af": 5
                         },
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "I2S_WS",
                             "af": 5
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "I2S_WS",
                             "af": 5
                         },
@@ -7151,12 +7151,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "BKIN",
                             "af": 4
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "BKIN",
                             "af": 4
                         },
@@ -7449,22 +7449,22 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
-                            "signal": "CH1",
-                            "af": 1
-                        },
-                        {
                             "pin": "PA0",
                             "signal": "CH1",
                             "af": 1
                         },
                         {
                             "pin": "PA0_C",
+                            "signal": "CH1",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PA0",
                             "signal": "ETR",
                             "af": 1
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "ETR",
                             "af": 1
                         },
@@ -7837,12 +7837,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "CH1",
                             "af": 2
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "CH1",
                             "af": 2
                         },
@@ -8071,12 +8071,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "ETR",
                             "af": 3
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "ETR",
                             "af": 3
                         },
@@ -8392,12 +8392,12 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
+                            "pin": "PA0",
                             "signal": "TX",
                             "af": 8
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "TX",
                             "af": 8
                         },
@@ -9076,22 +9076,22 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA0_C",
-                            "signal": "CTS",
-                            "af": 7
-                        },
-                        {
                             "pin": "PA0",
                             "signal": "CTS",
                             "af": 7
                         },
                         {
                             "pin": "PA0_C",
+                            "signal": "CTS",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PA0",
                             "signal": "NSS",
                             "af": 7
                         },
                         {
-                            "pin": "PA0",
+                            "pin": "PA0_C",
                             "signal": "NSS",
                             "af": 7
                         },

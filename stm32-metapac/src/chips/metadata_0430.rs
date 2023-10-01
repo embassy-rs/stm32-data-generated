@@ -1572,22 +1572,22 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(11),
             },
             PeripheralPin {
-                pin: "PA1_C",
-                signal: "REF_CLK",
-                af: Some(11),
-            },
-            PeripheralPin {
                 pin: "PA1",
                 signal: "REF_CLK",
                 af: Some(11),
             },
             PeripheralPin {
                 pin: "PA1_C",
+                signal: "REF_CLK",
+                af: Some(11),
+            },
+            PeripheralPin {
+                pin: "PA1",
                 signal: "RX_CLK",
                 af: Some(11),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "RX_CLK",
                 af: Some(11),
             },
@@ -3629,12 +3629,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "OUT",
                 af: Some(3),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "OUT",
                 af: Some(3),
             },
@@ -3791,12 +3791,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "R2",
                 af: Some(14),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "R2",
                 af: Some(14),
             },
@@ -4598,12 +4598,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "BK1_IO3",
                 af: Some(9),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "BK1_IO3",
                 af: Some(9),
             },
@@ -5079,12 +5079,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(10),
             },
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "MCLK_B",
                 af: Some(10),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "MCLK_B",
                 af: Some(10),
             },
@@ -7062,12 +7062,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(4),
             },
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "CH1N",
                 af: Some(4),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "CH1N",
                 af: Some(4),
             },
@@ -7376,12 +7376,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(1),
             },
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "CH2",
                 af: Some(1),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "CH2",
                 af: Some(1),
             },
@@ -7784,12 +7784,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(2),
             },
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "CH2",
                 af: Some(2),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "CH2",
                 af: Some(2),
             },
@@ -8377,12 +8377,12 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(8),
             },
             PeripheralPin {
-                pin: "PA1_C",
+                pin: "PA1",
                 signal: "RX",
                 af: Some(8),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "RX",
                 af: Some(8),
             },
@@ -8920,22 +8920,22 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(7),
             },
             PeripheralPin {
-                pin: "PA1_C",
-                signal: "DE",
-                af: Some(7),
-            },
-            PeripheralPin {
                 pin: "PA1",
                 signal: "DE",
                 af: Some(7),
             },
             PeripheralPin {
                 pin: "PA1_C",
+                signal: "DE",
+                af: Some(7),
+            },
+            PeripheralPin {
+                pin: "PA1",
                 signal: "RTS",
                 af: Some(7),
             },
             PeripheralPin {
-                pin: "PA1",
+                pin: "PA1_C",
                 signal: "RTS",
                 af: Some(7),
             },

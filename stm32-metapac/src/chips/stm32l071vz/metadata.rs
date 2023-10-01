@@ -1,4 +1,4 @@
-include!("../metadata_0531.rs");
+include!("../metadata_0529.rs");
 pub const METADATA: Metadata = Metadata {
     name: "STM32L071VZ",
     family: "STM32L0",

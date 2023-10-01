@@ -1736,6 +1736,10 @@ const INTERRUPTS: &'static [Interrupt] = &[
         number: 36,
     },
     Interrupt {
+        name: "TSC",
+        number: 39,
+    },
+    Interrupt {
         name: "EXTI15_10",
         number: 40,
     },

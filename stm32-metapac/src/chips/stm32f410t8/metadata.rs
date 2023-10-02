@@ -1,5 +1,5 @@
 include!("../metadata_0165.rs");
-pub const METADATA: Metadata = Metadata {
+pub static METADATA: Metadata = Metadata {
     name: "STM32F410T8",
     family: "STM32F4",
     line: "STM32F410",

@@ -46,6 +46,10 @@
                         "reset": {
                             "register": "APBRSTR2",
                             "field": "ADCRST"
+                        },
+                        "mux": {
+                            "register": "CCIPR",
+                            "field": "ADCSEL"
                         }
                     },
                     "pins": [
@@ -390,6 +394,10 @@
                         "reset": {
                             "register": "APBRSTR1",
                             "field": "I2C1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR",
+                            "field": "I2C1SEL"
                         }
                     },
                     "pins": [
@@ -1434,6 +1442,10 @@
                         "reset": {
                             "register": "APBRSTR2",
                             "field": "USART1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR",
+                            "field": "USART1SEL"
                         }
                     },
                     "pins": [

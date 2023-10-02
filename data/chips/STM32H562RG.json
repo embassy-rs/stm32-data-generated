@@ -333,6 +333,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "CECRST"
+                        },
+                        "mux": {
+                            "register": "CCIPR5",
+                            "field": "CECSEL"
                         }
                     }
                 },
@@ -1182,6 +1186,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "I2C1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "I2C1SEL"
                         }
                     },
                     "pins": [
@@ -1261,6 +1269,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "I2C2RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "I2C2SEL"
                         }
                     },
                     "pins": [
@@ -1340,6 +1352,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "I2C3RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "I2C3SEL"
                         }
                     },
                     "pins": [
@@ -1409,6 +1425,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "I2C4RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "I2C4SEL"
                         }
                     },
                     "pins": [
@@ -1493,6 +1513,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "I3C1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "I3C1SEL"
                         }
                     },
                     "pins": [
@@ -1607,6 +1631,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "LPTIM1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "LPTIM1SEL"
                         }
                     },
                     "pins": [
@@ -1692,6 +1720,10 @@
                         "reset": {
                             "register": "APB1HRSTR",
                             "field": "LPTIM2RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "LPTIM2SEL"
                         }
                     },
                     "pins": [
@@ -1797,6 +1829,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "LPTIM3RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "LPTIM3SEL"
                         }
                     },
                     "pins": [
@@ -1897,6 +1933,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "LPTIM4RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "LPTIM4SEL"
                         }
                     },
                     "pins": [
@@ -1925,6 +1965,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "LPTIM5RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "LPTIM5SEL"
                         }
                     },
                     "pins": [
@@ -1985,6 +2029,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "LPTIM6RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "LPTIM6SEL"
                         }
                     },
                     "pins": [
@@ -2050,6 +2098,10 @@
                         "reset": {
                             "register": "APB3RSTR",
                             "field": "LPUART1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR3",
+                            "field": "LPUART1SEL"
                         }
                     },
                     "pins": [
@@ -2125,6 +2177,10 @@
                         "reset": {
                             "register": "AHB4RSTR",
                             "field": "OCTOSPI1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "OCTOSPI1SEL"
                         }
                     },
                     "pins": [
@@ -2546,6 +2602,10 @@
                         "reset": {
                             "register": "AHB2RSTR",
                             "field": "RNGRST"
+                        },
+                        "mux": {
+                            "register": "CCIPR5",
+                            "field": "RNGSEL"
                         }
                     },
                     "interrupts": [
@@ -2620,6 +2680,10 @@
                         "reset": {
                             "register": "APB2RSTR",
                             "field": "SAI1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR5",
+                            "field": "SAI1SEL"
                         }
                     },
                     "pins": [
@@ -2730,6 +2794,10 @@
                         "reset": {
                             "register": "APB2RSTR",
                             "field": "SAI2RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR5",
+                            "field": "SAI2SEL"
                         }
                     },
                     "pins": [
@@ -2825,6 +2893,10 @@
                         "reset": {
                             "register": "AHB4RSTR",
                             "field": "SDMMC1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "SDMMC1SEL"
                         }
                     },
                     "pins": [
@@ -2938,6 +3010,10 @@
                         "reset": {
                             "register": "APB2RSTR",
                             "field": "SPI1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR3",
+                            "field": "SPI1SEL"
                         }
                     },
                     "pins": [
@@ -3083,6 +3159,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "SPI2RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR3",
+                            "field": "SPI2SEL"
                         }
                     },
                     "pins": [
@@ -3288,6 +3368,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "SPI3RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR3",
+                            "field": "SPI3SEL"
                         }
                     },
                     "pins": [
@@ -3443,6 +3527,10 @@
                         "reset": {
                             "register": "APB2RSTR",
                             "field": "SPI6RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR3",
+                            "field": "SPI6SEL"
                         }
                     },
                     "pins": [
@@ -5123,6 +5211,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "UART4RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "UART4SEL"
                         }
                     },
                     "pins": [
@@ -5253,6 +5345,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "UART5RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "UART5SEL"
                         }
                     },
                     "pins": [
@@ -5353,6 +5449,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "UART7RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "UART7SEL"
                         }
                     },
                     "pins": [
@@ -5508,6 +5608,10 @@
                         "reset": {
                             "register": "APB2RSTR",
                             "field": "USART1RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "USART1SEL"
                         }
                     },
                     "pins": [
@@ -5608,6 +5712,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "USART11RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR2",
+                            "field": "USART11SEL"
                         }
                     },
                     "pins": [
@@ -5666,6 +5774,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "USART2RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "USART2SEL"
                         }
                     },
                     "pins": [
@@ -5746,6 +5858,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "USART3RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "USART3SEL"
                         }
                     },
                     "pins": [
@@ -5861,6 +5977,10 @@
                         "reset": {
                             "register": "APB1LRSTR",
                             "field": "USART6RST"
+                        },
+                        "mux": {
+                            "register": "CCIPR1",
+                            "field": "USART6SEL"
                         }
                     },
                     "pins": [
@@ -5926,6 +6046,10 @@
                         "reset": {
                             "register": "APB2RSTR",
                             "field": "USBRST"
+                        },
+                        "mux": {
+                            "register": "CCIPR4",
+                            "field": "USBSEL"
                         }
                     },
                     "pins": [

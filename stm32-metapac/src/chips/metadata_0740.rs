@@ -3886,7 +3886,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "TAMP",
         address: 1174436864,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "tamp",
+            version: "u5",
+            block: "TAMP",
+            ir: &tamp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -6706,6 +6711,8 @@ pub mod sdmmc;
 pub mod spi;
 #[path = "../registers/syscfg_u5.rs"]
 pub mod syscfg;
+#[path = "../registers/tamp_u5.rs"]
+pub mod tamp;
 #[path = "../registers/timer_v1.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]

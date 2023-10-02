@@ -2839,6 +2839,11 @@
                 {
                     "name": "TAMP",
                     "address": 1073755136,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "l5",
+                        "block": "TAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

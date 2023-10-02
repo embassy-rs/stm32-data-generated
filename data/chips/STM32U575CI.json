@@ -3038,6 +3038,11 @@
                 {
                     "name": "TAMP",
                     "address": 1174436864,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "u5",
+                        "block": "TAMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

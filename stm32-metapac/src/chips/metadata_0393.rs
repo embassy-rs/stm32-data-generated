@@ -1132,12 +1132,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(6),
             },
             PeripheralPin {
-                pin: "PC3_C",
+                pin: "PC3",
                 signal: "DATIN1",
                 af: Some(3),
             },
             PeripheralPin {
-                pin: "PC3",
+                pin: "PC3_C",
                 signal: "DATIN1",
                 af: Some(3),
             },
@@ -1616,14 +1616,14 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(11),
             },
             PeripheralPin {
-                pin: "PC3_C",
-                signal: "TX_CLK",
-                af: Some(11),
-            },
-            PeripheralPin {
                 pin: "PC3",
                 signal: "TX_CLK",
                 af: None,
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "TX_CLK",
+                af: Some(11),
             },
             PeripheralPin {
                 pin: "PC4",
@@ -2110,12 +2110,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(12),
             },
             PeripheralPin {
-                pin: "PC3_C",
+                pin: "PC3",
                 signal: "SDCKE0",
                 af: Some(12),
             },
             PeripheralPin {
-                pin: "PC3",
+                pin: "PC3_C",
                 signal: "SDCKE0",
                 af: Some(12),
             },
@@ -4146,22 +4146,22 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(4),
             },
             PeripheralPin {
-                pin: "PC3_C",
-                signal: "P1_IO0",
-                af: Some(9),
-            },
-            PeripheralPin {
                 pin: "PC3",
                 signal: "P1_IO0",
                 af: Some(9),
             },
             PeripheralPin {
                 pin: "PC3_C",
+                signal: "P1_IO0",
+                af: Some(9),
+            },
+            PeripheralPin {
+                pin: "PC3",
                 signal: "P1_IO6",
                 af: Some(4),
             },
             PeripheralPin {
-                pin: "PC3",
+                pin: "PC3_C",
                 signal: "P1_IO6",
                 af: Some(4),
             },
@@ -4690,12 +4690,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PC3_C",
+                pin: "PC3",
                 signal: "CSLEEP",
                 af: None,
             },
             PeripheralPin {
-                pin: "PC3",
+                pin: "PC3_C",
                 signal: "CSLEEP",
                 af: None,
             },
@@ -5743,12 +5743,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(5),
             },
             PeripheralPin {
-                pin: "PC3_C",
+                pin: "PC3",
                 signal: "MOSI",
                 af: Some(5),
             },
             PeripheralPin {
-                pin: "PC3",
+                pin: "PC3_C",
                 signal: "MOSI",
                 af: Some(5),
             },
@@ -5823,12 +5823,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(5),
             },
             PeripheralPin {
-                pin: "PC3_C",
+                pin: "PC3",
                 signal: "I2S_SDO",
                 af: Some(5),
             },
             PeripheralPin {
-                pin: "PC3",
+                pin: "PC3_C",
                 signal: "I2S_SDO",
                 af: Some(5),
             },
@@ -9443,14 +9443,14 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(10),
             },
             PeripheralPin {
-                pin: "PC3_C",
-                signal: "ULPI_NXT",
-                af: Some(10),
-            },
-            PeripheralPin {
                 pin: "PC3",
                 signal: "ULPI_NXT",
                 af: None,
+            },
+            PeripheralPin {
+                pin: "PC3_C",
+                signal: "ULPI_NXT",
+                af: Some(10),
             },
         ],
         dma_channels: &[],

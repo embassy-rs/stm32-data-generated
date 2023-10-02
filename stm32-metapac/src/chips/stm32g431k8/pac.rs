@@ -371,6 +371,7 @@ pub const TIM4: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0800 a
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000 as usize as _) };
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400 as usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_2000 as usize as _) };
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_2400 as usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
 pub const WWDG: *mut () = 0x4000_2c00 as usize as _;
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
@@ -480,6 +481,8 @@ pub mod sai;
 pub mod spi;
 #[path = "../../peripherals/syscfg_g4.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_g4.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]

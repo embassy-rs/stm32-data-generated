@@ -98,13 +98,13 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Wrpr",
+            name: "Optkeyr",
             extends: None,
-            description: Some("Write protection register"),
+            description: Some("Flash option key register"),
             bit_size: 32,
             fields: &[Field {
-                name: "wrp",
-                description: Some("Write protect"),
+                name: "optkeyr",
+                description: Some("Option byte key"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -112,13 +112,13 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Ar",
+            name: "Keyr",
             extends: None,
-            description: Some("Flash address register"),
+            description: Some("Flash key register"),
             bit_size: 32,
             fields: &[Field {
-                name: "far",
-                description: Some("Flash address"),
+                name: "fkeyr",
+                description: Some("Flash Key"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -222,66 +222,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Optkeyr",
+            name: "Acr",
             extends: None,
-            description: Some("Flash option key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkeyr",
-                description: Some("Option byte key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Flash key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "fkeyr",
-                description: Some("Flash Key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Flash status register"),
+            description: Some("Flash access control register"),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bsy",
-                    description: Some("Busy"),
+                    name: "latency",
+                    description: Some("LATENCY"),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Latency"),
                 },
                 Field {
-                    name: "pgerr",
-                    description: Some("Programming error"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrprt",
-                    description: Some("Write protection error"),
+                    name: "prftbe",
+                    description: Some("Prefetch buffer enable"),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "eop",
-                    description: Some("End of operation"),
+                    name: "prftbs",
+                    description: Some("Prefetch buffer status"),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
@@ -394,30 +358,66 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Acr",
+            name: "Wrpr",
             extends: None,
-            description: Some("Flash access control register"),
+            description: Some("Write protection register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "wrp",
+                description: Some("Write protect"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Ar",
+            extends: None,
+            description: Some("Flash address register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "far",
+                description: Some("Flash address"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some("Flash status register"),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "latency",
-                    description: Some("LATENCY"),
+                    name: "bsy",
+                    description: Some("Busy"),
                     bit_offset: 0,
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some("Latency"),
+                    enumm: None,
                 },
                 Field {
-                    name: "prftbe",
-                    description: Some("Prefetch buffer enable"),
+                    name: "pgerr",
+                    description: Some("Programming error"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrprt",
+                    description: Some("Write protection error"),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "prftbs",
-                    description: Some("Prefetch buffer status"),
+                    name: "eop",
+                    description: Some("End of operation"),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
@@ -428,24 +428,19 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Rdprt",
+            name: "BootSel",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
-                    description: Some("Level 0"),
+                    name: "NBOOT0",
+                    description: Some("BOOT0 signal is defined by nBOOT0 option bit"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
-                    description: Some("Level 1"),
+                    name: "BOOT0",
+                    description: Some("BOOT0 signal is defined by BOOT0 pin value (legacy mode)"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "LEVEL2",
-                    description: Some("Level 2"),
-                    value: 3,
                 },
             ],
         },
@@ -462,91 +457,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "NORESET",
                     description: Some("No reset generated"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "NRstStop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some("Reset generated when entering Stop mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NORESET",
-                    description: Some("No reset generated"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RamParityCheck",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("RAM parity check enabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("RAM parity check disabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "NBoot1",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Together with BOOT0, select the device boot mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Together with BOOT0, select the device boot mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "NBoot0",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("When BOOT_SEL is cleared, select the device boot mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("When BOOT_SEL is cleared, select the device boot mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "BootSel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NBOOT0",
-                    description: Some("BOOT0 signal is defined by nBOOT0 option bit"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BOOT0",
-                    description: Some("BOOT0 signal is defined by BOOT0 pin value (legacy mode)"),
                     value: 1,
                 },
             ],
@@ -586,6 +496,62 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "NBoot0",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("When BOOT_SEL is cleared, select the device boot mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("When BOOT_SEL is cleared, select the device boot mode"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rdprt",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "LEVEL0",
+                    description: Some("Level 0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LEVEL1",
+                    description: Some("Level 1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LEVEL2",
+                    description: Some("Level 2"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "RamParityCheck",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("RAM parity check enabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("RAM parity check disabled"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "WdgSw",
             description: None,
             bit_size: 1,
@@ -598,6 +564,40 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "SOFTWARE",
                     description: Some("Software watchdog"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "NRstStop",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RESET",
+                    description: Some("Reset generated when entering Stop mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NORESET",
+                    description: Some("No reset generated"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "NBoot1",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Together with BOOT0, select the device boot mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Together with BOOT0, select the device boot mode"),
                     value: 1,
                 },
             ],

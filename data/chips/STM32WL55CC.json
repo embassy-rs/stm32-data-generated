@@ -1763,6 +1763,15 @@
                     }
                 },
                 {
+                    "name": "TAMP",
+                    "address": 1073786880,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "wl",
+                        "block": "TAMP"
+                    }
+                },
+                {
                     "name": "TIM1",
                     "address": 1073818624,
                     "registers": {
@@ -4236,6 +4245,15 @@
                         "kind": "syscfg",
                         "version": "wl5",
                         "block": "SYSCFG"
+                    }
+                },
+                {
+                    "name": "TAMP",
+                    "address": 1073786880,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "wl",
+                        "block": "TAMP"
                     }
                 },
                 {

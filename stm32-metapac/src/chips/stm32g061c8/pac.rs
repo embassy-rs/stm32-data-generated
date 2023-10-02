@@ -170,6 +170,7 @@ pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_7c00 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000 as usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400 as usize as _) };
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_b000 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const COMP1: *mut () = 0x4001_0200 as usize as _;
 pub const COMP2: *mut () = 0x4001_0204 as usize as _;
@@ -245,6 +246,8 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_g0.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_g0.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

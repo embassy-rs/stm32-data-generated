@@ -43,6 +43,76 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cdr",
+            extends: None,
+            description: Some("ADC common regular data register for dual and triple modes"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "data",
+                description: Some("1st data item of a pair of regular conversions"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Csr",
+            extends: None,
+            description: Some("ADC common status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "awd",
+                    description: Some("Analog watchdog flag of ADC 1"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Awd"),
+                },
+                Field {
+                    name: "eoc",
+                    description: Some("End of conversion of ADC 1"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Eoc"),
+                },
+                Field {
+                    name: "jeoc",
+                    description: Some("Injected channel end of conversion of ADC 1"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Jeoc"),
+                },
+                Field {
+                    name: "jstrt",
+                    description: Some("Injected channel Start flag of ADC 1"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Jstrt"),
+                },
+                Field {
+                    name: "strt",
+                    description: Some("Regular channel Start flag of ADC 1"),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Strt"),
+                },
+                Field {
+                    name: "ovr",
+                    description: Some("Overrun flag of ADC 1"),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Ovr"),
+                },
+            ],
+        },
+        FieldSet {
             name: "Ccr",
             extends: None,
             description: Some("ADC common control register"),
@@ -106,95 +176,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some("ADC common status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "awd",
-                    description: Some("Analog watchdog flag of ADC 1"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Awd"),
-                },
-                Field {
-                    name: "eoc",
-                    description: Some("End of conversion of ADC 1"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Eoc"),
-                },
-                Field {
-                    name: "jeoc",
-                    description: Some("Injected channel end of conversion of ADC 1"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Jeoc"),
-                },
-                Field {
-                    name: "jstrt",
-                    description: Some("Injected channel Start flag of ADC 1"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Jstrt"),
-                },
-                Field {
-                    name: "strt",
-                    description: Some("Regular channel Start flag of ADC 1"),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Strt"),
-                },
-                Field {
-                    name: "ovr",
-                    description: Some("Overrun flag of ADC 1"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Ovr"),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cdr",
-            extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "data",
-                description: Some("1st data item of a pair of regular conversions"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                enumm: None,
-            }],
-        },
     ],
     enums: &[
-        Enum {
-            name: "Awd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Adcpre",
             description: None,
@@ -223,6 +206,57 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Strt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSTARTED",
+                    description: Some("No regular channel conversion started"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some("Regular channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Awd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Eoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Ovr",
             description: None,
             bit_size: 1,
@@ -235,23 +269,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "OVERRUN",
                     description: Some("Overrun occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jeoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
                     value: 1,
                 },
             ],
@@ -346,18 +363,35 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Strt",
+            name: "Jstrt",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOTSTARTED",
-                    description: Some("No regular channel conversion started"),
+                    description: Some("No injected channel conversion started"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "STARTED",
-                    description: Some("Regular channel conversion has started"),
+                    description: Some("Injected channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jeoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
                     value: 1,
                 },
             ],
@@ -386,40 +420,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "MODE3",
                     description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Jstrt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No injected channel conversion started"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some("Injected channel conversion has started"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Eoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
                 },
             ],
         },

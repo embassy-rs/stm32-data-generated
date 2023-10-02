@@ -702,7 +702,7 @@ pub const COMP1: *mut () = 0x4600_5400 as usize as _;
 pub const COMP2: *mut () = 0x4600_5404 as usize as _;
 pub const VREFBUF: *mut () = 0x4600_7400 as usize as _;
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4600_7800 as usize as _) };
-pub const TAMP: *mut () = 0x4600_7c00 as usize as _;
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4600_7c00 as usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_0800 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_0c00 as usize as _) };
 pub const ADC4: *mut () = 0x4602_1000 as usize as _;
@@ -767,6 +767,8 @@ pub mod sdmmc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_u5.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_u5.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]

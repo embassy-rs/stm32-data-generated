@@ -3426,7 +3426,7 @@
                             "field": "SAI1RST"
                         },
                         "mux": {
-                            "register": "CCIPR",
+                            "register": "CCIPR2",
                             "field": "SAI1SEL"
                         }
                     },
@@ -3685,7 +3685,7 @@
                             "field": "SAI2RST"
                         },
                         "mux": {
-                            "register": "CCIPR",
+                            "register": "CCIPR2",
                             "field": "SAI2SEL"
                         }
                     },

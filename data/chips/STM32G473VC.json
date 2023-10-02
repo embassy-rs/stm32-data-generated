@@ -3879,6 +3879,15 @@
                     }
                 },
                 {
+                    "name": "TAMP",
+                    "address": 1073751040,
+                    "registers": {
+                        "kind": "tamp",
+                        "version": "g4",
+                        "block": "TAMP"
+                    }
+                },
+                {
                     "name": "TIM1",
                     "address": 1073818624,
                     "registers": {

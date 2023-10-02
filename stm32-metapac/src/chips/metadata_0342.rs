@@ -4545,6 +4545,20 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
+        name: "TAMP",
+        address: 1073751040,
+        registers: Some(PeripheralRegisters {
+            kind: "tamp",
+            version: "g4",
+            block: "TAMP",
+            ir: &tamp::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "TIM1",
         address: 1073818624,
         registers: Some(PeripheralRegisters {
@@ -7821,6 +7835,8 @@ pub mod sai;
 pub mod spi;
 #[path = "../registers/syscfg_g4.rs"]
 pub mod syscfg;
+#[path = "../registers/tamp_g4.rs"]
+pub mod tamp;
 #[path = "../registers/timer_v1.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]

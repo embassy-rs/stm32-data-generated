@@ -148,6 +148,7 @@ pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400 as 
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_b000 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4001_2708 as usize as _) };
@@ -211,6 +212,8 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_g0.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_g0.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

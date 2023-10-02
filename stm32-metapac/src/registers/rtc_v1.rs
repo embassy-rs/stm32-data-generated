@@ -120,48 +120,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Alrl",
-            extends: None,
-            description: Some("Alarm Register Low"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "alrl",
-                description: Some("Alarm register low"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Cnth",
-            extends: None,
-            description: Some("Counter Register High"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cnth",
-                description: Some("Counter register high"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Divh",
-            extends: None,
-            description: Some("Prescaler Divider Register High"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "divh",
-                description: Some("Prescaler divider register high"),
-                bit_offset: 0,
-                bit_size: 4,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Crh",
             extends: None,
             description: Some("Control Register High"),
@@ -194,13 +152,13 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Divl",
+            name: "Cnth",
             extends: None,
-            description: Some("Prescaler Divider Register Low"),
+            description: Some("Counter Register High"),
             bit_size: 32,
             fields: &[Field {
-                name: "divl",
-                description: Some("Prescaler divider register low"),
+                name: "cnth",
+                description: Some("Counter register high"),
                 bit_offset: 0,
                 bit_size: 16,
                 array: None,
@@ -222,6 +180,20 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
+            name: "Prll",
+            extends: None,
+            description: Some("Prescaler Load Register Low"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "prll",
+                description: Some("Prescaler divider register low"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Alrh",
             extends: None,
             description: Some("Alarm Register High"),
@@ -231,6 +203,20 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some("Alarm register high"),
                 bit_offset: 0,
                 bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Divh",
+            extends: None,
+            description: Some("Prescaler Divider Register High"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "divh",
+                description: Some("Prescaler divider register high"),
+                bit_offset: 0,
+                bit_size: 4,
                 array: None,
                 enumm: None,
             }],
@@ -292,6 +278,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Alrl",
+            extends: None,
+            description: Some("Alarm Register Low"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "alrl",
+                description: Some("Alarm register low"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Prlh",
             extends: None,
             description: Some("Prescaler Load Register High"),
@@ -306,12 +306,12 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Prll",
+            name: "Divl",
             extends: None,
-            description: Some("Prescaler Load Register Low"),
+            description: Some("Prescaler Divider Register Low"),
             bit_size: 32,
             fields: &[Field {
-                name: "prll",
+                name: "divl",
                 description: Some("Prescaler divider register low"),
                 bit_offset: 0,
                 bit_size: 16,
@@ -321,23 +321,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Cnf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EXIT",
-                    description: Some("Exit configuration mode (start update of RTC registers)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENTER",
-                    description: Some("Enter configuration mode"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Rtoff",
             description: None,
@@ -351,6 +334,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "DISABLED",
                     description: Some("Last write operation on RTC registers terminated"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cnf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "EXIT",
+                    description: Some("Exit configuration mode (start update of RTC registers)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENTER",
+                    description: Some("Enter configuration mode"),
                     value: 1,
                 },
             ],

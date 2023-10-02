@@ -302,23 +302,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Mwid",
+            name: "Mtyp",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS8",
-                    description: Some("Memory data bus width 8 bits"),
+                    name: "SRAM",
+                    description: Some("SRAM memory type"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BITS16",
-                    description: Some("Memory data bus width 16 bits"),
+                    name: "PSRAM",
+                    description: Some("PSRAM (CRAM) memory type"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BITS32",
-                    description: Some("Memory data bus width 32 bits"),
+                    name: "FLASH",
+                    description: Some("NOR Flash/OneNAND Flash"),
                     value: 2,
                 },
             ],
@@ -352,6 +352,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BYTES1024",
                     description: Some("1024 bytes CRAM page size"),
                     value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Mwid",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("Memory data bus width 8 bits"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("Memory data bus width 16 bits"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("Memory data bus width 32 bits"),
+                    value: 2,
                 },
             ],
         },
@@ -396,28 +418,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DURINGWAITSTATE",
                     description: Some("NWAIT signal is active during wait state"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mtyp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SRAM",
-                    description: Some("SRAM memory type"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PSRAM",
-                    description: Some("PSRAM (CRAM) memory type"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FLASH",
-                    description: Some("NOR Flash/OneNAND Flash"),
-                    value: 2,
                 },
             ],
         },

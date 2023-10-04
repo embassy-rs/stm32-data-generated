@@ -89,6 +89,62 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Keyr",
+            extends: None,
+            description: Some("Key register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "key",
+                description: Some("Cryptographic key"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Suspr",
+            extends: None,
+            description: Some("Suspend register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "susp",
+                description: Some("AES suspend"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Ivr",
+            extends: None,
+            description: Some("Initialization vector register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ivi",
+                description: Some("Initialization vector input"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Dinr",
+            extends: None,
+            description: Some("Data input register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "din",
+                description: Some("Input data word"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Control register"),
@@ -209,48 +265,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ivr",
-            extends: None,
-            description: Some("Initialization vector register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ivi",
-                description: Some("Initialization vector input"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Dinr",
-            extends: None,
-            description: Some("Data input register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "din",
-                description: Some("Input data word"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Doutr",
             extends: None,
             description: Some("Data output register"),
@@ -258,20 +272,6 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "dout",
                 description: Some("Output data word"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Suspr",
-            extends: None,
-            description: Some("Suspend register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "susp",
-                description: Some("AES suspend"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -320,6 +320,33 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Datatype",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NONE",
+                    description: Some("Word"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HALFWORD",
+                    description: Some("Half-word (16-bit)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BYTE",
+                    description: Some("Byte (8-bit)"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BIT",
+                    description: Some("Bit"),
+                    value: 3,
+                },
+            ],
+        },
         Enum {
             name: "Mode",
             description: None,
@@ -370,33 +397,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "FINALPHASE",
                     description: Some("Final phase"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Datatype",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some("Word"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALFWORD",
-                    description: Some("Half-word (16-bit)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BYTE",
-                    description: Some("Byte (8-bit)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BIT",
-                    description: Some("Bit"),
                     value: 3,
                 },
             ],

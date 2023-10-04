@@ -285,23 +285,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Waitpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVELOW",
-                    description: Some("NWAIT active low"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEHIGH",
-                    description: Some("NWAIT active high"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Mtyp",
             description: None,
             bit_size: 2,
@@ -319,6 +302,45 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "FLASH",
                     description: Some("NOR Flash/OneNAND Flash"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitcfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BEFOREWAITSTATE",
+                    description: Some("NWAIT signal is active one data cycle before wait state"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DURINGWAITSTATE",
+                    description: Some("NWAIT signal is active during wait state"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mwid",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("Memory data bus width 8 bits"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("Memory data bus width 16 bits"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("Memory data bus width 32 bits"),
                     value: 2,
                 },
             ],
@@ -356,28 +378,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Mwid",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some("Memory data bus width 8 bits"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("Memory data bus width 16 bits"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("Memory data bus width 32 bits"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
             name: "Accmod",
             description: None,
             bit_size: 2,
@@ -405,18 +405,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Waitcfg",
+            name: "Waitpol",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BEFOREWAITSTATE",
-                    description: Some("NWAIT signal is active one data cycle before wait state"),
+                    name: "ACTIVELOW",
+                    description: Some("NWAIT active low"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DURINGWAITSTATE",
-                    description: Some("NWAIT signal is active during wait state"),
+                    name: "ACTIVEHIGH",
+                    description: Some("NWAIT active high"),
                     value: 1,
                 },
             ],

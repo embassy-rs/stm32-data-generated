@@ -54,6 +54,30 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some("power control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cwupf",
+                    description: Some("Clear Wakeup Pin flag for PA0"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "wupp",
+                    description: Some("Wakeup pin polarity bit for PA0"),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Csr1",
             extends: None,
             description: Some("power control/status register"),
@@ -278,30 +302,6 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ewup",
                     description: Some("Enable Wakeup pin for PA0"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some("power control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cwupf",
-                    description: Some("Clear Wakeup Pin flag for PA0"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "wupp",
-                    description: Some("Wakeup pin polarity bit for PA0"),
                     bit_offset: 8,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),

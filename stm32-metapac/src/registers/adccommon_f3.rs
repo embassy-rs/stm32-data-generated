@@ -325,113 +325,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Dmacfg",
-            description: Some("DMA configuration (for multi-ADC mode)"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ONESHOT",
-                    description: Some("DMA one shot mode selected"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CIRCULATOR",
-                    description: Some("DMA circular mode selected"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd",
-            description: Some("Analog watchdog flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mdma",
-            description: Some("Direct memory access mode for multi ADC mode"),
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("MDMA mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS12_10",
-                    description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BIT8_6",
-                    description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Jqovf",
-            description: Some("Injected context queue overflow flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ended",
-            description: Some("End of operation"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTENDED",
-                    description: Some("Operation is not ended"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENDED",
-                    description: Some("Operation is ended"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovr",
-            description: Some("Overrun flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Dual",
             description: Some("Dual ADC mode selection"),
             bit_size: 5,
@@ -475,6 +368,113 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DUALA",
                     description: Some("Dual, alternate trigger mode only"),
                     value: 9,
+                },
+            ],
+        },
+        Enum {
+            name: "Mdma",
+            description: Some("Direct memory access mode for multi ADC mode"),
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("MDMA mode disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS12_10",
+                    description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BIT8_6",
+                    description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Ovr",
+            description: Some("Overrun flag"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jqovf",
+            description: Some("Injected context queue overflow flag"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERFLOW",
+                    description: Some("No injected context queue overflow"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERFLOW",
+                    description: Some("Injected context queue overflow"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dmacfg",
+            description: Some("DMA configuration (for multi-ADC mode)"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONESHOT",
+                    description: Some("DMA one shot mode selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CIRCULATOR",
+                    description: Some("DMA circular mode selected"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ended",
+            description: Some("End of operation"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTENDED",
+                    description: Some("Operation is not ended"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENDED",
+                    description: Some("Operation is ended"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Awd",
+            description: Some("Analog watchdog flag"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
+                    value: 1,
                 },
             ],
         },

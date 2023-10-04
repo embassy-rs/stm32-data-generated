@@ -54,30 +54,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some("Debug MCU Configuration Register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_stop",
-                    description: Some("Debug Stop Mode"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_standby",
-                    description: Some("Debug Standby Mode"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Apb1fzr",
             extends: None,
             description: Some("DBG APB freeze register 1"),
@@ -184,6 +160,30 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Revision Identifier"),
                     bit_offset: 16,
                     bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some("Debug MCU Configuration Register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_stop",
+                    description: Some("Debug Stop Mode"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_standby",
+                    description: Some("Debug Standby Mode"),
+                    bit_offset: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },

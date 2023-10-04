@@ -98,6 +98,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cmp",
+            extends: None,
+            description: Some("Compare Register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cmp",
+                description: Some("Compare value"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Arr",
             extends: None,
             description: Some("Autoreload Register"),
@@ -105,6 +119,20 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "arr",
                 description: Some("Auto reload value"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Cnt",
+            extends: None,
+            description: Some("Counter Register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cnt",
+                description: Some("Counter value"),
                 bit_offset: 0,
                 bit_size: 16,
                 array: None,
@@ -224,20 +252,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cmp",
-            extends: None,
-            description: Some("Compare Register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cmp",
-                description: Some("Compare value"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Control Register"),
@@ -268,20 +282,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Cnt",
-            extends: None,
-            description: Some("Counter Register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cnt",
-                description: Some("Counter value"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Ier",

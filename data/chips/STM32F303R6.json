@@ -1158,24 +1158,20 @@
                             "signal": "VINM_SEC"
                         },
                         {
-                            "pin": "PA5",
-                            "signal": "VM1"
-                        },
-                        {
-                            "pin": "PC5",
-                            "signal": "VM0"
-                        },
-                        {
-                            "pin": "PA7",
+                            "pin": "PD14",
                             "signal": "VP0"
                         },
                         {
-                            "pin": "PD14",
+                            "pin": "PB14",
                             "signal": "VP1"
                         },
                         {
                             "pin": "PB0",
                             "signal": "VP2"
+                        },
+                        {
+                            "pin": "PA7",
+                            "signal": "VP3"
                         }
                     ]
                 },

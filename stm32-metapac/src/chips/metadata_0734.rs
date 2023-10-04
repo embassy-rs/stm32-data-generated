@@ -2747,16 +2747,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "SMBA",
                 af: Some(4),
             },
-            PeripheralPin {
-                pin: "PJ1",
-                signal: "SDA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PJ2",
-                signal: "SCL",
-                af: Some(4),
-            },
         ],
         dma_channels: &[],
         interrupts: &[
@@ -2827,21 +2817,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PF1",
-                signal: "SCL",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PJ8",
-                signal: "SMBA",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PJ9",
-                signal: "SDA",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PJ10",
                 signal: "SCL",
                 af: Some(2),
             },
@@ -8826,36 +8801,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PF4",
                 signal: "RTS",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PJ3",
-                signal: "TX",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PJ4",
-                signal: "RX",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PJ5",
-                signal: "DE",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PJ5",
-                signal: "RTS",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PJ6",
-                signal: "CK",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PJ7",
-                signal: "CTS",
                 af: Some(7),
             },
         ],

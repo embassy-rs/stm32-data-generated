@@ -152,11 +152,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(7),
             },
             PeripheralPin {
-                pin: "PA11",
-                signal: "OUT",
-                af: Some(7),
-            },
-            PeripheralPin {
                 pin: "PA13",
                 signal: "OUT",
                 af: Some(7),
@@ -211,11 +206,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PA7",
-                signal: "OUT",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PA12",
                 signal: "OUT",
                 af: Some(7),
             },
@@ -582,11 +572,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "SDA",
                 af: Some(1),
             },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "SCL",
-                af: Some(4),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -709,11 +694,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(2),
             },
             PeripheralPin {
-                pin: "PA11",
-                signal: "OUT",
-                af: Some(1),
-            },
-            PeripheralPin {
                 pin: "PA13",
                 signal: "ETR",
                 af: Some(1),
@@ -726,11 +706,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PB1",
                 signal: "IN1",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PB2",
-                signal: "OUT",
                 af: Some(2),
             },
             PeripheralPin {
@@ -1053,16 +1028,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(0),
             },
             PeripheralPin {
-                pin: "PA11",
-                signal: "MISO",
-                af: Some(0),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "MOSI",
-                af: Some(0),
-            },
-            PeripheralPin {
                 pin: "PA13",
                 signal: "SCK",
                 af: Some(5),
@@ -1101,11 +1066,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 pin: "PB5",
                 signal: "MOSI",
                 af: Some(0),
-            },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "NSS",
-                af: Some(5),
             },
         ],
         dma_channels: &[
@@ -1394,11 +1354,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(0),
             },
             PeripheralPin {
-                pin: "PA11",
-                signal: "CH2",
-                af: Some(5),
-            },
-            PeripheralPin {
                 pin: "PB5",
                 signal: "CH1",
                 af: Some(5),
@@ -1523,21 +1478,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(4),
             },
             PeripheralPin {
-                pin: "PA11",
-                signal: "CTS",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "DE",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "RTS",
-                af: Some(4),
-            },
-            PeripheralPin {
                 pin: "PA14",
                 signal: "TX",
                 af: Some(4),
@@ -1570,11 +1510,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PB7",
                 signal: "RX",
-                af: Some(0),
-            },
-            PeripheralPin {
-                pin: "PB8",
-                signal: "TX",
                 af: Some(0),
             },
         ],

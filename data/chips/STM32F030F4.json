@@ -657,13 +657,13 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA9",
-                            "signal": "SCL",
+                            "pin": "PA10",
+                            "signal": "SDA",
                             "af": 4
                         },
                         {
-                            "pin": "PA10",
-                            "signal": "SDA",
+                            "pin": "PA9",
+                            "signal": "SCL",
                             "af": 4
                         }
                     ],
@@ -879,6 +879,11 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA10",
+                            "signal": "CH3",
+                            "af": 2
+                        },
+                        {
                             "pin": "PA6",
                             "signal": "BKIN",
                             "af": 2
@@ -891,11 +896,6 @@
                         {
                             "pin": "PA9",
                             "signal": "CH2",
-                            "af": 2
-                        },
-                        {
-                            "pin": "PA10",
-                            "signal": "CH3",
                             "af": 2
                         },
                         {
@@ -1104,14 +1104,14 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA7",
-                            "signal": "CH1",
-                            "af": 5
-                        },
-                        {
                             "pin": "PA10",
                             "signal": "BKIN",
                             "af": 0
+                        },
+                        {
+                            "pin": "PA7",
+                            "signal": "CH1",
+                            "af": 5
                         }
                     ],
                     "interrupts": [
@@ -1281,6 +1281,16 @@
                             "af": 1
                         },
                         {
+                            "pin": "PA10",
+                            "signal": "RX",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PA14",
+                            "signal": "TX",
+                            "af": 1
+                        },
+                        {
                             "pin": "PA2",
                             "signal": "TX",
                             "af": 1
@@ -1297,16 +1307,6 @@
                         },
                         {
                             "pin": "PA9",
-                            "signal": "TX",
-                            "af": 1
-                        },
-                        {
-                            "pin": "PA10",
-                            "signal": "RX",
-                            "af": 1
-                        },
-                        {
-                            "pin": "PA14",
                             "signal": "TX",
                             "af": 1
                         }

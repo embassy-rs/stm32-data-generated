@@ -1,4 +1,4 @@
-include!("../metadata_0492.rs");
+include!("../metadata_0477.rs");
 pub static METADATA: Metadata = Metadata {
     name: "STM32L010RB",
     family: "STM32L0",

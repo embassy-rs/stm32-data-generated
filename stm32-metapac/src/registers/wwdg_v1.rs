@@ -43,6 +43,38 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cfr",
+            extends: None,
+            description: Some("Configuration register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "w",
+                    description: Some("7-bit window value"),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdgtb",
+                    description: Some("Timer base"),
+                    bit_offset: 7,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wdgtb"),
+                },
+                Field {
+                    name: "ewi",
+                    description: Some("Early wakeup interrupt"),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Control register"),
@@ -80,40 +112,25 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: None,
             }],
         },
-        FieldSet {
-            name: "Cfr",
-            extends: None,
-            description: Some("Configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "w",
-                    description: Some("7-bit window value"),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
+    ],
+    enums: &[
+        Enum {
+            name: "Wdga",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Watchdog disabled"),
+                    value: 0,
                 },
-                Field {
-                    name: "wdgtb",
-                    description: Some("Timer base"),
-                    bit_offset: 7,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Wdgtb"),
-                },
-                Field {
-                    name: "ewi",
-                    description: Some("Early wakeup interrupt"),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Watchdog enabled"),
+                    value: 1,
                 },
             ],
         },
-    ],
-    enums: &[
         Enum {
             name: "Wdgtb",
             description: None,
@@ -138,23 +155,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV8",
                     description: Some("Counter clock (PCLK1 div 4096) div 8"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Wdga",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Watchdog disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Watchdog enabled"),
-                    value: 1,
                 },
             ],
         },

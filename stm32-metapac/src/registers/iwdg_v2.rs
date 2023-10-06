@@ -65,6 +65,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Rlr",
+            extends: None,
+            description: Some("Reload register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "rl",
+                description: Some("Watchdog counter reload value"),
+                bit_offset: 0,
+                bit_size: 12,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Winr",
             extends: None,
             description: Some("Window register"),
@@ -136,20 +150,6 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_size: 3,
                 array: None,
                 enumm: Some("Pr"),
-            }],
-        },
-        FieldSet {
-            name: "Rlr",
-            extends: None,
-            description: Some("Reload register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "rl",
-                description: Some("Watchdog counter reload value"),
-                bit_offset: 0,
-                bit_size: 12,
-                array: None,
-                enumm: None,
             }],
         },
     ],

@@ -393,16 +393,16 @@
                             "signal": "IN4"
                         },
                         {
-                            "pin": "PB2",
-                            "signal": "IN12"
-                        },
-                        {
                             "pin": "PB11",
                             "signal": "IN14"
                         },
                         {
                             "pin": "PB15",
                             "signal": "IN15"
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "IN12"
                         },
                         {
                             "pin": "PC0",
@@ -504,18 +504,6 @@
                             "signal": "IN11"
                         },
                         {
-                            "pin": "PE7",
-                            "signal": "IN4"
-                        },
-                        {
-                            "pin": "PE8",
-                            "signal": "IN6"
-                        },
-                        {
-                            "pin": "PE9",
-                            "signal": "IN2"
-                        },
-                        {
                             "pin": "PE10",
                             "signal": "IN14"
                         },
@@ -530,6 +518,18 @@
                         {
                             "pin": "PE13",
                             "signal": "IN3"
+                        },
+                        {
+                            "pin": "PE7",
+                            "signal": "IN4"
+                        },
+                        {
+                            "pin": "PE8",
+                            "signal": "IN6"
+                        },
+                        {
+                            "pin": "PE9",
+                            "signal": "IN2"
                         }
                     ],
                     "interrupts": [
@@ -583,14 +583,6 @@
                             "signal": "IN5"
                         },
                         {
-                            "pin": "PD8",
-                            "signal": "IN12"
-                        },
-                        {
-                            "pin": "PD9",
-                            "signal": "IN13"
-                        },
-                        {
                             "pin": "PD10",
                             "signal": "IN7"
                         },
@@ -611,8 +603,12 @@
                             "signal": "IN11"
                         },
                         {
-                            "pin": "PE8",
-                            "signal": "IN6"
+                            "pin": "PD8",
+                            "signal": "IN12"
+                        },
+                        {
+                            "pin": "PD9",
+                            "signal": "IN13"
                         },
                         {
                             "pin": "PE10",
@@ -633,6 +629,10 @@
                         {
                             "pin": "PE15",
                             "signal": "IN2"
+                        },
+                        {
+                            "pin": "PE8",
+                            "signal": "IN6"
                         }
                     ],
                     "interrupts": [
@@ -682,14 +682,6 @@
                             "signal": "IN2"
                         },
                         {
-                            "pin": "PD8",
-                            "signal": "IN12"
-                        },
-                        {
-                            "pin": "PD9",
-                            "signal": "IN13"
-                        },
-                        {
                             "pin": "PD10",
                             "signal": "IN7"
                         },
@@ -710,8 +702,12 @@
                             "signal": "IN11"
                         },
                         {
-                            "pin": "PE8",
-                            "signal": "IN6"
+                            "pin": "PD8",
+                            "signal": "IN12"
+                        },
+                        {
+                            "pin": "PD9",
+                            "signal": "IN13"
                         },
                         {
                             "pin": "PE10",
@@ -724,6 +720,10 @@
                         {
                             "pin": "PE12",
                             "signal": "IN16"
+                        },
+                        {
+                            "pin": "PE8",
+                            "signal": "IN6"
                         }
                     ],
                     "interrupts": [
@@ -805,16 +805,16 @@
                             "signal": "INP"
                         },
                         {
+                            "pin": "PA11",
+                            "signal": "OUT",
+                            "af": 8
+                        },
+                        {
                             "pin": "PA4",
                             "signal": "INM"
                         },
                         {
                             "pin": "PA6",
-                            "signal": "OUT",
-                            "af": 8
-                        },
-                        {
-                            "pin": "PA11",
                             "signal": "OUT",
                             "af": 8
                         },
@@ -839,6 +839,11 @@
                     "name": "COMP2",
                     "address": 1073807876,
                     "pins": [
+                        {
+                            "pin": "PA12",
+                            "signal": "OUT",
+                            "af": 8
+                        },
                         {
                             "pin": "PA2",
                             "signal": "INM"
@@ -866,11 +871,6 @@
                             "af": 8
                         },
                         {
-                            "pin": "PA12",
-                            "signal": "OUT",
-                            "af": 8
-                        },
-                        {
                             "pin": "PB9",
                             "signal": "OUT",
                             "af": 8
@@ -892,14 +892,14 @@
                             "signal": "INP"
                         },
                         {
-                            "pin": "PB7",
-                            "signal": "OUT",
-                            "af": 8
-                        },
-                        {
                             "pin": "PB15",
                             "signal": "OUT",
                             "af": 3
+                        },
+                        {
+                            "pin": "PB7",
+                            "signal": "OUT",
+                            "af": 8
                         },
                         {
                             "pin": "PC0",
@@ -940,16 +940,16 @@
                             "af": 8
                         },
                         {
+                            "pin": "PB14",
+                            "signal": "OUT",
+                            "af": 8
+                        },
+                        {
                             "pin": "PB2",
                             "signal": "INM"
                         },
                         {
                             "pin": "PB6",
-                            "signal": "OUT",
-                            "af": 8
-                        },
-                        {
-                            "pin": "PB14",
                             "signal": "OUT",
                             "af": 8
                         },
@@ -1605,22 +1605,22 @@
                     },
                     "pins": [
                         {
-                            "pin": "PB5",
-                            "signal": "RX",
-                            "af": 9
-                        },
-                        {
-                            "pin": "PB6",
-                            "signal": "TX",
-                            "af": 9
-                        },
-                        {
                             "pin": "PB12",
                             "signal": "RX",
                             "af": 9
                         },
                         {
                             "pin": "PB13",
+                            "signal": "TX",
+                            "af": 9
+                        },
+                        {
+                            "pin": "PB5",
+                            "signal": "RX",
+                            "af": 9
+                        },
+                        {
+                            "pin": "PB6",
                             "signal": "TX",
                             "af": 9
                         }
@@ -1646,13 +1646,13 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA8",
-                            "signal": "RX",
+                            "pin": "PA15",
+                            "signal": "TX",
                             "af": 11
                         },
                         {
-                            "pin": "PA15",
-                            "signal": "TX",
+                            "pin": "PA8",
+                            "signal": "RX",
                             "af": 11
                         },
                         {
@@ -1782,56 +1782,6 @@
                             "af": 12
                         },
                         {
-                            "pin": "PD3",
-                            "signal": "CLK",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD4",
-                            "signal": "NOE",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD5",
-                            "signal": "NWE",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD6",
-                            "signal": "NWAIT",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD7",
-                            "signal": "NCE",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD7",
-                            "signal": "NE1",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD8",
-                            "signal": "D13",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD8",
-                            "signal": "DA13",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD9",
-                            "signal": "D14",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PD9",
-                            "signal": "DA14",
-                            "af": 12
-                        },
-                        {
                             "pin": "PD10",
                             "signal": "D15",
                             "af": 12
@@ -1885,6 +1835,56 @@
                             "af": 12
                         },
                         {
+                            "pin": "PD3",
+                            "signal": "CLK",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD4",
+                            "signal": "NOE",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD5",
+                            "signal": "NWE",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD6",
+                            "signal": "NWAIT",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD7",
+                            "signal": "NCE",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD7",
+                            "signal": "NE1",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD8",
+                            "signal": "D13",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD8",
+                            "signal": "DA13",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD9",
+                            "signal": "D14",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PD9",
+                            "signal": "DA14",
+                            "af": 12
+                        },
+                        {
                             "pin": "PE0",
                             "signal": "NBL0",
                             "af": 12
@@ -1892,61 +1892,6 @@
                         {
                             "pin": "PE1",
                             "signal": "NBL1",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE2",
-                            "signal": "A23",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE3",
-                            "signal": "A19",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE4",
-                            "signal": "A20",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE5",
-                            "signal": "A21",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE6",
-                            "signal": "A22",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE7",
-                            "signal": "D4",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE7",
-                            "signal": "DA4",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE8",
-                            "signal": "D5",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE8",
-                            "signal": "DA5",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE9",
-                            "signal": "D6",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PE9",
-                            "signal": "DA6",
                             "af": 12
                         },
                         {
@@ -2010,6 +1955,66 @@
                             "af": 12
                         },
                         {
+                            "pin": "PE2",
+                            "signal": "A23",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE3",
+                            "signal": "A19",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE4",
+                            "signal": "A20",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE5",
+                            "signal": "A21",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE6",
+                            "signal": "A22",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE7",
+                            "signal": "D4",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE7",
+                            "signal": "DA4",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE8",
+                            "signal": "D5",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE8",
+                            "signal": "DA5",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE9",
+                            "signal": "D6",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PE9",
+                            "signal": "DA6",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PF10",
+                            "signal": "A0",
+                            "af": 12
+                        },
+                        {
                             "pin": "PF2",
                             "signal": "A2",
                             "af": 12
@@ -2017,11 +2022,6 @@
                         {
                             "pin": "PF9",
                             "signal": "A25",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PF10",
-                            "signal": "A0",
                             "af": 12
                         }
                     ],
@@ -2193,16 +2193,6 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA8",
-                            "signal": "CHA1",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "CHA2",
-                            "af": 13
-                        },
-                        {
                             "pin": "PA10",
                             "signal": "CHB1",
                             "af": 13
@@ -2223,6 +2213,16 @@
                             "af": 13
                         },
                         {
+                            "pin": "PA8",
+                            "signal": "CHA1",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "CHA2",
+                            "af": 13
+                        },
+                        {
                             "pin": "PB0",
                             "signal": "FLT5",
                             "af": 13
@@ -2230,6 +2230,36 @@
                         {
                             "pin": "PB1",
                             "signal": "SCOUT",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB10",
+                            "signal": "FLT3",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB11",
+                            "signal": "FLT4",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB12",
+                            "signal": "CHC1",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB13",
+                            "signal": "CHC2",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB14",
+                            "signal": "CHD1",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PB15",
+                            "signal": "CHD2",
                             "af": 13
                         },
                         {
@@ -2283,34 +2313,19 @@
                             "af": 13
                         },
                         {
-                            "pin": "PB10",
-                            "signal": "FLT3",
+                            "pin": "PC10",
+                            "signal": "FLT6",
                             "af": 13
                         },
                         {
-                            "pin": "PB11",
-                            "signal": "FLT4",
-                            "af": 13
+                            "pin": "PC11",
+                            "signal": "EEV2",
+                            "af": 3
                         },
                         {
-                            "pin": "PB12",
-                            "signal": "CHC1",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PB13",
-                            "signal": "CHC2",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PB14",
-                            "signal": "CHD1",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PB15",
-                            "signal": "CHD2",
-                            "af": 13
+                            "pin": "PC12",
+                            "signal": "EEV1",
+                            "af": 3
                         },
                         {
                             "pin": "PC5",
@@ -2345,21 +2360,6 @@
                         {
                             "pin": "PC9",
                             "signal": "CHE2",
-                            "af": 3
-                        },
-                        {
-                            "pin": "PC10",
-                            "signal": "FLT6",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PC11",
-                            "signal": "EEV2",
-                            "af": 3
-                        },
-                        {
-                            "pin": "PC12",
-                            "signal": "EEV1",
                             "af": 3
                         }
                     ],
@@ -2543,6 +2543,11 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA10",
+                            "signal": "SMBA",
+                            "af": 4
+                        },
+                        {
                             "pin": "PA8",
                             "signal": "SDA",
                             "af": 4
@@ -2550,11 +2555,6 @@
                         {
                             "pin": "PA9",
                             "signal": "SCL",
-                            "af": 4
-                        },
-                        {
-                            "pin": "PA10",
-                            "signal": "SMBA",
                             "af": 4
                         },
                         {
@@ -2646,17 +2646,17 @@
                             "af": 8
                         },
                         {
+                            "pin": "PC11",
+                            "signal": "SDA",
+                            "af": 8
+                        },
+                        {
                             "pin": "PC8",
                             "signal": "SCL",
                             "af": 8
                         },
                         {
                             "pin": "PC9",
-                            "signal": "SDA",
-                            "af": 8
-                        },
-                        {
-                            "pin": "PC11",
                             "signal": "SDA",
                             "af": 8
                         }
@@ -3139,18 +3139,6 @@
                             "signal": "VOUT"
                         },
                         {
-                            "pin": "PB2",
-                            "signal": "VINM"
-                        },
-                        {
-                            "pin": "PB2",
-                            "signal": "VINM0"
-                        },
-                        {
-                            "pin": "PB2",
-                            "signal": "VINM_SEC"
-                        },
-                        {
                             "pin": "PB10",
                             "signal": "VINM"
                         },
@@ -3169,6 +3157,18 @@
                         {
                             "pin": "PB13",
                             "signal": "VINP_SEC"
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "VINM"
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "VINM0"
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "VINM_SEC"
                         },
                         {
                             "pin": "PB0",
@@ -3226,6 +3226,14 @@
                             "signal": "VINP_SEC"
                         },
                         {
+                            "pin": "PD11",
+                            "signal": "VINP"
+                        },
+                        {
+                            "pin": "PD11",
+                            "signal": "VINP_SEC"
+                        },
+                        {
                             "pin": "PD8",
                             "signal": "VINM"
                         },
@@ -3236,14 +3244,6 @@
                         {
                             "pin": "PD8",
                             "signal": "VINM_SEC"
-                        },
-                        {
-                            "pin": "PD11",
-                            "signal": "VINP"
-                        },
-                        {
-                            "pin": "PD11",
-                            "signal": "VINP_SEC"
                         },
                         {
                             "pin": "PB13",
@@ -3536,13 +3536,13 @@
                             "af": 0
                         },
                         {
-                            "pin": "PB2",
-                            "signal": "OUT2",
+                            "pin": "PB15",
+                            "signal": "REFIN",
                             "af": 0
                         },
                         {
-                            "pin": "PB15",
-                            "signal": "REFIN",
+                            "pin": "PB2",
+                            "signal": "OUT2",
                             "af": 0
                         },
                         {
@@ -3602,6 +3602,26 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA10",
+                            "signal": "D1",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PA10",
+                            "signal": "SD_A",
+                            "af": 14
+                        },
+                        {
+                            "pin": "PA13",
+                            "signal": "SD_B",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PA14",
+                            "signal": "FS_B",
+                            "af": 13
+                        },
+                        {
                             "pin": "PA3",
                             "signal": "CK1",
                             "af": 3
@@ -3632,24 +3652,9 @@
                             "af": 14
                         },
                         {
-                            "pin": "PA10",
-                            "signal": "D1",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PA10",
-                            "signal": "SD_A",
+                            "pin": "PB10",
+                            "signal": "SCK_A",
                             "af": 14
-                        },
-                        {
-                            "pin": "PA13",
-                            "signal": "SD_B",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PA14",
-                            "signal": "FS_B",
-                            "af": 13
                         },
                         {
                             "pin": "PB3",
@@ -3692,11 +3697,6 @@
                             "af": 14
                         },
                         {
-                            "pin": "PB10",
-                            "signal": "SCK_A",
-                            "af": 14
-                        },
-                        {
                             "pin": "PC1",
                             "signal": "SD_A",
                             "af": 13
@@ -3724,6 +3724,11 @@
                         {
                             "pin": "PD6",
                             "signal": "SD_A",
+                            "af": 13
+                        },
+                        {
+                            "pin": "PE10",
+                            "signal": "MCLK_B",
                             "af": 13
                         },
                         {
@@ -3787,18 +3792,13 @@
                             "af": 13
                         },
                         {
-                            "pin": "PE10",
-                            "signal": "MCLK_B",
+                            "pin": "PF10",
+                            "signal": "D3",
                             "af": 13
                         },
                         {
                             "pin": "PF9",
                             "signal": "FS_B",
-                            "af": 13
-                        },
-                        {
-                            "pin": "PF10",
-                            "signal": "D3",
                             "af": 13
                         }
                     ],
@@ -3842,6 +3842,11 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA15",
+                            "signal": "NSS",
+                            "af": 5
+                        },
+                        {
                             "pin": "PA4",
                             "signal": "NSS",
                             "af": 5
@@ -3859,11 +3864,6 @@
                         {
                             "pin": "PA7",
                             "signal": "MOSI",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "NSS",
                             "af": 5
                         },
                         {
@@ -3922,11 +3922,6 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA8",
-                            "signal": "I2S_MCK",
-                            "af": 5
-                        },
-                        {
                             "pin": "PA10",
                             "signal": "MISO",
                             "af": 5
@@ -3939,6 +3934,11 @@
                         {
                             "pin": "PA11",
                             "signal": "MOSI",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA8",
+                            "signal": "I2S_MCK",
                             "af": 5
                         },
                         {
@@ -4007,12 +4007,12 @@
                             "af": 5
                         },
                         {
-                            "pin": "PF9",
+                            "pin": "PF10",
                             "signal": "SCK",
                             "af": 5
                         },
                         {
-                            "pin": "PF10",
+                            "pin": "PF9",
                             "signal": "SCK",
                             "af": 5
                         }
@@ -4057,6 +4057,16 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA15",
+                            "signal": "I2S_WS",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PA15",
+                            "signal": "NSS",
+                            "af": 6
+                        },
+                        {
                             "pin": "PA4",
                             "signal": "I2S_WS",
                             "af": 6
@@ -4070,16 +4080,6 @@
                             "pin": "PA9",
                             "signal": "I2S_MCK",
                             "af": 5
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "I2S_WS",
-                            "af": 6
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "NSS",
-                            "af": 6
                         },
                         {
                             "pin": "PB3",
@@ -4107,11 +4107,6 @@
                             "af": 6
                         },
                         {
-                            "pin": "PC7",
-                            "signal": "I2S_MCK",
-                            "af": 6
-                        },
-                        {
                             "pin": "PC10",
                             "signal": "I2S_CK",
                             "af": 6
@@ -4134,6 +4129,11 @@
                         {
                             "pin": "PC12",
                             "signal": "MOSI",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PC7",
+                            "signal": "I2S_MCK",
                             "af": 6
                         }
                     ],
@@ -4177,6 +4177,26 @@
                     },
                     "pins": [
                         {
+                            "pin": "PE11",
+                            "signal": "NSS",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PE12",
+                            "signal": "SCK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PE13",
+                            "signal": "MISO",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PE14",
+                            "signal": "MOSI",
+                            "af": 5
+                        },
+                        {
                             "pin": "PE2",
                             "signal": "SCK",
                             "af": 5
@@ -4198,26 +4218,6 @@
                         },
                         {
                             "pin": "PE6",
-                            "signal": "MOSI",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PE11",
-                            "signal": "NSS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PE12",
-                            "signal": "SCK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PE13",
-                            "signal": "MISO",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PE14",
                             "signal": "MOSI",
                             "af": 5
                         }
@@ -4291,26 +4291,6 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA6",
-                            "signal": "BKIN",
-                            "af": 6
-                        },
-                        {
-                            "pin": "PA7",
-                            "signal": "CH1N",
-                            "af": 6
-                        },
-                        {
-                            "pin": "PA8",
-                            "signal": "CH1",
-                            "af": 6
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "CH2",
-                            "af": 6
-                        },
-                        {
                             "pin": "PA10",
                             "signal": "CH3",
                             "af": 6
@@ -4351,6 +4331,26 @@
                             "af": 9
                         },
                         {
+                            "pin": "PA6",
+                            "signal": "BKIN",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PA7",
+                            "signal": "CH1N",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PA8",
+                            "signal": "CH1",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "CH2",
+                            "af": 6
+                        },
+                        {
                             "pin": "PB0",
                             "signal": "CH2N",
                             "af": 6
@@ -4359,16 +4359,6 @@
                             "pin": "PB1",
                             "signal": "CH3N",
                             "af": 6
-                        },
-                        {
-                            "pin": "PB8",
-                            "signal": "BKIN",
-                            "af": 12
-                        },
-                        {
-                            "pin": "PB9",
-                            "signal": "CH3N",
-                            "af": 12
                         },
                         {
                             "pin": "PB10",
@@ -4396,6 +4386,16 @@
                             "af": 4
                         },
                         {
+                            "pin": "PB8",
+                            "signal": "BKIN",
+                            "af": 12
+                        },
+                        {
+                            "pin": "PB9",
+                            "signal": "CH3N",
+                            "af": 12
+                        },
+                        {
                             "pin": "PC0",
                             "signal": "CH1",
                             "af": 2
@@ -4404,6 +4404,16 @@
                             "pin": "PC1",
                             "signal": "CH2",
                             "af": 2
+                        },
+                        {
+                            "pin": "PC13",
+                            "signal": "BKIN",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PC13",
+                            "signal": "CH1N",
+                            "af": 4
                         },
                         {
                             "pin": "PC2",
@@ -4429,31 +4439,6 @@
                             "pin": "PC5",
                             "signal": "CH4N",
                             "af": 6
-                        },
-                        {
-                            "pin": "PC13",
-                            "signal": "BKIN",
-                            "af": 2
-                        },
-                        {
-                            "pin": "PC13",
-                            "signal": "CH1N",
-                            "af": 4
-                        },
-                        {
-                            "pin": "PE7",
-                            "signal": "ETR",
-                            "af": 2
-                        },
-                        {
-                            "pin": "PE8",
-                            "signal": "CH1N",
-                            "af": 2
-                        },
-                        {
-                            "pin": "PE9",
-                            "signal": "CH1",
-                            "af": 2
                         },
                         {
                             "pin": "PE10",
@@ -4494,6 +4479,21 @@
                             "pin": "PE15",
                             "signal": "CH4N",
                             "af": 6
+                        },
+                        {
+                            "pin": "PE7",
+                            "signal": "ETR",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PE8",
+                            "signal": "CH1N",
+                            "af": 2
+                        },
+                        {
+                            "pin": "PE9",
+                            "signal": "CH1",
+                            "af": 2
                         },
                         {
                             "pin": "PF0",
@@ -4622,13 +4622,13 @@
                             "af": 2
                         },
                         {
-                            "pin": "PF9",
-                            "signal": "CH1",
+                            "pin": "PF10",
+                            "signal": "CH2",
                             "af": 3
                         },
                         {
-                            "pin": "PF10",
-                            "signal": "CH2",
+                            "pin": "PF9",
+                            "signal": "CH1",
                             "af": 3
                         }
                     ],
@@ -4698,11 +4698,6 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA6",
-                            "signal": "CH1",
-                            "af": 1
-                        },
-                        {
                             "pin": "PA12",
                             "signal": "CH1",
                             "af": 1
@@ -4710,6 +4705,11 @@
                         {
                             "pin": "PA13",
                             "signal": "CH1N",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PA6",
+                            "signal": "CH1",
                             "af": 1
                         },
                         {
@@ -4794,13 +4794,13 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA7",
-                            "signal": "CH1",
+                            "pin": "PA10",
+                            "signal": "BKIN",
                             "af": 1
                         },
                         {
-                            "pin": "PA10",
-                            "signal": "BKIN",
+                            "pin": "PA7",
+                            "signal": "CH1",
                             "af": 1
                         },
                         {
@@ -4900,6 +4900,21 @@
                             "af": 1
                         },
                         {
+                            "pin": "PA10",
+                            "signal": "CH4",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PA15",
+                            "signal": "CH1",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PA15",
+                            "signal": "ETR",
+                            "af": 14
+                        },
+                        {
                             "pin": "PA2",
                             "signal": "CH3",
                             "af": 1
@@ -4925,26 +4940,6 @@
                             "af": 10
                         },
                         {
-                            "pin": "PA10",
-                            "signal": "CH4",
-                            "af": 10
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "CH1",
-                            "af": 1
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "ETR",
-                            "af": 14
-                        },
-                        {
-                            "pin": "PB3",
-                            "signal": "CH2",
-                            "af": 1
-                        },
-                        {
                             "pin": "PB10",
                             "signal": "CH3",
                             "af": 1
@@ -4952,6 +4947,11 @@
                         {
                             "pin": "PB11",
                             "signal": "CH4",
+                            "af": 1
+                        },
+                        {
+                            "pin": "PB3",
+                            "signal": "CH2",
                             "af": 1
                         },
                         {
@@ -5106,6 +5106,11 @@
                             "af": 6
                         },
                         {
+                            "pin": "PF10",
+                            "signal": "BKIN2",
+                            "af": 2
+                        },
+                        {
                             "pin": "PF2",
                             "signal": "CH3",
                             "af": 2
@@ -5113,11 +5118,6 @@
                         {
                             "pin": "PF9",
                             "signal": "BKIN",
-                            "af": 2
-                        },
-                        {
-                            "pin": "PF10",
-                            "signal": "BKIN2",
                             "af": 2
                         }
                     ],
@@ -5368,11 +5368,6 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA8",
-                            "signal": "ETR",
-                            "af": 10
-                        },
-                        {
                             "pin": "PA11",
                             "signal": "CH1",
                             "af": 10
@@ -5385,6 +5380,11 @@
                         {
                             "pin": "PA13",
                             "signal": "CH3",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PA8",
+                            "signal": "ETR",
                             "af": 10
                         },
                         {
@@ -5529,13 +5529,13 @@
                             "af": 2
                         },
                         {
-                            "pin": "PB2",
-                            "signal": "CH1",
+                            "pin": "PB12",
+                            "signal": "ETR",
                             "af": 2
                         },
                         {
-                            "pin": "PB12",
-                            "signal": "ETR",
+                            "pin": "PB2",
+                            "signal": "CH1",
                             "af": 2
                         },
                         {
@@ -5748,16 +5748,6 @@
                             "af": 10
                         },
                         {
-                            "pin": "PA6",
-                            "signal": "BKIN",
-                            "af": 4
-                        },
-                        {
-                            "pin": "PA7",
-                            "signal": "CH1N",
-                            "af": 4
-                        },
-                        {
                             "pin": "PA10",
                             "signal": "BKIN",
                             "af": 11
@@ -5771,6 +5761,16 @@
                             "pin": "PA15",
                             "signal": "CH1",
                             "af": 2
+                        },
+                        {
+                            "pin": "PA6",
+                            "signal": "BKIN",
+                            "af": 4
+                        },
+                        {
+                            "pin": "PA7",
+                            "signal": "CH1N",
+                            "af": 4
                         },
                         {
                             "pin": "PB0",
@@ -5828,6 +5828,26 @@
                             "af": 10
                         },
                         {
+                            "pin": "PC10",
+                            "signal": "CH1N",
+                            "af": 4
+                        },
+                        {
+                            "pin": "PC11",
+                            "signal": "CH2N",
+                            "af": 4
+                        },
+                        {
+                            "pin": "PC12",
+                            "signal": "CH3N",
+                            "af": 4
+                        },
+                        {
+                            "pin": "PC13",
+                            "signal": "CH4N",
+                            "af": 6
+                        },
+                        {
                             "pin": "PC6",
                             "signal": "CH1",
                             "af": 4
@@ -5851,26 +5871,6 @@
                             "pin": "PC9",
                             "signal": "CH4",
                             "af": 4
-                        },
-                        {
-                            "pin": "PC10",
-                            "signal": "CH1N",
-                            "af": 4
-                        },
-                        {
-                            "pin": "PC11",
-                            "signal": "CH2N",
-                            "af": 4
-                        },
-                        {
-                            "pin": "PC12",
-                            "signal": "CH3N",
-                            "af": 4
-                        },
-                        {
-                            "pin": "PC13",
-                            "signal": "CH4N",
-                            "af": 6
                         },
                         {
                             "pin": "PD0",
@@ -6112,6 +6112,10 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA10",
+                            "signal": "DBCC2"
+                        },
+                        {
                             "pin": "PA2",
                             "signal": "FRSTX1",
                             "af": 14
@@ -6144,10 +6148,6 @@
                         {
                             "pin": "PA9",
                             "signal": "DBCC1"
-                        },
-                        {
-                            "pin": "PA10",
-                            "signal": "DBCC2"
                         },
                         {
                             "pin": "PB0",
@@ -6231,16 +6231,6 @@
                     },
                     "pins": [
                         {
-                            "pin": "PA8",
-                            "signal": "CK",
-                            "af": 7
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "TX",
-                            "af": 7
-                        },
-                        {
                             "pin": "PA10",
                             "signal": "RX",
                             "af": 7
@@ -6263,6 +6253,16 @@
                         {
                             "pin": "PA12",
                             "signal": "RTS",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PA8",
+                            "signal": "CK",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "TX",
                             "af": 7
                         },
                         {
@@ -6360,6 +6360,16 @@
                             "af": 7
                         },
                         {
+                            "pin": "PA14",
+                            "signal": "TX",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PA15",
+                            "signal": "RX",
+                            "af": 7
+                        },
+                        {
                             "pin": "PA2",
                             "signal": "TX",
                             "af": 7
@@ -6372,16 +6382,6 @@
                         {
                             "pin": "PA4",
                             "signal": "CK",
-                            "af": 7
-                        },
-                        {
-                            "pin": "PA14",
-                            "signal": "TX",
-                            "af": 7
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "RX",
                             "af": 7
                         },
                         {
@@ -6489,16 +6489,6 @@
                             "af": 7
                         },
                         {
-                            "pin": "PB8",
-                            "signal": "RX",
-                            "af": 7
-                        },
-                        {
-                            "pin": "PB9",
-                            "signal": "TX",
-                            "af": 7
-                        },
-                        {
                             "pin": "PB10",
                             "signal": "TX",
                             "af": 7
@@ -6534,6 +6524,16 @@
                             "af": 7
                         },
                         {
+                            "pin": "PB8",
+                            "signal": "RX",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PB9",
+                            "signal": "TX",
+                            "af": 7
+                        },
+                        {
                             "pin": "PC10",
                             "signal": "TX",
                             "af": 7
@@ -6546,16 +6546,6 @@
                         {
                             "pin": "PC12",
                             "signal": "CK",
-                            "af": 7
-                        },
-                        {
-                            "pin": "PD8",
-                            "signal": "TX",
-                            "af": 7
-                        },
-                        {
-                            "pin": "PD9",
-                            "signal": "RX",
                             "af": 7
                         },
                         {
@@ -6581,6 +6571,16 @@
                         {
                             "pin": "PD12",
                             "signal": "RTS",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PD8",
+                            "signal": "TX",
+                            "af": 7
+                        },
+                        {
+                            "pin": "PD9",
+                            "signal": "RX",
                             "af": 7
                         },
                         {

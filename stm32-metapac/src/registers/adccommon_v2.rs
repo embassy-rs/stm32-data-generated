@@ -43,6 +43,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cdr",
+            extends: None,
+            description: Some("ADC common regular data register for dual and triple modes"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "data",
+                description: Some("1st data item of a pair of regular conversions"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Ccr",
             extends: None,
             description: Some("ADC common control register"),
@@ -162,35 +176,38 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cdr",
-            extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "data",
-                description: Some("1st data item of a pair of regular conversions"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                enumm: None,
-            }],
-        },
     ],
     enums: &[
         Enum {
-            name: "Ovr",
+            name: "Strt",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
+                    name: "NOTSTARTED",
+                    description: Some("No regular channel conversion started"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
+                    name: "STARTED",
+                    description: Some("Regular channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Awd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
                     value: 1,
                 },
             ],
@@ -223,70 +240,46 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Strt",
+            name: "Ovr",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No regular channel conversion started"),
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STARTED",
-                    description: Some("Regular channel conversion has started"),
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Dds",
+            name: "Dma",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SINGLE",
-                    description: Some("No new DMA request is issued after the last transfer"),
+                    name: "DISABLED",
+                    description: Some("DMA mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CONTINUOUS",
-                    description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
+                    name: "MODE1",
+                    description: Some("DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Eoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
+                    name: "MODE2",
+                    description: Some("DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jstrt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No injected channel conversion started"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some("Injected channel conversion has started"),
-                    value: 1,
+                    name: "MODE3",
+                    description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
+                    value: 3,
                 },
             ],
         },
@@ -363,50 +356,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Awd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dma",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("DMA mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MODE1",
-                    description: Some("DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MODE2",
-                    description: Some("DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MODE3",
-                    description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Jeoc",
             description: None,
             bit_size: 1,
@@ -419,6 +368,57 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "COMPLETE",
                     description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jstrt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSTARTED",
+                    description: Some("No injected channel conversion started"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some("Injected channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Eoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SINGLE",
+                    description: Some("No new DMA request is issued after the last transfer"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONTINUOUS",
+                    description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
                     value: 1,
                 },
             ],

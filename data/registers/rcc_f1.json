@@ -739,11 +739,11 @@
         "enum": "USBPRE"
       },
       {
-        "name": "MCO",
+        "name": "MCOSEL",
         "description": "Microcontroller clock output",
         "bit_offset": 24,
         "bit_size": 3,
-        "enum": "MCO"
+        "enum": "MCOSEL"
       }
     ]
   },
@@ -1053,7 +1053,7 @@
       }
     ]
   },
-  "enum/MCO": {
+  "enum/MCOSEL": {
     "bit_size": 3,
     "variants": [
       {

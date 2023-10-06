@@ -712,11 +712,11 @@
         "enum": "PLLMUL"
       },
       {
-        "name": "MCO",
+        "name": "MCOSEL",
         "description": "Microcontroller clock output",
         "bit_offset": 24,
         "bit_size": 3,
-        "enum": "MCO"
+        "enum": "MCOSEL"
       },
       {
         "name": "MCOPRE",
@@ -1220,14 +1220,14 @@
         "value": 0
       },
       {
-        "name": "MediumLow",
-        "description": "Medium low driving capability",
-        "value": 2
-      },
-      {
         "name": "MediumHigh",
         "description": "Medium high driving capability",
         "value": 1
+      },
+      {
+        "name": "MediumLow",
+        "description": "Medium low driving capability",
+        "value": 2
       },
       {
         "name": "High",
@@ -1236,7 +1236,52 @@
       }
     ]
   },
-  "enum/MCO": {
+  "enum/MCOPRE": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "MCO is divided by 1",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "MCO is divided by 2",
+        "value": 1
+      },
+      {
+        "name": "Div4",
+        "description": "MCO is divided by 4",
+        "value": 2
+      },
+      {
+        "name": "Div8",
+        "description": "MCO is divided by 8",
+        "value": 3
+      },
+      {
+        "name": "Div16",
+        "description": "MCO is divided by 16",
+        "value": 4
+      },
+      {
+        "name": "Div32",
+        "description": "MCO is divided by 32",
+        "value": 5
+      },
+      {
+        "name": "Div64",
+        "description": "MCO is divided by 64",
+        "value": 6
+      },
+      {
+        "name": "Div128",
+        "description": "MCO is divided by 128",
+        "value": 7
+      }
+    ]
+  },
+  "enum/MCOSEL": {
     "bit_size": 3,
     "variants": [
       {
@@ -1283,51 +1328,6 @@
         "name": "HSI48",
         "description": "Internal RC 48 MHz (HSI48) oscillator clock selected",
         "value": 8
-      }
-    ]
-  },
-  "enum/MCOPRE": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "Div1",
-        "description": "MCO is divided by 1",
-        "value": 0
-      },
-      {
-        "name": "Div2",
-        "description": "MCO is divided by 2",
-        "value": 1
-      },
-      {
-        "name": "Div4",
-        "description": "MCO is divided by 4",
-        "value": 2
-      },
-      {
-        "name": "Div8",
-        "description": "MCO is divided by 8",
-        "value": 3
-      },
-      {
-        "name": "Div16",
-        "description": "MCO is divided by 16",
-        "value": 4
-      },
-      {
-        "name": "Div32",
-        "description": "MCO is divided by 32",
-        "value": 5
-      },
-      {
-        "name": "Div64",
-        "description": "MCO is divided by 64",
-        "value": 6
-      },
-      {
-        "name": "Div128",
-        "description": "MCO is divided by 128",
-        "value": 7
       }
     ]
   },

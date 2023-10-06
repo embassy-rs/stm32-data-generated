@@ -68,20 +68,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "C1to2sr",
-            extends: None,
-            description: Some("CPU1 to CPU2 status register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "chf",
-                description: Some("processor 1 transmit to process 2 Receive channel x status flag"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "C2mr",
             extends: None,
             description: Some("Mask register CPU2"),
@@ -104,6 +90,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
+        },
+        FieldSet {
+            name: "C1to2sr",
+            extends: None,
+            description: Some("CPU1 to CPU2 status register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "chf",
+                description: Some("processor 1 transmit to process 2 Receive channel x status flag"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "C1mr",
@@ -130,38 +130,14 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "C1cr",
+            name: "C1scr",
             extends: None,
-            description: Some("Control register CPU1"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxoie",
-                    description: Some("processor 1 Receive channel occupied interrupt enable"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txfie",
-                    description: Some("processor 1 Transmit channel free interrupt enable"),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "C2scr",
-            extends: None,
-            description: Some("Status Set or Clear register CPU2"),
+            description: Some("Status Set or Clear register CPU1"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "chc",
-                    description: Some("processor 2 Receive channel x status clear"),
+                    description: Some("processor 1 Receive channel x status clear"),
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
@@ -169,7 +145,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "chs",
-                    description: Some("processor 2 Transmit channel 1 status set"),
+                    description: Some("processor 1 Transmit channel x status set"),
                     bit_offset: 16,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
@@ -216,14 +192,14 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "C1scr",
+            name: "C2scr",
             extends: None,
-            description: Some("Status Set or Clear register CPU1"),
+            description: Some("Status Set or Clear register CPU2"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "chc",
-                    description: Some("processor 1 Receive channel x status clear"),
+                    description: Some("processor 2 Receive channel x status clear"),
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
@@ -231,10 +207,34 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "chs",
-                    description: Some("processor 1 Transmit channel x status set"),
+                    description: Some("processor 2 Transmit channel 1 status set"),
                     bit_offset: 16,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "C1cr",
+            extends: None,
+            description: Some("Control register CPU1"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxoie",
+                    description: Some("processor 1 Receive channel occupied interrupt enable"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txfie",
+                    description: Some("processor 1 Transmit channel free interrupt enable"),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
                     enumm: None,
                 },
             ],

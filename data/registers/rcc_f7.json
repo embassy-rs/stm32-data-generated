@@ -1859,11 +1859,11 @@
         "bit_size": 5
       },
       {
-        "name": "MCO1",
+        "name": "MCO1SEL",
         "description": "Microcontroller clock output 1",
         "bit_offset": 21,
         "bit_size": 2,
-        "enum": "MCO1"
+        "enum": "MCO1SEL"
       },
       {
         "name": "I2SSRC",
@@ -1887,11 +1887,11 @@
         "enum": "MCOPRE"
       },
       {
-        "name": "MCO2",
+        "name": "MCO2SEL",
         "description": "Microcontroller clock output 2",
         "bit_offset": 30,
         "bit_size": 2,
-        "enum": "MCO2"
+        "enum": "MCO2SEL"
       }
     ]
   },
@@ -2711,14 +2711,14 @@
         "value": 0
       },
       {
-        "name": "MediumLow",
-        "description": "Medium low driving capability",
-        "value": 2
-      },
-      {
         "name": "MediumHigh",
         "description": "Medium high driving capability",
         "value": 1
+      },
+      {
+        "name": "MediumLow",
+        "description": "Medium low driving capability",
+        "value": 2
       },
       {
         "name": "High",
@@ -2727,7 +2727,7 @@
       }
     ]
   },
-  "enum/MCO1": {
+  "enum/MCO1SEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -2752,7 +2752,7 @@
       }
     ]
   },
-  "enum/MCO2": {
+  "enum/MCO2SEL": {
     "bit_size": 2,
     "variants": [
       {

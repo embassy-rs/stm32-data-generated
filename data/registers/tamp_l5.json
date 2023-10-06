@@ -79,7 +79,7 @@
       },
       {
         "name": "MISR",
-        "description": " TAMP masked interrupt status register ",
+        "description": "TAMP masked interrupt status register",
         "byte_offset": 52,
         "access": "Read",
         "fieldset": "MISR"
@@ -402,7 +402,7 @@
     ]
   },
   "fieldset/MISR": {
-    "description": " TAMP masked interrupt status register ",
+    "description": "TAMP masked interrupt status register",
     "fields": [
       {
         "name": "TAMPMF",

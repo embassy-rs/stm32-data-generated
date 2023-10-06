@@ -3293,13 +3293,13 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output 1"]
         #[inline(always)]
-        pub const fn mco1(&self) -> super::vals::Mco1 {
+        pub const fn mco1sel(&self) -> super::vals::Mco1sel {
             let val = (self.0 >> 21usize) & 0x03;
-            super::vals::Mco1::from_bits(val as u8)
+            super::vals::Mco1sel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output 1"]
         #[inline(always)]
-        pub fn set_mco1(&mut self, val: super::vals::Mco1) {
+        pub fn set_mco1sel(&mut self, val: super::vals::Mco1sel) {
             self.0 = (self.0 & !(0x03 << 21usize)) | (((val.to_bits() as u32) & 0x03) << 21usize);
         }
         #[doc = "I2S clock selection"]
@@ -3337,13 +3337,13 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output 2"]
         #[inline(always)]
-        pub const fn mco2(&self) -> super::vals::Mco2 {
+        pub const fn mco2sel(&self) -> super::vals::Mco2sel {
             let val = (self.0 >> 30usize) & 0x03;
-            super::vals::Mco2::from_bits(val as u8)
+            super::vals::Mco2sel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output 2"]
         #[inline(always)]
-        pub fn set_mco2(&mut self, val: super::vals::Mco2) {
+        pub fn set_mco2sel(&mut self, val: super::vals::Mco2sel) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
@@ -4798,7 +4798,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mco1 {
+    pub enum Mco1sel {
         #[doc = "HSI clock selected"]
         HSI = 0,
         #[doc = "LSE oscillator selected"]
@@ -4808,9 +4808,9 @@ pub mod vals {
         #[doc = "PLL clock selected"]
         PLL = 0x03,
     }
-    impl Mco1 {
+    impl Mco1sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mco1 {
+        pub const fn from_bits(val: u8) -> Mco1sel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -4818,21 +4818,21 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Mco1 {
+    impl From<u8> for Mco1sel {
         #[inline(always)]
-        fn from(val: u8) -> Mco1 {
-            Mco1::from_bits(val)
+        fn from(val: u8) -> Mco1sel {
+            Mco1sel::from_bits(val)
         }
     }
-    impl From<Mco1> for u8 {
+    impl From<Mco1sel> for u8 {
         #[inline(always)]
-        fn from(val: Mco1) -> u8 {
-            Mco1::to_bits(val)
+        fn from(val: Mco1sel) -> u8 {
+            Mco1sel::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mco2 {
+    pub enum Mco2sel {
         #[doc = "System clock (SYSCLK) selected"]
         SYSCLK = 0,
         #[doc = "PLLI2S clock selected"]
@@ -4842,9 +4842,9 @@ pub mod vals {
         #[doc = "PLL clock selected"]
         PLL = 0x03,
     }
-    impl Mco2 {
+    impl Mco2sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mco2 {
+        pub const fn from_bits(val: u8) -> Mco2sel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -4852,16 +4852,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Mco2 {
+    impl From<u8> for Mco2sel {
         #[inline(always)]
-        fn from(val: u8) -> Mco2 {
-            Mco2::from_bits(val)
+        fn from(val: u8) -> Mco2sel {
+            Mco2sel::from_bits(val)
         }
     }
-    impl From<Mco2> for u8 {
+    impl From<Mco2sel> for u8 {
         #[inline(always)]
-        fn from(val: Mco2) -> u8 {
-            Mco2::to_bits(val)
+        fn from(val: Mco2sel) -> u8 {
+            Mco2sel::to_bits(val)
         }
     }
     #[repr(u8)]

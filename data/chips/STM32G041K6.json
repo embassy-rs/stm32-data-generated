@@ -1013,12 +1013,12 @@
                         },
                         {
                             "pin": "PA8",
-                            "signal": "MCO",
+                            "signal": "MCO_1",
                             "af": 0
                         },
                         {
                             "pin": "PA9",
-                            "signal": "MCO",
+                            "signal": "MCO_1",
                             "af": 0
                         },
                         {
@@ -1045,7 +1045,7 @@
                         },
                         {
                             "pin": "PF2",
-                            "signal": "MCO",
+                            "signal": "MCO_1",
                             "af": 0
                         }
                     ],

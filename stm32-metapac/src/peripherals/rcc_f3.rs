@@ -1415,13 +1415,13 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub const fn mco(&self) -> super::vals::Mco {
+        pub const fn mcosel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 24usize) & 0x07;
-            super::vals::Mco::from_bits(val as u8)
+            super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub fn set_mco(&mut self, val: super::vals::Mco) {
+        pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
         #[doc = "SDADC prescaler"]
@@ -2468,47 +2468,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mco {
-        #[doc = "MCO output disabled, no clock on MCO"]
-        NOMCO = 0,
-        _RESERVED_1 = 0x01,
-        #[doc = "Internal low speed (LSI) oscillator clock selected"]
-        LSI = 0x02,
-        #[doc = "External low speed (LSE) oscillator clock selected"]
-        LSE = 0x03,
-        #[doc = "System clock selected"]
-        SYSCLK = 0x04,
-        #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"]
-        HSI = 0x05,
-        #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
-        HSE = 0x06,
-        #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLNODIV)"]
-        PLL = 0x07,
-    }
-    impl Mco {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mco {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mco {
-        #[inline(always)]
-        fn from(val: u8) -> Mco {
-            Mco::from_bits(val)
-        }
-    }
-    impl From<Mco> for u8 {
-        #[inline(always)]
-        fn from(val: Mco) -> u8 {
-            Mco::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcopre {
         #[doc = "MCO is divided by 1"]
         DIV1 = 0,
@@ -2547,6 +2506,47 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcopre) -> u8 {
             Mcopre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Mcosel {
+        #[doc = "MCO output disabled, no clock on MCO"]
+        NOMCO = 0,
+        _RESERVED_1 = 0x01,
+        #[doc = "Internal low speed (LSI) oscillator clock selected"]
+        LSI = 0x02,
+        #[doc = "External low speed (LSE) oscillator clock selected"]
+        LSE = 0x03,
+        #[doc = "System clock selected"]
+        SYSCLK = 0x04,
+        #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"]
+        HSI = 0x05,
+        #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
+        HSE = 0x06,
+        #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLNODIV)"]
+        PLL = 0x07,
+    }
+    impl Mcosel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mcosel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mcosel {
+        #[inline(always)]
+        fn from(val: u8) -> Mcosel {
+            Mcosel::from_bits(val)
+        }
+    }
+    impl From<Mcosel> for u8 {
+        #[inline(always)]
+        fn from(val: Mcosel) -> u8 {
+            Mcosel::to_bits(val)
         }
     }
     #[repr(u8)]

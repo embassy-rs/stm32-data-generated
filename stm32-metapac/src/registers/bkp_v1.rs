@@ -59,44 +59,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Dr",
-            extends: None,
-            description: Some("Data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "d",
-                description: Some("Backup data"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some("Control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tpe",
-                    description: Some("Tamper pin enable"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tpal",
-                    description: Some("Tamper pin active level"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Tpal"),
-                },
-            ],
-        },
-        FieldSet {
             name: "Csr",
             extends: None,
             description: Some("Control/status register"),
@@ -145,6 +107,44 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some("Control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tpe",
+                    description: Some("Tamper pin enable"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tpal",
+                    description: Some("Tamper pin active level"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Tpal"),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dr",
+            extends: None,
+            description: Some("Data register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "d",
+                description: Some("Backup data"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Rtccr",
             extends: None,
             description: Some("RTC clock calibration register"),
@@ -187,6 +187,23 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
+            name: "Asos",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ALARM",
+                    description: Some("RTC Alarm pulse output selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SECOND",
+                    description: Some("RTC Second pulse output selected"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Tpal",
             description: None,
             bit_size: 1,
@@ -203,23 +220,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "A low level on the TAMPER pin resets all data backup registers (if TPE bit is set)",
                     ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Asos",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ALARM",
-                    description: Some("RTC Alarm pulse output selected"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECOND",
-                    description: Some("RTC Second pulse output selected"),
                     value: 1,
                 },
             ],

@@ -156,20 +156,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some("Flash option key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkey",
-                description: Some("Option byte key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Keyr",
             extends: None,
             description: Some("Flash key register"),
@@ -177,6 +163,20 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "key",
                 description: Some("FPEC key"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Optkeyr",
+            extends: None,
+            description: Some("Flash option key register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "optkey",
+                description: Some("Option byte key"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -394,33 +394,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Psize",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PSIZE8",
-                    description: Some("Program x8"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PSIZE16",
-                    description: Some("Program x16"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PSIZE32",
-                    description: Some("Program x32"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PSIZE64",
-                    description: Some("Program x64"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Latency",
             description: None,
             bit_size: 3,
@@ -504,6 +477,33 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "WS15",
                     description: Some("15 wait states"),
                     value: 15,
+                },
+            ],
+        },
+        Enum {
+            name: "Psize",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PSIZE8",
+                    description: Some("Program x8"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PSIZE16",
+                    description: Some("Program x16"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PSIZE32",
+                    description: Some("Program x32"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PSIZE64",
+                    description: Some("Program x64"),
+                    value: 3,
                 },
             ],
         },

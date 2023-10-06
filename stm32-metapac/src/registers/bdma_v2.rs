@@ -103,20 +103,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cselr",
-            extends: None,
-            description: Some("channel selection register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cs",
-                description: Some("DMA channel selection"),
-                bit_offset: 0,
-                bit_size: 4,
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("DMA channel configuration register (DMA_CCR)"),
@@ -221,6 +207,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cselr",
+            extends: None,
+            description: Some("channel selection register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cs",
+                description: Some("DMA channel selection"),
+                bit_offset: 0,
+                bit_size: 4,
+                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Ndtr",
             extends: None,
             description: Some("DMA channel 1 number of data register"),
@@ -277,45 +277,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Increment mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Increment mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Size",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some("8-bit size"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("16-bit size"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("32-bit size"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
             name: "Pl",
             description: None,
             bit_size: 2,
@@ -343,6 +304,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Dir",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FROMPERIPHERAL",
+                    description: Some("Read from peripheral"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FROMMEMORY",
+                    description: Some("Read from memory"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Memmem",
             description: None,
             bit_size: 1,
@@ -360,18 +338,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dir",
+            name: "Size",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("8-bit size"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("16-bit size"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("32-bit size"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Inc",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FROMPERIPHERAL",
-                    description: Some("Read from peripheral"),
+                    name: "DISABLED",
+                    description: Some("Increment mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FROMMEMORY",
-                    description: Some("Read from memory"),
+                    name: "ENABLED",
+                    description: Some("Increment mode enabled"),
                     value: 1,
                 },
             ],

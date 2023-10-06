@@ -1300,13 +1300,13 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub const fn mco(&self) -> super::vals::Mco {
+        pub const fn mcosel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 24usize) & 0x07;
-            super::vals::Mco::from_bits(val as u8)
+            super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub fn set_mco(&mut self, val: super::vals::Mco) {
+        pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
     }
@@ -1837,7 +1837,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mco {
+    pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
         NOMCO = 0,
         _RESERVED_1 = 0x01,
@@ -1852,9 +1852,9 @@ pub mod vals {
         #[doc = "PLL clock divided by 2 selected"]
         PLL = 0x07,
     }
-    impl Mco {
+    impl Mcosel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mco {
+        pub const fn from_bits(val: u8) -> Mcosel {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -1862,16 +1862,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Mco {
+    impl From<u8> for Mcosel {
         #[inline(always)]
-        fn from(val: u8) -> Mco {
-            Mco::from_bits(val)
+        fn from(val: u8) -> Mcosel {
+            Mcosel::from_bits(val)
         }
     }
-    impl From<Mco> for u8 {
+    impl From<Mcosel> for u8 {
         #[inline(always)]
-        fn from(val: Mco) -> u8 {
-            Mco::to_bits(val)
+        fn from(val: Mcosel) -> u8 {
+            Mcosel::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -238,7 +238,7 @@
     ]
   },
   "fieldset/CR1": {
-    "description": "TAMP control register 1 ",
+    "description": "TAMP control register 1",
     "fields": [
       {
         "name": "TAMPE",
@@ -420,7 +420,7 @@
     ]
   },
   "fieldset/PRIVCR": {
-    "description": "TAMP privilege mode control register ",
+    "description": "TAMP privilege mode control register",
     "fields": [
       {
         "name": "CNT1PRIV",
@@ -750,12 +750,12 @@
     "variants": [
       {
         "name": "FilteredLowOrUnfilteredHigh",
-        "description": "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event. ",
+        "description": "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event.",
         "value": 0
       },
       {
         "name": "FilteredHighOrUnfilteredLow",
-        "description": "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event. ",
+        "description": "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event.",
         "value": 1
       }
     ]

@@ -941,24 +941,24 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output clock selector This bitfield is controlled by software. It sets the clock selector for MCO output as follows: Note: This clock output may have some truncated cycles at startup or during MCO clock source switching. Any other value means no clock on MCO."]
         #[inline(always)]
-        pub const fn mcosel(&self) -> super::vals::Mcosel {
+        pub const fn mco1sel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 24usize) & 0x0f;
             super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output clock selector This bitfield is controlled by software. It sets the clock selector for MCO output as follows: Note: This clock output may have some truncated cycles at startup or during MCO clock source switching. Any other value means no clock on MCO."]
         #[inline(always)]
-        pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
+        pub fn set_mco1sel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Microcontroller clock output prescaler This bitfield is controlled by software. It sets the division factor of the clock sent to the MCO output as follows: ... It is highly recommended to set this field before the MCO output is enabled."]
         #[inline(always)]
-        pub const fn mcopre(&self) -> super::vals::Mcopre {
+        pub const fn mco1pre(&self) -> super::vals::Mcopre {
             let val = (self.0 >> 28usize) & 0x0f;
             super::vals::Mcopre::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output prescaler This bitfield is controlled by software. It sets the division factor of the clock sent to the MCO output as follows: ... It is highly recommended to set this field before the MCO output is enabled."]
         #[inline(always)]
-        pub fn set_mcopre(&mut self, val: super::vals::Mcopre) {
+        pub fn set_mco1pre(&mut self, val: super::vals::Mcopre) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val.to_bits() as u32) & 0x0f) << 28usize);
         }
     }

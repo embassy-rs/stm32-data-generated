@@ -2157,24 +2157,24 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub const fn mcosel(&self) -> super::vals::Mcosel {
+        pub const fn mco1sel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 24usize) & 0x07;
             super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
-        pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
+        pub fn set_mco1sel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
-        pub const fn mcopre(&self) -> super::vals::Mcopre {
+        pub const fn mco1pre(&self) -> super::vals::Mcopre {
             let val = (self.0 >> 28usize) & 0x07;
             super::vals::Mcopre::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
-        pub fn set_mcopre(&mut self, val: super::vals::Mcopre) {
+        pub fn set_mco1pre(&mut self, val: super::vals::Mcopre) {
             self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }

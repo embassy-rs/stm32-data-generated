@@ -226,6 +226,23 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
+            name: "Mode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MAIN_MODE",
+                    description: Some("Voltage regulator in Main mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOW_POWER_MODE",
+                    description: Some("Voltage regulator switches to low-power mode"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "DsEeKoff",
             description: None,
             bit_size: 1,
@@ -238,6 +255,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "NVMSLEEP",
                     description: Some("NVM not woken up when exiting from low-power mode (if the bit RUN_PD is set)"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pdds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STOP_MODE",
+                    description: Some("Enter Stop mode when the CPU enters deepsleep"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STANDBY_MODE",
+                    description: Some("Enter Standby mode when the CPU enters deepsleep"),
                     value: 1,
                 },
             ],
@@ -261,23 +295,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "RANGE3",
                     description: Some("1.2 V (range 3)"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Mode",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MAIN_MODE",
-                    description: Some("Voltage regulator in Main mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOW_POWER_MODE",
-                    description: Some("Voltage regulator switches to low-power mode"),
-                    value: 1,
                 },
             ],
         },
@@ -325,23 +342,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "EXTERNAL",
                     description: Some("External input analog voltage (Compare internally to VREFINT)"),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Pdds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STOP_MODE",
-                    description: Some("Enter Stop mode when the CPU enters deepsleep"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STANDBY_MODE",
-                    description: Some("Enter Standby mode when the CPU enters deepsleep"),
-                    value: 1,
                 },
             ],
         },

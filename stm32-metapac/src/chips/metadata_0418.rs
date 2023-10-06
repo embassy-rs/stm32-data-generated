@@ -4648,7 +4648,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1476543488,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
-            version: "h7",
+            version: "h7rm0433",
             block: "RCC",
             ir: &rcc::REGISTERS,
         }),
@@ -10141,7 +10141,7 @@ pub mod otg;
 pub mod pwr;
 #[path = "../registers/quadspi_v1.rs"]
 pub mod quadspi;
-#[path = "../registers/rcc_h7.rs"]
+#[path = "../registers/rcc_h7rm0433.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v1.rs"]
 pub mod rng;

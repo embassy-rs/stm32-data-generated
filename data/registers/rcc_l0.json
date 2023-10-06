@@ -1565,22 +1565,22 @@
     "variants": [
       {
         "name": "Low",
-        "description": "Lowest drive",
+        "description": "Low driving capability",
         "value": 0
       },
       {
         "name": "MediumLow",
-        "description": "Medium low drive",
+        "description": "Medium low driving capability",
         "value": 1
       },
       {
         "name": "MediumHigh",
-        "description": "Medium high drive",
+        "description": "Medium high driving capability",
         "value": 2
       },
       {
         "name": "High",
-        "description": "Highest drive",
+        "description": "High driving capability",
         "value": 3
       }
     ]

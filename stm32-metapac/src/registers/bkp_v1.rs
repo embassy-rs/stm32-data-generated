@@ -59,30 +59,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some("Control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tpe",
-                    description: Some("Tamper pin enable"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tpal",
-                    description: Some("Tamper pin active level"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Tpal"),
-                },
-            ],
-        },
-        FieldSet {
             name: "Csr",
             extends: None,
             description: Some("Control/status register"),
@@ -143,6 +119,30 @@ pub(crate) static REGISTERS: IR = IR {
                 array: None,
                 enumm: None,
             }],
+        },
+        FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some("Control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tpe",
+                    description: Some("Tamper pin enable"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tpal",
+                    description: Some("Tamper pin active level"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Tpal"),
+                },
+            ],
         },
         FieldSet {
             name: "Rtccr",

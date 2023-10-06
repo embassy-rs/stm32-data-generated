@@ -7073,13 +7073,13 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsedrv {
-        #[doc = "'Xtal mode lower driving capability"]
+        #[doc = "Low driving capability"]
         LOW = 0,
-        #[doc = "'Xtal mode medium-low driving capability"]
-        MEDIUM_LOW = 0x01,
-        #[doc = "'Xtal mode medium-high driving capability"]
-        MEDIUM_HIGH = 0x02,
-        #[doc = "'Xtal mode higher driving capability"]
+        #[doc = "Medium low driving capability"]
+        MEDIUMLOW = 0x01,
+        #[doc = "Medium high driving capability"]
+        MEDIUMHIGH = 0x02,
+        #[doc = "High driving capability"]
         HIGH = 0x03,
     }
     impl Lsedrv {

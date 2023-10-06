@@ -483,7 +483,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1476397056,
         registers: Some(PeripheralRegisters {
             kind: "exti",
-            version: "wle",
+            version: "w",
             block: "EXTI",
             ir: &exti::REGISTERS,
         }),
@@ -998,6 +998,40 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         ],
     },
     Peripheral {
+        name: "IPCC",
+        address: 1476398080,
+        registers: Some(PeripheralRegisters {
+            kind: "ipcc",
+            version: "v1",
+            block: "IPCC",
+            ir: &ipcc::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            clock: "AHB3",
+            enable: Some(PeripheralRccRegister {
+                register: "AHB3ENR",
+                field: "IPCCEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB3RSTR",
+                field: "IPCCRST",
+            }),
+            mux: None,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "C1_RX",
+                interrupt: "IPCC_C1_RX",
+            },
+            PeripheralInterrupt {
+                signal: "C1_TX",
+                interrupt: "IPCC_C1_TX",
+            },
+        ],
+    },
+    Peripheral {
         name: "IWDG",
         address: 1073754112,
         registers: Some(PeripheralRegisters {
@@ -1357,7 +1391,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1476395008,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
-            version: "wle",
+            version: "wl5",
             block: "RCC",
             ir: &rcc::REGISTERS,
         }),
@@ -1863,7 +1897,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073807360,
         registers: Some(PeripheralRegisters {
             kind: "syscfg",
-            version: "wle",
+            version: "wl5",
             block: "SYSCFG",
             ir: &syscfg::REGISTERS,
         }),
@@ -2698,6 +2732,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 19,
     },
     Interrupt {
+        name: "C2SEV_PWR_C2H",
+        number: 20,
+    },
+    Interrupt {
         name: "COMP",
         number: 21,
     },
@@ -2792,6 +2830,14 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "SUBGHZSPI",
         number: 44,
+    },
+    Interrupt {
+        name: "IPCC_C1_RX",
+        number: 45,
+    },
+    Interrupt {
+        name: "IPCC_C1_TX",
+        number: 46,
     },
     Interrupt {
         name: "HSEM",
@@ -2968,7 +3014,7 @@ pub mod crc;
 pub mod dbgmcu;
 #[path = "../registers/dmamux_v1.rs"]
 pub mod dmamux;
-#[path = "../registers/exti_wle.rs"]
+#[path = "../registers/exti_w.rs"]
 pub mod exti;
 #[path = "../registers/flash_wl.rs"]
 pub mod flash;
@@ -2976,11 +3022,13 @@ pub mod flash;
 pub mod gpio;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/ipcc_v1.rs"]
+pub mod ipcc;
 #[path = "../registers/iwdg_v2.rs"]
 pub mod iwdg;
 #[path = "../registers/pwr_wl5.rs"]
 pub mod pwr;
-#[path = "../registers/rcc_wle.rs"]
+#[path = "../registers/rcc_wl5.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v2.rs"]
 pub mod rng;
@@ -2988,7 +3036,7 @@ pub mod rng;
 pub mod rtc;
 #[path = "../registers/spi_v2.rs"]
 pub mod spi;
-#[path = "../registers/syscfg_wle.rs"]
+#[path = "../registers/syscfg_wl5.rs"]
 pub mod syscfg;
 #[path = "../registers/tamp_wl.rs"]
 pub mod tamp;

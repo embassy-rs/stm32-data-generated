@@ -98,6 +98,22 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Wdata",
+            extends: None,
+            description: Some("Write data register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "wdata",
+                description: Some(
+                    "Write data (write data are transferred to the address indicated by the write pointer)",
+                ),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Param",
             extends: None,
             description: Some("Parameter register"),
@@ -242,30 +258,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "X2bufcfg",
-            extends: None,
-            description: Some("X2 buffer configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "x2_base",
-                    description: Some("Base address of X2 buffer"),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "x2_buf_size",
-                    description: Some("Size of X2 buffer in 16-bit words"),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ybufcfg",
             extends: None,
             description: Some("Y buffer configuration register"),
@@ -346,6 +338,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "X2bufcfg",
+            extends: None,
+            description: Some("X2 buffer configuration register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "x2_base",
+                    description: Some("Base address of X2 buffer"),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "x2_buf_size",
+                    description: Some("Size of X2 buffer in 16-bit words"),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "X1bufcfg",
             extends: None,
             description: Some("X1 buffer configuration register"),
@@ -376,22 +392,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Wdata",
-            extends: None,
-            description: Some("Write data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "wdata",
-                description: Some(
-                    "Write data (write data are transferred to the address indicated by the write pointer)",
-                ),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
         },
     ],
     enums: &[],

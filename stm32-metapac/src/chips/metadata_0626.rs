@@ -376,11 +376,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             }),
             mux: None,
         }),
-        pins: &[PeripheralPin {
-            pin: "PA10",
-            signal: "SYNC",
-            af: Some(10),
-        }],
+        pins: &[],
         dma_channels: &[],
         interrupts: &[],
     },
@@ -3407,74 +3403,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         }],
     },
     Peripheral {
-        name: "USB",
-        address: 1073768448,
-        registers: Some(PeripheralRegisters {
-            kind: "usb",
-            version: "v3",
-            block: "USB",
-            ir: &usb::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            clock: "APB1",
-            enable: Some(PeripheralRccRegister {
-                register: "APB1ENR1",
-                field: "USBEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB1RSTR1",
-                field: "USBRST",
-            }),
-            mux: None,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PA11",
-                signal: "DM",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "DP",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA13",
-                signal: "NOE",
-                af: Some(10),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "HP",
-                interrupt: "USB",
-            },
-            PeripheralInterrupt {
-                signal: "LP",
-                interrupt: "USB",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
-                interrupt: "USB",
-            },
-        ],
-    },
-    Peripheral {
-        name: "USBRAM",
-        address: 1073769472,
-        registers: Some(PeripheralRegisters {
-            kind: "usbram",
-            version: "16x2_1024",
-            block: "USBRAM",
-            ir: &usbram::REGISTERS,
-        }),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "VREFINTCAL",
         address: 536835498,
         registers: Some(PeripheralRegisters {
@@ -3739,10 +3667,6 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 66,
     },
     Interrupt {
-        name: "USB",
-        number: 67,
-    },
-    Interrupt {
         name: "DMA2_CHANNEL6",
         number: 68,
     },
@@ -3939,10 +3863,6 @@ pub mod timer;
 pub mod uid;
 #[path = "../registers/usart_v3.rs"]
 pub mod usart;
-#[path = "../registers/usb_v3.rs"]
-pub mod usb;
-#[path = "../registers/usbram_16x2_1024.rs"]
-pub mod usbram;
 #[path = "../registers/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../registers/wwdg_v1.rs"]

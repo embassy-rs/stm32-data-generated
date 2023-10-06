@@ -32,30 +32,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Idcode",
-            extends: None,
-            description: Some("DBGMCU_IDCODE"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dev_id",
-                    description: Some("DEV_ID"),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rev_id",
-                    description: Some("REV_ID"),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("DBGMCU_CR"),
@@ -258,6 +234,30 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("TIM14"),
                     bit_offset: 27,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idcode",
+            extends: None,
+            description: Some("DBGMCU_IDCODE"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dev_id",
+                    description: Some("DEV_ID"),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rev_id",
+                    description: Some("REV_ID"),
+                    bit_offset: 16,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },

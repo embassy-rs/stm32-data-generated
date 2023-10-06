@@ -1638,14 +1638,14 @@ pub mod regs {
         }
         #[doc = "LSE oscillator drive capability"]
         #[inline(always)]
-        pub const fn lsedrv(&self) -> u8 {
+        pub const fn lsedrv(&self) -> super::vals::Lsedrv {
             let val = (self.0 >> 3usize) & 0x03;
-            val as u8
+            super::vals::Lsedrv::from_bits(val as u8)
         }
         #[doc = "LSE oscillator drive capability"]
         #[inline(always)]
-        pub fn set_lsedrv(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 3usize)) | (((val as u32) & 0x03) << 3usize);
+        pub fn set_lsedrv(&mut self, val: super::vals::Lsedrv) {
+            self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "CSS on LSE enable"]
         #[inline(always)]
@@ -3903,6 +3903,40 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hpre) -> u8 {
             Hpre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Lsedrv {
+        #[doc = "Low driving capability"]
+        LOW = 0,
+        #[doc = "Medium low driving capability"]
+        MEDIUMLOW = 0x01,
+        #[doc = "Medium high driving capability"]
+        MEDIUMHIGH = 0x02,
+        #[doc = "High driving capability"]
+        HIGH = 0x03,
+    }
+    impl Lsedrv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lsedrv {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lsedrv {
+        #[inline(always)]
+        fn from(val: u8) -> Lsedrv {
+            Lsedrv::from_bits(val)
+        }
+    }
+    impl From<Lsedrv> for u8 {
+        #[inline(always)]
+        fn from(val: Lsedrv) -> u8 {
+            Lsedrv::to_bits(val)
         }
     }
     #[repr(u8)]

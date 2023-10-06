@@ -336,63 +336,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[],
     },
     Peripheral {
-        name: "AES",
-        address: 1342570496,
-        registers: Some(PeripheralRegisters {
-            kind: "aes",
-            version: "v1",
-            block: "AES",
-            ir: &aes::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            clock: "AHB2",
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "AESEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "AESRST",
-            }),
-            mux: None,
-        }),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: Some("DMA2_CH1"),
-                dmamux: None,
-                dma: None,
-                request: Some(6),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: Some("DMA2_CH2"),
-                dmamux: None,
-                dma: None,
-                request: Some(6),
-            },
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: Some("DMA2_CH3"),
-                dmamux: None,
-                dma: None,
-                request: Some(6),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: Some("DMA2_CH5"),
-                dmamux: None,
-                dma: None,
-                request: Some(6),
-            },
-        ],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "AES",
-        }],
-    },
-    Peripheral {
         name: "CAN1",
         address: 1073767424,
         registers: Some(PeripheralRegisters {
@@ -1265,16 +1208,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "SDA",
                 af: Some(4),
             },
-            PeripheralPin {
-                pin: "PG13",
-                signal: "SDA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PG14",
-                signal: "SCL",
-                af: Some(4),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -1788,21 +1721,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PC3",
-                signal: "ETR",
-                af: Some(1),
-            },
-            PeripheralPin {
-                pin: "PG10",
-                signal: "IN1",
-                af: Some(1),
-            },
-            PeripheralPin {
-                pin: "PG11",
-                signal: "IN2",
-                af: Some(1),
-            },
-            PeripheralPin {
-                pin: "PG12",
                 signal: "ETR",
                 af: Some(1),
             },
@@ -2456,26 +2374,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "SD_B",
                 af: Some(13),
             },
-            PeripheralPin {
-                pin: "PG9",
-                signal: "SCK_A",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PG10",
-                signal: "FS_A",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PG11",
-                signal: "MCLK_A",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PG12",
-                signal: "SD_A",
-                af: Some(13),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -2878,26 +2776,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "MOSI",
                 af: Some(6),
             },
-            PeripheralPin {
-                pin: "PG9",
-                signal: "SCK",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PG10",
-                signal: "MISO",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PG11",
-                signal: "MOSI",
-                af: Some(6),
-            },
-            PeripheralPin {
-                pin: "PG12",
-                signal: "NSS",
-                af: Some(6),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -3233,21 +3111,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB15",
-                signal: "CH2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PG9",
-                signal: "CH1N",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PG10",
-                signal: "CH1",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PG11",
                 signal: "CH2",
                 af: Some(14),
             },
@@ -4672,36 +4535,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "RX",
                 af: Some(7),
             },
-            PeripheralPin {
-                pin: "PG9",
-                signal: "TX",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PG10",
-                signal: "RX",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PG11",
-                signal: "CTS",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PG12",
-                signal: "DE",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PG12",
-                signal: "RTS",
-                af: Some(7),
-            },
-            PeripheralPin {
-                pin: "PG13",
-                signal: "CK",
-                af: Some(7),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -5386,10 +5219,6 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 78,
     },
     Interrupt {
-        name: "AES",
-        number: 79,
-    },
-    Interrupt {
         name: "RNG",
         number: 80,
     },
@@ -5502,8 +5331,6 @@ pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[
 pub mod adc;
 #[path = "../registers/adccommon_v3.rs"]
 pub mod adccommon;
-#[path = "../registers/aes_v1.rs"]
-pub mod aes;
 #[path = "../registers/bdma_v2.rs"]
 pub mod bdma;
 #[path = "../registers/can_bxcan.rs"]

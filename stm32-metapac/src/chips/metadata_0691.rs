@@ -1546,6 +1546,11 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 signal: "A24",
                 af: Some(12),
             },
+            PeripheralPin {
+                pin: "PG14",
+                signal: "A25",
+                af: Some(12),
+            },
         ],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
@@ -1893,6 +1898,11 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PG13",
                 signal: "SDA",
+                af: Some(4),
+            },
+            PeripheralPin {
+                pin: "PG14",
+                signal: "SCL",
                 af: Some(4),
             },
             PeripheralPin {
@@ -2747,6 +2757,11 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PG13",
                 signal: "R0",
+                af: Some(11),
+            },
+            PeripheralPin {
+                pin: "PG14",
+                signal: "R1",
                 af: Some(11),
             },
         ],
@@ -6900,10 +6915,6 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "TSC",
         number: 77,
-    },
-    Interrupt {
-        name: "DSI",
-        number: 78,
     },
     Interrupt {
         name: "AES",

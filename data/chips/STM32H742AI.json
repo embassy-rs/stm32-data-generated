@@ -3969,7 +3969,7 @@
                     "address": 1476543488,
                     "registers": {
                         "kind": "rcc",
-                        "version": "h7",
+                        "version": "h7rm0433",
                         "block": "RCC"
                     },
                     "pins": [

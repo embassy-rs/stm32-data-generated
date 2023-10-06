@@ -757,7 +757,7 @@ pub mod otg;
 pub mod pwr;
 #[path = "../../peripherals/quadspi_v1.rs"]
 pub mod quadspi;
-#[path = "../../peripherals/rcc_h7.rs"]
+#[path = "../../peripherals/rcc_h7rm0433.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]
 pub mod rng;

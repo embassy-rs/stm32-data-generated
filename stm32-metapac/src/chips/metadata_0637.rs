@@ -5286,84 +5286,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         }],
     },
     Peripheral {
-        name: "USB_OTG_FS",
-        address: 1342177280,
-        registers: Some(PeripheralRegisters {
-            kind: "otg",
-            version: "v1",
-            block: "OTG",
-            ir: &otg::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            clock: "AHB2",
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "USB_OTG_FSEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "USB_OTG_FSRST",
-            }),
-            mux: None,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PA8",
-                signal: "SOF",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA9",
-                signal: "VBUS",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA10",
-                signal: "ID",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA11",
-                signal: "DM",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "DP",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA13",
-                signal: "NOE",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PC9",
-                signal: "NOE",
-                af: Some(10),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "EP1_IN",
-                interrupt: "OTG_FS",
-            },
-            PeripheralInterrupt {
-                signal: "EP1_OUT",
-                interrupt: "OTG_FS",
-            },
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "OTG_FS",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
-                interrupt: "OTG_FS",
-            },
-        ],
-    },
-    Peripheral {
         name: "VREFINTCAL",
         address: 536835498,
         registers: Some(PeripheralRegisters {
@@ -5676,10 +5598,6 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 66,
     },
     Interrupt {
-        name: "OTG_FS",
-        number: 67,
-    },
-    Interrupt {
         name: "DMA2_CHANNEL6",
         number: 68,
     },
@@ -5852,8 +5770,6 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../registers/iwdg_v2.rs"]
 pub mod iwdg;
-#[path = "../registers/otg_v1.rs"]
-pub mod otg;
 #[path = "../registers/pwr_l4.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_l4.rs"]

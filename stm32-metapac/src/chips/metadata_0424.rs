@@ -9293,7 +9293,16 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "WWDG",
+            },
+            PeripheralInterrupt {
+                signal: "RST",
+                interrupt: "WWDG",
+            },
+        ],
     },
     Peripheral {
         name: "WWDG2",
@@ -9310,16 +9319,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "WWDG",
-            },
-            PeripheralInterrupt {
-                signal: "RST",
-                interrupt: "WWDG",
-            },
-        ],
+        interrupts: &[],
     },
 ];
 pub(crate) static INTERRUPTS: &'static [Interrupt] = &[

@@ -43,38 +43,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cfr",
-            extends: None,
-            description: Some("Configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "w",
-                    description: Some("7-bit window value"),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdgtb",
-                    description: Some("Timer base"),
-                    bit_offset: 7,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Wdgtb"),
-                },
-                Field {
-                    name: "ewi",
-                    description: Some("Early wakeup interrupt"),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Control register"),
@@ -111,6 +79,38 @@ pub(crate) static REGISTERS: IR = IR {
                 array: None,
                 enumm: None,
             }],
+        },
+        FieldSet {
+            name: "Cfr",
+            extends: None,
+            description: Some("Configuration register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "w",
+                    description: Some("7-bit window value"),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdgtb",
+                    description: Some("Timer base"),
+                    bit_offset: 7,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wdgtb"),
+                },
+                Field {
+                    name: "ewi",
+                    description: Some("Early wakeup interrupt"),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
         },
     ],
     enums: &[

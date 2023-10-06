@@ -331,11 +331,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             }),
             mux: None,
         }),
-        pins: &[PeripheralPin {
-            pin: "PA10",
-            signal: "SYNC",
-            af: Some(10),
-        }],
+        pins: &[],
         dma_channels: &[],
         interrupts: &[],
     },
@@ -704,6 +700,56 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             reset: Some(PeripheralRccRegister {
                 register: "AHB2RSTR",
                 field: "GPIOCRST",
+            }),
+            mux: None,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
+        name: "GPIOD",
+        address: 1207962624,
+        registers: Some(PeripheralRegisters {
+            kind: "gpio",
+            version: "v2",
+            block: "GPIO",
+            ir: &gpio::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            clock: "AHB2",
+            enable: Some(PeripheralRccRegister {
+                register: "AHB2ENR",
+                field: "GPIODEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB2RSTR",
+                field: "GPIODRST",
+            }),
+            mux: None,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
+        name: "GPIOE",
+        address: 1207963648,
+        registers: Some(PeripheralRegisters {
+            kind: "gpio",
+            version: "v2",
+            block: "GPIO",
+            ir: &gpio::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            clock: "AHB2",
+            enable: Some(PeripheralRccRegister {
+                register: "AHB2ENR",
+                field: "GPIOEEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB2RSTR",
+                field: "GPIOERST",
             }),
             mux: None,
         }),
@@ -2569,74 +2615,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         }],
     },
     Peripheral {
-        name: "USB",
-        address: 1073768448,
-        registers: Some(PeripheralRegisters {
-            kind: "usb",
-            version: "v3",
-            block: "USB",
-            ir: &usb::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            clock: "APB1",
-            enable: Some(PeripheralRccRegister {
-                register: "APB1ENR1",
-                field: "USBEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB1RSTR1",
-                field: "USBRST",
-            }),
-            mux: None,
-        }),
-        pins: &[
-            PeripheralPin {
-                pin: "PA11",
-                signal: "DM",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA12",
-                signal: "DP",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PA13",
-                signal: "NOE",
-                af: Some(10),
-            },
-        ],
-        dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "HP",
-                interrupt: "USB",
-            },
-            PeripheralInterrupt {
-                signal: "LP",
-                interrupt: "USB",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
-                interrupt: "USB",
-            },
-        ],
-    },
-    Peripheral {
-        name: "USBRAM",
-        address: 1073769472,
-        registers: Some(PeripheralRegisters {
-            kind: "usbram",
-            version: "16x2_1024",
-            block: "USBRAM",
-            ir: &usbram::REGISTERS,
-        }),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "VREFINTCAL",
         address: 536835498,
         registers: Some(PeripheralRegisters {
@@ -2805,8 +2783,20 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 32,
     },
     Interrupt {
+        name: "I2C2_EV",
+        number: 33,
+    },
+    Interrupt {
+        name: "I2C2_ER",
+        number: 34,
+    },
+    Interrupt {
         name: "SPI1",
         number: 35,
+    },
+    Interrupt {
+        name: "SPI2",
+        number: 36,
     },
     Interrupt {
         name: "USART1",
@@ -2817,12 +2807,20 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 38,
     },
     Interrupt {
+        name: "USART3",
+        number: 39,
+    },
+    Interrupt {
         name: "EXTI15_10",
         number: 40,
     },
     Interrupt {
         name: "RTC_ALARM",
         number: 41,
+    },
+    Interrupt {
+        name: "SDMMC1",
+        number: 49,
     },
     Interrupt {
         name: "SPI3",
@@ -2867,10 +2865,6 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "LPTIM2",
         number: 66,
-    },
-    Interrupt {
-        name: "USB",
-        number: 67,
     },
     Interrupt {
         name: "DMA2_CHANNEL6",
@@ -3063,10 +3057,6 @@ pub mod timer;
 pub mod uid;
 #[path = "../registers/usart_v3.rs"]
 pub mod usart;
-#[path = "../registers/usb_v3.rs"]
-pub mod usb;
-#[path = "../registers/usbram_16x2_1024.rs"]
-pub mod usbram;
 #[path = "../registers/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../registers/wwdg_v1.rs"]

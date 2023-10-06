@@ -76,13 +76,45 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Doutr",
+            name: "Sr",
             extends: None,
-            description: Some("Data output register"),
+            description: Some("Status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ccf",
+                    description: Some("Computation complete flag"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rderr",
+                    description: Some("Read error flag"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrerr",
+                    description: Some("Write error flag"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Keyr",
+            extends: None,
+            description: Some("Key register"),
             bit_size: 32,
             fields: &[Field {
-                name: "dout",
-                description: Some("Output data word"),
+                name: "key",
+                description: Some("Cryptographic key"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -192,38 +224,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ccf",
-                    description: Some("Computation complete flag"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rderr",
-                    description: Some("Read error flag"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrerr",
-                    description: Some("Write error flag"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ivr",
             extends: None,
             description: Some("Initialization vector register"),
@@ -238,13 +238,13 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Keyr",
+            name: "Doutr",
             extends: None,
-            description: Some("Key register"),
+            description: Some("Data output register"),
             bit_size: 32,
             fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
+                name: "dout",
+                description: Some("Output data word"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -253,33 +253,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Datatype",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some("Word"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALFWORD",
-                    description: Some("Half-word (16-bit)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BYTE",
-                    description: Some("Byte (8-bit)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BIT",
-                    description: Some("Bit"),
-                    value: 3,
-                },
-            ],
-        },
         Enum {
             name: "Mode",
             description: None,
@@ -303,6 +276,33 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "MODE4",
                     description: Some("Key derivation then single decryption"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Datatype",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NONE",
+                    description: Some("Word"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HALFWORD",
+                    description: Some("Half-word (16-bit)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BYTE",
+                    description: Some("Byte (8-bit)"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BIT",
+                    description: Some("Bit"),
                     value: 3,
                 },
             ],

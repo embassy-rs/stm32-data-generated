@@ -1648,7 +1648,15 @@
                     "pins": [
                         {
                             "pin": "PB12",
+                            "signal": "I2S_WS"
+                        },
+                        {
+                            "pin": "PB12",
                             "signal": "NSS"
+                        },
+                        {
+                            "pin": "PB13",
+                            "signal": "I2S_CK"
                         },
                         {
                             "pin": "PB13",
@@ -1660,19 +1668,11 @@
                         },
                         {
                             "pin": "PB15",
-                            "signal": "MOSI"
-                        },
-                        {
-                            "pin": "PB12",
-                            "signal": "I2S_WS"
-                        },
-                        {
-                            "pin": "PB13",
-                            "signal": "I2S_CK"
+                            "signal": "I2S_SD"
                         },
                         {
                             "pin": "PB15",
-                            "signal": "I2S_SD"
+                            "signal": "MOSI"
                         },
                         {
                             "pin": "PC6",
@@ -1718,7 +1718,15 @@
                     "pins": [
                         {
                             "pin": "PA15",
+                            "signal": "I2S_WS"
+                        },
+                        {
+                            "pin": "PA15",
                             "signal": "NSS"
+                        },
+                        {
+                            "pin": "PB3",
+                            "signal": "I2S_CK"
                         },
                         {
                             "pin": "PB3",
@@ -1730,19 +1738,11 @@
                         },
                         {
                             "pin": "PB5",
-                            "signal": "MOSI"
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "I2S_WS"
-                        },
-                        {
-                            "pin": "PB3",
-                            "signal": "I2S_CK"
+                            "signal": "I2S_SD"
                         },
                         {
                             "pin": "PB5",
-                            "signal": "I2S_SD"
+                            "signal": "MOSI"
                         },
                         {
                             "pin": "PC7",

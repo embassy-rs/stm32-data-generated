@@ -1756,14 +1756,34 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA3",
+                            "signal": "I2S_MCK",
+                            "af": 5
+                        },
+                        {
                             "pin": "PA5",
                             "signal": "MISO",
                             "af": 3
                         },
                         {
                             "pin": "PA8",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA8",
                             "signal": "SCK",
                             "af": 5
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "I2S_WS",
+                            "af": 3
                         },
                         {
                             "pin": "PA9",
@@ -1777,7 +1797,17 @@
                         },
                         {
                             "pin": "PA10",
+                            "signal": "I2S_SD",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA10",
                             "signal": "MOSI",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB9",
+                            "signal": "I2S_WS",
                             "af": 5
                         },
                         {
@@ -1787,7 +1817,17 @@
                         },
                         {
                             "pin": "PB10",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB10",
                             "signal": "SCK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB12",
+                            "signal": "I2S_WS",
                             "af": 5
                         },
                         {
@@ -1797,8 +1837,18 @@
                         },
                         {
                             "pin": "PB13",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB13",
                             "signal": "SCK",
                             "af": 5
+                        },
+                        {
+                            "pin": "PB14",
+                            "signal": "I2S_MCK",
+                            "af": 3
                         },
                         {
                             "pin": "PB14",
@@ -1807,8 +1857,18 @@
                         },
                         {
                             "pin": "PB15",
+                            "signal": "I2S_SD",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB15",
                             "signal": "MOSI",
                             "af": 5
+                        },
+                        {
+                            "pin": "PC1",
+                            "signal": "I2S_SD",
+                            "af": 3
                         },
                         {
                             "pin": "PC1",
@@ -1822,72 +1882,12 @@
                         },
                         {
                             "pin": "PC3",
-                            "signal": "MOSI",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA3",
-                            "signal": "I2S_MCK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA8",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "I2S_WS",
-                            "af": 3
-                        },
-                        {
-                            "pin": "PA10",
                             "signal": "I2S_SD",
                             "af": 5
-                        },
-                        {
-                            "pin": "PB9",
-                            "signal": "I2S_WS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB10",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB12",
-                            "signal": "I2S_WS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB13",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB14",
-                            "signal": "I2S_MCK",
-                            "af": 3
-                        },
-                        {
-                            "pin": "PB15",
-                            "signal": "I2S_SD",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PC1",
-                            "signal": "I2S_SD",
-                            "af": 3
                         },
                         {
                             "pin": "PC3",
-                            "signal": "I2S_SD",
+                            "signal": "MOSI",
                             "af": 5
                         },
                         {
@@ -4492,14 +4492,34 @@
                     },
                     "pins": [
                         {
+                            "pin": "PA3",
+                            "signal": "I2S_MCK",
+                            "af": 5
+                        },
+                        {
                             "pin": "PA5",
                             "signal": "MISO",
                             "af": 3
                         },
                         {
                             "pin": "PA8",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA8",
                             "signal": "SCK",
                             "af": 5
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA9",
+                            "signal": "I2S_WS",
+                            "af": 3
                         },
                         {
                             "pin": "PA9",
@@ -4513,7 +4533,17 @@
                         },
                         {
                             "pin": "PA10",
+                            "signal": "I2S_SD",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA10",
                             "signal": "MOSI",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB9",
+                            "signal": "I2S_WS",
                             "af": 5
                         },
                         {
@@ -4523,7 +4553,17 @@
                         },
                         {
                             "pin": "PB10",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB10",
                             "signal": "SCK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB12",
+                            "signal": "I2S_WS",
                             "af": 5
                         },
                         {
@@ -4533,8 +4573,18 @@
                         },
                         {
                             "pin": "PB13",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB13",
                             "signal": "SCK",
                             "af": 5
+                        },
+                        {
+                            "pin": "PB14",
+                            "signal": "I2S_MCK",
+                            "af": 3
                         },
                         {
                             "pin": "PB14",
@@ -4543,8 +4593,18 @@
                         },
                         {
                             "pin": "PB15",
+                            "signal": "I2S_SD",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB15",
                             "signal": "MOSI",
                             "af": 5
+                        },
+                        {
+                            "pin": "PC1",
+                            "signal": "I2S_SD",
+                            "af": 3
                         },
                         {
                             "pin": "PC1",
@@ -4558,72 +4618,12 @@
                         },
                         {
                             "pin": "PC3",
-                            "signal": "MOSI",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA3",
-                            "signal": "I2S_MCK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA8",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA9",
-                            "signal": "I2S_WS",
-                            "af": 3
-                        },
-                        {
-                            "pin": "PA10",
                             "signal": "I2S_SD",
                             "af": 5
-                        },
-                        {
-                            "pin": "PB9",
-                            "signal": "I2S_WS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB10",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB12",
-                            "signal": "I2S_WS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB13",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB14",
-                            "signal": "I2S_MCK",
-                            "af": 3
-                        },
-                        {
-                            "pin": "PB15",
-                            "signal": "I2S_SD",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PC1",
-                            "signal": "I2S_SD",
-                            "af": 3
                         },
                         {
                             "pin": "PC3",
-                            "signal": "I2S_SD",
+                            "signal": "MOSI",
                             "af": 5
                         },
                         {

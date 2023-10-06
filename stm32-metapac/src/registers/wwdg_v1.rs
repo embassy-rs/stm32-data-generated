@@ -43,30 +43,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some("Control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "t",
-                    description: Some("7-bit counter (MSB to LSB)"),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdga",
-                    description: Some("Activation bit"),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Wdga"),
-                },
-            ],
-        },
-        FieldSet {
             name: "Cfr",
             extends: None,
             description: Some("Configuration register"),
@@ -99,6 +75,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some("Control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "t",
+                    description: Some("7-bit counter (MSB to LSB)"),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdga",
+                    description: Some("Activation bit"),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Wdga"),
+                },
+            ],
+        },
+        FieldSet {
             name: "Sr",
             extends: None,
             description: Some("Status register"),
@@ -114,23 +114,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Wdga",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Watchdog disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Watchdog enabled"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Wdgtb",
             description: None,
@@ -155,6 +138,23 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV8",
                     description: Some("Counter clock (PCLK1 div 4096) div 8"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wdga",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Watchdog disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Watchdog enabled"),
+                    value: 1,
                 },
             ],
         },

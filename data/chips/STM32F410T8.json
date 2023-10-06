@@ -1109,12 +1109,27 @@
                     "pins": [
                         {
                             "pin": "PA5",
+                            "signal": "I2S_CK",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA5",
                             "signal": "SCK",
                             "af": 5
                         },
                         {
                             "pin": "PA15",
+                            "signal": "I2S_WS",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PA15",
                             "signal": "NSS",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB3",
+                            "signal": "I2S_CK",
                             "af": 5
                         },
                         {
@@ -1129,27 +1144,12 @@
                         },
                         {
                             "pin": "PB5",
-                            "signal": "MOSI",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA5",
-                            "signal": "I2S_CK",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PA15",
-                            "signal": "I2S_WS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB3",
-                            "signal": "I2S_CK",
+                            "signal": "I2S_SD",
                             "af": 5
                         },
                         {
                             "pin": "PB5",
-                            "signal": "I2S_SD",
+                            "signal": "MOSI",
                             "af": 5
                         },
                         {

@@ -127,9 +127,9 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     enums: &[
         Enum {
-            name: "RevOut",
+            name: "RevIn",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "NORMAL",
@@ -137,9 +137,19 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "REVERSED",
-                    description: Some("Bit reversed output"),
+                    name: "BYTE",
+                    description: Some("Bit reversal done by byte"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "HALFWORD",
+                    description: Some("Bit reversal done by half-word"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "WORD",
+                    description: Some("Bit reversal done by word"),
+                    value: 3,
                 },
             ],
         },
@@ -171,9 +181,9 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RevIn",
+            name: "RevOut",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NORMAL",
@@ -181,19 +191,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BYTE",
-                    description: Some("Bit reversal done by byte"),
+                    name: "REVERSED",
+                    description: Some("Bit reversed output"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "HALFWORD",
-                    description: Some("Bit reversal done by half-word"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "WORD",
-                    description: Some("Bit reversal done by word"),
-                    value: 3,
                 },
             ],
         },

@@ -54,6 +54,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Exticr",
+            extends: None,
+            description: Some("external interrupt configuration register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "exti",
+                description: Some("EXTI x configuration"),
+                bit_offset: 0,
+                bit_size: 4,
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Pmc",
             extends: None,
             description: Some("peripheral mode configuration register"),
@@ -92,20 +106,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Exticr",
-            extends: None,
-            description: Some("external interrupt configuration register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "exti",
-                description: Some("EXTI x configuration"),
-                bit_offset: 0,
-                bit_size: 4,
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Memrm",

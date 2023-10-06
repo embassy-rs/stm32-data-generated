@@ -2217,7 +2217,7 @@
                             "field": "SAI1RST"
                         },
                         "mux": {
-                            "register": "CCIPR2",
+                            "register": "CCIPR",
                             "field": "SAI1SEL"
                         }
                     },

@@ -89,13 +89,13 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Suspr",
+            name: "Dinr",
             extends: None,
-            description: Some("Suspend register"),
+            description: Some("Data input register"),
             bit_size: 32,
             fields: &[Field {
-                name: "susp",
-                description: Some("AES suspend"),
+                name: "din",
+                description: Some("Input data word"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -141,6 +141,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
+        },
+        FieldSet {
+            name: "Keyr",
+            extends: None,
+            description: Some("Key register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "key",
+                description: Some("Cryptographic key"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Cr",
@@ -269,20 +283,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Dinr",
-            extends: None,
-            description: Some("Data input register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "din",
-                description: Some("Input data word"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Ivr",
             extends: None,
             description: Some("Initialization vector register"),
@@ -297,13 +297,13 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Keyr",
+            name: "Suspr",
             extends: None,
-            description: Some("Key register"),
+            description: Some("Suspend register"),
             bit_size: 32,
             fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
+                name: "susp",
+                description: Some("AES suspend"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -312,33 +312,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Gcmph",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "INITPHASE",
-                    description: Some("Init phase"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HEADERPHASE",
-                    description: Some("Header phase"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PAYLOADPHASE",
-                    description: Some("Payload phase"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FINALPHASE",
-                    description: Some("Final phase"),
-                    value: 3,
-                },
-            ],
-        },
         Enum {
             name: "Mode",
             description: None,
@@ -362,6 +335,33 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "MODE4",
                     description: Some("Key derivation then single decryption"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Gcmph",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "INITPHASE",
+                    description: Some("Init phase"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HEADERPHASE",
+                    description: Some("Header phase"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PAYLOADPHASE",
+                    description: Some("Payload phase"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FINALPHASE",
+                    description: Some("Final phase"),
                     value: 3,
                 },
             ],

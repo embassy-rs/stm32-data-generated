@@ -1813,7 +1813,17 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PB12",
+                signal: "I2S_WS",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB12",
                 signal: "NSS",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB13",
+                signal: "I2S_CK",
                 af: None,
             },
             PeripheralPin {
@@ -1828,22 +1838,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB15",
-                signal: "MOSI",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PB12",
-                signal: "I2S_WS",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PB13",
-                signal: "I2S_CK",
+                signal: "I2S_SD",
                 af: None,
             },
             PeripheralPin {
                 pin: "PB15",
-                signal: "I2S_SD",
+                signal: "MOSI",
                 af: None,
             },
             PeripheralPin {
@@ -1897,7 +1897,17 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         pins: &[
             PeripheralPin {
                 pin: "PA15",
+                signal: "I2S_WS",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA15",
                 signal: "NSS",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB3",
+                signal: "I2S_CK",
                 af: None,
             },
             PeripheralPin {
@@ -1912,22 +1922,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB5",
-                signal: "MOSI",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PA15",
-                signal: "I2S_WS",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PB3",
-                signal: "I2S_CK",
+                signal: "I2S_SD",
                 af: None,
             },
             PeripheralPin {
                 pin: "PB5",
-                signal: "I2S_SD",
+                signal: "MOSI",
                 af: None,
             },
             PeripheralPin {

@@ -1668,6 +1668,11 @@
                     "pins": [
                         {
                             "pin": "PB9",
+                            "signal": "I2S_WS",
+                            "af": 5
+                        },
+                        {
+                            "pin": "PB9",
                             "signal": "NSS",
                             "af": 5
                         },
@@ -1678,7 +1683,17 @@
                         },
                         {
                             "pin": "PB12",
+                            "signal": "I2S_WS",
+                            "af": 0
+                        },
+                        {
+                            "pin": "PB12",
                             "signal": "NSS",
+                            "af": 0
+                        },
+                        {
+                            "pin": "PB13",
+                            "signal": "I2S_CK",
                             "af": 0
                         },
                         {
@@ -1688,7 +1703,17 @@
                         },
                         {
                             "pin": "PB14",
+                            "signal": "I2S_MCK",
+                            "af": 0
+                        },
+                        {
+                            "pin": "PB14",
                             "signal": "MISO",
+                            "af": 0
+                        },
+                        {
+                            "pin": "PB15",
+                            "signal": "I2S_SD",
                             "af": 0
                         },
                         {
@@ -1698,37 +1723,12 @@
                         },
                         {
                             "pin": "PC2",
-                            "signal": "MISO",
+                            "signal": "I2S_MCK",
                             "af": 2
                         },
                         {
-                            "pin": "PB9",
-                            "signal": "I2S_WS",
-                            "af": 5
-                        },
-                        {
-                            "pin": "PB12",
-                            "signal": "I2S_WS",
-                            "af": 0
-                        },
-                        {
-                            "pin": "PB13",
-                            "signal": "I2S_CK",
-                            "af": 0
-                        },
-                        {
-                            "pin": "PB14",
-                            "signal": "I2S_MCK",
-                            "af": 0
-                        },
-                        {
-                            "pin": "PB15",
-                            "signal": "I2S_SD",
-                            "af": 0
-                        },
-                        {
                             "pin": "PC2",
-                            "signal": "I2S_MCK",
+                            "signal": "MISO",
                             "af": 2
                         }
                     ],

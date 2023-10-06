@@ -54,6 +54,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Memrmp",
+            extends: None,
+            description: Some("memory remap register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "mem_mode",
+                description: Some("Memory mapping selection"),
+                bit_offset: 0,
+                bit_size: 2,
+                array: None,
+                enumm: Some("MemMode"),
+            }],
+        },
+        FieldSet {
             name: "Exticr",
             extends: None,
             description: Some("external interrupt configuration register 1"),
@@ -104,20 +118,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Memrmp",
-            extends: None,
-            description: Some("memory remap register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "mem_mode",
-                description: Some("Memory mapping selection"),
-                bit_offset: 0,
-                bit_size: 2,
-                array: None,
-                enumm: Some("MemMode"),
-            }],
         },
     ],
     enums: &[Enum {

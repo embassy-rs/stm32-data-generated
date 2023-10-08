@@ -327,17 +327,17 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Atcr1",
+            name: "Smisr",
             extends: None,
             description: Some(
-                "TAMP active tamper control register 1",
+                "TAMP secure masked interrupt status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampam",
+                    name: "tampmf",
                     description: Some(
-                        "Tamper X active mode",
+                        "TAMPx secure interrupt masked flag. This flag is set by hardware when the tamper X secure interrupt is raised.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -352,144 +352,17 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "atosel",
+                    name: "itampmf",
                     description: Some(
-                        "Active tamper shared output X selection. The selected output must be available in the package pinout",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "atcksel",
-                    description: Some(
-                        "Active tamper RTC asynchronous prescaler clock selection. These bits selects the RTC asynchronous prescaler stage output.The selected clock is CK_ATPRE.. fCK_ATPRE = fRTCCLK / 2ATCKSEL when (PREDIV_A+1) = 128.. .... These bits can be written only when all active tampers are disabled. The write protection remains for up to 1.5 ck_atpre cycles after all the active tampers are disable.",
+                        "Internal tamper X secure interrupt masked flag. This flag is set by hardware when the internal tamper X secure interrupt is raised.",
                     ),
                     bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Atcksel",
-                    ),
-                },
-                Field {
-                    name: "atper",
-                    description: Some(
-                        "Active tamper output change period. The tamper output is changed every CK_ATPER = (2ATPER x CK_ATPRE) cycles. Refer to .",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "atoshare",
-                    description: Some(
-                        "Active tamper output sharing. IN1 is compared with TAMPOUTSEL1. IN2 is compared with TAMPOUTSEL2. IN3 is compared with TAMPOUTSEL3. IN4 is compared with TAMPOUTSEL4. IN5 is compared with TAMPOUTSEL5. IN6 is compared with TAMPOUTSEL6. IN7 is compared with TAMPOUTSEL7. IN8 is compared with TAMPOUTSEL8",
-                    ),
-                    bit_offset: 30,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "flten",
-                    description: Some(
-                        "Active tamper filter enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Privcr",
-            extends: None,
-            description: Some(
-                "TAMP privilege mode control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cnt1priv",
-                    description: Some(
-                        "Monotonic counter 1 privilege protection",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-                Field {
-                    name: "bkprwpriv",
-                    description: Some(
-                        "Backup registers zone 1 privilege protection",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-                Field {
-                    name: "bkpwpriv",
-                    description: Some(
-                        "Backup registers zone 2 privilege protection",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-                Field {
-                    name: "tamppriv",
-                    description: Some(
-                        "Tamper privilege protection (excluding backup registers). Note: Refer to for details on the read protection.",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Atcr2",
-            extends: None,
-            description: Some(
-                "TAMP active tamper control register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "atosel",
-                    description: Some(
-                        "Active tamper shared output X selection. The selected output must be available in the package pinout. Bits 9:8 are the mirror of ATOSEL1[1:0] in the ATCR1, and so can also be read or. written through ATCR1.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 3,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
-                                stride: 3,
+                                len: 13,
+                                stride: 1,
                             },
                         ),
                     ),
@@ -554,72 +427,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some(
-                "TAMP secure mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bkprwsec",
-                    description: Some(
-                        "Backup registers read/write protection offset. Protection zone 1 is defined for backup registers from BKP0R to BKPxR (x = BKPRWSEC-1, from 0 to 128). if TZEN=1, these backup registers can be read and written only with secure access. If TZEN=0:\tthe protection zone 1 can be read and written with non-secure access. If BKPRWSEC = 0: there is no protection zone 1. If BKPRWPRIV is set, BKPRWSEC[7:0] can be written only in privileged mode.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cnt1sec",
-                    description: Some(
-                        "Monotonic counter 1 secure protection",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-                Field {
-                    name: "bkpwsec",
-                    description: Some(
-                        "Backup registers write protection offset. Protection zone 2 is defined for backup registers from BKPyR (y = BKPRWSEC, from 0 to 128) to BKPzR (z = BKPWSEC-1, from 0 to 128, BKPWSECBKPRWSEC): if TZEN=1, these backup registers can be written only with secure access. They can be read with secure or non-secure access. Protection zone 3 defined for backup registers from BKPtR (t = BKPWSEC, from 0 to 127). They can be read or written with secure or non-secure access. If TZEN=0:\tthe protection zone 2 can be read and written with non-secure access. If BKPWSEC = 0 or if BKPWSEC BKPRWSEC: there is no protection zone 2. If BKPWPRIV is set, BKPRWSEC[7:0] can be written only in privileged mode.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bhklock",
-                    description: Some(
-                        "Boot hardware key lock. This bit can be read and can only be written to 1 by software. It is cleared by hardware together with the backup registers following a tamper detection event or when the readout protection (RDP) is disabled.",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Bhklock",
-                    ),
-                },
-                Field {
-                    name: "tampsec",
-                    description: Some(
-                        "Tamper protection (excluding monotonic counters and backup registers). Note: Refer to for details on the read protection.",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Scr",
             extends: None,
             description: Some(
@@ -648,90 +455,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "citampf",
                     description: Some(
                         "Clear ITAMPx detection flag. Writing 1 in this bit clears the ITAMPxF bit in the SR register.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 13,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ator",
-            extends: None,
-            description: Some(
-                "TAMP active tamper output register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "prng",
-                    description: Some(
-                        "Pseudo-random generator value. This field provides the values of the PRNG output. Because of potential inconsistencies due to synchronization delays, PRNG must be read at least twice. The read value is correct if it is equal to previous read value. This field can only be read when the APB is in secure mode.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "seedf",
-                    description: Some(
-                        "Seed running flag. This flag is set by hardware when a new seed is written in the ATSEEDR. It is cleared by hardware when the PRNG has absorbed this new seed, and by system reset. The TAMP APB cock must not be switched off as long as SEEDF is set.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "inits",
-                    description: Some(
-                        "Active tamper initialization status. This flag is set by hardware when the PRNG has absorbed the first 128-bit seed, meaning that the enabled active tampers are functional. This flag is cleared when the active tampers are disabled.",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Misr",
-            extends: None,
-            description: Some(
-                "TAMP non-secure masked interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampmf",
-                    description: Some(
-                        "TAMPx non-secure interrupt masked flag. This flag is set by hardware when the tamper X non-secure interrupt is raised.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampmf",
-                    description: Some(
-                        "Internal tamper X non-secure interrupt masked flag. This flag is set by hardware when the internal tamper X non-secure interrupt is raised.",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -792,17 +515,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Smisr",
+            name: "Sr",
             extends: None,
             description: Some(
-                "TAMP secure masked interrupt status register",
+                "TAMP status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampmf",
+                    name: "tampf",
                     description: Some(
-                        "TAMPx secure interrupt masked flag. This flag is set by hardware when the tamper X secure interrupt is raised.",
+                        "TAMPx detection flag. This flag is set by hardware when a tamper detection event is detected on the TAMPx input.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -817,9 +540,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "itampmf",
+                    name: "itampf",
                     description: Some(
-                        "Internal tamper X secure interrupt masked flag. This flag is set by hardware when the internal tamper X secure interrupt is raised.",
+                        "Internal tamper X flag. This flag is set by hardware when a tamper detection event is detected on the internal tamper X.",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -832,6 +555,28 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ercfgr",
+            extends: None,
+            description: Some(
+                "TAMP erase configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ercfg0",
+                    description: Some(
+                        "Configurable device secrets configuration",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ercfg",
+                    ),
                 },
             ],
         },
@@ -946,6 +691,97 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Atcr2",
+            extends: None,
+            description: Some(
+                "TAMP active tamper control register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "atosel",
+                    description: Some(
+                        "Active tamper shared output X selection. The selected output must be available in the package pinout. Bits 9:8 are the mirror of ATOSEL1[1:0] in the ATCR1, and so can also be read or. written through ATCR1.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 3,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Misr",
+            extends: None,
+            description: Some(
+                "TAMP non-secure masked interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampmf",
+                    description: Some(
+                        "TAMPx non-secure interrupt masked flag. This flag is set by hardware when the tamper X non-secure interrupt is raised.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampmf",
+                    description: Some(
+                        "Internal tamper X non-secure interrupt masked flag. This flag is set by hardware when the internal tamper X non-secure interrupt is raised.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 13,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Countr",
+            extends: None,
+            description: Some(
+                "TAMP monotonic counter 1 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "count",
+                    description: Some(
+                        "This register is read-only only and is incremented by one when a write access is done to this register. This register cannot roll-over and is frozen when reaching the maximum value.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Atseedr",
             extends: None,
             description: Some(
@@ -966,17 +802,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sr",
+            name: "Atcr1",
             extends: None,
             description: Some(
-                "TAMP status register",
+                "TAMP active tamper control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampf",
+                    name: "tampam",
                     description: Some(
-                        "TAMPx detection flag. This flag is set by hardware when a tamper detection event is detected on the TAMPx input.",
+                        "Tamper X active mode",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -991,20 +827,62 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "itampf",
+                    name: "atosel",
                     description: Some(
-                        "Internal tamper X flag. This flag is set by hardware when a tamper detection event is detected on the internal tamper X.",
+                        "Active tamper shared output X selection. The selected output must be available in the package pinout",
                     ),
-                    bit_offset: 16,
-                    bit_size: 1,
+                    bit_offset: 8,
+                    bit_size: 2,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 13,
-                                stride: 1,
+                                len: 4,
+                                stride: 2,
                             },
                         ),
                     ),
+                    enumm: None,
+                },
+                Field {
+                    name: "atcksel",
+                    description: Some(
+                        "Active tamper RTC asynchronous prescaler clock selection. These bits selects the RTC asynchronous prescaler stage output.The selected clock is CK_ATPRE.. fCK_ATPRE = fRTCCLK / 2ATCKSEL when (PREDIV_A+1) = 128.. .... These bits can be written only when all active tampers are disabled. The write protection remains for up to 1.5 ck_atpre cycles after all the active tampers are disable.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Atcksel",
+                    ),
+                },
+                Field {
+                    name: "atper",
+                    description: Some(
+                        "Active tamper output change period. The tamper output is changed every CK_ATPER = (2ATPER x CK_ATPRE) cycles. Refer to .",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "atoshare",
+                    description: Some(
+                        "Active tamper output sharing. IN1 is compared with TAMPOUTSEL1. IN2 is compared with TAMPOUTSEL2. IN3 is compared with TAMPOUTSEL3. IN4 is compared with TAMPOUTSEL4. IN5 is compared with TAMPOUTSEL5. IN6 is compared with TAMPOUTSEL6. IN7 is compared with TAMPOUTSEL7. IN8 is compared with TAMPOUTSEL8",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "flten",
+                    description: Some(
+                        "Active tamper filter enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -1030,44 +908,126 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ercfgr",
+            name: "Seccfgr",
             extends: None,
             description: Some(
-                "TAMP erase configuration register",
+                "TAMP secure mode register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ercfg0",
+                    name: "bkprwsec",
                     description: Some(
-                        "Configurable device secrets configuration",
+                        "Backup registers read/write protection offset. Protection zone 1 is defined for backup registers from BKP0R to BKPxR (x = BKPRWSEC-1, from 0 to 128). if TZEN=1, these backup registers can be read and written only with secure access. If TZEN=0:\tthe protection zone 1 can be read and written with non-secure access. If BKPRWSEC = 0: there is no protection zone 1. If BKPRWPRIV is set, BKPRWSEC[7:0] can be written only in privileged mode.",
                     ),
                     bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cnt1sec",
+                    description: Some(
+                        "Monotonic counter 1 secure protection",
+                    ),
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Ercfg",
+                        "Sec",
+                    ),
+                },
+                Field {
+                    name: "bkpwsec",
+                    description: Some(
+                        "Backup registers write protection offset. Protection zone 2 is defined for backup registers from BKPyR (y = BKPRWSEC, from 0 to 128) to BKPzR (z = BKPWSEC-1, from 0 to 128, BKPWSECBKPRWSEC): if TZEN=1, these backup registers can be written only with secure access. They can be read with secure or non-secure access. Protection zone 3 defined for backup registers from BKPtR (t = BKPWSEC, from 0 to 127). They can be read or written with secure or non-secure access. If TZEN=0:\tthe protection zone 2 can be read and written with non-secure access. If BKPWSEC = 0 or if BKPWSEC BKPRWSEC: there is no protection zone 2. If BKPWPRIV is set, BKPRWSEC[7:0] can be written only in privileged mode.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bhklock",
+                    description: Some(
+                        "Boot hardware key lock. This bit can be read and can only be written to 1 by software. It is cleared by hardware together with the backup registers following a tamper detection event or when the readout protection (RDP) is disabled.",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Bhklock",
+                    ),
+                },
+                Field {
+                    name: "tampsec",
+                    description: Some(
+                        "Tamper protection (excluding monotonic counters and backup registers). Note: Refer to for details on the read protection.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sec",
                     ),
                 },
             ],
         },
         FieldSet {
-            name: "Countr",
+            name: "Privcr",
             extends: None,
             description: Some(
-                "TAMP monotonic counter 1 register",
+                "TAMP privilege mode control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "count",
+                    name: "cnt1priv",
                     description: Some(
-                        "This register is read-only only and is incremented by one when a write access is done to this register. This register cannot roll-over and is frozen when reaching the maximum value.",
+                        "Monotonic counter 1 privilege protection",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_offset: 15,
+                    bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Priv",
+                    ),
+                },
+                Field {
+                    name: "bkprwpriv",
+                    description: Some(
+                        "Backup registers zone 1 privilege protection",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Priv",
+                    ),
+                },
+                Field {
+                    name: "bkpwpriv",
+                    description: Some(
+                        "Backup registers zone 2 privilege protection",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Priv",
+                    ),
+                },
+                Field {
+                    name: "tamppriv",
+                    description: Some(
+                        "Tamper privilege protection (excluding backup registers). Note: Refer to for details on the read protection.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Priv",
+                    ),
                 },
             ],
         },
@@ -1115,29 +1075,48 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Bhklock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
+        FieldSet {
+            name: "Ator",
+            extends: None,
+            description: Some(
+                "TAMP active tamper output register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "prng",
                     description: Some(
-                        "The Backup registers from BKP0R to BKP7R can be accessed according to the Protection zone they belong to.",
+                        "Pseudo-random generator value. This field provides the values of the PRNG output. Because of potential inconsistencies due to synchronization delays, PRNG must be read at least twice. The read value is correct if it is equal to previous read value. This field can only be read when the APB is in secure mode.",
                     ),
-                    value: 0,
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "LOCKED",
+                Field {
+                    name: "seedf",
                     description: Some(
-                        "The backup registers from BKP0R to BKP7R cannot be accessed neither in read nor in write (they are read as 0 and write ignore).",
+                        "Seed running flag. This flag is set by hardware when a new seed is written in the ATSEEDR. It is cleared by hardware when the PRNG has absorbed this new seed, and by system reset. The TAMP APB cock must not be switched off as long as SEEDF is set.",
                     ),
-                    value: 1,
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "inits",
+                    description: Some(
+                        "Active tamper initialization status. This flag is set by hardware when the PRNG has absorbed the first 128-bit seed, meaning that the enabled active tampers are functional. This flag is cleared when the active tampers are disabled.",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
+    ],
+    enums: &[
         Enum {
             name: "Tampprch",
             description: None,
@@ -1174,6 +1153,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Ercfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNPROTECTED",
+                    description: Some(
+                        "Configurable device secrets are not included in the device secrets protected by TAMP peripheral",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PROTECTED",
+                    description: Some(
+                        "Configurable device secrets are is included in the device secrets protected by TAMP peripheral",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Sec",
             description: None,
             bit_size: 1,
@@ -1189,6 +1189,83 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SECURE",
                     description: Some(
                         "Can be written only when the APB access is secure.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tampflt",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOFILTER",
+                    description: Some(
+                        "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FILTER2",
+                    description: Some(
+                        "Tamper event is activated after 2 consecutive samples at the active level.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FILTER4",
+                    description: Some(
+                        "Tamper event is activated after 4 consecutive samples at the active level.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FILTER8",
+                    description: Some(
+                        "Tamper event is activated after 8 consecutive samples at the active level.",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Bhklock",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNLOCKED",
+                    description: Some(
+                        "The Backup registers from BKP0R to BKP7R can be accessed according to the Protection zone they belong to.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOCKED",
+                    description: Some(
+                        "The backup registers from BKP0R to BKP7R cannot be accessed neither in read nor in write (they are read as 0 and write ignore).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tamptrg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FILTEREDLOWORUNFILTEREDHIGH",
+                    description: Some(
+                        "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FILTEREDHIGHORUNFILTEREDLOW",
+                    description: Some(
+                        "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event.",
                     ),
                     value: 1,
                 },
@@ -1258,41 +1335,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Tampflt",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOFILTER",
-                    description: Some(
-                        "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FILTER2",
-                    description: Some(
-                        "Tamper event is activated after 2 consecutive samples at the active level.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FILTER4",
-                    description: Some(
-                        "Tamper event is activated after 4 consecutive samples at the active level.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FILTER8",
-                    description: Some(
-                        "Tamper event is activated after 8 consecutive samples at the active level.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Priv",
             description: None,
             bit_size: 1,
@@ -1308,27 +1350,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILEGED",
                     description: Some(
                         "Can be read/written only with privileged access.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tamptrg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FILTEREDLOWORUNFILTEREDHIGH",
-                    description: Some(
-                        "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FILTEREDHIGHORUNFILTEREDLOW",
-                    description: Some(
-                        "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event.",
                     ),
                     value: 1,
                 },
@@ -1366,27 +1387,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "RTCCLK/128 is selected when (PREDIV_A+1) = 128 (actually selects 7th flip flop output)",
                     ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Ercfg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPROTECTED",
-                    description: Some(
-                        "Configurable device secrets are not included in the device secrets protected by TAMP peripheral",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PROTECTED",
-                    description: Some(
-                        "Configurable device secrets are is included in the device secrets protected by TAMP peripheral",
-                    ),
-                    value: 1,
                 },
             ],
         },

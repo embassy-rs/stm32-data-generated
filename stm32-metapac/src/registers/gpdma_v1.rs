@@ -3,118 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Gpdma",
-            extends: None,
-            description: Some(
-                "GPDMA",
-            ),
-            items: &[
-                BlockItem {
-                    name: "seccfgr",
-                    description: Some(
-                        "GPDMA secure configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Seccfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "privcfgr",
-                    description: Some(
-                        "GPDMA privileged configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Privcfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rcfglockr",
-                    description: Some(
-                        "GPDMA configuration lock register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rcfglockr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "misr",
-                    description: Some(
-                        "GPDMA non-secure masked interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Misr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smisr",
-                    description: Some(
-                        "GPDMA secure masked interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Misr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ch",
-                    description: None,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 128,
-                            },
-                        ),
-                    ),
-                    byte_offset: 80,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Channel",
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
             name: "Channel",
             extends: None,
             description: None,
@@ -321,223 +209,120 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    fieldsets: &[
-        FieldSet {
-            name: "ChFcr",
+        Block {
+            name: "Gpdma",
             extends: None,
             description: Some(
-                "GPDMA channel 7 flag clear register",
+                "GPDMA",
             ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tcf",
+            items: &[
+                BlockItem {
+                    name: "seccfgr",
                     description: Some(
-                        "transfer complete flag clear",
+                        "GPDMA secure configuration register",
                     ),
-                    bit_offset: 8,
-                    bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "htf",
-                    description: Some(
-                        "half transfer flag clear",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dtef",
-                    description: Some(
-                        "data transfer error flag clear",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ulef",
-                    description: Some(
-                        "update link transfer error flag clear",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usef",
-                    description: Some(
-                        "user setting error flag clear",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "suspf",
-                    description: Some(
-                        "completed suspension flag clear",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tof",
-                    description: Some(
-                        "trigger overrun flag clear",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "ChBr1",
-            extends: None,
-            description: Some(
-                "GPDMA channel 15 alternate block register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bndt",
-                    description: Some(
-                        "block number of data bytes to transfer from the source. Block size transferred from the source. When the channel is enabled, this field becomes read-only and is decremented, indicating the remaining number of data items in the current source block to be transferred. BNDT[15:0] is programmed in number of bytes, maximum source block size is 64 Kbytes -1. Once the last data transfer is completed (BNDT[15:0] = 0): - if CH[x].LLR.UB1 = 1, this field is updated by the LLI in the memory. - if CH[x].LLR.UB1 = 0 and if there is at least one not null Uxx update bit, this field is internally restored to the programmed value. - if all CH[x].LLR.Uxx = 0 and if CH[x].LLR.LA[15:0] ≠ 0, this field is internally restored to the programmed value (infinite/continuous last LLI). - if CH[x].LLR = 0, this field is kept as zero following the last LLI data transfer. Note: A non-null source block size must be a multiple of the source data width (BNDT[2:0] versus CH[x].TR1.SDW_LOG2[1:0]). Else a user setting error is reported and no transfer is issued. When configured in packing mode (CH[x].TR1.PAM[1]=1 and destination data width different from source data width), a non-null source block size must be a multiple of the destination data width (BNDT[2:0] versus CH[x].TR1.DDW[1:0]). Else a user setting error is reported and no transfer is issued.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "brc",
-                    description: Some(
-                        "Block repeat counter. This field contains the number of repetitions of the current block (0 to 2047). When the channel is enabled, this field becomes read-only. After decrements, this field indicates the remaining number of blocks, excluding the current one. This counter is hardware decremented for each completed block transfer. Once the last block transfer is completed (BRC[10:0] = BNDT[15:0] = 0): If CH[x].LLR.UB1 = 1, all CH[x].BR1 fields are updated by the next LLI in the memory. If CH[x].LLR.UB1 = 0 and if there is at least one not null Uxx update bit, this field is internally restored to the programmed value. if all CH[x].LLR.Uxx = 0 and if CH[x].LLR.LA[15:0] ≠ 0, this field is internally restored to the programmed value (infinite/continuous last LLI). if CH[x].LLR = 0, this field is kept as zero following the last LLI and data transfer.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdec",
-                    description: Some(
-                        "source address decrement",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "ChBr1Dec",
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Seccfgr",
+                            ),
+                        },
                     ),
                 },
-                Field {
-                    name: "ddec",
+                BlockItem {
+                    name: "privcfgr",
                     description: Some(
-                        "destination address decrement",
+                        "GPDMA privileged configuration register",
                     ),
-                    bit_offset: 29,
-                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "ChBr1Dec",
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Privcfgr",
+                            ),
+                        },
                     ),
                 },
-                Field {
-                    name: "brsdec",
+                BlockItem {
+                    name: "rcfglockr",
                     description: Some(
-                        "Block repeat source address decrement. Note: On top of this increment/decrement (depending on BRSDEC), CH[x].SAR is in the same time also updated by the increment/decrement (depending on SDEC) of the CH[x].TR3.SAO value, as it is done after any programmed burst transfer.",
+                        "GPDMA configuration lock register",
                     ),
-                    bit_offset: 30,
-                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "ChBr1Dec",
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rcfglockr",
+                            ),
+                        },
                     ),
                 },
-                Field {
-                    name: "brddec",
+                BlockItem {
+                    name: "misr",
                     description: Some(
-                        "Block repeat destination address decrement. Note: On top of this increment/decrement (depending on BRDDEC), CH[x].DAR is in the same time also updated by the increment/decrement (depending on DDEC) of the CH[x].TR3.DAO value, as it is usually done at the end of each programmed burst transfer.",
+                        "GPDMA non-secure masked interrupt status register",
                     ),
-                    bit_offset: 31,
-                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "ChBr1Dec",
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Misr",
+                            ),
+                        },
                     ),
                 },
-            ],
-        },
-        FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some(
-                "GPDMA secure configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sec",
+                BlockItem {
+                    name: "smisr",
                     description: Some(
-                        "SEC0",
+                        "GPDMA secure masked interrupt status register",
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Misr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ch",
+                    description: None,
                     array: Some(
                         Array::Regular(
                             RegularArray {
                                 len: 16,
-                                stride: 1,
+                                stride: 128,
                             },
                         ),
                     ),
-                    enumm: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "Channel",
+                        },
+                    ),
                 },
             ],
         },
-        FieldSet {
-            name: "ChBr2",
-            extends: None,
-            description: Some(
-                "GPDMA channel 12 block register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "brsao",
-                    description: Some(
-                        "Block repeated source address offset. For a channel with 2D addressing capability, this field is used to update (by addition or subtraction depending on CH[x].BR1.BRSDEC) the current source address (CH[x].SAR) at the end of a block transfer. Note: A block repeated source address offset must be aligned with the programmed data width of a source burst (BRSAO[2:0] versus CH[x].TR1.SDW_LOG2[1:0]). Else a user setting error is reported and no transfer is issued.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "brdao",
-                    description: Some(
-                        "Block repeated destination address offset. For a channel with 2D addressing capability, this field is used to update (by addition or subtraction depending on CH[x].BR1.BRDDEC) the current destination address (CH[x].DAR) at the end of a block transfer. Note: A block repeated destination address offset must be aligned with the programmed data width of a destination burst (BRDAO[2:0] versus CH[x].TR1.DDW[1:0]). Else a user setting error is reported and no transfer is issued.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
+    ],
+    fieldsets: &[
         FieldSet {
             name: "ChCr",
             extends: None,
@@ -685,100 +470,127 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "ChSr",
+            name: "Privcfgr",
             extends: None,
             description: Some(
-                "GPDMA channel 15 status register",
+                "GPDMA privileged configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "idlef",
+                    name: "priv_",
                     description: Some(
-                        "idle flag. This idle flag is de-asserted by hardware when the channel is enabled (CH[x].CR.EN = 1) with a valid channel configuration (no USEF to be immediately reported). This idle flag is asserted after hard reset or by hardware when the channel is back in idle state (in suspended or disabled state).",
+                        "PRIV0",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcf",
-                    description: Some(
-                        "transfer complete flag. A transfer complete event is either a block transfer complete, a 2D/repeated block transfer complete, a LLI transfer complete including the upload of the next LLI if any, or the full linked-list completion, depending on the transfer complete event mode (CH[x].TR2.TCEM[1:0]).",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "ChLlr",
+            extends: None,
+            description: Some(
+                "GPDMA channel 15 alternate linked-list address register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "htf",
+                    name: "la",
                     description: Some(
-                        "half transfer flag. An half transfer event is either an half block transfer or an half 2D/repeated block transfer, depending on the transfer complete event mode (CH[x].TR2.TCEM[1:0]). An half block transfer occurs when half of the bytes of the source block size (rounded up integer of CH[x].BR1.BNDT[15:0]/2) has been transferred to the destination. An half 2D/repeated block transfer occurs when half of the repeated blocks (rounded up integer of (CH[x].BR1.BRC[10:0]+1)/2)) has been transferred to the destination.",
+                        "pointer (16-bit low-significant address) to the next linked-list data structure. If UT1 = UT2 = UB1 = USA = UDA = ULL = 0 and if LA[15:20] = 0, the current LLI is the last one. The channel transfer is completed without any update of the linked-list GPDMA register file. Else, this field is the pointer to the memory address offset from which the next linked-list data structure is automatically fetched from, once the data transfer is completed, in order to conditionally update the linked-list GPDMA internal register file (CH[x].CTR1, CH[x].TR2, CH[x].BR1, CH[x].SAR, CH[x].DAR and CH[x].LLR). Note: The user must program the pointer to be 32-bit aligned. The two low-significant bits are write ignored.",
                     ),
-                    bit_offset: 9,
-                    bit_size: 1,
+                    bit_offset: 2,
+                    bit_size: 14,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dtef",
+                    name: "ull",
                     description: Some(
-                        "data transfer error flag",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ulef",
-                    description: Some(
-                        "update link transfer error flag",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usef",
-                    description: Some(
-                        "user setting error flag",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "suspf",
-                    description: Some(
-                        "completed suspension flag",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tof",
-                    description: Some(
-                        "trigger overrun flag",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fifol",
-                    description: Some(
-                        "monitored FIFO level. Number of available write beats in the FIFO, in units of the programmed destination data width (see CH[x].TR1.DDW[1:0], in units of bytes, half-words, or words). Note: After having suspended an active transfer, the user may need to read FIFOL[7:0], additionally to CH[x].BR1.BDNT[15:0] and CH[x].BR1.BRC[10:0], to know how many data have been transferred to the destination. Before reading, the user may wait for the transfer to be suspended (CH[x].SR.SUSPF = 1).",
+                        "Update CH[x].LLR register from memory. This bit is used to control the update of CH[x].LLR from the memory during the link transfer.",
                     ),
                     bit_offset: 16,
-                    bit_size: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ub2",
+                    description: Some(
+                        "Update CH[x].BR2 from memory. This bit controls the update of CH[x].BR2 from the memory during the link transfer.",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ut3",
+                    description: Some(
+                        "Update CH[x].TR3 from memory. This bit controls the update of CH[x].TR3 from the memory during the link transfer.",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uda",
+                    description: Some(
+                        "Update CH[x].DAR register from memory. This bit is used to control the update of CH[x].DAR from the memory during the link transfer.",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usa",
+                    description: Some(
+                        "update CH[x].SAR from memory. This bit controls the update of CH[x].SAR from the memory during the link transfer.",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ub1",
+                    description: Some(
+                        "Update CH[x].BR1 from memory. This bit controls the update of CH[x].BR1 from the memory during the link transfer. If UB1 = 0 and if CH[x].LLR ≠ 0, the linked-list is not completed. CH[x].BR1.BNDT[15:0] is then restored to the programmed value after data transfer is completed and before the link transfer.",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ut2",
+                    description: Some(
+                        "Update CH[x].TR2 from memory. This bit controls the update of CH[x].TR2 from the memory during the link transfer.",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ut1",
+                    description: Some(
+                        "Update CH[x].TR1 from memory. This bit controls the update of CH[x].TR1 from the memory during the link transfer.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -887,17 +699,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Privcfgr",
+            name: "Seccfgr",
             extends: None,
             description: Some(
-                "GPDMA privileged configuration register",
+                "GPDMA secure configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "priv_",
+                    name: "sec",
                     description: Some(
-                        "PRIV0",
+                        "SEC0",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1074,153 +886,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Misr",
-            extends: None,
-            description: Some(
-                "GPDMA secure masked interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mis",
-                    description: Some(
-                        "MIS0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "ChLlr",
-            extends: None,
-            description: Some(
-                "GPDMA channel 15 alternate linked-list address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "la",
-                    description: Some(
-                        "pointer (16-bit low-significant address) to the next linked-list data structure. If UT1 = UT2 = UB1 = USA = UDA = ULL = 0 and if LA[15:20] = 0, the current LLI is the last one. The channel transfer is completed without any update of the linked-list GPDMA register file. Else, this field is the pointer to the memory address offset from which the next linked-list data structure is automatically fetched from, once the data transfer is completed, in order to conditionally update the linked-list GPDMA internal register file (CH[x].CTR1, CH[x].TR2, CH[x].BR1, CH[x].SAR, CH[x].DAR and CH[x].LLR). Note: The user must program the pointer to be 32-bit aligned. The two low-significant bits are write ignored.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 14,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ull",
-                    description: Some(
-                        "Update CH[x].LLR register from memory. This bit is used to control the update of CH[x].LLR from the memory during the link transfer.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ub2",
-                    description: Some(
-                        "Update CH[x].BR2 from memory. This bit controls the update of CH[x].BR2 from the memory during the link transfer.",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ut3",
-                    description: Some(
-                        "Update CH[x].TR3 from memory. This bit controls the update of CH[x].TR3 from the memory during the link transfer.",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uda",
-                    description: Some(
-                        "Update CH[x].DAR register from memory. This bit is used to control the update of CH[x].DAR from the memory during the link transfer.",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usa",
-                    description: Some(
-                        "update CH[x].SAR from memory. This bit controls the update of CH[x].SAR from the memory during the link transfer.",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ub1",
-                    description: Some(
-                        "Update CH[x].BR1 from memory. This bit controls the update of CH[x].BR1 from the memory during the link transfer. If UB1 = 0 and if CH[x].LLR ≠ 0, the linked-list is not completed. CH[x].BR1.BNDT[15:0] is then restored to the programmed value after data transfer is completed and before the link transfer.",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ut2",
-                    description: Some(
-                        "Update CH[x].TR2 from memory. This bit controls the update of CH[x].TR2 from the memory during the link transfer.",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ut1",
-                    description: Some(
-                        "Update CH[x].TR1 from memory. This bit controls the update of CH[x].TR1 from the memory during the link transfer.",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "ChLbar",
-            extends: None,
-            description: Some(
-                "GPDMA channel 14 linked-list base address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lba",
-                    description: Some(
-                        "linked-list base address of GPDMA channel x",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Rcfglockr",
             extends: None,
             description: Some(
@@ -1243,6 +908,106 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "ChSr",
+            extends: None,
+            description: Some(
+                "GPDMA channel 15 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "idlef",
+                    description: Some(
+                        "idle flag. This idle flag is de-asserted by hardware when the channel is enabled (CH[x].CR.EN = 1) with a valid channel configuration (no USEF to be immediately reported). This idle flag is asserted after hard reset or by hardware when the channel is back in idle state (in suspended or disabled state).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tcf",
+                    description: Some(
+                        "transfer complete flag. A transfer complete event is either a block transfer complete, a 2D/repeated block transfer complete, a LLI transfer complete including the upload of the next LLI if any, or the full linked-list completion, depending on the transfer complete event mode (CH[x].TR2.TCEM[1:0]).",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "htf",
+                    description: Some(
+                        "half transfer flag. An half transfer event is either an half block transfer or an half 2D/repeated block transfer, depending on the transfer complete event mode (CH[x].TR2.TCEM[1:0]). An half block transfer occurs when half of the bytes of the source block size (rounded up integer of CH[x].BR1.BNDT[15:0]/2) has been transferred to the destination. An half 2D/repeated block transfer occurs when half of the repeated blocks (rounded up integer of (CH[x].BR1.BRC[10:0]+1)/2)) has been transferred to the destination.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dtef",
+                    description: Some(
+                        "data transfer error flag",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ulef",
+                    description: Some(
+                        "update link transfer error flag",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usef",
+                    description: Some(
+                        "user setting error flag",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "suspf",
+                    description: Some(
+                        "completed suspension flag",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tof",
+                    description: Some(
+                        "trigger overrun flag",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fifol",
+                    description: Some(
+                        "monitored FIFO level. Number of available write beats in the FIFO, in units of the programmed destination data width (see CH[x].TR1.DDW[1:0], in units of bytes, half-words, or words). Note: After having suspended an active transfer, the user may need to read FIFOL[7:0], additionally to CH[x].BR1.BDNT[15:0] and CH[x].BR1.BRC[10:0], to know how many data have been transferred to the destination. Before reading, the user may wait for the transfer to be suspended (CH[x].SR.SUSPF = 1).",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -1277,10 +1042,364 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "ChFcr",
+            extends: None,
+            description: Some(
+                "GPDMA channel 7 flag clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tcf",
+                    description: Some(
+                        "transfer complete flag clear",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "htf",
+                    description: Some(
+                        "half transfer flag clear",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dtef",
+                    description: Some(
+                        "data transfer error flag clear",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ulef",
+                    description: Some(
+                        "update link transfer error flag clear",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usef",
+                    description: Some(
+                        "user setting error flag clear",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "suspf",
+                    description: Some(
+                        "completed suspension flag clear",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tof",
+                    description: Some(
+                        "trigger overrun flag clear",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Misr",
+            extends: None,
+            description: Some(
+                "GPDMA secure masked interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mis",
+                    description: Some(
+                        "MIS0",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "ChBr1",
+            extends: None,
+            description: Some(
+                "GPDMA channel 15 alternate block register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bndt",
+                    description: Some(
+                        "block number of data bytes to transfer from the source. Block size transferred from the source. When the channel is enabled, this field becomes read-only and is decremented, indicating the remaining number of data items in the current source block to be transferred. BNDT[15:0] is programmed in number of bytes, maximum source block size is 64 Kbytes -1. Once the last data transfer is completed (BNDT[15:0] = 0): - if CH[x].LLR.UB1 = 1, this field is updated by the LLI in the memory. - if CH[x].LLR.UB1 = 0 and if there is at least one not null Uxx update bit, this field is internally restored to the programmed value. - if all CH[x].LLR.Uxx = 0 and if CH[x].LLR.LA[15:0] ≠ 0, this field is internally restored to the programmed value (infinite/continuous last LLI). - if CH[x].LLR = 0, this field is kept as zero following the last LLI data transfer. Note: A non-null source block size must be a multiple of the source data width (BNDT[2:0] versus CH[x].TR1.SDW_LOG2[1:0]). Else a user setting error is reported and no transfer is issued. When configured in packing mode (CH[x].TR1.PAM[1]=1 and destination data width different from source data width), a non-null source block size must be a multiple of the destination data width (BNDT[2:0] versus CH[x].TR1.DDW[1:0]). Else a user setting error is reported and no transfer is issued.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "brc",
+                    description: Some(
+                        "Block repeat counter. This field contains the number of repetitions of the current block (0 to 2047). When the channel is enabled, this field becomes read-only. After decrements, this field indicates the remaining number of blocks, excluding the current one. This counter is hardware decremented for each completed block transfer. Once the last block transfer is completed (BRC[10:0] = BNDT[15:0] = 0): If CH[x].LLR.UB1 = 1, all CH[x].BR1 fields are updated by the next LLI in the memory. If CH[x].LLR.UB1 = 0 and if there is at least one not null Uxx update bit, this field is internally restored to the programmed value. if all CH[x].LLR.Uxx = 0 and if CH[x].LLR.LA[15:0] ≠ 0, this field is internally restored to the programmed value (infinite/continuous last LLI). if CH[x].LLR = 0, this field is kept as zero following the last LLI and data transfer.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdec",
+                    description: Some(
+                        "source address decrement",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "ChBr1Dec",
+                    ),
+                },
+                Field {
+                    name: "ddec",
+                    description: Some(
+                        "destination address decrement",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "ChBr1Dec",
+                    ),
+                },
+                Field {
+                    name: "brsdec",
+                    description: Some(
+                        "Block repeat source address decrement. Note: On top of this increment/decrement (depending on BRSDEC), CH[x].SAR is in the same time also updated by the increment/decrement (depending on SDEC) of the CH[x].TR3.SAO value, as it is done after any programmed burst transfer.",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "ChBr1Dec",
+                    ),
+                },
+                Field {
+                    name: "brddec",
+                    description: Some(
+                        "Block repeat destination address decrement. Note: On top of this increment/decrement (depending on BRDDEC), CH[x].DAR is in the same time also updated by the increment/decrement (depending on DDEC) of the CH[x].TR3.DAO value, as it is usually done at the end of each programmed burst transfer.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "ChBr1Dec",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "ChLbar",
+            extends: None,
+            description: Some(
+                "GPDMA channel 14 linked-list base address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lba",
+                    description: Some(
+                        "linked-list base address of GPDMA channel x",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "ChBr2",
+            extends: None,
+            description: Some(
+                "GPDMA channel 12 block register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "brsao",
+                    description: Some(
+                        "Block repeated source address offset. For a channel with 2D addressing capability, this field is used to update (by addition or subtraction depending on CH[x].BR1.BRSDEC) the current source address (CH[x].SAR) at the end of a block transfer. Note: A block repeated source address offset must be aligned with the programmed data width of a source burst (BRSAO[2:0] versus CH[x].TR1.SDW_LOG2[1:0]). Else a user setting error is reported and no transfer is issued.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "brdao",
+                    description: Some(
+                        "Block repeated destination address offset. For a channel with 2D addressing capability, this field is used to update (by addition or subtraction depending on CH[x].BR1.BRDDEC) the current destination address (CH[x].DAR) at the end of a block transfer. Note: A block repeated destination address offset must be aligned with the programmed data width of a destination burst (BRDAO[2:0] versus CH[x].TR1.DDW[1:0]). Else a user setting error is reported and no transfer is issued.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
         Enum {
+            name: "ChTr2Breq",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BURST",
+                    description: Some(
+                        "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BLOCK",
+                    description: Some(
+                        "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a block level (see ).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "ChTr1Ap",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PORT0",
+                    description: Some(
+                        "port 0 (AHB) allocated",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PORT1",
+                    description: Some(
+                        "port 1 (AHB) allocated",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "ChCrLsm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RUNTOCOMPLETION",
+                    description: Some(
+                        "channel executed for the full linked-list and completed at the end of the last LLI (CH[x].LLR = 0). The 16 low-significant bits of the link address are null (LA[15:0] = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH[x].BR1.BNDT[15:0] = 0 and CH[x].BR1.BRC[10:0] = 0 if present.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LINKSTEP",
+                    description: Some(
+                        "channel executed once for the current LLI",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "ChBr1Dec",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ADD",
+                    description: Some(
+                        "The address is incremented by the programmed offset.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SUBTRACT",
+                    description: Some(
+                        "The address is decremented by the programmed offset.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "ChTr2Trigm",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BLOCK",
+                    description: Some(
+                        "at block level: the first burst read of each block transfer is conditioned by one hit trigger (channel x = 12 to 15, for each block if a 2D/repeated block is configured with CH[x].BR1.BRC[10:0] ≠ 0).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "_2DBLOCK",
+                    description: Some(
+                        "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LINKEDLISTITEM",
+                    description: Some(
+                        "at link level: a LLI link transfer is conditioned by one hit trigger. The LLI data transfer (if any) is not conditioned.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BURST",
+                    description: Some(
+                        "at programmed burst level: If SWREQ = 1, each programmed burst read is conditioned by one hit trigger. If SWREQ = 0, each programmed burst that is requested by the selected peripheral, is conditioned by one hit trigger.",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "ChCrLap",
             description: None,
             bit_size: 1,
             variants: &[
@@ -1336,51 +1455,107 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "ChTr2Breq",
+            name: "ChTr1Dw",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BURST",
+                    name: "BYTE",
                     description: Some(
-                        "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level.",
+                        "byte",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BLOCK",
+                    name: "HALFWORD",
                     description: Some(
-                        "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a block level (see ).",
+                        "half-word (2 bytes)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "WORD",
+                    description: Some(
+                        "word (4 bytes)",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "ChTr2Dreq",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SOURCEPERIPHERAL",
+                    description: Some(
+                        "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DESTINATIONPERIPHERAL",
+                    description: Some(
+                        "selected hardware request driven by a destination peripheral (request signal taken into account by the GPDMA transfer scheduler over the destination/write port)",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "ChTr1Pam",
+            name: "ChTr2Swreq",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ZEROEXTENDORLEFTTRUNCATE",
+                    name: "HARDWARE",
                     description: Some(
-                        "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width\nIf source is wider: source data is transferred as right aligned, left-truncated down to the destination data width",
+                        "no software request. The selected hardware request REQSEL[6:0] is taken into account.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SIGNEXTENDORRIGHTTRUNCATE",
+                    name: "SOFTWARE",
                     description: Some(
-                        "If destination is wider: source data is transferred as right aligned, sign extended up to the destination data width\nIf source is wider: source data is transferred as left-aligned, right-truncated down to the destination data width",
+                        "software request for a memory-to-memory transfer. The default selected hardware request as per REQSEL[6:0] is ignored.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "ChTr2Tcem",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "EACHBLOCK",
+                    description: Some(
+                        "at block level (when CH[x].BR1.BNDT[15:0] = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EACH2DBLOCK",
+                    description: Some(
+                        "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level (when CH[x].BR1.BRC[10:0] =  0 and CH[x].BR1.BNDT[15:0] =  0), the complete (and the half) transfer event is generated at the end (respectively half of the end) of the 2D/repeated block.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PACK",
+                    name: "EACHLINKEDLISTITEM",
                     description: Some(
-                        "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination",
+                        "at LLI level: the complete transfer event is generated at the end of the LLI transfer, including the update of the LLI if any. The half transfer event is generated at the half of the LLI data transfer (the LLI data transfer being a block transfer or a 2D/repeated block transfer for channel x = 12 to 15), if any data transfer.",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "LASTLINKEDLISTITEM",
+                    description: Some(
+                        "at channel level: the complete transfer event is generated at the end of the last LLI transfer. The half transfer event is generated at the half of the data transfer of the last LLI. The last LLI updates the link address CH[x].LLR.LA[15:2] to zero and clears all the CH[x].LLR update bits (UT1, UT2, UB1, USA, UDA and ULL, plus UT3 and UB2 if present). If the channel transfer is continuous/infinite, no event is generated.",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -1420,205 +1595,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "ChTr2Dreq",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SOURCEPERIPHERAL",
-                    description: Some(
-                        "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DESTINATIONPERIPHERAL",
-                    description: Some(
-                        "selected hardware request driven by a destination peripheral (request signal taken into account by the GPDMA transfer scheduler over the destination/write port)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "ChTr1Dw",
+            name: "ChTr1Pam",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BYTE",
+                    name: "ZEROEXTENDORLEFTTRUNCATE",
                     description: Some(
-                        "byte",
+                        "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width\nIf source is wider: source data is transferred as right aligned, left-truncated down to the destination data width",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HALFWORD",
+                    name: "SIGNEXTENDORRIGHTTRUNCATE",
                     description: Some(
-                        "half-word (2 bytes)",
+                        "If destination is wider: source data is transferred as right aligned, sign extended up to the destination data width\nIf source is wider: source data is transferred as left-aligned, right-truncated down to the destination data width",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WORD",
+                    name: "PACK",
                     description: Some(
-                        "word (4 bytes)",
+                        "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination",
                     ),
                     value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "ChTr2Trigm",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BLOCK",
-                    description: Some(
-                        "at block level: the first burst read of each block transfer is conditioned by one hit trigger (channel x = 12 to 15, for each block if a 2D/repeated block is configured with CH[x].BR1.BRC[10:0] ≠ 0).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "_2DBLOCK",
-                    description: Some(
-                        "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "LINKEDLISTITEM",
-                    description: Some(
-                        "at link level: a LLI link transfer is conditioned by one hit trigger. The LLI data transfer (if any) is not conditioned.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BURST",
-                    description: Some(
-                        "at programmed burst level: If SWREQ = 1, each programmed burst read is conditioned by one hit trigger. If SWREQ = 0, each programmed burst that is requested by the selected peripheral, is conditioned by one hit trigger.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "ChCrLsm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RUNTOCOMPLETION",
-                    description: Some(
-                        "channel executed for the full linked-list and completed at the end of the last LLI (CH[x].LLR = 0). The 16 low-significant bits of the link address are null (LA[15:0] = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH[x].BR1.BNDT[15:0] = 0 and CH[x].BR1.BRC[10:0] = 0 if present.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LINKSTEP",
-                    description: Some(
-                        "channel executed once for the current LLI",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "ChTr2Swreq",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "HARDWARE",
-                    description: Some(
-                        "no software request. The selected hardware request REQSEL[6:0] is taken into account.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some(
-                        "software request for a memory-to-memory transfer. The default selected hardware request as per REQSEL[6:0] is ignored.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "ChBr1Dec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ADD",
-                    description: Some(
-                        "The address is incremented by the programmed offset.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SUBTRACT",
-                    description: Some(
-                        "The address is decremented by the programmed offset.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "ChCrLap",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PORT0",
-                    description: Some(
-                        "port 0 (AHB) allocated",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PORT1",
-                    description: Some(
-                        "port 1 (AHB) allocated",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "ChTr2Tcem",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "EACHBLOCK",
-                    description: Some(
-                        "at block level (when CH[x].BR1.BNDT[15:0] = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EACH2DBLOCK",
-                    description: Some(
-                        "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level (when CH[x].BR1.BRC[10:0] =  0 and CH[x].BR1.BNDT[15:0] =  0), the complete (and the half) transfer event is generated at the end (respectively half of the end) of the 2D/repeated block.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "EACHLINKEDLISTITEM",
-                    description: Some(
-                        "at LLI level: the complete transfer event is generated at the end of the LLI transfer, including the update of the LLI if any. The half transfer event is generated at the half of the LLI data transfer (the LLI data transfer being a block transfer or a 2D/repeated block transfer for channel x = 12 to 15), if any data transfer.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "LASTLINKEDLISTITEM",
-                    description: Some(
-                        "at channel level: the complete transfer event is generated at the end of the last LLI transfer. The half transfer event is generated at the half of the data transfer of the last LLI. The last LLI updates the link address CH[x].LLR.LA[15:2] to zero and clears all the CH[x].LLR update bits (UT1, UT2, UB1, USA, UDA and ULL, plus UT3 and UB2 if present). If the channel transfer is continuous/infinite, no event is generated.",
-                    ),
-                    value: 3,
                 },
             ],
         },

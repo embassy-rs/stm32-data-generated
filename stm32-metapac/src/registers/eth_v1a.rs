@@ -3,236 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "EthernetDma",
-            extends: None,
-            description: Some(
-                "Ethernet: DMA controller operation",
-            ),
-            items: &[
-                BlockItem {
-                    name: "dmabmr",
-                    description: Some(
-                        "Ethernet DMA bus mode register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmabmr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmatpdr",
-                    description: Some(
-                        "Ethernet DMA transmit poll demand register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmatpdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmarpdr",
-                    description: Some(
-                        "EHERNET DMA receive poll demand register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmarpdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmardlar",
-                    description: Some(
-                        "Ethernet DMA receive descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmardlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmatdlar",
-                    description: Some(
-                        "Ethernet DMA transmit descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmatdlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmasr",
-                    description: Some(
-                        "Ethernet DMA status register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmasr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaomr",
-                    description: Some(
-                        "Ethernet DMA operation mode register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmaomr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaier",
-                    description: Some(
-                        "Ethernet DMA interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmaier",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmamfbocr",
-                    description: Some(
-                        "Ethernet DMA missed frame and buffer overflow counter register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmamfbocr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmachtdr",
-                    description: Some(
-                        "Ethernet DMA current host transmit descriptor register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmachtdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmachrdr",
-                    description: Some(
-                        "Ethernet DMA current host receive descriptor register",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmachrdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmachtbar",
-                    description: Some(
-                        "Ethernet DMA current host transmit buffer address register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmachtbar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmachrbar",
-                    description: Some(
-                        "Ethernet DMA current host receive buffer address register",
-                    ),
-                    array: None,
-                    byte_offset: 84,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmachrbar",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
             name: "EthernetMac",
             extends: None,
             description: Some(
@@ -784,6 +554,236 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Block {
+            name: "EthernetDma",
+            extends: None,
+            description: Some(
+                "Ethernet: DMA controller operation",
+            ),
+            items: &[
+                BlockItem {
+                    name: "dmabmr",
+                    description: Some(
+                        "Ethernet DMA bus mode register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmabmr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmatpdr",
+                    description: Some(
+                        "Ethernet DMA transmit poll demand register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmatpdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmarpdr",
+                    description: Some(
+                        "EHERNET DMA receive poll demand register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmarpdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmardlar",
+                    description: Some(
+                        "Ethernet DMA receive descriptor list address register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmardlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmatdlar",
+                    description: Some(
+                        "Ethernet DMA transmit descriptor list address register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmatdlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmasr",
+                    description: Some(
+                        "Ethernet DMA status register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmasr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaomr",
+                    description: Some(
+                        "Ethernet DMA operation mode register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmaomr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaier",
+                    description: Some(
+                        "Ethernet DMA interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmaier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmamfbocr",
+                    description: Some(
+                        "Ethernet DMA missed frame and buffer overflow counter register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmamfbocr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmachtdr",
+                    description: Some(
+                        "Ethernet DMA current host transmit descriptor register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmachtdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmachrdr",
+                    description: Some(
+                        "Ethernet DMA current host receive descriptor register",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmachrdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmachtbar",
+                    description: Some(
+                        "Ethernet DMA current host transmit buffer address register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmachtbar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmachrbar",
+                    description: Some(
+                        "Ethernet DMA current host receive buffer address register",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmachrbar",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
             name: "Eth",
             extends: None,
             description: Some(
@@ -1030,6 +1030,626 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Macfcr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC flow control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fcb",
+                    description: Some(
+                        "Flow control busy/back pressure activate",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Fcb",
+                    ),
+                },
+                Field {
+                    name: "tfce",
+                    description: Some(
+                        "Transmit flow control enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Tfce",
+                    ),
+                },
+                Field {
+                    name: "rfce",
+                    description: Some(
+                        "Receive flow control enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rfce",
+                    ),
+                },
+                Field {
+                    name: "upfd",
+                    description: Some(
+                        "Unicast pause frame detect",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Upfd",
+                    ),
+                },
+                Field {
+                    name: "plt",
+                    description: Some(
+                        "Pause low threshold",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Plt",
+                    ),
+                },
+                Field {
+                    name: "zqpd",
+                    description: Some(
+                        "Zero-quanta pause disable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Zqpd",
+                    ),
+                },
+                Field {
+                    name: "pt",
+                    description: Some(
+                        "Pause time",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmaier",
+            extends: None,
+            description: Some(
+                "Ethernet DMA interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tie",
+                    description: Some(
+                        "Transmit interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tpsie",
+                    description: Some(
+                        "Transmit process stopped interrupt enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tbuie",
+                    description: Some(
+                        "Transmit buffer unavailable interrupt enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tjtie",
+                    description: Some(
+                        "Transmit jabber timeout interrupt enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "roie",
+                    description: Some(
+                        "Receive overflow interrupt enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tuie",
+                    description: Some(
+                        "Transmit underflow interrupt enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rie",
+                    description: Some(
+                        "Receive interrupt enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbuie",
+                    description: Some(
+                        "Receive buffer unavailable interrupt enable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rpsie",
+                    description: Some(
+                        "Receive process stopped interrupt enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwtie",
+                    description: Some(
+                        "Receive watchdog timeout interrupt enable",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "etie",
+                    description: Some(
+                        "Early transmit interrupt enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fbeie",
+                    description: Some(
+                        "Fatal bus error interrupt enable",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "erie",
+                    description: Some(
+                        "Early receive interrupt enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "aise",
+                    description: Some(
+                        "Abnormal interrupt summary enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nise",
+                    description: Some(
+                        "Normal interrupt summary enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmcrir",
+            extends: None,
+            description: Some(
+                "Ethernet MMC receive interrupt register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rfces",
+                    description: Some(
+                        "Received frames CRC error status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfaes",
+                    description: Some(
+                        "Received frames alignment error status",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rgufs",
+                    description: Some(
+                        "Received good Unicast frames status",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmctgfsccr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC transmitted good frames after a single collision counter",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tgfscc",
+                    description: Some(
+                        "Transmitted good frames single collision counter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmarpdr",
+            extends: None,
+            description: Some(
+                "EHERNET DMA receive poll demand register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rpd",
+                    description: Some(
+                        "Receive poll demand",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some(
+                        "Rpd",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmcrgufcr",
+            extends: None,
+            description: Some(
+                "MMC received good unicast frames counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rgufc",
+                    description: Some(
+                        "RGUFC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptptslur",
+            extends: None,
+            description: Some(
+                "Ethernet PTP time stamp low update register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsuss",
+                    description: Some(
+                        "TSUSS",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 31,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tsupns",
+                    description: Some(
+                        "TSUPNS",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmardlar",
+            extends: None,
+            description: Some(
+                "Ethernet DMA receive descriptor list address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "srl",
+                    description: Some(
+                        "Start of receive list",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmcrimr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC receive interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rfcem",
+                    description: Some(
+                        "Received frame CRC error mask",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rfcem",
+                    ),
+                },
+                Field {
+                    name: "rfaem",
+                    description: Some(
+                        "Received frames alignment error mask",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rfaem",
+                    ),
+                },
+                Field {
+                    name: "rgufm",
+                    description: Some(
+                        "Received good Unicast frames mask",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rgufm",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca3lr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC address 3 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "maca3l",
+                    description: Some(
+                        "MBCA3L",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmatdlar",
+            extends: None,
+            description: Some(
+                "Ethernet DMA transmit descriptor list address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "stl",
+                    description: Some(
+                        "Start of transmit list",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macdbgr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC debug register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mmrpea",
+                    description: Some(
+                        "MAC MII receive protocol engine active",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "msfrwcs",
+                    description: Some(
+                        "MAC small FIFO read/write controllers status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfwra",
+                    description: Some(
+                        "Rx FIFO write controller active",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfrcs",
+                    description: Some(
+                        "Rx FIFO read controller status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rffl",
+                    description: Some(
+                        "Rx FIFO fill level",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mmtea",
+                    description: Some(
+                        "MAC MII transmit engine active",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mtfcs",
+                    description: Some(
+                        "MAC transmit frame controller status",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mtp",
+                    description: Some(
+                        "MAC transmitter in pause",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tfrs",
+                    description: Some(
+                        "Tx FIFO read status",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tfwa",
+                    description: Some(
+                        "Tx FIFO write active",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tfne",
+                    description: Some(
+                        "Tx FIFO not empty",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tff",
+                    description: Some(
+                        "Tx FIFO full",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Maca2lr",
             extends: None,
             description: Some(
@@ -1050,63 +1670,351 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mmctimr",
+            name: "Maccr",
             extends: None,
             description: Some(
-                "Ethernet MMC transmit interrupt mask register",
+                "Ethernet MAC configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tgfscm",
+                    name: "re",
                     description: Some(
-                        "Transmitted good frames single collision mask",
+                        "Receiver enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "te",
+                    description: Some(
+                        "Transmitter enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dc",
+                    description: Some(
+                        "Deferral check",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dc",
+                    ),
+                },
+                Field {
+                    name: "bl",
+                    description: Some(
+                        "Back-off limit",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Bl",
+                    ),
+                },
+                Field {
+                    name: "apcs",
+                    description: Some(
+                        "Automatic pad/CRC stripping",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Apcs",
+                    ),
+                },
+                Field {
+                    name: "rd",
+                    description: Some(
+                        "Retry disable",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rd",
+                    ),
+                },
+                Field {
+                    name: "ipco",
+                    description: Some(
+                        "IPv4 checksum offload",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ipco",
+                    ),
+                },
+                Field {
+                    name: "dm",
+                    description: Some(
+                        "Duplex mode",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dm",
+                    ),
+                },
+                Field {
+                    name: "lm",
+                    description: Some(
+                        "Loopback mode",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lm",
+                    ),
+                },
+                Field {
+                    name: "rod",
+                    description: Some(
+                        "Receive own disable",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rod",
+                    ),
+                },
+                Field {
+                    name: "fes",
+                    description: Some(
+                        "Fast Ethernet speed",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Tgfscm",
+                        "Fes",
                     ),
                 },
                 Field {
-                    name: "tgfmscm",
+                    name: "csd",
                     description: Some(
-                        "Transmitted good frames more than single collision mask",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Tgfmscm",
-                    ),
-                },
-                Field {
-                    name: "tgfm",
-                    description: Some(
-                        "Transmitted good frames mask",
+                        "Carrier sense disable",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Tgfm",
+                        "Csd",
+                    ),
+                },
+                Field {
+                    name: "ifg",
+                    description: Some(
+                        "Interframe gap",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Ifg",
+                    ),
+                },
+                Field {
+                    name: "jd",
+                    description: Some(
+                        "Jabber disable",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Jd",
+                    ),
+                },
+                Field {
+                    name: "wd",
+                    description: Some(
+                        "Watchdog disable",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wd",
                     ),
                 },
             ],
         },
         FieldSet {
-            name: "Dmatdlar",
+            name: "Macpmtcsr",
             extends: None,
             description: Some(
-                "Ethernet DMA transmit descriptor list address register",
+                "Ethernet MAC PMT control and status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "stl",
+                    name: "pd",
                     description: Some(
-                        "Start of transmit list",
+                        "Power down",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pd",
+                    ),
+                },
+                Field {
+                    name: "mpe",
+                    description: Some(
+                        "Magic packet enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Mpe",
+                    ),
+                },
+                Field {
+                    name: "wfe",
+                    description: Some(
+                        "Wakeup frame enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wfe",
+                    ),
+                },
+                Field {
+                    name: "mpr",
+                    description: Some(
+                        "Magic packet received",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wfr",
+                    description: Some(
+                        "Wakeup frame received",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gu",
+                    description: Some(
+                        "Global unicast",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Gu",
+                    ),
+                },
+                Field {
+                    name: "wffrpr",
+                    description: Some(
+                        "Wakeup frame filter register pointer reset",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wffrpr",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmccr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cr",
+                    description: Some(
+                        "Counter reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "CounterReset",
+                    ),
+                },
+                Field {
+                    name: "csr",
+                    description: Some(
+                        "Counter stop rollover",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Csr",
+                    ),
+                },
+                Field {
+                    name: "ror",
+                    description: Some(
+                        "Reset on read",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ror",
+                    ),
+                },
+                Field {
+                    name: "mcf",
+                    description: Some(
+                        "MMC counter freeze",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Mcf",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca0lr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC address 0 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "maca0l",
+                    description: Some(
+                        "0",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1140,6 +2048,320 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 31,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca3hr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC address 3 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "maca3h",
+                    description: Some(
+                        "MACA3H",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbc",
+                    description: Some(
+                        "MBC",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "SA",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MacahrSa",
+                    ),
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "AE",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MacahrAe",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmctir",
+            extends: None,
+            description: Some(
+                "Ethernet MMC transmit interrupt register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tgfscs",
+                    description: Some(
+                        "Transmitted good frames single collision status",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tgfmscs",
+                    description: Some(
+                        "Transmitted good frames more than single collision status",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tgfs",
+                    description: Some(
+                        "Transmitted good frames status",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptptshur",
+            extends: None,
+            description: Some(
+                "Ethernet PTP time stamp high update register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsus",
+                    description: Some(
+                        "TSUS",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptptsar",
+            extends: None,
+            description: Some(
+                "Ethernet PTP time stamp addend register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsa",
+                    description: Some(
+                        "TSA",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macmiiar",
+            extends: None,
+            description: Some(
+                "Ethernet MAC MII address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mb",
+                    description: Some(
+                        "MII busy",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MbProgress",
+                    ),
+                },
+                Field {
+                    name: "mw",
+                    description: Some(
+                        "MII write",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Mw",
+                    ),
+                },
+                Field {
+                    name: "cr",
+                    description: Some(
+                        "Clock range",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Cr",
+                    ),
+                },
+                Field {
+                    name: "mr",
+                    description: Some(
+                        "MII register - select the desired MII register in the PHY device",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pa",
+                    description: Some(
+                        "PHY address - select which of possible 32 PHYs is being accessed",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmcrfaecr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC received frames with alignment error counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rfaec",
+                    description: Some(
+                        "RFAEC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmachrdr",
+            extends: None,
+            description: Some(
+                "Ethernet DMA current host receive descriptor register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hrdap",
+                    description: Some(
+                        "Host receive descriptor address pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca1hr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC address 1 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "maca1h",
+                    description: Some(
+                        "MACA1H",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbc",
+                    description: Some(
+                        "MBC",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "SA",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MacahrSa",
+                    ),
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "AE",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MacahrAe",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmachtdr",
+            extends: None,
+            description: Some(
+                "Ethernet DMA current host transmit descriptor register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "htdap",
+                    description: Some(
+                        "Host transmit descriptor address pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1296,6 +2518,318 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Mmcrfcecr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC received frames with CRC error counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rfcfc",
+                    description: Some(
+                        "RFCFC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmatpdr",
+            extends: None,
+            description: Some(
+                "Ethernet DMA transmit poll demand register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tpd",
+                    description: Some(
+                        "Transmit poll demand",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some(
+                        "Tpd",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmachrbar",
+            extends: None,
+            description: Some(
+                "Ethernet DMA current host receive buffer address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hrbap",
+                    description: Some(
+                        "Host receive buffer address pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca2hr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC address 2 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "maca2h",
+                    description: Some(
+                        "MAC2AH",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbc",
+                    description: Some(
+                        "MBC",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "SA",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MacahrSa",
+                    ),
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "AE",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "MacahrAe",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macvlantr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC VLAN tag register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vlanti",
+                    description: Some(
+                        "VLAN tag identifier (for receive frames)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vlantc",
+                    description: Some(
+                        "12-bit VLAN tag comparison",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Vlantc",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptptssr",
+            extends: None,
+            description: Some(
+                "Ethernet PTP time stamp status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsso",
+                    description: Some(
+                        "TSSO",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tsttr",
+                    description: Some(
+                        "TSSO",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Machthr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC hash table high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hth",
+                    description: Some(
+                        "Upper 32 bits of hash table",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptpttlr",
+            extends: None,
+            description: Some(
+                "Ethernet PTP target time low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ttsl",
+                    description: Some(
+                        "TTSL",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptptshr",
+            extends: None,
+            description: Some(
+                "Ethernet PTP time stamp high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sts",
+                    description: Some(
+                        "STS",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca1lr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC address1 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "maca1l",
+                    description: Some(
+                        "MACA1LR",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macimr",
+            extends: None,
+            description: Some(
+                "Ethernet MAC interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pmtim",
+                    description: Some(
+                        "PMT interrupt mask",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pmtim",
+                    ),
+                },
+                Field {
+                    name: "tstim",
+                    description: Some(
+                        "Time stamp trigger interrupt mask",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Tstim",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmachtbar",
+            extends: None,
+            description: Some(
+                "Ethernet DMA current host transmit buffer address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "htbap",
+                    description: Some(
+                        "Host transmit buffer address pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Macsr",
             extends: None,
             description: Some(
@@ -1356,112 +2890,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macvlantr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC VLAN tag register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vlanti",
-                    description: Some(
-                        "VLAN tag identifier (for receive frames)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlantc",
-                    description: Some(
-                        "12-bit VLAN tag comparison",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Vlantc",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmardlar",
-            extends: None,
-            description: Some(
-                "Ethernet DMA receive descriptor list address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "srl",
-                    description: Some(
-                        "Start of receive list",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca1hr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 1 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca1h",
-                    description: Some(
-                        "MACA1H",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "MBC",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "SA",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrSa",
-                    ),
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "AE",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrAe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Ptptslr",
             extends: None,
             description: Some(
@@ -1492,86 +2920,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mmctgfmsccr",
-            extends: None,
-            description: Some(
-                "Ethernet MMC transmitted good frames after more than a single collision",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tgfmscc",
-                    description: Some(
-                        "TGFMSCC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptptshr",
-            extends: None,
-            description: Some(
-                "Ethernet PTP time stamp high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sts",
-                    description: Some(
-                        "STS",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmcrir",
-            extends: None,
-            description: Some(
-                "Ethernet MMC receive interrupt register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rfces",
-                    description: Some(
-                        "Received frames CRC error status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfaes",
-                    description: Some(
-                        "Received frames alignment error status",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rgufs",
-                    description: Some(
-                        "Received good Unicast frames status",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ptptthr",
             extends: None,
             description: Some(
@@ -1583,84 +2931,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ttsh",
                     description: Some(
                         "0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmccr",
-            extends: None,
-            description: Some(
-                "Ethernet MMC control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cr",
-                    description: Some(
-                        "Counter reset",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "CounterReset",
-                    ),
-                },
-                Field {
-                    name: "csr",
-                    description: Some(
-                        "Counter stop rollover",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Csr",
-                    ),
-                },
-                Field {
-                    name: "ror",
-                    description: Some(
-                        "Reset on read",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ror",
-                    ),
-                },
-                Field {
-                    name: "mcf",
-                    description: Some(
-                        "MMC counter freeze",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Mcf",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmctgfsccr",
-            extends: None,
-            description: Some(
-                "Ethernet MMC transmitted good frames after a single collision counter",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tgfscc",
-                    description: Some(
-                        "Transmitted good frames single collision counter",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1894,48 +3164,138 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mmcrimr",
+            name: "Dmamfbocr",
             extends: None,
             description: Some(
-                "Ethernet MMC receive interrupt mask register",
+                "Ethernet DMA missed frame and buffer overflow counter register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rfcem",
+                    name: "mfc",
                     description: Some(
-                        "Received frame CRC error mask",
+                        "Missed frames by the controller",
                     ),
-                    bit_offset: 5,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
-                    enumm: Some(
-                        "Rfcem",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "rfaem",
+                    name: "omfc",
                     description: Some(
-                        "Received frames alignment error mask",
+                        "Overflow bit for missed frame counter",
                     ),
-                    bit_offset: 6,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rfaem",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "rgufm",
+                    name: "mfa",
                     description: Some(
-                        "Received good Unicast frames mask",
+                        "Missed frames by the application",
                     ),
                     bit_offset: 17,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ofoc",
+                    description: Some(
+                        "Overflow bit for FIFO overflow counter",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ptpssir",
+            extends: None,
+            description: Some(
+                "Ethernet PTP subsecond increment register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "stssi",
+                    description: Some(
+                        "STSSI",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmctimr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC transmit interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tgfscm",
+                    description: Some(
+                        "Transmitted good frames single collision mask",
+                    ),
+                    bit_offset: 14,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Rgufm",
+                        "Tgfscm",
                     ),
+                },
+                Field {
+                    name: "tgfmscm",
+                    description: Some(
+                        "Transmitted good frames more than single collision mask",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Tgfmscm",
+                    ),
+                },
+                Field {
+                    name: "tgfm",
+                    description: Some(
+                        "Transmitted good frames mask",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Tgfm",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mmctgfmsccr",
+            extends: None,
+            description: Some(
+                "Ethernet MMC transmitted good frames after more than a single collision",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tgfmscc",
+                    description: Some(
+                        "TGFMSCC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -2078,398 +3438,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "Ra",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptptssr",
-            extends: None,
-            description: Some(
-                "Ethernet PTP time stamp status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsso",
-                    description: Some(
-                        "TSSO",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tsttr",
-                    description: Some(
-                        "TSSO",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macfcr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC flow control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fcb",
-                    description: Some(
-                        "Flow control busy/back pressure activate",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Fcb",
-                    ),
-                },
-                Field {
-                    name: "tfce",
-                    description: Some(
-                        "Transmit flow control enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Tfce",
-                    ),
-                },
-                Field {
-                    name: "rfce",
-                    description: Some(
-                        "Receive flow control enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rfce",
-                    ),
-                },
-                Field {
-                    name: "upfd",
-                    description: Some(
-                        "Unicast pause frame detect",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Upfd",
-                    ),
-                },
-                Field {
-                    name: "plt",
-                    description: Some(
-                        "Pause low threshold",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Plt",
-                    ),
-                },
-                Field {
-                    name: "zqpd",
-                    description: Some(
-                        "Zero-quanta pause disable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Zqpd",
-                    ),
-                },
-                Field {
-                    name: "pt",
-                    description: Some(
-                        "Pause time",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptptsar",
-            extends: None,
-            description: Some(
-                "Ethernet PTP time stamp addend register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsa",
-                    description: Some(
-                        "TSA",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptptshur",
-            extends: None,
-            description: Some(
-                "Ethernet PTP time stamp high update register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsus",
-                    description: Some(
-                        "TSUS",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Machtlr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC hash table low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "htl",
-                    description: Some(
-                        "Lower 32 bits of hash table",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmachtbar",
-            extends: None,
-            description: Some(
-                "Ethernet DMA current host transmit buffer address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "htbap",
-                    description: Some(
-                        "Host transmit buffer address pointer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmaier",
-            extends: None,
-            description: Some(
-                "Ethernet DMA interrupt enable register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tie",
-                    description: Some(
-                        "Transmit interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tpsie",
-                    description: Some(
-                        "Transmit process stopped interrupt enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tbuie",
-                    description: Some(
-                        "Transmit buffer unavailable interrupt enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tjtie",
-                    description: Some(
-                        "Transmit jabber timeout interrupt enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "roie",
-                    description: Some(
-                        "Receive overflow interrupt enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tuie",
-                    description: Some(
-                        "Transmit underflow interrupt enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rie",
-                    description: Some(
-                        "Receive interrupt enable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rbuie",
-                    description: Some(
-                        "Receive buffer unavailable interrupt enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rpsie",
-                    description: Some(
-                        "Receive process stopped interrupt enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwtie",
-                    description: Some(
-                        "Receive watchdog timeout interrupt enable",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "etie",
-                    description: Some(
-                        "Early transmit interrupt enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fbeie",
-                    description: Some(
-                        "Fatal bus error interrupt enable",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "erie",
-                    description: Some(
-                        "Early receive interrupt enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "aise",
-                    description: Some(
-                        "Abnormal interrupt summary enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nise",
-                    description: Some(
-                        "Normal interrupt summary enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptptslur",
-            extends: None,
-            description: Some(
-                "Ethernet PTP time stamp low update register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsuss",
-                    description: Some(
-                        "TSUSS",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 31,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tsupns",
-                    description: Some(
-                        "TSUPNS",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -2630,17 +3598,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Maca3lr",
+            name: "Machtlr",
             extends: None,
             description: Some(
-                "Ethernet MAC address 3 low register",
+                "Ethernet MAC hash table low register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "maca3l",
+                    name: "htl",
                     description: Some(
-                        "MBCA3L",
+                        "Lower 32 bits of hash table",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -2650,246 +3618,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dmachrbar",
+            name: "Macmiidr",
             extends: None,
             description: Some(
-                "Ethernet DMA current host receive buffer address register",
+                "Ethernet MAC MII data register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hrbap",
+                    name: "md",
                     description: Some(
-                        "Host receive buffer address pointer",
+                        "MII data read from/written to the PHY",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmcrgufcr",
-            extends: None,
-            description: Some(
-                "MMC received good unicast frames counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rgufc",
-                    description: Some(
-                        "RGUFC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maccr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "re",
-                    description: Some(
-                        "Receiver enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "te",
-                    description: Some(
-                        "Transmitter enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dc",
-                    description: Some(
-                        "Deferral check",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dc",
-                    ),
-                },
-                Field {
-                    name: "bl",
-                    description: Some(
-                        "Back-off limit",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Bl",
-                    ),
-                },
-                Field {
-                    name: "apcs",
-                    description: Some(
-                        "Automatic pad/CRC stripping",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Apcs",
-                    ),
-                },
-                Field {
-                    name: "rd",
-                    description: Some(
-                        "Retry disable",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rd",
-                    ),
-                },
-                Field {
-                    name: "ipco",
-                    description: Some(
-                        "IPv4 checksum offload",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ipco",
-                    ),
-                },
-                Field {
-                    name: "dm",
-                    description: Some(
-                        "Duplex mode",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dm",
-                    ),
-                },
-                Field {
-                    name: "lm",
-                    description: Some(
-                        "Loopback mode",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lm",
-                    ),
-                },
-                Field {
-                    name: "rod",
-                    description: Some(
-                        "Receive own disable",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rod",
-                    ),
-                },
-                Field {
-                    name: "fes",
-                    description: Some(
-                        "Fast Ethernet speed",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Fes",
-                    ),
-                },
-                Field {
-                    name: "csd",
-                    description: Some(
-                        "Carrier sense disable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Csd",
-                    ),
-                },
-                Field {
-                    name: "ifg",
-                    description: Some(
-                        "Interframe gap",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Ifg",
-                    ),
-                },
-                Field {
-                    name: "jd",
-                    description: Some(
-                        "Jabber disable",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Jd",
-                    ),
-                },
-                Field {
-                    name: "wd",
-                    description: Some(
-                        "Watchdog disable",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Wd",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmachrdr",
-            extends: None,
-            description: Some(
-                "Ethernet DMA current host receive descriptor register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hrdap",
-                    description: Some(
-                        "Host receive descriptor address pointer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -3066,748 +3808,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Maca1lr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address1 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca1l",
-                    description: Some(
-                        "MACA1LR",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Machthr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC hash table high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hth",
-                    description: Some(
-                        "Upper 32 bits of hash table",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmatpdr",
-            extends: None,
-            description: Some(
-                "Ethernet DMA transmit poll demand register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tpd",
-                    description: Some(
-                        "Transmit poll demand",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: Some(
-                        "Tpd",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macdbgr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC debug register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mmrpea",
-                    description: Some(
-                        "MAC MII receive protocol engine active",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "msfrwcs",
-                    description: Some(
-                        "MAC small FIFO read/write controllers status",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfwra",
-                    description: Some(
-                        "Rx FIFO write controller active",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfrcs",
-                    description: Some(
-                        "Rx FIFO read controller status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rffl",
-                    description: Some(
-                        "Rx FIFO fill level",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mmtea",
-                    description: Some(
-                        "MAC MII transmit engine active",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mtfcs",
-                    description: Some(
-                        "MAC transmit frame controller status",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mtp",
-                    description: Some(
-                        "MAC transmitter in pause",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfrs",
-                    description: Some(
-                        "Tx FIFO read status",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfwa",
-                    description: Some(
-                        "Tx FIFO write active",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfne",
-                    description: Some(
-                        "Tx FIFO not empty",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tff",
-                    description: Some(
-                        "Tx FIFO full",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macmiiar",
-            extends: None,
-            description: Some(
-                "Ethernet MAC MII address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mb",
-                    description: Some(
-                        "MII busy",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MbProgress",
-                    ),
-                },
-                Field {
-                    name: "mw",
-                    description: Some(
-                        "MII write",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Mw",
-                    ),
-                },
-                Field {
-                    name: "cr",
-                    description: Some(
-                        "Clock range",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Cr",
-                    ),
-                },
-                Field {
-                    name: "mr",
-                    description: Some(
-                        "MII register - select the desired MII register in the PHY device",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pa",
-                    description: Some(
-                        "PHY address - select which of possible 32 PHYs is being accessed",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmctir",
-            extends: None,
-            description: Some(
-                "Ethernet MMC transmit interrupt register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tgfscs",
-                    description: Some(
-                        "Transmitted good frames single collision status",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tgfmscs",
-                    description: Some(
-                        "Transmitted good frames more than single collision status",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tgfs",
-                    description: Some(
-                        "Transmitted good frames status",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmcrfaecr",
-            extends: None,
-            description: Some(
-                "Ethernet MMC received frames with alignment error counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rfaec",
-                    description: Some(
-                        "RFAEC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptpttlr",
-            extends: None,
-            description: Some(
-                "Ethernet PTP target time low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ttsl",
-                    description: Some(
-                        "TTSL",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmamfbocr",
-            extends: None,
-            description: Some(
-                "Ethernet DMA missed frame and buffer overflow counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mfc",
-                    description: Some(
-                        "Missed frames by the controller",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "omfc",
-                    description: Some(
-                        "Overflow bit for missed frame counter",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mfa",
-                    description: Some(
-                        "Missed frames by the application",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ofoc",
-                    description: Some(
-                        "Overflow bit for FIFO overflow counter",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca3hr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 3 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca3h",
-                    description: Some(
-                        "MACA3H",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "MBC",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "SA",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrSa",
-                    ),
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "AE",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrAe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca2hr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 2 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca2h",
-                    description: Some(
-                        "MAC2AH",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "MBC",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "SA",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrSa",
-                    ),
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "AE",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrAe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmachtdr",
-            extends: None,
-            description: Some(
-                "Ethernet DMA current host transmit descriptor register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "htdap",
-                    description: Some(
-                        "Host transmit descriptor address pointer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macpmtcsr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC PMT control and status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pd",
-                    description: Some(
-                        "Power down",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pd",
-                    ),
-                },
-                Field {
-                    name: "mpe",
-                    description: Some(
-                        "Magic packet enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Mpe",
-                    ),
-                },
-                Field {
-                    name: "wfe",
-                    description: Some(
-                        "Wakeup frame enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Wfe",
-                    ),
-                },
-                Field {
-                    name: "mpr",
-                    description: Some(
-                        "Magic packet received",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wfr",
-                    description: Some(
-                        "Wakeup frame received",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gu",
-                    description: Some(
-                        "Global unicast",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Gu",
-                    ),
-                },
-                Field {
-                    name: "wffrpr",
-                    description: Some(
-                        "Wakeup frame filter register pointer reset",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Wffrpr",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mmcrfcecr",
-            extends: None,
-            description: Some(
-                "Ethernet MMC received frames with CRC error counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rfcfc",
-                    description: Some(
-                        "RFCFC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macmiidr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC MII data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "md",
-                    description: Some(
-                        "MII data read from/written to the PHY",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmarpdr",
-            extends: None,
-            description: Some(
-                "EHERNET DMA receive poll demand register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rpd",
-                    description: Some(
-                        "Receive poll demand",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: Some(
-                        "Rpd",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca0lr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 0 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca0l",
-                    description: Some(
-                        "0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macimr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pmtim",
-                    description: Some(
-                        "PMT interrupt mask",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pmtim",
-                    ),
-                },
-                Field {
-                    name: "tstim",
-                    description: Some(
-                        "Time stamp trigger interrupt mask",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Tstim",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ptpssir",
-            extends: None,
-            description: Some(
-                "Ethernet PTP subsecond increment register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "stssi",
-                    description: Some(
-                        "STSSI",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Mmctgfcr",
             extends: None,
             description: Some(
@@ -3830,240 +3830,128 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Saif",
+            name: "Daif",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NORMAL",
                     description: Some(
-                        "Source address filter operates normally",
+                        "Normal filtering of frames",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "INVERT",
                     description: Some(
-                        "Source address filter operation inverted",
+                        "Address check block operates in inverse filtering mode for the DA address comparison",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Csr",
+            name: "Zqpd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Normal operation with automatic zero-quanta pause control frame generation",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Automatic generation of zero-quanta pause control frames is disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "St",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STOPPED",
+                    description: Some(
+                        "Transmission is placed in the Stopped state",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some(
+                        "Transmission is placed in Running state",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "MacahrAe",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
                     description: Some(
-                        "Counters roll over to zero after reaching the maximum value",
+                        "Address filters ignore this address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
                     description: Some(
-                        "Counters do not roll over to zero after reaching the maximum value",
+                        "Address filters use this address",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Fcb",
+            name: "Rps",
             description: None,
-            bit_size: 1,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DISABLEBACKPRESSURE",
+                    name: "STOPPED",
                     description: Some(
-                        "In half duplex only, deasserts back pressure",
+                        "Stopped, reset or Stop Receive command issued",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PAUSEORBACKPRESSURE",
+                    name: "RUNNINGFETCHING",
                     description: Some(
-                        "In full duplex, initiate a Pause control frame. In half duplex, assert back pressure",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Gu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Normal operation",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Any unicast packet filtered by the MAC address recognition may be a wakeup frame",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ra",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC receiver passes on to the application only those frames that have passed the SA/DA address file",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC receiver passes oll received frames on to the application",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Da",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ROUNDROBIN",
-                    description: Some(
-                        "Round-robin with Rx:Tx priority given by PM",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RXPRIORITY",
-                    description: Some(
-                        "Rx has priority over Tx",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ror",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MMC counters do not reset on read",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MMC counters reset to zero after read",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mcf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNFROZEN",
-                    description: Some(
-                        "All MMC counters update normally",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FROZEN",
-                    description: Some(
-                        "All MMC counters frozen to their current value",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Bl",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BL10",
-                    description: Some(
-                        "For retransmission n, wait up to 2^min(n, 10) time slots",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BL8",
-                    description: Some(
-                        "For retransmission n, wait up to 2^min(n, 8) time slots",
+                        "Running, fetching receive transfer descriptor",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BL4",
+                    name: "RUNNINGWAITING",
                     description: Some(
-                        "For retransmission n, wait up to 2^min(n, 4) time slots",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BL1",
-                    description: Some(
-                        "For retransmission n, wait up to 2^min(n, 1) time slots",
+                        "Running, waiting for receive packet",
                     ),
                     value: 3,
                 },
-            ],
-        },
-        Enum {
-            name: "Plt",
-            description: None,
-            bit_size: 2,
-            variants: &[
                 EnumVariant {
-                    name: "PLT4",
+                    name: "SUSPENDED",
                     description: Some(
-                        "Pause time minus 4 slot times",
+                        "Suspended, receive descriptor unavailable",
                     ),
-                    value: 0,
+                    value: 4,
                 },
                 EnumVariant {
-                    name: "PLT28",
+                    name: "RUNNINGWRITING",
                     description: Some(
-                        "Pause time minus 28 slot times",
+                        "Running, writing data to host memory buffer",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PLT144",
-                    description: Some(
-                        "Pause time minus 144 slot times",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PLT256",
-                    description: Some(
-                        "Pause time minus 256 slot times",
-                    ),
-                    value: 3,
+                    value: 7,
                 },
             ],
         },
@@ -4117,23 +4005,44 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dc",
+            name: "Cr",
             description: None,
-            bit_size: 1,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "CR_60_100",
                     description: Some(
-                        "MAC defers until CRS signal goes inactive",
+                        "60-100MHz HCLK/42",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "CR_100_150",
                     description: Some(
-                        "Deferral check function enabled",
+                        "100-150 MHz HCLK/62",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "CR_20_35",
+                    description: Some(
+                        "20-35MHz HCLK/16",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "CR_35_60",
+                    description: Some(
+                        "35-60MHz HCLK/16",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "CR_150_168",
+                    description: Some(
+                        "150-168MHz HCLK/102",
+                    ),
+                    value: 4,
                 },
             ],
         },
@@ -4159,65 +4068,114 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ifg",
+            name: "Saif",
             description: None,
-            bit_size: 3,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IFG96",
+                    name: "NORMAL",
                     description: Some(
-                        "96 bit times",
+                        "Source address filter operates normally",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IFG88",
+                    name: "INVERT",
                     description: Some(
-                        "88 bit times",
+                        "Source address filter operation inverted",
                     ),
                     value: 1,
                 },
+            ],
+        },
+        Enum {
+            name: "Aab",
+            description: None,
+            bit_size: 1,
+            variants: &[
                 EnumVariant {
-                    name: "IFG80",
+                    name: "UNALIGNED",
                     description: Some(
-                        "80 bit times",
+                        "Bursts are not aligned",
                     ),
-                    value: 2,
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "IFG72",
+                    name: "ALIGNED",
                     description: Some(
-                        "72 bit times",
+                        "Align bursts to start address LS bits. First burst alignment depends on FB bit",
                     ),
-                    value: 3,
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "MAC defers until CRS signal goes inactive",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "IFG64",
+                    name: "ENABLED",
                     description: Some(
-                        "64 bit times",
+                        "Deferral check function enabled",
                     ),
-                    value: 4,
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tpd",
+            description: None,
+            bit_size: 32,
+            variants: &[
+                EnumVariant {
+                    name: "POLL",
+                    description: Some(
+                        "Poll the transmit descriptor list",
+                    ),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Pd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "All received frames will be dropped. Cleared automatically when a magic packet or wakeup frame is received",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Da",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ROUNDROBIN",
+                    description: Some(
+                        "Round-robin with Rx:Tx priority given by PM",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "IFG56",
+                    name: "RXPRIORITY",
                     description: Some(
-                        "56 bit times",
+                        "Rx has priority over Tx",
                     ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "IFG48",
-                    description: Some(
-                        "48 bit times",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "IFG40",
-                    description: Some(
-                        "40 bit times",
-                    ),
-                    value: 7,
+                    value: 1,
                 },
             ],
         },
@@ -4237,6 +4195,433 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ENABLED",
                     description: Some(
                         "MAC additionally detects Pause frames with the station's unicast address",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dtcefd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Drop frames with errors only in the receive checksum offload engine",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Do not drop frames that only have errors in the receive checksum offload engine",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mw",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "READ",
+                    description: Some(
+                        "Read operation",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "WRITE",
+                    description: Some(
+                        "Write operation",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fef",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DROP",
+                    description: Some(
+                        "Rx FIFO drops frames with error status",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FORWARD",
+                    description: Some(
+                        "All frames except runt error frames are forwarded to the DMA",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some(
+                        "Normal mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOOPBACK",
+                    description: Some(
+                        "MAC operates in loopback mode at the MII",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Hu",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PERFECT",
+                    description: Some(
+                        "MAC performs a perfect destination address filtering for unicast frames",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HASH",
+                    description: Some(
+                        "MAC performs destination address filtering of received unicast frames according to the hash table",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ftf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FLUSH",
+                    description: Some(
+                        "Transmit FIFO controller logic is reset to its default values. Cleared automatically",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "MAC attempts retries based on the settings of BL",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "MAC attempts only 1 transmission",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rfce",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Pause frames are not decoded",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "MAC decodes received Pause frames and disables its transmitted for a specified time",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Bfd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Address filters pass all received broadcast frames",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Address filters filter all incoming broadcast frames",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rfaem",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNMASKED",
+                    description: Some(
+                        "Received-alignment-error counter half-full interrupt enabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MASKED",
+                    description: Some(
+                        "Received-alignment-error counter half-full interrupt disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ra",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "MAC receiver passes on to the application only those frames that have passed the SA/DA address file",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "MAC receiver passes oll received frames on to the application",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Jabber enabled, transmit frames up to 2048 bytes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Jabber disabled, transmit frames up to 16384 bytes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Usp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "COMBINED",
+                    description: Some(
+                        "PBL value used for both Rx and Tx DMA",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SEPARATE",
+                    description: Some(
+                        "RxDMA uses RDP value, TxDMA uses PBL value",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fpm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "X1",
+                    description: Some(
+                        "PBL values used as-is",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "X4",
+                    description: Some(
+                        "PBL values multiplied by 4",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Hm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PERFECT",
+                    description: Some(
+                        "MAC performs a perfect destination address filtering for multicast frames",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HASH",
+                    description: Some(
+                        "MAC performs destination address filtering of received multicast frames according to the hash table",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tfce",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "In full duplex, flow control is disabled. In half duplex, back pressure is disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "In full duplex, flow control is enabled. In half duplex, back pressure is enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pcf",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PREVENTALL",
+                    description: Some(
+                        "MAC prevents all control frames from reaching the application",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FORWARDALLEXCEPTPAUSE",
+                    description: Some(
+                        "MAC forwards all control frames to application except Pause",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FORWARDALL",
+                    description: Some(
+                        "MAC forwards all control frames to application even if they fail the address filter",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FORWARDALLFILTERED",
+                    description: Some(
+                        "MAC forwards control frames that pass the address filter",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Apcs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "MAC passes all incoming frames unmodified",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STRIP",
+                    description: Some(
+                        "MAC strips the Pad/FCS field on incoming frames only for lengths less than or equal to 1500 bytes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fugf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DROP",
+                    description: Some(
+                        "Rx FIFO drops all frames of less than 64 bytes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FORWARD",
+                    description: Some(
+                        "Rx FIFO forwards undersized frames",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Csr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Counters roll over to zero after reaching the maximum value",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Counters do not roll over to zero after reaching the maximum value",
                     ),
                     value: 1,
                 },
@@ -4306,149 +4691,79 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Vlantc",
+            name: "Fcb",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "VLANTC16",
+                    name: "DISABLEBACKPRESSURE",
                     description: Some(
-                        "Full 16 bit VLAN identifiers are used for comparison and filtering",
+                        "In half duplex only, deasserts back pressure",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "VLANTC12",
+                    name: "PAUSEORBACKPRESSURE",
                     description: Some(
-                        "12 bit VLAN identifies are used for comparison and filtering",
+                        "In full duplex, initiate a Pause control frame. In half duplex, assert back pressure",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Zqpd",
+            name: "Hpf",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "HASHONLY",
                     description: Some(
-                        "Normal operation with automatic zero-quanta pause control frame generation",
+                        "If HM or HU is set, only frames that match the Hash filter are passed",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "HASHORPERFECT",
                     description: Some(
-                        "Automatic generation of zero-quanta pause control frames is disabled",
+                        "If HM or HU is set, frames that match either the perfect filter or the hash filter are passed",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Bfd",
+            name: "Bl",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "BL10",
                     description: Some(
-                        "Address filters pass all received broadcast frames",
+                        "For retransmission n, wait up to 2^min(n, 10) time slots",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "BL8",
                     description: Some(
-                        "Address filters filter all incoming broadcast frames",
+                        "For retransmission n, wait up to 2^min(n, 8) time slots",
                     ),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Rfaem",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "UNMASKED",
+                    name: "BL4",
                     description: Some(
-                        "Received-alignment-error counter half-full interrupt enabled",
+                        "For retransmission n, wait up to 2^min(n, 4) time slots",
                     ),
-                    value: 0,
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "MASKED",
+                    name: "BL1",
                     description: Some(
-                        "Received-alignment-error counter half-full interrupt disabled",
+                        "For retransmission n, wait up to 2^min(n, 1) time slots",
                     ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "READ",
-                    description: Some(
-                        "Read operation",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "WRITE",
-                    description: Some(
-                        "Write operation",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Usp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "COMBINED",
-                    description: Some(
-                        "PBL value used for both Rx and Tx DMA",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SEPARATE",
-                    description: Some(
-                        "RxDMA uses RDP value, TxDMA uses PBL value",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC attempts retries based on the settings of BL",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC attempts only 1 transmission",
-                    ),
-                    value: 1,
+                    value: 3,
                 },
             ],
         },
@@ -4474,44 +4789,86 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Cr",
+            name: "Tstim",
             description: None,
-            bit_size: 3,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CR_60_100",
+                    name: "UNMASKED",
                     description: Some(
-                        "60-100MHz HCLK/42",
+                        "Time stamp interrupt generation enabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CR_100_150",
+                    name: "MASKED",
                     description: Some(
-                        "100-150 MHz HCLK/62",
+                        "Time stamp interrupt generation disabled",
                     ),
                     value: 1,
                 },
+            ],
+        },
+        Enum {
+            name: "Pam",
+            description: None,
+            bit_size: 1,
+            variants: &[
                 EnumVariant {
-                    name: "CR_20_35",
+                    name: "DISABLED",
                     description: Some(
-                        "20-35MHz HCLK/16",
+                        "Filtering of multicast frames depends on HM",
                     ),
-                    value: 2,
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "CR_35_60",
+                    name: "ENABLED",
                     description: Some(
-                        "35-60MHz HCLK/16",
+                        "All received frames with a multicast destination address are passed",
                     ),
-                    value: 3,
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mcf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNFROZEN",
+                    description: Some(
+                        "All MMC counters update normally",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "CR_150_168",
+                    name: "FROZEN",
                     description: Some(
-                        "150-168MHz HCLK/102",
+                        "All MMC counters frozen to their current value",
                     ),
-                    value: 4,
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ror",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "MMC counters do not reset on read",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "MMC counters reset to zero after read",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -4537,48 +4894,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "St",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STOPPED",
-                    description: Some(
-                        "Transmission is placed in the Stopped state",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some(
-                        "Transmission is placed in Running state",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rsf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CUTTHROUGH",
-                    description: Some(
-                        "Rx FIFO operates in cut-through mode, subject to RTC bits",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STOREFORWARD",
-                    description: Some(
-                        "Frames are read from Rx FIFO after complete frame has been written",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Fb",
             description: None,
             bit_size: 1,
@@ -4594,55 +4909,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FIXED",
                     description: Some(
                         "AHB uses only fixed burst transfers",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wffrpr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some(
-                        "Reset wakeup frame filter register point to 0b000. Automatically cleared",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "CounterReset",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some(
-                        "Reset all counters. Cleared automatically",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wfe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No power management event generated due to wakeup frame reception",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Enable generation of a power management event due to wakeup frame reception",
                     ),
                     value: 1,
                 },
@@ -4684,6 +4950,90 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Ifg",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "IFG96",
+                    description: Some(
+                        "96 bit times",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "IFG88",
+                    description: Some(
+                        "88 bit times",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "IFG80",
+                    description: Some(
+                        "80 bit times",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "IFG72",
+                    description: Some(
+                        "72 bit times",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "IFG64",
+                    description: Some(
+                        "64 bit times",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "IFG56",
+                    description: Some(
+                        "56 bit times",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "IFG48",
+                    description: Some(
+                        "48 bit times",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "IFG40",
+                    description: Some(
+                        "40 bit times",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Gu",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Normal operation",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Any unicast packet filtered by the MAC address recognition may be a wakeup frame",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Tgfm",
             description: None,
             bit_size: 1,
@@ -4705,63 +5055,231 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "MacahrSa",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DESTINATION",
-                    description: Some(
-                        "This address is used for comparison with DA fields of the received frame",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SOURCE",
-                    description: Some(
-                        "This address is used for comparison with SA fields of received frames",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rod",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC receives all packets from PHY while transmitting",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC disables reception of frames in half-duplex mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rfce",
+            name: "Mpe",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
                     description: Some(
-                        "Pause frames are not decoded",
+                        "No power management event generated due to Magic Packet reception",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
                     description: Some(
-                        "MAC decodes received Pause frames and disables its transmitted for a specified time",
+                        "Enable generation of a power management event due to Magic Packet reception",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rtc",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "RTC64",
+                    description: Some(
+                        "64 bytes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RTC32",
+                    description: Some(
+                        "32 bytes",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RTC96",
+                    description: Some(
+                        "96 bytes",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RTC128",
+                    description: Some(
+                        "128 bytes",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Rpd",
+            description: None,
+            bit_size: 32,
+            variants: &[
+                EnumVariant {
+                    name: "POLL",
+                    description: Some(
+                        "Poll the receive descriptor list",
+                    ),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "MbProgress",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BUSY",
+                    description: Some(
+                        "This bit is set to 1 by the application to indicate that a read or write access is in progress",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tgfscm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNMASKED",
+                    description: Some(
+                        "Transmitted-good-single-collision half-full interrupt enabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MASKED",
+                    description: Some(
+                        "Transmitted-good-single-collision half-full interrupt disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rdp",
+            description: None,
+            bit_size: 6,
+            variants: &[
+                EnumVariant {
+                    name: "RDP1",
+                    description: Some(
+                        "1 beat per RxDMA transaction",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RDP2",
+                    description: Some(
+                        "2 beats per RxDMA transaction",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RDP4",
+                    description: Some(
+                        "4 beats per RxDMA transaction",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "RDP8",
+                    description: Some(
+                        "8 beats per RxDMA transaction",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "RDP16",
+                    description: Some(
+                        "16 beats per RxDMA transaction",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "RDP32",
+                    description: Some(
+                        "32 beats per RxDMA transaction",
+                    ),
+                    value: 32,
+                },
+            ],
+        },
+        Enum {
+            name: "Saf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Source address ignored",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "MAC drops frames that fail the source address filter",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tgfmscm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNMASKED",
+                    description: Some(
+                        "Transmitted-good-multiple-collision half-full interrupt enabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MASKED",
+                    description: Some(
+                        "Transmitted-good-multiple-collision half-full interrupt disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Watchdog enabled, receive frames limited to 2048 bytes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Watchdog disabled, receive frames may be up to to 16384 bytes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wffrpr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RESET",
+                    description: Some(
+                        "Reset wakeup frame filter register point to 0b000. Automatically cleared",
                     ),
                     value: 1,
                 },
@@ -4789,56 +5307,35 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pcf",
+            name: "CounterReset",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PREVENTALL",
+                    name: "RESET",
                     description: Some(
-                        "MAC prevents all control frames from reaching the application",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FORWARDALLEXCEPTPAUSE",
-                    description: Some(
-                        "MAC forwards all control frames to application except Pause",
+                        "Reset all counters. Cleared automatically",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "FORWARDALL",
-                    description: Some(
-                        "MAC forwards all control frames to application even if they fail the address filter",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FORWARDALLFILTERED",
-                    description: Some(
-                        "MAC forwards control frames that pass the address filter",
-                    ),
-                    value: 3,
                 },
             ],
         },
         Enum {
-            name: "Pam",
+            name: "Pm",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
                     description: Some(
-                        "Filtering of multicast frames depends on HM",
+                        "Normal address filtering",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
                     description: Some(
-                        "All received frames with a multicast destination address are passed",
+                        "Address filters pass all incoming frames regardless of their destination or source address",
                     ),
                     value: 1,
                 },
@@ -4894,616 +5391,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dtcefd",
+            name: "Vlantc",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "VLANTC16",
                     description: Some(
-                        "Drop frames with errors only in the receive checksum offload engine",
+                        "Full 16 bit VLAN identifiers are used for comparison and filtering",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "VLANTC12",
                     description: Some(
-                        "Do not drop frames that only have errors in the receive checksum offload engine",
+                        "12 bit VLAN identifies are used for comparison and filtering",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Fef",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DROP",
-                    description: Some(
-                        "Rx FIFO drops frames with error status",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FORWARD",
-                    description: Some(
-                        "All frames except runt error frames are forwarded to the DMA",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PERFECT",
-                    description: Some(
-                        "MAC performs a perfect destination address filtering for unicast frames",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HASH",
-                    description: Some(
-                        "MAC performs destination address filtering of received unicast frames according to the hash table",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fugf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DROP",
-                    description: Some(
-                        "Rx FIFO drops all frames of less than 64 bytes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FORWARD",
-                    description: Some(
-                        "Rx FIFO forwards undersized frames",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Normal mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOOPBACK",
-                    description: Some(
-                        "MAC operates in loopback mode at the MII",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PERFECT",
-                    description: Some(
-                        "MAC performs a perfect destination address filtering for multicast frames",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HASH",
-                    description: Some(
-                        "MAC performs destination address filtering of received multicast frames according to the hash table",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tsf",
+            name: "Rsf",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "CUTTHROUGH",
                     description: Some(
-                        "Transmission starts when the frame size in the Tx FIFO exceeds TTC threshold",
+                        "Rx FIFO operates in cut-through mode, subject to RTC bits",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "STOREFORWARD",
                     description: Some(
-                        "Transmission starts when a full frame is in the Tx FIFO",
+                        "Frames are read from Rx FIFO after complete frame has been written",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Rps",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "STOPPED",
-                    description: Some(
-                        "Stopped, reset or Stop Receive command issued",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RUNNINGFETCHING",
-                    description: Some(
-                        "Running, fetching receive transfer descriptor",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RUNNINGWAITING",
-                    description: Some(
-                        "Running, waiting for receive packet",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "SUSPENDED",
-                    description: Some(
-                        "Suspended, receive descriptor unavailable",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "RUNNINGWRITING",
-                    description: Some(
-                        "Running, writing data to host memory buffer",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Rtc",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "RTC64",
-                    description: Some(
-                        "64 bytes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RTC32",
-                    description: Some(
-                        "32 bytes",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RTC96",
-                    description: Some(
-                        "96 bytes",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "RTC128",
-                    description: Some(
-                        "128 bytes",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Hpf",
+            name: "MacahrSa",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HASHONLY",
+                    name: "DESTINATION",
                     description: Some(
-                        "If HM or HU is set, only frames that match the Hash filter are passed",
+                        "This address is used for comparison with DA fields of the received frame",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HASHORPERFECT",
+                    name: "SOURCE",
                     description: Some(
-                        "If HM or HU is set, frames that match either the perfect filter or the hash filter are passed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tpd",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "POLL",
-                    description: Some(
-                        "Poll the transmit descriptor list",
-                    ),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Apcs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC passes all incoming frames unmodified",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STRIP",
-                    description: Some(
-                        "MAC strips the Pad/FCS field on incoming frames only for lengths less than or equal to 1500 bytes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Jabber enabled, transmit frames up to 2048 bytes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Jabber disabled, transmit frames up to 16384 bytes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fpm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "X1",
-                    description: Some(
-                        "PBL values used as-is",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "X4",
-                    description: Some(
-                        "PBL values multiplied by 4",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Daif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Normal filtering of frames",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INVERT",
-                    description: Some(
-                        "Address check block operates in inverse filtering mode for the DA address comparison",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Watchdog enabled, receive frames limited to 2048 bytes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Watchdog disabled, receive frames may be up to to 16384 bytes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rfcem",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNMASKED",
-                    description: Some(
-                        "Received-crc-error counter half-full interrupt enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASKED",
-                    description: Some(
-                        "Received-crc-error counter half-full interrupt disabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pmtim",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNMASKED",
-                    description: Some(
-                        "PMT Status interrupt generation enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASKED",
-                    description: Some(
-                        "PMT Status interrupt generation disabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "MbProgress",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BUSY",
-                    description: Some(
-                        "This bit is set to 1 by the application to indicate that a read or write access is in progress",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Aab",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNALIGNED",
-                    description: Some(
-                        "Bursts are not aligned",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ALIGNED",
-                    description: Some(
-                        "Align bursts to start address LS bits. First burst alignment depends on FB bit",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tgfscm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNMASKED",
-                    description: Some(
-                        "Transmitted-good-single-collision half-full interrupt enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASKED",
-                    description: Some(
-                        "Transmitted-good-single-collision half-full interrupt disabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tstim",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNMASKED",
-                    description: Some(
-                        "Time stamp interrupt generation enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASKED",
-                    description: Some(
-                        "Time stamp interrupt generation disabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rpd",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "POLL",
-                    description: Some(
-                        "Poll the receive descriptor list",
-                    ),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Csd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Errors generated due to loss of carrier",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No error generated due to loss of carrier",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Normal address filtering",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Address filters pass all incoming frames regardless of their destination or source address",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "All received frames will be dropped. Cleared automatically when a magic packet or wakeup frame is received",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "MacahrAe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Address filters ignore this address",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Address filters use this address",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mpe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No power management event generated due to Magic Packet reception",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Enable generation of a power management event due to Magic Packet reception",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tgfmscm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNMASKED",
-                    description: Some(
-                        "Transmitted-good-multiple-collision half-full interrupt enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASKED",
-                    description: Some(
-                        "Transmitted-good-multiple-collision half-full interrupt disabled",
+                        "This address is used for comparison with SA fields of received frames",
                     ),
                     value: 1,
                 },
@@ -5531,107 +5475,163 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Tfce",
+            name: "Rfcem",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "UNMASKED",
                     description: Some(
-                        "In full duplex, flow control is disabled. In half duplex, back pressure is disabled",
+                        "Received-crc-error counter half-full interrupt enabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "MASKED",
                     description: Some(
-                        "In full duplex, flow control is enabled. In half duplex, back pressure is enabled",
+                        "Received-crc-error counter half-full interrupt disabled",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Ftf",
+            name: "Tsf",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FLUSH",
+                    name: "CUTTHROUGH",
                     description: Some(
-                        "Transmit FIFO controller logic is reset to its default values. Cleared automatically",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Saf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Source address ignored",
+                        "Transmission starts when the frame size in the Tx FIFO exceeds TTC threshold",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "STOREFORWARD",
                     description: Some(
-                        "MAC drops frames that fail the source address filter",
+                        "Transmission starts when a full frame is in the Tx FIFO",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Rdp",
+            name: "Rod",
             description: None,
-            bit_size: 6,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RDP1",
+                    name: "ENABLED",
                     description: Some(
-                        "1 beat per RxDMA transaction",
+                        "MAC receives all packets from PHY while transmitting",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "MAC disables reception of frames in half-duplex mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pmtim",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNMASKED",
+                    description: Some(
+                        "PMT Status interrupt generation enabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MASKED",
+                    description: Some(
+                        "PMT Status interrupt generation disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Csd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Errors generated due to loss of carrier",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No error generated due to loss of carrier",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Plt",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLT4",
+                    description: Some(
+                        "Pause time minus 4 slot times",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLT28",
+                    description: Some(
+                        "Pause time minus 28 slot times",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RDP2",
+                    name: "PLT144",
                     description: Some(
-                        "2 beats per RxDMA transaction",
+                        "Pause time minus 144 slot times",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RDP4",
+                    name: "PLT256",
                     description: Some(
-                        "4 beats per RxDMA transaction",
+                        "Pause time minus 256 slot times",
                     ),
-                    value: 4,
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wfe",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No power management event generated due to wakeup frame reception",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "RDP8",
+                    name: "ENABLED",
                     description: Some(
-                        "8 beats per RxDMA transaction",
+                        "Enable generation of a power management event due to wakeup frame reception",
                     ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "RDP16",
-                    description: Some(
-                        "16 beats per RxDMA transaction",
-                    ),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "RDP32",
-                    description: Some(
-                        "32 beats per RxDMA transaction",
-                    ),
-                    value: 32,
+                    value: 1,
                 },
             ],
         },

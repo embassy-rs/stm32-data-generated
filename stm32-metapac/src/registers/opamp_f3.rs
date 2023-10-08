@@ -155,53 +155,91 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     enums: &[
         Enum {
-            name: "ForceVp",
+            name: "VpsSel",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Normal operating mode"),
-                    value: 0,
+                    name: "PB14",
+                    description: Some("PB14 used as OPAMP2 non-inverting input when TCM_EN=1"),
+                    value: 1,
                 },
                 EnumVariant {
-                    name: "CALIBRATION",
-                    description: Some("Calibration mode. Non-inverting input connected to calibration reference"),
-                    value: 1,
+                    name: "PB0",
+                    description: Some("PB0 used as OPAMP2 non-inverting input when TCM_EN=1"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PA7",
+                    description: Some("PA7 used as OPAMP2 non-inverting input when TCM_EN=1"),
+                    value: 3,
                 },
             ],
         },
         Enum {
-            name: "Outcal",
+            name: "PgaGain",
             description: None,
-            bit_size: 1,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
-                    description: Some("Non-inverting < inverting"),
+                    name: "GAIN2",
+                    description: Some("Gain 2"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HIGH",
-                    description: Some("Non-inverting > inverting"),
+                    name: "GAIN4",
+                    description: Some("Gain 4"),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Tstref",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "OUTPUT",
-                    description: Some("VREFOPAMP2 is output"),
-                    value: 0,
+                    name: "GAIN8",
+                    description: Some("Gain 8"),
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "NOTOUTPUT",
-                    description: Some("VREFOPAMP2 is not output"),
-                    value: 1,
+                    name: "GAIN16",
+                    description: Some("Gain 16"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "GAIN2_VM0",
+                    description: Some("Gain 2, feedback connected to VM0"),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "GAIN4_VM0",
+                    description: Some("Gain 4, feedback connected to VM0"),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "GAIN8_VM0",
+                    description: Some("Gain 8, feedback connected to VM0"),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "GAIN16_VM0",
+                    description: Some("Gain 16, feedback connected to VM0"),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "GAIN2_VM1",
+                    description: Some("Gain 2, feedback connected to VM1"),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "GAIN4_VM1",
+                    description: Some("Gain 4, feedback connected to VM1"),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "GAIN8_VM1",
+                    description: Some("Gain 8, feedback connected to VM1"),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "GAIN16_VM1",
+                    description: Some("Gain 16, feedback connected to VM1"),
+                    value: 15,
                 },
             ],
         },
@@ -299,91 +337,36 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "VpsSel",
+            name: "Tstref",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PB14",
-                    description: Some("PB14 used as OPAMP2 non-inverting input when TCM_EN=1"),
+                    name: "OUTPUT",
+                    description: Some("VREFOPAMP2 is output"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NOTOUTPUT",
+                    description: Some("VREFOPAMP2 is not output"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "PB0",
-                    description: Some("PB0 used as OPAMP2 non-inverting input when TCM_EN=1"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PA7",
-                    description: Some("PA7 used as OPAMP2 non-inverting input when TCM_EN=1"),
-                    value: 3,
                 },
             ],
         },
         Enum {
-            name: "PgaGain",
+            name: "ForceVp",
             description: None,
-            bit_size: 4,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "GAIN2",
-                    description: Some("Gain 2"),
+                    name: "NORMAL",
+                    description: Some("Normal operating mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "GAIN4",
-                    description: Some("Gain 4"),
+                    name: "CALIBRATION",
+                    description: Some("Calibration mode. Non-inverting input connected to calibration reference"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "GAIN8",
-                    description: Some("Gain 8"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "GAIN16",
-                    description: Some("Gain 16"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "GAIN2_VM0",
-                    description: Some("Gain 2, feedback connected to VM0"),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "GAIN4_VM0",
-                    description: Some("Gain 4, feedback connected to VM0"),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "GAIN8_VM0",
-                    description: Some("Gain 8, feedback connected to VM0"),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "GAIN16_VM0",
-                    description: Some("Gain 16, feedback connected to VM0"),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "GAIN2_VM1",
-                    description: Some("Gain 2, feedback connected to VM1"),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "GAIN4_VM1",
-                    description: Some("Gain 4, feedback connected to VM1"),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "GAIN8_VM1",
-                    description: Some("Gain 8, feedback connected to VM1"),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "GAIN16_VM1",
-                    description: Some("Gain 16, feedback connected to VM1"),
-                    value: 15,
                 },
             ],
         },
@@ -400,6 +383,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PA5",
                     description: Some("PA5 (VM1) used as OPAMP2 inverting input when TCM_EN=1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Outcal",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some("Non-inverting < inverting"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some("Non-inverting > inverting"),
                     value: 1,
                 },
             ],

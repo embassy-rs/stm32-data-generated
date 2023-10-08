@@ -143,6 +143,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cselr",
+            extends: None,
+            description: Some("channel selection register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cs",
+                description: Some("DMA channel selection"),
+                bit_offset: 0,
+                bit_size: 4,
+                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("DMA channel configuration register (DMA_CCR)"),
@@ -247,20 +261,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cselr",
-            extends: None,
-            description: Some("channel selection register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cs",
-                description: Some("DMA channel selection"),
-                bit_offset: 0,
-                bit_size: 4,
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Ndtr",
             extends: None,
             description: Some("DMA channel 1 number of data register"),
@@ -294,6 +294,45 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Circ",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Circular buffer disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Circular buffer enabled"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Size",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("8-bit size"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("16-bit size"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("32-bit size"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Pl",
             description: None,
             bit_size: 2,
@@ -317,23 +356,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "VERYHIGH",
                     description: Some("Very high priority"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Circ",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Circular buffer disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Circular buffer enabled"),
-                    value: 1,
                 },
             ],
         },
@@ -368,28 +390,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FROMMEMORY",
                     description: Some("Read from memory"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Size",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some("8-bit size"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("16-bit size"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("32-bit size"),
-                    value: 2,
                 },
             ],
         },

@@ -367,102 +367,150 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sdrtr",
+            name: "Pmem",
             extends: None,
             description: Some(
-                "SDRAM Refresh Timer register",
+                "Common memory space timing register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cre",
+                    name: "memset",
                     description: Some(
-                        "Clear Refresh error flag",
+                        "Common memory x setup time",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "count",
+                    name: "memwait",
                     description: Some(
-                        "Refresh Timer Count",
+                        "Common memory wait time",
                     ),
-                    bit_offset: 1,
-                    bit_size: 13,
+                    bit_offset: 8,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "reie",
+                    name: "memhold",
                     description: Some(
-                        "RES Interrupt Enable",
+                        "Common memory hold time",
                     ),
-                    bit_offset: 14,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "memhiz",
+                    description: Some(
+                        "Common memory x data bus Hi-Z time",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Sdcmr",
+            name: "Eccr",
             extends: None,
             description: Some(
-                "SDRAM Command Mode register",
+                "ECC result register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "mode",
+                    name: "ecc",
                     description: Some(
-                        "Command mode",
+                        "ECC computation result value",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Mode",
-                    ),
-                },
-                Field {
-                    name: "ctb2",
-                    description: Some(
-                        "Command target bank 2",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Sdtr",
+            extends: None,
+            description: Some(
+                "SDRAM Timing register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "ctb1",
+                    name: "tmrd",
                     description: Some(
-                        "Command target bank 1",
+                        "Load Mode Register to Active",
                     ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nrfs",
-                    description: Some(
-                        "Number of Auto-refresh",
-                    ),
-                    bit_offset: 5,
+                    bit_offset: 0,
                     bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "mrd",
+                    name: "txsr",
                     description: Some(
-                        "Mode Register definition",
+                        "Exit self-refresh delay",
                     ),
-                    bit_offset: 9,
-                    bit_size: 13,
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tras",
+                    description: Some(
+                        "Self refresh time",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trc",
+                    description: Some(
+                        "Row cycle delay",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "twr",
+                    description: Some(
+                        "Recovery delay",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trp",
+                    description: Some(
+                        "Row precharge delay",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trcd",
+                    description: Some(
+                        "Row to column delay",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -669,246 +717,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bwtr",
+            name: "Sdrtr",
             extends: None,
             description: Some(
-                "SRAM/NOR-Flash write timing registers",
+                "SDRAM Refresh Timer register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "addset",
+                    name: "cre",
                     description: Some(
-                        "Address setup phase duration",
+                        "Clear Refresh error flag",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "addhld",
+                    name: "count",
                     description: Some(
-                        "Address-hold phase duration",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "datast",
-                    description: Some(
-                        "Data-phase duration",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "busturn",
-                    description: Some(
-                        "Bus turnaround phase duration",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "accmod",
-                    description: Some(
-                        "Access mode",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Accmod",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sdtr",
-            extends: None,
-            description: Some(
-                "SDRAM Timing register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tmrd",
-                    description: Some(
-                        "Load Mode Register to Active",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txsr",
-                    description: Some(
-                        "Exit self-refresh delay",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tras",
-                    description: Some(
-                        "Self refresh time",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trc",
-                    description: Some(
-                        "Row cycle delay",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "twr",
-                    description: Some(
-                        "Recovery delay",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trp",
-                    description: Some(
-                        "Row precharge delay",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trcd",
-                    description: Some(
-                        "Row to column delay",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pcr",
-            extends: None,
-            description: Some(
-                "PC Card/NAND Flash control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pwaiten",
-                    description: Some(
-                        "Wait feature enable bit",
+                        "Refresh Timer Count",
                     ),
                     bit_offset: 1,
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reie",
+                    description: Some(
+                        "RES Interrupt Enable",
+                    ),
+                    bit_offset: 14,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pbken",
-                    description: Some(
-                        "NAND Flash memory bank enable bit",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwid",
-                    description: Some(
-                        "Data bus width",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Pwid",
-                    ),
-                },
-                Field {
-                    name: "eccen",
-                    description: Some(
-                        "ECC computation logic enable bit",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tclr",
-                    description: Some(
-                        "CLE to RE delay",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tar",
-                    description: Some(
-                        "ALE to RE delay",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eccps",
-                    description: Some(
-                        "ECC page size",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Eccps",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Eccr",
-            extends: None,
-            description: Some(
-                "ECC result register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ecc",
-                    description: Some(
-                        "ECC computation result value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1075,6 +917,222 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Pcr",
+            extends: None,
+            description: Some(
+                "PC Card/NAND Flash control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pwaiten",
+                    description: Some(
+                        "Wait feature enable bit",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pbken",
+                    description: Some(
+                        "NAND Flash memory bank enable bit",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pwid",
+                    description: Some(
+                        "Data bus width",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Pwid",
+                    ),
+                },
+                Field {
+                    name: "eccen",
+                    description: Some(
+                        "ECC computation logic enable bit",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tclr",
+                    description: Some(
+                        "CLE to RE delay",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tar",
+                    description: Some(
+                        "ALE to RE delay",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccps",
+                    description: Some(
+                        "ECC page size",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Eccps",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Patt",
+            extends: None,
+            description: Some(
+                "Attribute memory space timing register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "attset",
+                    description: Some(
+                        "Attribute memory setup time",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "attwait",
+                    description: Some(
+                        "Attribute memory wait time",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "atthold",
+                    description: Some(
+                        "Attribute memory hold time",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "atthiz",
+                    description: Some(
+                        "Attribute memory data bus Hi-Z time",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Btr",
+            extends: None,
+            description: Some(
+                "SRAM/NOR-Flash chip-select timing register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addset",
+                    description: Some(
+                        "Address setup phase duration",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "addhld",
+                    description: Some(
+                        "Address-hold phase duration",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "datast",
+                    description: Some(
+                        "Data-phase duration",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "busturn",
+                    description: Some(
+                        "Bus turnaround phase duration",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clkdiv",
+                    description: Some(
+                        "Clock divide ratio (for FMC_CLK signal)",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "datlat",
+                    description: Some(
+                        "Data latency for synchronous memory",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "accmod",
+                    description: Some(
+                        "Access mode",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Accmod",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Sdcr",
             extends: None,
             description: Some(
@@ -1189,10 +1247,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Btr",
+            name: "Bwtr",
             extends: None,
             description: Some(
-                "SRAM/NOR-Flash chip-select timing register",
+                "SRAM/NOR-Flash write timing registers",
             ),
             bit_size: 32,
             fields: &[
@@ -1232,26 +1290,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Bus turnaround phase duration",
                     ),
                     bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clkdiv",
-                    description: Some(
-                        "Clock divide ratio (for FMC_CLK signal)",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "datlat",
-                    description: Some(
-                        "Data latency for synchronous memory",
-                    ),
-                    bit_offset: 24,
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1315,100 +1353,62 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Patt",
+            name: "Sdcmr",
             extends: None,
             description: Some(
-                "Attribute memory space timing register",
+                "SDRAM Command Mode register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "attset",
+                    name: "mode",
                     description: Some(
-                        "Attribute memory setup time",
+                        "Command mode",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Mode",
+                    ),
+                },
+                Field {
+                    name: "ctb2",
+                    description: Some(
+                        "Command target bank 2",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "attwait",
+                    name: "ctb1",
                     description: Some(
-                        "Attribute memory wait time",
+                        "Command target bank 1",
                     ),
-                    bit_offset: 8,
-                    bit_size: 8,
+                    bit_offset: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "atthold",
+                    name: "nrfs",
                     description: Some(
-                        "Attribute memory hold time",
+                        "Number of Auto-refresh",
                     ),
-                    bit_offset: 16,
-                    bit_size: 8,
+                    bit_offset: 5,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "atthiz",
+                    name: "mrd",
                     description: Some(
-                        "Attribute memory data bus Hi-Z time",
+                        "Mode Register definition",
                     ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pmem",
-            extends: None,
-            description: Some(
-                "Common memory space timing register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "memset",
-                    description: Some(
-                        "Common memory x setup time",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "memwait",
-                    description: Some(
-                        "Common memory wait time",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "memhold",
-                    description: Some(
-                        "Common memory hold time",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "memhiz",
-                    description: Some(
-                        "Common memory x data bus Hi-Z time",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
+                    bit_offset: 9,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
@@ -1416,48 +1416,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Cpsize",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "NOBURSTSPLIT",
-                    description: Some(
-                        "No burst split when crossing page boundary",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYTES128",
-                    description: Some(
-                        "128 bytes CRAM page size",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BYTES256",
-                    description: Some(
-                        "256 bytes CRAM page size",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BYTES512",
-                    description: Some(
-                        "512 bytes CRAM page size",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BYTES1024",
-                    description: Some(
-                        "1024 bytes CRAM page size",
-                    ),
-                    value: 4,
-                },
-            ],
-        },
         Enum {
             name: "Cas",
             description: None,
@@ -1487,27 +1445,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Nb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NB2",
-                    description: Some(
-                        "Two internal Banks",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NB4",
-                    description: Some(
-                        "Four internal Banks",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Modes",
             description: None,
             bit_size: 2,
@@ -1532,6 +1469,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "Power-down mode",
                     ),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Pwid",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some(
+                        "External memory device width 8 bits",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some(
+                        "External memory device width 16 bits",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -1592,37 +1550,58 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Accmod",
+            name: "Mtyp",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "A",
+                    name: "SRAM",
                     description: Some(
-                        "Access mode A",
+                        "SRAM memory type",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B",
+                    name: "PSRAM",
                     description: Some(
-                        "Access mode B",
+                        "PSRAM (CRAM) memory type",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "C",
+                    name: "FLASH",
                     description: Some(
-                        "Access mode C",
+                        "NOR Flash/OneNAND Flash",
                     ),
                     value: 2,
                 },
+            ],
+        },
+        Enum {
+            name: "Rpipe",
+            description: None,
+            bit_size: 2,
+            variants: &[
                 EnumVariant {
-                    name: "D",
+                    name: "NODELAY",
                     description: Some(
-                        "Access mode D",
+                        "No clock cycle delay",
                     ),
-                    value: 3,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CLOCKS1",
+                    description: Some(
+                        "One clock cycle delay",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "CLOCKS2",
+                    description: Some(
+                        "Two clock cycles delay",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1662,77 +1641,35 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rpipe",
+            name: "Accmod",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NODELAY",
+                    name: "A",
                     description: Some(
-                        "No clock cycle delay",
+                        "Access mode A",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CLOCKS1",
+                    name: "B",
                     description: Some(
-                        "One clock cycle delay",
+                        "Access mode B",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CLOCKS2",
+                    name: "C",
                     description: Some(
-                        "Two clock cycles delay",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Waitpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVELOW",
-                    description: Some(
-                        "NWAIT active low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEHIGH",
-                    description: Some(
-                        "NWAIT active high",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sdclk",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "SDCLK clock disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "SDCLK period = 2 x HCLK period",
+                        "Access mode C",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV3",
+                    name: "D",
                     description: Some(
-                        "SDCLK period = 3 x HCLK period",
+                        "Access mode D",
                     ),
                     value: 3,
                 },
@@ -1761,76 +1698,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS13",
                     description: Some(
                         "13 bits",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Waitcfg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BEFOREWAITSTATE",
-                    description: Some(
-                        "NWAIT signal is active one data cycle before wait state",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DURINGWAITSTATE",
-                    description: Some(
-                        "NWAIT signal is active during wait state",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pwid",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some(
-                        "External memory device width 8 bits",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some(
-                        "External memory device width 16 bits",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mtyp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SRAM",
-                    description: Some(
-                        "SRAM memory type",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PSRAM",
-                    description: Some(
-                        "PSRAM (CRAM) memory type",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FLASH",
-                    description: Some(
-                        "NOR Flash/OneNAND Flash",
                     ),
                     value: 2,
                 },
@@ -1910,6 +1777,139 @@ pub(crate) static REGISTERS: IR = IR {
                         "ECC page size 8192 bytes",
                     ),
                     value: 5,
+                },
+            ],
+        },
+        Enum {
+            name: "Nb",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NB2",
+                    description: Some(
+                        "Two internal Banks",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NB4",
+                    description: Some(
+                        "Four internal Banks",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ACTIVELOW",
+                    description: Some(
+                        "NWAIT active low",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVEHIGH",
+                    description: Some(
+                        "NWAIT active high",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cpsize",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "NOBURSTSPLIT",
+                    description: Some(
+                        "No burst split when crossing page boundary",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BYTES128",
+                    description: Some(
+                        "128 bytes CRAM page size",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BYTES256",
+                    description: Some(
+                        "256 bytes CRAM page size",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BYTES512",
+                    description: Some(
+                        "512 bytes CRAM page size",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BYTES1024",
+                    description: Some(
+                        "1024 bytes CRAM page size",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitcfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BEFOREWAITSTATE",
+                    description: Some(
+                        "NWAIT signal is active one data cycle before wait state",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DURINGWAITSTATE",
+                    description: Some(
+                        "NWAIT signal is active during wait state",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sdclk",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "SDCLK clock disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "SDCLK period = 2 x HCLK period",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "SDCLK period = 3 x HCLK period",
+                    ),
+                    value: 3,
                 },
             ],
         },

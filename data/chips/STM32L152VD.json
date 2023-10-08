@@ -434,12 +434,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "COMPEN"
+                            "register": "apb1enr",
+                            "field": "compen"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "COMPRST"
+                            "register": "apb1rstr",
+                            "field": "comprst"
                         }
                     },
                     "pins": [
@@ -598,12 +598,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "CRCEN"
+                            "register": "ahbenr",
+                            "field": "crcen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "CRCRST"
+                            "register": "ahbrstr",
+                            "field": "crcrst"
                         }
                     }
                 },
@@ -618,12 +618,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "DACEN"
+                            "register": "apb1enr",
+                            "field": "dacen"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "DACRST"
+                            "register": "apb1rstr",
+                            "field": "dacrst"
                         }
                     },
                     "pins": [
@@ -673,12 +673,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "DMA1EN"
+                            "register": "ahbenr",
+                            "field": "dma1en"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "DMA1RST"
+                            "register": "ahbrstr",
+                            "field": "dma1rst"
                         }
                     },
                     "interrupts": [
@@ -723,12 +723,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "DMA2EN"
+                            "register": "ahbenr",
+                            "field": "dma2en"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "DMA2RST"
+                            "register": "ahbrstr",
+                            "field": "dma2rst"
                         }
                     },
                     "interrupts": [
@@ -840,12 +840,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "FLASHEN"
+                            "register": "ahbenr",
+                            "field": "flashen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "FLASHRST"
+                            "register": "ahbrstr",
+                            "field": "flashrst"
                         }
                     },
                     "interrupts": [
@@ -866,12 +866,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "FSMCEN"
+                            "register": "ahbenr",
+                            "field": "fsmcen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "FSMCRST"
+                            "register": "ahbrstr",
+                            "field": "fsmcrst"
                         }
                     },
                     "pins": [
@@ -1128,12 +1128,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOAEN"
+                            "register": "ahbenr",
+                            "field": "gpioaen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOARST"
+                            "register": "ahbrstr",
+                            "field": "gpioarst"
                         }
                     }
                 },
@@ -1148,12 +1148,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOBEN"
+                            "register": "ahbenr",
+                            "field": "gpioben"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOBRST"
+                            "register": "ahbrstr",
+                            "field": "gpiobrst"
                         }
                     }
                 },
@@ -1168,12 +1168,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOCEN"
+                            "register": "ahbenr",
+                            "field": "gpiocen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOCRST"
+                            "register": "ahbrstr",
+                            "field": "gpiocrst"
                         }
                     }
                 },
@@ -1188,12 +1188,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIODEN"
+                            "register": "ahbenr",
+                            "field": "gpioden"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIODRST"
+                            "register": "ahbrstr",
+                            "field": "gpiodrst"
                         }
                     }
                 },
@@ -1208,12 +1208,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOEEN"
+                            "register": "ahbenr",
+                            "field": "gpioeen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOERST"
+                            "register": "ahbrstr",
+                            "field": "gpioerst"
                         }
                     }
                 },
@@ -1228,12 +1228,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOFEN"
+                            "register": "ahbenr",
+                            "field": "gpiofen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOFRST"
+                            "register": "ahbrstr",
+                            "field": "gpiofrst"
                         }
                     }
                 },
@@ -1248,12 +1248,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOGEN"
+                            "register": "ahbenr",
+                            "field": "gpiogen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOGRST"
+                            "register": "ahbrstr",
+                            "field": "gpiogrst"
                         }
                     }
                 },
@@ -1268,12 +1268,12 @@
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {
-                            "register": "AHBENR",
-                            "field": "GPIOHEN"
+                            "register": "ahbenr",
+                            "field": "gpiohen"
                         },
                         "reset": {
-                            "register": "AHBRSTR",
-                            "field": "GPIOHRST"
+                            "register": "ahbrstr",
+                            "field": "gpiohrst"
                         }
                     }
                 },
@@ -1288,12 +1288,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "I2C1EN"
+                            "register": "apb1enr",
+                            "field": "i2c1en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "I2C1RST"
+                            "register": "apb1rstr",
+                            "field": "i2c1rst"
                         }
                     },
                     "pins": [
@@ -1355,12 +1355,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "I2C2EN"
+                            "register": "apb1enr",
+                            "field": "i2c2en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "I2C2RST"
+                            "register": "apb1rstr",
+                            "field": "i2c2rst"
                         }
                     },
                     "pins": [
@@ -1421,12 +1421,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "LCDEN"
+                            "register": "apb1enr",
+                            "field": "lcden"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "LCDRST"
+                            "register": "apb1rstr",
+                            "field": "lcdrst"
                         }
                     },
                     "pins": [
@@ -1783,12 +1783,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "PWREN"
+                            "register": "apb1enr",
+                            "field": "pwren"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "PWRRST"
+                            "register": "apb1rstr",
+                            "field": "pwrrst"
                         }
                     }
                 },
@@ -1909,12 +1909,12 @@
                     "rcc": {
                         "clock": "APB2",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "SDIOEN"
+                            "register": "apb2enr",
+                            "field": "sdioen"
                         },
                         "reset": {
-                            "register": "APB2RSTR",
-                            "field": "SDIORST"
+                            "register": "apb2rstr",
+                            "field": "sdiorst"
                         }
                     },
                     "pins": [
@@ -1987,12 +1987,12 @@
                     "rcc": {
                         "clock": "APB2",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "SPI1EN"
+                            "register": "apb2enr",
+                            "field": "spi1en"
                         },
                         "reset": {
-                            "register": "APB2RSTR",
-                            "field": "SPI1RST"
+                            "register": "apb2rstr",
+                            "field": "spi1rst"
                         }
                     },
                     "pins": [
@@ -2095,12 +2095,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "SPI2EN"
+                            "register": "apb1enr",
+                            "field": "spi2en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "SPI2RST"
+                            "register": "apb1rstr",
+                            "field": "spi2rst"
                         }
                     },
                     "pins": [
@@ -2208,12 +2208,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "SPI3EN"
+                            "register": "apb1enr",
+                            "field": "spi3en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "SPI3RST"
+                            "register": "apb1rstr",
+                            "field": "spi3rst"
                         }
                     },
                     "pins": [
@@ -2321,12 +2321,12 @@
                     "rcc": {
                         "clock": "APB2",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "SYSCFGEN"
+                            "register": "apb2enr",
+                            "field": "syscfgen"
                         },
                         "reset": {
-                            "register": "APB2RSTR",
-                            "field": "SYSCFGRST"
+                            "register": "apb2rstr",
+                            "field": "syscfgrst"
                         }
                     }
                 },
@@ -2341,8 +2341,8 @@
                     "rcc": {
                         "clock": "APB2_TIM",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "TIM10EN"
+                            "register": "apb2enr",
+                            "field": "tim10en"
                         }
                     },
                     "pins": [
@@ -2401,8 +2401,8 @@
                     "rcc": {
                         "clock": "APB2_TIM",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "TIM11EN"
+                            "register": "apb2enr",
+                            "field": "tim11en"
                         }
                     },
                     "pins": [
@@ -2461,12 +2461,12 @@
                     "rcc": {
                         "clock": "APB1_TIM",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "TIM2EN"
+                            "register": "apb1enr",
+                            "field": "tim2en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "TIM2RST"
+                            "register": "apb1rstr",
+                            "field": "tim2rst"
                         }
                     },
                     "pins": [
@@ -2608,12 +2608,12 @@
                     "rcc": {
                         "clock": "APB1_TIM",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "TIM3EN"
+                            "register": "apb1enr",
+                            "field": "tim3en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "TIM3RST"
+                            "register": "apb1rstr",
+                            "field": "tim3rst"
                         }
                     },
                     "pins": [
@@ -2744,12 +2744,12 @@
                     "rcc": {
                         "clock": "APB1_TIM",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "TIM4EN"
+                            "register": "apb1enr",
+                            "field": "tim4en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "TIM4RST"
+                            "register": "apb1rstr",
+                            "field": "tim4rst"
                         }
                     },
                     "pins": [
@@ -2851,12 +2851,12 @@
                     "rcc": {
                         "clock": "APB1_TIM",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "TIM5EN"
+                            "register": "apb1enr",
+                            "field": "tim5en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "TIM5RST"
+                            "register": "apb1rstr",
+                            "field": "tim5rst"
                         }
                     },
                     "pins": [
@@ -2941,12 +2941,12 @@
                     "rcc": {
                         "clock": "APB1_TIM",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "TIM6EN"
+                            "register": "apb1enr",
+                            "field": "tim6en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "TIM6RST"
+                            "register": "apb1rstr",
+                            "field": "tim6rst"
                         }
                     },
                     "interrupts": [
@@ -2989,12 +2989,12 @@
                     "rcc": {
                         "clock": "APB1_TIM",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "TIM7EN"
+                            "register": "apb1enr",
+                            "field": "tim7en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "TIM7RST"
+                            "register": "apb1rstr",
+                            "field": "tim7rst"
                         }
                     },
                     "interrupts": [
@@ -3037,12 +3037,12 @@
                     "rcc": {
                         "clock": "APB2_TIM",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "TIM9EN"
+                            "register": "apb2enr",
+                            "field": "tim9en"
                         },
                         "reset": {
-                            "register": "APB2RSTR",
-                            "field": "TIM9RST"
+                            "register": "apb2rstr",
+                            "field": "tim9rst"
                         }
                     },
                     "pins": [
@@ -3194,12 +3194,12 @@
                     "rcc": {
                         "clock": "APB2",
                         "enable": {
-                            "register": "APB2ENR",
-                            "field": "USART1EN"
+                            "register": "apb2enr",
+                            "field": "usart1en"
                         },
                         "reset": {
-                            "register": "APB2RSTR",
-                            "field": "USART1RST"
+                            "register": "apb2rstr",
+                            "field": "usart1rst"
                         }
                     },
                     "pins": [
@@ -3267,12 +3267,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "USART2EN"
+                            "register": "apb1enr",
+                            "field": "usart2en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "USART2RST"
+                            "register": "apb1rstr",
+                            "field": "usart2rst"
                         }
                     },
                     "pins": [
@@ -3355,12 +3355,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "USART3EN"
+                            "register": "apb1enr",
+                            "field": "usart3en"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "USART3RST"
+                            "register": "apb1rstr",
+                            "field": "usart3rst"
                         }
                     },
                     "pins": [
@@ -3458,12 +3458,12 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "USBEN"
+                            "register": "apb1enr",
+                            "field": "usben"
                         },
                         "reset": {
-                            "register": "APB1RSTR",
-                            "field": "USBRST"
+                            "register": "apb1rstr",
+                            "field": "usbrst"
                         }
                     },
                     "pins": [
@@ -3511,8 +3511,8 @@
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
-                            "register": "APB1ENR",
-                            "field": "WWDGEN"
+                            "register": "apb1enr",
+                            "field": "wwdgen"
                         }
                     },
                     "interrupts": [

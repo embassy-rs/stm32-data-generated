@@ -54,30 +54,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Idcode",
-            extends: None,
-            description: Some("IDCODE"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dev_id",
-                    description: Some("DEV_ID"),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rev_id",
-                    description: Some("REV_ID"),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Apb1Fz",
             extends: None,
             description: Some("Debug MCU APB1 Freeze registe"),
@@ -264,6 +240,30 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("TRACE_MODE"),
                     bit_offset: 6,
                     bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idcode",
+            extends: None,
+            description: Some("IDCODE"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dev_id",
+                    description: Some("DEV_ID"),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rev_id",
+                    description: Some("REV_ID"),
+                    bit_offset: 16,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },

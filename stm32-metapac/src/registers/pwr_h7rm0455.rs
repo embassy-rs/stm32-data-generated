@@ -267,17 +267,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Wkupfr",
+            name: "Wkupepr",
             extends: None,
             description: Some(
-                "reset only by system reset, not reset by wakeup from Standby mode",
+                "Reset only by system reset, not reset by wakeup from Standby mode",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wkupf",
+                    name: "wkupen",
                     description: Some(
-                        "Wakeup pin WKUPF flag. This bit is set by hardware and cleared only by a Reset pin or by setting the WKUPCn+1 bit in the PWR wakeup clear register (PWR_WKUPCR).",
+                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -291,84 +291,38 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some(
-                "This register is not reset by wakeup from Standby mode, RESET signal and VDD POR. It is only reset by VSW POR and VSWRST reset. This register shall not be accessed when VSWRST bit in RCC_BDCR register resets the VSW domain.After reset, PWR_CR2 register is write-protected. Prior to modifying its content, the DBP bit in PWR_CR1 register must be set to disable the write protection.",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "bren",
+                    name: "wkupp",
                     description: Some(
-                        "Backup regulator enable When set, the Backup regulator (used to maintain the backup RAM content in Standby and VBAT modes) is enabled. If BREN is reset, the backup regulator is switched off. The backup RAM can still be used in Run and Stop modes. However, its content will be lost in Standby and VBAT modes. If BREN is set, the application must wait till the Backup Regulator Ready flag (BRRDY) is set to indicate that the data written into the SRAM will be maintained in Standby and VBAT modes.",
+                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 8,
                     bit_size: 1,
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
-                    name: "monen",
+                    name: "wkuppupd",
                     description: Some(
-                        "VBAT and temperature monitoring enable When set, the VBAT supply and temperature monitoring is enabled.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "brrdy",
-                    description: Some(
-                        "Backup regulator ready This bit is set by hardware to indicate that the Backup regulator is ready.",
+                        "Wakeup pin pull configuration",
                     ),
                     bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbatl",
-                    description: Some(
-                        "VBAT level monitoring versus low threshold",
+                    bit_size: 2,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 2,
+                            },
+                        ),
                     ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbath",
-                    description: Some(
-                        "VBAT level monitoring versus high threshold",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "templ",
-                    description: Some(
-                        "Temperature level monitoring versus low threshold",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "temph",
-                    description: Some(
-                        "Temperature level monitoring versus high threshold",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],
@@ -489,67 +443,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wkupepr",
-            extends: None,
-            description: Some(
-                "Reset only by system reset, not reset by wakeup from Standby mode",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wkupen",
-                    description: Some(
-                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "wkupp",
-                    description: Some(
-                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "wkuppupd",
-                    description: Some(
-                        "Wakeup pin pull configuration",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 2,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],
@@ -690,6 +583,113 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some(
+                "This register is not reset by wakeup from Standby mode, RESET signal and VDD POR. It is only reset by VSW POR and VSWRST reset. This register shall not be accessed when VSWRST bit in RCC_BDCR register resets the VSW domain.After reset, PWR_CR2 register is write-protected. Prior to modifying its content, the DBP bit in PWR_CR1 register must be set to disable the write protection.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bren",
+                    description: Some(
+                        "Backup regulator enable When set, the Backup regulator (used to maintain the backup RAM content in Standby and VBAT modes) is enabled. If BREN is reset, the backup regulator is switched off. The backup RAM can still be used in Run and Stop modes. However, its content will be lost in Standby and VBAT modes. If BREN is set, the application must wait till the Backup Regulator Ready flag (BRRDY) is set to indicate that the data written into the SRAM will be maintained in Standby and VBAT modes.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "monen",
+                    description: Some(
+                        "VBAT and temperature monitoring enable When set, the VBAT supply and temperature monitoring is enabled.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "brrdy",
+                    description: Some(
+                        "Backup regulator ready This bit is set by hardware to indicate that the Backup regulator is ready.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbatl",
+                    description: Some(
+                        "VBAT level monitoring versus low threshold",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbath",
+                    description: Some(
+                        "VBAT level monitoring versus high threshold",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "templ",
+                    description: Some(
+                        "Temperature level monitoring versus low threshold",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "temph",
+                    description: Some(
+                        "Temperature level monitoring versus high threshold",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wkupfr",
+            extends: None,
+            description: Some(
+                "reset only by system reset, not reset by wakeup from Standby mode",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wkupf",
+                    description: Some(
+                        "Wakeup pin WKUPF flag. This bit is set by hardware and cleared only by a Reset pin or by setting the WKUPCn+1 bit in the PWR wakeup clear register (PWR_WKUPCR).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],

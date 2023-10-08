@@ -164,43 +164,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Scr",
-            extends: None,
-            description: Some(
-                "PWR status clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cwuf",
-                    description: Some(
-                        "Clear Wakeup flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "csbf",
-                    description: Some(
-                        "Clear standby flag\r Setting this bit clears the SBF flag in the PWR_SR1 register.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Sr1",
             extends: None,
             description: Some(
@@ -241,46 +204,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Wakeup flag internal\r This bit is set when a wakeup condition is detected on the internal wakeup line. It is cleared when all internal wakeup sources are cleared.",
                     ),
                     bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "PWR control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lpms",
-                    description: Some(
-                        "Low-power mode selection\r These bits select the low-power mode entered when CPU enters deepsleep mode.\r 1XX: Shutdown mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fpd_stop",
-                    description: Some(
-                        "Flash memory powered down during Stop mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Stop mode.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fpd_slp",
-                    description: Some(
-                        "Flash memory powered down during Sleep mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Sleep mode.",
-                    ),
-                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -335,6 +258,110 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Pcr",
+            extends: None,
+            description: Some(
+                "Power Port pull control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p",
+                    description: Some(
+                        "Port pull bit y (y=0..15)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr1",
+            extends: None,
+            description: Some(
+                "PWR control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lpms",
+                    description: Some(
+                        "Low-power mode selection\r These bits select the low-power mode entered when CPU enters deepsleep mode.\r 1XX: Shutdown mode",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fpd_stop",
+                    description: Some(
+                        "Flash memory powered down during Stop mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Stop mode.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fpd_slp",
+                    description: Some(
+                        "Flash memory powered down during Sleep mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Sleep mode.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Scr",
+            extends: None,
+            description: Some(
+                "PWR status clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cwuf",
+                    description: Some(
+                        "Clear Wakeup flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "csbf",
+                    description: Some(
+                        "Clear standby flag\r Setting this bit clears the SBF flag in the PWR_SR1 register.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr3",
             extends: None,
             description: Some(
@@ -377,33 +404,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pcr",
-            extends: None,
-            description: Some(
-                "Power Port pull control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "p",
-                    description: Some(
-                        "Port pull bit y (y=0..15)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],

@@ -43,62 +43,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some("ADC common status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "awd",
-                    description: Some("Analog watchdog flag of ADC 1"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Awd"),
-                },
-                Field {
-                    name: "eoc",
-                    description: Some("End of conversion of ADC 1"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Eoc"),
-                },
-                Field {
-                    name: "jeoc",
-                    description: Some("Injected channel end of conversion of ADC 1"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Jeoc"),
-                },
-                Field {
-                    name: "jstrt",
-                    description: Some("Injected channel Start flag of ADC 1"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Jstrt"),
-                },
-                Field {
-                    name: "strt",
-                    description: Some("Regular channel Start flag of ADC 1"),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Strt"),
-                },
-                Field {
-                    name: "ovr",
-                    description: Some("Overrun flag of ADC 1"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                    enumm: Some("Ovr"),
-                },
-            ],
-        },
-        FieldSet {
             name: "Cdr",
             extends: None,
             description: Some("ADC common regular data register for dual and triple modes"),
@@ -176,82 +120,104 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Csr",
+            extends: None,
+            description: Some("ADC common status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "awd",
+                    description: Some("Analog watchdog flag of ADC 1"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Awd"),
+                },
+                Field {
+                    name: "eoc",
+                    description: Some("End of conversion of ADC 1"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Eoc"),
+                },
+                Field {
+                    name: "jeoc",
+                    description: Some("Injected channel end of conversion of ADC 1"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Jeoc"),
+                },
+                Field {
+                    name: "jstrt",
+                    description: Some("Injected channel Start flag of ADC 1"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Jstrt"),
+                },
+                Field {
+                    name: "strt",
+                    description: Some("Regular channel Start flag of ADC 1"),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Strt"),
+                },
+                Field {
+                    name: "ovr",
+                    description: Some("Overrun flag of ADC 1"),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                    enumm: Some("Ovr"),
+                },
+            ],
+        },
     ],
     enums: &[
         Enum {
-            name: "Dma",
+            name: "Adcpre",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
-                    description: Some("DMA mode disabled"),
+                    name: "DIV2",
+                    description: Some("PCLK2 divided by 2"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MODE1",
-                    description: Some("DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"),
+                    name: "DIV4",
+                    description: Some("PCLK2 divided by 4"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MODE2",
-                    description: Some("DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
+                    name: "DIV6",
+                    description: Some("PCLK2 divided by 6"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MODE3",
-                    description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
+                    name: "DIV8",
+                    description: Some("PCLK2 divided by 8"),
                     value: 3,
                 },
             ],
         },
         Enum {
-            name: "Ovr",
+            name: "Awd",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Eoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jeoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
                     value: 1,
                 },
             ],
@@ -329,6 +295,74 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Eoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ovr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jeoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Strt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSTARTED",
+                    description: Some("No regular channel conversion started"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some("Regular channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Dds",
             description: None,
             bit_size: 1,
@@ -341,23 +375,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "CONTINUOUS",
                     description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
                     value: 1,
                 },
             ],
@@ -380,46 +397,29 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Adcpre",
+            name: "Dma",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DIV2",
-                    description: Some("PCLK2 divided by 2"),
+                    name: "DISABLED",
+                    description: Some("DMA mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV4",
-                    description: Some("PCLK2 divided by 4"),
+                    name: "MODE1",
+                    description: Some("DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV6",
-                    description: Some("PCLK2 divided by 6"),
+                    name: "MODE2",
+                    description: Some("DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV8",
-                    description: Some("PCLK2 divided by 8"),
+                    name: "MODE3",
+                    description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Strt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No regular channel conversion started"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some("Regular channel conversion has started"),
-                    value: 1,
                 },
             ],
         },

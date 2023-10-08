@@ -312,6 +312,60 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Cpsize",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "NOBURSTSPLIT",
+                    description: Some("No burst split when crossing page boundary"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BYTES128",
+                    description: Some("128 bytes CRAM page size"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BYTES256",
+                    description: Some("256 bytes CRAM page size"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BYTES512",
+                    description: Some("512 bytes CRAM page size"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BYTES1024",
+                    description: Some("1024 bytes CRAM page size"),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Mtyp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SRAM",
+                    description: Some("SRAM memory type"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PSRAM",
+                    description: Some("PSRAM (CRAM) memory type"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FLASH",
+                    description: Some("NOR Flash/OneNAND Flash"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Mwid",
             description: None,
             bit_size: 2,
@@ -364,60 +418,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DURINGWAITSTATE",
                     description: Some("NWAIT signal is active during wait state"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mtyp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SRAM",
-                    description: Some("SRAM memory type"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PSRAM",
-                    description: Some("PSRAM (CRAM) memory type"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FLASH",
-                    description: Some("NOR Flash/OneNAND Flash"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpsize",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "NOBURSTSPLIT",
-                    description: Some("No burst split when crossing page boundary"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYTES128",
-                    description: Some("128 bytes CRAM page size"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BYTES256",
-                    description: Some("256 bytes CRAM page size"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BYTES512",
-                    description: Some("512 bytes CRAM page size"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BYTES1024",
-                    description: Some("1024 bytes CRAM page size"),
-                    value: 4,
                 },
             ],
         },

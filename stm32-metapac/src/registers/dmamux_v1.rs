@@ -130,33 +130,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Rgsr",
-            extends: None,
-            description: Some(
-                "DMAMux - DMA request generator status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "of",
-                    description: Some(
-                        "Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Csr",
             extends: None,
             description: Some(
@@ -175,6 +148,33 @@ pub(crate) static REGISTERS: IR = IR {
                         Array::Regular(
                             RegularArray {
                                 len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rgsr",
+            extends: None,
+            description: Some(
+                "DMAMux - DMA request generator status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "of",
+                    description: Some(
+                        "Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
                                 stride: 1,
                             },
                         ),

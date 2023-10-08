@@ -116,23 +116,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     enums: &[
         Enum {
-            name: "RevOut",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Bit order not affected"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REVERSED",
-                    description: Some("Bit reversed output"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Polysize",
             description: None,
             bit_size: 2,
@@ -156,6 +139,23 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "POLYSIZE7",
                     description: Some("7-bit polynomial"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "RevOut",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some("Bit order not affected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REVERSED",
+                    description: Some("Bit reversed output"),
+                    value: 1,
                 },
             ],
         },

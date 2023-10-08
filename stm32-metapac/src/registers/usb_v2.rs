@@ -140,88 +140,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Daddr",
-            extends: None,
-            description: Some(
-                "device address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "add",
-                    description: Some(
-                        "device address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ef",
-                    description: Some(
-                        "USB device enabled",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lpmcsr",
-            extends: None,
-            description: Some(
-                "LPM control and status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lpmen",
-                    description: Some(
-                        "enable the LPM support within the USB device",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpmack",
-                    description: Some(
-                        "LPMACK",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lpmack",
-                    ),
-                },
-                Field {
-                    name: "remwake",
-                    description: Some(
-                        "REMWAKE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "besl",
-                    description: Some(
-                        "BESL",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Fnr",
             extends: None,
             description: Some(
@@ -276,6 +194,26 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 15,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Btable",
+            extends: None,
+            description: Some(
+                "Buffer table address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "btable",
+                    description: Some(
+                        "BTABLE",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
@@ -442,6 +380,36 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Daddr",
+            extends: None,
+            description: Some(
+                "device address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "add",
+                    description: Some(
+                        "device address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ef",
+                    description: Some(
+                        "USB device enabled",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Istr",
             extends: None,
             description: Some(
@@ -564,26 +532,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Btable",
-            extends: None,
-            description: Some(
-                "Buffer table address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "btable",
-                    description: Some(
-                        "BTABLE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Epr",
             extends: None,
             description: Some(
@@ -699,43 +647,60 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Stat",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
+        FieldSet {
+            name: "Lpmcsr",
+            extends: None,
+            description: Some(
+                "LPM control and status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lpmen",
                     description: Some(
-                        "all requests addressed to this endpoint are ignored",
+                        "enable the LPM support within the USB device",
                     ),
-                    value: 0,
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "STALL",
+                Field {
+                    name: "lpmack",
                     description: Some(
-                        "the endpoint is stalled and all requests result in a STALL handshake",
+                        "LPMACK",
                     ),
-                    value: 1,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lpmack",
+                    ),
                 },
-                EnumVariant {
-                    name: "NAK",
+                Field {
+                    name: "remwake",
                     description: Some(
-                        "the endpoint is naked and all requests result in a NAK handshake",
+                        "REMWAKE",
                     ),
-                    value: 2,
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "VALID",
+                Field {
+                    name: "besl",
                     description: Some(
-                        "this endpoint is enabled, requests are ACKed",
+                        "BESL",
                     ),
-                    value: 3,
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
+    ],
+    enums: &[
         Enum {
             name: "Dir",
             description: None,
@@ -752,6 +717,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FROM",
                     description: Some(
                         "data received by the USB peripheral from the host PC",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpmack",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NYET",
+                    description: Some(
+                        "the valid LPM Token will be NYET",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACK",
+                    description: Some(
+                        "the valid LPM Token will be ACK",
                     ),
                     value: 1,
                 },
@@ -793,23 +779,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lpmack",
+            name: "Stat",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NYET",
+                    name: "DISABLED",
                     description: Some(
-                        "the valid LPM Token will be NYET",
+                        "all requests addressed to this endpoint are ignored",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACK",
+                    name: "STALL",
                     description: Some(
-                        "the valid LPM Token will be ACK",
+                        "the endpoint is stalled and all requests result in a STALL handshake",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NAK",
+                    description: Some(
+                        "the endpoint is naked and all requests result in a NAK handshake",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VALID",
+                    description: Some(
+                        "this endpoint is enabled, requests are ACKed",
+                    ),
+                    value: 3,
                 },
             ],
         },

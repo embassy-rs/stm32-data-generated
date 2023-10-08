@@ -12,12 +12,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB1",
             enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "ADC12EN",
+                register: "ahb1enr",
+                field: "adc12en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "ADC12RST",
+                register: "ahb1rstr",
+                field: "adc12rst",
             }),
             mux: None,
         }),
@@ -167,12 +167,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB1",
             enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "ADC12EN",
+                register: "ahb1enr",
+                field: "adc12en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "ADC12RST",
+                register: "ahb1rstr",
+                field: "adc12rst",
             }),
             mux: None,
         }),
@@ -306,12 +306,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "BDMA1EN",
+                register: "ahb2enr",
+                field: "bdma1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "BDMA1RST",
+                register: "ahb2rstr",
+                field: "bdma1rst",
             }),
             mux: None,
         }),
@@ -364,12 +364,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "BDMA2EN",
+                register: "ahb4enr",
+                field: "bdma2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "BDMA2RST",
+                register: "ahb4rstr",
+                field: "bdma2rst",
             }),
             mux: None,
         }),
@@ -417,12 +417,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "CECEN",
+                register: "apb1lenr",
+                field: "cecen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "CECRST",
+                register: "apb1lrstr",
+                field: "cecrst",
             }),
             mux: None,
         }),
@@ -522,12 +522,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "CRCEN",
+                register: "ahb4enr",
+                field: "crcen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "CRCRST",
+                register: "ahb4rstr",
+                field: "crcrst",
             }),
             mux: None,
         }),
@@ -542,12 +542,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1HENR",
-                field: "CRSEN",
+                register: "apb1henr",
+                field: "crsen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1HRSTR",
-                field: "CRSRST",
+                register: "apb1hrstr",
+                field: "crsrst",
             }),
             mux: None,
         }),
@@ -598,12 +598,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "DAC1EN",
+                register: "apb1lenr",
+                field: "dac1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "DAC1RST",
+                register: "apb1lrstr",
+                field: "dac1rst",
             }),
             mux: None,
         }),
@@ -652,12 +652,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "DAC2EN",
+                register: "apb4enr",
+                field: "dac2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "DAC2RST",
+                register: "apb4rstr",
+                field: "dac2rst",
             }),
             mux: None,
         }),
@@ -704,12 +704,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "DCMIEN",
+                register: "ahb2enr",
+                field: "dcmien",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "DCMIRST",
+                register: "ahb2rstr",
+                field: "dcmirst",
             }),
             mux: None,
         }),
@@ -879,12 +879,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "DFSDM1EN",
+                register: "apb2enr",
+                field: "dfsdm1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "DFSDM1RST",
+                register: "apb2rstr",
+                field: "dfsdm1rst",
             }),
             mux: None,
         }),
@@ -1331,12 +1331,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB1",
             enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "DMA1EN",
+                register: "ahb1enr",
+                field: "dma1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "DMA1RST",
+                register: "ahb1rstr",
+                field: "dma1rst",
             }),
             mux: None,
         }),
@@ -1389,12 +1389,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB1",
             enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "DMA2EN",
+                register: "ahb1enr",
+                field: "dma2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "DMA2RST",
+                register: "ahb1rstr",
+                field: "dma2rst",
             }),
             mux: None,
         }),
@@ -1447,12 +1447,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB3",
             enable: Some(PeripheralRccRegister {
-                register: "AHB3ENR",
-                field: "DMA2DEN",
+                register: "ahb3enr",
+                field: "dma2den",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB3RSTR",
-                field: "DMA2DRST",
+                register: "ahb3rstr",
+                field: "dma2drst",
             }),
             mux: None,
         }),
@@ -1498,12 +1498,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "DTSEN",
+                register: "apb4enr",
+                field: "dtsen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "DTSRST",
+                register: "apb4rstr",
+                field: "dtsrst",
             }),
             mux: None,
         }),
@@ -1605,12 +1605,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1HENR",
-                field: "FDCANEN",
+                register: "apb1henr",
+                field: "fdcanen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1HRSTR",
-                field: "FDCANRST",
+                register: "apb1hrstr",
+                field: "fdcanrst",
             }),
             mux: None,
         }),
@@ -1739,12 +1739,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB3",
             enable: Some(PeripheralRccRegister {
-                register: "AHB3ENR",
-                field: "FMCEN",
+                register: "ahb3enr",
+                field: "fmcen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB3RSTR",
-                field: "FMCRST",
+                register: "ahb3rstr",
+                field: "fmcrst",
             }),
             mux: None,
         }),
@@ -2115,12 +2115,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOAEN",
+                register: "ahb4enr",
+                field: "gpioaen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOARST",
+                register: "ahb4rstr",
+                field: "gpioarst",
             }),
             mux: None,
         }),
@@ -2140,12 +2140,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOBEN",
+                register: "ahb4enr",
+                field: "gpioben",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOBRST",
+                register: "ahb4rstr",
+                field: "gpiobrst",
             }),
             mux: None,
         }),
@@ -2165,12 +2165,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOCEN",
+                register: "ahb4enr",
+                field: "gpiocen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOCRST",
+                register: "ahb4rstr",
+                field: "gpiocrst",
             }),
             mux: None,
         }),
@@ -2190,12 +2190,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIODEN",
+                register: "ahb4enr",
+                field: "gpioden",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIODRST",
+                register: "ahb4rstr",
+                field: "gpiodrst",
             }),
             mux: None,
         }),
@@ -2215,12 +2215,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOEEN",
+                register: "ahb4enr",
+                field: "gpioeen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOERST",
+                register: "ahb4rstr",
+                field: "gpioerst",
             }),
             mux: None,
         }),
@@ -2240,12 +2240,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOFEN",
+                register: "ahb4enr",
+                field: "gpiofen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOFRST",
+                register: "ahb4rstr",
+                field: "gpiofrst",
             }),
             mux: None,
         }),
@@ -2265,12 +2265,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOGEN",
+                register: "ahb4enr",
+                field: "gpiogen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOGRST",
+                register: "ahb4rstr",
+                field: "gpiogrst",
             }),
             mux: None,
         }),
@@ -2290,12 +2290,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOHEN",
+                register: "ahb4enr",
+                field: "gpiohen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOHRST",
+                register: "ahb4rstr",
+                field: "gpiohrst",
             }),
             mux: None,
         }),
@@ -2315,12 +2315,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOIEN",
+                register: "ahb4enr",
+                field: "gpioien",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOIRST",
+                register: "ahb4rstr",
+                field: "gpioirst",
             }),
             mux: None,
         }),
@@ -2340,12 +2340,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOJEN",
+                register: "ahb4enr",
+                field: "gpiojen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOJRST",
+                register: "ahb4rstr",
+                field: "gpiojrst",
             }),
             mux: None,
         }),
@@ -2365,12 +2365,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB4",
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
-                field: "GPIOKEN",
+                register: "ahb4enr",
+                field: "gpioken",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
-                field: "GPIOKRST",
+                register: "ahb4rstr",
+                field: "gpiokrst",
             }),
             mux: None,
         }),
@@ -2385,12 +2385,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "HASHEN",
+                register: "ahb2enr",
+                field: "hashen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "HASHRST",
+                register: "ahb2rstr",
+                field: "hashrst",
             }),
             mux: None,
         }),
@@ -2419,12 +2419,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "I2C1EN",
+                register: "apb1lenr",
+                field: "i2c1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "I2C1RST",
+                register: "apb1lrstr",
+                field: "i2c1rst",
             }),
             mux: None,
         }),
@@ -2494,12 +2494,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "I2C2EN",
+                register: "apb1lenr",
+                field: "i2c2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "I2C2RST",
+                register: "apb1lrstr",
+                field: "i2c2rst",
             }),
             mux: None,
         }),
@@ -2559,12 +2559,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "I2C3EN",
+                register: "apb1lenr",
+                field: "i2c3en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "I2C3RST",
+                register: "apb1lrstr",
+                field: "i2c3rst",
             }),
             mux: None,
         }),
@@ -2624,12 +2624,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "I2C4EN",
+                register: "apb4enr",
+                field: "i2c4en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "I2C4RST",
+                register: "apb4rstr",
+                field: "i2c4rst",
             }),
             mux: None,
         }),
@@ -2750,12 +2750,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "LPTIM1EN",
+                register: "apb1lenr",
+                field: "lptim1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "LPTIM1RST",
+                register: "apb1lrstr",
+                field: "lptim1rst",
             }),
             mux: None,
         }),
@@ -2814,12 +2814,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "LPTIM2EN",
+                register: "apb4enr",
+                field: "lptim2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "LPTIM2RST",
+                register: "apb4rstr",
+                field: "lptim2rst",
             }),
             mux: None,
         }),
@@ -2868,12 +2868,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "LPTIM3EN",
+                register: "apb4enr",
+                field: "lptim3en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "LPTIM3RST",
+                register: "apb4rstr",
+                field: "lptim3rst",
             }),
             mux: None,
         }),
@@ -2900,12 +2900,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "LPUART1EN",
+                register: "apb4enr",
+                field: "lpuart1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "LPUART1RST",
+                register: "apb4rstr",
+                field: "lpuart1rst",
             }),
             mux: None,
         }),
@@ -2974,12 +2974,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB3",
             enable: Some(PeripheralRccRegister {
-                register: "APB3ENR",
-                field: "LTDCEN",
+                register: "apb3enr",
+                field: "ltdcen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB3RSTR",
-                field: "LTDCRST",
+                register: "apb3rstr",
+                field: "ltdcrst",
             }),
             mux: None,
         }),
@@ -3333,12 +3333,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1HENR",
-                field: "MDIOSEN",
+                register: "apb1henr",
+                field: "mdiosen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1HRSTR",
-                field: "MDIOSRST",
+                register: "apb1hrstr",
+                field: "mdiosrst",
             }),
             mux: None,
         }),
@@ -3387,12 +3387,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB3",
             enable: Some(PeripheralRccRegister {
-                register: "AHB3ENR",
-                field: "MDMAEN",
+                register: "ahb3enr",
+                field: "mdmaen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB3RSTR",
-                field: "MDMARST",
+                register: "ahb3rstr",
+                field: "mdmarst",
             }),
             mux: None,
         }),
@@ -3422,12 +3422,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB3",
             enable: Some(PeripheralRccRegister {
-                register: "AHB3ENR",
-                field: "OCTOSPI2EN",
+                register: "ahb3enr",
+                field: "octospi2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB3RSTR",
-                field: "OCTOSPI2RST",
+                register: "ahb3rstr",
+                field: "octospi2rst",
             }),
             mux: None,
         }),
@@ -3645,12 +3645,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1HENR",
-                field: "OPAMPEN",
+                register: "apb1henr",
+                field: "opampen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1HRSTR",
-                field: "OPAMPRST",
+                register: "apb1hrstr",
+                field: "opamprst",
             }),
             mux: None,
         }),
@@ -4022,12 +4022,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "RNGEN",
+                register: "ahb2enr",
+                field: "rngen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "RNGRST",
+                register: "ahb2rstr",
+                field: "rngrst",
             }),
             mux: None,
         }),
@@ -4050,8 +4050,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "RTCAPBEN",
+                register: "apb4enr",
+                field: "rtcapben",
             }),
             reset: None,
             mux: None,
@@ -4130,12 +4130,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "SAI1EN",
+                register: "apb2enr",
+                field: "sai1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "SAI1RST",
+                register: "apb2rstr",
+                field: "sai1rst",
             }),
             mux: None,
         }),
@@ -4244,12 +4244,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "SAI2EN",
+                register: "apb2enr",
+                field: "sai2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "SAI2RST",
+                register: "apb2rstr",
+                field: "sai2rst",
             }),
             mux: None,
         }),
@@ -4368,12 +4368,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB3",
             enable: Some(PeripheralRccRegister {
-                register: "AHB3ENR",
-                field: "SDMMC1EN",
+                register: "ahb3enr",
+                field: "sdmmc1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB3RSTR",
-                field: "SDMMC1RST",
+                register: "ahb3rstr",
+                field: "sdmmc1rst",
             }),
             mux: None,
         }),
@@ -4467,12 +4467,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "SDMMC2EN",
+                register: "ahb2enr",
+                field: "sdmmc2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "SDMMC2RST",
+                register: "ahb2rstr",
+                field: "sdmmc2rst",
             }),
             mux: None,
         }),
@@ -4581,12 +4581,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "SPDIFRXEN",
+                register: "apb1lenr",
+                field: "spdifrxen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "SPDIFRXRST",
+                register: "apb1lrstr",
+                field: "spdifrxrst",
             }),
             mux: None,
         }),
@@ -4645,12 +4645,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "SPI1EN",
+                register: "apb2enr",
+                field: "spi1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "SPI1RST",
+                register: "apb2rstr",
+                field: "spi1rst",
             }),
             mux: None,
         }),
@@ -4814,12 +4814,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "SPI2EN",
+                register: "apb1lenr",
+                field: "spi2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "SPI2RST",
+                register: "apb1lrstr",
+                field: "spi2rst",
             }),
             mux: None,
         }),
@@ -5003,12 +5003,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "SPI3EN",
+                register: "apb1lenr",
+                field: "spi3en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "SPI3RST",
+                register: "apb1lrstr",
+                field: "spi3rst",
             }),
             mux: None,
         }),
@@ -5152,12 +5152,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "SPI4EN",
+                register: "apb2enr",
+                field: "spi4en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "SPI4RST",
+                register: "apb2rstr",
+                field: "spi4rst",
             }),
             mux: None,
         }),
@@ -5231,12 +5231,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "SPI6EN",
+                register: "apb4enr",
+                field: "spi6en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "SPI6RST",
+                register: "apb4rstr",
+                field: "spi6rst",
             }),
             mux: None,
         }),
@@ -5443,12 +5443,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB4",
             enable: Some(PeripheralRccRegister {
-                register: "APB4ENR",
-                field: "SYSCFGEN",
+                register: "apb4enr",
+                field: "syscfgen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB4RSTR",
-                field: "SYSCFGRST",
+                register: "apb4rstr",
+                field: "syscfgrst",
             }),
             mux: None,
         }),
@@ -5468,12 +5468,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "TIM1EN",
+                register: "apb2enr",
+                field: "tim1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "TIM1RST",
+                register: "apb2rstr",
+                field: "tim1rst",
             }),
             mux: None,
         }),
@@ -5720,12 +5720,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM12EN",
+                register: "apb1lenr",
+                field: "tim12en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM12RST",
+                register: "apb1lrstr",
+                field: "tim12rst",
             }),
             mux: None,
         }),
@@ -5777,12 +5777,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM13EN",
+                register: "apb1lenr",
+                field: "tim13en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM13RST",
+                register: "apb1lrstr",
+                field: "tim13rst",
             }),
             mux: None,
         }),
@@ -5827,12 +5827,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM14EN",
+                register: "apb1lenr",
+                field: "tim14en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM14RST",
+                register: "apb1lrstr",
+                field: "tim14rst",
             }),
             mux: None,
         }),
@@ -5877,12 +5877,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "TIM15EN",
+                register: "apb2enr",
+                field: "tim15en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "TIM15RST",
+                register: "apb2rstr",
+                field: "tim15rst",
             }),
             mux: None,
         }),
@@ -6003,12 +6003,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "TIM16EN",
+                register: "apb2enr",
+                field: "tim16en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "TIM16RST",
+                register: "apb2rstr",
+                field: "tim16rst",
             }),
             mux: None,
         }),
@@ -6080,12 +6080,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "TIM17EN",
+                register: "apb2enr",
+                field: "tim17en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "TIM17RST",
+                register: "apb2rstr",
+                field: "tim17rst",
             }),
             mux: None,
         }),
@@ -6157,12 +6157,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM2EN",
+                register: "apb1lenr",
+                field: "tim2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM2RST",
+                register: "apb1lrstr",
+                field: "tim2rst",
             }),
             mux: None,
         }),
@@ -6300,12 +6300,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM3EN",
+                register: "apb1lenr",
+                field: "tim3en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM3RST",
+                register: "apb1lrstr",
+                field: "tim3rst",
             }),
             mux: None,
         }),
@@ -6440,12 +6440,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM4EN",
+                register: "apb1lenr",
+                field: "tim4en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM4RST",
+                register: "apb1lrstr",
+                field: "tim4rst",
             }),
             mux: None,
         }),
@@ -6561,12 +6561,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM5EN",
+                register: "apb1lenr",
+                field: "tim5en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM5RST",
+                register: "apb1lrstr",
+                field: "tim5rst",
             }),
             mux: None,
         }),
@@ -6676,12 +6676,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM6EN",
+                register: "apb1lenr",
+                field: "tim6en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM6RST",
+                register: "apb1lrstr",
+                field: "tim6rst",
             }),
             mux: None,
         }),
@@ -6728,12 +6728,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "TIM7EN",
+                register: "apb1lenr",
+                field: "tim7en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "TIM7RST",
+                register: "apb1lrstr",
+                field: "tim7rst",
             }),
             mux: None,
         }),
@@ -6780,12 +6780,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2_TIM",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "TIM8EN",
+                register: "apb2enr",
+                field: "tim8en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "TIM8RST",
+                register: "apb2rstr",
+                field: "tim8rst",
             }),
             mux: None,
         }),
@@ -6957,12 +6957,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "UART4EN",
+                register: "apb1lenr",
+                field: "uart4en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "UART4RST",
+                register: "apb1lrstr",
+                field: "uart4rst",
             }),
             mux: None,
         }),
@@ -7081,12 +7081,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "UART5EN",
+                register: "apb1lenr",
+                field: "uart5en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "UART5RST",
+                register: "apb1lrstr",
+                field: "uart5rst",
             }),
             mux: None,
         }),
@@ -7160,12 +7160,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "UART7EN",
+                register: "apb1lenr",
+                field: "uart7en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "UART7RST",
+                register: "apb1lrstr",
+                field: "uart7rst",
             }),
             mux: None,
         }),
@@ -7249,12 +7249,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "UART8EN",
+                register: "apb1lenr",
+                field: "uart8en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "UART8RST",
+                register: "apb1lrstr",
+                field: "uart8rst",
             }),
             mux: None,
         }),
@@ -7318,12 +7318,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "UART9EN",
+                register: "apb2enr",
+                field: "uart9en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "UART9RST",
+                register: "apb2rstr",
+                field: "uart9rst",
             }),
             mux: None,
         }),
@@ -7401,12 +7401,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "USART1EN",
+                register: "apb2enr",
+                field: "usart1en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "USART1RST",
+                register: "apb2rstr",
+                field: "usart1rst",
             }),
             mux: None,
         }),
@@ -7500,12 +7500,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "USART10EN",
+                register: "apb2enr",
+                field: "usart10en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "USART10RST",
+                register: "apb2rstr",
+                field: "usart10rst",
             }),
             mux: None,
         }),
@@ -7584,12 +7584,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "USART2EN",
+                register: "apb1lenr",
+                field: "usart2en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "USART2RST",
+                register: "apb1lrstr",
+                field: "usart2rst",
             }),
             mux: None,
         }),
@@ -7698,12 +7698,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "APB1LENR",
-                field: "USART3EN",
+                register: "apb1lenr",
+                field: "usart3en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB1LRSTR",
-                field: "USART3RST",
+                register: "apb1lrstr",
+                field: "usart3rst",
             }),
             mux: None,
         }),
@@ -7827,12 +7827,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "APB2ENR",
-                field: "USART6EN",
+                register: "apb2enr",
+                field: "usart6en",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB2RSTR",
-                field: "USART6RST",
+                register: "apb2rstr",
+                field: "usart6rst",
             }),
             mux: None,
         }),
@@ -7911,12 +7911,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "AHB1",
             enable: Some(PeripheralRccRegister {
-                register: "AHB1ENR",
-                field: "USB_OTG_HSEN",
+                register: "ahb1enr",
+                field: "usb_otg_hsen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB1RSTR",
-                field: "USB_OTG_HSRST",
+                register: "ahb1rstr",
+                field: "usb_otg_hsrst",
             }),
             mux: None,
         }),
@@ -8055,8 +8055,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: Some(PeripheralRcc {
             clock: "APB3",
             enable: Some(PeripheralRccRegister {
-                register: "APB3ENR",
-                field: "WWDG1EN",
+                register: "apb3enr",
+                field: "wwdg1en",
             }),
             reset: None,
             mux: None,

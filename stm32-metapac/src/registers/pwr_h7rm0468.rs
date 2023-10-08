@@ -167,17 +167,87 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Wkupepr",
+            name: "Wkupcr",
             extends: None,
             description: Some(
-                "Reset only by system reset, not reset by wakeup from Standby mode",
+                "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared).",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wkupen",
+                    name: "wkupc",
                     description: Some(
-                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
+                        "Clear Wakeup pin flag for WKUP. These bits are always read as 0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Csr1",
+            extends: None,
+            description: Some(
+                "PWR control status register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "Programmable voltage detect output This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit. Note: since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "actvosrdy",
+                    description: Some(
+                        "Voltage levels ready bit for currently used VOS and SDLEVEL This bit is set to 1 by hardware when the voltage regulator and the SD converter are both disabled and Bypass mode is selected in PWR control register 3 (PWR_CR3).",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "actvos",
+                    description: Some(
+                        "VOS currently applied for VCORE voltage scaling selection. These bits reflect the last VOS value applied to the PMU.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "avdo",
+                    description: Some(
+                        "Analog voltage detector output on VDDA This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit. Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the AVDEN bit is set.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wkupfr",
+            extends: None,
+            description: Some(
+                "reset only by system reset, not reset by wakeup from Standby mode",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wkupf",
+                    description: Some(
+                        "Wakeup pin WKUPF flag. This bit is set by hardware and cleared only by a Reset pin or by setting the WKUPCn+1 bit in the PWR wakeup clear register (PWR_WKUPCR).",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -190,72 +260,6 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: None,
-                },
-                Field {
-                    name: "wkupp",
-                    description: Some(
-                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "wkuppupd",
-                    description: Some(
-                        "Wakeup pin pull configuration",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "D3cr",
-            extends: None,
-            description: Some(
-                "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vosrdy",
-                    description: Some(
-                        "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vos",
-                    description: Some(
-                        "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
                 },
             ],
         },
@@ -380,17 +384,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cpucr",
+            name: "Cr2",
             extends: None,
             description: Some(
-                "This register allows controlling CPU1 power.",
+                "This register is not reset by wakeup from Standby mode, RESET signal and VDD POR. It is only reset by VSW POR and VSWRST reset. This register shall not be accessed when VSWRST bit in RCC_BDCR register resets the VSW domain.After reset, PWR_CR2 register is write-protected. Prior to modifying its content, the DBP bit in PWR_CR1 register must be set to disable the write protection.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pdds_d1",
+                    name: "bren",
                     description: Some(
-                        "D1 domain Power Down Deepsleep selection. This bit allows CPU1 to define the Deepsleep mode for D1 domain.",
+                        "Backup regulator enable When set, the Backup regulator (used to maintain the backup RAM content in Standby and VBAT modes) is enabled. If BREN is reset, the backup regulator is switched off. The backup RAM can still be used in Run and Stop modes. However, its content will be lost in Standby and VBAT modes. If BREN is set, the application must wait till the Backup Regulator Ready flag (BRRDY) is set to indicate that the data written into the SRAM will be maintained in Standby and VBAT modes.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -398,83 +402,156 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pdds_d2",
+                    name: "monen",
                     description: Some(
-                        "D2 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for D2 domain.",
+                        "VBAT and temperature monitoring enable When set, the VBAT supply and temperature monitoring is enabled.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pdds_d3",
+                    name: "brrdy",
                     description: Some(
-                        "System D3 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for System D3 domain.",
+                        "Backup regulator ready This bit is set by hardware to indicate that the Backup regulator is ready.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "stopf",
+                    name: "vbatl",
                     description: Some(
-                        "STOP flag This bit is set by hardware and cleared only by any reset or by setting the CPU1 CSSF bit.",
+                        "VBAT level monitoring versus low threshold",
                     ),
-                    bit_offset: 5,
+                    bit_offset: 20,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sbf",
+                    name: "vbath",
                     description: Some(
-                        "System Standby flag This bit is set by hardware and cleared only by a POR (Power-on Reset) or by setting the CPU1 CSSF bit",
+                        "VBAT level monitoring versus high threshold",
                     ),
-                    bit_offset: 6,
+                    bit_offset: 21,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sbf_d1",
+                    name: "templ",
                     description: Some(
-                        "D1 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D1 domain is no longer in DStandby mode.",
+                        "Temperature level monitoring versus low threshold",
                     ),
-                    bit_offset: 7,
+                    bit_offset: 22,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sbf_d2",
+                    name: "temph",
                     description: Some(
-                        "D2 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D2 domain is no longer in DStandby mode.",
+                        "Temperature level monitoring versus high threshold",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "D3cr",
+            extends: None,
+            description: Some(
+                "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vosrdy",
+                    description: Some(
+                        "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vos",
+                    description: Some(
+                        "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Vos",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wkupepr",
+            extends: None,
+            description: Some(
+                "Reset only by system reset, not reset by wakeup from Standby mode",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wkupen",
+                    description: Some(
+                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "wkupp",
+                    description: Some(
+                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
                 Field {
-                    name: "cssf",
+                    name: "wkuppupd",
                     description: Some(
-                        "Clear D1 domain CPU1 Standby, Stop and HOLD flags (always read as 0) This bit is cleared to 0 by hardware.",
+                        "Wakeup pin pull configuration",
                     ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "run_d3",
-                    description: Some(
-                        "Keep system D3 domain in Run mode regardless of the CPU sub-systems modes",
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 2,
+                            },
+                        ),
                     ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],
@@ -570,114 +647,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Csr1",
+            name: "Cpucr",
             extends: None,
             description: Some(
-                "PWR control status register 1",
+                "This register allows controlling CPU1 power.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pvdo",
+                    name: "pdds_d1",
                     description: Some(
-                        "Programmable voltage detect output This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit. Note: since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "actvosrdy",
-                    description: Some(
-                        "Voltage levels ready bit for currently used VOS and SDLEVEL This bit is set to 1 by hardware when the voltage regulator and the SD converter are both disabled and Bypass mode is selected in PWR control register 3 (PWR_CR3).",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "actvos",
-                    description: Some(
-                        "VOS currently applied for VCORE voltage scaling selection. These bits reflect the last VOS value applied to the PMU.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "avdo",
-                    description: Some(
-                        "Analog voltage detector output on VDDA This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit. Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the AVDEN bit is set.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wkupfr",
-            extends: None,
-            description: Some(
-                "reset only by system reset, not reset by wakeup from Standby mode",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wkupf",
-                    description: Some(
-                        "Wakeup pin WKUPF flag. This bit is set by hardware and cleared only by a Reset pin or by setting the WKUPCn+1 bit in the PWR wakeup clear register (PWR_WKUPCR).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wkupcr",
-            extends: None,
-            description: Some(
-                "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared).",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wkupc",
-                    description: Some(
-                        "Clear Wakeup pin flag for WKUP. These bits are always read as 0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some(
-                "This register is not reset by wakeup from Standby mode, RESET signal and VDD POR. It is only reset by VSW POR and VSWRST reset. This register shall not be accessed when VSWRST bit in RCC_BDCR register resets the VSW domain.After reset, PWR_CR2 register is write-protected. Prior to modifying its content, the DBP bit in PWR_CR1 register must be set to disable the write protection.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bren",
-                    description: Some(
-                        "Backup regulator enable When set, the Backup regulator (used to maintain the backup RAM content in Standby and VBAT modes) is enabled. If BREN is reset, the backup regulator is switched off. The backup RAM can still be used in Run and Stop modes. However, its content will be lost in Standby and VBAT modes. If BREN is set, the application must wait till the Backup Regulator Ready flag (BRRDY) is set to indicate that the data written into the SRAM will be maintained in Standby and VBAT modes.",
+                        "D1 domain Power Down Deepsleep selection. This bit allows CPU1 to define the Deepsleep mode for D1 domain.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -685,61 +665,81 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "monen",
+                    name: "pdds_d2",
                     description: Some(
-                        "VBAT and temperature monitoring enable When set, the VBAT supply and temperature monitoring is enabled.",
+                        "D2 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for D2 domain.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "brrdy",
+                    name: "pdds_d3",
                     description: Some(
-                        "Backup regulator ready This bit is set by hardware to indicate that the Backup regulator is ready.",
+                        "System D3 domain Power Down Deepsleep. This bit allows CPU1 to define the Deepsleep mode for System D3 domain.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vbatl",
+                    name: "stopf",
                     description: Some(
-                        "VBAT level monitoring versus low threshold",
+                        "STOP flag This bit is set by hardware and cleared only by any reset or by setting the CPU1 CSSF bit.",
                     ),
-                    bit_offset: 20,
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vbath",
+                    name: "sbf",
                     description: Some(
-                        "VBAT level monitoring versus high threshold",
+                        "System Standby flag This bit is set by hardware and cleared only by a POR (Power-on Reset) or by setting the CPU1 CSSF bit",
                     ),
-                    bit_offset: 21,
+                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "templ",
+                    name: "sbf_d1",
                     description: Some(
-                        "Temperature level monitoring versus low threshold",
+                        "D1 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D1 domain is no longer in DStandby mode.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "temph",
+                    name: "sbf_d2",
                     description: Some(
-                        "Temperature level monitoring versus high threshold",
+                        "D2 domain DStandby flag This bit is set by hardware and cleared by any system reset or by setting the CPU1 CSSF bit. Once set, this bit can be cleared only when the D2 domain is no longer in DStandby mode.",
                     ),
-                    bit_offset: 23,
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cssf",
+                    description: Some(
+                        "Clear D1 domain CPU1 Standby, Stop and HOLD flags (always read as 0) This bit is cleared to 0 by hardware.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "run_d3",
+                    description: Some(
+                        "Keep system D3 domain in Run mode regardless of the CPU sub-systems modes",
+                    ),
+                    bit_offset: 11,
                     bit_size: 1,
                     array: None,
                     enumm: None,

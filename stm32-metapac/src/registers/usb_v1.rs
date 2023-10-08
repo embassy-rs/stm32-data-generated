@@ -183,17 +183,47 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Istr",
+            name: "Daddr",
             extends: None,
             description: Some(
-                "interrupt status register",
+                "device address",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ep_id",
+                    name: "add",
                     description: Some(
-                        "EP_ID",
+                        "device address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ef",
+                    description: Some(
+                        "USB device enabled",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Epr",
+            extends: None,
+            description: Some(
+                "endpoint register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ea",
+                    description: Some(
+                        "EA",
                     ),
                     bit_offset: 0,
                     bit_size: 4,
@@ -201,21 +231,41 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dir",
+                    name: "stat_tx",
                     description: Some(
-                        "DIR",
+                        "STAT_TX",
                     ),
                     bit_offset: 4,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Dir",
+                        "Stat",
                     ),
                 },
                 Field {
-                    name: "esof",
+                    name: "dtog_tx",
                     description: Some(
-                        "an SOF packet is expected but not received",
+                        "DTOG_TX",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_tx",
+                    description: Some(
+                        "CTR_TX",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_kind",
+                    description: Some(
+                        "EP_KIND",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -223,29 +273,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sof",
+                    name: "ep_type",
                     description: Some(
-                        "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus",
+                        "EPTYPE",
                     ),
                     bit_offset: 9,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "reset",
-                    description: Some(
-                        "peripheral detects an active USB RESET signal at its inputs",
+                    enumm: Some(
+                        "EpType",
                     ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
-                    name: "susp",
+                    name: "setup",
                     description: Some(
-                        "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus",
+                        "SETUP",
                     ),
                     bit_offset: 11,
                     bit_size: 1,
@@ -253,29 +295,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wkup",
+                    name: "stat_rx",
                     description: Some(
-                        "activity is detected that wakes up the USB peripheral",
+                        "STAT_RX",
                     ),
                     bit_offset: 12,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "err",
-                    description: Some(
-                        "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred",
+                    enumm: Some(
+                        "Stat",
                     ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
-                    name: "pmaovr",
+                    name: "dtog_rx",
                     description: Some(
-                        "microcontroller has not been able to respond in time to an USB memory request",
+                        "DTOG_RX",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
@@ -283,12 +317,32 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ctr",
+                    name: "ctr_rx",
                     description: Some(
-                        "endpoint has successfully completed a transaction",
+                        "CTR_RX",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Btable",
+            extends: None,
+            description: Some(
+                "Buffer table address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "btable",
+                    description: Some(
+                        "BTABLE",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
@@ -435,37 +489,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Btable",
+            name: "Istr",
             extends: None,
             description: Some(
-                "Buffer table address",
+                "interrupt status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "btable",
+                    name: "ep_id",
                     description: Some(
-                        "BTABLE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Epr",
-            extends: None,
-            description: Some(
-                "endpoint register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ea",
-                    description: Some(
-                        "EA",
+                        "EP_ID",
                     ),
                     bit_offset: 0,
                     bit_size: 4,
@@ -473,41 +507,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "stat_tx",
+                    name: "dir",
                     description: Some(
-                        "STAT_TX",
+                        "DIR",
                     ),
                     bit_offset: 4,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Stat",
+                        "Dir",
                     ),
                 },
                 Field {
-                    name: "dtog_tx",
+                    name: "esof",
                     description: Some(
-                        "DTOG_TX",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_tx",
-                    description: Some(
-                        "CTR_TX",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_kind",
-                    description: Some(
-                        "EP_KIND",
+                        "an SOF packet is expected but not received",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -515,21 +529,29 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ep_type",
+                    name: "sof",
                     description: Some(
-                        "EPTYPE",
+                        "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus",
                     ),
                     bit_offset: 9,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "EpType",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "setup",
+                    name: "reset",
                     description: Some(
-                        "SETUP",
+                        "peripheral detects an active USB RESET signal at its inputs",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "susp",
+                    description: Some(
+                        "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus",
                     ),
                     bit_offset: 11,
                     bit_size: 1,
@@ -537,21 +559,29 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "stat_rx",
+                    name: "wkup",
                     description: Some(
-                        "STAT_RX",
+                        "activity is detected that wakes up the USB peripheral",
                     ),
                     bit_offset: 12,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "dtog_rx",
+                    name: "err",
                     description: Some(
-                        "DTOG_RX",
+                        "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pmaovr",
+                    description: Some(
+                        "microcontroller has not been able to respond in time to an USB memory request",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
@@ -559,41 +589,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ctr_rx",
+                    name: "ctr",
                     description: Some(
-                        "CTR_RX",
+                        "endpoint has successfully completed a transaction",
                     ),
                     bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Daddr",
-            extends: None,
-            description: Some(
-                "device address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "add",
-                    description: Some(
-                        "device address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ef",
-                    description: Some(
-                        "USB device enabled",
-                    ),
-                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,

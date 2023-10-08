@@ -324,10 +324,10 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Alrmr",
+            name: "Tr",
             extends: None,
             description: Some(
-                "Alarm register",
+                "Time register",
             ),
             bit_size: 32,
             fields: &[
@@ -352,18 +352,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "msk1",
-                    description: Some(
-                        "Alarm seconds mask",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "AlrmrMsk",
-                    ),
-                },
-                Field {
                     name: "mnu",
                     description: Some(
                         "Minute units in BCD format",
@@ -382,18 +370,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: None,
-                },
-                Field {
-                    name: "msk2",
-                    description: Some(
-                        "Alarm minutes mask",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "AlrmrMsk",
-                    ),
                 },
                 Field {
                     name: "hu",
@@ -424,154 +400,8 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "AlrmrPm",
+                        "Ampm",
                     ),
-                },
-                Field {
-                    name: "msk3",
-                    description: Some(
-                        "Alarm hours mask",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "AlrmrMsk",
-                    ),
-                },
-                Field {
-                    name: "du",
-                    description: Some(
-                        "Date units or day in BCD format",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dt",
-                    description: Some(
-                        "Date tens in BCD format",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdsel",
-                    description: Some(
-                        "Week day selection",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "AlrmrWdsel",
-                    ),
-                },
-                Field {
-                    name: "msk4",
-                    description: Some(
-                        "Alarm date mask",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "AlrmrMsk",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Alrmssr",
-            extends: None,
-            description: Some(
-                "Alarm sub second register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ss",
-                    description: Some(
-                        "Sub seconds value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 15,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "maskss",
-                    description: Some(
-                        "Mask the most-significant bits starting at this bit",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tsdr",
-            extends: None,
-            description: Some(
-                "Timestamp date register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "du",
-                    description: Some(
-                        "Date units in BCD format",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dt",
-                    description: Some(
-                        "Date tens in BCD format",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mu",
-                    description: Some(
-                        "Month units in BCD format",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mt",
-                    description: Some(
-                        "Month tens in BCD format",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdu",
-                    description: Some(
-                        "Week day units",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -658,20 +488,348 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Wpr",
+            name: "Tsssr",
             extends: None,
             description: Some(
-                "Write protection register",
+                "Timestamp sub second register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "key",
+                    name: "ss",
                     description: Some(
-                        "Write protection key",
+                        "Sub second value",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Calr",
+            extends: None,
+            description: Some(
+                "Calibration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "calm",
+                    description: Some(
+                        "Calibration minus",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "calw16",
+                    description: Some(
+                        "Use a 16-second calibration cycle period",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Calw16",
+                    ),
+                },
+                Field {
+                    name: "calw8",
+                    description: Some(
+                        "Use an 8-second calibration cycle period",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Calw8",
+                    ),
+                },
+                Field {
+                    name: "calp",
+                    description: Some(
+                        "Increase frequency of RTC by 488.5 ppm",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Calp",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wutr",
+            extends: None,
+            description: Some(
+                "Wakeup timer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wut",
+                    description: Some(
+                        "Wakeup auto-reload value bits",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Shiftr",
+            extends: None,
+            description: Some(
+                "Shift control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "subfs",
+                    description: Some(
+                        "Subtract a fraction of a second",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 15,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "add1s",
+                    description: Some(
+                        "Add one second",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tafcr",
+            extends: None,
+            description: Some(
+                "Tamper and alternate function configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampe",
+                    description: Some(
+                        "Tamper detection enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Cursed(
+                            CursedArray {
+                                offsets: &[
+                                    0,
+                                    3,
+                                    5,
+                                ],
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "tamptrg",
+                    description: Some(
+                        "Active level for tamper",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Cursed(
+                            CursedArray {
+                                offsets: &[
+                                    0,
+                                    3,
+                                    5,
+                                ],
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Tamptrg",
+                    ),
+                },
+                Field {
+                    name: "tampie",
+                    description: Some(
+                        "Tamper interrupt enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tampts",
+                    description: Some(
+                        "Activate timestamp on tamper detection event",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tampfreq",
+                    description: Some(
+                        "Tamper sampling frequency",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Tampfreq",
+                    ),
+                },
+                Field {
+                    name: "tampflt",
+                    description: Some(
+                        "Tamper filter count",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Tampflt",
+                    ),
+                },
+                Field {
+                    name: "tampprch",
+                    description: Some(
+                        "Tamper precharge duration",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Tampprch",
+                    ),
+                },
+                Field {
+                    name: "tamppudis",
+                    description: Some(
+                        "Tamper pull-up disable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Tamppudis",
+                    ),
+                },
+                Field {
+                    name: "pc13value",
+                    description: Some(
+                        "PC13 value",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcvalue",
+                    ),
+                },
+                Field {
+                    name: "pc13mode",
+                    description: Some(
+                        "PC13 mode",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcmode",
+                    ),
+                },
+                Field {
+                    name: "pc14value",
+                    description: Some(
+                        "PC14 value",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcvalue",
+                    ),
+                },
+                Field {
+                    name: "pc14mode",
+                    description: Some(
+                        "PC14 mode",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcmode",
+                    ),
+                },
+                Field {
+                    name: "pc15value",
+                    description: Some(
+                        "PC15 value",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcvalue",
+                    ),
+                },
+                Field {
+                    name: "pc15mode",
+                    description: Some(
+                        "PC15 mode",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pcmode",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Alrmssr",
+            extends: None,
+            description: Some(
+                "Alarm sub second register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ss",
+                    description: Some(
+                        "Sub seconds value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 15,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "maskss",
+                    description: Some(
+                        "Mask the most-significant bits starting at this bit",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -689,26 +847,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ss",
                     description: Some(
                         "Sub second value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wutr",
-            extends: None,
-            description: Some(
-                "Wakeup timer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wut",
-                    description: Some(
-                        "Wakeup auto-reload value bits",
                     ),
                     bit_offset: 0,
                     bit_size: 16,
@@ -936,106 +1074,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dr",
-            extends: None,
-            description: Some(
-                "Date register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "du",
-                    description: Some(
-                        "Date units in BCD format",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dt",
-                    description: Some(
-                        "Date tens in BCD format",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mu",
-                    description: Some(
-                        "Month units in BCD format",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mt",
-                    description: Some(
-                        "Month tens in BCD format",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdu",
-                    description: Some(
-                        "Week day units",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "yu",
-                    description: Some(
-                        "Year units in BCD format",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "yt",
-                    description: Some(
-                        "Year tens in BCD format",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bkpr",
-            extends: None,
-            description: Some(
-                "Backup register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bkp",
-                    description: Some(
-                        "BKP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Isr",
             extends: None,
             description: Some(
@@ -1201,270 +1239,82 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Tsssr",
+            name: "Dr",
             extends: None,
             description: Some(
-                "Timestamp sub second register",
+                "Date register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ss",
+                    name: "du",
                     description: Some(
-                        "Sub second value",
+                        "Date units in BCD format",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Calr",
-            extends: None,
-            description: Some(
-                "Calibration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "calm",
-                    description: Some(
-                        "Calibration minus",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 9,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "calw16",
+                    name: "dt",
                     description: Some(
-                        "Use a 16-second calibration cycle period",
+                        "Date tens in BCD format",
                     ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Calw16",
-                    ),
-                },
-                Field {
-                    name: "calw8",
-                    description: Some(
-                        "Use an 8-second calibration cycle period",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Calw8",
-                    ),
-                },
-                Field {
-                    name: "calp",
-                    description: Some(
-                        "Increase frequency of RTC by 488.5 ppm",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Calp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tafcr",
-            extends: None,
-            description: Some(
-                "Tamper and alternate function configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampe",
-                    description: Some(
-                        "Tamper detection enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Cursed(
-                            CursedArray {
-                                offsets: &[
-                                    0,
-                                    3,
-                                    5,
-                                ],
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "tamptrg",
-                    description: Some(
-                        "Active level for tamper",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Cursed(
-                            CursedArray {
-                                offsets: &[
-                                    0,
-                                    3,
-                                    5,
-                                ],
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Tamptrg",
-                    ),
-                },
-                Field {
-                    name: "tampie",
-                    description: Some(
-                        "Tamper interrupt enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
+                    bit_offset: 4,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "tampts",
+                    name: "mu",
                     description: Some(
-                        "Activate timestamp on tamper detection event",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tampfreq",
-                    description: Some(
-                        "Tamper sampling frequency",
+                        "Month units in BCD format",
                     ),
                     bit_offset: 8,
-                    bit_size: 3,
+                    bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "Tampfreq",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "tampflt",
+                    name: "mt",
                     description: Some(
-                        "Tamper filter count",
+                        "Month tens in BCD format",
                     ),
-                    bit_offset: 11,
-                    bit_size: 2,
+                    bit_offset: 12,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tampflt",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "tampprch",
+                    name: "wdu",
                     description: Some(
-                        "Tamper precharge duration",
+                        "Week day units",
                     ),
                     bit_offset: 13,
-                    bit_size: 2,
+                    bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Tampprch",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "tamppudis",
+                    name: "yu",
                     description: Some(
-                        "Tamper pull-up disable",
+                        "Year units in BCD format",
                     ),
-                    bit_offset: 15,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "Tamppudis",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "pc13value",
+                    name: "yt",
                     description: Some(
-                        "PC13 value",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pcvalue",
-                    ),
-                },
-                Field {
-                    name: "pc13mode",
-                    description: Some(
-                        "PC13 mode",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pcmode",
-                    ),
-                },
-                Field {
-                    name: "pc14value",
-                    description: Some(
-                        "PC14 value",
+                        "Year tens in BCD format",
                     ),
                     bit_offset: 20,
-                    bit_size: 1,
+                    bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "Pcvalue",
-                    ),
-                },
-                Field {
-                    name: "pc14mode",
-                    description: Some(
-                        "PC14 mode",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pcmode",
-                    ),
-                },
-                Field {
-                    name: "pc15value",
-                    description: Some(
-                        "PC15 value",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pcvalue",
-                    ),
-                },
-                Field {
-                    name: "pc15mode",
-                    description: Some(
-                        "PC15 mode",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pcmode",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1499,40 +1349,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Shiftr",
+            name: "Alrmr",
             extends: None,
             description: Some(
-                "Shift control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "subfs",
-                    description: Some(
-                        "Subtract a fraction of a second",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 15,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "add1s",
-                    description: Some(
-                        "Add one second",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tr",
-            extends: None,
-            description: Some(
-                "Time register",
+                "Alarm register",
             ),
             bit_size: 32,
             fields: &[
@@ -1557,6 +1377,18 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "msk1",
+                    description: Some(
+                        "Alarm seconds mask",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "AlrmrMsk",
+                    ),
+                },
+                Field {
                     name: "mnu",
                     description: Some(
                         "Minute units in BCD format",
@@ -1575,6 +1407,18 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "msk2",
+                    description: Some(
+                        "Alarm minutes mask",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "AlrmrMsk",
+                    ),
                 },
                 Field {
                     name: "hu",
@@ -1605,13 +1449,274 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Ampm",
+                        "AlrmrPm",
                     ),
+                },
+                Field {
+                    name: "msk3",
+                    description: Some(
+                        "Alarm hours mask",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "AlrmrMsk",
+                    ),
+                },
+                Field {
+                    name: "du",
+                    description: Some(
+                        "Date units or day in BCD format",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dt",
+                    description: Some(
+                        "Date tens in BCD format",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdsel",
+                    description: Some(
+                        "Week day selection",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "AlrmrWdsel",
+                    ),
+                },
+                Field {
+                    name: "msk4",
+                    description: Some(
+                        "Alarm date mask",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "AlrmrMsk",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wpr",
+            extends: None,
+            description: Some(
+                "Write protection register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "key",
+                    description: Some(
+                        "Write protection key",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bkpr",
+            extends: None,
+            description: Some(
+                "Backup register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bkp",
+                    description: Some(
+                        "BKP",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tsdr",
+            extends: None,
+            description: Some(
+                "Timestamp date register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "du",
+                    description: Some(
+                        "Date units in BCD format",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dt",
+                    description: Some(
+                        "Date tens in BCD format",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mu",
+                    description: Some(
+                        "Month units in BCD format",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mt",
+                    description: Some(
+                        "Month tens in BCD format",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdu",
+                    description: Some(
+                        "Week day units",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
+        Enum {
+            name: "Tamppudis",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Precharge RTC_TAMPx pins before sampling (enable internal pull-up)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Disable precharge of RTC_TAMPx pins",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tampfreq",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV32768",
+                    description: Some(
+                        "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV16384",
+                    description: Some(
+                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV8192",
+                    description: Some(
+                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV4096",
+                    description: Some(
+                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV2048",
+                    description: Some(
+                        "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV1024",
+                    description: Some(
+                        "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV512",
+                    description: Some(
+                        "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV256",
+                    description: Some(
+                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Fmt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TWENTY_FOUR_HOUR",
+                    description: Some(
+                        "24 hour/day format",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "AM_PM",
+                    description: Some(
+                        "AM/PM hour format",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Tampprch",
             description: None,
@@ -1648,6 +1753,55 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Calw16",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SIXTEEN_SECOND",
+                    description: Some(
+                        "When CALW16 is set to ‘1’, the 16-second calibration cycle period is selected.This bit must not be set to ‘1’ if CALW8=1",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Alrwf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UPDATENOTALLOWED",
+                    description: Some(
+                        "Alarm update not allowed",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "UPDATEALLOWED",
+                    description: Some(
+                        "Alarm update allowed",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Calw8",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "EIGHT_SECOND",
+                    description: Some(
+                        "When CALW8 is set to ‘1’, the 8-second calibration cycle period is selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Pol",
             description: None,
             bit_size: 1,
@@ -1669,21 +1823,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pcmode",
+            name: "Calp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FLOATING",
+                    name: "NOCHANGE",
                     description: Some(
-                        "PCx is controlled by the GPIO configuration Register. Consequently PC15 is floating in Standby mode",
+                        "No RTCCLK pulses are added",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PUSHPULL",
+                    name: "INCREASEFREQ",
                     description: Some(
-                        "PCx is forced to push-pull output if LSE is disabled",
+                        "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tsedge",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some(
+                        "RTC_TS input rising edge generates a time-stamp event",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some(
+                        "RTC_TS input falling edge generates a time-stamp event",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "AlrmrPm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "AM",
+                    description: Some(
+                        "AM or 24-hour format",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PM",
+                    description: Some(
+                        "PM",
                     ),
                     value: 1,
                 },
@@ -1711,21 +1907,42 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Calp",
+            name: "Tamptrg",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOCHANGE",
+                    name: "RISINGEDGE",
                     description: Some(
-                        "No RTCCLK pulses are added",
+                        "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INCREASEFREQ",
+                    name: "FALLINGEDGE",
                     description: Some(
-                        "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)",
+                        "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pcmode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FLOATING",
+                    description: Some(
+                        "PCx is controlled by the GPIO configuration Register. Consequently PC15 is floating in Standby mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PUSHPULL",
+                    description: Some(
+                        "PCx is forced to push-pull output if LSE is disabled",
                     ),
                     value: 1,
                 },
@@ -1802,6 +2019,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "AlrmrWdsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DATEUNITS",
+                    description: Some(
+                        "DU[3:0] represents the date units",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "WEEKDAY",
+                    description: Some(
+                        "DU[3:0] represents the week day. DT[1:0] is don’t care",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Pcvalue",
             description: None,
             bit_size: 1,
@@ -1844,188 +2082,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "AlrmrPm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "AM",
-                    description: Some(
-                        "AM or 24-hour format",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PM",
-                    description: Some(
-                        "PM",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tampfreq",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV32768",
-                    description: Some(
-                        "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV16384",
-                    description: Some(
-                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV8192",
-                    description: Some(
-                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4096",
-                    description: Some(
-                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV2048",
-                    description: Some(
-                        "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV1024",
-                    description: Some(
-                        "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV512",
-                    description: Some(
-                        "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Tsedge",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some(
-                        "RTC_TS input rising edge generates a time-stamp event",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some(
-                        "RTC_TS input falling edge generates a time-stamp event",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fmt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TWENTY_FOUR_HOUR",
-                    description: Some(
-                        "24 hour/day format",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "AM_PM",
-                    description: Some(
-                        "AM/PM hour format",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ampm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "AM",
-                    description: Some(
-                        "AM or 24-hour format",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PM",
-                    description: Some(
-                        "PM",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Alrwf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UPDATENOTALLOWED",
-                    description: Some(
-                        "Alarm update not allowed",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "UPDATEALLOWED",
-                    description: Some(
-                        "Alarm update allowed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Calw8",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EIGHT_SECOND",
-                    description: Some(
-                        "When CALW8 is set to ‘1’, the 8-second calibration cycle period is selected",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Osel",
             description: None,
             bit_size: 2,
@@ -2050,83 +2106,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Wakeup output enabled",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Calw16",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SIXTEEN_SECOND",
-                    description: Some(
-                        "When CALW16 is set to ‘1’, the 16-second calibration cycle period is selected.This bit must not be set to ‘1’ if CALW8=1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tamptrg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some(
-                        "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some(
-                        "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Refckon",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "RTC_REFIN detection disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "RTC_REFIN detection enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tamppudis",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Precharge RTC_TAMPx pins before sampling (enable internal pull-up)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Disable precharge of RTC_TAMPx pins",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -2166,21 +2145,42 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "AlrmrWdsel",
+            name: "Refckon",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DATEUNITS",
+                    name: "DISABLED",
                     description: Some(
-                        "DU[3:0] represents the date units",
+                        "RTC_REFIN detection disabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WEEKDAY",
+                    name: "ENABLED",
                     description: Some(
-                        "DU[3:0] represents the week day. DT[1:0] is don’t care",
+                        "RTC_REFIN detection enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ampm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "AM",
+                    description: Some(
+                        "AM or 24-hour format",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PM",
+                    description: Some(
+                        "PM",
                     ),
                     value: 1,
                 },

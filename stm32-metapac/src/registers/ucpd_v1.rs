@@ -314,70 +314,40 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cfgr2",
+            name: "RxOrdextr1",
             extends: None,
             description: Some(
-                "configuration register 2",
+                "Rx ordered set extension register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rxfiltdis",
+                    name: "rxsopx1",
                     description: Some(
-                        "BMC decoder Rx pre-filter enable\r The sampling clock is that of the receiver (that is, after pre-scaler).",
+                        "Ordered set 1 received\r The bitfield contains a full 20-bit sequence received, consisting of four K‑codes, each of five bits. The bit 0 (bit 0 of K‑code1) is receive first, the bit 19 (bit 4 of K‑code4) last.",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxfilt2n3",
-                    description: Some(
-                        "BMC decoder Rx pre-filter sampling method\r Number of consistent consecutive samples before confirming a new value.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "forceclk",
-                    description: Some(
-                        "Force ClkReq clock request",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wupen",
-                    description: Some(
-                        "Wakeup from Stop mode enable\r Setting the bit enables the ASYNC_INT signal.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
+                    bit_size: 20,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "TxOrdsetr",
+            name: "Txdr",
             extends: None,
             description: Some(
-                "Tx ordered set type register",
+                "Tx data register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txordset",
+                    name: "txdata",
                     description: Some(
-                        "Ordered set to transmit\r The bitfield determines a full 20-bit sequence to transmit, consisting of four K-codes, each of five bits, defining the packet to transmit. The bit 0 (bit 0 of K-code1) is the first, the bit 19 (bit 4 of K‑code4) the last.",
+                        "Data byte to transmit",
                     ),
                     bit_offset: 0,
-                    bit_size: 20,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -424,66 +394,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "RxOrdextr2",
-            extends: None,
-            description: Some(
-                "Rx ordered set extension register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxsopx2",
-                    description: Some(
-                        "Ordered set 2 received\r The bitfield contains a full 20-bit sequence received, consisting of four K‑codes, each of five bits. The bit 0 (bit 0 of K‑code1) is receive first, the bit 19 (bit 4 of K‑code4) last.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 20,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txdr",
-            extends: None,
-            description: Some(
-                "Tx data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txdata",
-                    description: Some(
-                        "Data byte to transmit",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "TxPayszr",
-            extends: None,
-            description: Some(
-                "Tx payload size register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txpaysz",
-                    description: Some(
-                        "Payload size yet to transmit\r The bitfield is modified by software and by hardware. It contains the number of bytes of a payload (including header but excluding CRC) yet to transmit: each time a data byte is written into the TXDR register, the bitfield value decrements and the TXIS bit is set, except when the bitfield value reaches zero. The enumerated values are standard payload sizes before the start of transmission.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Rxdr",
             extends: None,
             description: None,
@@ -496,6 +406,46 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ipid",
+            extends: None,
+            description: Some(
+                "UCPD IP ID register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ipid",
+                    description: Some(
+                        "IPID",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "TxOrdsetr",
+            extends: None,
+            description: Some(
+                "Tx ordered set type register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txordset",
+                    description: Some(
+                        "Ordered set to transmit\r The bitfield determines a full 20-bit sequence to transmit, consisting of four K-codes, each of five bits, defining the packet to transmit. The bit 0 (bit 0 of K-code1) is the first, the bit 19 (bit 4 of K‑code4) the last.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 20,
                     array: None,
                     enumm: None,
                 },
@@ -690,6 +640,168 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cfgr1",
+            extends: None,
+            description: Some(
+                "configuration register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hbitclkdiv",
+                    description: Some(
+                        "Division ratio for producing half-bit clock\r The bitfield determines the division ratio (the bitfield value plus one) of a clk divider producing half-bit clock (hbit_clk).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ifrgap",
+                    description: Some(
+                        "Division ratio for producing inter-frame gap timer clock\r The bitfield determines the division ratio (the bitfield value minus one) of a clk divider producing inter-frame gap timer clock (tInterFrameGap).\r The division ratio 15 is to apply for Tx clock at the USB PD 2.0 specification nominal value. The division ratios below 15 are to apply for Tx clock below nominal, and the division ratios above 15 for Tx clock above nominal.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "transwin",
+                    description: Some(
+                        "Transition window duration\r The bitfield determines the division ratio (the bitfield value minus one) of a hbit_clk divider producing tTransitionWindow interval.\r Set a value that produces an interval of 12 to 20 us, taking into account the clk frequency and the HBITCLKDIV[5:0] bitfield setting.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "psc_usbpdclk",
+                    description: Some(
+                        "Pre-scaler division ratio for generating clk\r The bitfield determines the division ratio of a kernel clock pre-scaler producing peripheral clock (clk).\r It is recommended to use the pre-scaler so as to set the clk frequency in the range from 6 to 9 MHz.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "PscUsbpdclk",
+                    ),
+                },
+                Field {
+                    name: "rxordseten",
+                    description: Some(
+                        "Receiver ordered set enable\r The bitfield determines the types of ordered sets that the receiver must detect. When set/cleared, each bit enables/disables a specific function:\r 0bxxxxxxxx1: SOP detect enabled\r 0bxxxxxxx1x: SOP' detect enabled\r 0bxxxxxx1xx: SOP'' detect enabled\r 0bxxxxx1xxx: Hard Reset detect enabled\r 0bxxxx1xxxx: Cable Detect reset enabled\r 0bxxx1xxxxx: SOP'_Debug enabled\r 0bxx1xxxxxx: SOP''_Debug enabled\r 0bx1xxxxxxx: SOP extension#1 enabled\r 0b1xxxxxxxx: SOP extension#2 enabled",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txdmaen",
+                    description: Some(
+                        "Transmission DMA mode enable\r When set, the bit enables DMA mode for transmission.",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdmaen",
+                    description: Some(
+                        "Reception DMA mode enable\r When set, the bit enables DMA mode for reception.",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucpden",
+                    description: Some(
+                        "peripheral enable\r General enable of the peripheral.\r Upon disabling, the peripheral instantly quits any ongoing activity and all control bits and bitfields default to their reset values. They must be set to their desired values each time the peripheral transits from disabled to enabled state.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "TxPayszr",
+            extends: None,
+            description: Some(
+                "Tx payload size register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txpaysz",
+                    description: Some(
+                        "Payload size yet to transmit\r The bitfield is modified by software and by hardware. It contains the number of bytes of a payload (including header but excluding CRC) yet to transmit: each time a data byte is written into the TXDR register, the bitfield value decrements and the TXIS bit is set, except when the bitfield value reaches zero. The enumerated values are standard payload sizes before the start of transmission.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr2",
+            extends: None,
+            description: Some(
+                "configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxfiltdis",
+                    description: Some(
+                        "BMC decoder Rx pre-filter enable\r The sampling clock is that of the receiver (that is, after pre-scaler).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxfilt2n3",
+                    description: Some(
+                        "BMC decoder Rx pre-filter sampling method\r Number of consistent consecutive samples before confirming a new value.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "forceclk",
+                    description: Some(
+                        "Force ClkReq clock request",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wupen",
+                    description: Some(
+                        "Wakeup from Stop mode enable\r Setting the bit enables the ASYNC_INT signal.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Icr",
             extends: None,
             description: Some(
@@ -830,166 +942,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Imr",
-            extends: None,
-            description: Some(
-                "interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txisie",
-                    description: Some(
-                        "TXIS interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txmsgdiscie",
-                    description: Some(
-                        "TXMSGDISC interrupt enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txmsgsentie",
-                    description: Some(
-                        "TXMSGSENT interrupt enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txmsgabtie",
-                    description: Some(
-                        "TXMSGABT interrupt enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hrstdiscie",
-                    description: Some(
-                        "HRSTDISC interrupt enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hrstsentie",
-                    description: Some(
-                        "HRSTSENT interrupt enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txundie",
-                    description: Some(
-                        "TXUND interrupt enable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxneie",
-                    description: Some(
-                        "RXNE interrupt enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxorddetie",
-                    description: Some(
-                        "RXORDDET interrupt enable",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxhrstdetie",
-                    description: Some(
-                        "RXHRSTDET interrupt enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxovrie",
-                    description: Some(
-                        "RXOVR interrupt enable",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxmsgendie",
-                    description: Some(
-                        "RXMSGEND interrupt enable",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "typecevt1ie",
-                    description: Some(
-                        "TYPECEVT1 interrupt enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "typecevt2ie",
-                    description: Some(
-                        "TYPECEVT2 interrupt enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "frsevtie",
-                    description: Some(
-                        "FRSEVT interrupt enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "RxPayszr",
             extends: None,
             description: None,
@@ -1004,48 +956,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 10,
                     array: None,
                     enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "RxOrdsetr",
-            extends: None,
-            description: None,
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxordset",
-                    description: Some(
-                        "Rx ordered set code detected",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Rxordset",
-                    ),
-                },
-                Field {
-                    name: "rxsop3of4",
-                    description: Some(
-                        "The bit indicates the number of correct K‑codes. For debug purposes only.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxsopkinvalid",
-                    description: Some(
-                        "The bitfield is for debug purposes only.\r Others: Invalid",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Rxsopkinvalid",
-                    ),
                 },
             ],
         },
@@ -1244,6 +1154,48 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "RxOrdsetr",
+            extends: None,
+            description: None,
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxordset",
+                    description: Some(
+                        "Rx ordered set code detected",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Rxordset",
+                    ),
+                },
+                Field {
+                    name: "rxsop3of4",
+                    description: Some(
+                        "The bit indicates the number of correct K‑codes. For debug purposes only.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxsopkinvalid",
+                    description: Some(
+                        "The bitfield is for debug purposes only.\r Others: Invalid",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Rxsopkinvalid",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Cfgr3",
             extends: None,
             description: Some(
@@ -1294,37 +1246,177 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ipid",
+            name: "Imr",
             extends: None,
             description: Some(
-                "UCPD IP ID register",
+                "interrupt mask register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ipid",
+                    name: "txisie",
                     description: Some(
-                        "IPID",
+                        "TXIS interrupt enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txmsgdiscie",
+                    description: Some(
+                        "TXMSGDISC interrupt enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txmsgsentie",
+                    description: Some(
+                        "TXMSGSENT interrupt enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txmsgabtie",
+                    description: Some(
+                        "TXMSGABT interrupt enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hrstdiscie",
+                    description: Some(
+                        "HRSTDISC interrupt enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hrstsentie",
+                    description: Some(
+                        "HRSTSENT interrupt enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txundie",
+                    description: Some(
+                        "TXUND interrupt enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxneie",
+                    description: Some(
+                        "RXNE interrupt enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxorddetie",
+                    description: Some(
+                        "RXORDDET interrupt enable",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxhrstdetie",
+                    description: Some(
+                        "RXHRSTDET interrupt enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxovrie",
+                    description: Some(
+                        "RXOVR interrupt enable",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxmsgendie",
+                    description: Some(
+                        "RXMSGEND interrupt enable",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "typecevt1ie",
+                    description: Some(
+                        "TYPECEVT1 interrupt enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "typecevt2ie",
+                    description: Some(
+                        "TYPECEVT2 interrupt enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "frsevtie",
+                    description: Some(
+                        "FRSEVT interrupt enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "RxOrdextr1",
+            name: "RxOrdextr2",
             extends: None,
             description: Some(
-                "Rx ordered set extension register 1",
+                "Rx ordered set extension register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rxsopx1",
+                    name: "rxsopx2",
                     description: Some(
-                        "Ordered set 1 received\r The bitfield contains a full 20-bit sequence received, consisting of four K‑codes, each of five bits. The bit 0 (bit 0 of K‑code1) is receive first, the bit 19 (bit 4 of K‑code4) last.",
+                        "Ordered set 2 received\r The bitfield contains a full 20-bit sequence received, consisting of four K‑codes, each of five bits. The bit 0 (bit 0 of K‑code1) is receive first, the bit 19 (bit 4 of K‑code4) last.",
                     ),
                     bit_offset: 0,
                     bit_size: 20,
@@ -1333,100 +1425,71 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cfgr1",
-            extends: None,
-            description: Some(
-                "configuration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hbitclkdiv",
+    ],
+    enums: &[
+        Enum {
+            name: "Anamode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SOURCE",
                     description: Some(
-                        "Division ratio for producing half-bit clock\r The bitfield determines the division ratio (the bitfield value plus one) of a clk divider producing half-bit clock (hbit_clk).",
+                        "Source",
                     ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
+                    value: 0,
                 },
-                Field {
-                    name: "ifrgap",
+                EnumVariant {
+                    name: "SINK",
                     description: Some(
-                        "Division ratio for producing inter-frame gap timer clock\r The bitfield determines the division ratio (the bitfield value minus one) of a clk divider producing inter-frame gap timer clock (tInterFrameGap).\r The division ratio 15 is to apply for Tx clock at the USB PD 2.0 specification nominal value. The division ratios below 15 are to apply for Tx clock below nominal, and the division ratios above 15 for Tx clock above nominal.",
+                        "Sink",
                     ),
-                    bit_offset: 6,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "transwin",
-                    description: Some(
-                        "Transition window duration\r The bitfield determines the division ratio (the bitfield value minus one) of a hbit_clk divider producing tTransitionWindow interval.\r Set a value that produces an interval of 12 to 20 us, taking into account the clk frequency and the HBITCLKDIV[5:0] bitfield setting.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "psc_usbpdclk",
-                    description: Some(
-                        "Pre-scaler division ratio for generating clk\r The bitfield determines the division ratio of a kernel clock pre-scaler producing peripheral clock (clk).\r It is recommended to use the pre-scaler so as to set the clk frequency in the range from 6 to 9 MHz.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "PscUsbpdclk",
-                    ),
-                },
-                Field {
-                    name: "rxordseten",
-                    description: Some(
-                        "Receiver ordered set enable\r The bitfield determines the types of ordered sets that the receiver must detect. When set/cleared, each bit enables/disables a specific function:\r 0bxxxxxxxx1: SOP detect enabled\r 0bxxxxxxx1x: SOP' detect enabled\r 0bxxxxxx1xx: SOP'' detect enabled\r 0bxxxxx1xxx: Hard Reset detect enabled\r 0bxxxx1xxxx: Cable Detect reset enabled\r 0bxxx1xxxxx: SOP'_Debug enabled\r 0bxx1xxxxxx: SOP''_Debug enabled\r 0bx1xxxxxxx: SOP extension#1 enabled\r 0b1xxxxxxxx: SOP extension#2 enabled",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 9,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txdmaen",
-                    description: Some(
-                        "Transmission DMA mode enable\r When set, the bit enables DMA mode for transmission.",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdmaen",
-                    description: Some(
-                        "Reception DMA mode enable\r When set, the bit enables DMA mode for reception.",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpden",
-                    description: Some(
-                        "peripheral enable\r General enable of the peripheral.\r Upon disabling, the peripheral instantly quits any ongoing activity and all control bits and bitfields default to their reset values. They must be set to their desired values each time the peripheral transits from disabled to enabled state.",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
+                    value: 1,
                 },
             ],
         },
-    ],
-    enums: &[
+        Enum {
+            name: "PscUsbpdclk",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "1 (bypass)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "4",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "8",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "16",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
         Enum {
             name: "Phyccsel",
             description: None,
@@ -1480,90 +1543,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Enable CC1 and CC2 PHY",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "PscUsbpdclk",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "1 (bypass)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "4",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "8",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "16",
-                    ),
-                    value: 4,
-                },
-            ],
-        },
-        Enum {
-            name: "Rxsopkinvalid",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "No K‑code corrupted",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FIRST",
-                    description: Some(
-                        "First K‑code corrupted",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "SECOND",
-                    description: Some(
-                        "Second K‑code corrupted",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "THIRD",
-                    description: Some(
-                        "Third K‑code corrupted",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "FOURTH",
-                    description: Some(
-                        "Fourth K‑code corrupted",
-                    ),
-                    value: 4,
                 },
             ],
         },
@@ -1631,23 +1610,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Anamode",
+            name: "Txmode",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SOURCE",
+                    name: "PACKET",
                     description: Some(
-                        "Source",
+                        "Transmission of Tx packet previously defined in other registers",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SINK",
+                    name: "CABLERESET",
                     description: Some(
-                        "Sink",
+                        "Cable Reset sequence",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BIST",
+                    description: Some(
+                        "BIST test sequence (BIST Carrier Mode 2)",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1687,30 +1673,44 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Txmode",
+            name: "Rxsopkinvalid",
             description: None,
-            bit_size: 2,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "PACKET",
+                    name: "NONE",
                     description: Some(
-                        "Transmission of Tx packet previously defined in other registers",
+                        "No K‑code corrupted",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CABLERESET",
+                    name: "FIRST",
                     description: Some(
-                        "Cable Reset sequence",
+                        "First K‑code corrupted",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BIST",
+                    name: "SECOND",
                     description: Some(
-                        "BIST test sequence (BIST Carrier Mode 2)",
+                        "Second K‑code corrupted",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "THIRD",
+                    description: Some(
+                        "Third K‑code corrupted",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "FOURTH",
+                    description: Some(
+                        "Fourth K‑code corrupted",
+                    ),
+                    value: 4,
                 },
             ],
         },

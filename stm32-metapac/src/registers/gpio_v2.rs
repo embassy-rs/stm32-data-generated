@@ -203,29 +203,89 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Afr",
+            name: "Odr",
             extends: None,
             description: Some(
-                "GPIO alternate function register. This contains an array of 8 fields, which correspond to pins 0-7 of the port (for AFRL) or pins 8-15 of the port (for AFRH).",
+                "GPIO port output data register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "afr",
+                    name: "odr",
                     description: Some(
-                        "Alternate function selection for one of the pins controlled by this register (0-7).",
+                        "Port output data (y = 0..15)",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
+                    bit_size: 1,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
-                                stride: 4,
+                                len: 16,
+                                stride: 1,
                             },
                         ),
                     ),
-                    enumm: None,
+                    enumm: Some(
+                        "Odr",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Otyper",
+            extends: None,
+            description: Some(
+                "GPIO port output type register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ot",
+                    description: Some(
+                        "Port x configuration bits (y = 0..15)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Ot",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idr",
+            extends: None,
+            description: Some(
+                "GPIO port input data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "idr",
+                    description: Some(
+                        "Port input data (y = 0..15)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Idr",
+                    ),
                 },
             ],
         },
@@ -274,93 +334,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Idr",
-            extends: None,
-            description: Some(
-                "GPIO port input data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idr",
-                    description: Some(
-                        "Port input data (y = 0..15)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Idr",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Moder",
-            extends: None,
-            description: Some(
-                "GPIO port mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "moder",
-                    description: Some(
-                        "Port x configuration bits (y = 0..15)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Moder",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pupdr",
-            extends: None,
-            description: Some(
-                "GPIO port pull-up/pull-down register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pupdr",
-                    description: Some(
-                        "Port x configuration bits (y = 0..15)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pupdr",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Lckr",
             extends: None,
             description: Some(
@@ -402,104 +375,145 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Otyper",
+            name: "Pupdr",
             extends: None,
             description: Some(
-                "GPIO port output type register",
+                "GPIO port pull-up/pull-down register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ot",
+                    name: "pupdr",
                     description: Some(
                         "Port x configuration bits (y = 0..15)",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: Some(
                         Array::Regular(
                             RegularArray {
                                 len: 16,
-                                stride: 1,
+                                stride: 2,
                             },
                         ),
                     ),
                     enumm: Some(
-                        "Ot",
+                        "Pupdr",
                     ),
                 },
             ],
         },
         FieldSet {
-            name: "Odr",
+            name: "Moder",
             extends: None,
             description: Some(
-                "GPIO port output data register",
+                "GPIO port mode register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "odr",
+                    name: "moder",
                     description: Some(
-                        "Port output data (y = 0..15)",
+                        "Port x configuration bits (y = 0..15)",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: Some(
                         Array::Regular(
                             RegularArray {
                                 len: 16,
-                                stride: 1,
+                                stride: 2,
                             },
                         ),
                     ),
                     enumm: Some(
-                        "Odr",
+                        "Moder",
                     ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Afr",
+            extends: None,
+            description: Some(
+                "GPIO alternate function register. This contains an array of 8 fields, which correspond to pins 0-7 of the port (for AFRL) or pins 8-15 of the port (for AFRH).",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "afr",
+                    description: Some(
+                        "Alternate function selection for one of the pins controlled by this register (0-7).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
         Enum {
-            name: "Idr",
+            name: "Ot",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
+                    name: "PUSHPULL",
                     description: Some(
-                        "Input is logic low",
+                        "Output push-pull (reset state)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HIGH",
+                    name: "OPENDRAIN",
                     description: Some(
-                        "Input is logic high",
+                        "Output open-drain",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Lckk",
+            name: "Moder",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOTACTIVE",
+                    name: "INPUT",
                     description: Some(
-                        "Port configuration lock key not active",
+                        "Input mode (reset state)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVE",
+                    name: "OUTPUT",
                     description: Some(
-                        "Port configuration lock key active",
+                        "General purpose output mode",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ALTERNATE",
+                    description: Some(
+                        "Alternate function mode",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "ANALOG",
+                    description: Some(
+                        "Analog mode",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -528,6 +542,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "Pull-down",
                     ),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Idr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "Input is logic low",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some(
+                        "Input is logic high",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -567,48 +602,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lck",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some(
-                        "Port configuration not locked",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some(
-                        "Port configuration locked",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ot",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PUSHPULL",
-                    description: Some(
-                        "Output push-pull (reset state)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OPENDRAIN",
-                    description: Some(
-                        "Output open-drain",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Odr",
             description: None,
             bit_size: 1,
@@ -630,37 +623,44 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Moder",
+            name: "Lck",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "INPUT",
+                    name: "UNLOCKED",
                     description: Some(
-                        "Input mode (reset state)",
+                        "Port configuration not locked",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OUTPUT",
+                    name: "LOCKED",
                     description: Some(
-                        "General purpose output mode",
+                        "Port configuration locked",
                     ),
                     value: 1,
                 },
+            ],
+        },
+        Enum {
+            name: "Lckk",
+            description: None,
+            bit_size: 1,
+            variants: &[
                 EnumVariant {
-                    name: "ALTERNATE",
+                    name: "NOTACTIVE",
                     description: Some(
-                        "Alternate function mode",
+                        "Port configuration lock key not active",
                     ),
-                    value: 2,
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "ANALOG",
+                    name: "ACTIVE",
                     description: Some(
-                        "Analog mode",
+                        "Port configuration lock key active",
                     ),
-                    value: 3,
+                    value: 1,
                 },
             ],
         },

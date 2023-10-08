@@ -140,59 +140,29 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Fnr",
+            name: "Daddr",
             extends: None,
             description: Some(
-                "frame number register",
+                "device address",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fn_",
+                    name: "add",
                     description: Some(
-                        "FN",
+                        "device address",
                     ),
                     bit_offset: 0,
-                    bit_size: 11,
+                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "lsof",
+                    name: "ef",
                     description: Some(
-                        "LSOF",
+                        "USB device enabled",
                     ),
-                    bit_offset: 11,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lck",
-                    description: Some(
-                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdm",
-                    description: Some(
-                        "received data minus upstream port data line",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdp",
-                    description: Some(
-                        "received data plus upstream port data line",
-                    ),
-                    bit_offset: 15,
+                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -252,49 +222,59 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Btable",
+            name: "Fnr",
             extends: None,
             description: Some(
-                "Buffer table address",
+                "frame number register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "btable",
+                    name: "fn_",
                     description: Some(
-                        "BTABLE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Daddr",
-            extends: None,
-            description: Some(
-                "device address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "add",
-                    description: Some(
-                        "device address",
+                        "FN",
                     ),
                     bit_offset: 0,
-                    bit_size: 7,
+                    bit_size: 11,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ef",
+                    name: "lsof",
                     description: Some(
-                        "USB device enabled",
+                        "LSOF",
                     ),
-                    bit_offset: 7,
+                    bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lck",
+                    description: Some(
+                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdm",
+                    description: Some(
+                        "received data minus upstream port data line",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdp",
+                    description: Some(
+                        "received data plus upstream port data line",
+                    ),
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -584,6 +564,26 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Btable",
+            extends: None,
+            description: Some(
+                "Buffer table address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "btable",
+                    description: Some(
+                        "BTABLE",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Epr",
             extends: None,
             description: Some(
@@ -702,41 +702,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "EpType",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BULK",
-                    description: Some(
-                        "Bulk endpoint",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTROL",
-                    description: Some(
-                        "Control endpoint",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ISO",
-                    description: Some(
-                        "Iso endpoint",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "INTERRUPT",
-                    description: Some(
-                        "Interrupt endpoint",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Stat",
             description: None,
             bit_size: 2,
@@ -772,27 +737,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lpmack",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NYET",
-                    description: Some(
-                        "the valid LPM Token will be NYET",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACK",
-                    description: Some(
-                        "the valid LPM Token will be ACK",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Dir",
             description: None,
             bit_size: 1,
@@ -808,6 +752,62 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FROM",
                     description: Some(
                         "data received by the USB peripheral from the host PC",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "EpType",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BULK",
+                    description: Some(
+                        "Bulk endpoint",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONTROL",
+                    description: Some(
+                        "Control endpoint",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "ISO",
+                    description: Some(
+                        "Iso endpoint",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "INTERRUPT",
+                    description: Some(
+                        "Interrupt endpoint",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpmack",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NYET",
+                    description: Some(
+                        "the valid LPM Token will be NYET",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACK",
+                    description: Some(
+                        "the valid LPM Token will be ACK",
                     ),
                     value: 1,
                 },

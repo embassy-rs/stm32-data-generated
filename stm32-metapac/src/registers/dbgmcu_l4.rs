@@ -65,6 +65,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Apb1fzr2",
+            extends: None,
+            description: Some("Debug MCU APB1 freeze register 2"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "lptim2",
+                description: Some("LPTIM2 counter stopped when core is halted"),
+                bit_offset: 5,
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Idcode",
             extends: None,
             description: Some("DBGMCU_IDCODE"),
@@ -87,20 +101,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Apb1fzr2",
-            extends: None,
-            description: Some("Debug MCU APB1 freeze register 2"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "lptim2",
-                description: Some("LPTIM2 counter stopped when core is halted"),
-                bit_offset: 5,
-                bit_size: 1,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Apb2fzr",

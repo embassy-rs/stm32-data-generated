@@ -210,6 +210,50 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
+            name: "OpampCsrCalsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PERCENT3_3",
+                    description: Some("0.033*VDDA applied to OPAMP inputs during calibration"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PERCENT10",
+                    description: Some("0.1*VDDA applied to OPAMP inputs during calibration"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PERCENT50",
+                    description: Some("0.5*VDDA applied to OPAMP inputs during calibration"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PERCENT90",
+                    description: Some("0.9*VDDA applied to OPAMP inputs during calibration"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampCsrOpahsm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some("OpAmp in normal mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HIGHSPEED",
+                    description: Some("OpAmp in high speed mode"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "OpampCsrUsertrim",
             description: None,
             bit_size: 1,
@@ -223,6 +267,67 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "USER",
                     description: Some("User trim used"),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampTcmrLock",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "READWRITE",
+                    description: Some("TCMR is read-write"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "READONLY",
+                    description: Some("TCMR is read-only, can only be cleared by system reset"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampCsrForceVp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some("Non-inverting input connected configured inputs"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CALIBRATIONVERIFICATION",
+                    description: Some("Non-inverting input connected to calibration reference voltage"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampTcmrVpsSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "VINP0",
+                    description: Some("VINP0 connected to VINP input"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "VINP1",
+                    description: Some("VINP1 connected to VINP input"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "VINP2",
+                    description: Some("VINP2 connected to VINP input"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DAC3_CH1",
+                    description: Some("DAC3_CH1 connected to VINP input"),
+                    value: 3,
                 },
             ],
         },
@@ -267,6 +372,50 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DAC3_CH1",
                     description: Some("DAC3_CH1 connected to VINP input"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampCsrVmSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "VINM0",
+                    description: Some("VINM0 connected to VINM input"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "VINM1",
+                    description: Some("VINM1 connected to VINM input"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PGA",
+                    description: Some("Feedback resistor connected to VINM (PGA mode)"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "OUTPUT",
+                    description: Some("OpAmp output connected to VINM (Follower mode)"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampCsrLock",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "READWRITE",
+                    description: Some("CSR is read-write"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "READONLY",
+                    description: Some("CSR is read-only, can only be cleared by system reset"),
+                    value: 1,
                 },
             ],
         },
@@ -406,155 +555,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Gain 64, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 29,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrVmSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "VINM0",
-                    description: Some("VINM0 connected to VINM input"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "VINM1",
-                    description: Some("VINM1 connected to VINM input"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PGA",
-                    description: Some("Feedback resistor connected to VINM (PGA mode)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "OUTPUT",
-                    description: Some("OpAmp output connected to VINM (Follower mode)"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrLock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "READWRITE",
-                    description: Some("CSR is read-write"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READONLY",
-                    description: Some("CSR is read-only, can only be cleared by system reset"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampTcmrVpsSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "VINP0",
-                    description: Some("VINP0 connected to VINP input"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "VINP1",
-                    description: Some("VINP1 connected to VINP input"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "VINP2",
-                    description: Some("VINP2 connected to VINP input"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DAC3_CH1",
-                    description: Some("DAC3_CH1 connected to VINP input"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrOpahsm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some("OpAmp in normal mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HIGHSPEED",
-                    description: Some("OpAmp in high speed mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampTcmrLock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "READWRITE",
-                    description: Some("TCMR is read-write"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READONLY",
-                    description: Some("TCMR is read-only, can only be cleared by system reset"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrCalsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PERCENT3_3",
-                    description: Some("0.033*VDDA applied to OPAMP inputs during calibration"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PERCENT10",
-                    description: Some("0.1*VDDA applied to OPAMP inputs during calibration"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PERCENT50",
-                    description: Some("0.5*VDDA applied to OPAMP inputs during calibration"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PERCENT90",
-                    description: Some("0.9*VDDA applied to OPAMP inputs during calibration"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrForceVp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Non-inverting input connected configured inputs"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CALIBRATIONVERIFICATION",
-                    description: Some("Non-inverting input connected to calibration reference voltage"),
-                    value: 1,
                 },
             ],
         },

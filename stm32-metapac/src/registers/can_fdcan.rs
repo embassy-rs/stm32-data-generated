@@ -627,6 +627,256 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Txfqs",
+            extends: None,
+            description: Some(
+                "The Tx FIFO/Queue status is related to the pending Tx requests listed in register TXBRP. Therefore the effect of Add/Cancellation requests may be delayed due to a running Tx scan (TXBRP not yet updated).",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tffl",
+                    description: Some(
+                        "TFFL",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tfgi",
+                    description: Some(
+                        "TFGI",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tfqpi",
+                    description: Some(
+                        "TFQPI",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tfqf",
+                    description: Some(
+                        "TFQF",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Test",
+            extends: None,
+            description: Some(
+                "Write access to the Test Register has to be enabled by setting bit CCCR[TEST] to 1 . All Test Register functions are set to their reset values when bit CCCR[TEST] is reset. Loop Back mode and software control of Tx pin FDCANx_TX are hardware test modes. Programming TX differently from 00 may disturb the message transfer on the CAN bus.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lbck",
+                    description: Some(
+                        "LBCK",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tx",
+                    description: Some(
+                        "TX",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rx",
+                    description: Some(
+                        "RX",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txbcie",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cfie",
+                    description: Some(
+                        "CFIE",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Endn",
+            extends: None,
+            description: Some(
+                "FDCAN Core Release Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "etv",
+                    description: Some(
+                        "ETV",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ecr",
+            extends: None,
+            description: Some(
+                "FDCAN Error Counter Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tec",
+                    description: Some(
+                        "TEC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rec",
+                    description: Some(
+                        "TREC",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rp",
+                    description: Some(
+                        "RP",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cel",
+                    description: Some(
+                        "CEL",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tocc",
+            extends: None,
+            description: Some(
+                "FDCAN Timeout Counter Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "etoc",
+                    description: Some(
+                        "ETOC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tos",
+                    description: Some(
+                        "TOS",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "top",
+                    description: Some(
+                        "TOP",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tscc",
+            extends: None,
+            description: Some(
+                "FDCAN Timestamp Counter Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tss",
+                    description: Some(
+                        "TSS",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tcp",
+                    description: Some(
+                        "TCP",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Ckdiv",
             extends: None,
             description: Some(
@@ -894,757 +1144,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Tdcr",
+            name: "Txbtie",
             extends: None,
             description: Some(
-                "FDCAN Transmitter Delay Compensation Register",
+                "FDCAN Tx Buffer Transmission Interrupt Enable Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tdcf",
+                    name: "tie",
                     description: Some(
-                        "TDCF",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tdco",
-                    description: Some(
-                        "TDCO",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ecr",
-            extends: None,
-            description: Some(
-                "FDCAN Error Counter Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tec",
-                    description: Some(
-                        "TEC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rec",
-                    description: Some(
-                        "TREC",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rp",
-                    description: Some(
-                        "RP",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cel",
-                    description: Some(
-                        "CEL",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tocc",
-            extends: None,
-            description: Some(
-                "FDCAN Timeout Counter Configuration Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "etoc",
-                    description: Some(
-                        "ETOC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tos",
-                    description: Some(
-                        "TOS",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "top",
-                    description: Some(
-                        "TOP",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txbcie",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cfie",
-                    description: Some(
-                        "CFIE",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Xidam",
-            extends: None,
-            description: Some(
-                "FDCAN Extended ID and Mask Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eidm",
-                    description: Some(
-                        "EIDM",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 29,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txbrp",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Buffer Request Pending Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "trp",
-                    description: Some(
-                        "TRP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txbcf",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Buffer Cancellation Finished Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cf",
-                    description: Some(
-                        "CF",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cccr",
-            extends: None,
-            description: Some(
-                "For details about setting and resetting of single bits see Software initialization.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "init",
-                    description: Some(
-                        "INIT",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cce",
-                    description: Some(
-                        "CCE",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "asm",
-                    description: Some(
-                        "ASM",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csa",
-                    description: Some(
-                        "CSA",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csr",
-                    description: Some(
-                        "CSR",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mon",
-                    description: Some(
-                        "MON",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dar",
-                    description: Some(
-                        "DAR",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "test",
-                    description: Some(
-                        "TEST",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fdoe",
-                    description: Some(
-                        "FDOE",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "brse",
-                    description: Some(
-                        "BRSE",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pxhd",
-                    description: Some(
-                        "PXHD",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "efbi",
-                    description: Some(
-                        "EFBI",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txp",
-                    description: Some(
-                        "TXP",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "niso",
-                    description: Some(
-                        "NISO",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Endn",
-            extends: None,
-            description: Some(
-                "FDCAN Core Release Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "etv",
-                    description: Some(
-                        "ETV",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txbar",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Buffer Add Request Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ar",
-                    description: Some(
-                        "AR",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hpms",
-            extends: None,
-            description: Some(
-                "This register is updated every time a Message ID filter element configured to generate a priority event match. This can be used to monitor the status of incoming high priority messages and to enable fast access to these messages.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bidx",
-                    description: Some(
-                        "BIDX",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "msi",
-                    description: Some(
-                        "MSI",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fidx",
-                    description: Some(
-                        "FIDX",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "flst",
-                    description: Some(
-                        "FLST",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tscv",
-            extends: None,
-            description: Some(
-                "FDCAN Timestamp Counter Value Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsc",
-                    description: Some(
-                        "TSC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txefs",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Event FIFO Status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "effl",
-                    description: Some(
-                        "EFFL",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "efgi",
-                    description: Some(
-                        "EFGI",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "efpi",
-                    description: Some(
-                        "EFPI",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eff",
-                    description: Some(
-                        "EFF",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tefl",
-                    description: Some(
-                        "TEFL",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txbto",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Buffer Transmission Occurred Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "to",
-                    description: Some(
-                        "TO",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dbtp",
-            extends: None,
-            description: Some(
-                "This register is only writable if bits CCCR.CCE and CCCR.INIT are set. The CAN bit time may be programed in the range of 4 to 25 time quanta. The CAN time quantum may be programmed in the range of 1 to 1024 FDCAN clock periods. tq = (DBRP + 1) FDCAN clock period. DTSEG1 is the sum of Prop_Seg and Phase_Seg1. DTSEG2 is Phase_Seg2. Therefore the length of the bit time is (programmed values) [DTSEG1 + DTSEG2 + 3] tq or (functional values) [Sync_Seg + Prop_Seg + Phase_Seg1 + Phase_Seg2] tq. The Information Processing Time (IPT) is zero, meaning the data for the next bit is available at the first clock edge after the sample point.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dsjw",
-                    description: Some(
-                        "DSJW",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dtseg2",
-                    description: Some(
-                        "DTSEG2",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dtseg1",
-                    description: Some(
-                        "DTSEG1",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbrp",
-                    description: Some(
-                        "DBRP",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tdc",
-                    description: Some(
-                        "TDC",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txfqs",
-            extends: None,
-            description: Some(
-                "The Tx FIFO/Queue status is related to the pending Tx requests listed in register TXBRP. Therefore the effect of Add/Cancellation requests may be delayed due to a running Tx scan (TXBRP not yet updated).",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tffl",
-                    description: Some(
-                        "TFFL",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfgi",
-                    description: Some(
-                        "TFGI",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfqpi",
-                    description: Some(
-                        "TFQPI",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfqf",
-                    description: Some(
-                        "TFQF",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rxgfc",
-            extends: None,
-            description: Some(
-                "Global settings for Message ID filtering. The Global Filter Configuration controls the filter path for standard and extended messages as described in Figure706: Standard Message ID filter path and Figure707: Extended Message ID filter path.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rrfe",
-                    description: Some(
-                        "RRFE",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rrfs",
-                    description: Some(
-                        "RRFS",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "anfe",
-                    description: Some(
-                        "ANFE",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "anfs",
-                    description: Some(
-                        "ANFS",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "f1om",
-                    description: Some(
-                        "FIFO 1 operation mode",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "f0om",
-                    description: Some(
-                        "FIFO 0 operation mode",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lss",
-                    description: Some(
-                        "List size standard",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lse",
-                    description: Some(
-                        "List size extended",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txbcr",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Buffer Cancellation Request Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cr",
-                    description: Some(
-                        "CR",
+                        "TIE",
                     ),
                     bit_offset: 0,
                     bit_size: 3,
@@ -1901,70 +1411,100 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Rwd",
+            name: "Dbtp",
             extends: None,
             description: Some(
-                "The RAM Watchdog monitors the READY output of the Message RAM. A Message RAM access starts the Message RAM Watchdog Counter with the value configured by the RWD[WDC] bits. The counter is reloaded with RWD[WDC] bits when the Message RAM signals successful completion by activating its READY output. In case there is no response from the Message RAM until the counter has counted down to 0, the counter stops and interrupt flag IR[WDI] bit is set. The RAM Watchdog Counter is clocked by the fdcan_pclk clock.",
+                "This register is only writable if bits CCCR.CCE and CCCR.INIT are set. The CAN bit time may be programed in the range of 4 to 25 time quanta. The CAN time quantum may be programmed in the range of 1 to 1024 FDCAN clock periods. tq = (DBRP + 1) FDCAN clock period. DTSEG1 is the sum of Prop_Seg and Phase_Seg1. DTSEG2 is Phase_Seg2. Therefore the length of the bit time is (programmed values) [DTSEG1 + DTSEG2 + 3] tq or (functional values) [Sync_Seg + Prop_Seg + Phase_Seg1 + Phase_Seg2] tq. The Information Processing Time (IPT) is zero, meaning the data for the next bit is available at the first clock edge after the sample point.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wdc",
+                    name: "dsjw",
                     description: Some(
-                        "WDC",
+                        "DSJW",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "wdv",
+                    name: "dtseg2",
                     description: Some(
-                        "WDV",
+                        "DTSEG2",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dtseg1",
+                    description: Some(
+                        "DTSEG1",
                     ),
                     bit_offset: 8,
-                    bit_size: 8,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbrp",
+                    description: Some(
+                        "DBRP",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tdc",
+                    description: Some(
+                        "TDC",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Test",
+            name: "Tocv",
             extends: None,
             description: Some(
-                "Write access to the Test Register has to be enabled by setting bit CCCR[TEST] to 1 . All Test Register functions are set to their reset values when bit CCCR[TEST] is reset. Loop Back mode and software control of Tx pin FDCANx_TX are hardware test modes. Programming TX differently from 00 may disturb the message transfer on the CAN bus.",
+                "FDCAN Timeout Counter Value Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lbck",
+                    name: "toc",
                     description: Some(
-                        "LBCK",
+                        "TOC",
                     ),
-                    bit_offset: 4,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Txbcr",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Buffer Cancellation Request Register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "tx",
+                    name: "cr",
                     description: Some(
-                        "TX",
+                        "CR",
                     ),
-                    bit_offset: 5,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rx",
-                    description: Some(
-                        "RX",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
@@ -2041,6 +1581,26 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Tscv",
+            extends: None,
+            description: Some(
+                "FDCAN Timestamp Counter Value Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsc",
+                    description: Some(
+                        "TSC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Nbtp",
             extends: None,
             description: Some(
@@ -2091,129 +1651,169 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Tscc",
+            name: "Xidam",
             extends: None,
             description: Some(
-                "FDCAN Timestamp Counter Configuration Register",
+                "FDCAN Extended ID and Mask Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tss",
+                    name: "eidm",
                     description: Some(
-                        "TSS",
+                        "EIDM",
                     ),
                     bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcp",
-                    description: Some(
-                        "TCP",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
+                    bit_size: 29,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Rxfa",
+            name: "Cccr",
             extends: None,
             description: Some(
-                "CAN Rx FIFO X Acknowledge Register",
+                "For details about setting and resetting of single bits see Software initialization.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fai",
+                    name: "init",
                     description: Some(
-                        "FAI",
+                        "INIT",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tocv",
-            extends: None,
-            description: Some(
-                "FDCAN Timeout Counter Value Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "toc",
-                    description: Some(
-                        "TOC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rxfs",
-            extends: None,
-            description: Some(
-                "FDCAN Rx FIFO X Status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ffl",
-                    description: Some(
-                        "FFL",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "fgi",
+                    name: "cce",
                     description: Some(
-                        "FGI",
+                        "CCE",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "asm",
+                    description: Some(
+                        "ASM",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "csa",
+                    description: Some(
+                        "CSA",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "csr",
+                    description: Some(
+                        "CSR",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mon",
+                    description: Some(
+                        "MON",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dar",
+                    description: Some(
+                        "DAR",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "test",
+                    description: Some(
+                        "TEST",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fdoe",
+                    description: Some(
+                        "FDOE",
                     ),
                     bit_offset: 8,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fpi",
-                    description: Some(
-                        "FPI",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ff",
-                    description: Some(
-                        "FF",
-                    ),
-                    bit_offset: 24,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rfl",
+                    name: "brse",
                     description: Some(
-                        "RFL",
+                        "BRSE",
                     ),
-                    bit_offset: 25,
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pxhd",
+                    description: Some(
+                        "PXHD",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "efbi",
+                    description: Some(
+                        "EFBI",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txp",
+                    description: Some(
+                        "TXP",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "niso",
+                    description: Some(
+                        "NISO",
+                    ),
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2221,20 +1821,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Txbtie",
+            name: "Rwd",
             extends: None,
             description: Some(
-                "FDCAN Tx Buffer Transmission Interrupt Enable Register",
+                "The RAM Watchdog monitors the READY output of the Message RAM. A Message RAM access starts the Message RAM Watchdog Counter with the value configured by the RWD[WDC] bits. The counter is reloaded with RWD[WDC] bits when the Message RAM signals successful completion by activating its READY output. In case there is no response from the Message RAM until the counter has counted down to 0, the counter stops and interrupt flag IR[WDI] bit is set. The RAM Watchdog Counter is clocked by the fdcan_pclk clock.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tie",
+                    name: "wdc",
                     description: Some(
-                        "TIE",
+                        "WDC",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdv",
+                    description: Some(
+                        "WDV",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -2361,6 +1971,96 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Rxgfc",
+            extends: None,
+            description: Some(
+                "Global settings for Message ID filtering. The Global Filter Configuration controls the filter path for standard and extended messages as described in Figure706: Standard Message ID filter path and Figure707: Extended Message ID filter path.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rrfe",
+                    description: Some(
+                        "RRFE",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rrfs",
+                    description: Some(
+                        "RRFS",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "anfe",
+                    description: Some(
+                        "ANFE",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "anfs",
+                    description: Some(
+                        "ANFS",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "f1om",
+                    description: Some(
+                        "FIFO 1 operation mode",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "f0om",
+                    description: Some(
+                        "FIFO 0 operation mode",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lss",
+                    description: Some(
+                        "List size standard",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lse",
+                    description: Some(
+                        "List size extended",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Txbc",
             extends: None,
             description: Some(
@@ -2411,6 +2111,216 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Txbar",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Buffer Add Request Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ar",
+                    description: Some(
+                        "AR",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txefa",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Event FIFO Acknowledge Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "efai",
+                    description: Some(
+                        "EFAI",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tdcr",
+            extends: None,
+            description: Some(
+                "FDCAN Transmitter Delay Compensation Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tdcf",
+                    description: Some(
+                        "TDCF",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tdco",
+                    description: Some(
+                        "TDCO",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txefs",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Event FIFO Status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "effl",
+                    description: Some(
+                        "EFFL",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "efgi",
+                    description: Some(
+                        "EFGI",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "efpi",
+                    description: Some(
+                        "EFPI",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eff",
+                    description: Some(
+                        "EFF",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tefl",
+                    description: Some(
+                        "TEFL",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txbto",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Buffer Transmission Occurred Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "to",
+                    description: Some(
+                        "TO",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rxfs",
+            extends: None,
+            description: Some(
+                "FDCAN Rx FIFO X Status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ffl",
+                    description: Some(
+                        "FFL",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fgi",
+                    description: Some(
+                        "FGI",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fpi",
+                    description: Some(
+                        "FPI",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ff",
+                    description: Some(
+                        "FF",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfl",
+                    description: Some(
+                        "RFL",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Ile",
             extends: None,
             description: Some(
@@ -2435,26 +2345,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 1,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txefa",
-            extends: None,
-            description: Some(
-                "FDCAN Tx Event FIFO Acknowledge Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "efai",
-                    description: Some(
-                        "EFAI",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 5,
                     array: None,
                     enumm: None,
                 },
@@ -2532,6 +2422,116 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 6,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txbrp",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Buffer Request Pending Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "trp",
+                    description: Some(
+                        "TRP",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hpms",
+            extends: None,
+            description: Some(
+                "This register is updated every time a Message ID filter element configured to generate a priority event match. This can be used to monitor the status of incoming high priority messages and to enable fast access to these messages.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bidx",
+                    description: Some(
+                        "BIDX",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "msi",
+                    description: Some(
+                        "MSI",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fidx",
+                    description: Some(
+                        "FIDX",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "flst",
+                    description: Some(
+                        "FLST",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rxfa",
+            extends: None,
+            description: Some(
+                "CAN Rx FIFO X Acknowledge Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fai",
+                    description: Some(
+                        "FAI",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txbcf",
+            extends: None,
+            description: Some(
+                "FDCAN Tx Buffer Cancellation Finished Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cf",
+                    description: Some(
+                        "CF",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },

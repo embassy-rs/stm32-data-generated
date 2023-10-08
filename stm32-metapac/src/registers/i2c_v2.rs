@@ -201,83 +201,57 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cr2",
+            name: "Txdr",
             extends: None,
             description: Some(
-                "Control register 2",
+                "Transmit data register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sadd",
+                    name: "txdata",
                     description: Some(
-                        "Slave address bit (master mode)",
+                        "8-bit transmit data",
                     ),
                     bit_offset: 0,
-                    bit_size: 10,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Timeoutr",
+            extends: None,
+            description: Some(
+                "Timeout register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "timeouta",
+                    description: Some(
+                        "Bus timeout A",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dir",
+                    name: "tidle",
                     description: Some(
-                        "Transfer direction (master mode)",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dir",
-                    ),
-                },
-                Field {
-                    name: "add10",
-                    description: Some(
-                        "10-bit addressing mode (master mode)",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Addmode",
-                    ),
-                },
-                Field {
-                    name: "head10r",
-                    description: Some(
-                        "10-bit address header only read direction (master receiver mode)",
+                        "Idle clock timeout detection",
                     ),
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Headr",
-                    ),
-                },
-                Field {
-                    name: "start",
-                    description: Some(
-                        "Start generation",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "stop",
+                    name: "timouten",
                     description: Some(
-                        "Stop generation (master mode)",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nack",
-                    description: Some(
-                        "NACK generation (slave mode)",
+                        "Clock timeout enable",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
@@ -285,126 +259,22 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "nbytes",
+                    name: "timeoutb",
                     description: Some(
-                        "Number of bytes",
+                        "Bus timeout B",
                     ),
                     bit_offset: 16,
-                    bit_size: 8,
+                    bit_size: 12,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "reload",
+                    name: "texten",
                     description: Some(
-                        "NBYTES reload mode",
+                        "Extended clock timeout enable",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 31,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Reload",
-                    ),
-                },
-                Field {
-                    name: "autoend",
-                    description: Some(
-                        "Automatic end mode (master mode)",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Autoend",
-                    ),
-                },
-                Field {
-                    name: "pecbyte",
-                    description: Some(
-                        "Packet error checking byte",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Timingr",
-            extends: None,
-            description: Some(
-                "Timing register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "scll",
-                    description: Some(
-                        "SCL low period (master mode)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sclh",
-                    description: Some(
-                        "SCL high period (master mode)",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdadel",
-                    description: Some(
-                        "Data hold time",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "scldel",
-                    description: Some(
-                        "Data setup time",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "presc",
-                    description: Some(
-                        "Timing prescaler",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rxdr",
-            extends: None,
-            description: Some(
-                "Receive data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxdata",
-                    description: Some(
-                        "8-bit receive data",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -567,66 +437,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Timeoutr",
-            extends: None,
-            description: Some(
-                "Timeout register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "timeouta",
-                    description: Some(
-                        "Bus timeout A",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tidle",
-                    description: Some(
-                        "Idle clock timeout detection",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "timouten",
-                    description: Some(
-                        "Clock timeout enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "timeoutb",
-                    description: Some(
-                        "Bus timeout B",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "texten",
-                    description: Some(
-                        "Extended clock timeout enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -809,6 +619,198 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 17,
                     bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rxdr",
+            extends: None,
+            description: Some(
+                "Receive data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxdata",
+                    description: Some(
+                        "8-bit receive data",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some(
+                "Control register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sadd",
+                    description: Some(
+                        "Slave address bit (master mode)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dir",
+                    description: Some(
+                        "Transfer direction (master mode)",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dir",
+                    ),
+                },
+                Field {
+                    name: "add10",
+                    description: Some(
+                        "10-bit addressing mode (master mode)",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Addmode",
+                    ),
+                },
+                Field {
+                    name: "head10r",
+                    description: Some(
+                        "10-bit address header only read direction (master receiver mode)",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Headr",
+                    ),
+                },
+                Field {
+                    name: "start",
+                    description: Some(
+                        "Start generation",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stop",
+                    description: Some(
+                        "Stop generation (master mode)",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nack",
+                    description: Some(
+                        "NACK generation (slave mode)",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nbytes",
+                    description: Some(
+                        "Number of bytes",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reload",
+                    description: Some(
+                        "NBYTES reload mode",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Reload",
+                    ),
+                },
+                Field {
+                    name: "autoend",
+                    description: Some(
+                        "Automatic end mode (master mode)",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Autoend",
+                    ),
+                },
+                Field {
+                    name: "pecbyte",
+                    description: Some(
+                        "Packet error checking byte",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Oar1",
+            extends: None,
+            description: Some(
+                "Own address register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "oa1",
+                    description: Some(
+                        "Interface address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oa1mode",
+                    description: Some(
+                        "Own Address 1 10-bit mode",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Addmode",
+                    ),
+                },
+                Field {
+                    name: "oa1en",
+                    description: Some(
+                        "Own Address 1 enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1017,62 +1019,60 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Oar1",
+            name: "Timingr",
             extends: None,
             description: Some(
-                "Own address register 1",
+                "Timing register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "oa1",
+                    name: "scll",
                     description: Some(
-                        "Interface address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "oa1mode",
-                    description: Some(
-                        "Own Address 1 10-bit mode",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Addmode",
-                    ),
-                },
-                Field {
-                    name: "oa1en",
-                    description: Some(
-                        "Own Address 1 enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txdr",
-            extends: None,
-            description: Some(
-                "Transmit data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txdata",
-                    description: Some(
-                        "8-bit transmit data",
+                        "SCL low period (master mode)",
                     ),
                     bit_offset: 0,
                     bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sclh",
+                    description: Some(
+                        "SCL high period (master mode)",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdadel",
+                    description: Some(
+                        "Data hold time",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "scldel",
+                    description: Some(
+                        "Data setup time",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "presc",
+                    description: Some(
+                        "Timing prescaler",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -1081,21 +1081,21 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Dir",
+            name: "Reload",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WRITE",
+                    name: "COMPLETED",
                     description: Some(
-                        "Write transfer, slave enters receiver mode",
+                        "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "READ",
+                    name: "NOTCOMPLETED",
                     description: Some(
-                        "Read transfer, slave enters transmitter mode",
+                        "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)",
                     ),
                     value: 1,
                 },
@@ -1161,6 +1161,48 @@ pub(crate) static REGISTERS: IR = IR {
                         "OA2[7:1] are masked and don’t care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged",
                     ),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Addmode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some(
+                        "7-bit addressing mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT10",
+                    description: Some(
+                        "10-bit addressing mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dir",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "WRITE",
+                    description: Some(
+                        "Write transfer, slave enters receiver mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "READ",
+                    description: Some(
+                        "Read transfer, slave enters transmitter mode",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -1284,21 +1326,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Reload",
+            name: "Autoend",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "COMPLETED",
+                    name: "SOFTWARE",
                     description: Some(
-                        "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)",
+                        "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTCOMPLETED",
+                    name: "AUTOMATIC",
                     description: Some(
-                        "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)",
+                        "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred",
                     ),
                     value: 1,
                 },
@@ -1320,48 +1362,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PARTIAL",
                     description: Some(
                         "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Addmode",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BIT7",
-                    description: Some(
-                        "7-bit addressing mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT10",
-                    description: Some(
-                        "10-bit addressing mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Autoend",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some(
-                        "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "AUTOMATIC",
-                    description: Some(
-                        "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred",
                     ),
                     value: 1,
                 },

@@ -103,20 +103,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cselr",
-            extends: None,
-            description: Some("channel selection register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cs",
-                description: Some("DMA channel selection"),
-                bit_offset: 0,
-                bit_size: 4,
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Isr",
             extends: None,
             description: Some("DMA interrupt status register (DMA_ISR)"),
@@ -155,20 +141,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Ndtr",
-            extends: None,
-            description: Some("DMA channel 1 number of data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ndt",
-                description: Some("Number of data to transfer"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Cr",
@@ -274,21 +246,49 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Cselr",
+            extends: None,
+            description: Some("channel selection register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cs",
+                description: Some("DMA channel selection"),
+                bit_offset: 0,
+                bit_size: 4,
+                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Ndtr",
+            extends: None,
+            description: Some("DMA channel 1 number of data register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ndt",
+                description: Some("Number of data to transfer"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
     ],
     enums: &[
         Enum {
-            name: "Circ",
+            name: "Memmem",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
-                    description: Some("Circular buffer disabled"),
+                    description: Some("Memory to memory mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
-                    description: Some("Circular buffer enabled"),
+                    description: Some("Memory to memory mode enabled"),
                     value: 1,
                 },
             ],
@@ -317,6 +317,40 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "VERYHIGH",
                     description: Some("Very high priority"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Circ",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Circular buffer disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Circular buffer enabled"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Inc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Increment mode disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Increment mode enabled"),
+                    value: 1,
                 },
             ],
         },
@@ -356,40 +390,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS32",
                     description: Some("32-bit size"),
                     value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Memmem",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Memory to memory mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Memory to memory mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Increment mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Increment mode enabled"),
-                    value: 1,
                 },
             ],
         },

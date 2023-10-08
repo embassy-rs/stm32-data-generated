@@ -238,20 +238,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cdr2",
-            extends: None,
-            description: Some("ADC x common regular data register for 32-bit dual mode"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "rdata_alt",
-                description: Some("Regular data of the master/slave alternated ADCs"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Ccr",
             extends: None,
             description: Some("ADC common control register"),
@@ -324,6 +310,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cdr2",
+            extends: None,
+            description: Some("ADC x common regular data register for 32-bit dual mode"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "rdata_alt",
+                description: Some("Regular data of the master/slave alternated ADCs"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Cdr",
             extends: None,
             description: Some("ADC common regular data register for dual and triple modes"),
@@ -350,18 +350,35 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "JeocMst",
+            name: "JqovfMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERFLOW",
+                    description: Some("No injected context queue overflow has occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERFLOW",
+                    description: Some("Injected context queue overflow has occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "JeosMst",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOTCOMPLETE",
-                    description: Some("Injected conversion is not complete"),
+                    description: Some("Injected sequence is not complete"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "COMPLETE",
-                    description: Some("Injected conversion complete"),
+                    description: Some("Injected sequence complete"),
                     value: 1,
                 },
             ],
@@ -384,35 +401,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "JqovfMst",
+            name: "EosmpMst",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow has occurred"),
+                    name: "NOTENDED",
+                    description: Some("End of sampling phase no yet reached"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow has occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OvrMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
+                    name: "ENDED",
+                    description: Some("End of sampling phase reached"),
                     value: 1,
                 },
             ],
@@ -440,133 +440,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "EosMst",
+            name: "JeocMst",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOTCOMPLETE",
-                    description: Some("Regular sequence is not complete"),
+                    description: Some("Injected conversion is not complete"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "COMPLETE",
-                    description: Some("Regular sequence complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EosmpMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTENDED",
-                    description: Some("End of sampling phase no yet reached"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENDED",
-                    description: Some("End of sampling phase reached"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Regular conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Regular conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "JeosMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected sequence is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected sequence complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dual",
-            description: None,
-            bit_size: 5,
-            variants: &[
-                EnumVariant {
-                    name: "INDEPENDENT",
-                    description: Some("Independent mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DUALRJ",
-                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DUALRA",
-                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DUALIJ",
-                    description: Some("Dual, combined interleaved mode + injected simultaneous mode"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DUALJ",
-                    description: Some("Dual, injected simultaneous mode only"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DUALR",
-                    description: Some("Dual, regular simultaneous mode only"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DUALI",
-                    description: Some("Dual, interleaved mode only"),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DUALA",
-                    description: Some("Dual, alternate trigger mode only"),
-                    value: 9,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd1Mst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
+                    description: Some("Injected conversion complete"),
                     value: 1,
                 },
             ],
@@ -635,6 +520,121 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV256",
                     description: Some("adc_ker_ck_input divided by 256"),
                     value: 11,
+                },
+            ],
+        },
+        Enum {
+            name: "Awd1Mst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dual",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some("Independent mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DUALRJ",
+                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DUALRA",
+                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DUALIJ",
+                    description: Some("Dual, combined interleaved mode + injected simultaneous mode"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DUALJ",
+                    description: Some("Dual, injected simultaneous mode only"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DUALR",
+                    description: Some("Dual, regular simultaneous mode only"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DUALI",
+                    description: Some("Dual, interleaved mode only"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DUALA",
+                    description: Some("Dual, alternate trigger mode only"),
+                    value: 9,
+                },
+            ],
+        },
+        Enum {
+            name: "EosMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Regular sequence is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Regular sequence complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OvrMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "EocMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Regular conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Regular conversion complete"),
+                    value: 1,
                 },
             ],
         },

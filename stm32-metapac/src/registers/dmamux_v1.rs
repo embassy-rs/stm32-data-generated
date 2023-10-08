@@ -157,6 +157,33 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Csr",
+            extends: None,
+            description: Some(
+                "DMAMUX request line multiplexer interrupt channel status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sof",
+                    description: Some(
+                        "Synchronization overrun event flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Rgcr",
             extends: None,
             description: Some(
@@ -214,33 +241,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 19,
                     bit_size: 5,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some(
-                "DMAMUX request line multiplexer interrupt channel status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sof",
-                    description: Some(
-                        "Synchronization overrun event flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],

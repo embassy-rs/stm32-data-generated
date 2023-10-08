@@ -779,19 +779,429 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ahb5rstr",
+            name: "Apb2rstr",
             extends: None,
             description: Some(
-                "RCC AHB5 peripheral reset register",
+                "RCC APB2 peripheral reset register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "radiorst",
+                    name: "tim1rst",
                     description: Some(
-                        "2.4 GHz RADIO reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RADIOSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "TIM1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi1rst",
+                    description: Some(
+                        "SPI1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart1rst",
+                    description: Some(
+                        "USART1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim16rst",
+                    description: Some(
+                        "TIM16 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM16SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim17rst",
+                    description: Some(
+                        "TIM17 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM17SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Csr",
+            extends: None,
+            description: Some(
+                "RCC control/status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rmvf",
+                    description: Some(
+                        "Remove reset flag\r Set by software to clear the reset flags.\r Access can be secured by RCC RMVFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oblrstf",
+                    description: Some(
+                        "Option byte loader reset flag\r Set by hardware when a reset from the option byte loading occurs.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pinrstf",
+                    description: Some(
+                        "NRST pin reset flag\r Set by hardware when a reset from the NRST pin occurs.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "borrstf",
+                    description: Some(
+                        "BOR flag\r Set by hardware when a BOR occurs.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sftrstf",
+                    description: Some(
+                        "Software reset flag\r Set by hardware when a software reset occurs.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iwdgrstf",
+                    description: Some(
+                        "Independent watchdog reset flag\r Set by hardware when an independent watchdog reset domain occurs.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wwdgrstf",
+                    description: Some(
+                        "Window watchdog reset flag\r Set by hardware when a window watchdog reset occurs.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpwrrstf",
+                    description: Some(
+                        "Low-power reset flag\r Set by hardware when a reset occurs due to illegal Stop and Standby modes entry.\r Cleared by writing to the RMVF bit.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pll1divr",
+            extends: None,
+            description: Some(
+                "RCC PLL1 dividers register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "plln",
+                    description: Some(
+                        "Multiplication factor for PLL1 VCO\r Set and reset by software to control the multiplication factor of the VCO.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r ...\r ...\r others: reserved\r VCO output frequency = F<sub>ref1_ck</sub> x multiplication factor for PLL1 VCO, when fractional value 0 has been loaded into PLL1FRACN, with: \r Multiplication factor for PLL1 VCO between 4 and 512\r input frequency F<sub>ref1_ck</sub> between 4 and 16�MHz",
                     ),
                     bit_offset: 0,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllp",
+                    description: Some(
+                        "PLL1 DIVP division factor\r Set and reset by software to control the frequency of the pll1pclk clock.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r Note that odd division factors are not allowed.\r ...",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllq",
+                    description: Some(
+                        "PLL1 DIVQ division factor\r Set and reset by software to control the frequency of the PLl1QCLK clock.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r ...",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllr",
+                    description: Some(
+                        "PLL1 DIVR division factor\r Set and reset by software to control the frequency of the pll1rclk clock.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r ...",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb7rstr",
+            extends: None,
+            description: Some(
+                "RCC APB7 peripheral reset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "syscfgrst",
+                    description: Some(
+                        "SYSCFG reset\r Set and cleared by software.\r Access can be secured by SYSCFG SYSCFGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi3rst",
+                    description: Some(
+                        "SPI3 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpuart1rst",
+                    description: Some(
+                        "LPUART1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c3rst",
+                    description: Some(
+                        "I2C3 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptim1rst",
+                    description: Some(
+                        "LPTIM1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb1enr1",
+            extends: None,
+            description: Some(
+                "RCC APB1 peripheral clock enable register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim2en",
+                    description: Some(
+                        "TIM2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim3en",
+                    description: Some(
+                        "TIM3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wwdgen",
+                    description: Some(
+                        "WWDG bus clock enable\r Set by software to enable the window watchdog bus clock. Reset by hardware system reset.\r This bit can also be set by hardware if the WWDG_SW option bit is reset.\r Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart2en",
+                    description: Some(
+                        "USART2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART2SEC When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c1en",
+                    description: Some(
+                        "I2C1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb4enr",
+            extends: None,
+            description: Some(
+                "RCC AHB4 peripheral clock enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pwren",
+                    description: Some(
+                        "PWR bus clock enable\r Set and cleared by software.\r Can only be accessed secure when one or more features in the PWR is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adc4en",
+                    description: Some(
+                        "ADC4 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb1smenr1",
+            extends: None,
+            description: Some(
+                "RCC APB1 peripheral clocks enable in Sleep and Stop modes\tregister 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim2smen",
+                    description: Some(
+                        "TIM2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim3smen",
+                    description: Some(
+                        "TIM3 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wwdgsmen",
+                    description: Some(
+                        "Window watchdog bus clock enable during Sleep and Stop modes\r Set and cleared by software. This bit is forced to 1 by hardware when the hardware WWDG option is activated.\r Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart2smen",
+                    description: Some(
+                        "USART2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c1smen",
+                    description: Some(
+                        "I2C1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb1rstr2",
+            extends: None,
+            description: Some(
+                "RCC APB1 peripheral reset register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lptim2rst",
+                    description: Some(
+                        "LPTIM2 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -879,139 +1289,89 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccipr3",
+            name: "Ahb1smenr",
             extends: None,
             description: Some(
-                "RCC peripherals independent clock configuration register 3",
+                "RCC AHB1 peripheral clocks enable in Sleep and Stop modes register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lpuart1sel",
+                    name: "gpdma1smen",
                     description: Some(
-                        "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPUART1 is functional in Stop modes only when the kernel clock is HSI16 or LSE.",
+                        "GPDMA1 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPDMA1 SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
                     ),
                     bit_offset: 0,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lpuartsel",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "spi3sel",
+                    name: "flashsmen",
                     description: Some(
-                        "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI3 is functional in Stop modes only when the kernel clock is HSI16.",
+                        "FLASH bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secured when the Flash security state is secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 3,
-                    bit_size: 2,
+                    bit_offset: 8,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Spisel",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "i2c3sel",
+                    name: "crcsmen",
                     description: Some(
-                        "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C3 is functional in Stop modes only when the kernel clock is HSI16",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Icsel",
-                    ),
-                },
-                Field {
-                    name: "lptim1sel",
-                    description: Some(
-                        "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM1 is functional in Stop modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1.",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Lptimsel",
-                    ),
-                },
-                Field {
-                    name: "adcsel",
-                    description: Some(
-                        "ADC4 kernel clock source selection\r These bits are used to select the ADC4 kernel clock source.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r others: reserved\r Note: The ADC4 is functional in Stop modes only when the kernel clock is HSI16.",
+                        "CRC bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC CRCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 12,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Adcsel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cifr",
-            extends: None,
-            description: Some(
-                "RCC clock interrupt flag register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lsi1rdyf",
-                    description: Some(
-                        "LSI1 ready interrupt flag\r Set by hardware when the LSI1 clock becomes stable and LSI1RDYIE is set.\r Cleared by software setting the LSI1RDYC bit.\r Access to the bit can be secured by RCC LSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "lserdyf",
+                    name: "tscsmen",
                     description: Some(
-                        "LSE ready interrupt flag\r Set by hardware when the LSE clock becomes stable and LSERDYIE is set.\r Cleared by software setting the LSERDYC bit.\r Access to the bit can be secured by RCC LSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "TSC bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TSCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "hsirdyf",
+                    name: "ramcfgsmen",
                     description: Some(
-                        "HSI16 ready interrupt flag\r Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Cleared by software setting the HSIRDYC bit.",
+                        "RAMCFG bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RAMCFGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "hserdyf",
+                    name: "gtzc1smen",
                     description: Some(
-                        "HSE32 ready interrupt flag\r Set by hardware when the HSE32 clock becomes stable and HSERDYIE is set.\r Cleared by software setting the HSERDYC bit.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "GTZC1 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secure when one device is secure (TZEN = 1). When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: 24,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pllrdyf",
+                    name: "icachesmen",
                     description: Some(
-                        "PLL1 ready interrupt flag\r Set by hardware when the PLL1 locks and PLL1RDYIE is set.\r Cleared by software setting the PLL1RDYC bit.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "ICACHE bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC ICACHE_REGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
                     ),
-                    bit_offset: 6,
+                    bit_offset: 29,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "hsecssf",
+                    name: "sram1smen",
                     description: Some(
-                        "HSE32 clock security system interrupt flag\r Set by hardware when a clock security failure is detected in the HSE32 oscillator.\r Cleared by software setting the HSECSSC bit.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "SRAM1 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_MPCBB1 SECx, INVSECSTATE. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 10,
+                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1019,20 +1379,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Apb1enr2",
+            name: "Ecscr1",
             extends: None,
             description: Some(
-                "RCC APB1 peripheral clock enable register 2",
+                "RCC external clock sources calibration register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lptim2en",
+                    name: "hsetrim",
                     description: Some(
-                        "LPTIM2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "HSE32 clock trimming \r These bits provide user-programmable capacitor trimming value. It can be programmed to adjust the HSE32 oscillator frequency.",
                     ),
-                    bit_offset: 5,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
@@ -1149,496 +1509,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cfgr1",
-            extends: None,
-            description: Some(
-                "RCC clock configuration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sw",
-                    description: Some(
-                        "system clock switch\r Set and cleared by software to select system clock source (SYSCLK).\r Cleared by hardware when entering Stop and Standby modes\r When selecting HSE32 directly or indirectly as system clock and HSE32 oscillator clock security fails, cleared by hardware.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Sw",
-                    ),
-                },
-                Field {
-                    name: "sws",
-                    description: Some(
-                        "system clock switch status\r Set and cleared by hardware to indicate which clock source is used as system clock.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Sw",
-                    ),
-                },
-                Field {
-                    name: "mcosel",
-                    description: Some(
-                        "microcontroller clock output\r Set and cleared by software.\r others: reserved\r Note: This clock output may have some truncated cycles at startup or during MCO clock source switching.",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Mcosel",
-                    ),
-                },
-                Field {
-                    name: "mcopre",
-                    description: Some(
-                        "microcontroller clock output prescaler\r Set and cleared by software.\r It is highly recommended to change this prescaler before MCO output is enabled.\r others: not allowed",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Mcopre",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some(
-                "RCC control/status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rmvf",
-                    description: Some(
-                        "Remove reset flag\r Set by software to clear the reset flags.\r Access can be secured by RCC RMVFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "oblrstf",
-                    description: Some(
-                        "Option byte loader reset flag\r Set by hardware when a reset from the option byte loading occurs.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pinrstf",
-                    description: Some(
-                        "NRST pin reset flag\r Set by hardware when a reset from the NRST pin occurs.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "borrstf",
-                    description: Some(
-                        "BOR flag\r Set by hardware when a BOR occurs.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sftrstf",
-                    description: Some(
-                        "Software reset flag\r Set by hardware when a software reset occurs.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "iwdgrstf",
-                    description: Some(
-                        "Independent watchdog reset flag\r Set by hardware when an independent watchdog reset domain occurs.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wwdgrstf",
-                    description: Some(
-                        "Window watchdog reset flag\r Set by hardware when a window watchdog reset occurs.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpwrrstf",
-                    description: Some(
-                        "Low-power reset flag\r Set by hardware when a reset occurs due to illegal Stop and Standby modes entry.\r Cleared by writing to the RMVF bit.",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb4smenr",
-            extends: None,
-            description: Some(
-                "RCC AHB4 peripheral clocks enable in Sleep and Stop modes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pwrsmen",
-                    description: Some(
-                        "PWR bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secure when one or more features in the PWR is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adc4smen",
-                    description: Some(
-                        "ADC4 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb7enr",
-            extends: None,
-            description: Some(
-                "RCC APB7 peripheral clock enable register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "syscfgen",
-                    description: Some(
-                        "SYSCFG bus clock enable\r Set and cleared by software.\r Access can be secured by SYSCFG SYSCFGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3en",
-                    description: Some(
-                        "SPI3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpuart1en",
-                    description: Some(
-                        "LPUART1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c3en",
-                    description: Some(
-                        "I2C3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lptim1en",
-                    description: Some(
-                        "LPTIM1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rtcapben",
-                    description: Some(
-                        "RTC and TAMP bus clock enable\r Set and cleared by software.\r Can only be accessed secure when one or more features in the RTC or TAMP is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ecscr1",
-            extends: None,
-            description: Some(
-                "RCC external clock sources calibration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hsetrim",
-                    description: Some(
-                        "HSE32 clock trimming \r These bits provide user-programmable capacitor trimming value. It can be programmed to adjust the HSE32 oscillator frequency.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr3",
-            extends: None,
-            description: Some(
-                "RCC clock configuration register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ppre7",
-                    description: Some(
-                        "APB7 prescaler\r Set and cleared by software to control the division factor of the APB7 clock (pclk7).\r 0xx: hclk1 not divided",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Ppre",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some(
-                "RCC secure configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hsisec",
-                    description: Some(
-                        "HSI16 clock configuration and status bits security\r Set and reset by software.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsesec",
-                    description: Some(
-                        "HSE32 clock configuration bits, status bits and HSECSS security\r Set and reset by software.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lsisec",
-                    description: Some(
-                        "LSI clock configuration and status bits security\r Set and reset by software.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lsesec",
-                    description: Some(
-                        "LSE clock configuration and status bits security\r Set and reset by software.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sysclksec",
-                    description: Some(
-                        "SYSCLK selection, clock output on MCO configuration security\r Set and reset by software.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "prescsec",
-                    description: Some(
-                        "AHBx/APBx prescaler configuration bits security\r Set and reset by software.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllsec",
-                    description: Some(
-                        "PLL1 clock configuration and status bits security\r Set and reset by software.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rmvfsec",
-                    description: Some(
-                        "Remove reset flag security\r Set and reset by software.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb2smenr",
-            extends: None,
-            description: Some(
-                "RCC AHB2 peripheral clocks enable in Sleep and Stop modes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "gpioasmen",
-                    description: Some(
-                        "IO port A bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOA SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiobsmen",
-                    description: Some(
-                        "IO port B bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOB SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiocsmen",
-                    description: Some(
-                        "IO port C bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOC SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiohsmen",
-                    description: Some(
-                        "IO port H bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "aessmen",
-                    description: Some(
-                        "AES bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hashsmen",
-                    description: Some(
-                        "HASH bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC HASHSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rngsmen",
-                    description: Some(
-                        "Random number generator (RNG) bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RNGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "saessmen",
-                    description: Some(
-                        "SAES accelerator bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SAESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pkasmen",
-                    description: Some(
-                        "PKA bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC PKASEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sram2smen",
-                    description: Some(
-                        "SRAM2 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_MPCBB2 SECx, INVSECSTATE. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Apb7smenr",
             extends: None,
             description: Some(
@@ -1709,17 +1579,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ahb1rstr",
+            name: "Cicr",
             extends: None,
             description: Some(
-                "RCC AHB1 peripheral reset register",
+                "RCC clock interrupt clear register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "gpdma1rst",
+                    name: "lsi1rdyc",
                     description: Some(
-                        "GPDMA1 reset\r Set and cleared by software.\r Access can be secured by GPDMA1 SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "LSI1 ready interrupt clear\r Writing this bit to 1 clears the LSI1RDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC LSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1727,21 +1597,193 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "crcrst",
+                    name: "lserdyc",
                     description: Some(
-                        "CRC reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC CRCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "LSE ready interrupt clear\r Writing this bit to 1 clears the LSERDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC LSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "tscrst",
+                    name: "hsirdyc",
                     description: Some(
-                        "TSC reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TSCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "HSI16 ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.\\\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hserdyc",
+                    description: Some(
+                        "HSE32 ready interrupt clear\r Writing this bit to 1 clears the HSERDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllrdyc",
+                    description: Some(
+                        "PLL1 ready interrupt clear\r Writing this bit to 1 clears the PLL1RDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsecssc",
+                    description: Some(
+                        "High speed external clock security system interrupt clear\r Writing this bit to 1 clears the HSECSSF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Radioenr",
+            extends: None,
+            description: Some(
+                "RCC RADIO peripheral clock enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bbclken",
+                    description: Some(
+                        "2.4 GHz RADIO baseband kernel clock (aclk) enable\r Set and cleared by software.\r Note: The HSE32 oscillator needs to be enabled by either HSEON or STRADIOCLKON.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stradioclkon",
+                    description: Some(
+                        "2.4 GHz RADIO bus clock enable and HSE32 oscillator enable by 2.4 GHz RADIO sleep timer wakeup event\r Set by hardware on a 2.4 GHz RADIO sleep timer wakeup event.\r Cleared by software writing zero to this bit.\r Note: Before accessing the 2.4 GHz RADIO registers the RADIOCLKRDY bit must be checked.",
                     ),
                     bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "radioclkrdy",
+                    description: Some(
+                        "2.4 GHz RADIO bus clock ready.\r Set and cleared by hardware to indicate that the 2.4 GHz RADIO bus clock is ready and the 2.4 GHz RADIO registers can be accessed.\r Note: Once both RADIOEN and STRADIOCLKON are cleared, RADIOCLKRDY goes low after three hclk5 clock cycles.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some(
+                "RCC clock control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hsion",
+                    description: Some(
+                        "HSI16 clock enable\r Set and cleared by software.\r Cleared by hardware when entering Stop and Standby modes. \r Set by hardware to force the HSI16 oscillator on when exiting Stop and Standby modes.\r Set by hardware to force the HSI16 oscillator on in case of clock security failure of the HSE32 crystal oscillator.\r This bit is set by hardware if the HSI16 is used directly or indirectly as system clock.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsikeron",
+                    description: Some(
+                        "HSI16 enable for some peripheral kernels\r Set and cleared by software to force HSI16 oscillator on even in Stop modes. \r Keeping the HSI16 oscillator on in Stop modes allows the communication speed not to be reduced by the HSI16 oscillator startup time. This bit has no effect on register bit HSION value.\r Cleared by hardware when entering Standby modes. \r Refer to Peripherals clock gating and autonomous mode for more details.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsirdy",
+                    description: Some(
+                        "HSI16 clock ready flag\r Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles.",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hseon",
+                    description: Some(
+                        "HSE32 clock enable\r Set and cleared by software.\r Cleared by hardware to stop the HSE32 clock for the CPU when entering Stop and Standby modes and on a HSECSS failure.\r When the HSE32 is used as 2.4 GHz RADIO kernel clock, enabled by RADIOEN and RADIOSMEN and the 2.4 GHz RADIO is active, HSEON is not be cleared when entering low power mode. In this case only Stop 0 mode is entered as low power mode.\r This bit cannot be reset if the HSE32 oscillator is used directly or indirectly as the system clock.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hserdy",
+                    description: Some(
+                        "HSE32 clock ready flag\r Set by hardware to indicate that the HSE32 oscillator is stable. This bit is set both when HSE32 is enabled by software by setting HSEON and when requested as kernel clock by the 2.4 GHz RADIO.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsecsson",
+                    description: Some(
+                        "HSE32 clock security system enable\r Set by software to enable the HSE32 clock security system. When HSECSSON is set, the clock detector is enabled by hardware when the HSE32 oscillator is ready and disabled by hardware if a HSE32 clock failure is detected. This bit is set only and is cleared by reset.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsepre",
+                    description: Some(
+                        "HSE32 clock for SYSCLK prescaler\r Set and cleared by software to control the division factor of the HSE32 clock for SYSCLK.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Hsepre",
+                    ),
+                },
+                Field {
+                    name: "pllon",
+                    description: Some(
+                        "PLL1 enable\r Set and cleared by software to enable the main PLL.\r Cleared by hardware when entering Stop or Standby modes and when PLL1 on HSE32 is selected as sysclk, on a HSECSS failure.\r This bit cannot be reset if the PLL1 clock is used as the system clock.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllrdy",
+                    description: Some(
+                        "PLL1 clock ready flag\r Set by hardware to indicate that the PLL1 is locked.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 25,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1799,59 +1841,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cier",
+            name: "Ahb5rstr",
             extends: None,
             description: Some(
-                "RCC clock interrupt enable register",
+                "RCC AHB5 peripheral reset register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lsi1rdyie",
+                    name: "radiorst",
                     description: Some(
-                        "LSI1 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the LSI1 oscillator stabilization.\r Access to the bit can be secured by RCC LSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "2.4 GHz RADIO reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RADIOSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lserdyie",
-                    description: Some(
-                        "LSE ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization.\r Access to the bit can be secured by RCC LSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsirdyie",
-                    description: Some(
-                        "HSI16 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hserdyie",
-                    description: Some(
-                        "HSE32 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSE32 oscillator stabilization.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllrdyie",
-                    description: Some(
-                        "PLL1 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by PLL1 lock.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1859,96 +1861,310 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccipr1",
+            name: "Privcfgr",
             extends: None,
             description: Some(
-                "RCC peripherals independent clock configuration register 1",
+                "RCC privilege configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "usart1sel",
+                    name: "spriv",
                     description: Some(
-                        "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "RCC secure functions privilege configuration\r Set and reset by software.\r This bit can be written only by a secure privileged access.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nspriv",
+                    description: Some(
+                        "RCC non-secure functions privilege configuration\r Set and reset by software.\r This bit can be written only by privileged access, secure or non-secure.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb1rstr",
+            extends: None,
+            description: Some(
+                "RCC AHB1 peripheral reset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "gpdma1rst",
+                    description: Some(
+                        "GPDMA1 reset\r Set and cleared by software.\r Access can be secured by GPDMA1 SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crcrst",
+                    description: Some(
+                        "CRC reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC CRCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tscrst",
+                    description: Some(
+                        "TSC reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TSCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pll1cfgr",
+            extends: None,
+            description: Some(
+                "RCC PLL1 configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pllsrc",
+                    description: Some(
+                        "PLL1 entry clock source\r Set and cleared by software to select PLL1 clock source. These bits can be written only when the PLL1 is disabled.\r Cleared by hardware when entering Stop or Standby modes. \r Note: In order to save power, when no PLL1 clock is used, the value of PLL1SRC must be 0.",
                     ),
                     bit_offset: 0,
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Pllsrc",
                     ),
                 },
                 Field {
-                    name: "usart2sel",
+                    name: "pllrge",
                     description: Some(
-                        "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "PLL1 input frequency range\r Set and reset by software to select the proper reference frequency range used for PLL1.\r This bit must be written before enabling the PLL1.\r 00-01-10: PLL1 input (ref1_ck) clock range frequency between 4 and 8 MHz",
                     ),
                     bit_offset: 2,
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Pllrge",
                     ),
                 },
                 Field {
-                    name: "i2c1sel",
+                    name: "pllfracen",
                     description: Some(
-                        "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16.",
+                        "PLL1 fractional latch enable\r Set and reset by software to latch the content of PLL1FRACN into the ΣΔ modulator.\r In order to latch the PLL1FRACN value into the ΣΔ modulator, PLL1FRACEN must be set\u{a0}to\u{a0}0, then set to 1: the transition 0 to 1 transfers the content of PLL1FRACN into the modulator (see PLL1 initialization phase for details).",
                     ),
-                    bit_offset: 10,
-                    bit_size: 2,
+                    bit_offset: 4,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Icsel",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lptim2sel",
+                    name: "pllm",
                     description: Some(
-                        "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1.",
+                        "Prescaler for PLL1\r Set and cleared by software to configure the prescaler of the PLL1. The VCO1 input frequency is PLL1 input clock frequency/PLL1M.\r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). \r ...",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllpen",
+                    description: Some(
+                        "PLL1 DIVP divider output enable\r Set and reset by software to enable the pll1pclk output of the PLL1.\r To save power, PLL1PEN and PLL1P bits must be set to 0 when the pll1pclk is not used. \r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllqen",
+                    description: Some(
+                        "PLL1 DIVQ divider output enable\r Set and reset by software to enable the pll1qclk output of the PLL1.\r To save power, PLL1QEN and PLL1Q bits must be set to 0 when the pll1qclk is not used. \r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllren",
+                    description: Some(
+                        "PLL1 DIVR divider output enable\r Set and cleared by software to enable the pll1rclk output of the PLL1.\r To save power, PLL1REN and PLL1R bits must be set to 0 when the pll1rclk is not used.\r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).",
                     ),
                     bit_offset: 18,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lptimsel",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "spi1sel",
+                    name: "pllrclkpre",
                     description: Some(
-                        "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16.",
+                        "pll1rclk clock for SYSCLK prescaler division enable\r Set and cleared by software to control the division of the pll1rclk clock for SYSCLK.",
                     ),
                     bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Spisel",
-                    ),
-                },
-                Field {
-                    name: "systicksel",
-                    description: Some(
-                        "SysTick clock source selection\r These bits are used to select the SysTick clock source.\r Access can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: When LSE or LSI is selected, the AHB frequency must be at least four times higher than the LSI or LSE frequency. In addition, a jitter up to one hclk1 cycle is introduced, due to the LSE or LSI sampling with hclk1 in the SysTick circuitry.",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Systicksel",
-                    ),
-                },
-                Field {
-                    name: "timicsel",
-                    description: Some(
-                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture \r When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI16/256. \r When TIMICSEL is cleared, the HSI16, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division.",
-                    ),
-                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Timicsel",
+                        "Pllrclkpre",
                     ),
+                },
+                Field {
+                    name: "pllrclkprestep",
+                    description: Some(
+                        "pll1rclk clock for SYSCLK prescaler division step selection\r Set and cleared by software to control the division step of the pll1rclk clock for SYSCLK.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pllrclkprestep",
+                    ),
+                },
+                Field {
+                    name: "pllrclkprerdy",
+                    description: Some(
+                        "pll1rclkpre not divided ready.\r Set by hardware after PLL1RCLKPRE has been set from divided to not divide, to indicate that the pll1rclk not divided is available on sysclkpre.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb2smenr",
+            extends: None,
+            description: Some(
+                "RCC APB2 peripheral clocks enable in Sleep and Stop modes register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim1smen",
+                    description: Some(
+                        "TIM1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi1smen",
+                    description: Some(
+                        "SPI1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart1smen",
+                    description: Some(
+                        "USART1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim16smen",
+                    description: Some(
+                        "TIM16 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM16SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim17smen",
+                    description: Some(
+                        "TIM17 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM17SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pll1fracr",
+            extends: None,
+            description: Some(
+                "RCC PLL1 fractional divider register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pllfracn",
+                    description: Some(
+                        "Fractional part of the multiplication factor for PLL1 VCO\r Set and reset by software to control the fractional part of the multiplication factor of the VCO.\r These bits can be written at any time, allowing dynamic fine-tuning of the PLL1 VCO.\r VCO output frequency = F<sub>ref1_ck</sub> x [multiplication factor for PLL1 VCO + (PLL1FRACN / 2<sup>13</sup>)], with: \r Multiplication factor for PLL1 VCO must be between 4 and 512.\r PLL1FRACN can be between 0 and 2<sup>13</sup>- 1.\r The input frequency F<sub>ref1_ck</sub> must be between 4 and 16 MHz. \r To change the used fractional value on-the-fly even if the PLL1 is enabled, the application must proceed as follows:\r Set the bit PLL1FRACEN to 0. \r Write the new fractional value into PLL1FRACN. \r Set the bit PLL1FRACEN to 1.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb5enr",
+            extends: None,
+            description: Some(
+                "RCC AHB5 peripheral clock enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "radioen",
+                    description: Some(
+                        "2.4 GHz RADIO bus clock enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RADIOSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Before accessing the 2.4 GHz RADIO sleep timers registers the RADIOCLKRDY bit must be checked.\r Note: When RADIOSMEN and STRADIOCLKON are both cleared, RADIOCLKRDY bit must be re-checked when exiting low-power modes (Sleep and Stop).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb4rstr",
+            extends: None,
+            description: Some(
+                "RCC AHB4 peripheral reset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "adc4rst",
+                    description: Some(
+                        "ADC4 reset\r Set and cleared by software.\r Access can be secred by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -2155,19 +2371,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ahb5enr",
+            name: "Apb1enr2",
             extends: None,
             description: Some(
-                "RCC AHB5 peripheral clock enable register",
+                "RCC APB1 peripheral clock enable register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "radioen",
+                    name: "lptim2en",
                     description: Some(
-                        "2.4 GHz RADIO bus clock enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RADIOSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Before accessing the 2.4 GHz RADIO sleep timers registers the RADIOCLKRDY bit must be checked.\r Note: When RADIOSMEN and STRADIOCLKON are both cleared, RADIOCLKRDY bit must be re-checked when exiting low-power modes (Sleep and Stop).",
+                        "LPTIM2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2175,17 +2391,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Privcfgr",
+            name: "Cifr",
             extends: None,
             description: Some(
-                "RCC privilege configuration register",
+                "RCC clock interrupt flag register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "spriv",
+                    name: "lsi1rdyf",
                     description: Some(
-                        "RCC secure functions privilege configuration\r Set and reset by software.\r This bit can be written only by a secure privileged access.",
+                        "LSI1 ready interrupt flag\r Set by hardware when the LSI1 clock becomes stable and LSI1RDYIE is set.\r Cleared by software setting the LSI1RDYC bit.\r Access to the bit can be secured by RCC LSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2193,56 +2409,104 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "nspriv",
+                    name: "lserdyf",
                     description: Some(
-                        "RCC non-secure functions privilege configuration\r Set and reset by software.\r This bit can be written only by privileged access, secure or non-secure.",
+                        "LSE ready interrupt flag\r Set by hardware when the LSE clock becomes stable and LSERDYIE is set.\r Cleared by software setting the LSERDYC bit.\r Access to the bit can be secured by RCC LSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Pll1fracr",
-            extends: None,
-            description: Some(
-                "RCC PLL1 fractional divider register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "pllfracn",
+                    name: "hsirdyf",
                     description: Some(
-                        "Fractional part of the multiplication factor for PLL1 VCO\r Set and reset by software to control the fractional part of the multiplication factor of the VCO.\r These bits can be written at any time, allowing dynamic fine-tuning of the PLL1 VCO.\r VCO output frequency = F<sub>ref1_ck</sub> x [multiplication factor for PLL1 VCO + (PLL1FRACN / 2<sup>13</sup>)], with: \r Multiplication factor for PLL1 VCO must be between 4 and 512.\r PLL1FRACN can be between 0 and 2<sup>13</sup>- 1.\r The input frequency F<sub>ref1_ck</sub> must be between 4 and 16 MHz. \r To change the used fractional value on-the-fly even if the PLL1 is enabled, the application must proceed as follows:\r Set the bit PLL1FRACEN to 0. \r Write the new fractional value into PLL1FRACN. \r Set the bit PLL1FRACEN to 1.",
+                        "HSI16 ready interrupt flag\r Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Cleared by software setting the HSIRDYC bit.",
                     ),
                     bit_offset: 3,
-                    bit_size: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hserdyf",
+                    description: Some(
+                        "HSE32 ready interrupt flag\r Set by hardware when the HSE32 clock becomes stable and HSERDYIE is set.\r Cleared by software setting the HSERDYC bit.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllrdyf",
+                    description: Some(
+                        "PLL1 ready interrupt flag\r Set by hardware when the PLL1 locks and PLL1RDYIE is set.\r Cleared by software setting the PLL1RDYC bit.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsecssf",
+                    description: Some(
+                        "HSE32 clock security system interrupt flag\r Set by hardware when a clock security failure is detected in the HSE32 oscillator.\r Cleared by software setting the HSECSSC bit.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Ccipr2",
+            name: "Apb1smenr2",
             extends: None,
             description: Some(
-                "RCC peripherals independent clock configuration register 2",
+                "RCC APB1 peripheral clocks enable in Sleep and Stop modes \tregister 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rngsel",
+                    name: "lptim2smen",
                     description: Some(
-                        "RNGSEL kernel clock source selection\r These bits allow to select the RNG kernel clock source.\r Access can be secured by GTZC_TZSC RNGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "LPTIM2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
                     ),
-                    bit_offset: 12,
-                    bit_size: 2,
+                    bit_offset: 5,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rngsel",
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Icscr3",
+            extends: None,
+            description: Some(
+                "RCC internal clock sources calibration register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hsical",
+                    description: Some(
+                        "HSI16 clock calibration\r These bits are initialized at startup with the factory-programmed HSI16 calibration value. When HSITRIM[4:0] is written, HSICAL[11:0] is updated with the sum of HSITRIM[4:0] and the initial factory trim value.",
                     ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsitrim",
+                    description: Some(
+                        "HSI16 clock trimming \r These bits provide an additional user-programmable trimming value that is added to the HSICAL[11:0] bits. It can be programmed to adjust to voltage and temperature variations that influence the frequency of the HSI16.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -2281,52 +2545,346 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pll1divr",
+            name: "Apb2enr",
             extends: None,
             description: Some(
-                "RCC PLL1 dividers register",
+                "RCC APB2 peripheral clock enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "plln",
+                    name: "tim1en",
                     description: Some(
-                        "Multiplication factor for PLL1 VCO\r Set and reset by software to control the multiplication factor of the VCO.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r ...\r ...\r others: reserved\r VCO output frequency = F<sub>ref1_ck</sub> x multiplication factor for PLL1 VCO, when fractional value 0 has been loaded into PLL1FRACN, with: \r Multiplication factor for PLL1 VCO between 4 and 512\r input frequency F<sub>ref1_ck</sub> between 4 and 16�MHz",
+                        "TIM1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi1en",
+                    description: Some(
+                        "SPI1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart1en",
+                    description: Some(
+                        "USART1bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim16en",
+                    description: Some(
+                        "TIM16 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM16SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim17en",
+                    description: Some(
+                        "TIM17 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM17SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccipr2",
+            extends: None,
+            description: Some(
+                "RCC peripherals independent clock configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rngsel",
+                    description: Some(
+                        "RNGSEL kernel clock source selection\r These bits allow to select the RNG kernel clock source.\r Access can be secured by GTZC_TZSC RNGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Rngsel",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb7enr",
+            extends: None,
+            description: Some(
+                "RCC APB7 peripheral clock enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "syscfgen",
+                    description: Some(
+                        "SYSCFG bus clock enable\r Set and cleared by software.\r Access can be secured by SYSCFG SYSCFGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi3en",
+                    description: Some(
+                        "SPI3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpuart1en",
+                    description: Some(
+                        "LPUART1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c3en",
+                    description: Some(
+                        "I2C3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptim1en",
+                    description: Some(
+                        "LPTIM1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rtcapben",
+                    description: Some(
+                        "RTC and TAMP bus clock enable\r Set and cleared by software.\r Can only be accessed secure when one or more features in the RTC or TAMP is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Seccfgr",
+            extends: None,
+            description: Some(
+                "RCC secure configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hsisec",
+                    description: Some(
+                        "HSI16 clock configuration and status bits security\r Set and reset by software.",
                     ),
                     bit_offset: 0,
-                    bit_size: 9,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pllp",
+                    name: "hsesec",
                     description: Some(
-                        "PLL1 DIVP division factor\r Set and reset by software to control the frequency of the pll1pclk clock.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r Note that odd division factors are not allowed.\r ...",
+                        "HSE32 clock configuration bits, status bits and HSECSS security\r Set and reset by software.",
                     ),
-                    bit_offset: 9,
-                    bit_size: 7,
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pllq",
+                    name: "lsisec",
                     description: Some(
-                        "PLL1 DIVQ division factor\r Set and reset by software to control the frequency of the PLl1QCLK clock.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r ...",
+                        "LSI clock configuration and status bits security\r Set and reset by software.",
                     ),
-                    bit_offset: 16,
-                    bit_size: 7,
+                    bit_offset: 3,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pllr",
+                    name: "lsesec",
                     description: Some(
-                        "PLL1 DIVR division factor\r Set and reset by software to control the frequency of the pll1rclk clock.\r These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).\r ...",
+                        "LSE clock configuration and status bits security\r Set and reset by software.",
                     ),
-                    bit_offset: 24,
-                    bit_size: 7,
+                    bit_offset: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "sysclksec",
+                    description: Some(
+                        "SYSCLK selection, clock output on MCO configuration security\r Set and reset by software.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prescsec",
+                    description: Some(
+                        "AHBx/APBx prescaler configuration bits security\r Set and reset by software.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsec",
+                    description: Some(
+                        "PLL1 clock configuration and status bits security\r Set and reset by software.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rmvfsec",
+                    description: Some(
+                        "Remove reset flag security\r Set and reset by software.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cier",
+            extends: None,
+            description: Some(
+                "RCC clock interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lsi1rdyie",
+                    description: Some(
+                        "LSI1 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the LSI1 oscillator stabilization.\r Access to the bit can be secured by RCC LSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lserdyie",
+                    description: Some(
+                        "LSE ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization.\r Access to the bit can be secured by RCC LSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsirdyie",
+                    description: Some(
+                        "HSI16 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hserdyie",
+                    description: Some(
+                        "HSE32 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSE32 oscillator stabilization.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllrdyie",
+                    description: Some(
+                        "PLL1 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by PLL1 lock.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb5smenr",
+            extends: None,
+            description: Some(
+                "RCC AHB5 peripheral clocks enable in Sleep and Stop modes register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "radiosmen",
+                    description: Some(
+                        "2.4 GHz RADIO bus clock enable during Sleep and Stop modes when the 2.4 GHz RADIO is active.\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RADIOSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr3",
+            extends: None,
+            description: Some(
+                "RCC clock configuration register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ppre7",
+                    description: Some(
+                        "APB7 prescaler\r Set and cleared by software to control the division factor of the APB7 clock (pclk7).\r 0xx: hclk1 not divided",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Ppre",
+                    ),
                 },
             ],
         },
@@ -2497,67 +3055,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Icscr3",
+            name: "Ahb2smenr",
             extends: None,
             description: Some(
-                "RCC internal clock sources calibration register 3",
+                "RCC AHB2 peripheral clocks enable in Sleep and Stop modes register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hsical",
+                    name: "gpioasmen",
                     description: Some(
-                        "HSI16 clock calibration\r These bits are initialized at startup with the factory-programmed HSI16 calibration value. When HSITRIM[4:0] is written, HSICAL[11:0] is updated with the sum of HSITRIM[4:0] and the initial factory trim value.",
+                        "IO port A bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOA SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsitrim",
-                    description: Some(
-                        "HSI16 clock trimming \r These bits provide an additional user-programmable trimming value that is added to the HSICAL[11:0] bits. It can be programmed to adjust to voltage and temperature variations that influence the frequency of the HSI16.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb4rstr",
-            extends: None,
-            description: Some(
-                "RCC AHB4 peripheral reset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "adc4rst",
-                    description: Some(
-                        "ADC4 reset\r Set and cleared by software.\r Access can be secred by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Ahb4enr",
-            extends: None,
-            description: Some(
-                "RCC AHB4 peripheral clock enable register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "pwren",
+                    name: "gpiobsmen",
                     description: Some(
-                        "PWR bus clock enable\r Set and cleared by software.\r Can only be accessed secure when one or more features in the PWR is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "IO port B bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOB SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiocsmen",
+                    description: Some(
+                        "IO port C bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOC SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -2565,779 +3093,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "adc4en",
+                    name: "gpiohsmen",
                     description: Some(
-                        "ADC4 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2enr",
-            extends: None,
-            description: Some(
-                "RCC APB2 peripheral clock enable register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1en",
-                    description: Some(
-                        "TIM1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi1en",
-                    description: Some(
-                        "SPI1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart1en",
-                    description: Some(
-                        "USART1bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim16en",
-                    description: Some(
-                        "TIM16 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM16SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim17en",
-                    description: Some(
-                        "TIM17 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM17SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1enr1",
-            extends: None,
-            description: Some(
-                "RCC APB1 peripheral clock enable register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim2en",
-                    description: Some(
-                        "TIM2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim3en",
-                    description: Some(
-                        "TIM3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wwdgen",
-                    description: Some(
-                        "WWDG bus clock enable\r Set by software to enable the window watchdog bus clock. Reset by hardware system reset.\r This bit can also be set by hardware if the WWDG_SW option bit is reset.\r Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart2en",
-                    description: Some(
-                        "USART2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART2SEC When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1en",
-                    description: Some(
-                        "I2C1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2smenr",
-            extends: None,
-            description: Some(
-                "RCC APB2 peripheral clocks enable in Sleep and Stop modes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1smen",
-                    description: Some(
-                        "TIM1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi1smen",
-                    description: Some(
-                        "SPI1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart1smen",
-                    description: Some(
-                        "USART1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim16smen",
-                    description: Some(
-                        "TIM16 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM16SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim17smen",
-                    description: Some(
-                        "TIM17 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM17SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb1smenr",
-            extends: None,
-            description: Some(
-                "RCC AHB1 peripheral clocks enable in Sleep and Stop modes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "gpdma1smen",
-                    description: Some(
-                        "GPDMA1 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPDMA1 SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "flashsmen",
-                    description: Some(
-                        "FLASH bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secured when the Flash security state is secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crcsmen",
-                    description: Some(
-                        "CRC bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC CRCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tscsmen",
-                    description: Some(
-                        "TSC bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TSCSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ramcfgsmen",
-                    description: Some(
-                        "RAMCFG bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RAMCFGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gtzc1smen",
-                    description: Some(
-                        "GTZC1 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secure when one device is secure (TZEN = 1). When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "icachesmen",
-                    description: Some(
-                        "ICACHE bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC ICACHE_REGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sram1smen",
-                    description: Some(
-                        "SRAM1 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_MPCBB1 SECx, INVSECSTATE. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll1cfgr",
-            extends: None,
-            description: Some(
-                "RCC PLL1 configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pllsrc",
-                    description: Some(
-                        "PLL1 entry clock source\r Set and cleared by software to select PLL1 clock source. These bits can be written only when the PLL1 is disabled.\r Cleared by hardware when entering Stop or Standby modes. \r Note: In order to save power, when no PLL1 clock is used, the value of PLL1SRC must be 0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Pllsrc",
-                    ),
-                },
-                Field {
-                    name: "pllrge",
-                    description: Some(
-                        "PLL1 input frequency range\r Set and reset by software to select the proper reference frequency range used for PLL1.\r This bit must be written before enabling the PLL1.\r 00-01-10: PLL1 input (ref1_ck) clock range frequency between 4 and 8 MHz",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Pllrge",
-                    ),
-                },
-                Field {
-                    name: "pllfracen",
-                    description: Some(
-                        "PLL1 fractional latch enable\r Set and reset by software to latch the content of PLL1FRACN into the ΣΔ modulator.\r In order to latch the PLL1FRACN value into the ΣΔ modulator, PLL1FRACEN must be set\u{a0}to\u{a0}0, then set to 1: the transition 0 to 1 transfers the content of PLL1FRACN into the modulator (see PLL1 initialization phase for details).",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllm",
-                    description: Some(
-                        "Prescaler for PLL1\r Set and cleared by software to configure the prescaler of the PLL1. The VCO1 input frequency is PLL1 input clock frequency/PLL1M.\r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). \r ...",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllpen",
-                    description: Some(
-                        "PLL1 DIVP divider output enable\r Set and reset by software to enable the pll1pclk output of the PLL1.\r To save power, PLL1PEN and PLL1P bits must be set to 0 when the pll1pclk is not used. \r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllqen",
-                    description: Some(
-                        "PLL1 DIVQ divider output enable\r Set and reset by software to enable the pll1qclk output of the PLL1.\r To save power, PLL1QEN and PLL1Q bits must be set to 0 when the pll1qclk is not used. \r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllren",
-                    description: Some(
-                        "PLL1 DIVR divider output enable\r Set and cleared by software to enable the pll1rclk output of the PLL1.\r To save power, PLL1REN and PLL1R bits must be set to 0 when the pll1rclk is not used.\r This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0).",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllrclkpre",
-                    description: Some(
-                        "pll1rclk clock for SYSCLK prescaler division enable\r Set and cleared by software to control the division of the pll1rclk clock for SYSCLK.",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pllrclkpre",
-                    ),
-                },
-                Field {
-                    name: "pllrclkprestep",
-                    description: Some(
-                        "pll1rclk clock for SYSCLK prescaler division step selection\r Set and cleared by software to control the division step of the pll1rclk clock for SYSCLK.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pllrclkprestep",
-                    ),
-                },
-                Field {
-                    name: "pllrclkprerdy",
-                    description: Some(
-                        "pll1rclkpre not divided ready.\r Set by hardware after PLL1RCLKPRE has been set from divided to not divide, to indicate that the pll1rclk not divided is available on sysclkpre.",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some(
-                "RCC clock control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hsion",
-                    description: Some(
-                        "HSI16 clock enable\r Set and cleared by software.\r Cleared by hardware when entering Stop and Standby modes. \r Set by hardware to force the HSI16 oscillator on when exiting Stop and Standby modes.\r Set by hardware to force the HSI16 oscillator on in case of clock security failure of the HSE32 crystal oscillator.\r This bit is set by hardware if the HSI16 is used directly or indirectly as system clock.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsikeron",
-                    description: Some(
-                        "HSI16 enable for some peripheral kernels\r Set and cleared by software to force HSI16 oscillator on even in Stop modes. \r Keeping the HSI16 oscillator on in Stop modes allows the communication speed not to be reduced by the HSI16 oscillator startup time. This bit has no effect on register bit HSION value.\r Cleared by hardware when entering Standby modes. \r Refer to Peripherals clock gating and autonomous mode for more details.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsirdy",
-                    description: Some(
-                        "HSI16 clock ready flag\r Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles.",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hseon",
-                    description: Some(
-                        "HSE32 clock enable\r Set and cleared by software.\r Cleared by hardware to stop the HSE32 clock for the CPU when entering Stop and Standby modes and on a HSECSS failure.\r When the HSE32 is used as 2.4 GHz RADIO kernel clock, enabled by RADIOEN and RADIOSMEN and the 2.4 GHz RADIO is active, HSEON is not be cleared when entering low power mode. In this case only Stop 0 mode is entered as low power mode.\r This bit cannot be reset if the HSE32 oscillator is used directly or indirectly as the system clock.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hserdy",
-                    description: Some(
-                        "HSE32 clock ready flag\r Set by hardware to indicate that the HSE32 oscillator is stable. This bit is set both when HSE32 is enabled by software by setting HSEON and when requested as kernel clock by the 2.4 GHz RADIO.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsecsson",
-                    description: Some(
-                        "HSE32 clock security system enable\r Set by software to enable the HSE32 clock security system. When HSECSSON is set, the clock detector is enabled by hardware when the HSE32 oscillator is ready and disabled by hardware if a HSE32 clock failure is detected. This bit is set only and is cleared by reset.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsepre",
-                    description: Some(
-                        "HSE32 clock for SYSCLK prescaler\r Set and cleared by software to control the division factor of the HSE32 clock for SYSCLK.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hsepre",
-                    ),
-                },
-                Field {
-                    name: "pllon",
-                    description: Some(
-                        "PLL1 enable\r Set and cleared by software to enable the main PLL.\r Cleared by hardware when entering Stop or Standby modes and when PLL1 on HSE32 is selected as sysclk, on a HSECSS failure.\r This bit cannot be reset if the PLL1 clock is used as the system clock.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllrdy",
-                    description: Some(
-                        "PLL1 clock ready flag\r Set by hardware to indicate that the PLL1 is locked.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Radioenr",
-            extends: None,
-            description: Some(
-                "RCC RADIO peripheral clock enable register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bbclken",
-                    description: Some(
-                        "2.4 GHz RADIO baseband kernel clock (aclk) enable\r Set and cleared by software.\r Note: The HSE32 oscillator needs to be enabled by either HSEON or STRADIOCLKON.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stradioclkon",
-                    description: Some(
-                        "2.4 GHz RADIO bus clock enable and HSE32 oscillator enable by 2.4 GHz RADIO sleep timer wakeup event\r Set by hardware on a 2.4 GHz RADIO sleep timer wakeup event.\r Cleared by software writing zero to this bit.\r Note: Before accessing the 2.4 GHz RADIO registers the RADIOCLKRDY bit must be checked.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "radioclkrdy",
-                    description: Some(
-                        "2.4 GHz RADIO bus clock ready.\r Set and cleared by hardware to indicate that the 2.4 GHz RADIO bus clock is ready and the 2.4 GHz RADIO registers can be accessed.\r Note: Once both RADIOEN and STRADIOCLKON are cleared, RADIOCLKRDY goes low after three hclk5 clock cycles.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2rstr",
-            extends: None,
-            description: Some(
-                "RCC APB2 peripheral reset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1rst",
-                    description: Some(
-                        "TIM1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi1rst",
-                    description: Some(
-                        "SPI1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart1rst",
-                    description: Some(
-                        "USART1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim16rst",
-                    description: Some(
-                        "TIM16 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM16SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim17rst",
-                    description: Some(
-                        "TIM17 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM17SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1smenr1",
-            extends: None,
-            description: Some(
-                "RCC APB1 peripheral clocks enable in Sleep and Stop modes\tregister 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim2smen",
-                    description: Some(
-                        "TIM2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim3smen",
-                    description: Some(
-                        "TIM3 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wwdgsmen",
-                    description: Some(
-                        "Window watchdog bus clock enable during Sleep and Stop modes\r Set and cleared by software. This bit is forced to 1 by hardware when the hardware WWDG option is activated.\r Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart2smen",
-                    description: Some(
-                        "USART2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1smen",
-                    description: Some(
-                        "I2C1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cicr",
-            extends: None,
-            description: Some(
-                "RCC clock interrupt clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lsi1rdyc",
-                    description: Some(
-                        "LSI1 ready interrupt clear\r Writing this bit to 1 clears the LSI1RDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC LSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lserdyc",
-                    description: Some(
-                        "LSE ready interrupt clear\r Writing this bit to 1 clears the LSERDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC LSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsirdyc",
-                    description: Some(
-                        "HSI16 ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.\\\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hserdyc",
-                    description: Some(
-                        "HSE32 ready interrupt clear\r Writing this bit to 1 clears the HSERDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllrdyc",
-                    description: Some(
-                        "PLL1 ready interrupt clear\r Writing this bit to 1 clears the PLL1RDYF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC PLL1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsecssc",
-                    description: Some(
-                        "High speed external clock security system interrupt clear\r Writing this bit to 1 clears the HSECSSF flag. Writing 0 has no effect.\r Access to the bit can be secured by RCC HSESEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb7rstr",
-            extends: None,
-            description: Some(
-                "RCC APB7 peripheral reset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "syscfgrst",
-                    description: Some(
-                        "SYSCFG reset\r Set and cleared by software.\r Access can be secured by SYSCFG SYSCFGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3rst",
-                    description: Some(
-                        "SPI3 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpuart1rst",
-                    description: Some(
-                        "LPUART1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c3rst",
-                    description: Some(
-                        "I2C3 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "IO port H bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -3345,11 +3103,61 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lptim1rst",
+                    name: "aessmen",
                     description: Some(
-                        "LPTIM1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "AES bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
-                    bit_offset: 11,
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hashsmen",
+                    description: Some(
+                        "HASH bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC HASHSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rngsmen",
+                    description: Some(
+                        "Random number generator (RNG) bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RNGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "saessmen",
+                    description: Some(
+                        "SAES accelerator bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SAESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pkasmen",
+                    description: Some(
+                        "PKA bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC PKASEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sram2smen",
+                    description: Some(
+                        "SRAM2 bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_MPCBB2 SECx, INVSECSTATE. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 30,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3357,139 +3165,443 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Apb1smenr2",
+            name: "Ccipr3",
             extends: None,
             description: Some(
-                "RCC APB1 peripheral clocks enable in Sleep and Stop modes \tregister 2",
+                "RCC peripherals independent clock configuration register 3",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lptim2smen",
+                    name: "lpuart1sel",
                     description: Some(
-                        "LPTIM2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1rstr2",
-            extends: None,
-            description: Some(
-                "RCC APB1 peripheral reset register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lptim2rst",
-                    description: Some(
-                        "LPTIM2 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb5smenr",
-            extends: None,
-            description: Some(
-                "RCC AHB5 peripheral clocks enable in Sleep and Stop modes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "radiosmen",
-                    description: Some(
-                        "2.4 GHz RADIO bus clock enable during Sleep and Stop modes when the 2.4 GHz RADIO is active.\r Set and cleared by software.\r Access can be secured by GTZC_TZSC RADIOSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPUART1 is functional in Stop modes only when the kernel clock is HSI16 or LSE.",
                     ),
                     bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Lpuartsel",
+                    ),
+                },
+                Field {
+                    name: "spi3sel",
+                    description: Some(
+                        "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI3 is functional in Stop modes only when the kernel clock is HSI16.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Spisel",
+                    ),
+                },
+                Field {
+                    name: "i2c3sel",
+                    description: Some(
+                        "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C3 is functional in Stop modes only when the kernel clock is HSI16",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Icsel",
+                    ),
+                },
+                Field {
+                    name: "lptim1sel",
+                    description: Some(
+                        "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM1 is functional in Stop modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1.",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Lptimsel",
+                    ),
+                },
+                Field {
+                    name: "adcsel",
+                    description: Some(
+                        "ADC4 kernel clock source selection\r These bits are used to select the ADC4 kernel clock source.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r others: reserved\r Note: The ADC4 is functional in Stop modes only when the kernel clock is HSI16.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Adcsel",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb4smenr",
+            extends: None,
+            description: Some(
+                "RCC AHB4 peripheral clocks enable in Sleep and Stop modes register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pwrsmen",
+                    description: Some(
+                        "PWR bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secure when one or more features in the PWR is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "adc4smen",
+                    description: Some(
+                        "ADC4 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr1",
+            extends: None,
+            description: Some(
+                "RCC clock configuration register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sw",
+                    description: Some(
+                        "system clock switch\r Set and cleared by software to select system clock source (SYSCLK).\r Cleared by hardware when entering Stop and Standby modes\r When selecting HSE32 directly or indirectly as system clock and HSE32 oscillator clock security fails, cleared by hardware.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Sw",
+                    ),
+                },
+                Field {
+                    name: "sws",
+                    description: Some(
+                        "system clock switch status\r Set and cleared by hardware to indicate which clock source is used as system clock.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Sw",
+                    ),
+                },
+                Field {
+                    name: "mcosel",
+                    description: Some(
+                        "microcontroller clock output\r Set and cleared by software.\r others: reserved\r Note: This clock output may have some truncated cycles at startup or during MCO clock source switching.",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Mcosel",
+                    ),
+                },
+                Field {
+                    name: "mcopre",
+                    description: Some(
+                        "microcontroller clock output prescaler\r Set and cleared by software.\r It is highly recommended to change this prescaler before MCO output is enabled.\r others: not allowed",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Mcopre",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccipr1",
+            extends: None,
+            description: Some(
+                "RCC peripherals independent clock configuration register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usart1sel",
+                    description: Some(
+                        "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Usartsel",
+                    ),
+                },
+                Field {
+                    name: "usart2sel",
+                    description: Some(
+                        "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Usartsel",
+                    ),
+                },
+                Field {
+                    name: "i2c1sel",
+                    description: Some(
+                        "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16.",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Icsel",
+                    ),
+                },
+                Field {
+                    name: "lptim2sel",
+                    description: Some(
+                        "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Lptimsel",
+                    ),
+                },
+                Field {
+                    name: "spi1sel",
+                    description: Some(
+                        "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Spisel",
+                    ),
+                },
+                Field {
+                    name: "systicksel",
+                    description: Some(
+                        "SysTick clock source selection\r These bits are used to select the SysTick clock source.\r Access can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: When LSE or LSI is selected, the AHB frequency must be at least four times higher than the LSI or LSE frequency. In addition, a jitter up to one hclk1 cycle is introduced, due to the LSE or LSI sampling with hclk1 in the SysTick circuitry.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Systicksel",
+                    ),
+                },
+                Field {
+                    name: "timicsel",
+                    description: Some(
+                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture \r When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI16/256. \r When TIMICSEL is cleared, the HSI16, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Timicsel",
+                    ),
                 },
             ],
         },
     ],
     enums: &[
         Enum {
-            name: "Lsedrv",
+            name: "Pllrge",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
+                    name: "FREQ_4TO8MHZ",
                     description: Some(
-                        "Low driving capability",
+                        "PLL2 input (ref2_ck) clock range frequency between 4 and 8 MHz",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUMLOW",
+                    name: "FREQ_8TO16MHZ",
                     description: Some(
-                        "Medium low driving capability",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MEDIUMHIGH",
-                    description: Some(
-                        "Medium high driving capability",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some(
-                        "High driving capability",
+                        "PLL2 input (ref2_ck) clock range frequency between 8 and 16 MHz",
                     ),
                     value: 3,
                 },
             ],
         },
         Enum {
-            name: "Hsepre",
+            name: "Lptimsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK7",
+                    description: Some(
+                        "pclk7 selected.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllsrc",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NONE",
+                    description: Some(
+                        "no clock sent to PLL1",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 clock selected as PLL1 clock entry",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSE32",
+                    description: Some(
+                        "HSE32 clock after HSEPRE divider selected as PLL1 clock entry",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lsetrim",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "R5_4",
+                    description: Some(
+                        "current source resistance 5/4 x R",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "R",
+                    description: Some(
+                        "current source resistance R",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "R3_4",
+                    description: Some(
+                        "current source resistance 3/4 x R",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "R2_3",
+                    description: Some(
+                        "current source resistance 2/3 x R",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Icsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some(
+                        "pclk1 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYSCLK",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 selected",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllrclkpre",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DIV1",
                     description: Some(
-                        "HSE32 not divided, SYSCLK = HSE32",
+                        "pll1rclk not divided, sysclkpre = pll1rclk",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "DIVIDED",
                     description: Some(
-                        "HSE32 divided, SYSCLK = HSE32/2",
+                        "pll1rclk divided, sysclkpre = pll1rclk divided",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Lscosel",
+            name: "Pllrclkprestep",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LSI",
+                    name: "STEP2",
                     description: Some(
-                        "LSI clock selected",
+                        "pll1rclk 2-step division",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LSE",
+                    name: "STEP3",
                     description: Some(
-                        "LSE clock selected",
+                        "pll1rclk 3-step division",
                     ),
                     value: 1,
                 },
@@ -3538,23 +3650,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lsiprediv",
+            name: "Rngsel",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "LSE",
                     description: Some(
-                        "LSI not divided",
+                        "LSE selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV128",
+                    name: "LSI",
                     description: Some(
-                        "LSI divided by 128",
+                        "LSI selected",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: Some(
+                        "pll1qclk divide by 2 selected",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -3590,6 +3716,76 @@ pub(crate) static REGISTERS: IR = IR {
                         "LSE selected",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Hsepre",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "HSE32 not divided, SYSCLK = HSE32",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "HSE32 divided, SYSCLK = HSE32/2",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lsiprediv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "LSI not divided",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "LSI divided by 128",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Systicksel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HCLK1_DIV8",
+                    description: Some(
+                        "hclk1 divided by 8 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -3636,21 +3832,336 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pllrge",
+            name: "Hdiv5",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FREQ_4TO8MHZ",
+                    name: "DIV1",
                     description: Some(
-                        "PLL2 input (ref2_ck) clock range frequency between 4 and 8 MHz",
+                        "hclk5 = SYSCLK not divided",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FREQ_8TO16MHZ",
+                    name: "DIV2",
                     description: Some(
-                        "PLL2 input (ref2_ck) clock range frequency between 8 and 16 MHz",
+                        "hclk5 = SYSCLK divided by 2",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lscosel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI clock selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE clock selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lsedrv",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "Low driving capability",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MEDIUMLOW",
+                    description: Some(
+                        "Medium low driving capability",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MEDIUMHIGH",
+                    description: Some(
+                        "Medium high driving capability",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some(
+                        "High driving capability",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Rtcsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOCLOCK",
+                    description: Some(
+                        "no clock selected, RTC and TAMP kernel clock disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE oscillator clock selected, and enabled",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI oscillator clock selected, and enabled",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSE32",
+                    description: Some(
+                        "HSE32 oscillator clock divided by 32 selected, and enabled",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Spisel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK2",
+                    description: Some(
+                        "pclk2 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYSCLK",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 selected",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Timicsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "HSI16 divider disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HSI16_DIV_256",
+                    description: Some(
+                        "HSI16/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ppre",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "HCLK not divided",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "HCLK divided by 2",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "HCLK divided by 4",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "HCLK divided by 8",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "HCLK divided by 16",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Sw",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 selected as system clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HSE32",
+                    description: Some(
+                        "HSE32 or HSE32/2, as defined by HSEPRE, selected as system clock",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PLL1_R",
+                    description: Some(
+                        "pll1rclk selected as system clock",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Usartsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some(
+                        "pclk1 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYSCLK",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Hpre",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "DCLK not divided",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "hclk = SYSCLK divided by 2",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "hclk = SYSCLK divided by 4",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "hclk = SYSCLK divided by 8",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "hclk = SYSCLK divided by 16",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Radiostsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NONE",
+                    description: Some(
+                        "no clock selected, 2.4 GHz RADIO sleep timer kernel clock disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE oscillator clock selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE32",
+                    description: Some(
+                        "HSE32 oscillator clock divided by 1000 selected",
                     ),
                     value: 3,
                 },
@@ -3734,244 +4245,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lptimsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK7",
-                    description: Some(
-                        "pclk7 selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some(
-                        "LSI selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 selected",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE selected",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Timicsel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "HSI16 divider disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HSI16_DIV_256",
-                    description: Some(
-                        "HSI16/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Systicksel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HCLK1_DIV8",
-                    description: Some(
-                        "hclk1 divided by 8 selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some(
-                        "LSI selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE selected",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrclkprestep",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STEP2",
-                    description: Some(
-                        "pll1rclk 2-step division",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STEP3",
-                    description: Some(
-                        "pll1rclk 3-step division",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Icsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some(
-                        "pclk1 selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYSCLK",
-                    description: Some(
-                        "SYSCLK selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 selected",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Ppre",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "HCLK not divided",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "HCLK divided by 2",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "HCLK divided by 4",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "HCLK divided by 8",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "HCLK divided by 16",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Rngsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some(
-                        "LSI selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 selected",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PLL1_Q",
-                    description: Some(
-                        "pll1qclk divide by 2 selected",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllsrc",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "no clock sent to PLL1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 clock selected as PLL1 clock entry",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSE32",
-                    description: Some(
-                        "HSE32 clock after HSEPRE divider selected as PLL1 clock entry",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Hpre5",
             description: None,
             bit_size: 3,
@@ -4010,279 +4283,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "hclk5 = SYSCLK divided by 6",
                     ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Rtcsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOCLOCK",
-                    description: Some(
-                        "no clock selected, RTC and TAMP kernel clock disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE oscillator clock selected, and enabled",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some(
-                        "LSI oscillator clock selected, and enabled",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSE32",
-                    description: Some(
-                        "HSE32 oscillator clock divided by 32 selected, and enabled",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Hdiv5",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "hclk5 = SYSCLK not divided",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "hclk5 = SYSCLK divided by 2",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrclkpre",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "pll1rclk not divided, sysclkpre = pll1rclk",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIVIDED",
-                    description: Some(
-                        "pll1rclk divided, sysclkpre = pll1rclk divided",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Spisel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK2",
-                    description: Some(
-                        "pclk2 selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYSCLK",
-                    description: Some(
-                        "SYSCLK selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 selected",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsetrim",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "R5_4",
-                    description: Some(
-                        "current source resistance 5/4 x R",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "R",
-                    description: Some(
-                        "current source resistance R",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "R3_4",
-                    description: Some(
-                        "current source resistance 3/4 x R",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "R2_3",
-                    description: Some(
-                        "current source resistance 2/3 x R",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Hpre",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "DCLK not divided",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "hclk = SYSCLK divided by 2",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "hclk = SYSCLK divided by 4",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "hclk = SYSCLK divided by 8",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "hclk = SYSCLK divided by 16",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Radiostsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "no clock selected, 2.4 GHz RADIO sleep timer kernel clock disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE oscillator clock selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSE32",
-                    description: Some(
-                        "HSE32 oscillator clock divided by 1000 selected",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Sw",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 selected as system clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HSE32",
-                    description: Some(
-                        "HSE32 or HSE32/2, as defined by HSEPRE, selected as system clock",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PLL1_R",
-                    description: Some(
-                        "pll1rclk selected as system clock",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Usartsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some(
-                        "pclk1 selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYSCLK",
-                    description: Some(
-                        "SYSCLK selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: Some(
-                        "HSI16 selected",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE selected",
-                    ),
-                    value: 3,
                 },
             ],
         },

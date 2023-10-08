@@ -43,6 +43,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cdr",
+            extends: None,
+            description: Some("ADC common regular data register for dual and triple modes"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "data",
+                description: Some("1st data item of a pair of regular conversions"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Ccr",
             extends: None,
             description: Some("ADC common control register"),
@@ -162,22 +176,25 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cdr",
-            extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "data",
-                description: Some("1st data item of a pair of regular conversions"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                enumm: None,
-            }],
-        },
     ],
     enums: &[
+        Enum {
+            name: "Jeoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Awd",
             description: None,
@@ -191,6 +208,67 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "EVENT",
                     description: Some("Analog watchdog event occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jstrt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSTARTED",
+                    description: Some("No injected channel conversion started"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some("Injected channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adcpre",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some("PCLK2 divided by 2"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some("PCLK2 divided by 4"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some("PCLK2 divided by 6"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some("PCLK2 divided by 8"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Eoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
                     value: 1,
                 },
             ],
@@ -268,6 +346,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Ovr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Dma",
             description: None,
             bit_size: 2,
@@ -295,35 +390,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Jstrt",
+            name: "Dds",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No injected channel conversion started"),
+                    name: "SINGLE",
+                    description: Some("No new DMA request is issued after the last transfer"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STARTED",
-                    description: Some("Injected channel conversion has started"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
+                    name: "CONTINUOUS",
+                    description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
                     value: 1,
                 },
             ],
@@ -342,84 +420,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "STARTED",
                     description: Some("Regular channel conversion has started"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jeoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SINGLE",
-                    description: Some("No new DMA request is issued after the last transfer"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTINUOUS",
-                    description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Eoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adcpre",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some("PCLK2 divided by 2"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some("PCLK2 divided by 4"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some("PCLK2 divided by 6"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some("PCLK2 divided by 8"),
-                    value: 3,
                 },
             ],
         },

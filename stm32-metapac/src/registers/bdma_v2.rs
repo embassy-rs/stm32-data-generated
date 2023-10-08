@@ -3,53 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Dma",
-            extends: None,
-            description: Some("DMA controller"),
-            items: &[
-                BlockItem {
-                    name: "isr",
-                    description: Some("DMA interrupt status register (DMA_ISR)"),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Read,
-                        bit_size: 32,
-                        fieldset: Some("Isr"),
-                    }),
-                },
-                BlockItem {
-                    name: "ifcr",
-                    description: Some("DMA interrupt flag clear register (DMA_IFCR)"),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Write,
-                        bit_size: 32,
-                        fieldset: Some("Isr"),
-                    }),
-                },
-                BlockItem {
-                    name: "ch",
-                    description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 20 })),
-                    byte_offset: 8,
-                    inner: BlockItemInner::Block(BlockItemBlock { block: "Ch" }),
-                },
-                BlockItem {
-                    name: "cselr",
-                    description: Some("channel selection register"),
-                    array: None,
-                    byte_offset: 168,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Cselr"),
-                    }),
-                },
-            ],
-        },
-        Block {
             name: "Ch",
             extends: None,
             description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
@@ -100,8 +53,123 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        Block {
+            name: "Dma",
+            extends: None,
+            description: Some("DMA controller"),
+            items: &[
+                BlockItem {
+                    name: "isr",
+                    description: Some("DMA interrupt status register (DMA_ISR)"),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Read,
+                        bit_size: 32,
+                        fieldset: Some("Isr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ifcr",
+                    description: Some("DMA interrupt flag clear register (DMA_IFCR)"),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
+                        bit_size: 32,
+                        fieldset: Some("Isr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ch",
+                    description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 20 })),
+                    byte_offset: 8,
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Ch" }),
+                },
+                BlockItem {
+                    name: "cselr",
+                    description: Some("channel selection register"),
+                    array: None,
+                    byte_offset: 168,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Cselr"),
+                    }),
+                },
+            ],
+        },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Cselr",
+            extends: None,
+            description: Some("channel selection register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cs",
+                description: Some("DMA channel selection"),
+                bit_offset: 0,
+                bit_size: 4,
+                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Isr",
+            extends: None,
+            description: Some("DMA interrupt status register (DMA_ISR)"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "gif",
+                    description: Some("Channel 1 Global interrupt flag"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "tcif",
+                    description: Some("Channel 1 Transfer Complete flag"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "htif",
+                    description: Some("Channel 1 Half Transfer Complete flag"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "teif",
+                    description: Some("Channel 1 Transfer Error flag"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ndtr",
+            extends: None,
+            description: Some("DMA channel 1 number of data register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ndt",
+                description: Some("Number of data to transfer"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
         FieldSet {
             name: "Cr",
             extends: None,
@@ -206,76 +274,25 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cselr",
-            extends: None,
-            description: Some("channel selection register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cs",
-                description: Some("DMA channel selection"),
-                bit_offset: 0,
-                bit_size: 4,
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Ndtr",
-            extends: None,
-            description: Some("DMA channel 1 number of data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ndt",
-                description: Some("Number of data to transfer"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Isr",
-            extends: None,
-            description: Some("DMA interrupt status register (DMA_ISR)"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "gif",
-                    description: Some("Channel 1 Global interrupt flag"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
+    ],
+    enums: &[
+        Enum {
+            name: "Circ",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Circular buffer disabled"),
+                    value: 0,
                 },
-                Field {
-                    name: "tcif",
-                    description: Some("Channel 1 Transfer Complete flag"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "htif",
-                    description: Some("Channel 1 Half Transfer Complete flag"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "teif",
-                    description: Some("Channel 1 Transfer Error flag"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Circular buffer enabled"),
+                    value: 1,
                 },
             ],
         },
-    ],
-    enums: &[
         Enum {
             name: "Pl",
             description: None,
@@ -321,23 +338,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Memmem",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Memory to memory mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Memory to memory mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Size",
             description: None,
             bit_size: 2,
@@ -360,6 +360,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Memmem",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Memory to memory mode disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Memory to memory mode enabled"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Inc",
             description: None,
             bit_size: 1,
@@ -372,23 +389,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "ENABLED",
                     description: Some("Increment mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Circ",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Circular buffer disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Circular buffer enabled"),
                     value: 1,
                 },
             ],

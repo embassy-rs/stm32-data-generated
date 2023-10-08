@@ -114,46 +114,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Fcr",
-            extends: None,
-            description: Some("stream x FIFO control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fth",
-                    description: Some("FIFO threshold selection"),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Fth"),
-                },
-                Field {
-                    name: "dmdis",
-                    description: Some("Direct mode disable"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Dmdis"),
-                },
-                Field {
-                    name: "fs",
-                    description: Some("FIFO status"),
-                    bit_offset: 3,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some("Fs"),
-                },
-                Field {
-                    name: "feie",
-                    description: Some("FIFO error interrupt enable"),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("stream x configuration register"),
@@ -314,6 +274,46 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Fcr",
+            extends: None,
+            description: Some("stream x FIFO control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fth",
+                    description: Some("FIFO threshold selection"),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Fth"),
+                },
+                Field {
+                    name: "dmdis",
+                    description: Some("Direct mode disable"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Dmdis"),
+                },
+                Field {
+                    name: "fs",
+                    description: Some("FIFO status"),
+                    bit_offset: 3,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some("Fs"),
+                },
+                Field {
+                    name: "feie",
+                    description: Some("FIFO error interrupt enable"),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Ndtr",
             extends: None,
             description: Some("stream x number of data register"),
@@ -388,18 +388,18 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Inc",
+            name: "Dmdis",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIXED",
-                    description: Some("Address pointer is fixed"),
+                    name: "ENABLED",
+                    description: Some("Direct mode is enabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INCREMENTED",
-                    description: Some("Address pointer is incremented after each data transfer"),
+                    name: "DISABLED",
+                    description: Some("Direct mode is disabled"),
                     value: 1,
                 },
             ],
@@ -423,179 +423,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "MEMORYTOMEMORY",
                     description: Some("Memory-to-memory"),
                     value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Fth",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "QUARTER",
-                    description: Some("1/4 full FIFO"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALF",
-                    description: Some("1/2 full FIFO"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "THREEQUARTERS",
-                    description: Some("3/4 full FIFO"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FULL",
-                    description: Some("Full FIFO"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Circ",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Circular mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Circular mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ct",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MEMORY0",
-                    description: Some("The current target memory is Memory 0"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MEMORY1",
-                    description: Some("The current target memory is Memory 1"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pfctrl",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DMA",
-                    description: Some("The DMA is the flow controller"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PERIPHERAL",
-                    description: Some("The peripheral is the flow controller"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pincos",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PSIZE",
-                    description: Some("The offset size for the peripheral address calculation is linked to the PSIZE"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FIXED4",
-                    description: Some(
-                        "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Size",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some("Byte (8-bit)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("Half-word (16-bit)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("Word (32-bit)"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Dbm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("No buffer switching at the end of transfer"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Memory target switched at the end of the DMA transfer"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fs",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "QUARTER1",
-                    description: Some("0 < fifo_level < 1/4"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "QUARTER2",
-                    description: Some("1/4 <= fifo_level < 1/2"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "QUARTER3",
-                    description: Some("1/2 <= fifo_level < 3/4"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "QUARTER4",
-                    description: Some("3/4 <= fifo_level < full"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "EMPTY",
-                    description: Some("FIFO is empty"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "FULL",
-                    description: Some("FIFO is full"),
-                    value: 5,
                 },
             ],
         },
@@ -654,18 +481,191 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dmdis",
+            name: "Inc",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Direct mode is enabled"),
+                    name: "FIXED",
+                    description: Some("Address pointer is fixed"),
                     value: 0,
                 },
                 EnumVariant {
+                    name: "INCREMENTED",
+                    description: Some("Address pointer is incremented after each data transfer"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ct",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MEMORY0",
+                    description: Some("The current target memory is Memory 0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MEMORY1",
+                    description: Some("The current target memory is Memory 1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Size",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("Byte (8-bit)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("Half-word (16-bit)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("Word (32-bit)"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Fth",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "QUARTER",
+                    description: Some("1/4 full FIFO"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HALF",
+                    description: Some("1/2 full FIFO"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "THREEQUARTERS",
+                    description: Some("3/4 full FIFO"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FULL",
+                    description: Some("Full FIFO"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Pfctrl",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DMA",
+                    description: Some("The DMA is the flow controller"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PERIPHERAL",
+                    description: Some("The peripheral is the flow controller"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pincos",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PSIZE",
+                    description: Some("The offset size for the peripheral address calculation is linked to the PSIZE"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FIXED4",
+                    description: Some(
+                        "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dbm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
                     name: "DISABLED",
-                    description: Some("Direct mode is disabled"),
+                    description: Some("No buffer switching at the end of transfer"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Memory target switched at the end of the DMA transfer"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fs",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "QUARTER1",
+                    description: Some("0 < fifo_level < 1/4"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "QUARTER2",
+                    description: Some("1/4 <= fifo_level < 1/2"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "QUARTER3",
+                    description: Some("1/2 <= fifo_level < 3/4"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "QUARTER4",
+                    description: Some("3/4 <= fifo_level < full"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "EMPTY",
+                    description: Some("FIFO is empty"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "FULL",
+                    description: Some("FIFO is full"),
+                    value: 5,
+                },
+            ],
+        },
+        Enum {
+            name: "Circ",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Circular mode disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Circular mode enabled"),
                     value: 1,
                 },
             ],

@@ -43,30 +43,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cdr",
-            extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdata_mst",
-                    description: Some("Regular data of the master ADC"),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rdata_slv",
-                    description: Some("Regular data of the slave ADC"),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ccr",
             extends: None,
             description: Some("ADC common control register"),
@@ -133,6 +109,30 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("CH17 selection (temperature)"),
                     bit_offset: 24,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cdr",
+            extends: None,
+            description: Some("ADC common regular data register for dual and triple modes"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdata_mst",
+                    description: Some("Regular data of the master ADC"),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rdata_slv",
+                    description: Some("Regular data of the slave ADC"),
+                    bit_offset: 16,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },

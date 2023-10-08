@@ -3200,7 +3200,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "SAI1RST",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "CCIPR2",
+                register: "CCIPR",
                 field: "SAI1SEL",
             }),
         }),
@@ -3462,7 +3462,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "SAI2RST",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "CCIPR2",
+                register: "CCIPR",
                 field: "SAI2SEL",
             }),
         }),

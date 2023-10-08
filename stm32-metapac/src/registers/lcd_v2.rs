@@ -92,30 +92,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Clr",
-            extends: None,
-            description: Some("clear register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sofc",
-                    description: Some("Start of frame flag clear"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uddc",
-                    description: Some("Update display done clear"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("control register"),
@@ -165,6 +141,30 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bufen",
                     description: Some("Voltage output buffer enable"),
                     bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Clr",
+            extends: None,
+            description: Some("clear register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sofc",
+                    description: Some("Start of frame flag clear"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uddc",
+                    description: Some("Update display done clear"),
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,

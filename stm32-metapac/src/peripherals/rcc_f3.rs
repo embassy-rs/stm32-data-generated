@@ -1448,13 +1448,13 @@ pub mod regs {
         }
         #[doc = "Do not divide PLL to MCO"]
         #[inline(always)]
-        pub const fn pllnodiv(&self) -> super::vals::Pllnodiv {
+        pub const fn pllmcodiv(&self) -> super::vals::Pllmcodiv {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Pllnodiv::from_bits(val as u8)
+            super::vals::Pllmcodiv::from_bits(val as u8)
         }
         #[doc = "Do not divide PLL to MCO"]
         #[inline(always)]
-        pub fn set_pllnodiv(&mut self, val: super::vals::Pllnodiv) {
+        pub fn set_pllmcodiv(&mut self, val: super::vals::Pllmcodiv) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -2524,7 +2524,7 @@ pub mod vals {
         HSI = 0x05,
         #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
         HSE = 0x06,
-        #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLNODIV)"]
+        #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLMCODIV)"]
         PLL = 0x07,
     }
     impl Mcosel {
@@ -2547,6 +2547,36 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcosel) -> u8 {
             Mcosel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllmcodiv {
+        #[doc = "PLL is divided by 2 for MCO"]
+        DIV2 = 0,
+        #[doc = "PLL is not divided for MCO"]
+        DIV1 = 0x01,
+    }
+    impl Pllmcodiv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllmcodiv {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllmcodiv {
+        #[inline(always)]
+        fn from(val: u8) -> Pllmcodiv {
+            Pllmcodiv::from_bits(val)
+        }
+    }
+    impl From<Pllmcodiv> for u8 {
+        #[inline(always)]
+        fn from(val: Pllmcodiv) -> u8 {
+            Pllmcodiv::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2582,8 +2612,7 @@ pub mod vals {
         MUL15 = 0x0d,
         #[doc = "PLL input clock x16"]
         MUL16 = 0x0e,
-        #[doc = "PLL input clock x16"]
-        MUL16X = 0x0f,
+        _RESERVED_f = 0x0f,
     }
     impl Pllmul {
         #[inline(always)]
@@ -2605,36 +2634,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllmul) -> u8 {
             Pllmul::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pllnodiv {
-        #[doc = "PLL is divided by 2 for MCO"]
-        DIV2 = 0,
-        #[doc = "PLL is not divided for MCO"]
-        DIV1 = 0x01,
-    }
-    impl Pllnodiv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllnodiv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllnodiv {
-        #[inline(always)]
-        fn from(val: u8) -> Pllnodiv {
-            Pllnodiv::from_bits(val)
-        }
-    }
-    impl From<Pllnodiv> for u8 {
-        #[inline(always)]
-        fn from(val: Pllnodiv) -> u8 {
-            Pllnodiv::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -144,33 +144,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Polysize",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "POLYSIZE32",
-                    description: Some("32-bit polynomial"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "POLYSIZE16",
-                    description: Some("16-bit polynomial"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "POLYSIZE8",
-                    description: Some("8-bit polynomial"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "POLYSIZE7",
-                    description: Some("7-bit polynomial"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "RevIn",
             description: None,
             bit_size: 2,
@@ -193,6 +166,33 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "WORD",
                     description: Some("Bit reversal done by word"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Polysize",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "POLYSIZE32",
+                    description: Some("32-bit polynomial"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "POLYSIZE16",
+                    description: Some("16-bit polynomial"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "POLYSIZE8",
+                    description: Some("8-bit polynomial"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "POLYSIZE7",
+                    description: Some("7-bit polynomial"),
                     value: 3,
                 },
             ],

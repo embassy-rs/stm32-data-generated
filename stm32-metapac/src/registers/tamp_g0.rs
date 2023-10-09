@@ -242,109 +242,119 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Sidr",
+            name: "Scr",
             extends: None,
             description: Some(
-                "EXTI Size ID register",
+                "TAMP status clear register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sid",
+                    name: "ctampf",
                     description: Some(
-                        "Size Identification",
+                        "Clear tamper X detection flag",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "citampf",
+                    description: Some(
+                        "Clear internal tamper X detection flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 7,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "TAMP status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampf",
+                    description: Some(
+                        "Tamper X detection flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampf",
+                    description: Some(
+                        "Internal tamper X detection flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 7,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Verr",
+            extends: None,
+            description: Some(
+                "EXTI IP Version register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "minrev",
+                    description: Some(
+                        "Minor Revision number",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Ier",
-            extends: None,
-            description: Some(
-                "TAMP interrupt enable register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "tampie",
+                    name: "majrev",
                     description: Some(
-                        "Tamper X interrupt enable",
+                        "Major Revision number",
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampie",
-                    description: Some(
-                        "Internal tamper X interrupt enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Misr",
-            extends: None,
-            description: Some(
-                "TAMP masked interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampmf",
-                    description: Some(
-                        "Tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampmf",
-                    description: Some(
-                        "Internal tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -400,31 +410,129 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hwcfgr2",
+            name: "Sidr",
             extends: None,
             description: Some(
-                "TAMP hardware configuration register 2",
+                "EXTI Size ID register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ptionreg_out",
+                    name: "sid",
                     description: Some(
-                        "PTIONREG_OUT",
+                        "Size Identification",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Cr1",
+            extends: None,
+            description: Some(
+                "control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "trust_zone",
+                    name: "tampe",
                     description: Some(
-                        "TRUST_ZONE",
+                        "Tamper detection on IN X enable",
                     ),
-                    bit_offset: 8,
-                    bit_size: 4,
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampe",
+                    description: Some(
+                        "Internal tamper X enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ipidr",
+            extends: None,
+            description: Some(
+                "EXTI Identification register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ipid",
+                    description: Some(
+                        "IP Identification",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Misr",
+            extends: None,
+            description: Some(
+                "TAMP masked interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampmf",
+                    description: Some(
+                        "Tamper X interrupt masked flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampmf",
+                    description: Some(
+                        "Internal tamper X interrupt masked flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -491,17 +599,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Scr",
+            name: "Ier",
             extends: None,
             description: Some(
-                "TAMP status clear register",
+                "TAMP interrupt enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ctampf",
+                    name: "tampie",
                     description: Some(
-                        "Clear tamper X detection flag",
+                        "Tamper X interrupt enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -516,103 +624,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "citampf",
+                    name: "itampie",
                     description: Some(
-                        "Clear internal tamper X detection flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 7,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Verr",
-            extends: None,
-            description: Some(
-                "EXTI IP Version register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "minrev",
-                    description: Some(
-                        "Minor Revision number",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "majrev",
-                    description: Some(
-                        "Major Revision number",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ipidr",
-            extends: None,
-            description: Some(
-                "EXTI Identification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ipid",
-                    description: Some(
-                        "IP Identification",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampe",
-                    description: Some(
-                        "Tamper detection on IN X enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampe",
-                    description: Some(
-                        "Internal tamper X enable",
+                        "Internal tamper X interrupt enable",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -624,6 +638,56 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bkpr",
+            extends: None,
+            description: Some(
+                "TAMP backup register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bkp",
+                    description: Some(
+                        "BKP",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hwcfgr2",
+            extends: None,
+            description: Some(
+                "TAMP hardware configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ptionreg_out",
+                    description: Some(
+                        "PTIONREG_OUT",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trust_zone",
+                    description: Some(
+                        "TRUST_ZONE",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -673,70 +737,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 16,
                     bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some(
-                "TAMP status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampf",
-                    description: Some(
-                        "Tamper X detection flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampf",
-                    description: Some(
-                        "Internal tamper X detection flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 7,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bkpr",
-            extends: None,
-            description: Some(
-                "TAMP backup register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bkp",
-                    description: Some(
-                        "BKP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

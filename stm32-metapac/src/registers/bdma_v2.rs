@@ -103,46 +103,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Isr",
-            extends: None,
-            description: Some("DMA interrupt status register (DMA_ISR)"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "gif",
-                    description: Some("Channel 1 Global interrupt flag"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "tcif",
-                    description: Some("Channel 1 Transfer Complete flag"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "htif",
-                    description: Some("Channel 1 Half Transfer Complete flag"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "teif",
-                    description: Some("Channel 1 Transfer Error flag"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cselr",
             extends: None,
             description: Some("channel selection register"),
@@ -261,6 +221,46 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Isr",
+            extends: None,
+            description: Some("DMA interrupt status register (DMA_ISR)"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "gif",
+                    description: Some("Channel 1 Global interrupt flag"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "tcif",
+                    description: Some("Channel 1 Transfer Complete flag"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "htif",
+                    description: Some("Channel 1 Half Transfer Complete flag"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "teif",
+                    description: Some("Channel 1 Transfer Error flag"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Ndtr",
             extends: None,
             description: Some("DMA channel 1 number of data register"),
@@ -276,6 +276,23 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Circ",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Circular buffer disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Circular buffer enabled"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Memmem",
             description: None,
@@ -294,18 +311,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Circ",
+            name: "Inc",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
-                    description: Some("Circular buffer disabled"),
+                    description: Some("Increment mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
-                    description: Some("Circular buffer enabled"),
+                    description: Some("Increment mode enabled"),
                     value: 1,
                 },
             ],
@@ -333,6 +350,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Dir",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FROMPERIPHERAL",
+                    description: Some("Read from peripheral"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FROMMEMORY",
+                    description: Some("Read from memory"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Pl",
             description: None,
             bit_size: 2,
@@ -356,40 +390,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "VERYHIGH",
                     description: Some("Very high priority"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Increment mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Increment mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dir",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FROMPERIPHERAL",
-                    description: Some("Read from peripheral"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FROMMEMORY",
-                    description: Some("Read from memory"),
-                    value: 1,
                 },
             ],
         },

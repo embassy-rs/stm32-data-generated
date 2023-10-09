@@ -1117,11 +1117,6 @@
         "name": "Mul16",
         "description": "PLL input clock x16",
         "value": 14
-      },
-      {
-        "name": "Mul16x",
-        "description": "PLL input clock x16",
-        "value": 15
       }
     ]
   },

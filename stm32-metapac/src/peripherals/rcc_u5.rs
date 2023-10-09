@@ -61,42 +61,42 @@ impl Rcc {
     }
     #[doc = "RCC PLL2 configuration register"]
     #[inline(always)]
-    pub const fn pll2cfgr(self) -> crate::common::Reg<regs::Pll2cfgr, crate::common::RW> {
+    pub const fn pll2cfgr(self) -> crate::common::Reg<regs::Pll23cfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(44usize) as _) }
     }
     #[doc = "RCC PLL3 configuration register"]
     #[inline(always)]
-    pub const fn pll3cfgr(self) -> crate::common::Reg<regs::Pll3cfgr, crate::common::RW> {
+    pub const fn pll3cfgr(self) -> crate::common::Reg<regs::Pll23cfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(48usize) as _) }
     }
     #[doc = "RCC PLL1 dividers register"]
     #[inline(always)]
-    pub const fn pll1divr(self) -> crate::common::Reg<regs::Pll1divr, crate::common::RW> {
+    pub const fn pll1divr(self) -> crate::common::Reg<regs::Plldivr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(52usize) as _) }
     }
     #[doc = "RCC PLL1 fractional divider register"]
     #[inline(always)]
-    pub const fn pll1fracr(self) -> crate::common::Reg<regs::Pll1fracr, crate::common::RW> {
+    pub const fn pll1fracr(self) -> crate::common::Reg<regs::Pllfracr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(56usize) as _) }
     }
     #[doc = "RCC PLL2 dividers configuration register"]
     #[inline(always)]
-    pub const fn pll2divr(self) -> crate::common::Reg<regs::Pll2divr, crate::common::RW> {
+    pub const fn pll2divr(self) -> crate::common::Reg<regs::Plldivr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
     }
     #[doc = "RCC PLL2 fractional divider register"]
     #[inline(always)]
-    pub const fn pll2fracr(self) -> crate::common::Reg<regs::Pll2fracr, crate::common::RW> {
+    pub const fn pll2fracr(self) -> crate::common::Reg<regs::Pllfracr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize) as _) }
     }
     #[doc = "RCC PLL3 dividers configuration register"]
     #[inline(always)]
-    pub const fn pll3divr(self) -> crate::common::Reg<regs::Pll3divr, crate::common::RW> {
+    pub const fn pll3divr(self) -> crate::common::Reg<regs::Plldivr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
     }
     #[doc = "RCC PLL3 fractional divider register"]
     #[inline(always)]
-    pub const fn pll3fracr(self) -> crate::common::Reg<regs::Pll3fracr, crate::common::RW> {
+    pub const fn pll3fracr(self) -> crate::common::Reg<regs::Pllfracr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
     }
     #[doc = "RCC clock interrupt enable register"]
@@ -5697,95 +5697,95 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
             Icscr3(0)
         }
     }
-    #[doc = "RCC PLL1 configuration register"]
+    #[doc = "RCC PLL configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Pll1cfgr(pub u32);
     impl Pll1cfgr {
-        #[doc = "PLL1 entry clock source Set and cleared by software to select PLL1 clock source. These bits can be written only when the PLL1 is disabled. In order to save power, when no PLL1 is used, the value of PLL1SRC must be 0."]
+        #[doc = "PLL entry clock source Set and cleared by software to select PLL clock source. These bits can be written only when the PLL is disabled. In order to save power, when no PLL is used, the value of PLLSRC must be 0."]
         #[inline(always)]
         pub const fn pllsrc(&self) -> super::vals::Pllsrc {
             let val = (self.0 >> 0usize) & 0x03;
             super::vals::Pllsrc::from_bits(val as u8)
         }
-        #[doc = "PLL1 entry clock source Set and cleared by software to select PLL1 clock source. These bits can be written only when the PLL1 is disabled. In order to save power, when no PLL1 is used, the value of PLL1SRC must be 0."]
+        #[doc = "PLL entry clock source Set and cleared by software to select PLL clock source. These bits can be written only when the PLL is disabled. In order to save power, when no PLL is used, the value of PLLSRC must be 0."]
         #[inline(always)]
         pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
-        #[doc = "PLL1 input frequency range Set and reset by software to select the proper reference frequency range used for PLL1. This bit must be written before enabling the PLL1. 00-01-10: PLL1 input (ref1_ck) clock range frequency between 4 and 8 MHz"]
+        #[doc = "PLL input frequency range Set and reset by software to select the proper reference frequency range used for PLL. This bit must be written before enabling the PLL. 00-01-10: PLL input (ref1_ck) clock range frequency between 4 and 8 MHz"]
         #[inline(always)]
         pub const fn pllrge(&self) -> super::vals::Pllrge {
             let val = (self.0 >> 2usize) & 0x03;
             super::vals::Pllrge::from_bits(val as u8)
         }
-        #[doc = "PLL1 input frequency range Set and reset by software to select the proper reference frequency range used for PLL1. This bit must be written before enabling the PLL1. 00-01-10: PLL1 input (ref1_ck) clock range frequency between 4 and 8 MHz"]
+        #[doc = "PLL input frequency range Set and reset by software to select the proper reference frequency range used for PLL. This bit must be written before enabling the PLL. 00-01-10: PLL input (ref1_ck) clock range frequency between 4 and 8 MHz"]
         #[inline(always)]
         pub fn set_pllrge(&mut self, val: super::vals::Pllrge) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
-        #[doc = "PLL1 fractional latch enable Set and reset by software to latch the content of PLL1FRACN into the Î£Î modulator. In order to latch the PLL1FRACN value into the Î£Î modulator, PLL1FRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLL1FRACN into the modulator (see for details)."]
+        #[doc = "PLL fractional latch enable Set and reset by software to latch the content of PLLFRACN into the Î£Î modulator. In order to latch the PLLFRACN value into the Î£Î modulator, PLLFRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLLFRACN into the modulator (see for details)."]
         #[inline(always)]
         pub const fn pllfracen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 fractional latch enable Set and reset by software to latch the content of PLL1FRACN into the Î£Î modulator. In order to latch the PLL1FRACN value into the Î£Î modulator, PLL1FRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLL1FRACN into the modulator (see for details)."]
+        #[doc = "PLL fractional latch enable Set and reset by software to latch the content of PLLFRACN into the Î£Î modulator. In order to latch the PLLFRACN value into the Î£Î modulator, PLLFRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLLFRACN into the modulator (see for details)."]
         #[inline(always)]
         pub fn set_pllfracen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "Prescaler for PLL1 Set and cleared by software to configure the prescaler of the PLL1. The VCO1 input frequency is PLL1 input clock frequency/PLL1M. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
+        #[doc = "Prescaler for PLL Set and cleared by software to configure the prescaler of the PLL. The VCO1 input frequency is PLL input clock frequency/PLLM. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0). ..."]
         #[inline(always)]
         pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 8usize) & 0x0f;
             super::vals::Pllm::from_bits(val as u8)
         }
-        #[doc = "Prescaler for PLL1 Set and cleared by software to configure the prescaler of the PLL1. The VCO1 input frequency is PLL1 input clock frequency/PLL1M. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
+        #[doc = "Prescaler for PLL Set and cleared by software to configure the prescaler of the PLL. The VCO1 input frequency is PLL input clock frequency/PLLM. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0). ..."]
         #[inline(always)]
         pub fn set_pllm(&mut self, val: super::vals::Pllm) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
         }
-        #[doc = "Prescaler for EPOD booster input clock Set and cleared by software to configure the prescaler of the PLL1, used for the EPOD booster. The EPOD booster input frequency is PLL1 input clock frequency/PLL1MBOOST. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0) and EPOD Boost mode is disabled (see ). others: reserved"]
+        #[doc = "Prescaler for EPOD booster input clock Set and cleared by software to configure the prescaler of the PLL, used for the EPOD booster. The EPOD booster input frequency is PLL input clock frequency/PLLMBOOST. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0) and EPOD Boost mode is disabled (see ). others: reserved"]
         #[inline(always)]
         pub const fn pllmboost(&self) -> super::vals::Pllmboost {
             let val = (self.0 >> 12usize) & 0x0f;
             super::vals::Pllmboost::from_bits(val as u8)
         }
-        #[doc = "Prescaler for EPOD booster input clock Set and cleared by software to configure the prescaler of the PLL1, used for the EPOD booster. The EPOD booster input frequency is PLL1 input clock frequency/PLL1MBOOST. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0) and EPOD Boost mode is disabled (see ). others: reserved"]
+        #[doc = "Prescaler for EPOD booster input clock Set and cleared by software to configure the prescaler of the PLL, used for the EPOD booster. The EPOD booster input frequency is PLL input clock frequency/PLLMBOOST. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0) and EPOD Boost mode is disabled (see ). others: reserved"]
         #[inline(always)]
         pub fn set_pllmboost(&mut self, val: super::vals::Pllmboost) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val.to_bits() as u32) & 0x0f) << 12usize);
         }
-        #[doc = "PLL1 DIVP divider output enable Set and reset by software to enable the pll1_p_ck output of the PLL1. To save power, PLL1PEN and PLL1P bits must be set to 0 when the pll1_p_ck is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
+        #[doc = "PLL DIVP divider output enable Set and reset by software to enable the PLL_p_ck output of the PLL. To save power, PLLPEN and PLLP bits must be set to 0 when the PLL_p_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
         #[inline(always)]
         pub const fn pllpen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 DIVP divider output enable Set and reset by software to enable the pll1_p_ck output of the PLL1. To save power, PLL1PEN and PLL1P bits must be set to 0 when the pll1_p_ck is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
+        #[doc = "PLL DIVP divider output enable Set and reset by software to enable the PLL_p_ck output of the PLL. To save power, PLLPEN and PLLP bits must be set to 0 when the PLL_p_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
         #[inline(always)]
         pub fn set_pllpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
-        #[doc = "PLL1 DIVQ divider output enable Set and reset by software to enable the pll1_q_ck output of the PLL1. To save power, PLL1QEN and PLL1Q bits must be set to 0 when the pll1_q_ck is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
+        #[doc = "PLL DIVQ divider output enable Set and reset by software to enable the PLL_q_ck output of the PLL. To save power, PLLQEN and PLLQ bits must be set to 0 when the PLL_q_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
         #[inline(always)]
         pub const fn pllqen(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 DIVQ divider output enable Set and reset by software to enable the pll1_q_ck output of the PLL1. To save power, PLL1QEN and PLL1Q bits must be set to 0 when the pll1_q_ck is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
+        #[doc = "PLL DIVQ divider output enable Set and reset by software to enable the PLL_q_ck output of the PLL. To save power, PLLQEN and PLLQ bits must be set to 0 when the PLL_q_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
         #[inline(always)]
         pub fn set_pllqen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
-        #[doc = "PLL1 DIVR divider output enable Set and reset by software to enable the pll1_r_ck output of the PLL1. To save power, PLL1RENPLL2REN and PLL1R bits must be set to 0 when the pll1_r_ck is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
+        #[doc = "PLL DIVR divider output enable Set and reset by software to enable the PLL_r_ck output of the PLL. To save power, PLLRENPLL2REN and PLLR bits must be set to 0 when the PLL_r_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
         #[inline(always)]
         pub const fn pllren(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 DIVR divider output enable Set and reset by software to enable the pll1_r_ck output of the PLL1. To save power, PLL1RENPLL2REN and PLL1R bits must be set to 0 when the pll1_r_ck is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
+        #[doc = "PLL DIVR divider output enable Set and reset by software to enable the PLL_r_ck output of the PLL. To save power, PLLRENPLL2REN and PLLR bits must be set to 0 when the PLL_r_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
         #[inline(always)]
         pub fn set_pllren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
@@ -5797,67 +5797,156 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
             Pll1cfgr(0)
         }
     }
+    #[doc = "RCC PLL configuration register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pll23cfgr(pub u32);
+    impl Pll23cfgr {
+        #[doc = "PLL entry clock source Set and cleared by software to select PLL clock source. These bits can be written only when the PLL is disabled. In order to save power, when no PLL is used, the value of PLLSRC must be 0."]
+        #[inline(always)]
+        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Pllsrc::from_bits(val as u8)
+        }
+        #[doc = "PLL entry clock source Set and cleared by software to select PLL clock source. These bits can be written only when the PLL is disabled. In order to save power, when no PLL is used, the value of PLLSRC must be 0."]
+        #[inline(always)]
+        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "PLL input frequency range Set and reset by software to select the proper reference frequency range used for PLL. This bit must be written before enabling the PLL. 00-01-10: PLL input (ref1_ck) clock range frequency between 4 and 8 MHz"]
+        #[inline(always)]
+        pub const fn pllrge(&self) -> super::vals::Pllrge {
+            let val = (self.0 >> 2usize) & 0x03;
+            super::vals::Pllrge::from_bits(val as u8)
+        }
+        #[doc = "PLL input frequency range Set and reset by software to select the proper reference frequency range used for PLL. This bit must be written before enabling the PLL. 00-01-10: PLL input (ref1_ck) clock range frequency between 4 and 8 MHz"]
+        #[inline(always)]
+        pub fn set_pllrge(&mut self, val: super::vals::Pllrge) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
+        }
+        #[doc = "PLL fractional latch enable Set and reset by software to latch the content of PLLFRACN into the Î£Î modulator. In order to latch the PLLFRACN value into the Î£Î modulator, PLLFRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLLFRACN into the modulator (see for details)."]
+        #[inline(always)]
+        pub const fn pllfracen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PLL fractional latch enable Set and reset by software to latch the content of PLLFRACN into the Î£Î modulator. In order to latch the PLLFRACN value into the Î£Î modulator, PLLFRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLLFRACN into the modulator (see for details)."]
+        #[inline(always)]
+        pub fn set_pllfracen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Prescaler for PLL Set and cleared by software to configure the prescaler of the PLL. The VCO1 input frequency is PLL input clock frequency/PLLM. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0). ..."]
+        #[inline(always)]
+        pub const fn pllm(&self) -> super::vals::Pllm {
+            let val = (self.0 >> 8usize) & 0x0f;
+            super::vals::Pllm::from_bits(val as u8)
+        }
+        #[doc = "Prescaler for PLL Set and cleared by software to configure the prescaler of the PLL. The VCO1 input frequency is PLL input clock frequency/PLLM. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0). ..."]
+        #[inline(always)]
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "PLL DIVP divider output enable Set and reset by software to enable the PLL_p_ck output of the PLL. To save power, PLLPEN and PLLP bits must be set to 0 when the PLL_p_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
+        #[inline(always)]
+        pub const fn pllpen(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PLL DIVP divider output enable Set and reset by software to enable the PLL_p_ck output of the PLL. To save power, PLLPEN and PLLP bits must be set to 0 when the PLL_p_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
+        #[inline(always)]
+        pub fn set_pllpen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "PLL DIVQ divider output enable Set and reset by software to enable the PLL_q_ck output of the PLL. To save power, PLLQEN and PLLQ bits must be set to 0 when the PLL_q_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
+        #[inline(always)]
+        pub const fn pllqen(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PLL DIVQ divider output enable Set and reset by software to enable the PLL_q_ck output of the PLL. To save power, PLLQEN and PLLQ bits must be set to 0 when the PLL_q_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
+        #[inline(always)]
+        pub fn set_pllqen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "PLL DIVR divider output enable Set and reset by software to enable the PLL_r_ck output of the PLL. To save power, PLLRENPLL2REN and PLLR bits must be set to 0 when the PLL_r_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
+        #[inline(always)]
+        pub const fn pllren(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PLL DIVR divider output enable Set and reset by software to enable the PLL_r_ck output of the PLL. To save power, PLLRENPLL2REN and PLLR bits must be set to 0 when the PLL_r_ck is not used. This bit can be written only when the PLL is disabled (PLLON = 0 and PLLRDY = 0)."]
+        #[inline(always)]
+        pub fn set_pllren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+    }
+    impl Default for Pll23cfgr {
+        #[inline(always)]
+        fn default() -> Pll23cfgr {
+            Pll23cfgr(0)
+        }
+    }
     #[doc = "RCC PLL1 dividers register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1divr(pub u32);
-    impl Pll1divr {
+    pub struct Plldivr(pub u32);
+    impl Plldivr {
         #[doc = "Multiplication factor for PLL1 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled (PLL1ON = 0 and PLL1RDY = 0). ... ... Others: reserved VCO output frequency = Fref1_ck x PLL1N, when fractional value 0 has been loaded into PLL1FRACN, with: PLL1N between 4 and 512 input frequency Fref1_ck between 4 and 16 MHz"]
         #[inline(always)]
-        pub const fn plln(&self) -> u16 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
+            super::vals::Plln::from_bits(val as u16)
         }
         #[doc = "Multiplication factor for PLL1 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled (PLL1ON = 0 and PLL1RDY = 0). ... ... Others: reserved VCO output frequency = Fref1_ck x PLL1N, when fractional value 0 has been loaded into PLL1FRACN, with: PLL1N between 4 and 512 input frequency Fref1_ck between 4 and 16 MHz"]
         #[inline(always)]
-        pub fn set_plln(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val.to_bits() as u32) & 0x01ff) << 0usize);
         }
         #[doc = "PLL1 DIVP division factor Set and reset by software to control the frequency of the pll1_p_ck clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). Note that odd division factors are not allowed. ..."]
         #[inline(always)]
-        pub const fn pllp(&self) -> u8 {
+        pub const fn pllp(&self) -> super::vals::Plldiv {
             let val = (self.0 >> 9usize) & 0x7f;
-            val as u8
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVP division factor Set and reset by software to control the frequency of the pll1_p_ck clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). Note that odd division factors are not allowed. ..."]
         #[inline(always)]
-        pub fn set_pllp(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
+        pub fn set_pllp(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 9usize)) | (((val.to_bits() as u32) & 0x7f) << 9usize);
         }
         #[doc = "PLL1 DIVQ division factor Set and reset by software to control the frequency of the pll1_q_ck clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
+        pub const fn pllq(&self) -> super::vals::Plldiv {
             let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVQ division factor Set and reset by software to control the frequency of the pll1_q_ck clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        pub fn set_pllq(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val.to_bits() as u32) & 0x7f) << 16usize);
         }
         #[doc = "PLL1 DIVR division factor Set and reset by software to control the frequency of the pll1_r_ck clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub const fn pllr(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Plldiv {
             let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVR division factor Set and reset by software to control the frequency of the pll1_r_ck clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub fn set_pllr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
+        pub fn set_pllr(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 24usize)) | (((val.to_bits() as u32) & 0x7f) << 24usize);
         }
     }
-    impl Default for Pll1divr {
+    impl Default for Plldivr {
         #[inline(always)]
-        fn default() -> Pll1divr {
-            Pll1divr(0)
+        fn default() -> Plldivr {
+            Plldivr(0)
         }
     }
     #[doc = "RCC PLL1 fractional divider register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1fracr(pub u32);
-    impl Pll1fracr {
+    pub struct Pllfracr(pub u32);
+    impl Pllfracr {
         #[doc = "Fractional part of the multiplication factor for PLL1 VCO Set and reset by software to control the fractional part of the multiplication factor of the VCO. These bits can be written at any time, allowing dynamic fine-tuning of the PLL1 VCO. VCO output frequency = Fref1_ck x (PLL1N + (PLL1FRACN / 213)), with: PLL1N must be between 4 and 512. PLL1FRACN can be between 0 and 213- 1. The input frequency Fref1_ck must be between 4 and 16 MHz. To change the FRACN value on-the-fly even if the PLL is enabled, the application must proceed as follows: Set the bit PLL1FRACEN to 0. Write the new fractional value into PLL1FRACN. Set the bit PLL1FRACEN to 1."]
         #[inline(always)]
         pub const fn pllfracn(&self) -> u16 {
@@ -5870,346 +5959,10 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
             self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
         }
     }
-    impl Default for Pll1fracr {
+    impl Default for Pllfracr {
         #[inline(always)]
-        fn default() -> Pll1fracr {
-            Pll1fracr(0)
-        }
-    }
-    #[doc = "RCC PLL2 configuration register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2cfgr(pub u32);
-    impl Pll2cfgr {
-        #[doc = "PLL2 entry clock source Set and cleared by software to select PLL2 clock source. These bits can be written only when the PLL2 is disabled. In order to save power, when no PLL2 is used, the value of PLL2SRC must be 0."]
-        #[inline(always)]
-        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
-            let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Pllsrc::from_bits(val as u8)
-        }
-        #[doc = "PLL2 entry clock source Set and cleared by software to select PLL2 clock source. These bits can be written only when the PLL2 is disabled. In order to save power, when no PLL2 is used, the value of PLL2SRC must be 0."]
-        #[inline(always)]
-        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
-        }
-        #[doc = "PLL2 input frequency range Set and reset by software to select the proper reference frequency range used for PLL2. This bit must be written before enabling the PLL2. 00-01-10: PLL2 input (ref2_ck) clock range frequency between 4 and 8 MHz"]
-        #[inline(always)]
-        pub const fn pllrge(&self) -> super::vals::Pllrge {
-            let val = (self.0 >> 2usize) & 0x03;
-            super::vals::Pllrge::from_bits(val as u8)
-        }
-        #[doc = "PLL2 input frequency range Set and reset by software to select the proper reference frequency range used for PLL2. This bit must be written before enabling the PLL2. 00-01-10: PLL2 input (ref2_ck) clock range frequency between 4 and 8 MHz"]
-        #[inline(always)]
-        pub fn set_pllrge(&mut self, val: super::vals::Pllrge) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
-        }
-        #[doc = "PLL2 fractional latch enable Set and reset by software to latch the content of PLL2FRACN into the Î£Î modulator. In order to latch the PLL2FRACN value into the Î£Î modulator, PLL2FRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLL2FRACN into the modulator (see for details)."]
-        #[inline(always)]
-        pub const fn pllfracen(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 fractional latch enable Set and reset by software to latch the content of PLL2FRACN into the Î£Î modulator. In order to latch the PLL2FRACN value into the Î£Î modulator, PLL2FRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLL2FRACN into the modulator (see for details)."]
-        #[inline(always)]
-        pub fn set_pllfracen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Prescaler for PLL2 Set and cleared by software to configure the prescaler of the PLL2. The VCO2 input frequency is PLL2 input clock frequency/PLL2M. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllm(&self) -> super::vals::Pllm {
-            let val = (self.0 >> 8usize) & 0x0f;
-            super::vals::Pllm::from_bits(val as u8)
-        }
-        #[doc = "Prescaler for PLL2 Set and cleared by software to configure the prescaler of the PLL2. The VCO2 input frequency is PLL2 input clock frequency/PLL2M. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
-        }
-        #[doc = "PLL2 DIVP divider output enable Set and reset by software to enable the pll2_p_ck output of the PLL2. To save power, PLL2PEN and PLL2P bits must be set to 0 when the pll2_p_ck is not used. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0)."]
-        #[inline(always)]
-        pub const fn pllpen(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 DIVP divider output enable Set and reset by software to enable the pll2_p_ck output of the PLL2. To save power, PLL2PEN and PLL2P bits must be set to 0 when the pll2_p_ck is not used. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0)."]
-        #[inline(always)]
-        pub fn set_pllpen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-        }
-        #[doc = "PLL2 DIVQ divider output enable Set and reset by software to enable the pll2_q_ck output of the PLL2. To save power, PLL2QEN and PLL2Q bits must be set to 0 when the pll2_q_ck is not used. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0."]
-        #[inline(always)]
-        pub const fn pllqen(&self) -> bool {
-            let val = (self.0 >> 17usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 DIVQ divider output enable Set and reset by software to enable the pll2_q_ck output of the PLL2. To save power, PLL2QEN and PLL2Q bits must be set to 0 when the pll2_q_ck is not used. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0."]
-        #[inline(always)]
-        pub fn set_pllqen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-        }
-        #[doc = "PLL2 DIVR divider output enable Set and reset by software to enable the pll2_r_ck output of the PLL2. To save power, PLL2REN and PLL2R bits must be set to 0 when the pll2_r_ck is not used. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0)."]
-        #[inline(always)]
-        pub const fn pllren(&self) -> bool {
-            let val = (self.0 >> 18usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 DIVR divider output enable Set and reset by software to enable the pll2_r_ck output of the PLL2. To save power, PLL2REN and PLL2R bits must be set to 0 when the pll2_r_ck is not used. This bit can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0)."]
-        #[inline(always)]
-        pub fn set_pllren(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
-        }
-    }
-    impl Default for Pll2cfgr {
-        #[inline(always)]
-        fn default() -> Pll2cfgr {
-            Pll2cfgr(0)
-        }
-    }
-    #[doc = "RCC PLL2 dividers configuration register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2divr(pub u32);
-    impl Pll2divr {
-        #[doc = "Multiplication factor for PLL2 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled (PLL2ON = 0 and PLL2RDY = 0). ... ... Others: reserved VCO output frequency = Fref2_ck x PLL2N, when fractional value 0 has been loaded into PLL2FRACN, with: PLL2N between 4 and 512 input frequency Fref2_ck between 1MHz and 16MHz"]
-        #[inline(always)]
-        pub const fn plln(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
-        }
-        #[doc = "Multiplication factor for PLL2 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled (PLL2ON = 0 and PLL2RDY = 0). ... ... Others: reserved VCO output frequency = Fref2_ck x PLL2N, when fractional value 0 has been loaded into PLL2FRACN, with: PLL2N between 4 and 512 input frequency Fref2_ck between 1MHz and 16MHz"]
-        #[inline(always)]
-        pub fn set_plln(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
-        }
-        #[doc = "PLL2 DIVP division factor Set and reset by software to control the frequency of the pll2_p_ck clock. These bits can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllp(&self) -> u8 {
-            let val = (self.0 >> 9usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL2 DIVP division factor Set and reset by software to control the frequency of the pll2_p_ck clock. These bits can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllp(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
-        }
-        #[doc = "PLL2 DIVQ division factor Set and reset by software to control the frequency of the pll2_q_ck clock. These bits can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL2 DIVQ division factor Set and reset by software to control the frequency of the pll2_q_ck clock. These bits can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-        #[doc = "PLL2 DIVR division factor Set and reset by software to control the frequency of the pll2_r_ck clock. These bits can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllr(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL2 DIVR division factor Set and reset by software to control the frequency of the pll2_r_ck clock. These bits can be written only when the PLL2 is disabled (PLL2ON = 0 and PLL2RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
-        }
-    }
-    impl Default for Pll2divr {
-        #[inline(always)]
-        fn default() -> Pll2divr {
-            Pll2divr(0)
-        }
-    }
-    #[doc = "RCC PLL2 fractional divider register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2fracr(pub u32);
-    impl Pll2fracr {
-        #[doc = "Fractional part of the multiplication factor for PLL2 VCO Set and reset by software to control the fractional part of the multiplication factor of the VCO. These bits can be written at any time, allowing dynamic fine-tuning of the PLL2 VCO. VCO output frequency = Fref2_ck x (PLL2N + (PLL2FRACN / 213)), with PLL2N must be between 4 and 512. PLL2FRACN can be between 0 and 213 - 1. The input frequency Fref2_ck must be between 4 and 16 MHz. In order to change the FRACN value on-the-fly even if the PLL is enabled, the application must proceed as follows: Set the bit PLL2FRACEN to 0. Write the new fractional value into PLL2FRACN. Set the bit PLL2FRACEN to 1."]
-        #[inline(always)]
-        pub const fn pllfracn(&self) -> u16 {
-            let val = (self.0 >> 3usize) & 0x1fff;
-            val as u16
-        }
-        #[doc = "Fractional part of the multiplication factor for PLL2 VCO Set and reset by software to control the fractional part of the multiplication factor of the VCO. These bits can be written at any time, allowing dynamic fine-tuning of the PLL2 VCO. VCO output frequency = Fref2_ck x (PLL2N + (PLL2FRACN / 213)), with PLL2N must be between 4 and 512. PLL2FRACN can be between 0 and 213 - 1. The input frequency Fref2_ck must be between 4 and 16 MHz. In order to change the FRACN value on-the-fly even if the PLL is enabled, the application must proceed as follows: Set the bit PLL2FRACEN to 0. Write the new fractional value into PLL2FRACN. Set the bit PLL2FRACEN to 1."]
-        #[inline(always)]
-        pub fn set_pllfracn(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
-        }
-    }
-    impl Default for Pll2fracr {
-        #[inline(always)]
-        fn default() -> Pll2fracr {
-            Pll2fracr(0)
-        }
-    }
-    #[doc = "RCC PLL3 configuration register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3cfgr(pub u32);
-    impl Pll3cfgr {
-        #[doc = "PLL3 entry clock source Set and cleared by software to select PLL3 clock source. These bits can be written only when the PLL3 is disabled. In order to save power, when no PLL3 is used, the value of PLL3SRC must be 00."]
-        #[inline(always)]
-        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
-            let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Pllsrc::from_bits(val as u8)
-        }
-        #[doc = "PLL3 entry clock source Set and cleared by software to select PLL3 clock source. These bits can be written only when the PLL3 is disabled. In order to save power, when no PLL3 is used, the value of PLL3SRC must be 00."]
-        #[inline(always)]
-        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
-        }
-        #[doc = "PLL3 input frequency range Set and reset by software to select the proper reference frequency range used for PLL3. This bit must be written before enabling the PLL3. 00-01-10: PLL3 input (ref3_ck) clock range frequency between 4 and 8 MHz"]
-        #[inline(always)]
-        pub const fn pllrge(&self) -> super::vals::Pllrge {
-            let val = (self.0 >> 2usize) & 0x03;
-            super::vals::Pllrge::from_bits(val as u8)
-        }
-        #[doc = "PLL3 input frequency range Set and reset by software to select the proper reference frequency range used for PLL3. This bit must be written before enabling the PLL3. 00-01-10: PLL3 input (ref3_ck) clock range frequency between 4 and 8 MHz"]
-        #[inline(always)]
-        pub fn set_pllrge(&mut self, val: super::vals::Pllrge) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
-        }
-        #[doc = "PLL3 fractional latch enable Set and reset by software to latch the content of PLL3FRACN into the Î£Î modulator. In order to latch the PLL3FRACN value into the Î£Î modulator, PLL3FRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLL3FRACN into the modulator (see for details)."]
-        #[inline(always)]
-        pub const fn pllfracen(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 fractional latch enable Set and reset by software to latch the content of PLL3FRACN into the Î£Î modulator. In order to latch the PLL3FRACN value into the Î£Î modulator, PLL3FRACEN must be set to 0, then set to 1: the transition 0 to 1 transfers the content of PLL3FRACN into the modulator (see for details)."]
-        #[inline(always)]
-        pub fn set_pllfracen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Prescaler for PLL3 Set and cleared by software to configure the prescaler of the PLL3. The VCO3 input frequency is PLL3 input clock frequency/PLL3M. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllm(&self) -> super::vals::Pllm {
-            let val = (self.0 >> 8usize) & 0x0f;
-            super::vals::Pllm::from_bits(val as u8)
-        }
-        #[doc = "Prescaler for PLL3 Set and cleared by software to configure the prescaler of the PLL3. The VCO3 input frequency is PLL3 input clock frequency/PLL3M. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
-        }
-        #[doc = "PLL3 DIVP divider output enable Set and reset by software to enable the pll3_p_ck output of the PLL3. To save power, PLL3PEN and PLL3P bits must be set to 0 when the pll3_p_ck is not used. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0)."]
-        #[inline(always)]
-        pub const fn pllpen(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 DIVP divider output enable Set and reset by software to enable the pll3_p_ck output of the PLL3. To save power, PLL3PEN and PLL3P bits must be set to 0 when the pll3_p_ck is not used. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0)."]
-        #[inline(always)]
-        pub fn set_pllpen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-        }
-        #[doc = "PLL3 DIVQ divider output enable Set and reset by software to enable the pll3_q_ck output of the PLL3. To save power, PLL3QEN and PLL3Q bits must be set to 0 when the pll3_q_ck is not used. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0)."]
-        #[inline(always)]
-        pub const fn pllqen(&self) -> bool {
-            let val = (self.0 >> 17usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 DIVQ divider output enable Set and reset by software to enable the pll3_q_ck output of the PLL3. To save power, PLL3QEN and PLL3Q bits must be set to 0 when the pll3_q_ck is not used. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0)."]
-        #[inline(always)]
-        pub fn set_pllqen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-        }
-        #[doc = "PLL3 DIVR divider output enable Set and reset by software to enable the pll3_r_ck output of the PLL3. To save power, PLL3REN and PLL3R bits must be set to 0 when the pll3_r_ck is not used. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0)."]
-        #[inline(always)]
-        pub const fn pllren(&self) -> bool {
-            let val = (self.0 >> 18usize) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 DIVR divider output enable Set and reset by software to enable the pll3_r_ck output of the PLL3. To save power, PLL3REN and PLL3R bits must be set to 0 when the pll3_r_ck is not used. This bit can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0)."]
-        #[inline(always)]
-        pub fn set_pllren(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
-        }
-    }
-    impl Default for Pll3cfgr {
-        #[inline(always)]
-        fn default() -> Pll3cfgr {
-            Pll3cfgr(0)
-        }
-    }
-    #[doc = "RCC PLL3 dividers configuration register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3divr(pub u32);
-    impl Pll3divr {
-        #[doc = "Multiplication factor for PLL3 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled (PLL3ON = 0 and PLL3RDY = 0). ... ... Others: reserved VCO output frequency = Fref3_ck x PLL3N, when fractional value 0 has been loaded into PLL3FRACN, with: PLL3N between 4 and 512 input frequency Fref3_ck between 4 and 16MHz"]
-        #[inline(always)]
-        pub const fn plln(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
-        }
-        #[doc = "Multiplication factor for PLL3 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled (PLL3ON = 0 and PLL3RDY = 0). ... ... Others: reserved VCO output frequency = Fref3_ck x PLL3N, when fractional value 0 has been loaded into PLL3FRACN, with: PLL3N between 4 and 512 input frequency Fref3_ck between 4 and 16MHz"]
-        #[inline(always)]
-        pub fn set_plln(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
-        }
-        #[doc = "PLL3 DIVP division factor Set and reset by software to control the frequency of the pll3_p_ck clock. These bits can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllp(&self) -> u8 {
-            let val = (self.0 >> 9usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL3 DIVP division factor Set and reset by software to control the frequency of the pll3_p_ck clock. These bits can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllp(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
-        }
-        #[doc = "PLL3 DIVQ division factor Set and reset by software to control the frequency of the pll3_q_ck clock. These bits can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL3 DIVQ division factor Set and reset by software to control the frequency of the pll3_q_ck clock. These bits can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-        #[doc = "PLL3 DIVR division factor Set and reset by software to control the frequency of the pll3_r_ck clock. These bits can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub const fn pllr(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "PLL3 DIVR division factor Set and reset by software to control the frequency of the pll3_r_ck clock. These bits can be written only when the PLL3 is disabled (PLL3ON = 0 and PLL3RDY = 0). ..."]
-        #[inline(always)]
-        pub fn set_pllr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
-        }
-    }
-    impl Default for Pll3divr {
-        #[inline(always)]
-        fn default() -> Pll3divr {
-            Pll3divr(0)
-        }
-    }
-    #[doc = "RCC PLL3 fractional divider register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3fracr(pub u32);
-    impl Pll3fracr {
-        #[doc = "Fractional part of the multiplication factor for PLL3 VCO Set and reset by software to control the fractional part of the multiplication factor of the VCO. These bits can be written at any time, allowing dynamic fine-tuning of the PLL3 VCO. VCO output frequency = Fref3_ck x (PLL3N + (PLL3FRACN / 213)), with: PLL3N must be between 4 and 512. PLL3FRACN can be between 0 and 213 - 1. The input frequency Fref3_ck must be between 4 and 16 MHz. In order to change the FRACN value on-the-fly even if the PLL is enabled, the application must proceed as follows: Set the bit PLL3FRACEN to 0. Write the new fractional value into PLL3FRACN. Set the bit PLL3FRACEN to 1."]
-        #[inline(always)]
-        pub const fn pllfracn(&self) -> u16 {
-            let val = (self.0 >> 3usize) & 0x1fff;
-            val as u16
-        }
-        #[doc = "Fractional part of the multiplication factor for PLL3 VCO Set and reset by software to control the fractional part of the multiplication factor of the VCO. These bits can be written at any time, allowing dynamic fine-tuning of the PLL3 VCO. VCO output frequency = Fref3_ck x (PLL3N + (PLL3FRACN / 213)), with: PLL3N must be between 4 and 512. PLL3FRACN can be between 0 and 213 - 1. The input frequency Fref3_ck must be between 4 and 16 MHz. In order to change the FRACN value on-the-fly even if the PLL is enabled, the application must proceed as follows: Set the bit PLL3FRACEN to 0. Write the new fractional value into PLL3FRACN. Set the bit PLL3FRACEN to 1."]
-        #[inline(always)]
-        pub fn set_pllfracn(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
-        }
-    }
-    impl Default for Pll3fracr {
-        #[inline(always)]
-        fn default() -> Pll3fracr {
-            Pll3fracr(0)
+        fn default() -> Pllfracr {
+            Pllfracr(0)
         }
     }
     #[doc = "RCC privilege configuration register"]
@@ -7593,9 +7346,163 @@ in RCC_ICSCR1"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Plldiv {
+        DIV1 = 0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+        DIV9 = 0x08,
+        DIV10 = 0x09,
+        DIV11 = 0x0a,
+        DIV12 = 0x0b,
+        DIV13 = 0x0c,
+        DIV14 = 0x0d,
+        DIV15 = 0x0e,
+        DIV16 = 0x0f,
+        DIV17 = 0x10,
+        DIV18 = 0x11,
+        DIV19 = 0x12,
+        DIV20 = 0x13,
+        DIV21 = 0x14,
+        DIV22 = 0x15,
+        DIV23 = 0x16,
+        DIV24 = 0x17,
+        DIV25 = 0x18,
+        DIV26 = 0x19,
+        DIV27 = 0x1a,
+        DIV28 = 0x1b,
+        DIV29 = 0x1c,
+        DIV30 = 0x1d,
+        DIV31 = 0x1e,
+        DIV32 = 0x1f,
+        DIV33 = 0x20,
+        DIV34 = 0x21,
+        DIV35 = 0x22,
+        DIV36 = 0x23,
+        DIV37 = 0x24,
+        DIV38 = 0x25,
+        DIV39 = 0x26,
+        DIV40 = 0x27,
+        DIV41 = 0x28,
+        DIV42 = 0x29,
+        DIV43 = 0x2a,
+        DIV44 = 0x2b,
+        DIV45 = 0x2c,
+        DIV46 = 0x2d,
+        DIV47 = 0x2e,
+        DIV48 = 0x2f,
+        DIV49 = 0x30,
+        DIV50 = 0x31,
+        DIV51 = 0x32,
+        DIV52 = 0x33,
+        DIV53 = 0x34,
+        DIV54 = 0x35,
+        DIV55 = 0x36,
+        DIV56 = 0x37,
+        DIV57 = 0x38,
+        DIV58 = 0x39,
+        DIV59 = 0x3a,
+        DIV60 = 0x3b,
+        DIV61 = 0x3c,
+        DIV62 = 0x3d,
+        DIV63 = 0x3e,
+        DIV64 = 0x3f,
+        DIV65 = 0x40,
+        DIV66 = 0x41,
+        DIV67 = 0x42,
+        DIV68 = 0x43,
+        DIV69 = 0x44,
+        DIV70 = 0x45,
+        DIV71 = 0x46,
+        DIV72 = 0x47,
+        DIV73 = 0x48,
+        DIV74 = 0x49,
+        DIV75 = 0x4a,
+        DIV76 = 0x4b,
+        DIV77 = 0x4c,
+        DIV78 = 0x4d,
+        DIV79 = 0x4e,
+        DIV80 = 0x4f,
+        DIV81 = 0x50,
+        DIV82 = 0x51,
+        DIV83 = 0x52,
+        DIV84 = 0x53,
+        DIV85 = 0x54,
+        DIV86 = 0x55,
+        DIV87 = 0x56,
+        DIV88 = 0x57,
+        DIV89 = 0x58,
+        DIV90 = 0x59,
+        DIV91 = 0x5a,
+        DIV92 = 0x5b,
+        DIV93 = 0x5c,
+        DIV94 = 0x5d,
+        DIV95 = 0x5e,
+        DIV96 = 0x5f,
+        DIV97 = 0x60,
+        DIV98 = 0x61,
+        DIV99 = 0x62,
+        DIV100 = 0x63,
+        DIV101 = 0x64,
+        DIV102 = 0x65,
+        DIV103 = 0x66,
+        DIV104 = 0x67,
+        DIV105 = 0x68,
+        DIV106 = 0x69,
+        DIV107 = 0x6a,
+        DIV108 = 0x6b,
+        DIV109 = 0x6c,
+        DIV110 = 0x6d,
+        DIV111 = 0x6e,
+        DIV112 = 0x6f,
+        DIV113 = 0x70,
+        DIV114 = 0x71,
+        DIV115 = 0x72,
+        DIV116 = 0x73,
+        DIV117 = 0x74,
+        DIV118 = 0x75,
+        DIV119 = 0x76,
+        DIV120 = 0x77,
+        DIV121 = 0x78,
+        DIV122 = 0x79,
+        DIV123 = 0x7a,
+        DIV124 = 0x7b,
+        DIV125 = 0x7c,
+        DIV126 = 0x7d,
+        DIV127 = 0x7e,
+        DIV128 = 0x7f,
+    }
+    impl Plldiv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Plldiv {
+            unsafe { core::mem::transmute(val & 0x7f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Plldiv {
+        #[inline(always)]
+        fn from(val: u8) -> Plldiv {
+            Plldiv::from_bits(val)
+        }
+    }
+    impl From<Plldiv> for u8 {
+        #[inline(always)]
+        fn from(val: Plldiv) -> u8 {
+            Plldiv::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllm {
         #[doc = "division by 1 (bypass)"]
-        BYPASS = 0,
+        DIV1 = 0,
         #[doc = "division by 2"]
         DIV2 = 0x01,
         #[doc = "division by 3"]
@@ -7641,7 +7548,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllmboost {
         #[doc = "division by 1 (bypass)"]
-        BYPASS = 0,
+        DIV1 = 0,
         #[doc = "division by 2"]
         DIV2 = 0x01,
         #[doc = "division by 4"]
@@ -7686,6 +7593,540 @@ in RCC_ICSCR1"]
         #[inline(always)]
         fn from(val: Pllmboost) -> u8 {
             Pllmboost::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Plln(pub u16);
+    impl Plln {
+        pub const MUL4: Self = Self(0x03);
+        pub const MUL5: Self = Self(0x04);
+        pub const MUL6: Self = Self(0x05);
+        pub const MUL7: Self = Self(0x06);
+        pub const MUL8: Self = Self(0x07);
+        pub const MUL9: Self = Self(0x08);
+        pub const MUL10: Self = Self(0x09);
+        pub const MUL11: Self = Self(0x0a);
+        pub const MUL12: Self = Self(0x0b);
+        pub const MUL13: Self = Self(0x0c);
+        pub const MUL14: Self = Self(0x0d);
+        pub const MUL15: Self = Self(0x0e);
+        pub const MUL16: Self = Self(0x0f);
+        pub const MUL17: Self = Self(0x10);
+        pub const MUL18: Self = Self(0x11);
+        pub const MUL19: Self = Self(0x12);
+        pub const MUL20: Self = Self(0x13);
+        pub const MUL21: Self = Self(0x14);
+        pub const MUL22: Self = Self(0x15);
+        pub const MUL23: Self = Self(0x16);
+        pub const MUL24: Self = Self(0x17);
+        pub const MUL25: Self = Self(0x18);
+        pub const MUL26: Self = Self(0x19);
+        pub const MUL27: Self = Self(0x1a);
+        pub const MUL28: Self = Self(0x1b);
+        pub const MUL29: Self = Self(0x1c);
+        pub const MUL30: Self = Self(0x1d);
+        pub const MUL31: Self = Self(0x1e);
+        pub const MUL32: Self = Self(0x1f);
+        pub const MUL33: Self = Self(0x20);
+        pub const MUL34: Self = Self(0x21);
+        pub const MUL35: Self = Self(0x22);
+        pub const MUL36: Self = Self(0x23);
+        pub const MUL37: Self = Self(0x24);
+        pub const MUL38: Self = Self(0x25);
+        pub const MUL39: Self = Self(0x26);
+        pub const MUL40: Self = Self(0x27);
+        pub const MUL41: Self = Self(0x28);
+        pub const MUL42: Self = Self(0x29);
+        pub const MUL43: Self = Self(0x2a);
+        pub const MUL44: Self = Self(0x2b);
+        pub const MUL45: Self = Self(0x2c);
+        pub const MUL46: Self = Self(0x2d);
+        pub const MUL47: Self = Self(0x2e);
+        pub const MUL48: Self = Self(0x2f);
+        pub const MUL49: Self = Self(0x30);
+        pub const MUL50: Self = Self(0x31);
+        pub const MUL51: Self = Self(0x32);
+        pub const MUL52: Self = Self(0x33);
+        pub const MUL53: Self = Self(0x34);
+        pub const MUL54: Self = Self(0x35);
+        pub const MUL55: Self = Self(0x36);
+        pub const MUL56: Self = Self(0x37);
+        pub const MUL57: Self = Self(0x38);
+        pub const MUL58: Self = Self(0x39);
+        pub const MUL59: Self = Self(0x3a);
+        pub const MUL60: Self = Self(0x3b);
+        pub const MUL61: Self = Self(0x3c);
+        pub const MUL62: Self = Self(0x3d);
+        pub const MUL63: Self = Self(0x3e);
+        pub const MUL64: Self = Self(0x3f);
+        pub const MUL65: Self = Self(0x40);
+        pub const MUL66: Self = Self(0x41);
+        pub const MUL67: Self = Self(0x42);
+        pub const MUL68: Self = Self(0x43);
+        pub const MUL69: Self = Self(0x44);
+        pub const MUL70: Self = Self(0x45);
+        pub const MUL71: Self = Self(0x46);
+        pub const MUL72: Self = Self(0x47);
+        pub const MUL73: Self = Self(0x48);
+        pub const MUL74: Self = Self(0x49);
+        pub const MUL75: Self = Self(0x4a);
+        pub const MUL76: Self = Self(0x4b);
+        pub const MUL77: Self = Self(0x4c);
+        pub const MUL78: Self = Self(0x4d);
+        pub const MUL79: Self = Self(0x4e);
+        pub const MUL80: Self = Self(0x4f);
+        pub const MUL81: Self = Self(0x50);
+        pub const MUL82: Self = Self(0x51);
+        pub const MUL83: Self = Self(0x52);
+        pub const MUL84: Self = Self(0x53);
+        pub const MUL85: Self = Self(0x54);
+        pub const MUL86: Self = Self(0x55);
+        pub const MUL87: Self = Self(0x56);
+        pub const MUL88: Self = Self(0x57);
+        pub const MUL89: Self = Self(0x58);
+        pub const MUL90: Self = Self(0x59);
+        pub const MUL91: Self = Self(0x5a);
+        pub const MUL92: Self = Self(0x5b);
+        pub const MUL93: Self = Self(0x5c);
+        pub const MUL94: Self = Self(0x5d);
+        pub const MUL95: Self = Self(0x5e);
+        pub const MUL96: Self = Self(0x5f);
+        pub const MUL97: Self = Self(0x60);
+        pub const MUL98: Self = Self(0x61);
+        pub const MUL99: Self = Self(0x62);
+        pub const MUL100: Self = Self(0x63);
+        pub const MUL101: Self = Self(0x64);
+        pub const MUL102: Self = Self(0x65);
+        pub const MUL103: Self = Self(0x66);
+        pub const MUL104: Self = Self(0x67);
+        pub const MUL105: Self = Self(0x68);
+        pub const MUL106: Self = Self(0x69);
+        pub const MUL107: Self = Self(0x6a);
+        pub const MUL108: Self = Self(0x6b);
+        pub const MUL109: Self = Self(0x6c);
+        pub const MUL110: Self = Self(0x6d);
+        pub const MUL111: Self = Self(0x6e);
+        pub const MUL112: Self = Self(0x6f);
+        pub const MUL113: Self = Self(0x70);
+        pub const MUL114: Self = Self(0x71);
+        pub const MUL115: Self = Self(0x72);
+        pub const MUL116: Self = Self(0x73);
+        pub const MUL117: Self = Self(0x74);
+        pub const MUL118: Self = Self(0x75);
+        pub const MUL119: Self = Self(0x76);
+        pub const MUL120: Self = Self(0x77);
+        pub const MUL121: Self = Self(0x78);
+        pub const MUL122: Self = Self(0x79);
+        pub const MUL123: Self = Self(0x7a);
+        pub const MUL124: Self = Self(0x7b);
+        pub const MUL125: Self = Self(0x7c);
+        pub const MUL126: Self = Self(0x7d);
+        pub const MUL127: Self = Self(0x7e);
+        pub const MUL128: Self = Self(0x7f);
+        pub const MUL129: Self = Self(0x80);
+        pub const MUL130: Self = Self(0x81);
+        pub const MUL131: Self = Self(0x82);
+        pub const MUL132: Self = Self(0x83);
+        pub const MUL133: Self = Self(0x84);
+        pub const MUL134: Self = Self(0x85);
+        pub const MUL135: Self = Self(0x86);
+        pub const MUL136: Self = Self(0x87);
+        pub const MUL137: Self = Self(0x88);
+        pub const MUL138: Self = Self(0x89);
+        pub const MUL139: Self = Self(0x8a);
+        pub const MUL140: Self = Self(0x8b);
+        pub const MUL141: Self = Self(0x8c);
+        pub const MUL142: Self = Self(0x8d);
+        pub const MUL143: Self = Self(0x8e);
+        pub const MUL144: Self = Self(0x8f);
+        pub const MUL145: Self = Self(0x90);
+        pub const MUL146: Self = Self(0x91);
+        pub const MUL147: Self = Self(0x92);
+        pub const MUL148: Self = Self(0x93);
+        pub const MUL149: Self = Self(0x94);
+        pub const MUL150: Self = Self(0x95);
+        pub const MUL151: Self = Self(0x96);
+        pub const MUL152: Self = Self(0x97);
+        pub const MUL153: Self = Self(0x98);
+        pub const MUL154: Self = Self(0x99);
+        pub const MUL155: Self = Self(0x9a);
+        pub const MUL156: Self = Self(0x9b);
+        pub const MUL157: Self = Self(0x9c);
+        pub const MUL158: Self = Self(0x9d);
+        pub const MUL159: Self = Self(0x9e);
+        pub const MUL160: Self = Self(0x9f);
+        pub const MUL161: Self = Self(0xa0);
+        pub const MUL162: Self = Self(0xa1);
+        pub const MUL163: Self = Self(0xa2);
+        pub const MUL164: Self = Self(0xa3);
+        pub const MUL165: Self = Self(0xa4);
+        pub const MUL166: Self = Self(0xa5);
+        pub const MUL167: Self = Self(0xa6);
+        pub const MUL168: Self = Self(0xa7);
+        pub const MUL169: Self = Self(0xa8);
+        pub const MUL170: Self = Self(0xa9);
+        pub const MUL171: Self = Self(0xaa);
+        pub const MUL172: Self = Self(0xab);
+        pub const MUL173: Self = Self(0xac);
+        pub const MUL174: Self = Self(0xad);
+        pub const MUL175: Self = Self(0xae);
+        pub const MUL176: Self = Self(0xaf);
+        pub const MUL177: Self = Self(0xb0);
+        pub const MUL178: Self = Self(0xb1);
+        pub const MUL179: Self = Self(0xb2);
+        pub const MUL180: Self = Self(0xb3);
+        pub const MUL181: Self = Self(0xb4);
+        pub const MUL182: Self = Self(0xb5);
+        pub const MUL183: Self = Self(0xb6);
+        pub const MUL184: Self = Self(0xb7);
+        pub const MUL185: Self = Self(0xb8);
+        pub const MUL186: Self = Self(0xb9);
+        pub const MUL187: Self = Self(0xba);
+        pub const MUL188: Self = Self(0xbb);
+        pub const MUL189: Self = Self(0xbc);
+        pub const MUL190: Self = Self(0xbd);
+        pub const MUL191: Self = Self(0xbe);
+        pub const MUL192: Self = Self(0xbf);
+        pub const MUL193: Self = Self(0xc0);
+        pub const MUL194: Self = Self(0xc1);
+        pub const MUL195: Self = Self(0xc2);
+        pub const MUL196: Self = Self(0xc3);
+        pub const MUL197: Self = Self(0xc4);
+        pub const MUL198: Self = Self(0xc5);
+        pub const MUL199: Self = Self(0xc6);
+        pub const MUL200: Self = Self(0xc7);
+        pub const MUL201: Self = Self(0xc8);
+        pub const MUL202: Self = Self(0xc9);
+        pub const MUL203: Self = Self(0xca);
+        pub const MUL204: Self = Self(0xcb);
+        pub const MUL205: Self = Self(0xcc);
+        pub const MUL206: Self = Self(0xcd);
+        pub const MUL207: Self = Self(0xce);
+        pub const MUL208: Self = Self(0xcf);
+        pub const MUL209: Self = Self(0xd0);
+        pub const MUL210: Self = Self(0xd1);
+        pub const MUL211: Self = Self(0xd2);
+        pub const MUL212: Self = Self(0xd3);
+        pub const MUL213: Self = Self(0xd4);
+        pub const MUL214: Self = Self(0xd5);
+        pub const MUL215: Self = Self(0xd6);
+        pub const MUL216: Self = Self(0xd7);
+        pub const MUL217: Self = Self(0xd8);
+        pub const MUL218: Self = Self(0xd9);
+        pub const MUL219: Self = Self(0xda);
+        pub const MUL220: Self = Self(0xdb);
+        pub const MUL221: Self = Self(0xdc);
+        pub const MUL222: Self = Self(0xdd);
+        pub const MUL223: Self = Self(0xde);
+        pub const MUL224: Self = Self(0xdf);
+        pub const MUL225: Self = Self(0xe0);
+        pub const MUL226: Self = Self(0xe1);
+        pub const MUL227: Self = Self(0xe2);
+        pub const MUL228: Self = Self(0xe3);
+        pub const MUL229: Self = Self(0xe4);
+        pub const MUL230: Self = Self(0xe5);
+        pub const MUL231: Self = Self(0xe6);
+        pub const MUL232: Self = Self(0xe7);
+        pub const MUL233: Self = Self(0xe8);
+        pub const MUL234: Self = Self(0xe9);
+        pub const MUL235: Self = Self(0xea);
+        pub const MUL236: Self = Self(0xeb);
+        pub const MUL237: Self = Self(0xec);
+        pub const MUL238: Self = Self(0xed);
+        pub const MUL239: Self = Self(0xee);
+        pub const MUL240: Self = Self(0xef);
+        pub const MUL241: Self = Self(0xf0);
+        pub const MUL242: Self = Self(0xf1);
+        pub const MUL243: Self = Self(0xf2);
+        pub const MUL244: Self = Self(0xf3);
+        pub const MUL245: Self = Self(0xf4);
+        pub const MUL246: Self = Self(0xf5);
+        pub const MUL247: Self = Self(0xf6);
+        pub const MUL248: Self = Self(0xf7);
+        pub const MUL249: Self = Self(0xf8);
+        pub const MUL250: Self = Self(0xf9);
+        pub const MUL251: Self = Self(0xfa);
+        pub const MUL252: Self = Self(0xfb);
+        pub const MUL253: Self = Self(0xfc);
+        pub const MUL254: Self = Self(0xfd);
+        pub const MUL255: Self = Self(0xfe);
+        pub const MUL256: Self = Self(0xff);
+        pub const MUL257: Self = Self(0x0100);
+        pub const MUL258: Self = Self(0x0101);
+        pub const MUL259: Self = Self(0x0102);
+        pub const MUL260: Self = Self(0x0103);
+        pub const MUL261: Self = Self(0x0104);
+        pub const MUL262: Self = Self(0x0105);
+        pub const MUL263: Self = Self(0x0106);
+        pub const MUL264: Self = Self(0x0107);
+        pub const MUL265: Self = Self(0x0108);
+        pub const MUL266: Self = Self(0x0109);
+        pub const MUL267: Self = Self(0x010a);
+        pub const MUL268: Self = Self(0x010b);
+        pub const MUL269: Self = Self(0x010c);
+        pub const MUL270: Self = Self(0x010d);
+        pub const MUL271: Self = Self(0x010e);
+        pub const MUL272: Self = Self(0x010f);
+        pub const MUL273: Self = Self(0x0110);
+        pub const MUL274: Self = Self(0x0111);
+        pub const MUL275: Self = Self(0x0112);
+        pub const MUL276: Self = Self(0x0113);
+        pub const MUL277: Self = Self(0x0114);
+        pub const MUL278: Self = Self(0x0115);
+        pub const MUL279: Self = Self(0x0116);
+        pub const MUL280: Self = Self(0x0117);
+        pub const MUL281: Self = Self(0x0118);
+        pub const MUL282: Self = Self(0x0119);
+        pub const MUL283: Self = Self(0x011a);
+        pub const MUL284: Self = Self(0x011b);
+        pub const MUL285: Self = Self(0x011c);
+        pub const MUL286: Self = Self(0x011d);
+        pub const MUL287: Self = Self(0x011e);
+        pub const MUL288: Self = Self(0x011f);
+        pub const MUL289: Self = Self(0x0120);
+        pub const MUL290: Self = Self(0x0121);
+        pub const MUL291: Self = Self(0x0122);
+        pub const MUL292: Self = Self(0x0123);
+        pub const MUL293: Self = Self(0x0124);
+        pub const MUL294: Self = Self(0x0125);
+        pub const MUL295: Self = Self(0x0126);
+        pub const MUL296: Self = Self(0x0127);
+        pub const MUL297: Self = Self(0x0128);
+        pub const MUL298: Self = Self(0x0129);
+        pub const MUL299: Self = Self(0x012a);
+        pub const MUL300: Self = Self(0x012b);
+        pub const MUL301: Self = Self(0x012c);
+        pub const MUL302: Self = Self(0x012d);
+        pub const MUL303: Self = Self(0x012e);
+        pub const MUL304: Self = Self(0x012f);
+        pub const MUL305: Self = Self(0x0130);
+        pub const MUL306: Self = Self(0x0131);
+        pub const MUL307: Self = Self(0x0132);
+        pub const MUL308: Self = Self(0x0133);
+        pub const MUL309: Self = Self(0x0134);
+        pub const MUL310: Self = Self(0x0135);
+        pub const MUL311: Self = Self(0x0136);
+        pub const MUL312: Self = Self(0x0137);
+        pub const MUL313: Self = Self(0x0138);
+        pub const MUL314: Self = Self(0x0139);
+        pub const MUL315: Self = Self(0x013a);
+        pub const MUL316: Self = Self(0x013b);
+        pub const MUL317: Self = Self(0x013c);
+        pub const MUL318: Self = Self(0x013d);
+        pub const MUL319: Self = Self(0x013e);
+        pub const MUL320: Self = Self(0x013f);
+        pub const MUL321: Self = Self(0x0140);
+        pub const MUL322: Self = Self(0x0141);
+        pub const MUL323: Self = Self(0x0142);
+        pub const MUL324: Self = Self(0x0143);
+        pub const MUL325: Self = Self(0x0144);
+        pub const MUL326: Self = Self(0x0145);
+        pub const MUL327: Self = Self(0x0146);
+        pub const MUL328: Self = Self(0x0147);
+        pub const MUL329: Self = Self(0x0148);
+        pub const MUL330: Self = Self(0x0149);
+        pub const MUL331: Self = Self(0x014a);
+        pub const MUL332: Self = Self(0x014b);
+        pub const MUL333: Self = Self(0x014c);
+        pub const MUL334: Self = Self(0x014d);
+        pub const MUL335: Self = Self(0x014e);
+        pub const MUL336: Self = Self(0x014f);
+        pub const MUL337: Self = Self(0x0150);
+        pub const MUL338: Self = Self(0x0151);
+        pub const MUL339: Self = Self(0x0152);
+        pub const MUL340: Self = Self(0x0153);
+        pub const MUL341: Self = Self(0x0154);
+        pub const MUL342: Self = Self(0x0155);
+        pub const MUL343: Self = Self(0x0156);
+        pub const MUL344: Self = Self(0x0157);
+        pub const MUL345: Self = Self(0x0158);
+        pub const MUL346: Self = Self(0x0159);
+        pub const MUL347: Self = Self(0x015a);
+        pub const MUL348: Self = Self(0x015b);
+        pub const MUL349: Self = Self(0x015c);
+        pub const MUL350: Self = Self(0x015d);
+        pub const MUL351: Self = Self(0x015e);
+        pub const MUL352: Self = Self(0x015f);
+        pub const MUL353: Self = Self(0x0160);
+        pub const MUL354: Self = Self(0x0161);
+        pub const MUL355: Self = Self(0x0162);
+        pub const MUL356: Self = Self(0x0163);
+        pub const MUL357: Self = Self(0x0164);
+        pub const MUL358: Self = Self(0x0165);
+        pub const MUL359: Self = Self(0x0166);
+        pub const MUL360: Self = Self(0x0167);
+        pub const MUL361: Self = Self(0x0168);
+        pub const MUL362: Self = Self(0x0169);
+        pub const MUL363: Self = Self(0x016a);
+        pub const MUL364: Self = Self(0x016b);
+        pub const MUL365: Self = Self(0x016c);
+        pub const MUL366: Self = Self(0x016d);
+        pub const MUL367: Self = Self(0x016e);
+        pub const MUL368: Self = Self(0x016f);
+        pub const MUL369: Self = Self(0x0170);
+        pub const MUL370: Self = Self(0x0171);
+        pub const MUL371: Self = Self(0x0172);
+        pub const MUL372: Self = Self(0x0173);
+        pub const MUL373: Self = Self(0x0174);
+        pub const MUL374: Self = Self(0x0175);
+        pub const MUL375: Self = Self(0x0176);
+        pub const MUL376: Self = Self(0x0177);
+        pub const MUL377: Self = Self(0x0178);
+        pub const MUL378: Self = Self(0x0179);
+        pub const MUL379: Self = Self(0x017a);
+        pub const MUL380: Self = Self(0x017b);
+        pub const MUL381: Self = Self(0x017c);
+        pub const MUL382: Self = Self(0x017d);
+        pub const MUL383: Self = Self(0x017e);
+        pub const MUL384: Self = Self(0x017f);
+        pub const MUL385: Self = Self(0x0180);
+        pub const MUL386: Self = Self(0x0181);
+        pub const MUL387: Self = Self(0x0182);
+        pub const MUL388: Self = Self(0x0183);
+        pub const MUL389: Self = Self(0x0184);
+        pub const MUL390: Self = Self(0x0185);
+        pub const MUL391: Self = Self(0x0186);
+        pub const MUL392: Self = Self(0x0187);
+        pub const MUL393: Self = Self(0x0188);
+        pub const MUL394: Self = Self(0x0189);
+        pub const MUL395: Self = Self(0x018a);
+        pub const MUL396: Self = Self(0x018b);
+        pub const MUL397: Self = Self(0x018c);
+        pub const MUL398: Self = Self(0x018d);
+        pub const MUL399: Self = Self(0x018e);
+        pub const MUL400: Self = Self(0x018f);
+        pub const MUL401: Self = Self(0x0190);
+        pub const MUL402: Self = Self(0x0191);
+        pub const MUL403: Self = Self(0x0192);
+        pub const MUL404: Self = Self(0x0193);
+        pub const MUL405: Self = Self(0x0194);
+        pub const MUL406: Self = Self(0x0195);
+        pub const MUL407: Self = Self(0x0196);
+        pub const MUL408: Self = Self(0x0197);
+        pub const MUL409: Self = Self(0x0198);
+        pub const MUL410: Self = Self(0x0199);
+        pub const MUL411: Self = Self(0x019a);
+        pub const MUL412: Self = Self(0x019b);
+        pub const MUL413: Self = Self(0x019c);
+        pub const MUL414: Self = Self(0x019d);
+        pub const MUL415: Self = Self(0x019e);
+        pub const MUL416: Self = Self(0x019f);
+        pub const MUL417: Self = Self(0x01a0);
+        pub const MUL418: Self = Self(0x01a1);
+        pub const MUL419: Self = Self(0x01a2);
+        pub const MUL420: Self = Self(0x01a3);
+        pub const MUL421: Self = Self(0x01a4);
+        pub const MUL422: Self = Self(0x01a5);
+        pub const MUL423: Self = Self(0x01a6);
+        pub const MUL424: Self = Self(0x01a7);
+        pub const MUL425: Self = Self(0x01a8);
+        pub const MUL426: Self = Self(0x01a9);
+        pub const MUL427: Self = Self(0x01aa);
+        pub const MUL428: Self = Self(0x01ab);
+        pub const MUL429: Self = Self(0x01ac);
+        pub const MUL430: Self = Self(0x01ad);
+        pub const MUL431: Self = Self(0x01ae);
+        pub const MUL432: Self = Self(0x01af);
+        pub const MUL433: Self = Self(0x01b0);
+        pub const MUL434: Self = Self(0x01b1);
+        pub const MUL435: Self = Self(0x01b2);
+        pub const MUL436: Self = Self(0x01b3);
+        pub const MUL437: Self = Self(0x01b4);
+        pub const MUL438: Self = Self(0x01b5);
+        pub const MUL439: Self = Self(0x01b6);
+        pub const MUL440: Self = Self(0x01b7);
+        pub const MUL441: Self = Self(0x01b8);
+        pub const MUL442: Self = Self(0x01b9);
+        pub const MUL443: Self = Self(0x01ba);
+        pub const MUL444: Self = Self(0x01bb);
+        pub const MUL445: Self = Self(0x01bc);
+        pub const MUL446: Self = Self(0x01bd);
+        pub const MUL447: Self = Self(0x01be);
+        pub const MUL448: Self = Self(0x01bf);
+        pub const MUL449: Self = Self(0x01c0);
+        pub const MUL450: Self = Self(0x01c1);
+        pub const MUL451: Self = Self(0x01c2);
+        pub const MUL452: Self = Self(0x01c3);
+        pub const MUL453: Self = Self(0x01c4);
+        pub const MUL454: Self = Self(0x01c5);
+        pub const MUL455: Self = Self(0x01c6);
+        pub const MUL456: Self = Self(0x01c7);
+        pub const MUL457: Self = Self(0x01c8);
+        pub const MUL458: Self = Self(0x01c9);
+        pub const MUL459: Self = Self(0x01ca);
+        pub const MUL460: Self = Self(0x01cb);
+        pub const MUL461: Self = Self(0x01cc);
+        pub const MUL462: Self = Self(0x01cd);
+        pub const MUL463: Self = Self(0x01ce);
+        pub const MUL464: Self = Self(0x01cf);
+        pub const MUL465: Self = Self(0x01d0);
+        pub const MUL466: Self = Self(0x01d1);
+        pub const MUL467: Self = Self(0x01d2);
+        pub const MUL468: Self = Self(0x01d3);
+        pub const MUL469: Self = Self(0x01d4);
+        pub const MUL470: Self = Self(0x01d5);
+        pub const MUL471: Self = Self(0x01d6);
+        pub const MUL472: Self = Self(0x01d7);
+        pub const MUL473: Self = Self(0x01d8);
+        pub const MUL474: Self = Self(0x01d9);
+        pub const MUL475: Self = Self(0x01da);
+        pub const MUL476: Self = Self(0x01db);
+        pub const MUL477: Self = Self(0x01dc);
+        pub const MUL478: Self = Self(0x01dd);
+        pub const MUL479: Self = Self(0x01de);
+        pub const MUL480: Self = Self(0x01df);
+        pub const MUL481: Self = Self(0x01e0);
+        pub const MUL482: Self = Self(0x01e1);
+        pub const MUL483: Self = Self(0x01e2);
+        pub const MUL484: Self = Self(0x01e3);
+        pub const MUL485: Self = Self(0x01e4);
+        pub const MUL486: Self = Self(0x01e5);
+        pub const MUL487: Self = Self(0x01e6);
+        pub const MUL488: Self = Self(0x01e7);
+        pub const MUL489: Self = Self(0x01e8);
+        pub const MUL490: Self = Self(0x01e9);
+        pub const MUL491: Self = Self(0x01ea);
+        pub const MUL492: Self = Self(0x01eb);
+        pub const MUL493: Self = Self(0x01ec);
+        pub const MUL494: Self = Self(0x01ed);
+        pub const MUL495: Self = Self(0x01ee);
+        pub const MUL496: Self = Self(0x01ef);
+        pub const MUL497: Self = Self(0x01f0);
+        pub const MUL498: Self = Self(0x01f1);
+        pub const MUL499: Self = Self(0x01f2);
+        pub const MUL500: Self = Self(0x01f3);
+        pub const MUL501: Self = Self(0x01f4);
+        pub const MUL502: Self = Self(0x01f5);
+        pub const MUL503: Self = Self(0x01f6);
+        pub const MUL504: Self = Self(0x01f7);
+        pub const MUL505: Self = Self(0x01f8);
+        pub const MUL506: Self = Self(0x01f9);
+        pub const MUL507: Self = Self(0x01fa);
+        pub const MUL508: Self = Self(0x01fb);
+        pub const MUL509: Self = Self(0x01fc);
+        pub const MUL510: Self = Self(0x01fd);
+        pub const MUL511: Self = Self(0x01fe);
+        pub const MUL512: Self = Self(0x01ff);
+    }
+    impl Plln {
+        pub const fn from_bits(val: u16) -> Plln {
+            Self(val & 0x01ff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl From<u16> for Plln {
+        #[inline(always)]
+        fn from(val: u16) -> Plln {
+            Plln::from_bits(val)
+        }
+    }
+    impl From<Plln> for u16 {
+        #[inline(always)]
+        fn from(val: Plln) -> u16 {
+            Plln::to_bits(val)
         }
     }
     #[repr(u8)]

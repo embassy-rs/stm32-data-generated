@@ -98,13 +98,13 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Optkeyr",
+            name: "Ar",
             extends: None,
-            description: Some("Flash option key register"),
+            description: Some("Flash address register"),
             bit_size: 32,
             fields: &[Field {
-                name: "optkeyr",
-                description: Some("Option byte key"),
+                name: "far",
+                description: Some("Flash address"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -254,6 +254,46 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some("Flash status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bsy",
+                    description: Some("Busy"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pgerr",
+                    description: Some("Programming error"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrprt",
+                    description: Some("Write protection error"),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eop",
+                    description: Some("End of operation"),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Wrpr",
             extends: None,
             description: Some("Write protection register"),
@@ -268,13 +308,13 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Ar",
+            name: "Optkeyr",
             extends: None,
-            description: Some("Flash address register"),
+            description: Some("Flash option key register"),
             bit_size: 32,
             fields: &[Field {
-                name: "far",
-                description: Some("Flash address"),
+                name: "optkeyr",
+                description: Some("Option byte key"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -385,65 +425,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Flash status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bsy",
-                    description: Some("Busy"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pgerr",
-                    description: Some("Programming error"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrprt",
-                    description: Some("Write protection error"),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eop",
-                    description: Some("End of operation"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
-        Enum {
-            name: "VddaMonitor",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("VDDA power supply supervisor disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("VDDA power supply supervisor enabled"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "NRstStop",
             description: None,
@@ -462,36 +445,41 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "NBoot1",
+            name: "NRstStdby",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Together with BOOT0, select the device boot mode"),
+                    name: "RESET",
+                    description: Some("Reset generated when entering Standby mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Together with BOOT0, select the device boot mode"),
+                    name: "NORESET",
+                    description: Some("No reset generated"),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "WdgSw",
+            name: "Rdprt",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HARDWARE",
-                    description: Some("Hardware watchdog"),
+                    name: "LEVEL0",
+                    description: Some("Level 0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some("Software watchdog"),
+                    name: "LEVEL1",
+                    description: Some("Level 1"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "LEVEL2",
+                    description: Some("Level 2"),
+                    value: 3,
                 },
             ],
         },
@@ -530,28 +518,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rdprt",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "LEVEL0",
-                    description: Some("Level 0"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LEVEL1",
-                    description: Some("Level 1"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "LEVEL2",
-                    description: Some("Level 2"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "BootSel",
             description: None,
             bit_size: 1,
@@ -569,18 +535,35 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "NRstStdby",
+            name: "WdgSw",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET",
-                    description: Some("Reset generated when entering Standby mode"),
+                    name: "HARDWARE",
+                    description: Some("Hardware watchdog"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORESET",
-                    description: Some("No reset generated"),
+                    name: "SOFTWARE",
+                    description: Some("Software watchdog"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "VddaMonitor",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("VDDA power supply supervisor disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("VDDA power supply supervisor enabled"),
                     value: 1,
                 },
             ],
@@ -598,6 +581,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "ENABLED",
                     description: Some("When BOOT_SEL is cleared, select the device boot mode"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "NBoot1",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Together with BOOT0, select the device boot mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Together with BOOT0, select the device boot mode"),
                     value: 1,
                 },
             ],

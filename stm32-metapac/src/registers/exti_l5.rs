@@ -131,6 +131,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Seccfgr",
+            extends: None,
+            description: Some("Security configuration register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "sec",
+                description: Some("Security enable on event input x"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Exticr",
             extends: None,
             description: Some("external interrupt configuration register 1"),
@@ -159,12 +173,12 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Seccfgr",
+            name: "Privcfgr",
             extends: None,
-            description: Some("Security configuration register"),
+            description: Some("Privilege configuration register"),
             bit_size: 32,
             fields: &[Field {
-                name: "sec",
+                name: "priv_",
                 description: Some("Security enable on event input x"),
                 bit_offset: 0,
                 bit_size: 1,
@@ -183,20 +197,6 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 0,
                 bit_size: 1,
                 array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Privcfgr",
-            extends: None,
-            description: Some("Privilege configuration register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "priv_",
-                description: Some("Security enable on event input x"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
                 enumm: None,
             }],
         },

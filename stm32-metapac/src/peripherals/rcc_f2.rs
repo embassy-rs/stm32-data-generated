@@ -2996,25 +2996,25 @@ pub mod regs {
     impl Pllcfgr {
         #[doc = "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock"]
         #[inline(always)]
-        pub const fn pllm(&self) -> u8 {
+        pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 0usize) & 0x3f;
-            val as u8
+            super::vals::Pllm::from_bits(val as u8)
         }
         #[doc = "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock"]
         #[inline(always)]
-        pub fn set_pllm(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
         }
         #[doc = "Main PLL (PLL) multiplication factor for VCO"]
         #[inline(always)]
-        pub const fn plln(&self) -> u16 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 6usize) & 0x01ff;
-            val as u16
+            super::vals::Plln::from_bits(val as u16)
         }
         #[doc = "Main PLL (PLL) multiplication factor for VCO"]
         #[inline(always)]
-        pub fn set_plln(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val as u32) & 0x01ff) << 6usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val.to_bits() as u32) & 0x01ff) << 6usize);
         }
         #[doc = "Main PLL (PLL) division factor for main system clock"]
         #[inline(always)]
@@ -3040,14 +3040,14 @@ pub mod regs {
         }
         #[doc = "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks"]
         #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
+        pub const fn pllq(&self) -> super::vals::Pllq {
             let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
+            super::vals::Pllq::from_bits(val as u8)
         }
         #[doc = "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks"]
         #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
+        pub fn set_pllq(&mut self, val: super::vals::Pllq) {
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
     }
     impl Default for Pllcfgr {
@@ -3338,6 +3338,362 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllm {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        DIV2 = 0x02,
+        DIV3 = 0x03,
+        DIV4 = 0x04,
+        DIV5 = 0x05,
+        DIV6 = 0x06,
+        DIV7 = 0x07,
+        DIV8 = 0x08,
+        DIV9 = 0x09,
+        DIV10 = 0x0a,
+        DIV11 = 0x0b,
+        DIV12 = 0x0c,
+        DIV13 = 0x0d,
+        DIV14 = 0x0e,
+        DIV15 = 0x0f,
+        DIV16 = 0x10,
+        DIV17 = 0x11,
+        DIV18 = 0x12,
+        DIV19 = 0x13,
+        DIV20 = 0x14,
+        DIV21 = 0x15,
+        DIV22 = 0x16,
+        DIV23 = 0x17,
+        DIV24 = 0x18,
+        DIV25 = 0x19,
+        DIV26 = 0x1a,
+        DIV27 = 0x1b,
+        DIV28 = 0x1c,
+        DIV29 = 0x1d,
+        DIV30 = 0x1e,
+        DIV31 = 0x1f,
+        DIV32 = 0x20,
+        DIV33 = 0x21,
+        DIV34 = 0x22,
+        DIV35 = 0x23,
+        DIV36 = 0x24,
+        DIV37 = 0x25,
+        DIV38 = 0x26,
+        DIV39 = 0x27,
+        DIV40 = 0x28,
+        DIV41 = 0x29,
+        DIV42 = 0x2a,
+        DIV43 = 0x2b,
+        DIV44 = 0x2c,
+        DIV45 = 0x2d,
+        DIV46 = 0x2e,
+        DIV47 = 0x2f,
+        DIV48 = 0x30,
+        DIV49 = 0x31,
+        DIV50 = 0x32,
+        DIV51 = 0x33,
+        DIV52 = 0x34,
+        DIV53 = 0x35,
+        DIV54 = 0x36,
+        DIV55 = 0x37,
+        DIV56 = 0x38,
+        DIV57 = 0x39,
+        DIV58 = 0x3a,
+        DIV59 = 0x3b,
+        DIV60 = 0x3c,
+        DIV61 = 0x3d,
+        DIV62 = 0x3e,
+        DIV63 = 0x3f,
+    }
+    impl Pllm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllm {
+            unsafe { core::mem::transmute(val & 0x3f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllm {
+        #[inline(always)]
+        fn from(val: u8) -> Pllm {
+            Pllm::from_bits(val)
+        }
+    }
+    impl From<Pllm> for u8 {
+        #[inline(always)]
+        fn from(val: Pllm) -> u8 {
+            Pllm::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Plln(pub u16);
+    impl Plln {
+        pub const MUL192: Self = Self(0xc0);
+        pub const MUL193: Self = Self(0xc1);
+        pub const MUL194: Self = Self(0xc2);
+        pub const MUL195: Self = Self(0xc3);
+        pub const MUL196: Self = Self(0xc4);
+        pub const MUL197: Self = Self(0xc5);
+        pub const MUL198: Self = Self(0xc6);
+        pub const MUL199: Self = Self(0xc7);
+        pub const MUL200: Self = Self(0xc8);
+        pub const MUL201: Self = Self(0xc9);
+        pub const MUL202: Self = Self(0xca);
+        pub const MUL203: Self = Self(0xcb);
+        pub const MUL204: Self = Self(0xcc);
+        pub const MUL205: Self = Self(0xcd);
+        pub const MUL206: Self = Self(0xce);
+        pub const MUL207: Self = Self(0xcf);
+        pub const MUL208: Self = Self(0xd0);
+        pub const MUL209: Self = Self(0xd1);
+        pub const MUL210: Self = Self(0xd2);
+        pub const MUL211: Self = Self(0xd3);
+        pub const MUL212: Self = Self(0xd4);
+        pub const MUL213: Self = Self(0xd5);
+        pub const MUL214: Self = Self(0xd6);
+        pub const MUL215: Self = Self(0xd7);
+        pub const MUL216: Self = Self(0xd8);
+        pub const MUL217: Self = Self(0xd9);
+        pub const MUL218: Self = Self(0xda);
+        pub const MUL219: Self = Self(0xdb);
+        pub const MUL220: Self = Self(0xdc);
+        pub const MUL221: Self = Self(0xdd);
+        pub const MUL222: Self = Self(0xde);
+        pub const MUL223: Self = Self(0xdf);
+        pub const MUL224: Self = Self(0xe0);
+        pub const MUL225: Self = Self(0xe1);
+        pub const MUL226: Self = Self(0xe2);
+        pub const MUL227: Self = Self(0xe3);
+        pub const MUL228: Self = Self(0xe4);
+        pub const MUL229: Self = Self(0xe5);
+        pub const MUL230: Self = Self(0xe6);
+        pub const MUL231: Self = Self(0xe7);
+        pub const MUL232: Self = Self(0xe8);
+        pub const MUL233: Self = Self(0xe9);
+        pub const MUL234: Self = Self(0xea);
+        pub const MUL235: Self = Self(0xeb);
+        pub const MUL236: Self = Self(0xec);
+        pub const MUL237: Self = Self(0xed);
+        pub const MUL238: Self = Self(0xee);
+        pub const MUL239: Self = Self(0xef);
+        pub const MUL240: Self = Self(0xf0);
+        pub const MUL241: Self = Self(0xf1);
+        pub const MUL242: Self = Self(0xf2);
+        pub const MUL243: Self = Self(0xf3);
+        pub const MUL244: Self = Self(0xf4);
+        pub const MUL245: Self = Self(0xf5);
+        pub const MUL246: Self = Self(0xf6);
+        pub const MUL247: Self = Self(0xf7);
+        pub const MUL248: Self = Self(0xf8);
+        pub const MUL249: Self = Self(0xf9);
+        pub const MUL250: Self = Self(0xfa);
+        pub const MUL251: Self = Self(0xfb);
+        pub const MUL252: Self = Self(0xfc);
+        pub const MUL253: Self = Self(0xfd);
+        pub const MUL254: Self = Self(0xfe);
+        pub const MUL255: Self = Self(0xff);
+        pub const MUL256: Self = Self(0x0100);
+        pub const MUL257: Self = Self(0x0101);
+        pub const MUL258: Self = Self(0x0102);
+        pub const MUL259: Self = Self(0x0103);
+        pub const MUL260: Self = Self(0x0104);
+        pub const MUL261: Self = Self(0x0105);
+        pub const MUL262: Self = Self(0x0106);
+        pub const MUL263: Self = Self(0x0107);
+        pub const MUL264: Self = Self(0x0108);
+        pub const MUL265: Self = Self(0x0109);
+        pub const MUL266: Self = Self(0x010a);
+        pub const MUL267: Self = Self(0x010b);
+        pub const MUL268: Self = Self(0x010c);
+        pub const MUL269: Self = Self(0x010d);
+        pub const MUL270: Self = Self(0x010e);
+        pub const MUL271: Self = Self(0x010f);
+        pub const MUL272: Self = Self(0x0110);
+        pub const MUL273: Self = Self(0x0111);
+        pub const MUL274: Self = Self(0x0112);
+        pub const MUL275: Self = Self(0x0113);
+        pub const MUL276: Self = Self(0x0114);
+        pub const MUL277: Self = Self(0x0115);
+        pub const MUL278: Self = Self(0x0116);
+        pub const MUL279: Self = Self(0x0117);
+        pub const MUL280: Self = Self(0x0118);
+        pub const MUL281: Self = Self(0x0119);
+        pub const MUL282: Self = Self(0x011a);
+        pub const MUL283: Self = Self(0x011b);
+        pub const MUL284: Self = Self(0x011c);
+        pub const MUL285: Self = Self(0x011d);
+        pub const MUL286: Self = Self(0x011e);
+        pub const MUL287: Self = Self(0x011f);
+        pub const MUL288: Self = Self(0x0120);
+        pub const MUL289: Self = Self(0x0121);
+        pub const MUL290: Self = Self(0x0122);
+        pub const MUL291: Self = Self(0x0123);
+        pub const MUL292: Self = Self(0x0124);
+        pub const MUL293: Self = Self(0x0125);
+        pub const MUL294: Self = Self(0x0126);
+        pub const MUL295: Self = Self(0x0127);
+        pub const MUL296: Self = Self(0x0128);
+        pub const MUL297: Self = Self(0x0129);
+        pub const MUL298: Self = Self(0x012a);
+        pub const MUL299: Self = Self(0x012b);
+        pub const MUL300: Self = Self(0x012c);
+        pub const MUL301: Self = Self(0x012d);
+        pub const MUL302: Self = Self(0x012e);
+        pub const MUL303: Self = Self(0x012f);
+        pub const MUL304: Self = Self(0x0130);
+        pub const MUL305: Self = Self(0x0131);
+        pub const MUL306: Self = Self(0x0132);
+        pub const MUL307: Self = Self(0x0133);
+        pub const MUL308: Self = Self(0x0134);
+        pub const MUL309: Self = Self(0x0135);
+        pub const MUL310: Self = Self(0x0136);
+        pub const MUL311: Self = Self(0x0137);
+        pub const MUL312: Self = Self(0x0138);
+        pub const MUL313: Self = Self(0x0139);
+        pub const MUL314: Self = Self(0x013a);
+        pub const MUL315: Self = Self(0x013b);
+        pub const MUL316: Self = Self(0x013c);
+        pub const MUL317: Self = Self(0x013d);
+        pub const MUL318: Self = Self(0x013e);
+        pub const MUL319: Self = Self(0x013f);
+        pub const MUL320: Self = Self(0x0140);
+        pub const MUL321: Self = Self(0x0141);
+        pub const MUL322: Self = Self(0x0142);
+        pub const MUL323: Self = Self(0x0143);
+        pub const MUL324: Self = Self(0x0144);
+        pub const MUL325: Self = Self(0x0145);
+        pub const MUL326: Self = Self(0x0146);
+        pub const MUL327: Self = Self(0x0147);
+        pub const MUL328: Self = Self(0x0148);
+        pub const MUL329: Self = Self(0x0149);
+        pub const MUL330: Self = Self(0x014a);
+        pub const MUL331: Self = Self(0x014b);
+        pub const MUL332: Self = Self(0x014c);
+        pub const MUL333: Self = Self(0x014d);
+        pub const MUL334: Self = Self(0x014e);
+        pub const MUL335: Self = Self(0x014f);
+        pub const MUL336: Self = Self(0x0150);
+        pub const MUL337: Self = Self(0x0151);
+        pub const MUL338: Self = Self(0x0152);
+        pub const MUL339: Self = Self(0x0153);
+        pub const MUL340: Self = Self(0x0154);
+        pub const MUL341: Self = Self(0x0155);
+        pub const MUL342: Self = Self(0x0156);
+        pub const MUL343: Self = Self(0x0157);
+        pub const MUL344: Self = Self(0x0158);
+        pub const MUL345: Self = Self(0x0159);
+        pub const MUL346: Self = Self(0x015a);
+        pub const MUL347: Self = Self(0x015b);
+        pub const MUL348: Self = Self(0x015c);
+        pub const MUL349: Self = Self(0x015d);
+        pub const MUL350: Self = Self(0x015e);
+        pub const MUL351: Self = Self(0x015f);
+        pub const MUL352: Self = Self(0x0160);
+        pub const MUL353: Self = Self(0x0161);
+        pub const MUL354: Self = Self(0x0162);
+        pub const MUL355: Self = Self(0x0163);
+        pub const MUL356: Self = Self(0x0164);
+        pub const MUL357: Self = Self(0x0165);
+        pub const MUL358: Self = Self(0x0166);
+        pub const MUL359: Self = Self(0x0167);
+        pub const MUL360: Self = Self(0x0168);
+        pub const MUL361: Self = Self(0x0169);
+        pub const MUL362: Self = Self(0x016a);
+        pub const MUL363: Self = Self(0x016b);
+        pub const MUL364: Self = Self(0x016c);
+        pub const MUL365: Self = Self(0x016d);
+        pub const MUL366: Self = Self(0x016e);
+        pub const MUL367: Self = Self(0x016f);
+        pub const MUL368: Self = Self(0x0170);
+        pub const MUL369: Self = Self(0x0171);
+        pub const MUL370: Self = Self(0x0172);
+        pub const MUL371: Self = Self(0x0173);
+        pub const MUL372: Self = Self(0x0174);
+        pub const MUL373: Self = Self(0x0175);
+        pub const MUL374: Self = Self(0x0176);
+        pub const MUL375: Self = Self(0x0177);
+        pub const MUL376: Self = Self(0x0178);
+        pub const MUL377: Self = Self(0x0179);
+        pub const MUL378: Self = Self(0x017a);
+        pub const MUL379: Self = Self(0x017b);
+        pub const MUL380: Self = Self(0x017c);
+        pub const MUL381: Self = Self(0x017d);
+        pub const MUL382: Self = Self(0x017e);
+        pub const MUL383: Self = Self(0x017f);
+        pub const MUL384: Self = Self(0x0180);
+        pub const MUL385: Self = Self(0x0181);
+        pub const MUL386: Self = Self(0x0182);
+        pub const MUL387: Self = Self(0x0183);
+        pub const MUL388: Self = Self(0x0184);
+        pub const MUL389: Self = Self(0x0185);
+        pub const MUL390: Self = Self(0x0186);
+        pub const MUL391: Self = Self(0x0187);
+        pub const MUL392: Self = Self(0x0188);
+        pub const MUL393: Self = Self(0x0189);
+        pub const MUL394: Self = Self(0x018a);
+        pub const MUL395: Self = Self(0x018b);
+        pub const MUL396: Self = Self(0x018c);
+        pub const MUL397: Self = Self(0x018d);
+        pub const MUL398: Self = Self(0x018e);
+        pub const MUL399: Self = Self(0x018f);
+        pub const MUL400: Self = Self(0x0190);
+        pub const MUL401: Self = Self(0x0191);
+        pub const MUL402: Self = Self(0x0192);
+        pub const MUL403: Self = Self(0x0193);
+        pub const MUL404: Self = Self(0x0194);
+        pub const MUL405: Self = Self(0x0195);
+        pub const MUL406: Self = Self(0x0196);
+        pub const MUL407: Self = Self(0x0197);
+        pub const MUL408: Self = Self(0x0198);
+        pub const MUL409: Self = Self(0x0199);
+        pub const MUL410: Self = Self(0x019a);
+        pub const MUL411: Self = Self(0x019b);
+        pub const MUL412: Self = Self(0x019c);
+        pub const MUL413: Self = Self(0x019d);
+        pub const MUL414: Self = Self(0x019e);
+        pub const MUL415: Self = Self(0x019f);
+        pub const MUL416: Self = Self(0x01a0);
+        pub const MUL417: Self = Self(0x01a1);
+        pub const MUL418: Self = Self(0x01a2);
+        pub const MUL419: Self = Self(0x01a3);
+        pub const MUL420: Self = Self(0x01a4);
+        pub const MUL421: Self = Self(0x01a5);
+        pub const MUL422: Self = Self(0x01a6);
+        pub const MUL423: Self = Self(0x01a7);
+        pub const MUL424: Self = Self(0x01a8);
+        pub const MUL425: Self = Self(0x01a9);
+        pub const MUL426: Self = Self(0x01aa);
+        pub const MUL427: Self = Self(0x01ab);
+        pub const MUL428: Self = Self(0x01ac);
+        pub const MUL429: Self = Self(0x01ad);
+        pub const MUL430: Self = Self(0x01ae);
+        pub const MUL431: Self = Self(0x01af);
+        pub const MUL432: Self = Self(0x01b0);
+    }
+    impl Plln {
+        pub const fn from_bits(val: u16) -> Plln {
+            Self(val & 0x01ff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl From<u16> for Plln {
+        #[inline(always)]
+        fn from(val: u16) -> Plln {
+            Plln::from_bits(val)
+        }
+    }
+    impl From<Plln> for u16 {
+        #[inline(always)]
+        fn from(val: Plln) -> u16 {
+            Plln::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllp {
         #[doc = "PLLP=2"]
         DIV2 = 0,
@@ -3368,6 +3724,48 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllp) -> u8 {
             Pllp::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllq {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        DIV2 = 0x02,
+        DIV3 = 0x03,
+        DIV4 = 0x04,
+        DIV5 = 0x05,
+        DIV6 = 0x06,
+        DIV7 = 0x07,
+        DIV8 = 0x08,
+        DIV9 = 0x09,
+        DIV10 = 0x0a,
+        DIV11 = 0x0b,
+        DIV12 = 0x0c,
+        DIV13 = 0x0d,
+        DIV14 = 0x0e,
+        DIV15 = 0x0f,
+    }
+    impl Pllq {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllq {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllq {
+        #[inline(always)]
+        fn from(val: u8) -> Pllq {
+            Pllq::from_bits(val)
+        }
+    }
+    impl From<Pllq> for u8 {
+        #[inline(always)]
+        fn from(val: Pllq) -> u8 {
+            Pllq::to_bits(val)
         }
     }
     #[repr(u8)]

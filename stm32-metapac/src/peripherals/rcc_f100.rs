@@ -1825,8 +1825,7 @@ pub mod vals {
         MUL15 = 0x0d,
         #[doc = "PLL input clock x16"]
         MUL16 = 0x0e,
-        #[doc = "PLL input clock x16"]
-        MUL16X = 0x0f,
+        _RESERVED_f = 0x0f,
     }
     impl Pllmul {
         #[inline(always)]

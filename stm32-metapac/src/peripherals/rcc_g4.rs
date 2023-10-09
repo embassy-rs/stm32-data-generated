@@ -3469,25 +3469,25 @@ pub mod regs {
         }
         #[doc = "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock"]
         #[inline(always)]
-        pub const fn pllm(&self) -> u8 {
+        pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
+            super::vals::Pllm::from_bits(val as u8)
         }
         #[doc = "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock"]
         #[inline(always)]
-        pub fn set_pllm(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "Main PLL multiplication factor for VCO"]
         #[inline(always)]
-        pub const fn plln(&self) -> u8 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 8usize) & 0x7f;
-            val as u8
+            super::vals::Plln::from_bits(val as u8)
         }
         #[doc = "Main PLL multiplication factor for VCO"]
         #[inline(always)]
-        pub fn set_plln(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x7f << 8usize)) | (((val.to_bits() as u32) & 0x7f) << 8usize);
         }
         #[doc = "Main PLL PLLSAI3CLK output enable"]
         #[inline(always)]
@@ -3502,14 +3502,14 @@ pub mod regs {
         }
         #[doc = "Main PLL division factor for PLLSAI3CLK (SAI1 and SAI2 clock)"]
         #[inline(always)]
-        pub const fn pllp(&self) -> bool {
+        pub const fn pllpbit(&self) -> super::vals::Pllpbit {
             let val = (self.0 >> 17usize) & 0x01;
-            val != 0
+            super::vals::Pllpbit::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLSAI3CLK (SAI1 and SAI2 clock)"]
         #[inline(always)]
-        pub fn set_pllp(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        pub fn set_pllpbit(&mut self, val: super::vals::Pllpbit) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
         }
         #[doc = "Main PLL PLLUSB1CLK output enable"]
         #[inline(always)]
@@ -3524,14 +3524,14 @@ pub mod regs {
         }
         #[doc = "Main PLL division factor for PLLUSB1CLK(48 MHz clock)"]
         #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
+        pub const fn pllq(&self) -> super::vals::Pllq {
             let val = (self.0 >> 21usize) & 0x03;
-            val as u8
+            super::vals::Pllq::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLUSB1CLK(48 MHz clock)"]
         #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 21usize)) | (((val as u32) & 0x03) << 21usize);
+        pub fn set_pllq(&mut self, val: super::vals::Pllq) {
+            self.0 = (self.0 & !(0x03 << 21usize)) | (((val.to_bits() as u32) & 0x03) << 21usize);
         }
         #[doc = "Main PLL PLLCLK output enable"]
         #[inline(always)]
@@ -3546,25 +3546,25 @@ pub mod regs {
         }
         #[doc = "Main PLL division factor for PLLCLK (system clock)"]
         #[inline(always)]
-        pub const fn pllr(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Pllr {
             let val = (self.0 >> 25usize) & 0x03;
-            val as u8
+            super::vals::Pllr::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLCLK (system clock)"]
         #[inline(always)]
-        pub fn set_pllr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 25usize)) | (((val as u32) & 0x03) << 25usize);
+        pub fn set_pllr(&mut self, val: super::vals::Pllr) {
+            self.0 = (self.0 & !(0x03 << 25usize)) | (((val.to_bits() as u32) & 0x03) << 25usize);
         }
         #[doc = "Main PLL division factor for PLLSAI2CLK"]
         #[inline(always)]
-        pub const fn pllpdiv(&self) -> u8 {
+        pub const fn pllp(&self) -> super::vals::Pllp {
             let val = (self.0 >> 27usize) & 0x1f;
-            val as u8
+            super::vals::Pllp::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLSAI2CLK"]
         #[inline(always)]
-        pub fn set_pllpdiv(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 27usize)) | (((val as u32) & 0x1f) << 27usize);
+        pub fn set_pllp(&mut self, val: super::vals::Pllp) {
+            self.0 = (self.0 & !(0x1f << 27usize)) | (((val.to_bits() as u32) & 0x1f) << 27usize);
         }
     }
     impl Default for Pllcfgr {
@@ -3812,6 +3812,444 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcosel) -> u8 {
             Mcosel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllm {
+        DIV1 = 0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+        DIV9 = 0x08,
+        DIV10 = 0x09,
+        DIV11 = 0x0a,
+        DIV12 = 0x0b,
+        DIV13 = 0x0c,
+        DIV14 = 0x0d,
+        DIV15 = 0x0e,
+        DIV16 = 0x0f,
+    }
+    impl Pllm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllm {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllm {
+        #[inline(always)]
+        fn from(val: u8) -> Pllm {
+            Pllm::from_bits(val)
+        }
+    }
+    impl From<Pllm> for u8 {
+        #[inline(always)]
+        fn from(val: Pllm) -> u8 {
+            Pllm::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Plln {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        MUL8 = 0x08,
+        MUL9 = 0x09,
+        MUL10 = 0x0a,
+        MUL11 = 0x0b,
+        MUL12 = 0x0c,
+        MUL13 = 0x0d,
+        MUL14 = 0x0e,
+        MUL15 = 0x0f,
+        MUL16 = 0x10,
+        MUL17 = 0x11,
+        MUL18 = 0x12,
+        MUL19 = 0x13,
+        MUL20 = 0x14,
+        MUL21 = 0x15,
+        MUL22 = 0x16,
+        MUL23 = 0x17,
+        MUL24 = 0x18,
+        MUL25 = 0x19,
+        MUL26 = 0x1a,
+        MUL27 = 0x1b,
+        MUL28 = 0x1c,
+        MUL29 = 0x1d,
+        MUL30 = 0x1e,
+        MUL31 = 0x1f,
+        MUL32 = 0x20,
+        MUL33 = 0x21,
+        MUL34 = 0x22,
+        MUL35 = 0x23,
+        MUL36 = 0x24,
+        MUL37 = 0x25,
+        MUL38 = 0x26,
+        MUL39 = 0x27,
+        MUL40 = 0x28,
+        MUL41 = 0x29,
+        MUL42 = 0x2a,
+        MUL43 = 0x2b,
+        MUL44 = 0x2c,
+        MUL45 = 0x2d,
+        MUL46 = 0x2e,
+        MUL47 = 0x2f,
+        MUL48 = 0x30,
+        MUL49 = 0x31,
+        MUL50 = 0x32,
+        MUL51 = 0x33,
+        MUL52 = 0x34,
+        MUL53 = 0x35,
+        MUL54 = 0x36,
+        MUL55 = 0x37,
+        MUL56 = 0x38,
+        MUL57 = 0x39,
+        MUL58 = 0x3a,
+        MUL59 = 0x3b,
+        MUL60 = 0x3c,
+        MUL61 = 0x3d,
+        MUL62 = 0x3e,
+        MUL63 = 0x3f,
+        MUL64 = 0x40,
+        MUL65 = 0x41,
+        MUL66 = 0x42,
+        MUL67 = 0x43,
+        MUL68 = 0x44,
+        MUL69 = 0x45,
+        MUL70 = 0x46,
+        MUL71 = 0x47,
+        MUL72 = 0x48,
+        MUL73 = 0x49,
+        MUL74 = 0x4a,
+        MUL75 = 0x4b,
+        MUL76 = 0x4c,
+        MUL77 = 0x4d,
+        MUL78 = 0x4e,
+        MUL79 = 0x4f,
+        MUL80 = 0x50,
+        MUL81 = 0x51,
+        MUL82 = 0x52,
+        MUL83 = 0x53,
+        MUL84 = 0x54,
+        MUL85 = 0x55,
+        MUL86 = 0x56,
+        MUL87 = 0x57,
+        MUL88 = 0x58,
+        MUL89 = 0x59,
+        MUL90 = 0x5a,
+        MUL91 = 0x5b,
+        MUL92 = 0x5c,
+        MUL93 = 0x5d,
+        MUL94 = 0x5e,
+        MUL95 = 0x5f,
+        MUL96 = 0x60,
+        MUL97 = 0x61,
+        MUL98 = 0x62,
+        MUL99 = 0x63,
+        MUL100 = 0x64,
+        MUL101 = 0x65,
+        MUL102 = 0x66,
+        MUL103 = 0x67,
+        MUL104 = 0x68,
+        MUL105 = 0x69,
+        MUL106 = 0x6a,
+        MUL107 = 0x6b,
+        MUL108 = 0x6c,
+        MUL109 = 0x6d,
+        MUL110 = 0x6e,
+        MUL111 = 0x6f,
+        MUL112 = 0x70,
+        MUL113 = 0x71,
+        MUL114 = 0x72,
+        MUL115 = 0x73,
+        MUL116 = 0x74,
+        MUL117 = 0x75,
+        MUL118 = 0x76,
+        MUL119 = 0x77,
+        MUL120 = 0x78,
+        MUL121 = 0x79,
+        MUL122 = 0x7a,
+        MUL123 = 0x7b,
+        MUL124 = 0x7c,
+        MUL125 = 0x7d,
+        MUL126 = 0x7e,
+        MUL127 = 0x7f,
+    }
+    impl Plln {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Plln {
+            unsafe { core::mem::transmute(val & 0x7f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Plln {
+        #[inline(always)]
+        fn from(val: u8) -> Plln {
+            Plln::from_bits(val)
+        }
+    }
+    impl From<Plln> for u8 {
+        #[inline(always)]
+        fn from(val: Plln) -> u8 {
+            Plln::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllp {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        DIV2 = 0x02,
+        DIV3 = 0x03,
+        DIV4 = 0x04,
+        DIV5 = 0x05,
+        DIV6 = 0x06,
+        DIV7 = 0x07,
+        DIV8 = 0x08,
+        DIV9 = 0x09,
+        DIV10 = 0x0a,
+        DIV11 = 0x0b,
+        DIV12 = 0x0c,
+        DIV13 = 0x0d,
+        DIV14 = 0x0e,
+        DIV15 = 0x0f,
+        DIV16 = 0x10,
+        DIV17 = 0x11,
+        DIV18 = 0x12,
+        DIV19 = 0x13,
+        DIV20 = 0x14,
+        DIV21 = 0x15,
+        DIV22 = 0x16,
+        DIV23 = 0x17,
+        DIV24 = 0x18,
+        DIV25 = 0x19,
+        DIV26 = 0x1a,
+        DIV27 = 0x1b,
+        DIV28 = 0x1c,
+        DIV29 = 0x1d,
+        DIV30 = 0x1e,
+        DIV31 = 0x1f,
+        _RESERVED_20 = 0x20,
+        _RESERVED_21 = 0x21,
+        _RESERVED_22 = 0x22,
+        _RESERVED_23 = 0x23,
+        _RESERVED_24 = 0x24,
+        _RESERVED_25 = 0x25,
+        _RESERVED_26 = 0x26,
+        _RESERVED_27 = 0x27,
+        _RESERVED_28 = 0x28,
+        _RESERVED_29 = 0x29,
+        _RESERVED_2a = 0x2a,
+        _RESERVED_2b = 0x2b,
+        _RESERVED_2c = 0x2c,
+        _RESERVED_2d = 0x2d,
+        _RESERVED_2e = 0x2e,
+        _RESERVED_2f = 0x2f,
+        _RESERVED_30 = 0x30,
+        _RESERVED_31 = 0x31,
+        _RESERVED_32 = 0x32,
+        _RESERVED_33 = 0x33,
+        _RESERVED_34 = 0x34,
+        _RESERVED_35 = 0x35,
+        _RESERVED_36 = 0x36,
+        _RESERVED_37 = 0x37,
+        _RESERVED_38 = 0x38,
+        _RESERVED_39 = 0x39,
+        _RESERVED_3a = 0x3a,
+        _RESERVED_3b = 0x3b,
+        _RESERVED_3c = 0x3c,
+        _RESERVED_3d = 0x3d,
+        _RESERVED_3e = 0x3e,
+        _RESERVED_3f = 0x3f,
+        _RESERVED_40 = 0x40,
+        _RESERVED_41 = 0x41,
+        _RESERVED_42 = 0x42,
+        _RESERVED_43 = 0x43,
+        _RESERVED_44 = 0x44,
+        _RESERVED_45 = 0x45,
+        _RESERVED_46 = 0x46,
+        _RESERVED_47 = 0x47,
+        _RESERVED_48 = 0x48,
+        _RESERVED_49 = 0x49,
+        _RESERVED_4a = 0x4a,
+        _RESERVED_4b = 0x4b,
+        _RESERVED_4c = 0x4c,
+        _RESERVED_4d = 0x4d,
+        _RESERVED_4e = 0x4e,
+        _RESERVED_4f = 0x4f,
+        _RESERVED_50 = 0x50,
+        _RESERVED_51 = 0x51,
+        _RESERVED_52 = 0x52,
+        _RESERVED_53 = 0x53,
+        _RESERVED_54 = 0x54,
+        _RESERVED_55 = 0x55,
+        _RESERVED_56 = 0x56,
+        _RESERVED_57 = 0x57,
+        _RESERVED_58 = 0x58,
+        _RESERVED_59 = 0x59,
+        _RESERVED_5a = 0x5a,
+        _RESERVED_5b = 0x5b,
+        _RESERVED_5c = 0x5c,
+        _RESERVED_5d = 0x5d,
+        _RESERVED_5e = 0x5e,
+        _RESERVED_5f = 0x5f,
+        _RESERVED_60 = 0x60,
+        _RESERVED_61 = 0x61,
+        _RESERVED_62 = 0x62,
+        _RESERVED_63 = 0x63,
+        _RESERVED_64 = 0x64,
+        _RESERVED_65 = 0x65,
+        _RESERVED_66 = 0x66,
+        _RESERVED_67 = 0x67,
+        _RESERVED_68 = 0x68,
+        _RESERVED_69 = 0x69,
+        _RESERVED_6a = 0x6a,
+        _RESERVED_6b = 0x6b,
+        _RESERVED_6c = 0x6c,
+        _RESERVED_6d = 0x6d,
+        _RESERVED_6e = 0x6e,
+        _RESERVED_6f = 0x6f,
+        _RESERVED_70 = 0x70,
+        _RESERVED_71 = 0x71,
+        _RESERVED_72 = 0x72,
+        _RESERVED_73 = 0x73,
+        _RESERVED_74 = 0x74,
+        _RESERVED_75 = 0x75,
+        _RESERVED_76 = 0x76,
+        _RESERVED_77 = 0x77,
+        _RESERVED_78 = 0x78,
+        _RESERVED_79 = 0x79,
+        _RESERVED_7a = 0x7a,
+        _RESERVED_7b = 0x7b,
+        _RESERVED_7c = 0x7c,
+        _RESERVED_7d = 0x7d,
+        _RESERVED_7e = 0x7e,
+        _RESERVED_7f = 0x7f,
+    }
+    impl Pllp {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllp {
+            unsafe { core::mem::transmute(val & 0x7f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllp {
+        #[inline(always)]
+        fn from(val: u8) -> Pllp {
+            Pllp::from_bits(val)
+        }
+    }
+    impl From<Pllp> for u8 {
+        #[inline(always)]
+        fn from(val: Pllp) -> u8 {
+            Pllp::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllpbit {
+        DIV7 = 0,
+        DIV17 = 0x01,
+    }
+    impl Pllpbit {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllpbit {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllpbit {
+        #[inline(always)]
+        fn from(val: u8) -> Pllpbit {
+            Pllpbit::from_bits(val)
+        }
+    }
+    impl From<Pllpbit> for u8 {
+        #[inline(always)]
+        fn from(val: Pllpbit) -> u8 {
+            Pllpbit::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllq {
+        DIV2 = 0,
+        DIV4 = 0x01,
+        DIV6 = 0x02,
+        DIV8 = 0x03,
+    }
+    impl Pllq {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllq {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllq {
+        #[inline(always)]
+        fn from(val: u8) -> Pllq {
+            Pllq::from_bits(val)
+        }
+    }
+    impl From<Pllq> for u8 {
+        #[inline(always)]
+        fn from(val: Pllq) -> u8 {
+            Pllq::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllr {
+        DIV2 = 0,
+        DIV4 = 0x01,
+        DIV6 = 0x02,
+        DIV8 = 0x03,
+    }
+    impl Pllr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllr {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllr {
+        #[inline(always)]
+        fn from(val: u8) -> Pllr {
+            Pllr::from_bits(val)
+        }
+    }
+    impl From<Pllr> for u8 {
+        #[inline(always)]
+        fn from(val: Pllr) -> u8 {
+            Pllr::to_bits(val)
         }
     }
     #[repr(u8)]

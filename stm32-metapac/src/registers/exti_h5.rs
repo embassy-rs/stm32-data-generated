@@ -271,6 +271,82 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Lockr",
+            extends: None,
+            description: Some(
+                "lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lock",
+                    description: Some(
+                        "Global security and privilege configuration registers (EXTI_SECCFGR and EXTI_PRIVCFGR) lock \r This bit is written once after reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Lines",
+            extends: None,
+            description: Some(
+                "EXTI lines register, 1 bit per line",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "line",
+                    description: Some(
+                        "EXTI line",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sec",
+            extends: None,
+            description: Some(
+                "security configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sec",
+                    description: Some(
+                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Priv",
             extends: None,
             description: Some(
@@ -319,82 +395,6 @@ pub(crate) static REGISTERS: IR = IR {
                             RegularArray {
                                 len: 4,
                                 stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sec",
-            extends: None,
-            description: Some(
-                "security configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sec",
-                    description: Some(
-                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lockr",
-            extends: None,
-            description: Some(
-                "lock register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lock",
-                    description: Some(
-                        "Global security and privilege configuration registers (EXTI_SECCFGR and EXTI_PRIVCFGR) lock \r This bit is written once after reset.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lines",
-            extends: None,
-            description: Some(
-                "EXTI lines register, 1 bit per line",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "line",
-                    description: Some(
-                        "EXTI line",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
                             },
                         ),
                     ),

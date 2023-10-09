@@ -164,17 +164,17 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Sr1",
+            name: "Cr3",
             extends: None,
             description: Some(
-                "PWR status register 1",
+                "PWR control register 3",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wuf",
+                    name: "ewup",
                     description: Some(
-                        "Wakeup flag",
+                        "Enable Wakeup pin",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -189,70 +189,23 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sbf",
+                    name: "apc",
                     description: Some(
-                        "Standby/Shutdown flag\r This bit is set by hardware when the device enters Standby or Shutdown mode and is cleared by setting the CSBF bit in the PWR_SCR register, or by a power-on reset. It is not cleared by the system reset.",
+                        "Apply pull-up and pull-down configuration\r This bit determines whether the I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied.",
                     ),
-                    bit_offset: 8,
+                    bit_offset: 10,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "wufi",
+                    name: "eiwul",
                     description: Some(
-                        "Wakeup flag internal\r This bit is set when a wakeup condition is detected on the internal wakeup line. It is cleared when all internal wakeup sources are cleared.",
+                        "Enable internal wakeup line\r When set, a rising edge on the internal wakeup line triggers a wakeup event.",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr2",
-            extends: None,
-            description: Some(
-                "PWR status register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "flash_rdy",
-                    description: Some(
-                        "Flash ready flag\r This bit is set by hardware to indicate when the Flash memory is ready to be accessed after wakeup from power-down. To place the Flash memory in power-down, set either FPD_SLP or FPD_STP bit.\r Note: If the system boots from SRAM, the user application must wait till FLASH_RDY bit is set, prior to jumping to Flash memory.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr4",
-            extends: None,
-            description: Some(
-                "PWR control register 4",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wp",
-                    description: Some(
-                        "Wakeup pin WKUP1 polarity",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],
@@ -325,6 +278,73 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Sr2",
+            extends: None,
+            description: Some(
+                "PWR status register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "flash_rdy",
+                    description: Some(
+                        "Flash ready flag\r This bit is set by hardware to indicate when the Flash memory is ready to be accessed after wakeup from power-down. To place the Flash memory in power-down, set either FPD_SLP or FPD_STP bit.\r Note: If the system boots from SRAM, the user application must wait till FLASH_RDY bit is set, prior to jumping to Flash memory.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr1",
+            extends: None,
+            description: Some(
+                "PWR status register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wuf",
+                    description: Some(
+                        "Wakeup flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "sbf",
+                    description: Some(
+                        "Standby/Shutdown flag\r This bit is set by hardware when the device enters Standby or Shutdown mode and is cleared by setting the CSBF bit in the PWR_SCR register, or by a power-on reset. It is not cleared by the system reset.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wufi",
+                    description: Some(
+                        "Wakeup flag internal\r This bit is set when a wakeup condition is detected on the internal wakeup line. It is cleared when all internal wakeup sources are cleared.",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Scr",
             extends: None,
             description: Some(
@@ -362,17 +382,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr3",
+            name: "Cr4",
             extends: None,
             description: Some(
-                "PWR control register 3",
+                "PWR control register 4",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ewup",
+                    name: "wp",
                     description: Some(
-                        "Enable Wakeup pin",
+                        "Wakeup pin WKUP1 polarity",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -384,26 +404,6 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: None,
-                },
-                Field {
-                    name: "apc",
-                    description: Some(
-                        "Apply pull-up and pull-down configuration\r This bit determines whether the I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied.",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eiwul",
-                    description: Some(
-                        "Enable internal wakeup line\r When set, a rising edge on the internal wakeup line triggers a wakeup event.",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],

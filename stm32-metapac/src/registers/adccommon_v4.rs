@@ -126,6 +126,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cdr2",
+            extends: None,
+            description: Some("ADC x common regular data register for 32-bit dual mode"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "rdata_alt",
+                description: Some("Regular data of the master/slave alternated ADCs"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Csr",
             extends: None,
             description: Some("ADC Common status register"),
@@ -310,20 +324,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cdr2",
-            extends: None,
-            description: Some("ADC x common regular data register for 32-bit dual mode"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "rdata_alt",
-                description: Some("Regular data of the master/slave alternated ADCs"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Cdr",
             extends: None,
             description: Some("ADC common regular data register for dual and triple modes"),
@@ -349,6 +349,57 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "EocMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Regular conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Regular conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "JeosMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Injected sequence is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Injected sequence complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OvrMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Ckmode",
             description: None,
@@ -377,35 +428,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "JeosMst",
+            name: "AdrdyMst",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected sequence is not complete"),
+                    name: "NOTREADY",
+                    description: Some("ADC is not ready to start conversion"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected sequence complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "JeocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected conversion complete"),
+                    name: "READY",
+                    description: Some("ADC is ready to start conversion"),
                     value: 1,
                 },
             ],
@@ -428,18 +462,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OvrMst",
+            name: "JeocMst",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
+                    name: "NOTCOMPLETE",
+                    description: Some("Injected conversion is not complete"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
+                    name: "COMPLETE",
+                    description: Some("Injected conversion complete"),
                     value: 1,
                 },
             ],
@@ -488,113 +522,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DUALA",
                     description: Some("Dual, alternate trigger mode only"),
                     value: 9,
-                },
-            ],
-        },
-        Enum {
-            name: "JqovfMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow has occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow has occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd1Mst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Damdf",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOPACK",
-                    description: Some("Without data packing, CDR/CDR2 not used"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FORMAT32TO10",
-                    description: Some("CDR formatted for 32-bit down to 10-bit resolution"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FORMAT8",
-                    description: Some("CDR formatted for 8-bit resolution"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "AdrdyMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREADY",
-                    description: Some("ADC is not ready to start conversion"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some("ADC is ready to start conversion"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EosMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Regular sequence is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Regular sequence complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Regular conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Regular conversion complete"),
-                    value: 1,
                 },
             ],
         },
@@ -662,6 +589,79 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV256",
                     description: Some("adc_ker_ck_input divided by 256"),
                     value: 11,
+                },
+            ],
+        },
+        Enum {
+            name: "EosMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Regular sequence is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Regular sequence complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Damdf",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOPACK",
+                    description: Some("Without data packing, CDR/CDR2 not used"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FORMAT32TO10",
+                    description: Some("CDR formatted for 32-bit down to 10-bit resolution"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FORMAT8",
+                    description: Some("CDR formatted for 8-bit resolution"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "JqovfMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERFLOW",
+                    description: Some("No injected context queue overflow has occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERFLOW",
+                    description: Some("Injected context queue overflow has occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Awd1Mst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
+                    value: 1,
                 },
             ],
         },

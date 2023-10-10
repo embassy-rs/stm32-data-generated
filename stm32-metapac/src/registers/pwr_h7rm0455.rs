@@ -167,114 +167,121 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Wkupcr",
+            name: "Cr3",
             extends: None,
             description: Some(
-                "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared).",
+                "Reset only by POR only, not reset by wakeup from Standby mode and RESET pad. The lower byte of this register is written once after POR and shall be written before changing VOS level or ck_sys clock frequency. No limitation applies to the upper bytes.Programming data corresponding to an invalid combination of SDLEVEL, SDEXTHP, SDEN, LDOEN and BYPASS bits (see Table9) will be ignored: data will not be written, the written-once mechanism will lock the register and any further write access will be ignored. The default supply configuration will be kept and the ACTVOSRDY bit in PWR control status register 1 (PWR_CSR1) will go on indicating invalid voltage levels. The system shall be power cycled before writing a new value.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wkupc",
+                    name: "bypass",
                     description: Some(
-                        "Clear Wakeup pin flag for WKUP. These bits are always read as 0.",
+                        "Power management unit bypass",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "D3cr",
-            extends: None,
-            description: Some(
-                "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vosrdy",
-                    description: Some(
-                        "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).",
-                    ),
-                    bit_offset: 13,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vos",
+                    name: "ldoen",
                     description: Some(
-                        "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.",
+                        "Low drop-out regulator enable",
                     ),
-                    bit_offset: 14,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sden",
+                    description: Some(
+                        "SD converter Enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdexthp",
+                    description: Some(
+                        "Step-down converter forced ON and in High Power MR mode",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdlevel",
+                    description: Some(
+                        "Step-down converter voltage output level selection",
+                    ),
+                    bit_offset: 4,
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wkupepr",
-            extends: None,
-            description: Some(
-                "Reset only by system reset, not reset by wakeup from Standby mode",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wkupen",
-                    description: Some(
-                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
                 Field {
-                    name: "wkupp",
+                    name: "vbe",
                     description: Some(
-                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
+                        "VBAT charging enable",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "wkuppupd",
+                    name: "vbrs",
                     description: Some(
-                        "Wakeup pin pull configuration",
+                        "VBAT charging resistor selection",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdextrdy",
+                    description: Some(
+                        "SMPS step-down converter external supply ready",
                     ),
                     bit_offset: 16,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 2,
-                            },
-                        ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb33den",
+                    description: Some(
+                        "VDD33USB voltage level detector enable.",
                     ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usbregen",
+                    description: Some(
+                        "USB regulator enable.",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb33rdy",
+                    description: Some(
+                        "USB supply ready.",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -424,6 +431,58 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 11,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "D3cr",
+            extends: None,
+            description: Some(
+                "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vosrdy",
+                    description: Some(
+                        "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vos",
+                    description: Some(
+                        "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Vos",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wkupcr",
+            extends: None,
+            description: Some(
+                "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared).",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wkupc",
+                    description: Some(
+                        "Clear Wakeup pin flag for WKUP. These bits are always read as 0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
@@ -627,121 +686,62 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr3",
+            name: "Wkupepr",
             extends: None,
             description: Some(
-                "Reset only by POR only, not reset by wakeup from Standby mode and RESET pad. The lower byte of this register is written once after POR and shall be written before changing VOS level or ck_sys clock frequency. No limitation applies to the upper bytes.Programming data corresponding to an invalid combination of SDLEVEL, SDEXTHP, SDEN, LDOEN and BYPASS bits (see Table9) will be ignored: data will not be written, the written-once mechanism will lock the register and any further write access will be ignored. The default supply configuration will be kept and the ACTVOSRDY bit in PWR control status register 1 (PWR_CSR1) will go on indicating invalid voltage levels. The system shall be power cycled before writing a new value.",
+                "Reset only by system reset, not reset by wakeup from Standby mode",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bypass",
+                    name: "wkupen",
                     description: Some(
-                        "Power management unit bypass",
+                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ldoen",
-                    description: Some(
-                        "Low drop-out regulator enable",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sden",
+                    name: "wkupp",
                     description: Some(
-                        "SD converter Enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdexthp",
-                    description: Some(
-                        "Step-down converter forced ON and in High Power MR mode",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdlevel",
-                    description: Some(
-                        "Step-down converter voltage output level selection",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbe",
-                    description: Some(
-                        "VBAT charging enable",
+                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbrs",
-                    description: Some(
-                        "VBAT charging resistor selection",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sdextrdy",
+                    name: "wkuppupd",
                     description: Some(
-                        "SMPS step-down converter external supply ready",
+                        "Wakeup pin pull configuration",
                     ),
                     bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb33den",
-                    description: Some(
-                        "VDD33USB voltage level detector enable.",
+                    bit_size: 2,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 2,
+                            },
+                        ),
                     ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usbregen",
-                    description: Some(
-                        "USB regulator enable.",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb33rdy",
-                    description: Some(
-                        "USB supply ready.",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],

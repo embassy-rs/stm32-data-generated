@@ -354,350 +354,32 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Lwr",
+            name: "Amtcr",
             extends: None,
             description: Some(
-                "DMA2D line watermark register",
+                "DMA2D AXI master timer configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lw",
+                    name: "en",
                     description: Some(
-                        "Line watermark These bits allow to configure the line watermark for interrupt generation. An interrupt is raised when the last pixel of the watermarked line has been transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Isr",
-            extends: None,
-            description: Some(
-                "DMA2D Interrupt Status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "teif",
-                    description: Some(
-                        "Transfer error interrupt flag This bit is set when an error occurs during a DMA transfer (data transfer or automatic CLUT loading).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcif",
-                    description: Some(
-                        "Transfer complete interrupt flag This bit is set when a DMA2D transfer operation is complete (data transfer only).",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "twif",
-                    description: Some(
-                        "Transfer watermark interrupt flag This bit is set when the last pixel of the watermarked line has been transferred.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "caeif",
-                    description: Some(
-                        "CLUT access error interrupt flag This bit is set when the CPU accesses the CLUT while the CLUT is being automatically copied from a system memory to the internal DMA2D.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctcif",
-                    description: Some(
-                        "CLUT transfer complete interrupt flag This bit is set when the CLUT copy from a system memory area to the internal DMA2D memory is complete.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ceif",
-                    description: Some(
-                        "Configuration error interrupt flag This bit is set when the START bit of DMA2D_CR, DMA2DFGPFCCR or DMA2D_BGPFCCR is set and a wrong configuration has been programmed.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Omar",
-            extends: None,
-            description: Some(
-                "DMA2D output memory address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ma",
-                    description: Some(
-                        "Memory Address Address of the data used for the output FIFO. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned and a 16-bit per pixel format must be 16-bit aligned.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ifcr",
-            extends: None,
-            description: Some(
-                "DMA2D interrupt flag clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cteif",
-                    description: Some(
-                        "Clear Transfer error interrupt flag Programming this bit to 1 clears the TEIF flag in the DMA2D_ISR register",
+                        "Enable Enables the dead time functionality.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Cteif",
+                        "En",
                     ),
                 },
                 Field {
-                    name: "ctcif",
+                    name: "dt",
                     description: Some(
-                        "Clear transfer complete interrupt flag Programming this bit to 1 clears the TCIF flag in the DMA2D_ISR register",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ctcif",
-                    ),
-                },
-                Field {
-                    name: "ctwif",
-                    description: Some(
-                        "Clear transfer watermark interrupt flag Programming this bit to 1 clears the TWIF flag in the DMA2D_ISR register",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ctwif",
-                    ),
-                },
-                Field {
-                    name: "caecif",
-                    description: Some(
-                        "Clear CLUT access error interrupt flag Programming this bit to 1 clears the CAEIF flag in the DMA2D_ISR register",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Caecif",
-                    ),
-                },
-                Field {
-                    name: "cctcif",
-                    description: Some(
-                        "Clear CLUT transfer complete interrupt flag Programming this bit to 1 clears the CTCIF flag in the DMA2D_ISR register",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cctcif",
-                    ),
-                },
-                Field {
-                    name: "cceif",
-                    description: Some(
-                        "Clear configuration error interrupt flag Programming this bit to 1 clears the CEIF flag in the DMA2D_ISR register",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cceif",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Opfccr",
-            extends: None,
-            description: Some(
-                "DMA2D output PFC control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cm",
-                    description: Some(
-                        "Color mode These bits define the color format of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "OpfccrCm",
-                    ),
-                },
-                Field {
-                    name: "sb",
-                    description: Some(
-                        "Swap Bytes",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sb",
-                    ),
-                },
-                Field {
-                    name: "ai",
-                    description: Some(
-                        "Alpha Inverted This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "OpfccrAi",
-                    ),
-                },
-                Field {
-                    name: "rbs",
-                    description: Some(
-                        "Red Blue Swap This bit allows to swap the R &amp; B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "OpfccrRbs",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bgmar",
-            extends: None,
-            description: Some(
-                "DMA2D background memory address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ma",
-                    description: Some(
-                        "Memory address Address of the data used for the background image. This register can only be written when data transfers are disabled. Once a data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ocolr",
-            extends: None,
-            description: Some(
-                "DMA2D output color register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "blue",
-                    description: Some(
-                        "Blue Value These bits define the blue value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "green",
-                    description: Some(
-                        "Green Value These bits define the green value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Dead Time Dead time value in the AXI clock cycle inserted between two consecutive accesses on the AXI master port. These bits represent the minimum guaranteed number of cycles between two consecutive AXI accesses.",
                     ),
                     bit_offset: 8,
                     bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "red",
-                    description: Some(
-                        "Red Value These bits define the red value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alpha",
-                    description: Some(
-                        "Alpha Channel Value These bits define the alpha channel of the output color. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nlr",
-            extends: None,
-            description: Some(
-                "DMA2D number of line register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nl",
-                    description: Some(
-                        "Number of lines Number of lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pl",
-                    description: Some(
-                        "Pixel per lines Number of pixels per lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. If any of the input image format is 4-bit per pixel, pixel per lines must be even.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 14,
                     array: None,
                     enumm: None,
                 },
@@ -806,100 +488,70 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bgor",
+            name: "Isr",
             extends: None,
             description: Some(
-                "DMA2D background offset register",
+                "DMA2D Interrupt Status Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lo",
+                    name: "teif",
                     description: Some(
-                        "Line offset Line offset used for the background image (expressed in pixel). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
+                        "Transfer error interrupt flag This bit is set when an error occurs during a DMA transfer (data transfer or automatic CLUT loading).",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fgcolr",
-            extends: None,
-            description: Some(
-                "DMA2D foreground color register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "blue",
-                    description: Some(
-                        "Blue Value These bits defines the blue value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "green",
+                    name: "tcif",
                     description: Some(
-                        "Green Value These bits defines the green value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
+                        "Transfer complete interrupt flag This bit is set when a DMA2D transfer operation is complete (data transfer only).",
                     ),
-                    bit_offset: 8,
-                    bit_size: 8,
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "red",
+                    name: "twif",
                     description: Some(
-                        "Red Value These bits defines the red value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                        "Transfer watermark interrupt flag This bit is set when the last pixel of the watermarked line has been transferred.",
                     ),
-                    bit_offset: 16,
-                    bit_size: 8,
+                    bit_offset: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Fgmar",
-            extends: None,
-            description: Some(
-                "DMA2D foreground memory address register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "ma",
+                    name: "caeif",
                     description: Some(
-                        "Memory address Address of the data used for the foreground image. This register can only be written when data transfers are disabled. Once the data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
+                        "CLUT access error interrupt flag This bit is set when the CPU accesses the CLUT while the CLUT is being automatically copied from a system memory to the internal DMA2D.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_offset: 3,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Fgor",
-            extends: None,
-            description: Some(
-                "DMA2D foreground offset register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "lo",
+                    name: "ctcif",
                     description: Some(
-                        "Line offset Line offset used for the foreground expressed in pixel. This value is used to generate the address. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once a data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
+                        "CLUT transfer complete interrupt flag This bit is set when the CLUT copy from a system memory area to the internal DMA2D memory is complete.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 16,
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ceif",
+                    description: Some(
+                        "Configuration error interrupt flag This bit is set when the START bit of DMA2D_CR, DMA2DFGPFCCR or DMA2D_BGPFCCR is set and a wrong configuration has been programmed.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -926,80 +578,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bgcmar",
+            name: "Omar",
             extends: None,
             description: Some(
-                "DMA2D background CLUT memory address register",
+                "DMA2D output memory address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ma",
                     description: Some(
-                        "Memory address Address of the data used for the CLUT address dedicated to the background image. This register can only be written when no transfer is on going. Once the CLUT transfer has started, this register is read-only. If the background CLUT format is 32-bit, the address must be 32-bit aligned.",
+                        "Memory Address Address of the data used for the output FIFO. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned and a 16-bit per pixel format must be 16-bit aligned.",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Oor",
-            extends: None,
-            description: Some(
-                "DMA2D output offset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lo",
-                    description: Some(
-                        "Line Offset Line offset used for the output (expressed in pixels). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bgcolr",
-            extends: None,
-            description: Some(
-                "DMA2D background color register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "blue",
-                    description: Some(
-                        "Blue Value These bits define the blue value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "green",
-                    description: Some(
-                        "Green Value These bits define the green value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "red",
-                    description: Some(
-                        "Red Value These bits define the red value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -1112,6 +704,328 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 24,
                     bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nlr",
+            extends: None,
+            description: Some(
+                "DMA2D number of line register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "nl",
+                    description: Some(
+                        "Number of lines Number of lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pl",
+                    description: Some(
+                        "Pixel per lines Number of pixels per lines of the area to be transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. If any of the input image format is 4-bit per pixel, pixel per lines must be even.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fgmar",
+            extends: None,
+            description: Some(
+                "DMA2D foreground memory address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ma",
+                    description: Some(
+                        "Memory address Address of the data used for the foreground image. This register can only be written when data transfers are disabled. Once the data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ocolr",
+            extends: None,
+            description: Some(
+                "DMA2D output color register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "blue",
+                    description: Some(
+                        "Blue Value These bits define the blue value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "green",
+                    description: Some(
+                        "Green Value These bits define the green value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "red",
+                    description: Some(
+                        "Red Value These bits define the red value of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "alpha",
+                    description: Some(
+                        "Alpha Channel Value These bits define the alpha channel of the output color. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fgcolr",
+            extends: None,
+            description: Some(
+                "DMA2D foreground color register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "blue",
+                    description: Some(
+                        "Blue Value These bits defines the blue value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "green",
+                    description: Some(
+                        "Green Value These bits defines the green value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, They are read-only.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "red",
+                    description: Some(
+                        "Red Value These bits defines the red value for the A4 or A8 mode of the foreground image. They can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bgmar",
+            extends: None,
+            description: Some(
+                "DMA2D background memory address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ma",
+                    description: Some(
+                        "Memory address Address of the data used for the background image. This register can only be written when data transfers are disabled. Once a data transfer has started, this register is read-only. The address alignment must match the image format selected e.g. a 32-bit per pixel format must be 32-bit aligned, a 16-bit per pixel format must be 16-bit aligned and a 4-bit per pixel format must be 8-bit aligned.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bgcolr",
+            extends: None,
+            description: Some(
+                "DMA2D background color register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "blue",
+                    description: Some(
+                        "Blue Value These bits define the blue value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "green",
+                    description: Some(
+                        "Green Value These bits define the green value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "red",
+                    description: Some(
+                        "Red Value These bits define the red value for the A4 or A8 mode of the background. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bgor",
+            extends: None,
+            description: Some(
+                "DMA2D background offset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lo",
+                    description: Some(
+                        "Line offset Line offset used for the background image (expressed in pixel). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ifcr",
+            extends: None,
+            description: Some(
+                "DMA2D interrupt flag clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cteif",
+                    description: Some(
+                        "Clear Transfer error interrupt flag Programming this bit to 1 clears the TEIF flag in the DMA2D_ISR register",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cteif",
+                    ),
+                },
+                Field {
+                    name: "ctcif",
+                    description: Some(
+                        "Clear transfer complete interrupt flag Programming this bit to 1 clears the TCIF flag in the DMA2D_ISR register",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ctcif",
+                    ),
+                },
+                Field {
+                    name: "ctwif",
+                    description: Some(
+                        "Clear transfer watermark interrupt flag Programming this bit to 1 clears the TWIF flag in the DMA2D_ISR register",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ctwif",
+                    ),
+                },
+                Field {
+                    name: "caecif",
+                    description: Some(
+                        "Clear CLUT access error interrupt flag Programming this bit to 1 clears the CAEIF flag in the DMA2D_ISR register",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Caecif",
+                    ),
+                },
+                Field {
+                    name: "cctcif",
+                    description: Some(
+                        "Clear CLUT transfer complete interrupt flag Programming this bit to 1 clears the CTCIF flag in the DMA2D_ISR register",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cctcif",
+                    ),
+                },
+                Field {
+                    name: "cceif",
+                    description: Some(
+                        "Clear configuration error interrupt flag Programming this bit to 1 clears the CEIF flag in the DMA2D_ISR register",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cceif",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fgor",
+            extends: None,
+            description: Some(
+                "DMA2D foreground offset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lo",
+                    description: Some(
+                        "Line offset Line offset used for the foreground expressed in pixel. This value is used to generate the address. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once a data transfer has started, they become read-only. If the image format is 4-bit per pixel, the line offset must be even.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -1248,32 +1162,118 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Amtcr",
+            name: "Opfccr",
             extends: None,
             description: Some(
-                "DMA2D AXI master timer configuration register",
+                "DMA2D output PFC control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "en",
+                    name: "cm",
                     description: Some(
-                        "Enable Enables the dead time functionality.",
+                        "Color mode These bits define the color format of the output image. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only. others: meaningless",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "En",
+                        "OpfccrCm",
                     ),
                 },
                 Field {
-                    name: "dt",
+                    name: "sb",
                     description: Some(
-                        "Dead Time Dead time value in the AXI clock cycle inserted between two consecutive accesses on the AXI master port. These bits represent the minimum guaranteed number of cycles between two consecutive AXI accesses.",
+                        "Swap Bytes",
                     ),
                     bit_offset: 8,
-                    bit_size: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sb",
+                    ),
+                },
+                Field {
+                    name: "ai",
+                    description: Some(
+                        "Alpha Inverted This bit inverts the alpha value. Once the transfer has started, this bit is read-only.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "OpfccrAi",
+                    ),
+                },
+                Field {
+                    name: "rbs",
+                    description: Some(
+                        "Red Blue Swap This bit allows to swap the R &amp; B to support BGR or ABGR color formats. Once the transfer has started, this bit is read-only.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "OpfccrRbs",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Oor",
+            extends: None,
+            description: Some(
+                "DMA2D output offset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lo",
+                    description: Some(
+                        "Line Offset Line offset used for the output (expressed in pixels). This value is used for the address generation. It is added at the end of each line to determine the starting address of the next line. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Lwr",
+            extends: None,
+            description: Some(
+                "DMA2D line watermark register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lw",
+                    description: Some(
+                        "Line watermark These bits allow to configure the line watermark for interrupt generation. An interrupt is raised when the last pixel of the watermarked line has been transferred. These bits can only be written when data transfers are disabled. Once the transfer has started, they are read-only.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bgcmar",
+            extends: None,
+            description: Some(
+                "DMA2D background CLUT memory address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ma",
+                    description: Some(
+                        "Memory address Address of the data used for the CLUT address dedicated to the background image. This register can only be written when no transfer is on going. Once the CLUT transfer has started, this register is read-only. If the background CLUT format is 32-bit, the address must be 32-bit aligned.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1281,104 +1281,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "BgpfccrAm",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOMODIFY",
-                    description: Some(
-                        "No modification of alpha channel",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REPLACE",
-                    description: Some(
-                        "Replace with value in ALPHA[7:0]",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MULTIPLY",
-                    description: Some(
-                        "Multiply with value in ALPHA[7:0]",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "FgpfccrCcm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ARGB8888",
-                    description: Some(
-                        "CLUT color format ARGB8888",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RGB888",
-                    description: Some(
-                        "CLUT color format RGB888",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "BgpfccrStart",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "START",
-                    description: Some(
-                        "Start the automatic loading of the CLUT",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FgpfccrAi",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "REGULARALPHA",
-                    description: Some(
-                        "Regular alpha",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INVERTEDALPHA",
-                    description: Some(
-                        "Inverted alpha",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Caecif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clear the CAEIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "FgpfccrCm",
             description: None,
@@ -1471,6 +1373,41 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "En",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Disabled AHB/AXI dead-time functionality",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Enabled AHB/AXI dead-time functionality",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cteif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clear the TEIF flag in the ISR register",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Teie",
             description: None,
             bit_size: 1,
@@ -1486,6 +1423,391 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ENABLED",
                     description: Some(
                         "TE interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FgpfccrAm",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOMODIFY",
+                    description: Some(
+                        "No modification of alpha channel",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REPLACE",
+                    description: Some(
+                        "Replace with value in ALPHA[7:0]",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MULTIPLY",
+                    description: Some(
+                        "Multiply with value in ALPHA[7:0]",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "FgpfccrRbs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "REGULAR",
+                    description: Some(
+                        "No Red Blue Swap (RGB or ARGB)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SWAP",
+                    description: Some(
+                        "Red Blue Swap (BGR or ABGR)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ctcie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "CTC interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "CTC interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "BgpfccrStart",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "START",
+                    description: Some(
+                        "Start the automatic loading of the CLUT",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FgpfccrCcm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "CLUT color format ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "CLUT color format RGB888",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Caecif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clear the CAEIF flag in the ISR register",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ceie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "CE interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "CE interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "MEMORYTOMEMORY",
+                    description: Some(
+                        "Memory-to-memory (FG fetch only)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MEMORYTOMEMORYPFC",
+                    description: Some(
+                        "Memory-to-memory with PFC (FG fetch only with FG PFC active)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MEMORYTOMEMORYPFCBLENDING",
+                    description: Some(
+                        "Memory-to-memory with blending (FG and BG fetch with PFC and blending)",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "REGISTERTOMEMORY",
+                    description: Some(
+                        "Register-to-memory",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Twie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "TW interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "TW interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OpfccrCm",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "RGB888",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RGB565",
+                    description: Some(
+                        "RGB565",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "ARGB1555",
+                    description: Some(
+                        "ARGB1555",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "ARGB4444",
+                    description: Some(
+                        "ARGB4444",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "BgpfccrCcm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "CLUT color format ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "CLUT color format RGB888",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FgpfccrStart",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "START",
+                    description: Some(
+                        "Start the automatic loading of the CLUT",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FgpfccrAi",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "REGULARALPHA",
+                    description: Some(
+                        "Regular alpha",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "INVERTEDALPHA",
+                    description: Some(
+                        "Inverted alpha",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Susp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSUSPENDED",
+                    description: Some(
+                        "Transfer not suspended",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SUSPENDED",
+                    description: Some(
+                        "Transfer suspended",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ctwif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clear the TWIF flag in the ISR register",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ctcif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clear the TCIF flag in the ISR register",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sb",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "REGULAR",
+                    description: Some(
+                        "Regular byte order",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SWAPBYTES",
+                    description: Some(
+                        "Bytes are swapped two by two",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tcie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "TC interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "TC interrupt enabled",
                     ),
                     value: 1,
                 },
@@ -1590,154 +1912,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "BgpfccrAi",
+            name: "CrStart",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REGULARALPHA",
+                    name: "START",
                     description: Some(
-                        "Regular alpha",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INVERTEDALPHA",
-                    description: Some(
-                        "Inverted alpha",
+                        "Launch the DMA2D",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "OpfccrCm",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "ARGB8888",
-                    description: Some(
-                        "ARGB8888",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RGB888",
-                    description: Some(
-                        "RGB888",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RGB565",
-                    description: Some(
-                        "RGB565",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "ARGB1555",
-                    description: Some(
-                        "ARGB1555",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "ARGB4444",
-                    description: Some(
-                        "ARGB4444",
-                    ),
-                    value: 4,
-                },
-            ],
-        },
-        Enum {
-            name: "Twie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "TW interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "TW interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OpfccrAi",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "REGULARALPHA",
-                    description: Some(
-                        "Regular alpha",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INVERTEDALPHA",
-                    description: Some(
-                        "Inverted alpha",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FgpfccrRbs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "REGULAR",
-                    description: Some(
-                        "No Red Blue Swap (RGB or ARGB)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SWAP",
-                    description: Some(
-                        "Red Blue Swap (BGR or ABGR)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ctcie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "CTC interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "CTC interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FgpfccrAm",
+            name: "BgpfccrAm",
             description: None,
             bit_size: 2,
             variants: &[
@@ -1765,63 +1954,91 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Caeie",
+            name: "OpfccrRbs",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "REGULAR",
                     description: Some(
-                        "CAE interrupt disabled",
+                        "No Red Blue Swap (RGB or ARGB)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "SWAP",
                     description: Some(
-                        "CAE interrupt enabled",
+                        "Red Blue Swap (BGR or ABGR)",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "BgpfccrCcm",
+            name: "OpfccrAi",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ARGB8888",
+                    name: "REGULARALPHA",
                     description: Some(
-                        "CLUT color format ARGB8888",
+                        "Regular alpha",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "INVERTEDALPHA",
                     description: Some(
-                        "CLUT color format RGB888",
+                        "Inverted alpha",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Tcie",
+            name: "Abort",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "ABORTREQUEST",
                     description: Some(
-                        "TC interrupt disabled",
+                        "Transfer abort requested",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "BgpfccrAi",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "REGULARALPHA",
+                    description: Some(
+                        "Regular alpha",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "INVERTEDALPHA",
                     description: Some(
-                        "TC interrupt enabled",
+                        "Inverted alpha",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cctcif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clear the CTCIF flag in the ISR register",
                     ),
                     value: 1,
                 },
@@ -1849,238 +2066,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Sb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "REGULAR",
-                    description: Some(
-                        "Regular byte order",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SWAPBYTES",
-                    description: Some(
-                        "Bytes are swapped two by two",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cctcif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clear the CTCIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "En",
+            name: "Caeie",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
                     description: Some(
-                        "Disabled AHB/AXI dead-time functionality",
+                        "CAE interrupt disabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
                     description: Some(
-                        "Enabled AHB/AXI dead-time functionality",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ceie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "CE interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "CE interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Susp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSUSPENDED",
-                    description: Some(
-                        "Transfer not suspended",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SUSPENDED",
-                    description: Some(
-                        "Transfer suspended",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Abort",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ABORTREQUEST",
-                    description: Some(
-                        "Transfer abort requested",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cteif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clear the TEIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ctcif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clear the TCIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FgpfccrStart",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "START",
-                    description: Some(
-                        "Start the automatic loading of the CLUT",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OpfccrRbs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "REGULAR",
-                    description: Some(
-                        "No Red Blue Swap (RGB or ARGB)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SWAP",
-                    description: Some(
-                        "Red Blue Swap (BGR or ABGR)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ctwif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clear the TWIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mode",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "MEMORYTOMEMORY",
-                    description: Some(
-                        "Memory-to-memory (FG fetch only)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MEMORYTOMEMORYPFC",
-                    description: Some(
-                        "Memory-to-memory with PFC (FG fetch only with FG PFC active)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MEMORYTOMEMORYPFCBLENDING",
-                    description: Some(
-                        "Memory-to-memory with blending (FG and BG fetch with PFC and blending)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "REGISTERTOMEMORY",
-                    description: Some(
-                        "Register-to-memory",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "CrStart",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "START",
-                    description: Some(
-                        "Launch the DMA2D",
+                        "CAE interrupt enabled",
                     ),
                     value: 1,
                 },

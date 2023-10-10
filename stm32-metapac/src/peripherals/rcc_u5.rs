@@ -7501,25 +7501,21 @@ in RCC_ICSCR1"]
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllm {
-        #[doc = "division by 1 (bypass)"]
         DIV1 = 0,
-        #[doc = "division by 2"]
         DIV2 = 0x01,
-        #[doc = "division by 3"]
         DIV3 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        #[doc = "division by 16"]
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+        DIV9 = 0x08,
+        DIV10 = 0x09,
+        DIV11 = 0x0a,
+        DIV12 = 0x0b,
+        DIV13 = 0x0c,
+        DIV14 = 0x0d,
+        DIV15 = 0x0e,
         DIV16 = 0x0f,
     }
     impl Pllm {

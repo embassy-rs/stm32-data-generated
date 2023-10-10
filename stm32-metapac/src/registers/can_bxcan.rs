@@ -3,6 +3,49 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
+            name: "Fb",
+            extends: None,
+            description: Some(
+                "CAN Filter Bank cluster",
+            ),
+            items: &[
+                BlockItem {
+                    name: "fr1",
+                    description: Some(
+                        "Filter bank 0 register 1",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fr2",
+                    description: Some(
+                        "Filter bank 0 register 2",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fr2",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
             name: "Tx",
             extends: None,
             description: Some(
@@ -73,49 +116,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Tdhr",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "Fb",
-            extends: None,
-            description: Some(
-                "CAN Filter Bank cluster",
-            ),
-            items: &[
-                BlockItem {
-                    name: "fr1",
-                    description: Some(
-                        "Filter bank 0 register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fr2",
-                    description: Some(
-                        "Filter bank 0 register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fr2",
                             ),
                         },
                     ),
@@ -509,196 +509,25 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Rfr",
+            name: "Ffa1r",
             extends: None,
             description: Some(
-                "receive FIFO 0 register",
+                "filter FIFO assignment register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fmp",
+                    name: "ffa",
                     description: Some(
-                        "FMP0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "full",
-                    description: Some(
-                        "FULL0",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fovr",
-                    description: Some(
-                        "FOVR0",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfom",
-                    description: Some(
-                        "RFOM0",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fmr",
-            extends: None,
-            description: Some(
-                "filter master register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "finit",
-                    description: Some(
-                        "FINIT",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can2sb",
-                    description: Some(
-                        "CAN2SB",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fr1",
-            extends: None,
-            description: Some(
-                "Filter bank 0 register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fb",
-                    description: Some(
-                        "Filter bits",
+                        "Filter FIFO assignment for filter 0",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 32,
+                                len: 28,
                                 stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tir",
-            extends: None,
-            description: Some(
-                "TX mailbox identifier register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txrq",
-                    description: Some(
-                        "TXRQ",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rtr",
-                    description: Some(
-                        "RTR",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "TirRtr",
-                    ),
-                },
-                Field {
-                    name: "ide",
-                    description: Some(
-                        "IDE",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "TirIde",
-                    ),
-                },
-                Field {
-                    name: "exid",
-                    description: Some(
-                        "EXID",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 18,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stid",
-                    description: Some(
-                        "STID",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Tdlr",
-            extends: None,
-            description: Some(
-                "mailbox data low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "data",
-                    description: Some(
-                        "DATA0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 8,
                             },
                         ),
                     ),
@@ -774,6 +603,106 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "Silm",
                     ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Msr",
+            extends: None,
+            description: Some(
+                "master status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "inak",
+                    description: Some(
+                        "INAK",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "slak",
+                    description: Some(
+                        "SLAK",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "erri",
+                    description: Some(
+                        "ERRI",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wkui",
+                    description: Some(
+                        "WKUI",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "slaki",
+                    description: Some(
+                        "SLAKI",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txm",
+                    description: Some(
+                        "TXM",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxm",
+                    description: Some(
+                        "RXM",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "samp",
+                    description: Some(
+                        "SAMP",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rx",
+                    description: Some(
+                        "RX",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -888,33 +817,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ffa1r",
-            extends: None,
-            description: Some(
-                "filter FIFO assignment register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ffa",
-                    description: Some(
-                        "Filter FIFO assignment for filter 0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 28,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Fr2",
             extends: None,
             description: Some(
@@ -942,89 +844,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Esr",
+            name: "Fa1r",
             extends: None,
             description: Some(
-                "interrupt enable register",
+                "filter activation register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ewgf",
+                    name: "fact",
                     description: Some(
-                        "EWGF",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epvf",
-                    description: Some(
-                        "EPVF",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "boff",
-                    description: Some(
-                        "BOFF",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lec",
-                    description: Some(
-                        "LEC",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Lec",
-                    ),
-                },
-                Field {
-                    name: "tec",
-                    description: Some(
-                        "TEC",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rec",
-                    description: Some(
-                        "REC",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fm1r",
-            extends: None,
-            description: Some(
-                "filter mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fbm",
-                    description: Some(
-                        "Filter mode",
+                        "Filter active",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1036,6 +866,279 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rir",
+            extends: None,
+            description: Some(
+                "receive FIFO mailbox identifier register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rtr",
+                    description: Some(
+                        "RTR",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "RirRtr",
+                    ),
+                },
+                Field {
+                    name: "ide",
+                    description: Some(
+                        "IDE",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "RirIde",
+                    ),
+                },
+                Field {
+                    name: "exid",
+                    description: Some(
+                        "EXID",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 18,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stid",
+                    description: Some(
+                        "STID",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tsr",
+            extends: None,
+            description: Some(
+                "transmit status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rqcp",
+                    description: Some(
+                        "RQCP0",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "txok",
+                    description: Some(
+                        "TXOK0",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "alst",
+                    description: Some(
+                        "ALST0",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "terr",
+                    description: Some(
+                        "TERR0",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "abrq",
+                    description: Some(
+                        "ABRQ0",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "code",
+                    description: Some(
+                        "CODE",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tme",
+                    description: Some(
+                        "Lowest priority flag for mailbox 0",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "low",
+                    description: Some(
+                        "Lowest priority flag for mailbox 0",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fmr",
+            extends: None,
+            description: Some(
+                "filter master register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "finit",
+                    description: Some(
+                        "FINIT",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "can2sb",
+                    description: Some(
+                        "CAN2SB",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rfr",
+            extends: None,
+            description: Some(
+                "receive FIFO 0 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fmp",
+                    description: Some(
+                        "FMP0",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "full",
+                    description: Some(
+                        "FULL0",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fovr",
+                    description: Some(
+                        "FOVR0",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfom",
+                    description: Some(
+                        "RFOM0",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -1204,10 +1307,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Tdhr",
+            name: "Fr1",
             extends: None,
             description: Some(
-                "mailbox data high register",
+                "Filter bank 0 register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fb",
+                    description: Some(
+                        "Filter bits",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rdhr",
+            extends: None,
+            description: Some(
+                "receive FIFO mailbox data high register",
             ),
             bit_size: 32,
             fields: &[
@@ -1231,128 +1361,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fa1r",
+            name: "Tdlr",
             extends: None,
             description: Some(
-                "filter activation register",
+                "mailbox data low register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fact",
+                    name: "data",
                     description: Some(
-                        "Filter active",
+                        "DATA0",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 8,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 28,
-                                stride: 1,
+                                len: 4,
+                                stride: 8,
                             },
                         ),
                     ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Msr",
-            extends: None,
-            description: Some(
-                "master status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "inak",
-                    description: Some(
-                        "INAK",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "slak",
-                    description: Some(
-                        "SLAK",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "erri",
-                    description: Some(
-                        "ERRI",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wkui",
-                    description: Some(
-                        "WKUI",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "slaki",
-                    description: Some(
-                        "SLAKI",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txm",
-                    description: Some(
-                        "TXM",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxm",
-                    description: Some(
-                        "RXM",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "samp",
-                    description: Some(
-                        "SAMP",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rx",
-                    description: Some(
-                        "RX",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],
@@ -1398,137 +1428,25 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Tsr",
+            name: "Tdhr",
             extends: None,
             description: Some(
-                "transmit status register",
+                "mailbox data high register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rqcp",
+                    name: "data",
                     description: Some(
-                        "RQCP0",
+                        "DATA4",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 8,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 3,
+                                len: 4,
                                 stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "txok",
-                    description: Some(
-                        "TXOK0",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "alst",
-                    description: Some(
-                        "ALST0",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "terr",
-                    description: Some(
-                        "TERR0",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "abrq",
-                    description: Some(
-                        "ABRQ0",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "code",
-                    description: Some(
-                        "CODE",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tme",
-                    description: Some(
-                        "Lowest priority flag for mailbox 0",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "low",
-                    description: Some(
-                        "Lowest priority flag for mailbox 0",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
                             },
                         ),
                     ),
@@ -1559,6 +1477,142 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tir",
+            extends: None,
+            description: Some(
+                "TX mailbox identifier register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txrq",
+                    description: Some(
+                        "TXRQ",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rtr",
+                    description: Some(
+                        "RTR",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "TirRtr",
+                    ),
+                },
+                Field {
+                    name: "ide",
+                    description: Some(
+                        "IDE",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "TirIde",
+                    ),
+                },
+                Field {
+                    name: "exid",
+                    description: Some(
+                        "EXID",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 18,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stid",
+                    description: Some(
+                        "STID",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Esr",
+            extends: None,
+            description: Some(
+                "interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ewgf",
+                    description: Some(
+                        "EWGF",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epvf",
+                    description: Some(
+                        "EPVF",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boff",
+                    description: Some(
+                        "BOFF",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lec",
+                    description: Some(
+                        "LEC",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Lec",
+                    ),
+                },
+                Field {
+                    name: "tec",
+                    description: Some(
+                        "TEC",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rec",
+                    description: Some(
+                        "REC",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -1604,79 +1658,25 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Rir",
+            name: "Fm1r",
             extends: None,
             description: Some(
-                "receive FIFO mailbox identifier register",
+                "filter mode register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rtr",
+                    name: "fbm",
                     description: Some(
-                        "RTR",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "RirRtr",
-                    ),
-                },
-                Field {
-                    name: "ide",
-                    description: Some(
-                        "IDE",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "RirIde",
-                    ),
-                },
-                Field {
-                    name: "exid",
-                    description: Some(
-                        "EXID",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 18,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stid",
-                    description: Some(
-                        "STID",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rdhr",
-            extends: None,
-            description: Some(
-                "receive FIFO mailbox data high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "data",
-                    description: Some(
-                        "DATA4",
+                        "Filter mode",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 1,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 4,
-                                stride: 8,
+                                len: 28,
+                                stride: 1,
                             },
                         ),
                     ),
@@ -1686,6 +1686,195 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "RirIde",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "Standard identifier",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EXTENDED",
+                    description: Some(
+                        "Extended identifier",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ffie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No interrupt when FULL bit is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Interrupt generated when FULL bit is set",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tmeie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No interrupt when RQCPx bit is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Interrupt generated when RQCPx bit is set",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lbkm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Loop Back Mode disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Loop Back Mode enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "TirRtr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DATA",
+                    description: Some(
+                        "Data frame",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REMOTE",
+                    description: Some(
+                        "Remote frame",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wkuie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No interrupt when WKUI is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Interrupt generated when WKUI bit is set",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lecie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "ERRI bit will not be set when the error code in LEC[2:0] is set by hardware on error detection",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "ERRI bit will be set when the error code in LEC[2:0] is set by hardware on error detection",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fovie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No interrupt when FOVR bit is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Interrupt generated when FOVR bit is set",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Slkie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "No interrupt when SLAKI bit is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Interrupt generated when SLAKI bit is set",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Fmpie",
             description: None,
@@ -1702,6 +1891,48 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ENABLED",
                     description: Some(
                         "Interrupt generated when state of FMP[1:0] bits are not 00b",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Silm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some(
+                        "Normal operation",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SILENT",
+                    description: Some(
+                        "Silent Mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Epvie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "ERRI bit will not be set when EPVF is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "ERRI bit will be set when EPVF is set",
                     ),
                     value: 1,
                 },
@@ -1771,279 +2002,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lecie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "ERRI bit will not be set when the error code in LEC[2:0] is set by hardware on error detection",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "ERRI bit will be set when the error code in LEC[2:0] is set by hardware on error detection",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fovie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No interrupt when FOVR bit is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Interrupt generated when FOVR bit is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RirIde",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "Standard identifier",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EXTENDED",
-                    description: Some(
-                        "Extended identifier",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Silm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Normal operation",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SILENT",
-                    description: Some(
-                        "Silent Mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "TirIde",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "Standard identifier",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EXTENDED",
-                    description: Some(
-                        "Extended identifier",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "TirRtr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DATA",
-                    description: Some(
-                        "Data frame",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMOTE",
-                    description: Some(
-                        "Remote frame",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Epvie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "ERRI bit will not be set when EPVF is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "ERRI bit will be set when EPVF is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lbkm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Loop Back Mode disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Loop Back Mode enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tmeie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No interrupt when RQCPx bit is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Interrupt generated when RQCPx bit is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ffie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No interrupt when FULL bit is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Interrupt generated when FULL bit is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wkuie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No interrupt when WKUI is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Interrupt generated when WKUI bit is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Bofie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "ERRI bit will not be set when BOFF is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "ERRI bit will be set when BOFF is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Slkie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No interrupt when SLAKI bit is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Interrupt generated when SLAKI bit is set",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ewgie",
             description: None,
             bit_size: 1,
@@ -2101,6 +2059,48 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "REMOTE",
                     description: Some(
                         "Remote frame",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Bofie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "ERRI bit will not be set when BOFF is set",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "ERRI bit will be set when BOFF is set",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "TirIde",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "Standard identifier",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EXTENDED",
+                    description: Some(
+                        "Extended identifier",
                     ),
                     value: 1,
                 },

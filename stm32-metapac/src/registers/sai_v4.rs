@@ -3,86 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Sai",
-            extends: None,
-            description: Some(
-                "Serial audio interface",
-            ),
-            items: &[
-                BlockItem {
-                    name: "gcr",
-                    description: Some(
-                        "Global configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ch",
-                    description: Some(
-                        "Cluster CH%s, containing ?CR1, ?CR2, ?FRCR, ?SLOTR, ?IM, ?SR, ?CLRFR, ?DR",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 4,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Ch",
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pdmcr",
-                    description: Some(
-                        "PDM control register",
-                    ),
-                    array: None,
-                    byte_offset: 68,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pdmcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pdmdly",
-                    description: Some(
-                        "PDM delay register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pdmdly",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
             name: "Ch",
             extends: None,
             description: Some(
@@ -227,8 +147,398 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        Block {
+            name: "Sai",
+            extends: None,
+            description: Some(
+                "Serial audio interface",
+            ),
+            items: &[
+                BlockItem {
+                    name: "gcr",
+                    description: Some(
+                        "Global configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ch",
+                    description: Some(
+                        "Cluster CH%s, containing ?CR1, ?CR2, ?FRCR, ?SLOTR, ?IM, ?SR, ?CLRFR, ?DR",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 4,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "Ch",
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pdmcr",
+                    description: Some(
+                        "PDM control register",
+                    ),
+                    array: None,
+                    byte_offset: 68,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pdmcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pdmdly",
+                    description: Some(
+                        "PDM delay register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pdmdly",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Pdmdly",
+            extends: None,
+            description: Some(
+                "PDM delay register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dlym1l",
+                    description: Some(
+                        "Delay line adjust for first microphone of pair 1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym1r",
+                    description: Some(
+                        "Delay line adjust for second microphone of pair 1",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym2l",
+                    description: Some(
+                        "Delay line for first microphone of pair 2",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym2r",
+                    description: Some(
+                        "Delay line for second microphone of pair 2",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym3l",
+                    description: Some(
+                        "Delay line for first microphone of pair 3",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym3r",
+                    description: Some(
+                        "Delay line for second microphone of pair 3",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym4l",
+                    description: Some(
+                        "Delay line for first microphone of pair 4",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dlym4r",
+                    description: Some(
+                        "Delay line for second microphone of pair 4",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Frcr",
+            extends: None,
+            description: Some(
+                "This register has no meaning in AC97 and SPDIF audio protocol",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "frl",
+                    description: Some(
+                        "Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fsall",
+                    description: Some(
+                        "Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fsdef",
+                    description: Some(
+                        "Frame synchronization definition. This bit is set and cleared by software. When the bit is set, the number of slots defined in the SAI_xSLOTR register has to be even. It means that half of this number of slots will be dedicated to the left channel and the other slots for the right channel (e.g: this bit has to be set for I2S or MSB/LSB-justified protocols...). This bit is meaningless and is not used in AC97 or SPDIF audio block configuration. It must be configured when the audio block is disabled.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fspol",
+                    description: Some(
+                        "Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Fspol",
+                    ),
+                },
+                Field {
+                    name: "fsoff",
+                    description: Some(
+                        "Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Fsoff",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "Status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ovrudr",
+                    description: Some(
+                        "Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ovrudr",
+                    ),
+                },
+                Field {
+                    name: "mutedet",
+                    description: Some(
+                        "Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Mutedet",
+                    ),
+                },
+                Field {
+                    name: "wckcfg",
+                    description: Some(
+                        "Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wckcfg",
+                    ),
+                },
+                Field {
+                    name: "freq",
+                    description: Some(
+                        "FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Freq",
+                    ),
+                },
+                Field {
+                    name: "cnrdy",
+                    description: Some(
+                        "Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cnrdy",
+                    ),
+                },
+                Field {
+                    name: "afsdet",
+                    description: Some(
+                        "Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Afsdet",
+                    ),
+                },
+                Field {
+                    name: "lfsdet",
+                    description: Some(
+                        "Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lfsdet",
+                    ),
+                },
+                Field {
+                    name: "flvl",
+                    description: Some(
+                        "FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Flvl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Gcr",
+            extends: None,
+            description: Some(
+                "Global configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "syncin",
+                    description: Some(
+                        "Synchronization inputs",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "syncout",
+                    description: Some(
+                        "Synchronization outputs These bits are set and cleared by software.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dr",
+            extends: None,
+            description: Some(
+                "Data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "data",
+                    description: Some(
+                        "Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Pdmcr",
             extends: None,
@@ -293,6 +603,76 @@ pub(crate) static REGISTERS: IR = IR {
                         "Clock enable of bitstream clock number 4",
                     ),
                     bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Clrfr",
+            extends: None,
+            description: Some(
+                "Clear flag register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "covrudr",
+                    description: Some(
+                        "Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cmutedet",
+                    description: Some(
+                        "Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwckcfg",
+                    description: Some(
+                        "Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ccnrdy",
+                    description: Some(
+                        "Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cafsdet",
+                    description: Some(
+                        "Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clfsdet",
+                    description: Some(
+                        "Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.",
+                    ),
+                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -380,67 +760,39 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dr",
+            name: "Cr2",
             extends: None,
             description: Some(
-                "Data register",
+                "Configuration register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "data",
+                    name: "fth",
                     description: Some(
-                        "Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.",
+                        "FIFO threshold. This bit is set and cleared by software.",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 3,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Clrfr",
-            extends: None,
-            description: Some(
-                "Clear flag register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "covrudr",
-                    description: Some(
-                        "Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.",
+                    enumm: Some(
+                        "Fth",
                     ),
-                    bit_offset: 0,
+                },
+                Field {
+                    name: "fflush",
+                    description: Some(
+                        "FIFO flush. This bit is set by software. It is always read as 0. This bit should be configured when the SAI is disabled.",
+                    ),
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "cmutedet",
+                    name: "tris",
                     description: Some(
-                        "Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwckcfg",
-                    description: Some(
-                        "Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccnrdy",
-                    description: Some(
-                        "Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.",
+                        "Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -448,9 +800,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cafsdet",
+                    name: "mute",
                     description: Some(
-                        "Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.",
+                        "Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -458,44 +810,50 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clfsdet",
+                    name: "muteval",
                     description: Some(
-                        "Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.",
+                        "Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Gcr",
-            extends: None,
-            description: Some(
-                "Global configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "syncin",
-                    description: Some(
-                        "Synchronization inputs",
+                    enumm: Some(
+                        "Muteval",
                     ),
-                    bit_offset: 0,
-                    bit_size: 2,
+                },
+                Field {
+                    name: "mutecnt",
+                    description: Some(
+                        "Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "syncout",
+                    name: "cpl",
                     description: Some(
-                        "Synchronization outputs These bits are set and cleared by software.",
+                        "Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cpl",
+                    ),
+                },
+                Field {
+                    name: "comp",
+                    description: Some(
+                        "Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.",
+                    ),
+                    bit_offset: 14,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Comp",
+                    ),
                 },
             ],
         },
@@ -668,364 +1026,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some(
-                "Status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ovrudr",
-                    description: Some(
-                        "Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ovrudr",
-                    ),
-                },
-                Field {
-                    name: "mutedet",
-                    description: Some(
-                        "Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Mutedet",
-                    ),
-                },
-                Field {
-                    name: "wckcfg",
-                    description: Some(
-                        "Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Wckcfg",
-                    ),
-                },
-                Field {
-                    name: "freq",
-                    description: Some(
-                        "FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Freq",
-                    ),
-                },
-                Field {
-                    name: "cnrdy",
-                    description: Some(
-                        "Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cnrdy",
-                    ),
-                },
-                Field {
-                    name: "afsdet",
-                    description: Some(
-                        "Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Afsdet",
-                    ),
-                },
-                Field {
-                    name: "lfsdet",
-                    description: Some(
-                        "Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lfsdet",
-                    ),
-                },
-                Field {
-                    name: "flvl",
-                    description: Some(
-                        "FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Flvl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Frcr",
-            extends: None,
-            description: Some(
-                "This register has no meaning in AC97 and SPDIF audio protocol",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "frl",
-                    description: Some(
-                        "Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fsall",
-                    description: Some(
-                        "Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fsdef",
-                    description: Some(
-                        "Frame synchronization definition. This bit is set and cleared by software. When the bit is set, the number of slots defined in the SAI_xSLOTR register has to be even. It means that half of this number of slots will be dedicated to the left channel and the other slots for the right channel (e.g: this bit has to be set for I2S or MSB/LSB-justified protocols...). This bit is meaningless and is not used in AC97 or SPDIF audio block configuration. It must be configured when the audio block is disabled.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fspol",
-                    description: Some(
-                        "Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Fspol",
-                    ),
-                },
-                Field {
-                    name: "fsoff",
-                    description: Some(
-                        "Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Fsoff",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some(
-                "Configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fth",
-                    description: Some(
-                        "FIFO threshold. This bit is set and cleared by software.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Fth",
-                    ),
-                },
-                Field {
-                    name: "fflush",
-                    description: Some(
-                        "FIFO flush. This bit is set by software. It is always read as 0. This bit should be configured when the SAI is disabled.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tris",
-                    description: Some(
-                        "Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mute",
-                    description: Some(
-                        "Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "muteval",
-                    description: Some(
-                        "Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Muteval",
-                    ),
-                },
-                Field {
-                    name: "mutecnt",
-                    description: Some(
-                        "Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cpl",
-                    description: Some(
-                        "Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cpl",
-                    ),
-                },
-                Field {
-                    name: "comp",
-                    description: Some(
-                        "Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Comp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pdmdly",
-            extends: None,
-            description: Some(
-                "PDM delay register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dlym1l",
-                    description: Some(
-                        "Delay line adjust for first microphone of pair 1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym1r",
-                    description: Some(
-                        "Delay line adjust for second microphone of pair 1",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym2l",
-                    description: Some(
-                        "Delay line for first microphone of pair 2",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym2r",
-                    description: Some(
-                        "Delay line for second microphone of pair 2",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym3l",
-                    description: Some(
-                        "Delay line for first microphone of pair 3",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym3r",
-                    description: Some(
-                        "Delay line for second microphone of pair 3",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym4l",
-                    description: Some(
-                        "Delay line for first microphone of pair 4",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dlym4r",
-                    description: Some(
-                        "Delay line for second microphone of pair 4",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Slotr",
             extends: None,
             description: Some(
@@ -1082,328 +1082,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Ds",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "BIT8",
-                    description: Some(
-                        "8 bits",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BIT10",
-                    description: Some(
-                        "10 bits",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BIT16",
-                    description: Some(
-                        "16 bits",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "BIT20",
-                    description: Some(
-                        "20 bits",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "BIT24",
-                    description: Some(
-                        "24 bits",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "BIT32",
-                    description: Some(
-                        "32 bits",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpl",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ONESCOMPLEMENT",
-                    description: Some(
-                        "1’s complement representation",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TWOSCOMPLEMENT",
-                    description: Some(
-                        "2’s complement representation",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Syncen",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "ASYNCHRONOUS",
-                    description: Some(
-                        "audio sub-block in asynchronous mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INTERNAL",
-                    description: Some(
-                        "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "EXTERNAL",
-                    description: Some(
-                        "audio sub-block is synchronous with an external SAI embedded peripheral. In this case the audio sub-block should be configured in Slave mode",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Freq",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOREQUEST",
-                    description: Some(
-                        "No FIFO request",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REQUEST",
-                    description: Some(
-                        "FIFO request to read or to write the SAI_xDR",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fsoff",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ONFIRST",
-                    description: Some(
-                        "FS is asserted on the first bit of the slot 0",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BEFOREFIRST",
-                    description: Some(
-                        "FS is asserted one bit before the first bit of the slot 0",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lfsdet",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOERROR",
-                    description: Some(
-                        "No error",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOSYNC",
-                    description: Some(
-                        "Frame synchronization signal is not present at the right time",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cnrdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "External AC’97 Codec is ready",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOTREADY",
-                    description: Some(
-                        "External AC’97 Codec is not ready",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Slotsz",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DATASIZE",
-                    description: Some(
-                        "The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT16",
-                    description: Some(
-                        "16-bit",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BIT32",
-                    description: Some(
-                        "32-bit",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Outdriv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ONSTART",
-                    description: Some(
-                        "Audio block output driven when SAIEN is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "IMMEDIATELY",
-                    description: Some(
-                        "Audio block output driven immediately after the setting of this bit",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Comp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOCOMPANDING",
-                    description: Some(
-                        "No companding algorithm",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MULAW",
-                    description: Some(
-                        "μ-Law algorithm",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "ALAW",
-                    description: Some(
-                        "A-Law algorithm",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Fspol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some(
-                        "FS is active low (falling edge)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some(
-                        "FS is active high (rising edge)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mutedet",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOMUTE",
-                    description: Some(
-                        "No MUTE detection on the SD input line",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MUTE",
-                    description: Some(
-                        "MUTE value detected on the SD input line (0 value) for a specified number of consecutive audio frame",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Nodiv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MASTERCLOCK",
-                    description: Some(
-                        "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NODIV",
-                    description: Some(
-                        "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Flvl",
             description: None,
             bit_size: 3,
@@ -1453,107 +1131,114 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lsbfirst",
+            name: "Nodiv",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MSBFIRST",
+                    name: "MASTERCLOCK",
                     description: Some(
-                        "Data are transferred with MSB first",
+                        "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LSBFIRST",
+                    name: "NODIV",
                     description: Some(
-                        "Data are transferred with LSB first",
+                        "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL.",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Ovrudr",
+            name: "Mutedet",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOERROR",
+                    name: "NOMUTE",
                     description: Some(
-                        "No overrun/underrun error",
+                        "No MUTE detection on the SD input line",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERRUN",
+                    name: "MUTE",
                     description: Some(
-                        "Overrun/underrun error detection",
+                        "MUTE value detected on the SD input line (0 value) for a specified number of consecutive audio frame",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Mono",
+            name: "Outdriv",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STEREO",
+                    name: "ONSTART",
                     description: Some(
-                        "Stereo mode",
+                        "Audio block output driven when SAIEN is set",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MONO",
+                    name: "IMMEDIATELY",
                     description: Some(
-                        "Mono mode",
+                        "Audio block output driven immediately after the setting of this bit",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Sloten",
+            name: "Fsoff",
             description: None,
-            bit_size: 16,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "INACTIVE",
+                    name: "ONFIRST",
                     description: Some(
-                        "Inactive slot",
+                        "FS is asserted on the first bit of the slot 0",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACTIVE",
+                    name: "BEFOREFIRST",
                     description: Some(
-                        "Active slot",
+                        "FS is asserted one bit before the first bit of the slot 0",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Ckstr",
+            name: "Syncen",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FALLINGEDGE",
+                    name: "ASYNCHRONOUS",
                     description: Some(
-                        "Data strobing edge is falling edge of SCK",
+                        "audio sub-block in asynchronous mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISINGEDGE",
+                    name: "INTERNAL",
                     description: Some(
-                        "Data strobing edge is rising edge of SCK",
+                        "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "EXTERNAL",
+                    description: Some(
+                        "audio sub-block is synchronous with an external SAI embedded peripheral. In this case the audio sub-block should be configured in Slave mode",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1579,30 +1264,275 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Prtcfg",
+            name: "Afsdet",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FREE",
+                    name: "NOERROR",
                     description: Some(
-                        "Free protocol. Free protocol allows to use the powerful configuration of the audio block to address a specific audio protocol",
+                        "No error",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SPDIF",
+                    name: "EARLYSYNC",
                     description: Some(
-                        "SPDIF protocol",
+                        "Frame synchronization signal is detected earlier than expected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Muteval",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SENDZERO",
+                    description: Some(
+                        "Bit value 0 is sent during the mute mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SENDLAST",
+                    description: Some(
+                        "Last values are sent during the mute mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lfsdet",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOERROR",
+                    description: Some(
+                        "No error",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NOSYNC",
+                    description: Some(
+                        "Frame synchronization signal is not present at the right time",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fspol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some(
+                        "FS is active low (falling edge)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some(
+                        "FS is active high (rising edge)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Freq",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOREQUEST",
+                    description: Some(
+                        "No FIFO request",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REQUEST",
+                    description: Some(
+                        "FIFO request to read or to write the SAI_xDR",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Slotsz",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DATASIZE",
+                    description: Some(
+                        "The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT16",
+                    description: Some(
+                        "16-bit",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "AC97",
+                    name: "BIT32",
                     description: Some(
-                        "AC’97 protocol",
+                        "32-bit",
                     ),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Comp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOCOMPANDING",
+                    description: Some(
+                        "No companding algorithm",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MULAW",
+                    description: Some(
+                        "μ-Law algorithm",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "ALAW",
+                    description: Some(
+                        "A-Law algorithm",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckstr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some(
+                        "Data strobing edge is falling edge of SCK",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some(
+                        "Data strobing edge is rising edge of SCK",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lsbfirst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MSBFIRST",
+                    description: Some(
+                        "Data are transferred with MSB first",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSBFIRST",
+                    description: Some(
+                        "Data are transferred with LSB first",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cnrdy",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "READY",
+                    description: Some(
+                        "External AC’97 Codec is ready",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NOTREADY",
+                    description: Some(
+                        "External AC’97 Codec is not ready",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ds",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "BIT8",
+                    description: Some(
+                        "8 bits",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BIT10",
+                    description: Some(
+                        "10 bits",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BIT16",
+                    description: Some(
+                        "16 bits",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "BIT20",
+                    description: Some(
+                        "20 bits",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "BIT24",
+                    description: Some(
+                        "24 bits",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "BIT32",
+                    description: Some(
+                        "32 bits",
+                    ),
+                    value: 7,
                 },
             ],
         },
@@ -1638,27 +1568,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Slave receiver",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Muteval",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SENDZERO",
-                    description: Some(
-                        "Bit value 0 is sent during the mute mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SENDLAST",
-                    description: Some(
-                        "Last values are sent during the mute mode",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -1705,21 +1614,112 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Afsdet",
+            name: "Sloten",
+            description: None,
+            bit_size: 16,
+            variants: &[
+                EnumVariant {
+                    name: "INACTIVE",
+                    description: Some(
+                        "Inactive slot",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVE",
+                    description: Some(
+                        "Active slot",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mono",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STEREO",
+                    description: Some(
+                        "Stereo mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MONO",
+                    description: Some(
+                        "Mono mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Prtcfg",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "FREE",
+                    description: Some(
+                        "Free protocol. Free protocol allows to use the powerful configuration of the audio block to address a specific audio protocol",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SPDIF",
+                    description: Some(
+                        "SPDIF protocol",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "AC97",
+                    description: Some(
+                        "AC’97 protocol",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Ovrudr",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOERROR",
                     description: Some(
-                        "No error",
+                        "No overrun/underrun error",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "EARLYSYNC",
+                    name: "OVERRUN",
                     description: Some(
-                        "Frame synchronization signal is detected earlier than expected",
+                        "Overrun/underrun error detection",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cpl",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONESCOMPLEMENT",
+                    description: Some(
+                        "1’s complement representation",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TWOSCOMPLEMENT",
+                    description: Some(
+                        "2’s complement representation",
                     ),
                     value: 1,
                 },

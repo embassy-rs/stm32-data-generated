@@ -342,24 +342,124 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dbglockr",
+            name: "Epochselcr",
             extends: None,
             description: Some(
-                "SBS debug lock register",
+                "SBS EPOCH selection control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dbgcfg_lock",
+                    name: "epoch_sel",
                     description: Some(
-                        "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
+                        "select EPOCH value to be sent to the SAES\r 1x: EPOCH forced to zero (value used to retrieve PUF reference value at boot time)",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "DbgcfgLock",
+                        "EpochSel",
                     ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr2",
+            extends: None,
+            description: Some(
+                "SBS Class B register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cll",
+                    description: Some(
+                        "core lockup lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the lockup (HardFault) output of Cortex-M33 with TIM1/8/15/16/17 break inputs.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "SRAM ECC error lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM double ECC error signal with break input of TIM1/8/15/16/17.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdl",
+                    description: Some(
+                        "PVD lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection with TIM1/8/15/16/17 break inputs.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccl",
+                    description: Some(
+                        "ECC lock\r This bit is set and cleared by software. It can be used to enable and lock the Flash memory double ECC error with break input of TIM1/8/15/6/17.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cnslckr",
+            extends: None,
+            description: Some(
+                "SBS CPU non-secure lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "locknsvtor",
+                    description: Some(
+                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "locknsmpu",
+                    description: Some(
+                        "non-secure MPU register lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccnmir",
+            extends: None,
+            description: Some(
+                "SBS flift ECC NMI mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "eccnmi_mask_en",
+                    description: Some(
+                        "NMI behavior setup when a double ECC error occurs on flitf data part",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -414,217 +514,52 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fpuimr",
+            name: "Dbgcr",
             extends: None,
             description: Some(
-                "SBS FPU interrupt mask register",
+                "SBS debug control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fpu_ie",
+                    name: "ap_unlock",
                     description: Some(
-                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cccsr",
-            extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os control and status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "en",
-                    description: Some(
-                        "enable compensation cell for VDDIO power rail\r This bit enables the I/O compensation cell.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "cs",
-                    description: Some(
-                        "code selection for VDDIO power rail (reset value set to 1)\r This bit selects the code to be applied for the I/O compensation cell.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Cs",
-                    ),
-                },
-                Field {
-                    name: "rdy",
-                    description: Some(
-                        "VDDIO compensation cell ready flag\r This bit provides the status of the compensation cell.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdplsr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdpl",
-                    description: Some(
-                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
+                        "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
                     ),
                     bit_offset: 0,
                     bit_size: 8,
                     array: None,
-                    enumm: Some(
-                        "Hdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Eccnmir",
-            extends: None,
-            description: Some(
-                "SBS flift ECC NMI mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eccnmi_mask_en",
-                    description: Some(
-                        "NMI behavior setup when a double ECC error occurs on flitf data part",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Nexthdplcr",
-            extends: None,
-            description: Some(
-                "SBS next HDPL control register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "nexthdpl",
+                    name: "dbg_unlock",
                     description: Some(
-                        "index to point to a higher HDPL than the current one\r Index to add to the current HDPL to point (through OBK-HDPL) to the next secure storage areas (OBK-HDPL = HDPL + NEXTHDPL). See for more details.",
+                        "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cnslckr",
-            extends: None,
-            description: Some(
-                "SBS CPU non-secure lock register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "locknsvtor",
-                    description: Some(
-                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
+                    bit_offset: 8,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "locknsmpu",
+                    name: "dbg_auth_hdpl",
                     description: Some(
-                        "non-secure MPU register lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
+                        "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Epochselcr",
-            extends: None,
-            description: Some(
-                "SBS EPOCH selection control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "epoch_sel",
-                    description: Some(
-                        "select EPOCH value to be sent to the SAES\r 1x: EPOCH forced to zero (value used to retrieve PUF reference value at boot time)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
+                    bit_offset: 16,
+                    bit_size: 8,
                     array: None,
                     enumm: Some(
-                        "EpochSel",
+                        "DbgAuthHdpl",
                     ),
                 },
-            ],
-        },
-        FieldSet {
-            name: "Rsscmdr",
-            extends: None,
-            description: Some(
-                "SBS RSS command register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "rsscmd",
+                    name: "dbg_auth_sec",
                     description: Some(
-                        "RSS command\r The application can use this bitfield to pass on a command to the RSS, executed at the next reset.\r When RSSCMD ≠ 0 and PRODUCT_STATE is in Open, then the system always boots on RSS whatever is the boot pin value.",
+                        "control debug opening secure/non-secure\r Write 0xB4 to this bitfield to open debug for secure and non-secure.\r Writing any other values only open non-secure.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 16,
+                    bit_offset: 24,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -713,6 +648,26 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Nexthdplcr",
+            extends: None,
+            description: Some(
+                "SBS next HDPL control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "nexthdpl",
+                    description: Some(
+                        "index to point to a higher HDPL than the current one\r Index to add to the current HDPL to point (through OBK-HDPL) to the next secure storage areas (OBK-HDPL = HDPL + NEXTHDPL). See for more details.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cslckr",
             extends: None,
             description: Some(
@@ -753,184 +708,66 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccvalr",
+            name: "Dbglockr",
             extends: None,
             description: Some(
-                "SBS compensation cell for I/Os value register",
+                "SBS debug lock register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ansrc1",
+                    name: "dbgcfg_lock",
                     description: Some(
-                        "compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                        "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "apsrc1",
-                    description: Some(
-                        "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ansrc2",
-                    description: Some(
-                        "Compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "apsrc2",
-                    description: Some(
-                        "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dbgcr",
-            extends: None,
-            description: Some(
-                "SBS debug control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ap_unlock",
-                    description: Some(
-                        "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_unlock",
-                    description: Some(
-                        "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_auth_hdpl",
-                    description: Some(
-                        "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
-                    ),
-                    bit_offset: 16,
                     bit_size: 8,
                     array: None,
                     enumm: Some(
-                        "DbgAuthHdpl",
+                        "DbgcfgLock",
                     ),
                 },
+            ],
+        },
+        FieldSet {
+            name: "Rsscmdr",
+            extends: None,
+            description: Some(
+                "SBS RSS command register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "dbg_auth_sec",
+                    name: "rsscmd",
                     description: Some(
-                        "control debug opening secure/non-secure\r Write 0xB4 to this bitfield to open debug for secure and non-secure.\r Writing any other values only open non-secure.",
+                        "RSS command\r The application can use this bitfield to pass on a command to the RSS, executed at the next reset.\r When RSSCMD ≠ 0 and PRODUCT_STATE is in Open, then the system always boots on RSS whatever is the boot pin value.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hdplsr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdpl",
+                    description: Some(
+                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
+                    ),
+                    bit_offset: 0,
                     bit_size: 8,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mesr",
-            extends: None,
-            description: Some(
-                "SBS memory erase status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mclr",
-                    description: Some(
-                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, DCACHE, ICACHE and PKA. It is set by hardware and reset by software",
+                    enumm: Some(
+                        "Hdpl",
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ipmee",
-                    description: Some(
-                        "end-of-erase status for ICACHE and PKA RAM\r This bit shows the status of the protection for ICACHE and PKA. It is set by hardware and reset by software.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr2",
-            extends: None,
-            description: Some(
-                "SBS Class B register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cll",
-                    description: Some(
-                        "core lockup lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the lockup (HardFault) output of Cortex-M33 with TIM1/8/15/16/17 break inputs.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sel",
-                    description: Some(
-                        "SRAM ECC error lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM double ECC error signal with break input of TIM1/8/15/16/17.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvdl",
-                    description: Some(
-                        "PVD lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection with TIM1/8/15/16/17 break inputs.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eccl",
-                    description: Some(
-                        "ECC lock\r This bit is set and cleared by software. It can be used to enable and lock the Flash memory double ECC error with break input of TIM1/8/15/6/17.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -990,40 +827,231 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Cccsr",
+            extends: None,
+            description: Some(
+                "SBS compensation cell for I/Os control and status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en",
+                    description: Some(
+                        "enable compensation cell for VDDIO power rail\r This bit enables the I/O compensation cell.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 2,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "cs",
+                    description: Some(
+                        "code selection for VDDIO power rail (reset value set to 1)\r This bit selects the code to be applied for the I/O compensation cell.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 2,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Cs",
+                    ),
+                },
+                Field {
+                    name: "rdy",
+                    description: Some(
+                        "VDDIO compensation cell ready flag\r This bit provides the status of the compensation cell.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "SBS FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccvalr",
+            extends: None,
+            description: Some(
+                "SBS compensation cell for I/Os value register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ansrc1",
+                    description: Some(
+                        "compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "apsrc1",
+                    description: Some(
+                        "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ansrc2",
+                    description: Some(
+                        "Compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "apsrc2",
+                    description: Some(
+                        "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mesr",
+            extends: None,
+            description: Some(
+                "SBS memory erase status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mclr",
+                    description: Some(
+                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, DCACHE, ICACHE and PKA. It is set by hardware and reset by software",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ipmee",
+                    description: Some(
+                        "end-of-erase status for ICACHE and PKA RAM\r This bit shows the status of the protection for ICACHE and PKA. It is set by hardware and reset by software.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
         Enum {
-            name: "Cs",
+            name: "IncrHdpl",
             description: None,
-            bit_size: 1,
+            bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "CELL",
+                    name: "B_0X6A",
                     description: Some(
-                        "Code from the cell (available in the SBS_CCVR)",
+                        "recommended value to increment HDPL level by one",
+                    ),
+                    value: 106,
+                },
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "no increment",
+                    ),
+                    value: 180,
+                },
+            ],
+        },
+        Enum {
+            name: "EpochSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "SEC_EPOCH counter input selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
+                    name: "B_0X1",
                     description: Some(
-                        "Code from SBS_CCCR",
+                        "NS_EPOCH (non-secure) input selected",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "DbgcfgLock",
+            name: "Sec",
             description: None,
-            bit_size: 8,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "B_0X0",
                     description: Some(
-                        "Writes to SBS_DBGCR allowed (default)",
+                        "SBS_CFGR2 register accessible through secure or non-secure transaction",
                     ),
-                    value: 180,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "SBS_CFGR2 register only accessible through secure transaction",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -1063,49 +1091,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "EthSelPhy",
+            name: "Cs",
             description: None,
-            bit_size: 3,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "CELL",
                     description: Some(
-                        "GMII or MII",
+                        "Code from the cell (available in the SBS_CCVR)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "SOFTWARE",
                     description: Some(
-                        "reserved (RGMII)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X4",
-                    description: Some(
-                        "RMII",
-                    ),
-                    value: 4,
-                },
-            ],
-        },
-        Enum {
-            name: "EpochSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "SEC_EPOCH counter input selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "NS_EPOCH (non-secure) input selected",
+                        "Code from SBS_CCCR",
                     ),
                     value: 1,
                 },
@@ -1140,44 +1140,44 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "IncrHdpl",
+            name: "EthSelPhy",
             description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X6A",
-                    description: Some(
-                        "recommended value to increment HDPL level by one",
-                    ),
-                    value: 106,
-                },
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "no increment",
-                    ),
-                    value: 180,
-                },
-            ],
-        },
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "SBS_CFGR2 register accessible through secure or non-secure transaction",
+                        "GMII or MII",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "SBS_CFGR2 register only accessible through secure transaction",
+                        "reserved (RGMII)",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X4",
+                    description: Some(
+                        "RMII",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "DbgcfgLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "Writes to SBS_DBGCR allowed (default)",
+                    ),
+                    value: 180,
                 },
             ],
         },

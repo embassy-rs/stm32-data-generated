@@ -2798,25 +2798,25 @@ pub mod regs {
     impl Cfgr {
         #[doc = "System clock switch"]
         #[inline(always)]
-        pub const fn sw(&self) -> u8 {
+        pub const fn sw(&self) -> super::vals::Sw {
             let val = (self.0 >> 0usize) & 0x03;
-            val as u8
+            super::vals::Sw::from_bits(val as u8)
         }
         #[doc = "System clock switch"]
         #[inline(always)]
-        pub fn set_sw(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        pub fn set_sw(&mut self, val: super::vals::Sw) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "System clock switch status"]
         #[inline(always)]
-        pub const fn sws(&self) -> u8 {
+        pub const fn sws(&self) -> super::vals::Sw {
             let val = (self.0 >> 2usize) & 0x03;
-            val as u8
+            super::vals::Sw::from_bits(val as u8)
         }
         #[doc = "System clock switch status"]
         #[inline(always)]
-        pub fn set_sws(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        pub fn set_sws(&mut self, val: super::vals::Sw) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
         #[inline(always)]
@@ -3264,14 +3264,14 @@ pub mod regs {
         }
         #[doc = "MSI clock ranges"]
         #[inline(always)]
-        pub const fn msirange(&self) -> u8 {
+        pub const fn msirange(&self) -> super::vals::Msirange {
             let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
+            super::vals::Msirange::from_bits(val as u8)
         }
         #[doc = "MSI clock ranges"]
         #[inline(always)]
-        pub fn set_msirange(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        pub fn set_msirange(&mut self, val: super::vals::Msirange) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "HSI16 clock enable"]
         #[inline(always)]
@@ -3596,27 +3596,27 @@ pub mod regs {
     impl Extcfgr {
         #[doc = "HCLK3 shared prescaler (AHB3, Flash, and SRAM2)"]
         #[inline(always)]
-        pub const fn shdhpre(&self) -> u8 {
+        pub const fn shdhpre(&self) -> super::vals::Hpre {
             let val = (self.0 >> 0usize) & 0x0f;
-            val as u8
+            super::vals::Hpre::from_bits(val as u8)
         }
         #[doc = "HCLK3 shared prescaler (AHB3, Flash, and SRAM2)"]
         #[inline(always)]
-        pub fn set_shdhpre(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        pub fn set_shdhpre(&mut self, val: super::vals::Hpre) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "dual core device only\\]
 HCLK2 prescaler (CPU2)"]
         #[inline(always)]
-        pub const fn c2hpre(&self) -> u8 {
+        pub const fn c2hpre(&self) -> super::vals::Hpre {
             let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
+            super::vals::Hpre::from_bits(val as u8)
         }
         #[doc = "dual core device only\\]
 HCLK2 prescaler (CPU2)"]
         #[inline(always)]
-        pub fn set_c2hpre(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        pub fn set_c2hpre(&mut self, val: super::vals::Hpre) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)"]
         #[inline(always)]
@@ -3710,36 +3710,36 @@ HCLK2 prescaler (CPU2)"]
     impl Pllcfgr {
         #[doc = "Main PLL entry clock source"]
         #[inline(always)]
-        pub const fn pllsrc(&self) -> u8 {
+        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
             let val = (self.0 >> 0usize) & 0x03;
-            val as u8
+            super::vals::Pllsrc::from_bits(val as u8)
         }
         #[doc = "Main PLL entry clock source"]
         #[inline(always)]
-        pub fn set_pllsrc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Division factor for the main PLL input clock"]
         #[inline(always)]
-        pub const fn pllm(&self) -> u8 {
+        pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 4usize) & 0x07;
-            val as u8
+            super::vals::Pllm::from_bits(val as u8)
         }
         #[doc = "Division factor for the main PLL input clock"]
         #[inline(always)]
-        pub fn set_pllm(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "Main PLL multiplication factor for VCO"]
         #[inline(always)]
-        pub const fn plln(&self) -> u8 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 8usize) & 0x7f;
-            val as u8
+            super::vals::Plln::from_bits(val as u8)
         }
         #[doc = "Main PLL multiplication factor for VCO"]
         #[inline(always)]
-        pub fn set_plln(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x7f << 8usize)) | (((val.to_bits() as u32) & 0x7f) << 8usize);
         }
         #[doc = "Main PLL PLLPCLK output enable"]
         #[inline(always)]
@@ -3754,14 +3754,14 @@ HCLK2 prescaler (CPU2)"]
         }
         #[doc = "Main PLL division factor for PLLPCLK."]
         #[inline(always)]
-        pub const fn pllp(&self) -> u8 {
+        pub const fn pllp(&self) -> super::vals::Pllp {
             let val = (self.0 >> 17usize) & 0x1f;
-            val as u8
+            super::vals::Pllp::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLPCLK."]
         #[inline(always)]
-        pub fn set_pllp(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 17usize)) | (((val as u32) & 0x1f) << 17usize);
+        pub fn set_pllp(&mut self, val: super::vals::Pllp) {
+            self.0 = (self.0 & !(0x1f << 17usize)) | (((val.to_bits() as u32) & 0x1f) << 17usize);
         }
         #[doc = "Main PLL PLLQCLK output enable"]
         #[inline(always)]
@@ -3776,14 +3776,14 @@ HCLK2 prescaler (CPU2)"]
         }
         #[doc = "Main PLL division factor for PLLQCLK"]
         #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
+        pub const fn pllq(&self) -> super::vals::Pllq {
             let val = (self.0 >> 25usize) & 0x07;
-            val as u8
+            super::vals::Pllq::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLQCLK"]
         #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 25usize)) | (((val as u32) & 0x07) << 25usize);
+        pub fn set_pllq(&mut self, val: super::vals::Pllq) {
+            self.0 = (self.0 & !(0x07 << 25usize)) | (((val.to_bits() as u32) & 0x07) << 25usize);
         }
         #[doc = "Main PLL PLLRCLK output enable"]
         #[inline(always)]
@@ -3798,14 +3798,14 @@ HCLK2 prescaler (CPU2)"]
         }
         #[doc = "Main PLL division factor for PLLRCLK"]
         #[inline(always)]
-        pub const fn pllr(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Pllr {
             let val = (self.0 >> 29usize) & 0x07;
-            val as u8
+            super::vals::Pllr::from_bits(val as u8)
         }
         #[doc = "Main PLL division factor for PLLRCLK"]
         #[inline(always)]
-        pub fn set_pllr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 29usize)) | (((val as u32) & 0x07) << 29usize);
+        pub fn set_pllr(&mut self, val: super::vals::Pllr) {
+            self.0 = (self.0 & !(0x07 << 29usize)) | (((val.to_bits() as u32) & 0x07) << 29usize);
         }
     }
     impl Default for Pllcfgr {
@@ -4032,6 +4032,408 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Msirange {
+        #[doc = "range 0 around 100 kHz"]
+        RANGE100K = 0,
+        #[doc = "range 1 around 200 kHz"]
+        RANGE200K = 0x01,
+        #[doc = "range 2 around 400 kHz"]
+        RANGE400K = 0x02,
+        #[doc = "range 3 around 800 kHz"]
+        RANGE800K = 0x03,
+        #[doc = "range 4 around 1 MHz"]
+        RANGE1M = 0x04,
+        #[doc = "range 5 around 2 MHz"]
+        RANGE2M = 0x05,
+        #[doc = "range 6 around 4 MHz"]
+        RANGE4M = 0x06,
+        #[doc = "range 7 around 8 MHz"]
+        RANGE8M = 0x07,
+        #[doc = "range 8 around 16 MHz"]
+        RANGE16M = 0x08,
+        #[doc = "range 9 around 24 MHz"]
+        RANGE24M = 0x09,
+        #[doc = "range 10 around 32 MHz"]
+        RANGE32M = 0x0a,
+        #[doc = "range 11 around 48 MHz"]
+        RANGE48M = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Msirange {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Msirange {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Msirange {
+        #[inline(always)]
+        fn from(val: u8) -> Msirange {
+            Msirange::from_bits(val)
+        }
+    }
+    impl From<Msirange> for u8 {
+        #[inline(always)]
+        fn from(val: Msirange) -> u8 {
+            Msirange::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllm {
+        DIV1 = 0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+    }
+    impl Pllm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllm {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllm {
+        #[inline(always)]
+        fn from(val: u8) -> Pllm {
+            Pllm::from_bits(val)
+        }
+    }
+    impl From<Pllm> for u8 {
+        #[inline(always)]
+        fn from(val: Pllm) -> u8 {
+            Pllm::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Plln {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        MUL6 = 0x06,
+        MUL7 = 0x07,
+        MUL8 = 0x08,
+        MUL9 = 0x09,
+        MUL10 = 0x0a,
+        MUL11 = 0x0b,
+        MUL12 = 0x0c,
+        MUL13 = 0x0d,
+        MUL14 = 0x0e,
+        MUL15 = 0x0f,
+        MUL16 = 0x10,
+        MUL17 = 0x11,
+        MUL18 = 0x12,
+        MUL19 = 0x13,
+        MUL20 = 0x14,
+        MUL21 = 0x15,
+        MUL22 = 0x16,
+        MUL23 = 0x17,
+        MUL24 = 0x18,
+        MUL25 = 0x19,
+        MUL26 = 0x1a,
+        MUL27 = 0x1b,
+        MUL28 = 0x1c,
+        MUL29 = 0x1d,
+        MUL30 = 0x1e,
+        MUL31 = 0x1f,
+        MUL32 = 0x20,
+        MUL33 = 0x21,
+        MUL34 = 0x22,
+        MUL35 = 0x23,
+        MUL36 = 0x24,
+        MUL37 = 0x25,
+        MUL38 = 0x26,
+        MUL39 = 0x27,
+        MUL40 = 0x28,
+        MUL41 = 0x29,
+        MUL42 = 0x2a,
+        MUL43 = 0x2b,
+        MUL44 = 0x2c,
+        MUL45 = 0x2d,
+        MUL46 = 0x2e,
+        MUL47 = 0x2f,
+        MUL48 = 0x30,
+        MUL49 = 0x31,
+        MUL50 = 0x32,
+        MUL51 = 0x33,
+        MUL52 = 0x34,
+        MUL53 = 0x35,
+        MUL54 = 0x36,
+        MUL55 = 0x37,
+        MUL56 = 0x38,
+        MUL57 = 0x39,
+        MUL58 = 0x3a,
+        MUL59 = 0x3b,
+        MUL60 = 0x3c,
+        MUL61 = 0x3d,
+        MUL62 = 0x3e,
+        MUL63 = 0x3f,
+        MUL64 = 0x40,
+        MUL65 = 0x41,
+        MUL66 = 0x42,
+        MUL67 = 0x43,
+        MUL68 = 0x44,
+        MUL69 = 0x45,
+        MUL70 = 0x46,
+        MUL71 = 0x47,
+        MUL72 = 0x48,
+        MUL73 = 0x49,
+        MUL74 = 0x4a,
+        MUL75 = 0x4b,
+        MUL76 = 0x4c,
+        MUL77 = 0x4d,
+        MUL78 = 0x4e,
+        MUL79 = 0x4f,
+        MUL80 = 0x50,
+        MUL81 = 0x51,
+        MUL82 = 0x52,
+        MUL83 = 0x53,
+        MUL84 = 0x54,
+        MUL85 = 0x55,
+        MUL86 = 0x56,
+        MUL87 = 0x57,
+        MUL88 = 0x58,
+        MUL89 = 0x59,
+        MUL90 = 0x5a,
+        MUL91 = 0x5b,
+        MUL92 = 0x5c,
+        MUL93 = 0x5d,
+        MUL94 = 0x5e,
+        MUL95 = 0x5f,
+        MUL96 = 0x60,
+        MUL97 = 0x61,
+        MUL98 = 0x62,
+        MUL99 = 0x63,
+        MUL100 = 0x64,
+        MUL101 = 0x65,
+        MUL102 = 0x66,
+        MUL103 = 0x67,
+        MUL104 = 0x68,
+        MUL105 = 0x69,
+        MUL106 = 0x6a,
+        MUL107 = 0x6b,
+        MUL108 = 0x6c,
+        MUL109 = 0x6d,
+        MUL110 = 0x6e,
+        MUL111 = 0x6f,
+        MUL112 = 0x70,
+        MUL113 = 0x71,
+        MUL114 = 0x72,
+        MUL115 = 0x73,
+        MUL116 = 0x74,
+        MUL117 = 0x75,
+        MUL118 = 0x76,
+        MUL119 = 0x77,
+        MUL120 = 0x78,
+        MUL121 = 0x79,
+        MUL122 = 0x7a,
+        MUL123 = 0x7b,
+        MUL124 = 0x7c,
+        MUL125 = 0x7d,
+        MUL126 = 0x7e,
+        MUL127 = 0x7f,
+    }
+    impl Plln {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Plln {
+            unsafe { core::mem::transmute(val & 0x7f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Plln {
+        #[inline(always)]
+        fn from(val: u8) -> Plln {
+            Plln::from_bits(val)
+        }
+    }
+    impl From<Plln> for u8 {
+        #[inline(always)]
+        fn from(val: Plln) -> u8 {
+            Plln::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllp {
+        _RESERVED_0 = 0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+        DIV9 = 0x08,
+        DIV10 = 0x09,
+        DIV11 = 0x0a,
+        DIV12 = 0x0b,
+        DIV13 = 0x0c,
+        DIV14 = 0x0d,
+        DIV15 = 0x0e,
+        DIV16 = 0x0f,
+        DIV17 = 0x10,
+        DIV18 = 0x11,
+        DIV19 = 0x12,
+        DIV20 = 0x13,
+        DIV21 = 0x14,
+        DIV22 = 0x15,
+        DIV23 = 0x16,
+        DIV24 = 0x17,
+        DIV25 = 0x18,
+        DIV26 = 0x19,
+        DIV27 = 0x1a,
+        DIV28 = 0x1b,
+        DIV29 = 0x1c,
+        DIV30 = 0x1d,
+        DIV31 = 0x1e,
+        _RESERVED_1f = 0x1f,
+    }
+    impl Pllp {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllp {
+            unsafe { core::mem::transmute(val & 0x1f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllp {
+        #[inline(always)]
+        fn from(val: u8) -> Pllp {
+            Pllp::from_bits(val)
+        }
+    }
+    impl From<Pllp> for u8 {
+        #[inline(always)]
+        fn from(val: Pllp) -> u8 {
+            Pllp::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllq {
+        _RESERVED_0 = 0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Pllq {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllq {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllq {
+        #[inline(always)]
+        fn from(val: u8) -> Pllq {
+            Pllq::from_bits(val)
+        }
+    }
+    impl From<Pllq> for u8 {
+        #[inline(always)]
+        fn from(val: Pllq) -> u8 {
+            Pllq::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllr {
+        _RESERVED_0 = 0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Pllr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllr {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllr {
+        #[inline(always)]
+        fn from(val: u8) -> Pllr {
+            Pllr::from_bits(val)
+        }
+    }
+    impl From<Pllr> for u8 {
+        #[inline(always)]
+        fn from(val: Pllr) -> u8 {
+            Pllr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllsrc {
+        #[doc = "No clock selected as PLL entry clock source"]
+        NOCLOCK = 0,
+        #[doc = "MSI selected as PLL entry clock source"]
+        MSI = 0x01,
+        #[doc = "HSI16 selected as PLL entry clock source"]
+        HSI16 = 0x02,
+        #[doc = "HSE selected as PLL entry clock source"]
+        HSE32 = 0x03,
+    }
+    impl Pllsrc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllsrc {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllsrc {
+        #[inline(always)]
+        fn from(val: u8) -> Pllsrc {
+            Pllsrc::from_bits(val)
+        }
+    }
+    impl From<Pllsrc> for u8 {
+        #[inline(always)]
+        fn from(val: Pllsrc) -> u8 {
+            Pllsrc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
         DIV1 = 0,
@@ -4101,6 +4503,36 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rtcsel) -> u8 {
             Rtcsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Sw {
+        MSI = 0,
+        HSI16 = 0x01,
+        HSE32 = 0x02,
+        PLLR = 0x03,
+    }
+    impl Sw {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sw {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sw {
+        #[inline(always)]
+        fn from(val: u8) -> Sw {
+            Sw::from_bits(val)
+        }
+    }
+    impl From<Sw> for u8 {
+        #[inline(always)]
+        fn from(val: Sw) -> u8 {
+            Sw::to_bits(val)
         }
     }
 }

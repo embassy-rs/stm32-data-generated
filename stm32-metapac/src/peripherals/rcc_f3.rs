@@ -2223,8 +2223,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcpres {
-        #[doc = "No clock"]
-        NOCLOCK = 0,
+        _RESERVED_0 = 0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,

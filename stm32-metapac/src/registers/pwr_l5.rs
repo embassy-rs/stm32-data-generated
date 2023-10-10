@@ -215,6 +215,224 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Privcfgr",
+            extends: None,
+            description: Some(
+                "Power privilege configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "priv_",
+                    description: Some(
+                        "PRIV",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some(
+                "Power control register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvde",
+                    description: Some(
+                        "Power voltage detector enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pls",
+                    description: Some(
+                        "Power voltage detector level selection",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Pls",
+                    ),
+                },
+                Field {
+                    name: "pvme1",
+                    description: Some(
+                        "Peripheral voltage monitoring 1 enable: VDDUSB vs. 1.2V",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvme2",
+                    description: Some(
+                        "Peripheral voltage monitoring 2 enable: VDDIO2 vs. 0.9V",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvme3",
+                    description: Some(
+                        "Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvme4",
+                    description: Some(
+                        "Peripheral voltage monitoring 4 enable: VDDA vs. 2.2V",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iosv",
+                    description: Some(
+                        "VDDIO2 Independent I/Os supply valid",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usv",
+                    description: Some(
+                        "VDDUSB USB supply valid",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr3",
+            extends: None,
+            description: Some(
+                "Power control register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ewup",
+                    description: Some(
+                        "Enable Wakeup pin WKUP",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 5,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "rrs",
+                    description: Some(
+                        "SRAM2 retention in Standby mode",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Rrs",
+                    ),
+                },
+                Field {
+                    name: "apc",
+                    description: Some(
+                        "Apply pull-up and pull-down configuration",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ulpmen",
+                    description: Some(
+                        "ULPMEN",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucpd_stdby",
+                    description: Some(
+                        "UCPD_STDBY",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucpd_dbdis",
+                    description: Some(
+                        "UCPD_DBDIS",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pcr",
+            extends: None,
+            description: Some(
+                "Power Port pull control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p",
+                    description: Some(
+                        "Port pull bit y (y=0..15)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Scr",
             extends: None,
             description: Some(
@@ -352,89 +570,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pcr",
-            extends: None,
-            description: Some(
-                "Power Port pull control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "p",
-                    description: Some(
-                        "Port pull bit y (y=0..15)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "Power control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lpms",
-                    description: Some(
-                        "Low-power mode selection",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Lpms",
-                    ),
-                },
-                Field {
-                    name: "dbp",
-                    description: Some(
-                        "Disable backup domain write protection",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vos",
-                    description: Some(
-                        "Voltage scaling range selection",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
-                },
-                Field {
-                    name: "lpr",
-                    description: Some(
-                        "Low-power run",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lpr",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Sr1",
             extends: None,
             description: Some(
@@ -506,6 +641,96 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "wufi",
                     description: Some(
                         "Wakeup flag internal",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr2",
+            extends: None,
+            description: Some(
+                "Power status register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "reglps",
+                    description: Some(
+                        "Low-power regulator started",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reglpf",
+                    description: Some(
+                        "Low-power regulator flag",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vosf",
+                    description: Some(
+                        "Voltage scaling flag",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "Power voltage detector output",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo1",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDUSB vs. 1.2 V",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo2",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDIO2 vs. 0.9 V",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo3",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDA vs. 1.62 V",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo4",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDA vs. 2.2 V",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
@@ -635,109 +860,29 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr2",
+            name: "Cr1",
             extends: None,
             description: Some(
-                "Power control register 2",
+                "Power control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pvde",
+                    name: "lpms",
                     description: Some(
-                        "Power voltage detector enable",
+                        "Low-power mode selection",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pls",
-                    description: Some(
-                        "Power voltage detector level selection",
-                    ),
-                    bit_offset: 1,
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Pls",
+                        "Lpms",
                     ),
                 },
                 Field {
-                    name: "pvme1",
+                    name: "dbp",
                     description: Some(
-                        "Peripheral voltage monitoring 1 enable: VDDUSB vs. 1.2V",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvme2",
-                    description: Some(
-                        "Peripheral voltage monitoring 2 enable: VDDIO2 vs. 0.9V",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvme3",
-                    description: Some(
-                        "Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvme4",
-                    description: Some(
-                        "Peripheral voltage monitoring 4 enable: VDDA vs. 2.2V",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "iosv",
-                    description: Some(
-                        "VDDIO2 Independent I/Os supply valid",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usv",
-                    description: Some(
-                        "VDDUSB USB supply valid",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr2",
-            extends: None,
-            description: Some(
-                "Power status register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "reglps",
-                    description: Some(
-                        "Low-power regulator started",
+                        "Disable backup domain write protection",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -745,206 +890,33 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "reglpf",
+                    name: "vos",
                     description: Some(
-                        "Low-power regulator flag",
+                        "Voltage scaling range selection",
                     ),
                     bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vosf",
-                    description: Some(
-                        "Voltage scaling flag",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvdo",
-                    description: Some(
-                        "Power voltage detector output",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo1",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDUSB vs. 1.2 V",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo2",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDIO2 vs. 0.9 V",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo3",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDA vs. 1.62 V",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo4",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDA vs. 2.2 V",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Privcfgr",
-            extends: None,
-            description: Some(
-                "Power privilege configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "priv_",
-                    description: Some(
-                        "PRIV",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr3",
-            extends: None,
-            description: Some(
-                "Power control register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ewup",
-                    description: Some(
-                        "Enable Wakeup pin WKUP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 5,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "rrs",
-                    description: Some(
-                        "SRAM2 retention in Standby mode",
-                    ),
-                    bit_offset: 8,
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Rrs",
+                        "Vos",
                     ),
                 },
                 Field {
-                    name: "apc",
+                    name: "lpr",
                     description: Some(
-                        "Apply pull-up and pull-down configuration",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ulpmen",
-                    description: Some(
-                        "ULPMEN",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd_stdby",
-                    description: Some(
-                        "UCPD_STDBY",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd_dbdis",
-                    description: Some(
-                        "UCPD_DBDIS",
+                        "Low-power run",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Lpr",
+                    ),
                 },
             ],
         },
     ],
     enums: &[
-        Enum {
-            name: "Rrs",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "POWEROFF",
-                    description: Some(
-                        "SRAM2 powered off in Standby mode (SRAM2 content lost)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ONLPR",
-                    description: Some(
-                        "SRAM2 powered by the low-power regulator in Standby mode (SRAM2 content kept)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ONLPRTOP4KB",
-                    description: Some(
-                        "Only the upper 4 Kbytes of SRAM2 are powered by the low-power regulator in Standby mode (upper 4 Kbytes of SRAM2 content 0x2003 F000 - 0x2003 FFFF is kept).",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
         Enum {
             name: "Pls",
             description: None,
@@ -1009,6 +981,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Rrs",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "POWEROFF",
+                    description: Some(
+                        "SRAM2 powered off in Standby mode (SRAM2 content lost)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ONLPR",
+                    description: Some(
+                        "SRAM2 powered by the low-power regulator in Standby mode (SRAM2 content kept)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "ONLPRTOP4KB",
+                    description: Some(
+                        "Only the upper 4 Kbytes of SRAM2 are powered by the low-power regulator in Standby mode (upper 4 Kbytes of SRAM2 content 0x2003 F000 - 0x2003 FFFF is kept).",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Vos",
             description: None,
             bit_size: 2,
@@ -1033,27 +1033,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Range 2",
                     ),
                     value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Lpr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MAINMODE",
-                    description: Some(
-                        "Voltage regulator in Main mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOWPOWERMODE",
-                    description: Some(
-                        "Voltage regulator in low-power mode",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -1096,6 +1075,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "Shutdown mode",
                     ),
                     value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MAINMODE",
+                    description: Some(
+                        "Voltage regulator in Main mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOWPOWERMODE",
+                    description: Some(
+                        "Voltage regulator in low-power mode",
+                    ),
+                    value: 1,
                 },
             ],
         },

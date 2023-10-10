@@ -68,30 +68,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Cmpcr",
-            extends: None,
-            description: Some("Compensation cell control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cmp_pd",
-                    description: Some("Compensation cell power-down"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ready",
-                    description: Some("Compensation cell ready flag"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Pmc",
             extends: None,
             description: Some("peripheral mode configuration register"),
@@ -118,6 +94,30 @@ pub(crate) static REGISTERS: IR = IR {
                 array: None,
                 enumm: Some("MemMode"),
             }],
+        },
+        FieldSet {
+            name: "Cmpcr",
+            extends: None,
+            description: Some("Compensation cell control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cmp_pd",
+                    description: Some("Compensation cell power-down"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ready",
+                    description: Some("Compensation cell ready flag"),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
         },
     ],
     enums: &[Enum {

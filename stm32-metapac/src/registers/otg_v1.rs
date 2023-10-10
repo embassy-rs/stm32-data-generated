@@ -977,6 +977,558 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Grstctl",
+            extends: None,
+            description: Some(
+                "Reset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "csrst",
+                    description: Some(
+                        "Core soft reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsrst",
+                    description: Some(
+                        "HCLK soft reset",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fcrst",
+                    description: Some(
+                        "Host frame counter reset",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxfflsh",
+                    description: Some(
+                        "RxFIFO flush",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txfflsh",
+                    description: Some(
+                        "TxFIFO flush",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txfnum",
+                    description: Some(
+                        "TxFIFO number",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmareq",
+                    description: Some(
+                        "DMA request signal enabled for USB OTG HS",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ahbidl",
+                    description: Some(
+                        "AHB master idle",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Glpmcfg",
+            extends: None,
+            description: Some(
+                "Core LPM configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lpmen",
+                    description: Some(
+                        "LPM support enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpmack",
+                    description: Some(
+                        "LPM token acknowledge enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "besl",
+                    description: Some(
+                        "Best effort service latency",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "remwake",
+                    description: Some(
+                        "bRemoteWake value",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l1ssen",
+                    description: Some(
+                        "L1 Shallow Sleep enable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "beslthrs",
+                    description: Some(
+                        "BESL threshold",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l1dsen",
+                    description: Some(
+                        "L1 deep sleep enable",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpmrst",
+                    description: Some(
+                        "LPM response",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "slpsts",
+                    description: Some(
+                        "Port sleep status",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l1rsmok",
+                    description: Some(
+                        "Sleep State Resume OK",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpmchidx",
+                    description: Some(
+                        "LPM Channel Index",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpmrcnt",
+                    description: Some(
+                        "LPM retry count",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sndlpm",
+                    description: Some(
+                        "Send LPM transaction",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpmrcntsts",
+                    description: Some(
+                        "LPM retry count status",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "enbesl",
+                    description: Some(
+                        "Enable best effort service latency",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dsts",
+            extends: None,
+            description: Some(
+                "Device status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "suspsts",
+                    description: Some(
+                        "Suspend status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "enumspd",
+                    description: Some(
+                        "Enumerated speed",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Dspd",
+                    ),
+                },
+                Field {
+                    name: "eerr",
+                    description: Some(
+                        "Erratic error",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fnsof",
+                    description: Some(
+                        "Frame number of the received SOF",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hcintmsk",
+            extends: None,
+            description: Some(
+                "Host channel mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "xfrcm",
+                    description: Some(
+                        "Transfer completed mask",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "chhm",
+                    description: Some(
+                        "Channel halted mask",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stallm",
+                    description: Some(
+                        "STALL response received interrupt mask",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nakm",
+                    description: Some(
+                        "NAK response received interrupt mask",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ackm",
+                    description: Some(
+                        "ACK response received/transmitted interrupt mask",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nyet",
+                    description: Some(
+                        "Response received interrupt mask",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txerrm",
+                    description: Some(
+                        "Transaction error mask",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bberrm",
+                    description: Some(
+                        "Babble error mask",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "frmorm",
+                    description: Some(
+                        "Frame overrun mask",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dterrm",
+                    description: Some(
+                        "Data toggle error mask",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hprt",
+            extends: None,
+            description: Some(
+                "Host port control and status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pcsts",
+                    description: Some(
+                        "Port connect status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcdet",
+                    description: Some(
+                        "Port connect detected",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pena",
+                    description: Some(
+                        "Port enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "penchng",
+                    description: Some(
+                        "Port enable/disable change",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "poca",
+                    description: Some(
+                        "Port overcurrent active",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pocchng",
+                    description: Some(
+                        "Port overcurrent change",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pres",
+                    description: Some(
+                        "Port resume",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "psusp",
+                    description: Some(
+                        "Port suspend",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prst",
+                    description: Some(
+                        "Port reset",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plsts",
+                    description: Some(
+                        "Port line status",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ppwr",
+                    description: Some(
+                        "Port power",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ptctl",
+                    description: Some(
+                        "Port test control",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pspd",
+                    description: Some(
+                        "Port speed",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Haint",
             extends: None,
             description: Some(
@@ -997,240 +1549,84 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Gotgint",
+            name: "Dtxfsts",
             extends: None,
             description: Some(
-                "Interrupt register",
+                "Device IN endpoint transmit FIFO status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sedet",
+                    name: "ineptfsav",
                     description: Some(
-                        "Session end detected",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "srsschg",
-                    description: Some(
-                        "Session request success status change",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hnsschg",
-                    description: Some(
-                        "Host negotiation success status change",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hngdet",
-                    description: Some(
-                        "Host negotiation detected",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adtochg",
-                    description: Some(
-                        "A-device timeout change",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbcdne",
-                    description: Some(
-                        "Debounce done",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idchng",
-                    description: Some(
-                        "ID input pin changed",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "GccfgV2",
-            extends: None,
-            description: Some(
-                "General core configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dcdet",
-                    description: Some(
-                        "Data contact detection (DCD) status",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pdet",
-                    description: Some(
-                        "Primary detection (PD) status",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdet",
-                    description: Some(
-                        "Secondary detection (SD) status",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ps2det",
-                    description: Some(
-                        "DM pull-up detection status",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwrdwn",
-                    description: Some(
-                        "Power down",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bcden",
-                    description: Some(
-                        "Battery charging detector (BCD) enable",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dcden",
-                    description: Some(
-                        "Data contact detection (DCD) mode enable",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pden",
-                    description: Some(
-                        "Primary detection (PD) mode enable",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sden",
-                    description: Some(
-                        "Secondary detection (SD) mode enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbden",
-                    description: Some(
-                        "USB VBUS detection enable",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "phyhsen",
-                    description: Some(
-                        "Internal high-speed PHY enable.",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Gnptxsts",
-            extends: None,
-            description: Some(
-                "Non-periodic transmit FIFO/queue status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nptxfsav",
-                    description: Some(
-                        "Non-periodic TxFIFO space available",
+                        "IN endpoint TxFIFO space available",
                     ),
                     bit_offset: 0,
                     bit_size: 16,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Dcfg",
+            extends: None,
+            description: Some(
+                "Device configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "nptqxsav",
+                    name: "dspd",
                     description: Some(
-                        "Non-periodic transmit request queue space available",
+                        "Device speed",
                     ),
-                    bit_offset: 16,
-                    bit_size: 8,
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Dspd",
+                    ),
+                },
+                Field {
+                    name: "nzlsohsk",
+                    description: Some(
+                        "Non-zero-length status OUT handshake",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "nptxqtop",
+                    name: "dad",
                     description: Some(
-                        "Top of the non-periodic transmit request queue",
+                        "Device address",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 4,
                     bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pfivl",
+                    description: Some(
+                        "Periodic frame interval",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Pfivl",
+                    ),
+                },
+                Field {
+                    name: "xcvrdly",
+                    description: Some(
+                        "Transceiver delay",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1427,206 +1823,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Doeptsiz",
-            extends: None,
-            description: Some(
-                "Device OUT endpoint transfer size register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "xfrsiz",
-                    description: Some(
-                        "Transfer size",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 19,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pktcnt",
-                    description: Some(
-                        "Packet count",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdpid_stupcnt",
-                    description: Some(
-                        "Received data PID/SETUP packet count",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Grstctl",
-            extends: None,
-            description: Some(
-                "Reset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "csrst",
-                    description: Some(
-                        "Core soft reset",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsrst",
-                    description: Some(
-                        "HCLK soft reset",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fcrst",
-                    description: Some(
-                        "Host frame counter reset",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxfflsh",
-                    description: Some(
-                        "RxFIFO flush",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txfflsh",
-                    description: Some(
-                        "TxFIFO flush",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txfnum",
-                    description: Some(
-                        "TxFIFO number",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dmareq",
-                    description: Some(
-                        "DMA request signal enabled for USB OTG HS",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ahbidl",
-                    description: Some(
-                        "AHB master idle",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hptxsts",
-            extends: None,
-            description: Some(
-                "Periodic transmit FIFO/queue status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ptxfsavl",
-                    description: Some(
-                        "Periodic transmit data FIFO space available",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ptxqsav",
-                    description: Some(
-                        "Periodic transmit request queue space available",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ptxqtop",
-                    description: Some(
-                        "Top of the periodic transmit request queue",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Daintmsk",
-            extends: None,
-            description: Some(
-                "All endpoints interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "iepm",
-                    description: Some(
-                        "IN EP interrupt mask bits",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "oepm",
-                    description: Some(
-                        "OUT EP interrupt mask bits",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Hnptxsts",
             extends: None,
             description: Some(
@@ -1667,565 +1863,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Diepmsk",
+            name: "Dvbusdis",
             extends: None,
             description: Some(
-                "Device IN endpoint common interrupt mask register",
+                "Device VBUS discharge time register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "xfrcm",
+                    name: "vbusdt",
                     description: Some(
-                        "Transfer completed interrupt mask",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epdm",
-                    description: Some(
-                        "Endpoint disabled interrupt mask",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tom",
-                    description: Some(
-                        "Timeout condition mask (Non-isochronous endpoints)",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ittxfemsk",
-                    description: Some(
-                        "IN token received when TxFIFO empty mask",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "inepnmm",
-                    description: Some(
-                        "IN token received with EP mismatch mask",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "inepnem",
-                    description: Some(
-                        "IN endpoint NAK effective mask",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Doepctl",
-            extends: None,
-            description: Some(
-                "Device endpoint control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mpsiz",
-                    description: Some(
-                        "MPSIZ",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usbaep",
-                    description: Some(
-                        "USBAEP",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eonum_dpid",
-                    description: Some(
-                        "EONUM/DPID",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "naksts",
-                    description: Some(
-                        "NAKSTS",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eptyp",
-                    description: Some(
-                        "EPTYP",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Eptyp",
-                    ),
-                },
-                Field {
-                    name: "snpm",
-                    description: Some(
-                        "SNPM",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stall",
-                    description: Some(
-                        "STALL",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cnak",
-                    description: Some(
-                        "CNAK",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "snak",
-                    description: Some(
-                        "SNAK",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sd0pid_sevnfrm",
-                    description: Some(
-                        "SD0PID/SEVNFRM",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "soddfrm",
-                    description: Some(
-                        "SODDFRM",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epdis",
-                    description: Some(
-                        "EPDIS",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epena",
-                    description: Some(
-                        "EPENA",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dieptsiz",
-            extends: None,
-            description: Some(
-                "Device endpoint transfer size register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "xfrsiz",
-                    description: Some(
-                        "Transfer size",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 19,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pktcnt",
-                    description: Some(
-                        "Packet count",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mcnt",
-                    description: Some(
-                        "Multi count",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Glpmcfg",
-            extends: None,
-            description: Some(
-                "Core LPM configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lpmen",
-                    description: Some(
-                        "LPM support enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpmack",
-                    description: Some(
-                        "LPM token acknowledge enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "besl",
-                    description: Some(
-                        "Best effort service latency",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "remwake",
-                    description: Some(
-                        "bRemoteWake value",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l1ssen",
-                    description: Some(
-                        "L1 Shallow Sleep enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "beslthrs",
-                    description: Some(
-                        "BESL threshold",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l1dsen",
-                    description: Some(
-                        "L1 deep sleep enable",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpmrst",
-                    description: Some(
-                        "LPM response",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "slpsts",
-                    description: Some(
-                        "Port sleep status",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l1rsmok",
-                    description: Some(
-                        "Sleep State Resume OK",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpmchidx",
-                    description: Some(
-                        "LPM Channel Index",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpmrcnt",
-                    description: Some(
-                        "LPM retry count",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sndlpm",
-                    description: Some(
-                        "Send LPM transaction",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpmrcntsts",
-                    description: Some(
-                        "LPM retry count status",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "enbesl",
-                    description: Some(
-                        "Enable best effort service latency",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Grxsts",
-            extends: None,
-            description: Some(
-                "Status read and pop register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "epnum",
-                    description: Some(
-                        "Endpoint number (device mode) / Channel number (host mode)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bcnt",
-                    description: Some(
-                        "Byte count",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dpid",
-                    description: Some(
-                        "Data PID",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Dpid",
-                    ),
-                },
-                Field {
-                    name: "pktstsd",
-                    description: Some(
-                        "Packet status (device mode)",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Pktstsd",
-                    ),
-                },
-                Field {
-                    name: "pktstsh",
-                    description: Some(
-                        "Packet status (host mode)",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Pktstsh",
-                    ),
-                },
-                Field {
-                    name: "frmnum",
-                    description: Some(
-                        "Frame number (device mode)",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "GccfgV1",
-            extends: None,
-            description: Some(
-                "General core configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pwrdwn",
-                    description: Some(
-                        "Power down",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbusasen",
-                    description: Some(
-                        "Enable the VBUS \"A\" sensing device",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbusbsen",
-                    description: Some(
-                        "Enable the VBUS \"B\" sensing device",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sofouten",
-                    description: Some(
-                        "SOF output enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "novbussens",
-                    description: Some(
-                        "VBUS sensing disable",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Grxfsiz",
-            extends: None,
-            description: Some(
-                "Receive FIFO size register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxfd",
-                    description: Some(
-                        "RxFIFO depth",
+                        "Device VBUS discharge time",
                     ),
                     bit_offset: 0,
                     bit_size: 16,
@@ -2235,274 +1883,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dsts",
+            name: "Hptxsts",
             extends: None,
             description: Some(
-                "Device status register",
+                "Periodic transmit FIFO/queue status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "suspsts",
+                    name: "ptxfsavl",
                     description: Some(
-                        "Suspend status",
+                        "Periodic transmit data FIFO space available",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "enumspd",
+                    name: "ptxqsav",
                     description: Some(
-                        "Enumerated speed",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Dspd",
-                    ),
-                },
-                Field {
-                    name: "eerr",
-                    description: Some(
-                        "Erratic error",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fnsof",
-                    description: Some(
-                        "Frame number of the received SOF",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 14,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fifo",
-            extends: None,
-            description: Some(
-                "FIFO register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "data",
-                    description: Some(
-                        "Data",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Diepctl",
-            extends: None,
-            description: Some(
-                "Device endpoint control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mpsiz",
-                    description: Some(
-                        "MPSIZ",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usbaep",
-                    description: Some(
-                        "USBAEP",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eonum_dpid",
-                    description: Some(
-                        "EONUM/DPID",
+                        "Periodic transmit request queue space available",
                     ),
                     bit_offset: 16,
-                    bit_size: 1,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "naksts",
+                    name: "ptxqtop",
                     description: Some(
-                        "NAKSTS",
+                        "Top of the periodic transmit request queue",
                     ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eptyp",
-                    description: Some(
-                        "EPTYP",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Eptyp",
-                    ),
-                },
-                Field {
-                    name: "snpm",
-                    description: Some(
-                        "SNPM",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stall",
-                    description: Some(
-                        "STALL",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txfnum",
-                    description: Some(
-                        "TXFNUM",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cnak",
-                    description: Some(
-                        "CNAK",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "snak",
-                    description: Some(
-                        "SNAK",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sd0pid_sevnfrm",
-                    description: Some(
-                        "SD0PID/SEVNFRM",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "soddfrm_sd1pid",
-                    description: Some(
-                        "SODDFRM/SD1PID",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epdis",
-                    description: Some(
-                        "EPDIS",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epena",
-                    description: Some(
-                        "EPENA",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Doepmsk",
-            extends: None,
-            description: Some(
-                "Device OUT endpoint common interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "xfrcm",
-                    description: Some(
-                        "Transfer completed interrupt mask",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epdm",
-                    description: Some(
-                        "Endpoint disabled interrupt mask",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stupm",
-                    description: Some(
-                        "SETUP phase done mask",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "otepdm",
-                    description: Some(
-                        "OUT token received when endpoint disabled mask",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
+                    bit_offset: 24,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -2609,17 +2023,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pcgcctl",
+            name: "Gahbcfg",
             extends: None,
             description: Some(
-                "Power and clock gating control register",
+                "AHB configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "stppclk",
+                    name: "gint",
                     description: Some(
-                        "Stop PHY clock",
+                        "Global interrupt mask",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2627,139 +2041,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gatehclk",
+                    name: "hbstlen",
                     description: Some(
-                        "Gate HCLK",
+                        "Burst length/type",
                     ),
                     bit_offset: 1,
-                    bit_size: 1,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "physusp",
+                    name: "dmaen",
                     description: Some(
-                        "PHY Suspended",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hcfg",
-            extends: None,
-            description: Some(
-                "Host configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fslspcs",
-                    description: Some(
-                        "FS/LS PHY clock select",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fslss",
-                    description: Some(
-                        "FS- and LS-only support",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Diepempmsk",
-            extends: None,
-            description: Some(
-                "Device IN endpoint FIFO empty interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ineptxfem",
-                    description: Some(
-                        "IN EP Tx FIFO empty interrupt mask bits",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hprt",
-            extends: None,
-            description: Some(
-                "Host port control and status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pcsts",
-                    description: Some(
-                        "Port connect status",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pcdet",
-                    description: Some(
-                        "Port connect detected",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pena",
-                    description: Some(
-                        "Port enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "penchng",
-                    description: Some(
-                        "Port enable/disable change",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "poca",
-                    description: Some(
-                        "Port overcurrent active",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pocchng",
-                    description: Some(
-                        "Port overcurrent change",
+                        "DMA enable",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -2767,19 +2061,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pres",
+                    name: "txfelvl",
                     description: Some(
-                        "Port resume",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "psusp",
-                    description: Some(
-                        "Port suspend",
+                        "TxFIFO empty level",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -2787,164 +2071,42 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "prst",
+                    name: "ptxfelvl",
                     description: Some(
-                        "Port reset",
+                        "Periodic TxFIFO empty level",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-                Field {
-                    name: "plsts",
-                    description: Some(
-                        "Port line status",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ppwr",
-                    description: Some(
-                        "Port power",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ptctl",
-                    description: Some(
-                        "Port test control",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pspd",
-                    description: Some(
-                        "Port speed",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
             ],
         },
         FieldSet {
-            name: "Hcchar",
+            name: "Fsiz",
             extends: None,
             description: Some(
-                "Host channel characteristics register",
+                "FIFO size register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "mpsiz",
+                    name: "sa",
                     description: Some(
-                        "Maximum packet size",
+                        "RAM start address",
                     ),
                     bit_offset: 0,
-                    bit_size: 11,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "epnum",
+                    name: "fd",
                     description: Some(
-                        "Endpoint number",
+                        "FIFO depth",
                     ),
-                    bit_offset: 11,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "epdir",
-                    description: Some(
-                        "Endpoint direction",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lsdev",
-                    description: Some(
-                        "Low-speed device",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eptyp",
-                    description: Some(
-                        "Endpoint type",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Eptyp",
-                    ),
-                },
-                Field {
-                    name: "mcnt",
-                    description: Some(
-                        "Multicount",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dad",
-                    description: Some(
-                        "Device address",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "oddfrm",
-                    description: Some(
-                        "Odd frame",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "chdis",
-                    description: Some(
-                        "Channel disable",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "chena",
-                    description: Some(
-                        "Channel enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -2981,17 +2143,57 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Gotgctl",
+            name: "Diepempmsk",
             extends: None,
             description: Some(
-                "Control and status register",
+                "Device IN endpoint FIFO empty interrupt mask register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "srqscs",
+                    name: "ineptxfem",
                     description: Some(
-                        "Session request success",
+                        "IN EP Tx FIFO empty interrupt mask bits",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Haintmsk",
+            extends: None,
+            description: Some(
+                "Host all channels interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "haintm",
+                    description: Some(
+                        "Channel interrupt mask",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dctl",
+            extends: None,
+            description: Some(
+                "Device control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rwusig",
+                    description: Some(
+                        "Remote wakeup signaling",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2999,9 +2201,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "srq",
+                    name: "sdis",
                     description: Some(
-                        "Session request",
+                        "Soft disconnect",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -3009,9 +2211,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "vbvaloen",
+                    name: "ginsts",
                     description: Some(
-                        "VBUS valid override enable",
+                        "Global IN NAK status",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -3019,9 +2221,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "vbvaloval",
+                    name: "gonsts",
                     description: Some(
-                        "VBUS valid override value",
+                        "Global OUT NAK status",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -3029,39 +2231,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "avaloen",
+                    name: "tctl",
                     description: Some(
-                        "A-peripheral session valid override enable",
+                        "Test control",
                     ),
                     bit_offset: 4,
-                    bit_size: 1,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "avaloval",
+                    name: "sginak",
                     description: Some(
-                        "A-peripheral session valid override value",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bvaloen",
-                    description: Some(
-                        "B-peripheral session valid override enable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bvaloval",
-                    description: Some(
-                        "B-peripheral session valid override value",
+                        "Set global IN NAK",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -3069,9 +2251,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hngscs",
+                    name: "cginak",
                     description: Some(
-                        "Host negotiation success",
+                        "Clear global IN NAK",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -3079,9 +2261,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hnprq",
+                    name: "sgonak",
                     description: Some(
-                        "HNP request",
+                        "Set global OUT NAK",
                     ),
                     bit_offset: 9,
                     bit_size: 1,
@@ -3089,9 +2271,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hshnpen",
+                    name: "cgonak",
                     description: Some(
-                        "Host set HNP enable",
+                        "Clear global OUT NAK",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -3099,61 +2281,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dhnpen",
+                    name: "poprgdne",
                     description: Some(
-                        "Device HNP enabled",
+                        "Power-on programming done",
                     ),
                     bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ehen",
-                    description: Some(
-                        "Embedded host enable",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cidsts",
-                    description: Some(
-                        "Connector ID status",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbct",
-                    description: Some(
-                        "Long/short debounce time",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "asvld",
-                    description: Some(
-                        "A-session valid",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bsvld",
-                    description: Some(
-                        "B-session valid",
-                    ),
-                    bit_offset: 19,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3451,97 +2583,235 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Haintmsk",
+            name: "Fifo",
             extends: None,
             description: Some(
-                "Host all channels interrupt mask register",
+                "FIFO register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "haintm",
+                    name: "data",
                     description: Some(
-                        "Channel interrupt mask",
+                        "Data",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Gi2cctl",
+            name: "Hcfg",
             extends: None,
             description: Some(
-                "I2C access register",
+                "Host configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rwdata",
+                    name: "fslspcs",
                     description: Some(
-                        "I2C Read/Write Data",
+                        "FS/LS PHY clock select",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "regaddr",
-                    description: Some(
-                        "I2C Register Address",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "addr",
-                    description: Some(
-                        "I2C Address",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2cen",
-                    description: Some(
-                        "I2C Enable",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ack",
-                    description: Some(
-                        "I2C ACK",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2cdevadr",
-                    description: Some(
-                        "I2C Device Address",
-                    ),
-                    bit_offset: 26,
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "i2cdatse0",
+                    name: "fslss",
                     description: Some(
-                        "I2C DatSe0 USB mode",
+                        "FS- and LS-only support",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Grxsts",
+            extends: None,
+            description: Some(
+                "Status read and pop register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "epnum",
+                    description: Some(
+                        "Endpoint number (device mode) / Channel number (host mode)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bcnt",
+                    description: Some(
+                        "Byte count",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dpid",
+                    description: Some(
+                        "Data PID",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Dpid",
+                    ),
+                },
+                Field {
+                    name: "pktstsd",
+                    description: Some(
+                        "Packet status (device mode)",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Pktstsd",
+                    ),
+                },
+                Field {
+                    name: "pktstsh",
+                    description: Some(
+                        "Packet status (host mode)",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Pktstsh",
+                    ),
+                },
+                Field {
+                    name: "frmnum",
+                    description: Some(
+                        "Frame number (device mode)",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Doepctl",
+            extends: None,
+            description: Some(
+                "Device endpoint control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mpsiz",
+                    description: Some(
+                        "MPSIZ",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usbaep",
+                    description: Some(
+                        "USBAEP",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eonum_dpid",
+                    description: Some(
+                        "EONUM/DPID",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "naksts",
+                    description: Some(
+                        "NAKSTS",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eptyp",
+                    description: Some(
+                        "EPTYP",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Eptyp",
+                    ),
+                },
+                Field {
+                    name: "snpm",
+                    description: Some(
+                        "SNPM",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stall",
+                    description: Some(
+                        "STALL",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cnak",
+                    description: Some(
+                        "CNAK",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "snak",
+                    description: Some(
+                        "SNAK",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sd0pid_sevnfrm",
+                    description: Some(
+                        "SD0PID/SEVNFRM",
                     ),
                     bit_offset: 28,
                     bit_size: 1,
@@ -3549,9 +2819,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rw",
+                    name: "soddfrm",
                     description: Some(
-                        "Read/Write Indicator",
+                        "SODDFRM",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epdis",
+                    description: Some(
+                        "EPDIS",
                     ),
                     bit_offset: 30,
                     bit_size: 1,
@@ -3559,9 +2839,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "bsydne",
+                    name: "epena",
                     description: Some(
-                        "I2C Busy/Done",
+                        "EPENA",
                     ),
                     bit_offset: 31,
                     bit_size: 1,
@@ -3571,220 +2851,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dvbusdis",
+            name: "Hctsiz",
             extends: None,
             description: Some(
-                "Device VBUS discharge time register",
+                "Host channel transfer size register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "vbusdt",
+                    name: "xfrsiz",
                     description: Some(
-                        "Device VBUS discharge time",
+                        "Transfer size",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Daint",
-            extends: None,
-            description: Some(
-                "Device all endpoints interrupt register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "iepint",
-                    description: Some(
-                        "IN endpoint interrupt bits",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 19,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "oepint",
+                    name: "pktcnt",
                     description: Some(
-                        "OUT endpoint interrupt bits",
+                        "Packet count",
                     ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dctl",
-            extends: None,
-            description: Some(
-                "Device control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rwusig",
-                    description: Some(
-                        "Remote wakeup signaling",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
+                    bit_offset: 19,
+                    bit_size: 10,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sdis",
+                    name: "dpid",
                     description: Some(
-                        "Soft disconnect",
+                        "Data PID",
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ginsts",
-                    description: Some(
-                        "Global IN NAK status",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gonsts",
-                    description: Some(
-                        "Global OUT NAK status",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tctl",
-                    description: Some(
-                        "Test control",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sginak",
-                    description: Some(
-                        "Set global IN NAK",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cginak",
-                    description: Some(
-                        "Clear global IN NAK",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sgonak",
-                    description: Some(
-                        "Set global OUT NAK",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cgonak",
-                    description: Some(
-                        "Clear global OUT NAK",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "poprgdne",
-                    description: Some(
-                        "Power-on programming done",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Gahbcfg",
-            extends: None,
-            description: Some(
-                "AHB configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "gint",
-                    description: Some(
-                        "Global interrupt mask",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hbstlen",
-                    description: Some(
-                        "Burst length/type",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dmaen",
-                    description: Some(
-                        "DMA enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txfelvl",
-                    description: Some(
-                        "TxFIFO empty level",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ptxfelvl",
-                    description: Some(
-                        "Periodic TxFIFO empty level",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
+                    bit_offset: 29,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
@@ -3861,156 +2961,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cid",
-            extends: None,
-            description: Some(
-                "Core ID register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "product_id",
-                    description: Some(
-                        "Product ID field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dvbuspulse",
-            extends: None,
-            description: Some(
-                "Device VBUS pulsing time register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dvbusp",
-                    description: Some(
-                        "Device VBUS pulsing time",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hcintmsk",
-            extends: None,
-            description: Some(
-                "Host channel mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "xfrcm",
-                    description: Some(
-                        "Transfer completed mask",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "chhm",
-                    description: Some(
-                        "Channel halted mask",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stallm",
-                    description: Some(
-                        "STALL response received interrupt mask",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nakm",
-                    description: Some(
-                        "NAK response received interrupt mask",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ackm",
-                    description: Some(
-                        "ACK response received/transmitted interrupt mask",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nyet",
-                    description: Some(
-                        "Response received interrupt mask",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txerrm",
-                    description: Some(
-                        "Transaction error mask",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bberrm",
-                    description: Some(
-                        "Babble error mask",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "frmorm",
-                    description: Some(
-                        "Frame overrun mask",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dterrm",
-                    description: Some(
-                        "Data toggle error mask",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Hfir",
             extends: None,
             description: Some(
@@ -4031,59 +2981,29 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hctsiz",
+            name: "Daint",
             extends: None,
             description: Some(
-                "Host channel transfer size register",
+                "Device all endpoints interrupt register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "xfrsiz",
+                    name: "iepint",
                     description: Some(
-                        "Transfer size",
+                        "IN endpoint interrupt bits",
                     ),
                     bit_offset: 0,
-                    bit_size: 19,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pktcnt",
+                    name: "oepint",
                     description: Some(
-                        "Packet count",
+                        "OUT endpoint interrupt bits",
                     ),
-                    bit_offset: 19,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dpid",
-                    description: Some(
-                        "Data PID",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dtxfsts",
-            extends: None,
-            description: Some(
-                "Device IN endpoint transmit FIFO status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ineptfsav",
-                    description: Some(
-                        "IN endpoint TxFIFO space available",
-                    ),
-                    bit_offset: 0,
+                    bit_offset: 16,
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -4091,17 +3011,117 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Doepint",
+            name: "Gotgint",
             extends: None,
             description: Some(
-                "Device endpoint interrupt register",
+                "Interrupt register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "xfrc",
+                    name: "sedet",
                     description: Some(
-                        "XFRC",
+                        "Session end detected",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "srsschg",
+                    description: Some(
+                        "Session request success status change",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hnsschg",
+                    description: Some(
+                        "Host negotiation success status change",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hngdet",
+                    description: Some(
+                        "Host negotiation detected",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adtochg",
+                    description: Some(
+                        "A-device timeout change",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbcdne",
+                    description: Some(
+                        "Debounce done",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "idchng",
+                    description: Some(
+                        "ID input pin changed",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cid",
+            extends: None,
+            description: Some(
+                "Core ID register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "product_id",
+                    description: Some(
+                        "Product ID field",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Diepmsk",
+            extends: None,
+            description: Some(
+                "Device IN endpoint common interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "xfrcm",
+                    description: Some(
+                        "Transfer completed interrupt mask",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -4109,9 +3129,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "epdisd",
+                    name: "epdm",
                     description: Some(
-                        "EPDISD",
+                        "Endpoint disabled interrupt mask",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -4119,9 +3139,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "stup",
+                    name: "tom",
                     description: Some(
-                        "STUP",
+                        "Timeout condition mask (Non-isochronous endpoints)",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -4129,9 +3149,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "otepdis",
+                    name: "ittxfemsk",
                     description: Some(
-                        "OTEPDIS",
+                        "IN token received when TxFIFO empty mask",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -4139,9 +3159,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "b2bstup",
+                    name: "inepnmm",
                     description: Some(
-                        "B2BSTUP",
+                        "IN token received with EP mismatch mask",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "inepnem",
+                    description: Some(
+                        "IN endpoint NAK effective mask",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -4151,30 +3181,50 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fsiz",
+            name: "Doepmsk",
             extends: None,
             description: Some(
-                "FIFO size register",
+                "Device OUT endpoint common interrupt mask register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sa",
+                    name: "xfrcm",
                     description: Some(
-                        "RAM start address",
+                        "Transfer completed interrupt mask",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "fd",
+                    name: "epdm",
                     description: Some(
-                        "FIFO depth",
+                        "Endpoint disabled interrupt mask",
                     ),
-                    bit_offset: 16,
-                    bit_size: 16,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stupm",
+                    description: Some(
+                        "SETUP phase done mask",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otepdm",
+                    description: Some(
+                        "OUT token received when endpoint disabled mask",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -4451,32 +3501,974 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dcfg",
+            name: "Pcgcctl",
             extends: None,
             description: Some(
-                "Device configuration register",
+                "Power and clock gating control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dspd",
+                    name: "stppclk",
                     description: Some(
-                        "Device speed",
+                        "Stop PHY clock",
                     ),
                     bit_offset: 0,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Dspd",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "nzlsohsk",
+                    name: "gatehclk",
                     description: Some(
-                        "Non-zero-length status OUT handshake",
+                        "Gate HCLK",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "physusp",
+                    description: Some(
+                        "PHY Suspended",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Grxfsiz",
+            extends: None,
+            description: Some(
+                "Receive FIFO size register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxfd",
+                    description: Some(
+                        "RxFIFO depth",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Daintmsk",
+            extends: None,
+            description: Some(
+                "All endpoints interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "iepm",
+                    description: Some(
+                        "IN EP interrupt mask bits",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oepm",
+                    description: Some(
+                        "OUT EP interrupt mask bits",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Gotgctl",
+            extends: None,
+            description: Some(
+                "Control and status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "srqscs",
+                    description: Some(
+                        "Session request success",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "srq",
+                    description: Some(
+                        "Session request",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbvaloen",
+                    description: Some(
+                        "VBUS valid override enable",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbvaloval",
+                    description: Some(
+                        "VBUS valid override value",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "avaloen",
+                    description: Some(
+                        "A-peripheral session valid override enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "avaloval",
+                    description: Some(
+                        "A-peripheral session valid override value",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bvaloen",
+                    description: Some(
+                        "B-peripheral session valid override enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bvaloval",
+                    description: Some(
+                        "B-peripheral session valid override value",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hngscs",
+                    description: Some(
+                        "Host negotiation success",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hnprq",
+                    description: Some(
+                        "HNP request",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hshnpen",
+                    description: Some(
+                        "Host set HNP enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dhnpen",
+                    description: Some(
+                        "Device HNP enabled",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ehen",
+                    description: Some(
+                        "Embedded host enable",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cidsts",
+                    description: Some(
+                        "Connector ID status",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbct",
+                    description: Some(
+                        "Long/short debounce time",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "asvld",
+                    description: Some(
+                        "A-session valid",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bsvld",
+                    description: Some(
+                        "B-session valid",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Doepint",
+            extends: None,
+            description: Some(
+                "Device endpoint interrupt register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "xfrc",
+                    description: Some(
+                        "XFRC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epdisd",
+                    description: Some(
+                        "EPDISD",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stup",
+                    description: Some(
+                        "STUP",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otepdis",
+                    description: Some(
+                        "OTEPDIS",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "b2bstup",
+                    description: Some(
+                        "B2BSTUP",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Gnptxsts",
+            extends: None,
+            description: Some(
+                "Non-periodic transmit FIFO/queue status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "nptxfsav",
+                    description: Some(
+                        "Non-periodic TxFIFO space available",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nptqxsav",
+                    description: Some(
+                        "Non-periodic transmit request queue space available",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nptxqtop",
+                    description: Some(
+                        "Top of the non-periodic transmit request queue",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Gi2cctl",
+            extends: None,
+            description: Some(
+                "I2C access register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rwdata",
+                    description: Some(
+                        "I2C Read/Write Data",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "regaddr",
+                    description: Some(
+                        "I2C Register Address",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "addr",
+                    description: Some(
+                        "I2C Address",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2cen",
+                    description: Some(
+                        "I2C Enable",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ack",
+                    description: Some(
+                        "I2C ACK",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2cdevadr",
+                    description: Some(
+                        "I2C Device Address",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2cdatse0",
+                    description: Some(
+                        "I2C DatSe0 USB mode",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rw",
+                    description: Some(
+                        "Read/Write Indicator",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bsydne",
+                    description: Some(
+                        "I2C Busy/Done",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "GccfgV1",
+            extends: None,
+            description: Some(
+                "General core configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pwrdwn",
+                    description: Some(
+                        "Power down",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbusasen",
+                    description: Some(
+                        "Enable the VBUS \"A\" sensing device",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbusbsen",
+                    description: Some(
+                        "Enable the VBUS \"B\" sensing device",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sofouten",
+                    description: Some(
+                        "SOF output enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "novbussens",
+                    description: Some(
+                        "VBUS sensing disable",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dieptsiz",
+            extends: None,
+            description: Some(
+                "Device endpoint transfer size register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "xfrsiz",
+                    description: Some(
+                        "Transfer size",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 19,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pktcnt",
+                    description: Some(
+                        "Packet count",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mcnt",
+                    description: Some(
+                        "Multi count",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dvbuspulse",
+            extends: None,
+            description: Some(
+                "Device VBUS pulsing time register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dvbusp",
+                    description: Some(
+                        "Device VBUS pulsing time",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "GccfgV2",
+            extends: None,
+            description: Some(
+                "General core configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcdet",
+                    description: Some(
+                        "Data contact detection (DCD) status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pdet",
+                    description: Some(
+                        "Primary detection (PD) status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdet",
+                    description: Some(
+                        "Secondary detection (SD) status",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ps2det",
+                    description: Some(
+                        "DM pull-up detection status",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pwrdwn",
+                    description: Some(
+                        "Power down",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bcden",
+                    description: Some(
+                        "Battery charging detector (BCD) enable",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dcden",
+                    description: Some(
+                        "Data contact detection (DCD) mode enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pden",
+                    description: Some(
+                        "Primary detection (PD) mode enable",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sden",
+                    description: Some(
+                        "Secondary detection (SD) mode enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbden",
+                    description: Some(
+                        "USB VBUS detection enable",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "phyhsen",
+                    description: Some(
+                        "Internal high-speed PHY enable.",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Diepctl",
+            extends: None,
+            description: Some(
+                "Device endpoint control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mpsiz",
+                    description: Some(
+                        "MPSIZ",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usbaep",
+                    description: Some(
+                        "USBAEP",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eonum_dpid",
+                    description: Some(
+                        "EONUM/DPID",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "naksts",
+                    description: Some(
+                        "NAKSTS",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eptyp",
+                    description: Some(
+                        "EPTYP",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Eptyp",
+                    ),
+                },
+                Field {
+                    name: "snpm",
+                    description: Some(
+                        "SNPM",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stall",
+                    description: Some(
+                        "STALL",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txfnum",
+                    description: Some(
+                        "TXFNUM",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cnak",
+                    description: Some(
+                        "CNAK",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "snak",
+                    description: Some(
+                        "SNAK",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sd0pid_sevnfrm",
+                    description: Some(
+                        "SD0PID/SEVNFRM",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "soddfrm_sd1pid",
+                    description: Some(
+                        "SODDFRM/SD1PID",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epdis",
+                    description: Some(
+                        "EPDIS",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epena",
+                    description: Some(
+                        "EPENA",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Doeptsiz",
+            extends: None,
+            description: Some(
+                "Device OUT endpoint transfer size register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "xfrsiz",
+                    description: Some(
+                        "Transfer size",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 19,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pktcnt",
+                    description: Some(
+                        "Packet count",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdpid_stupcnt",
+                    description: Some(
+                        "Received data PID/SETUP packet count",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hcchar",
+            extends: None,
+            description: Some(
+                "Host channel characteristics register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mpsiz",
+                    description: Some(
+                        "Maximum packet size",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epnum",
+                    description: Some(
+                        "Endpoint number",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "epdir",
+                    description: Some(
+                        "Endpoint direction",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lsdev",
+                    description: Some(
+                        "Low-speed device",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eptyp",
+                    description: Some(
+                        "Endpoint type",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Eptyp",
+                    ),
+                },
+                Field {
+                    name: "mcnt",
+                    description: Some(
+                        "Multicount",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
@@ -4485,29 +4477,37 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Device address",
                     ),
-                    bit_offset: 4,
+                    bit_offset: 22,
                     bit_size: 7,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pfivl",
+                    name: "oddfrm",
                     description: Some(
-                        "Periodic frame interval",
+                        "Odd frame",
                     ),
-                    bit_offset: 11,
-                    bit_size: 2,
+                    bit_offset: 29,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pfivl",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "xcvrdly",
+                    name: "chdis",
                     description: Some(
-                        "Transceiver delay",
+                        "Channel disable",
                     ),
-                    bit_offset: 14,
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "chena",
+                    description: Some(
+                        "Channel enable",
+                    ),
+                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4517,28 +4517,36 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Dpid",
+            name: "Pfivl",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DATA0",
-                    description: None,
+                    name: "FRAME_INTERVAL_80",
+                    description: Some(
+                        "80% of the frame interval",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DATA2",
-                    description: None,
+                    name: "FRAME_INTERVAL_85",
+                    description: Some(
+                        "85% of the frame interval",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DATA1",
-                    description: None,
+                    name: "FRAME_INTERVAL_90",
+                    description: Some(
+                        "90% of the frame interval",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MDATA",
-                    description: None,
+                    name: "FRAME_INTERVAL_95",
+                    description: Some(
+                        "95% of the frame interval",
+                    ),
                     value: 3,
                 },
             ],
@@ -4568,48 +4576,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Full speed using internal embedded PHY",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Pktstsd",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "OUT_NAK",
-                    description: Some(
-                        "Global OUT NAK (triggers an interrupt)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "OUT_DATA_RX",
-                    description: Some(
-                        "OUT data packet received",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "OUT_DATA_DONE",
-                    description: Some(
-                        "OUT transfer completed (triggers an interrupt)",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "SETUP_DATA_DONE",
-                    description: Some(
-                        "SETUP transaction completed (triggers an interrupt)",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "SETUP_DATA_RX",
-                    description: Some(
-                        "SETUP data packet received",
-                    ),
-                    value: 6,
                 },
             ],
         },
@@ -4676,37 +4642,71 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pfivl",
+            name: "Dpid",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FRAME_INTERVAL_80",
-                    description: Some(
-                        "80% of the frame interval",
-                    ),
+                    name: "DATA0",
+                    description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FRAME_INTERVAL_85",
+                    name: "DATA2",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DATA1",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MDATA",
+                    description: None,
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Pktstsd",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "OUT_NAK",
                     description: Some(
-                        "85% of the frame interval",
+                        "Global OUT NAK (triggers an interrupt)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FRAME_INTERVAL_90",
+                    name: "OUT_DATA_RX",
                     description: Some(
-                        "90% of the frame interval",
+                        "OUT data packet received",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FRAME_INTERVAL_95",
+                    name: "OUT_DATA_DONE",
                     description: Some(
-                        "95% of the frame interval",
+                        "OUT transfer completed (triggers an interrupt)",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SETUP_DATA_DONE",
+                    description: Some(
+                        "SETUP transaction completed (triggers an interrupt)",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "SETUP_DATA_RX",
+                    description: Some(
+                        "SETUP data packet received",
+                    ),
+                    value: 6,
                 },
             ],
         },

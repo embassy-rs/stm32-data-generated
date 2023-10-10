@@ -167,38 +167,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "D3cr",
-            extends: None,
-            description: Some(
-                "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vosrdy",
-                    description: Some(
-                        "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vos",
-                    description: Some(
-                        "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr3",
             extends: None,
             description: Some(
@@ -319,6 +287,56 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Csr1",
+            extends: None,
+            description: Some(
+                "PWR control status register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "Programmable voltage detect output This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit. Note: since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "actvosrdy",
+                    description: Some(
+                        "Voltage levels ready bit for currently used VOS and SDLEVEL This bit is set to 1 by hardware when the voltage regulator and the SD converter are both disabled and Bypass mode is selected in PWR control register 3 (PWR_CR3).",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "actvos",
+                    description: Some(
+                        "VOS currently applied for VCORE voltage scaling selection. These bits reflect the last VOS value applied to the PMU.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "avdo",
+                    description: Some(
+                        "Analog voltage detector output on VDDA This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit. Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the AVDEN bit is set.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr2",
             extends: None,
             description: Some(
@@ -393,26 +411,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 23,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wkupcr",
-            extends: None,
-            description: Some(
-                "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared).",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wkupc",
-                    description: Some(
-                        "Clear Wakeup pin flag for WKUP. These bits are always read as 0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
@@ -509,56 +507,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Csr1",
-            extends: None,
-            description: Some(
-                "PWR control status register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pvdo",
-                    description: Some(
-                        "Programmable voltage detect output This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit. Note: since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "actvosrdy",
-                    description: Some(
-                        "Voltage levels ready bit for currently used VOS and SDLEVEL This bit is set to 1 by hardware when the voltage regulator and the SD converter are both disabled and Bypass mode is selected in PWR control register 3 (PWR_CR3).",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "actvos",
-                    description: Some(
-                        "VOS currently applied for VCORE voltage scaling selection. These bits reflect the last VOS value applied to the PMU.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "avdo",
-                    description: Some(
-                        "Analog voltage detector output on VDDA This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit. Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the AVDEN bit is set.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Wkupfr",
             extends: None,
             description: Some(
@@ -582,6 +530,119 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wkupcr",
+            extends: None,
+            description: Some(
+                "reset only by system reset, not reset by wakeup from Standby mode5 wait states are required when writing this register (when clearing a WKUPF bit in PWR_WKUPFR, the AHB write access will complete after the WKUPF has been cleared).",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wkupc",
+                    description: Some(
+                        "Clear Wakeup pin flag for WKUP. These bits are always read as 0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wkupepr",
+            extends: None,
+            description: Some(
+                "Reset only by system reset, not reset by wakeup from Standby mode",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wkupen",
+                    description: Some(
+                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "wkupp",
+                    description: Some(
+                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "wkuppupd",
+                    description: Some(
+                        "Wakeup pin pull configuration",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 2,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "D3cr",
+            extends: None,
+            description: Some(
+                "This register allows controlling D3 domain power.Following reset VOSRDY will be read 1 by software",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vosrdy",
+                    description: Some(
+                        "VOS Ready bit for VCORE voltage scaling output selection. This bit is set to 1 by hardware when Bypass mode is selected in PWR control register 3 (PWR_CR3).",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vos",
+                    description: Some(
+                        "Voltage scaling selection according to performance These bits control the VCORE voltage level and allow to obtains the best trade-off between power consumption and performance: When increasing the performance, the voltage scaling shall be changed before increasing the system frequency. When decreasing performance, the system frequency shall first be decreased before changing the voltage scaling.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Vos",
+                    ),
                 },
             ],
         },
@@ -681,67 +742,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wkupepr",
-            extends: None,
-            description: Some(
-                "Reset only by system reset, not reset by wakeup from Standby mode",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wkupen",
-                    description: Some(
-                        "Enable Wakeup Pin WKUPn+1 Each bit is set and cleared by software. Note: An additional wakeup event is detected if WKUPn+1 pin is enabled (by setting the WKUPENn+1 bit) when WKUPn+1 pin level is already high when WKUPPn+1 selects rising edge, or low when WKUPPn+1 selects falling edge.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "wkupp",
-                    description: Some(
-                        "Wakeup pin polarity bit for WKUPn-7 These bits define the polarity used for event detection on WKUPn-7 external wakeup pin.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "wkuppupd",
-                    description: Some(
-                        "Wakeup pin pull configuration",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 2,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],

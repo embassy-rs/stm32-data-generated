@@ -285,67 +285,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Waitcfg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BEFOREWAITSTATE",
-                    description: Some("NWAIT signal is active one data cycle before wait state"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DURINGWAITSTATE",
-                    description: Some("NWAIT signal is active during wait state"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Accmod",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "A",
-                    description: Some("Access mode A"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B",
-                    description: Some("Access mode B"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "C",
-                    description: Some("Access mode C"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "D",
-                    description: Some("Access mode D"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Waitpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVELOW",
-                    description: Some("NWAIT active low"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEHIGH",
-                    description: Some("NWAIT active high"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Mtyp",
             description: None,
             bit_size: 2,
@@ -418,6 +357,67 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BYTES1024",
                     description: Some("1024 bytes CRAM page size"),
                     value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Accmod",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "A",
+                    description: Some("Access mode A"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B",
+                    description: Some("Access mode B"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "C",
+                    description: Some("Access mode C"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "D",
+                    description: Some("Access mode D"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ACTIVELOW",
+                    description: Some("NWAIT active low"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVEHIGH",
+                    description: Some("NWAIT active high"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitcfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BEFOREWAITSTATE",
+                    description: Some("NWAIT signal is active one data cycle before wait state"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DURINGWAITSTATE",
+                    description: Some("NWAIT signal is active during wait state"),
+                    value: 1,
                 },
             ],
         },

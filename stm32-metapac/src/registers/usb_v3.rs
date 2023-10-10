@@ -157,146 +157,72 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Daddr",
+            name: "Btable",
             extends: None,
             description: Some(
-                "device address",
+                "Buffer table address",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "add",
+                    name: "btable",
                     description: Some(
-                        "device address",
+                        "BTABLE",
                     ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ef",
-                    description: Some(
-                        "USB device enabled",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
+                    bit_offset: 3,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Epr",
+            name: "Lpmcsr",
             extends: None,
             description: Some(
-                "endpoint register",
+                "LPM control and status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ea",
+                    name: "lpmen",
                     description: Some(
-                        "EA",
+                        "enable the LPM support within the USB device",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "stat_tx",
+                    name: "lpmack",
                     description: Some(
-                        "STAT_TX",
+                        "LPMACK",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lpmack",
+                    ),
+                },
+                Field {
+                    name: "remwake",
+                    description: Some(
+                        "REMWAKE",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "besl",
+                    description: Some(
+                        "BESL",
                     ),
                     bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_tx",
-                    description: Some(
-                        "DTOG_TX",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_tx",
-                    description: Some(
-                        "CTR_TX",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_kind",
-                    description: Some(
-                        "EP_KIND",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_type",
-                    description: Some(
-                        "EPTYPE",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "EpType",
-                    ),
-                },
-                Field {
-                    name: "setup",
-                    description: Some(
-                        "SETUP",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stat_rx",
-                    description: Some(
-                        "STAT_RX",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_rx",
-                    description: Some(
-                        "DTOG_RX",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_rx",
-                    description: Some(
-                        "CTR_RX",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -463,52 +389,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Lpmcsr",
+            name: "Daddr",
             extends: None,
             description: Some(
-                "LPM control and status register",
+                "device address",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lpmen",
+                    name: "add",
                     description: Some(
-                        "enable the LPM support within the USB device",
+                        "device address",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "lpmack",
+                    name: "ef",
                     description: Some(
-                        "LPMACK",
+                        "USB device enabled",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 7,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lpmack",
-                    ),
-                },
-                Field {
-                    name: "remwake",
-                    description: Some(
-                        "REMWAKE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "besl",
-                    description: Some(
-                        "BESL",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -637,86 +541,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Btable",
-            extends: None,
-            description: Some(
-                "Buffer table address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "btable",
-                    description: Some(
-                        "BTABLE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fnr",
-            extends: None,
-            description: Some(
-                "frame number register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fn_",
-                    description: Some(
-                        "FN",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lsof",
-                    description: Some(
-                        "LSOF",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lck",
-                    description: Some(
-                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdm",
-                    description: Some(
-                        "received data minus upstream port data line",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdp",
-                    description: Some(
-                        "received data plus upstream port data line",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Bcdr",
             extends: None,
             description: Some(
@@ -818,8 +642,226 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Epr",
+            extends: None,
+            description: Some(
+                "endpoint register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ea",
+                    description: Some(
+                        "EA",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_tx",
+                    description: Some(
+                        "STAT_TX",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_tx",
+                    description: Some(
+                        "DTOG_TX",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_tx",
+                    description: Some(
+                        "CTR_TX",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_kind",
+                    description: Some(
+                        "EP_KIND",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_type",
+                    description: Some(
+                        "EPTYPE",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "EpType",
+                    ),
+                },
+                Field {
+                    name: "setup",
+                    description: Some(
+                        "SETUP",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_rx",
+                    description: Some(
+                        "STAT_RX",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_rx",
+                    description: Some(
+                        "DTOG_RX",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_rx",
+                    description: Some(
+                        "CTR_RX",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fnr",
+            extends: None,
+            description: Some(
+                "frame number register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fn_",
+                    description: Some(
+                        "FN",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lsof",
+                    description: Some(
+                        "LSOF",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lck",
+                    description: Some(
+                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdm",
+                    description: Some(
+                        "received data minus upstream port data line",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdp",
+                    description: Some(
+                        "received data plus upstream port data line",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
+        Enum {
+            name: "Sdet",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CDP",
+                    description: Some(
+                        "CDP detected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DCP",
+                    description: Some(
+                        "DCP detected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dir",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TO",
+                    description: Some(
+                        "data transmitted by the USB peripheral to the host PC",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FROM",
+                    description: Some(
+                        "data received by the USB peripheral from the host PC",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Stat",
             description: None,
@@ -852,27 +894,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "this endpoint is enabled, requests are ACKed",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Lpmack",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NYET",
-                    description: Some(
-                        "the valid LPM Token will be NYET",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACK",
-                    description: Some(
-                        "the valid LPM Token will be ACK",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -912,42 +933,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dir",
+            name: "Lpmack",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TO",
+                    name: "NYET",
                     description: Some(
-                        "data transmitted by the USB peripheral to the host PC",
+                        "the valid LPM Token will be NYET",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FROM",
+                    name: "ACK",
                     description: Some(
-                        "data received by the USB peripheral from the host PC",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sdet",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CDP",
-                    description: Some(
-                        "CDP detected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DCP",
-                    description: Some(
-                        "DCP detected",
+                        "the valid LPM Token will be ACK",
                     ),
                     value: 1,
                 },

@@ -1652,15 +1652,15 @@ pub mod regs {
         pub fn set_lserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI ready interrupt flag"]
+        #[doc = "HSI16 ready interrupt flag"]
         #[inline(always)]
-        pub const fn hsirdyf(&self) -> bool {
+        pub const fn hsi16rdyf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI ready interrupt flag"]
+        #[doc = "HSI16 ready interrupt flag"]
         #[inline(always)]
-        pub fn set_hsirdyf(&mut self, val: bool) {
+        pub fn set_hsi16rdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSE ready interrupt flag"]
@@ -1729,15 +1729,15 @@ pub mod regs {
         pub fn set_lserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "HSI ready interrupt enable"]
+        #[doc = "HSI16 ready interrupt enable"]
         #[inline(always)]
-        pub const fn hsirdyie(&self) -> bool {
+        pub const fn hsi16rdyie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI ready interrupt enable"]
+        #[doc = "HSI16 ready interrupt enable"]
         #[inline(always)]
-        pub fn set_hsirdyie(&mut self, val: bool) {
+        pub fn set_hsi16rdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "HSE ready interrupt enable"]
@@ -1795,15 +1795,15 @@ pub mod regs {
         pub fn set_lserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
-        #[doc = "HSI ready interrupt clear"]
+        #[doc = "HSI16 ready interrupt clear"]
         #[inline(always)]
-        pub const fn hsirdyc(&self) -> bool {
+        pub const fn hsi16rdyc(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI ready interrupt clear"]
+        #[doc = "HSI16 ready interrupt clear"]
         #[inline(always)]
-        pub fn set_hsirdyc(&mut self, val: bool) {
+        pub fn set_hsi16rdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "HSE ready interrupt clear"]
@@ -1864,24 +1864,24 @@ pub mod regs {
     impl Cr {
         #[doc = "Internal high-speed clock enable"]
         #[inline(always)]
-        pub const fn hsion(&self) -> bool {
+        pub const fn hsi16on(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[doc = "Internal high-speed clock enable"]
         #[inline(always)]
-        pub fn set_hsion(&mut self, val: bool) {
+        pub fn set_hsi16on(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Internal high-speed clock ready flag"]
         #[inline(always)]
-        pub const fn hsirdy(&self) -> bool {
+        pub const fn hsi16rdy(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[doc = "Internal high-speed clock ready flag"]
         #[inline(always)]
-        pub fn set_hsirdy(&mut self, val: bool) {
+        pub fn set_hsi16rdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI clock enable"]
@@ -2174,24 +2174,24 @@ pub mod regs {
     impl Icscr {
         #[doc = "nternal high speed clock calibration"]
         #[inline(always)]
-        pub const fn hsical(&self) -> u8 {
+        pub const fn hsi16cal(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[doc = "nternal high speed clock calibration"]
         #[inline(always)]
-        pub fn set_hsical(&mut self, val: u8) {
+        pub fn set_hsi16cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "High speed internal clock trimming"]
         #[inline(always)]
-        pub const fn hsitrim(&self) -> u8 {
+        pub const fn hsi16trim(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
             val as u8
         }
         #[doc = "High speed internal clock trimming"]
         #[inline(always)]
-        pub fn set_hsitrim(&mut self, val: u8) {
+        pub fn set_hsi16trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
         #[doc = "MSI clock ranges"]
@@ -2333,8 +2333,8 @@ pub mod vals {
         NOCLOCK = 0,
         #[doc = "SYSCLK clock selected"]
         SYSCLK = 0x01,
-        #[doc = "HSI oscillator clock selected"]
-        HSI = 0x02,
+        #[doc = "HSI16 oscillator clock selected"]
+        HSI16 = 0x02,
         #[doc = "MSI oscillator clock selected"]
         MSI = 0x03,
         #[doc = "HSE oscillator clock selected"]
@@ -2505,8 +2505,8 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
-        #[doc = "HSI selected as PLL input clock"]
-        HSI = 0,
+        #[doc = "HSI16 selected as PLL input clock"]
+        HSI16 = 0,
         #[doc = "HSE selected as PLL input clock"]
         HSE = 0x01,
     }
@@ -2645,8 +2645,8 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
     pub enum Sw {
         #[doc = "MSI oscillator used as system clock"]
         MSI = 0,
-        #[doc = "HSI oscillator used as system clock"]
-        HSI = 0x01,
+        #[doc = "HSI16 oscillator used as system clock"]
+        HSI16 = 0x01,
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x02,
         #[doc = "PLL used as system clock"]

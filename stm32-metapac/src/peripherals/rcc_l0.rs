@@ -24,11 +24,6 @@ impl Rcc {
     pub const fn icscr(self) -> crate::common::Reg<regs::Icscr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
     }
-    #[doc = "Clock recovery RC register"]
-    #[inline(always)]
-    pub const fn crrcr(self) -> crate::common::Reg<regs::Crrcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
-    }
     #[doc = "Clock configuration register"]
     #[inline(always)]
     pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
@@ -1345,17 +1340,6 @@ pub mod regs {
         pub fn set_lptim1sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
-        #[doc = "48 MHz HSI48 clock source selection"]
-        #[inline(always)]
-        pub const fn hsi48msel(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "48 MHz HSI48 clock source selection"]
-        #[inline(always)]
-        pub fn set_hsi48msel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
     }
     impl Default for Ccipr {
         #[inline(always)]
@@ -1470,13 +1454,13 @@ pub mod regs {
         #[doc = "Microcontroller clock output selection"]
         #[inline(always)]
         pub const fn mcosel(&self) -> super::vals::Mcosel {
-            let val = (self.0 >> 24usize) & 0x07;
+            let val = (self.0 >> 24usize) & 0x0f;
             super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output selection"]
         #[inline(always)]
         pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
-            self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
@@ -1566,17 +1550,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_msirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "HSI48 ready Interrupt clear"]
-        #[inline(always)]
-        pub const fn hsi48rdyc(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 ready Interrupt clear"]
-        #[inline(always)]
-        pub fn set_hsi48rdyc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "LSE Clock Security System Interrupt clear"]
         #[inline(always)]
@@ -1678,17 +1651,6 @@ pub mod regs {
         pub fn set_msirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "HSI48 ready interrupt flag"]
-        #[inline(always)]
-        pub const fn hsi48rdyie(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 ready interrupt flag"]
-        #[inline(always)]
-        pub fn set_hsi48rdyie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
         #[doc = "LSE CSS interrupt flag"]
         #[inline(always)]
         pub const fn csslse(&self) -> bool {
@@ -1778,17 +1740,6 @@ pub mod regs {
         pub fn set_msirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "HSI48 ready interrupt flag"]
-        #[inline(always)]
-        pub const fn hsi48rdyf(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 ready interrupt flag"]
-        #[inline(always)]
-        pub fn set_hsi48rdyf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
         #[doc = "LSE Clock Security System Interrupt flag"]
         #[inline(always)]
         pub const fn csslsef(&self) -> bool {
@@ -1847,13 +1798,13 @@ pub mod regs {
         }
         #[doc = "Internal high-speed clock ready flag"]
         #[inline(always)]
-        pub const fn hsi16rdyf(&self) -> bool {
+        pub const fn hsi16rdy(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "Internal high-speed clock ready flag"]
         #[inline(always)]
-        pub fn set_hsi16rdyf(&mut self, val: bool) {
+        pub fn set_hsi16rdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSI16DIVEN"]
@@ -1993,62 +1944,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Cr {
             Cr(0)
-        }
-    }
-    #[doc = "Clock recovery RC register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Crrcr(pub u32);
-    impl Crrcr {
-        #[doc = "48MHz HSI clock enable"]
-        #[inline(always)]
-        pub const fn hsi48on(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "48MHz HSI clock enable"]
-        #[inline(always)]
-        pub fn set_hsi48on(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "48MHz HSI clock ready flag"]
-        #[inline(always)]
-        pub const fn hsi48rdy(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "48MHz HSI clock ready flag"]
-        #[inline(always)]
-        pub fn set_hsi48rdy(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "48 MHz HSI clock divided by 6 output enable"]
-        #[inline(always)]
-        pub const fn hsi48div6en(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "48 MHz HSI clock divided by 6 output enable"]
-        #[inline(always)]
-        pub fn set_hsi48div6en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "48 MHz HSI clock calibration"]
-        #[inline(always)]
-        pub const fn hsi48cal(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0xff;
-            val as u8
-        }
-        #[doc = "48 MHz HSI clock calibration"]
-        #[inline(always)]
-        pub fn set_hsi48cal(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
-        }
-    }
-    impl Default for Crrcr {
-        #[inline(always)]
-        fn default() -> Crrcr {
-            Crrcr(0)
         }
     }
     #[doc = "Control and status register"]

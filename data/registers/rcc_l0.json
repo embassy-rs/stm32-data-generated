@@ -15,12 +15,6 @@
         "fieldset": "ICSCR"
       },
       {
-        "name": "CRRCR",
-        "description": "Clock recovery RC register",
-        "byte_offset": 8,
-        "fieldset": "CRRCR"
-      },
-      {
         "name": "CFGR",
         "description": "Clock configuration register",
         "byte_offset": 12,
@@ -792,12 +786,6 @@
         "bit_offset": 18,
         "bit_size": 2,
         "enum": "LPTIMSEL"
-      },
-      {
-        "name": "HSI48MSEL",
-        "description": "48 MHz HSI48 clock source selection",
-        "bit_offset": 26,
-        "bit_size": 1
       }
     ]
   },
@@ -871,7 +859,7 @@
         "name": "MCOSEL",
         "description": "Microcontroller clock output selection",
         "bit_offset": 24,
-        "bit_size": 3,
+        "bit_size": 4,
         "enum": "MCOSEL"
       },
       {
@@ -920,12 +908,6 @@
         "name": "MSIRDYC",
         "description": "MSI ready Interrupt clear",
         "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "HSI48RDYC",
-        "description": "HSI48 ready Interrupt clear",
-        "bit_offset": 6,
         "bit_size": 1
       },
       {
@@ -982,12 +964,6 @@
         "bit_size": 1
       },
       {
-        "name": "HSI48RDYIE",
-        "description": "HSI48 ready interrupt flag",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
         "name": "CSSLSE",
         "description": "LSE CSS interrupt flag",
         "bit_offset": 7,
@@ -1035,12 +1011,6 @@
         "bit_size": 1
       },
       {
-        "name": "HSI48RDYF",
-        "description": "HSI48 ready interrupt flag",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
         "name": "CSSLSEF",
         "description": "LSE Clock Security System Interrupt flag",
         "bit_offset": 7,
@@ -1070,7 +1040,7 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYF",
+        "name": "HSI16RDY",
         "description": "Internal high-speed clock ready flag",
         "bit_offset": 2,
         "bit_size": 1
@@ -1147,35 +1117,6 @@
         "description": "PLL clock ready flag",
         "bit_offset": 25,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/CRRCR": {
-    "description": "Clock recovery RC register",
-    "fields": [
-      {
-        "name": "HSI48ON",
-        "description": "48MHz HSI clock enable",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "HSI48RDY",
-        "description": "48MHz HSI clock ready flag",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "HSI48DIV6EN",
-        "description": "48 MHz HSI clock divided by 6 output enable",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "HSI48CAL",
-        "description": "48 MHz HSI clock calibration",
-        "bit_offset": 8,
-        "bit_size": 8
       }
     ]
   },

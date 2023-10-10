@@ -235,78 +235,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ccvalr",
-            extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os value register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ansrc1",
-                    description: Some(
-                        "compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "apsrc1",
-                    description: Some(
-                        "compensation value for the PMOS transistor \r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ansrc2",
-                    description: Some(
-                        "Compensation value for the NMOS transistor \r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "apsrc2",
-                    description: Some(
-                        "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdplcr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "incr_hdpl",
-                    description: Some(
-                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "IncrHdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Pmcr",
             extends: None,
             description: Some(
@@ -363,6 +291,28 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hdplsr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdpl",
+                    description: Some(
+                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "Hdpl",
+                    ),
                 },
             ],
         },
@@ -467,6 +417,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Hdplcr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "incr_hdpl",
+                    description: Some(
+                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "IncrHdpl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Dbglockr",
             extends: None,
             description: Some(
@@ -489,29 +461,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cnslckr",
+            name: "Eccnmir",
             extends: None,
             description: Some(
-                "SBS CPU lock register",
+                "SBS flift ECC NMI mask register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "locknsvtor",
+                    name: "eccnmi_mask_en",
                     description: Some(
-                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
+                        "NMI behavior setup when a double ECC error occurs on flitf data part",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "locknsmpu",
-                    description: Some(
-                        "MPU register lock \r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
-                    ),
-                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -582,6 +544,86 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Mesr",
+            extends: None,
+            description: Some(
+                "SBS memory erase status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mclr",
+                    description: Some(
+                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, ICACHE. It is set by hardware and reset by software",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ipmee",
+                    description: Some(
+                        "end-of-erase status for ICACHE\r This bit shows the status of the protection for ICACHE. It is set by hardware and reset by software.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccvalr",
+            extends: None,
+            description: Some(
+                "SBS compensation cell for I/Os value register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ansrc1",
+                    description: Some(
+                        "compensation value for the NMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "apsrc1",
+                    description: Some(
+                        "compensation value for the PMOS transistor \r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ansrc2",
+                    description: Some(
+                        "Compensation value for the NMOS transistor \r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "apsrc2",
+                    description: Some(
+                        "compensation value for the PMOS transistor\r This value is provided by the cell and must be interpreted by the processor to compensate the slew rate in the functional range.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Fpuimr",
             extends: None,
             description: Some(
@@ -596,6 +638,36 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cnslckr",
+            extends: None,
+            description: Some(
+                "SBS CPU lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "locknsvtor",
+                    description: Some(
+                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "locknsmpu",
+                    description: Some(
+                        "MPU register lock \r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -643,78 +715,6 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Mesr",
-            extends: None,
-            description: Some(
-                "SBS memory erase status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mclr",
-                    description: Some(
-                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, ICACHE. It is set by hardware and reset by software",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ipmee",
-                    description: Some(
-                        "end-of-erase status for ICACHE\r This bit shows the status of the protection for ICACHE. It is set by hardware and reset by software.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdplsr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdpl",
-                    description: Some(
-                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Hdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Eccnmir",
-            extends: None,
-            description: Some(
-                "SBS flift ECC NMI mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eccnmi_mask_en",
-                    description: Some(
-                        "NMI behavior setup when a double ECC error occurs on flitf data part",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
         Enum {
@@ -735,41 +735,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Code from SBS_CCCR",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "IncrHdpl",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X6A",
-                    description: Some(
-                        "recommended value to increment HDPL level by one",
-                    ),
-                    value: 106,
-                },
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "no increment",
-                    ),
-                    value: 180,
-                },
-            ],
-        },
-        Enum {
-            name: "DbgcfgLock",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "Writes to SBS_DBGCR allowed (default)",
-                    ),
-                    value: 180,
                 },
             ],
         },
@@ -798,6 +763,41 @@ pub(crate) static REGISTERS: IR = IR {
                         "HDPL2",
                     ),
                     value: 138,
+                },
+            ],
+        },
+        Enum {
+            name: "DbgcfgLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "Writes to SBS_DBGCR allowed (default)",
+                    ),
+                    value: 180,
+                },
+            ],
+        },
+        Enum {
+            name: "IncrHdpl",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X6A",
+                    description: Some(
+                        "recommended value to increment HDPL level by one",
+                    ),
+                    value: 106,
+                },
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "no increment",
+                    ),
+                    value: 180,
                 },
             ],
         },

@@ -334,62 +334,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Wucr2",
-            extends: None,
-            description: Some(
-                "wakeup control register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wupp",
-                    description: Some(
-                        "Wakeup pin WKUP1 polarity.\r This bit must be configured when WUPEN1 = 0.\r Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Wupp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wuscr",
-            extends: None,
-            description: Some(
-                "wakeup status clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cwuf",
-                    description: Some(
-                        "Clear wakeup flag 1\r Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r Writing 1 to this bit clears the WUF1 flag in WUSR.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Svmsr",
             extends: None,
             description: Some(
@@ -434,22 +378,54 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr3",
+            name: "Dbpr",
             extends: None,
             description: Some(
-                "control register 3",
+                "disable Backup domain register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fsten",
+                    name: "dbp",
                     description: Some(
-                        "Fast soft start",
+                        "Disable Backup domain write protection\r In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Svmcr",
+            extends: None,
+            description: Some(
+                "supply voltage monitoring control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvde",
+                    description: Some(
+                        "Programmable voltage detector enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdls",
+                    description: Some(
+                        "Programmable voltage detector level selection\r These bits select the voltage threshold detected by the programmable voltage detector:",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Pvdls",
+                    ),
                 },
             ],
         },
@@ -472,6 +448,107 @@ pub(crate) static REGISTERS: IR = IR {
                         Array::Regular(
                             RegularArray {
                                 len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ioretenr",
+            extends: None,
+            description: Some(
+                "port A Standby IO retention enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en",
+                    description: Some(
+                        "Port A Standby GPIO retention enable\r Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV.\r When set, each bit enables the Standby GPIO retention feature for PAy",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr3",
+            extends: None,
+            description: Some(
+                "control register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fsten",
+                    description: Some(
+                        "Fast soft start",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wusr",
+            extends: None,
+            description: Some(
+                "wakeup status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wuf",
+                    description: Some(
+                        "Wakeup and interrupt pending flag 1\r This bit is set when a wakeup event is detected on WKUP1 pin. This bit is cleared by writing 1 in the CWUF1 bit of WUSCR or by hardware when WUPEN1 = 0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ioretr",
+            extends: None,
+            description: Some(
+                "port A Standby IO retention status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ret",
+                    description: Some(
+                        "Port A Standby GPIO retention active\r Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
                                 stride: 1,
                             },
                         ),
@@ -539,34 +616,71 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Svmcr",
+            name: "Wucr2",
             extends: None,
             description: Some(
-                "supply voltage monitoring control register",
+                "wakeup control register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pvde",
+                    name: "wupp",
                     description: Some(
-                        "Programmable voltage detector enable",
+                        "Wakeup pin WKUP1 polarity.\r This bit must be configured when WUPEN1 = 0.\r Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
                     ),
-                    bit_offset: 4,
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cssf",
+                    description: Some(
+                        "Clear Stop and Standby flags\r Access can be secured by LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r Writing 1 to this bit clears the STOPF and SBF flags.",
+                    ),
+                    bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pvdls",
+                    name: "stopf",
                     description: Some(
-                        "Programmable voltage detector level selection\r These bits select the voltage threshold detected by the programmable voltage detector:",
+                        "Stop flag\r This bit is set by hardware when the device enters a Stop or Standby mode at the same time as the sysclk has been set by hardware to select HSI16. It’s cleared by software by writing 1 to the CSSF bit and by hardware when SBF is set.",
                     ),
-                    bit_offset: 5,
-                    bit_size: 3,
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pvdls",
+                    enumm: None,
+                },
+                Field {
+                    name: "sbf",
+                    description: Some(
+                        "Standby flag\r This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset.",
                     ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -636,69 +750,66 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sr",
+            name: "Radioscr",
             extends: None,
             description: Some(
-                "status register",
+                "2.4 GHz RADIO status and control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cssf",
+                    name: "mode",
                     description: Some(
-                        "Clear Stop and Standby flags\r Access can be secured by LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r Writing 1 to this bit clears the STOPF and SBF flags.",
+                        "2.4 GHz RADIO operating mode.\r 1x: 2.4 GHz RADIO active mode",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stopf",
-                    description: Some(
-                        "Stop flag\r This bit is set by hardware when the device enters a Stop or Standby mode at the same time as the sysclk has been set by hardware to select HSI16. It’s cleared by software by writing 1 to the CSSF bit and by hardware when SBF is set.",
+                    enumm: Some(
+                        "Mode",
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
-                    name: "sbf",
+                    name: "phymode",
                     description: Some(
-                        "Standby flag\r This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset.",
+                        "2.4 GHz RADIO PHY operating mode",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Ioretr",
-            extends: None,
-            description: Some(
-                "port A Standby IO retention status register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "ret",
+                    name: "encmode",
                     description: Some(
-                        "Port A Standby GPIO retention active\r Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV.",
+                        "2.4 GHz RADIO encryption function operating mode",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 3,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "rfvddhpa",
+                    description: Some(
+                        "2.4 GHz RADIO VDDHPA control word.\r Bits [3:0] see Table 81: PA output power table format for definition.\r Bit [4] rf_event.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "regpardyvddrfpa",
+                    description: Some(
+                        "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input.\r Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level.",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Regpardyvddrfpa",
+                    ),
                 },
             ],
         },
@@ -877,81 +988,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Radioscr",
+            name: "Wuscr",
             extends: None,
             description: Some(
-                "2.4 GHz RADIO status and control register",
+                "wakeup status clear register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "mode",
+                    name: "cwuf",
                     description: Some(
-                        "2.4 GHz RADIO operating mode.\r 1x: 2.4 GHz RADIO active mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Mode",
-                    ),
-                },
-                Field {
-                    name: "phymode",
-                    description: Some(
-                        "2.4 GHz RADIO PHY operating mode",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "encmode",
-                    description: Some(
-                        "2.4 GHz RADIO encryption function operating mode",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfvddhpa",
-                    description: Some(
-                        "2.4 GHz RADIO VDDHPA control word.\r Bits [3:0] see Table 81: PA output power table format for definition.\r Bit [4] rf_event.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "regpardyvddrfpa",
-                    description: Some(
-                        "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input.\r Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level.",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Regpardyvddrfpa",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wusr",
-            extends: None,
-            description: Some(
-                "wakeup status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wuf",
-                    description: Some(
-                        "Wakeup and interrupt pending flag 1\r This bit is set when a wakeup event is detected on WKUP1 pin. This bit is cleared by writing 1 in the CWUF1 bit of WUSCR or by hardware when WUPEN1 = 0.",
+                        "Clear wakeup flag 1\r Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r Writing 1 to this bit clears the WUF1 flag in WUSR.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -968,49 +1015,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dbpr",
+            name: "Vosr",
             extends: None,
             description: Some(
-                "disable Backup domain register",
+                "voltage scaling register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dbp",
+                    name: "vosrdy",
                     description: Some(
-                        "Disable Backup domain write protection\r In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers.",
+                        "Ready bit for V<sub>CORE</sub> voltage scaling output selection\r Set and cleared by hardware. When decreasing the voltage scaling range, VOSRDY must be one before increasing the SYSCLK frequency.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Ioretenr",
-            extends: None,
-            description: Some(
-                "port A Standby IO retention enable register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "en",
+                    name: "vos",
                     description: Some(
-                        "Port A Standby GPIO retention enable\r Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV.\r When set, each bit enables the Standby GPIO retention feature for PAy",
+                        "Voltage scaling range selection\r Set a and cleared by software.\r Cleared by hardware when entering Stop 1 mode.\r Access can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 16,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
+                    array: None,
+                    enumm: Some(
+                        "Vos",
                     ),
-                    enumm: None,
                 },
             ],
         },
@@ -1048,208 +1080,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Vosr",
-            extends: None,
-            description: Some(
-                "voltage scaling register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vosrdy",
-                    description: Some(
-                        "Ready bit for V<sub>CORE</sub> voltage scaling output selection\r Set and cleared by hardware. When decreasing the voltage scaling range, VOSRDY must be one before increasing the SYSCLK frequency.",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vos",
-                    description: Some(
-                        "Voltage scaling range selection\r Set a and cleared by software.\r Cleared by hardware when entering Stop 1 mode.\r Access can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
-                },
-            ],
-        },
     ],
     enums: &[
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSECURE",
-                    description: Some(
-                        "SVMCR and CR3 can be read and written with secure or non-secure access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "SVMCR and CR3 can be read and written only with secure access.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Radiorsb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTRETAINED",
-                    description: Some(
-                        "2.4 GHz RADIO SRAMs and sleep timer content not retained in Standby mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "2.4 GHz RADIO SRAMs and sleep timer content retained in Standby mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pvdo",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ABOVEOREQUAL",
-                    description: Some(
-                        "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BELOW",
-                    description: Some(
-                        "VDD is below the PVD threshold selected by PVDLS[2:0].",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged access only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Icrampds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "ICACHE SRAM content retained in Stop modes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOTRETAINED",
-                    description: Some(
-                        "ICACHE SRAM content lost in Stop modes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rrsb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "SRAM2 content not retained in Standby mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "SRAM2 content retained in Standby mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Srampds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "POWEREDON",
-                    description: Some(
-                        "SRAM1 content retained in Stop modes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "POWEREDOFF",
-                    description: Some(
-                        "SRAM1 content lost in Stop modes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vos",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RANGE2",
-                    description: Some(
-                        "Range 2 (lowest power)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RANGE1",
-                    description: Some(
-                        "Range 1 (highest frequency).",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Wupp",
             description: None,
@@ -1266,48 +1098,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LOW",
                     description: Some(
                         "Detection on low level (falling edge)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Regpardyvddrfpa",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREADY",
-                    description: Some(
-                        "Not ready, V<sub>DDHPA</sub> voltage level < REGPAVOS selected supply level",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "Ready, V<sub>DDHPA</sub> voltage level ≥ REGPAVOS selected supply level",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mode",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DEEPSLEEP",
-                    description: Some(
-                        "2.4 GHz RADIO deep sleep mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SLEEP",
-                    description: Some(
-                        "2.4 GHz RADIO sleep mode",
                     ),
                     value: 1,
                 },
@@ -1335,6 +1125,90 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Srampds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "POWEREDON",
+                    description: Some(
+                        "SRAM1 content retained in Stop modes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "POWEREDOFF",
+                    description: Some(
+                        "SRAM1 content lost in Stop modes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sec",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSECURE",
+                    description: Some(
+                        "SVMCR and CR3 can be read and written with secure or non-secure access.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SECURE",
+                    description: Some(
+                        "SVMCR and CR3 can be read and written only with secure access.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Priv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNPRIVILEGED",
+                    description: Some(
+                        "Read and write to non-secure functions can be done by privileged or unprivileged access.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PRIVILEGED",
+                    description: Some(
+                        "Read and write to non-secure functions can be done by privileged access only.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Vos",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RANGE2",
+                    description: Some(
+                        "Range 2 (lowest power)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RANGE1",
+                    description: Some(
+                        "Range 1 (highest frequency).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Actvos",
             description: None,
             bit_size: 1,
@@ -1350,6 +1224,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "RANGE1",
                     description: Some(
                         "Range 1 (highest frequency)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rrsb",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "SRAM2 content not retained in Standby mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "SRAM2 content retained in Standby mode",
                     ),
                     value: 1,
                 },
@@ -1419,6 +1314,48 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Pvdo",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ABOVEOREQUAL",
+                    description: Some(
+                        "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BELOW",
+                    description: Some(
+                        "VDD is below the PVD threshold selected by PVDLS[2:0].",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Radiorsb",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTRETAINED",
+                    description: Some(
+                        "2.4 GHz RADIO SRAMs and sleep timer content not retained in Standby mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RETAINED",
+                    description: Some(
+                        "2.4 GHz RADIO SRAMs and sleep timer content retained in Standby mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Lpms",
             description: None,
             bit_size: 3,
@@ -1434,6 +1371,69 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "STOP1",
                     description: Some(
                         "Stop 1 mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Icrampds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RETAINED",
+                    description: Some(
+                        "ICACHE SRAM content retained in Stop modes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NOTRETAINED",
+                    description: Some(
+                        "ICACHE SRAM content lost in Stop modes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DEEPSLEEP",
+                    description: Some(
+                        "2.4 GHz RADIO deep sleep mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SLEEP",
+                    description: Some(
+                        "2.4 GHz RADIO sleep mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Regpardyvddrfpa",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREADY",
+                    description: Some(
+                        "Not ready, V<sub>DDHPA</sub> voltage level < REGPAVOS selected supply level",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "READY",
+                    description: Some(
+                        "Ready, V<sub>DDHPA</sub> voltage level ≥ REGPAVOS selected supply level",
                     ),
                     value: 1,
                 },

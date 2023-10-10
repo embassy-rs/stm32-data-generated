@@ -140,122 +140,20 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Istr",
+            name: "Btable",
             extends: None,
             description: Some(
-                "interrupt status register",
+                "Buffer table address",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ep_id",
+                    name: "btable",
                     description: Some(
-                        "EP_ID",
+                        "BTABLE",
                     ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dir",
-                    description: Some(
-                        "DIR",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dir",
-                    ),
-                },
-                Field {
-                    name: "l1req",
-                    description: Some(
-                        "LPM command to enter the L1 state is successfully received and acknowledged",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "esof",
-                    description: Some(
-                        "an SOF packet is expected but not received",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sof",
-                    description: Some(
-                        "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "reset",
-                    description: Some(
-                        "peripheral detects an active USB RESET signal at its inputs",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "susp",
-                    description: Some(
-                        "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wkup",
-                    description: Some(
-                        "activity is detected that wakes up the USB peripheral",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "err",
-                    description: Some(
-                        "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pmaovr",
-                    description: Some(
-                        "microcontroller has not been able to respond in time to an USB memory request",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr",
-                    description: Some(
-                        "endpoint has successfully completed a transaction",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
+                    bit_offset: 3,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
@@ -292,47 +190,103 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fnr",
+            name: "Epr",
             extends: None,
             description: Some(
-                "frame number register",
+                "endpoint register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fn_",
+                    name: "ea",
                     description: Some(
-                        "FN",
+                        "EA",
                     ),
                     bit_offset: 0,
-                    bit_size: 11,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "lsof",
+                    name: "stat_tx",
                     description: Some(
-                        "LSOF",
+                        "STAT_TX",
                     ),
-                    bit_offset: 11,
+                    bit_offset: 4,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
                 },
                 Field {
-                    name: "lck",
+                    name: "dtog_tx",
                     description: Some(
-                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
+                        "DTOG_TX",
                     ),
-                    bit_offset: 13,
+                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rxdm",
+                    name: "ctr_tx",
                     description: Some(
-                        "received data minus upstream port data line",
+                        "CTR_TX",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_kind",
+                    description: Some(
+                        "EP_KIND",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_type",
+                    description: Some(
+                        "EPTYPE",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "EpType",
+                    ),
+                },
+                Field {
+                    name: "setup",
+                    description: Some(
+                        "SETUP",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_rx",
+                    description: Some(
+                        "STAT_RX",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_rx",
+                    description: Some(
+                        "DTOG_RX",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
@@ -340,32 +294,12 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rxdp",
+                    name: "ctr_rx",
                     description: Some(
-                        "received data plus upstream port data line",
+                        "CTR_RX",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Btable",
-            extends: None,
-            description: Some(
-                "Buffer table address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "btable",
-                    description: Some(
-                        "BTABLE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
@@ -532,103 +466,47 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Epr",
+            name: "Fnr",
             extends: None,
             description: Some(
-                "endpoint register",
+                "frame number register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ea",
+                    name: "fn_",
                     description: Some(
-                        "EA",
+                        "FN",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
+                    bit_size: 11,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "stat_tx",
+                    name: "lsof",
                     description: Some(
-                        "STAT_TX",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_tx",
-                    description: Some(
-                        "DTOG_TX",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_tx",
-                    description: Some(
-                        "CTR_TX",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_kind",
-                    description: Some(
-                        "EP_KIND",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_type",
-                    description: Some(
-                        "EPTYPE",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "EpType",
-                    ),
-                },
-                Field {
-                    name: "setup",
-                    description: Some(
-                        "SETUP",
+                        "LSOF",
                     ),
                     bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lck",
+                    description: Some(
+                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
+                    ),
+                    bit_offset: 13,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "stat_rx",
+                    name: "rxdm",
                     description: Some(
-                        "STAT_RX",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_rx",
-                    description: Some(
-                        "DTOG_RX",
+                        "received data minus upstream port data line",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
@@ -636,9 +514,131 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ctr_rx",
+                    name: "rxdp",
                     description: Some(
-                        "CTR_RX",
+                        "received data plus upstream port data line",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Istr",
+            extends: None,
+            description: Some(
+                "interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ep_id",
+                    description: Some(
+                        "EP_ID",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dir",
+                    description: Some(
+                        "DIR",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dir",
+                    ),
+                },
+                Field {
+                    name: "l1req",
+                    description: Some(
+                        "LPM command to enter the L1 state is successfully received and acknowledged",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "esof",
+                    description: Some(
+                        "an SOF packet is expected but not received",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sof",
+                    description: Some(
+                        "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reset",
+                    description: Some(
+                        "peripheral detects an active USB RESET signal at its inputs",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "susp",
+                    description: Some(
+                        "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wkup",
+                    description: Some(
+                        "activity is detected that wakes up the USB peripheral",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "err",
+                    description: Some(
+                        "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pmaovr",
+                    description: Some(
+                        "microcontroller has not been able to respond in time to an USB memory request",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr",
+                    description: Some(
+                        "endpoint has successfully completed a transaction",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
@@ -702,62 +702,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "EpType",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BULK",
-                    description: Some(
-                        "Bulk endpoint",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTROL",
-                    description: Some(
-                        "Control endpoint",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ISO",
-                    description: Some(
-                        "Iso endpoint",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "INTERRUPT",
-                    description: Some(
-                        "Interrupt endpoint",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Lpmack",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NYET",
-                    description: Some(
-                        "the valid LPM Token will be NYET",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACK",
-                    description: Some(
-                        "the valid LPM Token will be ACK",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Dir",
             description: None,
             bit_size: 1,
@@ -808,6 +752,62 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "VALID",
                     description: Some(
                         "this endpoint is enabled, requests are ACKed",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpmack",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NYET",
+                    description: Some(
+                        "the valid LPM Token will be NYET",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACK",
+                    description: Some(
+                        "the valid LPM Token will be ACK",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "EpType",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BULK",
+                    description: Some(
+                        "Bulk endpoint",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONTROL",
+                    description: Some(
+                        "Control endpoint",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "ISO",
+                    description: Some(
+                        "Iso endpoint",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "INTERRUPT",
+                    description: Some(
+                        "Interrupt endpoint",
                     ),
                     value: 3,
                 },

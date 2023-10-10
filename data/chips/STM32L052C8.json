@@ -1185,7 +1185,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "l0",
+                        "version": "l0_v2",
                         "block": "RCC"
                     },
                     "pins": [

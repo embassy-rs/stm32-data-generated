@@ -230,6 +230,33 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Lines",
+            extends: None,
+            description: Some(
+                "EXTI lines register, 1 bit per line",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "line",
+                    description: Some(
+                        "EXTI line",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Exti",
             extends: None,
             description: Some(
@@ -282,33 +309,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "Priv",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lines",
-            extends: None,
-            description: Some(
-                "EXTI lines register, 1 bit per line",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "line",
-                    description: Some(
-                        "EXTI line",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
                 },
             ],
         },

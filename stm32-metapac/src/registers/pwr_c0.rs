@@ -204,60 +204,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pcr",
-            extends: None,
-            description: Some(
-                "Power Port pull control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "p",
-                    description: Some(
-                        "Port pull bit y (y=0..15)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr4",
-            extends: None,
-            description: Some(
-                "PWR control register 4",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wp",
-                    description: Some(
-                        "Wakeup pin WKUP1 polarity",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Scr",
             extends: None,
             description: Some(
@@ -342,6 +288,26 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Sr2",
+            extends: None,
+            description: Some(
+                "PWR status register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "flash_rdy",
+                    description: Some(
+                        "Flash ready flag\r This bit is set by hardware to indicate when the Flash memory is ready to be accessed after wakeup from power-down. To place the Flash memory in power-down, set either FPD_SLP or FPD_STP bit.\r Note: If the system boots from SRAM, the user application must wait till FLASH_RDY bit is set, prior to jumping to Flash memory.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Sr1",
             extends: None,
             description: Some(
@@ -389,21 +355,55 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sr2",
+            name: "Cr4",
             extends: None,
             description: Some(
-                "PWR status register 2",
+                "PWR control register 4",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "flash_rdy",
+                    name: "wp",
                     description: Some(
-                        "Flash ready flag\r This bit is set by hardware to indicate when the Flash memory is ready to be accessed after wakeup from power-down. To place the Flash memory in power-down, set either FPD_SLP or FPD_STP bit.\r Note: If the system boots from SRAM, the user application must wait till FLASH_RDY bit is set, prior to jumping to Flash memory.",
+                        "Wakeup pin WKUP1 polarity",
                     ),
-                    bit_offset: 7,
+                    bit_offset: 0,
                     bit_size: 1,
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pcr",
+            extends: None,
+            description: Some(
+                "Power Port pull control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p",
+                    description: Some(
+                        "Port pull bit y (y=0..15)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],

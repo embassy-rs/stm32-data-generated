@@ -54,6 +54,30 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Idcode",
+            extends: None,
+            description: Some("MCU Device ID Code Register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dev_id",
+                    description: Some("Device Identifier"),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rev_id",
+                    description: Some("Revision Identifier"),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Debug MCU Configuration Register"),
@@ -208,30 +232,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("TIM17"),
                     bit_offset: 18,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Idcode",
-            extends: None,
-            description: Some("MCU Device ID Code Register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dev_id",
-                    description: Some("Device Identifier"),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rev_id",
-                    description: Some("Revision Identifier"),
-                    bit_offset: 16,
-                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },

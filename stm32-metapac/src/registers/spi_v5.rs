@@ -250,20 +250,418 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Rxcrc",
+            name: "Cfg2",
             extends: None,
             description: Some(
-                "Receiver CRC Register",
+                "configuration register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rxcrc",
+                    name: "mssi",
                     description: Some(
-                        "CRC register for receiver",
+                        "Master SS Idleness",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "midi",
+                    description: Some(
+                        "Master Inter-Data Idleness",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rdiom",
+                    description: Some(
+                        "RDY signal input/output management\n Note: When DSIZE at the CFG1 register is configured shorter than 8-bit, the RDIOM bit has to be kept at zero.",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rdiom",
+                    ),
+                },
+                Field {
+                    name: "rdiop",
+                    description: Some(
+                        "RDY signal input/output polarity",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rdiop",
+                    ),
+                },
+                Field {
+                    name: "ioswp",
+                    description: Some(
+                        "Swap functionality of MISO and MOSI pins",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "comm",
+                    description: Some(
+                        "SPI Communication Mode",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Comm",
+                    ),
+                },
+                Field {
+                    name: "sp",
+                    description: Some(
+                        "Serial Protocol",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Sp",
+                    ),
+                },
+                Field {
+                    name: "master",
+                    description: Some(
+                        "SPI Master",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Master",
+                    ),
+                },
+                Field {
+                    name: "lsbfirst",
+                    description: Some(
+                        "Data frame format",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lsbfirst",
+                    ),
+                },
+                Field {
+                    name: "cpha",
+                    description: Some(
+                        "Clock phase",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cpha",
+                    ),
+                },
+                Field {
+                    name: "cpol",
+                    description: Some(
+                        "Clock polarity",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cpol",
+                    ),
+                },
+                Field {
+                    name: "ssm",
+                    description: Some(
+                        "Software management of SS signal input",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ssiop",
+                    description: Some(
+                        "SS input/output polarity",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ssiop",
+                    ),
+                },
+                Field {
+                    name: "ssoe",
+                    description: Some(
+                        "SS output enable",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ssom",
+                    description: Some(
+                        "SS output management in master mode",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ssom",
+                    ),
+                },
+                Field {
+                    name: "afcntr",
+                    description: Some(
+                        "Alternate function GPIOs control",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Afcntr",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Crcpoly",
+            extends: None,
+            description: Some(
+                "Polynomial Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "crcpoly",
+                    description: Some(
+                        "CRC polynomial register",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txdr",
+            extends: None,
+            description: Some(
+                "Transmit Data Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txdr",
+                    description: Some(
+                        "Transmit data register",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rxdr",
+            extends: None,
+            description: Some(
+                "Receive Data Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxdr",
+                    description: Some(
+                        "Receive data register",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Txcrc",
+            extends: None,
+            description: Some(
+                "Transmitter CRC Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txcrc",
+                    description: Some(
+                        "CRC register for transmitter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfg1",
+            extends: None,
+            description: Some(
+                "configuration register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dsize",
+                    description: Some(
+                        "Number of bits in at single SPI data frame",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fthlv",
+                    description: Some(
+                        "threshold level",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Fthlv",
+                    ),
+                },
+                Field {
+                    name: "udrcfg",
+                    description: Some(
+                        "Behavior of slave transmitter at underrun condition",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Udrcfg",
+                    ),
+                },
+                Field {
+                    name: "rxdmaen",
+                    description: Some(
+                        "Rx DMA stream enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txdmaen",
+                    description: Some(
+                        "Tx DMA stream enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crcsize",
+                    description: Some(
+                        "Length of CRC frame to be transacted and compared",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crcen",
+                    description: Some(
+                        "Hardware CRC computation enable",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbr",
+                    description: Some(
+                        "Master baud rate",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Mbr",
+                    ),
+                },
+                Field {
+                    name: "bpass",
+                    description: Some(
+                        "bypass of the prescaler at master baud rate clock generator",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Autocr",
+            extends: None,
+            description: None,
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "trigsel",
+                    description: Some(
+                        "trigger selection (refer ).\n ...\n Note: these bits can be written only when SPE = 0.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trigpol",
+                    description: Some(
+                        "trigger polarity\n Note: This bit can be written only when SPE = 0.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Trigpol",
+                    ),
+                },
+                Field {
+                    name: "trigen",
+                    description: Some(
+                        "trigger of CSTART control enable\n Note: if user can't prevent trigger event during write, the TRIGEN has to be changed when SPI is disabled",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -353,164 +751,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "SUSPend flag clear",
                     ),
                     bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Autocr",
-            extends: None,
-            description: None,
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "trigsel",
-                    description: Some(
-                        "trigger selection (refer ).\n ...\n Note: these bits can be written only when SPE = 0.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trigpol",
-                    description: Some(
-                        "trigger polarity\n Note: This bit can be written only when SPE = 0.",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Trigpol",
-                    ),
-                },
-                Field {
-                    name: "trigen",
-                    description: Some(
-                        "trigger of CSTART control enable\n Note: if user can't prevent trigger event during write, the TRIGEN has to be changed when SPI is disabled",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spe",
-                    description: Some(
-                        "Serial Peripheral Enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "masrx",
-                    description: Some(
-                        "Master automatic SUSP in Receive mode",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cstart",
-                    description: Some(
-                        "Master transfer start",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csusp",
-                    description: Some(
-                        "Master SUSPend request",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hddir",
-                    description: Some(
-                        "Rx/Tx direction at Half-duplex mode",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hddir",
-                    ),
-                },
-                Field {
-                    name: "ssi",
-                    description: Some(
-                        "Internal SS signal input level",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crc33_17",
-                    description: Some(
-                        "32-bit CRC polynomial configuration",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Crc",
-                    ),
-                },
-                Field {
-                    name: "rcrcini",
-                    description: Some(
-                        "CRC calculation initialization pattern control for receiver",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rcrcini",
-                    ),
-                },
-                Field {
-                    name: "tcrcini",
-                    description: Some(
-                        "CRC calculation initialization pattern control for transmitter",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Tcrcini",
-                    ),
-                },
-                Field {
-                    name: "iolock",
-                    description: Some(
-                        "Locking the AF configuration of associated IOs",
-                    ),
-                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -628,146 +868,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Crcpoly",
+            name: "Rxcrc",
             extends: None,
             description: Some(
-                "Polynomial Register",
+                "Receiver CRC Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "crcpoly",
+                    name: "rxcrc",
                     description: Some(
-                        "CRC polynomial register",
+                        "CRC register for receiver",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txdr",
-            extends: None,
-            description: Some(
-                "Transmit Data Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txdr",
-                    description: Some(
-                        "Transmit data register",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfg1",
-            extends: None,
-            description: Some(
-                "configuration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dsize",
-                    description: Some(
-                        "Number of bits in at single SPI data frame",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fthlv",
-                    description: Some(
-                        "threshold level",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Fthlv",
-                    ),
-                },
-                Field {
-                    name: "udrcfg",
-                    description: Some(
-                        "Behavior of slave transmitter at underrun condition",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Udrcfg",
-                    ),
-                },
-                Field {
-                    name: "rxdmaen",
-                    description: Some(
-                        "Rx DMA stream enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txdmaen",
-                    description: Some(
-                        "Tx DMA stream enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crcsize",
-                    description: Some(
-                        "Length of CRC frame to be transacted and compared",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crcen",
-                    description: Some(
-                        "Hardware CRC computation enable",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbr",
-                    description: Some(
-                        "Master baud rate",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Mbr",
-                    ),
-                },
-                Field {
-                    name: "bpass",
-                    description: Some(
-                        "bypass of the prescaler at master baud rate clock generator",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -785,26 +899,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "udrdr",
                     description: Some(
                         "Data at slave underrun condition",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Txcrc",
-            extends: None,
-            description: Some(
-                "Transmitter CRC Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txcrc",
-                    description: Some(
-                        "CRC register for transmitter",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -998,370 +1092,143 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Rxdr",
+            name: "Cr1",
             extends: None,
             description: Some(
-                "Receive Data Register",
+                "control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rxdr",
+                    name: "spe",
                     description: Some(
-                        "Receive data register",
+                        "Serial Peripheral Enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Cfg2",
-            extends: None,
-            description: Some(
-                "configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "mssi",
+                    name: "masrx",
                     description: Some(
-                        "Master SS Idleness",
+                        "Master automatic SUSP in Receive mode",
                     ),
-                    bit_offset: 0,
-                    bit_size: 4,
+                    bit_offset: 8,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "midi",
+                    name: "cstart",
                     description: Some(
-                        "Master Inter-Data Idleness",
+                        "Master transfer start",
                     ),
-                    bit_offset: 4,
-                    bit_size: 4,
+                    bit_offset: 9,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rdiom",
+                    name: "csusp",
                     description: Some(
-                        "RDY signal input/output management\n Note: When DSIZE at the CFG1 register is configured shorter than 8-bit, the RDIOM bit has to be kept at zero.",
+                        "Master SUSPend request",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hddir",
+                    description: Some(
+                        "Rx/Tx direction at Half-duplex mode",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Hddir",
+                    ),
+                },
+                Field {
+                    name: "ssi",
+                    description: Some(
+                        "Internal SS signal input level",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crc33_17",
+                    description: Some(
+                        "32-bit CRC polynomial configuration",
                     ),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Rdiom",
+                        "Crc",
                     ),
                 },
                 Field {
-                    name: "rdiop",
+                    name: "rcrcini",
                     description: Some(
-                        "RDY signal input/output polarity",
+                        "CRC calculation initialization pattern control for receiver",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Rdiop",
+                        "Rcrcini",
                     ),
                 },
                 Field {
-                    name: "ioswp",
+                    name: "tcrcini",
                     description: Some(
-                        "Swap functionality of MISO and MOSI pins",
+                        "CRC calculation initialization pattern control for transmitter",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "comm",
-                    description: Some(
-                        "SPI Communication Mode",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 2,
-                    array: None,
                     enumm: Some(
-                        "Comm",
+                        "Tcrcini",
                     ),
                 },
                 Field {
-                    name: "sp",
+                    name: "iolock",
                     description: Some(
-                        "Serial Protocol",
+                        "Locking the AF configuration of associated IOs",
                     ),
-                    bit_offset: 19,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Sp",
-                    ),
-                },
-                Field {
-                    name: "master",
-                    description: Some(
-                        "SPI Master",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Master",
-                    ),
-                },
-                Field {
-                    name: "lsbfirst",
-                    description: Some(
-                        "Data frame format",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lsbfirst",
-                    ),
-                },
-                Field {
-                    name: "cpha",
-                    description: Some(
-                        "Clock phase",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cpha",
-                    ),
-                },
-                Field {
-                    name: "cpol",
-                    description: Some(
-                        "Clock polarity",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cpol",
-                    ),
-                },
-                Field {
-                    name: "ssm",
-                    description: Some(
-                        "Software management of SS signal input",
-                    ),
-                    bit_offset: 26,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: None,
-                },
-                Field {
-                    name: "ssiop",
-                    description: Some(
-                        "SS input/output polarity",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ssiop",
-                    ),
-                },
-                Field {
-                    name: "ssoe",
-                    description: Some(
-                        "SS output enable",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ssom",
-                    description: Some(
-                        "SS output management in master mode",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ssom",
-                    ),
-                },
-                Field {
-                    name: "afcntr",
-                    description: Some(
-                        "Alternate function GPIOs control",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Afcntr",
-                    ),
                 },
             ],
         },
     ],
     enums: &[
         Enum {
-            name: "Rxplvl",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "ZEROFRAMES",
-                    description: Some(
-                        "Zero frames beyond packing ratio available",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ONEFRAME",
-                    description: Some(
-                        "One frame beyond packing ratio available",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TWOFRAMES",
-                    description: Some(
-                        "Two frame beyond packing ratio available",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "THREEFRAMES",
-                    description: Some(
-                        "Three frame beyond packing ratio available",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpol",
+            name: "Tcrcini",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLELOW",
+                    name: "ALLZEROS",
                     description: Some(
-                        "CK to 0 when idle",
+                        "All zeros TX CRC initialization pattern",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "IDLEHIGH",
+                    name: "ALLONES",
                     description: Some(
-                        "CK to 1 when idle",
+                        "All ones TX CRC initialization pattern",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Trigpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some(
-                        "trigger is active on raising edge",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some(
-                        "trigger is active on falling edge",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ssiop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVELOW",
-                    description: Some(
-                        "Low level is active for SS signal",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEHIGH",
-                    description: Some(
-                        "High level is active for SS signal",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sp",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "MOTOROLA",
-                    description: Some(
-                        "Motorola SPI protocol",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TI",
-                    description: Some(
-                        "TI SPI protocol",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Comm",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "FULLDUPLEX",
-                    description: Some(
-                        "Full duplex",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TRANSMITTER",
-                    description: Some(
-                        "Simplex transmitter only",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RECEIVER",
-                    description: Some(
-                        "Simplex receiver only",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HALFDUPLEX",
-                    description: Some(
-                        "Half duplex",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -1485,44 +1352,93 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Crc",
+            name: "Cpol",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "IDLELOW",
                     description: Some(
-                        "Full size (33/17 bit) CRC polynomial is not used",
+                        "CK to 0 when idle",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "IDLEHIGH",
                     description: Some(
-                        "Full size (33/17 bit) CRC polynomial is used",
+                        "CK to 1 when idle",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Tcrcini",
+            name: "Comm",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ALLZEROS",
+                    name: "FULLDUPLEX",
                     description: Some(
-                        "All zeros TX CRC initialization pattern",
+                        "Full duplex",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ALLONES",
+                    name: "TRANSMITTER",
                     description: Some(
-                        "All ones TX CRC initialization pattern",
+                        "Simplex transmitter only",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RECEIVER",
+                    description: Some(
+                        "Simplex receiver only",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HALFDUPLEX",
+                    description: Some(
+                        "Half duplex",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Rxplvl",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "ZEROFRAMES",
+                    description: Some(
+                        "Zero frames beyond packing ratio available",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ONEFRAME",
+                    description: Some(
+                        "One frame beyond packing ratio available",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "TWOFRAMES",
+                    description: Some(
+                        "Two frame beyond packing ratio available",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "THREEFRAMES",
+                    description: Some(
+                        "Three frame beyond packing ratio available",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -1548,21 +1464,84 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Master",
+            name: "Rdiop",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SLAVE",
+                    name: "READYHIGH",
                     description: Some(
-                        "Slave configuration",
+                        "high level of the signal means the slave is ready for communication",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MASTER",
+                    name: "READYLOW",
                     description: Some(
-                        "Master configuration",
+                        "low level of the signal means the slave is ready for communication",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rxwne",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LESSTHAN32",
+                    description: Some(
+                        "Less than 32-bit data frame received",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ATLEAST32",
+                    description: Some(
+                        "At least 32-bit data frame received",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rdiom",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PERMANENTLYACTIVE",
+                    description: Some(
+                        "RDY signal is defined internally fixed as permanently active (RDIOP setting has no effect)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FROMINPUT",
+                    description: Some(
+                        "RDY signal is overtaken from alternate function input (at master case) or output (at slave case) of the dedicated pin (RDIOP setting takes effect)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Afcntr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCONTROLLED",
+                    description: Some(
+                        "Peripheral takes no control of GPIOs while disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONTROLLED",
+                    description: Some(
+                        "Peripheral controls GPIOs while disabled",
                     ),
                     value: 1,
                 },
@@ -1632,42 +1611,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Cpha",
+            name: "Master",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIRSTEDGE",
+                    name: "SLAVE",
                     description: Some(
-                        "The first clock transition is the first data capture edge",
+                        "Slave configuration",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECONDEDGE",
+                    name: "MASTER",
                     description: Some(
-                        "The second clock transition is the first data capture edge",
+                        "Master configuration",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Rdiom",
+            name: "Ssiop",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PERMANENTLYACTIVE",
+                    name: "ACTIVELOW",
                     description: Some(
-                        "RDY signal is defined internally fixed as permanently active (RDIOP setting has no effect)",
+                        "Low level is active for SS signal",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FROMINPUT",
+                    name: "ACTIVEHIGH",
                     description: Some(
-                        "RDY signal is overtaken from alternate function input (at master case) or output (at slave case) of the dedicated pin (RDIOP setting takes effect)",
+                        "High level is active for SS signal",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ssom",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ASSERTED",
+                    description: Some(
+                        "SS is asserted until data transfer complete",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NOTASSERTED",
+                    description: Some(
+                        "Data frames interleaved with SS not asserted during MIDI",
                     ),
                     value: 1,
                 },
@@ -1702,21 +1702,84 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ssom",
+            name: "Cpha",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ASSERTED",
+                    name: "FIRSTEDGE",
                     description: Some(
-                        "SS is asserted until data transfer complete",
+                        "The first clock transition is the first data capture edge",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTASSERTED",
+                    name: "SECONDEDGE",
                     description: Some(
-                        "Data frames interleaved with SS not asserted during MIDI",
+                        "The second clock transition is the first data capture edge",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Trigpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some(
+                        "trigger is active on raising edge",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some(
+                        "trigger is active on falling edge",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sp",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "MOTOROLA",
+                    description: Some(
+                        "Motorola SPI protocol",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TI",
+                    description: Some(
+                        "TI SPI protocol",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Crc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Full size (33/17 bit) CRC polynomial is not used",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Full size (33/17 bit) CRC polynomial is used",
                     ),
                     value: 1,
                 },
@@ -1744,27 +1807,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rxwne",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LESSTHAN32",
-                    description: Some(
-                        "Less than 32-bit data frame received",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ATLEAST32",
-                    description: Some(
-                        "At least 32-bit data frame received",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lsbfirst",
             description: None,
             bit_size: 1,
@@ -1780,48 +1822,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LSBFIRST",
                     description: Some(
                         "Data is transmitted/received with the LSB first",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Afcntr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCONTROLLED",
-                    description: Some(
-                        "Peripheral takes no control of GPIOs while disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTROLLED",
-                    description: Some(
-                        "Peripheral controls GPIOs while disabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rdiop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "READYHIGH",
-                    description: Some(
-                        "high level of the signal means the slave is ready for communication",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READYLOW",
-                    description: Some(
-                        "low level of the signal means the slave is ready for communication",
                     ),
                     value: 1,
                 },

@@ -201,6 +201,36 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Cccr",
+            extends: None,
+            description: Some(
+                "compensation cell code register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ncc1",
+                    description: Some(
+                        "NMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcc1",
+                    description: Some(
+                        "PMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cslockr",
             extends: None,
             description: Some(
@@ -234,6 +264,86 @@ pub(crate) static REGISTERS: IR = IR {
                         "SAU registers lock\r This bit is set by software and cleared only by a system reset. When set, it disables write access to SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers.",
                     ),
                     bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr2",
+            extends: None,
+            description: Some(
+                "configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cll",
+                    description: Some(
+                        "Cortex-M33 LOCKUP (hardfault) output enable\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the connection of Cortex-M33 LOCKUP (hardfault) output to TIM1/16/17 break input.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spl",
+                    description: Some(
+                        "SRAM2 parity lock bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM2 parity error signal connection to TIM1/16/17 break inputs.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdl",
+                    description: Some(
+                        "PVD lock enable bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection to TIM1/16/17 break input, as well as the PVDE and PVDLS[2:0] in the PWR register.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccl",
+                    description: Some(
+                        "ECC lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cnslckr",
+            extends: None,
+            description: Some(
+                "CPU non-secure lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "locknsvtor",
+                    description: Some(
+                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "locknsmpu",
+                    description: Some(
+                        "Non-secure MPU registers lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
+                    ),
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -281,30 +391,110 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cccr",
+            name: "Cccsr",
             extends: None,
             description: Some(
-                "compensation cell code register",
+                "compensation cell control/status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ncc1",
+                    name: "en1",
                     description: Some(
-                        "NMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                        "VDD I/Os compensation cell enable\r This bit enables the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pcc1",
+                    name: "cs1",
                     description: Some(
-                        "PMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                        "VDD I/Os code selection\r This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
                     ),
-                    bit_offset: 4,
-                    bit_size: 4,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rdy1",
+                    description: Some(
+                        "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION).",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mesr",
+            extends: None,
+            description: Some(
+                "memory erase status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mclr",
+                    description: Some(
+                        "Device memories erase status\r This bit is set by hardware when SRAM2, ICACHE, PKA SRAM erase is completed after power-on reset or tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is not reset by system reset and is cleared by software by writing 1 to it.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ipmee",
+                    description: Some(
+                        "ICACHE and PKA SRAM erase status\r This bit is set by hardware when ICACHE and PKA SRAM erase is completed after potential tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is cleared by software by writing 1 to it.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "Floating point unit interrupts enable bits\r FPU_IE[5]: Inexact interrupt enable (interrupt disable at reset)\r FPU_IE[4]: Input abnormal interrupt enable\r FPU_IE[3]: Overflow interrupt enable\r FPU_IE[2]: Underflow interrupt enable\r FPU_IE[1]: Divide-by-zero interrupt enable\r FPU_IE[0]: Invalid operation Interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rsscmdr",
+            extends: None,
+            description: Some(
+                "RSS command register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rsscmd",
+                    description: Some(
+                        "RSS commands\r This field defines a command to be executed by the RSS.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -374,196 +564,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Fast-mode Plus drive capability activation on PB3\r This bit can be read and written only with secure access if PB3 is secure in GPIOB. This bit enables the Fast-mode Plus drive mode for PB3 when PB3 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOB SEC3.",
                     ),
                     bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rsscmdr",
-            extends: None,
-            description: Some(
-                "RSS command register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rsscmd",
-                    description: Some(
-                        "RSS commands\r This field defines a command to be executed by the RSS.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr2",
-            extends: None,
-            description: Some(
-                "configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cll",
-                    description: Some(
-                        "Cortex-M33 LOCKUP (hardfault) output enable\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the connection of Cortex-M33 LOCKUP (hardfault) output to TIM1/16/17 break input.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spl",
-                    description: Some(
-                        "SRAM2 parity lock bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM2 parity error signal connection to TIM1/16/17 break inputs.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvdl",
-                    description: Some(
-                        "PVD lock enable bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection to TIM1/16/17 break input, as well as the PVDE and PVDLS[2:0] in the PWR register.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eccl",
-                    description: Some(
-                        "ECC lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mesr",
-            extends: None,
-            description: Some(
-                "memory erase status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mclr",
-                    description: Some(
-                        "Device memories erase status\r This bit is set by hardware when SRAM2, ICACHE, PKA SRAM erase is completed after power-on reset or tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is not reset by system reset and is cleared by software by writing 1 to it.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ipmee",
-                    description: Some(
-                        "ICACHE and PKA SRAM erase status\r This bit is set by hardware when ICACHE and PKA SRAM erase is completed after potential tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is cleared by software by writing 1 to it.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fpuimr",
-            extends: None,
-            description: Some(
-                "FPU interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fpu_ie",
-                    description: Some(
-                        "Floating point unit interrupts enable bits\r FPU_IE[5]: Inexact interrupt enable (interrupt disable at reset)\r FPU_IE[4]: Input abnormal interrupt enable\r FPU_IE[3]: Overflow interrupt enable\r FPU_IE[2]: Underflow interrupt enable\r FPU_IE[1]: Divide-by-zero interrupt enable\r FPU_IE[0]: Invalid operation Interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cnslckr",
-            extends: None,
-            description: Some(
-                "CPU non-secure lock register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "locknsvtor",
-                    description: Some(
-                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "locknsmpu",
-                    description: Some(
-                        "Non-secure MPU registers lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cccsr",
-            extends: None,
-            description: Some(
-                "compensation cell control/status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "en1",
-                    description: Some(
-                        "VDD I/Os compensation cell enable\r This bit enables the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cs1",
-                    description: Some(
-                        "VDD I/Os code selection\r This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rdy1",
-                    description: Some(
-                        "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION).",
-                    ),
-                    bit_offset: 8,
                     bit_size: 1,
                     array: None,
                     enumm: None,

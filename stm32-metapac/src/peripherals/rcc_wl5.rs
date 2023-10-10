@@ -2973,13 +2973,13 @@ pub mod regs {
         pub fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "HSE32 ready interrupt clear"]
+        #[doc = "HSE ready interrupt clear"]
         #[inline(always)]
         pub const fn hserdyc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 ready interrupt clear"]
+        #[doc = "HSE ready interrupt clear"]
         #[inline(always)]
         pub fn set_hserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
@@ -2995,13 +2995,13 @@ pub mod regs {
         pub fn set_pllrdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "HSE32 Clock security system interrupt clear"]
+        #[doc = "HSE Clock security system interrupt clear"]
         #[inline(always)]
         pub const fn cssc(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 Clock security system interrupt clear"]
+        #[doc = "HSE Clock security system interrupt clear"]
         #[inline(always)]
         pub fn set_cssc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
@@ -3073,13 +3073,13 @@ pub mod regs {
         pub fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "HSE32 ready interrupt enable"]
+        #[doc = "HSE ready interrupt enable"]
         #[inline(always)]
         pub const fn hserdyie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 ready interrupt enable"]
+        #[doc = "HSE ready interrupt enable"]
         #[inline(always)]
         pub fn set_hserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
@@ -3162,13 +3162,13 @@ pub mod regs {
         pub fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "HSE32 ready interrupt flag"]
+        #[doc = "HSE ready interrupt flag"]
         #[inline(always)]
         pub const fn hserdyf(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 ready interrupt flag"]
+        #[doc = "HSE ready interrupt flag"]
         #[inline(always)]
         pub fn set_hserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
@@ -3184,13 +3184,13 @@ pub mod regs {
         pub fn set_pllrdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "HSE32 Clock security system interrupt flag"]
+        #[doc = "HSE Clock security system interrupt flag"]
         #[inline(always)]
         pub const fn cssf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 Clock security system interrupt flag"]
+        #[doc = "HSE Clock security system interrupt flag"]
         #[inline(always)]
         pub fn set_cssf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
@@ -3328,57 +3328,57 @@ pub mod regs {
         pub fn set_hsikerdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "HSE32 clock enable"]
+        #[doc = "HSE clock enable"]
         #[inline(always)]
         pub const fn hseon(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 clock enable"]
+        #[doc = "HSE clock enable"]
         #[inline(always)]
         pub fn set_hseon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
-        #[doc = "HSE32 clock ready flag"]
+        #[doc = "HSE clock ready flag"]
         #[inline(always)]
         pub const fn hserdy(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 clock ready flag"]
+        #[doc = "HSE clock ready flag"]
         #[inline(always)]
         pub fn set_hserdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
-        #[doc = "HSE32 Clock security system enable"]
+        #[doc = "HSE Clock security system enable"]
         #[inline(always)]
         pub const fn csson(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 Clock security system enable"]
+        #[doc = "HSE Clock security system enable"]
         #[inline(always)]
         pub fn set_csson(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "HSE32 sysclk prescaler"]
+        #[doc = "HSE sysclk prescaler"]
         #[inline(always)]
         pub const fn hsepre(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "HSE32 sysclk prescaler"]
+        #[doc = "HSE sysclk prescaler"]
         #[inline(always)]
         pub fn set_hsepre(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
-        #[doc = "Enable HSE32 VDDTCXO output on package pin PB0-VDDTCXO."]
+        #[doc = "Enable HSE VDDTCXO output on package pin PB0-VDDTCXO."]
         #[inline(always)]
         pub const fn hsebyppwr(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
-        #[doc = "Enable HSE32 VDDTCXO output on package pin PB0-VDDTCXO."]
+        #[doc = "Enable HSE VDDTCXO output on package pin PB0-VDDTCXO."]
         #[inline(always)]
         pub fn set_hsebyppwr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
@@ -3989,8 +3989,8 @@ pub mod vals {
         MSI = 0x02,
         #[doc = "HSI oscillator clock selected"]
         HSI16 = 0x03,
-        #[doc = "HSE32 oscillator clock selected"]
-        HSE32 = 0x04,
+        #[doc = "HSE oscillator clock selected"]
+        HSE = 0x04,
         #[doc = "Main PLLRCLK clock selected"]
         PLLRCLK = 0x05,
         #[doc = "LSI oscillator clock selected"]
@@ -4408,7 +4408,7 @@ pub mod vals {
         #[doc = "HSI16 selected as PLL entry clock source"]
         HSI16 = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
-        HSE32 = 0x03,
+        HSE = 0x03,
     }
     impl Pllsrc {
         #[inline(always)]
@@ -4510,7 +4510,7 @@ pub mod vals {
     pub enum Sw {
         MSI = 0,
         HSI16 = 0x01,
-        HSE32 = 0x02,
+        HSE = 0x02,
         PLLR = 0x03,
     }
     impl Sw {

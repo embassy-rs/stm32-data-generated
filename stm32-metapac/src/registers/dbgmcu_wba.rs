@@ -354,30 +354,80 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Idcode",
+            name: "Apb1lfzr",
             extends: None,
             description: Some(
-                "identity code register",
+                "APB1L peripheral freeze register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dev_id",
+                    name: "dbg_tim2_stop",
                     description: Some(
-                        "Device ID",
+                        "TIM2 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM2SEC.",
                     ),
                     bit_offset: 0,
-                    bit_size: 12,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rev_id",
+                    name: "dbg_tim3_stop",
                     description: Some(
-                        "Revision ID",
+                        "TIM3 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM3SEC.",
                     ),
-                    bit_offset: 16,
-                    bit_size: 16,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_wwdg_stop",
+                    description: Some(
+                        "WWDG stop in CPU debug\r Write access can be protected by GTZC_TZSC.WWDGSEC",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_iwdg_stop",
+                    description: Some(
+                        "IWDG stop in CPU debug\r Write access can be protected by GTZC_TZSC.IWDGSEC.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_i2c1_stop",
+                    description: Some(
+                        "I2C1 SMBUS timeout stop in CPU debug\r Write access can be protected by GTZC_TZSC.I2C1SEC.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pncr",
+            extends: None,
+            description: Some(
+                "part number codification register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "codification",
+                    description: Some(
+                        "Part number codification",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -424,50 +474,100 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cidr1",
+            name: "Cr",
             extends: None,
             description: Some(
-                "CoreSight peripheral identity register 1",
+                "status and configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "preamble",
+                    name: "dbg_stop",
                     description: Some(
-                        "Component ID bits [11:8]",
+                        "Allows debug in Stop mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI16 oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 4,
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "class",
+                    name: "dbg_standby",
                     description: Some(
-                        "Component ID bits [15:12] - component class",
+                        "Allows debug in Standby mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI16 oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed.",
                     ),
-                    bit_offset: 4,
-                    bit_size: 4,
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpms",
+                    description: Some(
+                        "Device low power mode selected\r 10x: Standby mode\r others reserved",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stopf",
+                    description: Some(
+                        "Device Stop flag",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sbf",
+                    description: Some(
+                        "Device Standby flag",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cs",
+                    description: Some(
+                        "CPU Sleep",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cds",
+                    description: Some(
+                        "CPU DeepSleep",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Apb1hfzr",
+            name: "Cidr0",
             extends: None,
             description: Some(
-                "APB1H peripheral freeze register",
+                "CoreSight component identity register 0",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dbg_lptim2_stop",
+                    name: "preamble",
                     description: Some(
-                        "LPTIM2 stop in CPU debug\r Write access can be protected by GTZC_TZSC.LPTIM2SEC.",
+                        "Component ID bits [7:0]",
                     ),
-                    bit_offset: 5,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -504,6 +604,306 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Apb2fzr",
+            extends: None,
+            description: Some(
+                "APB2 peripheral freeze register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_tim1_stop",
+                    description: Some(
+                        "TIM1 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM1SEC.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_tim16_stop",
+                    description: Some(
+                        "TIM16 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM16SEC.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_tim17_stop",
+                    description: Some(
+                        "TIM17 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM17SEC.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr3",
+            extends: None,
+            description: Some(
+                "CoreSight component identity register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "preamble",
+                    description: Some(
+                        "Component ID bits [31:24]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr2",
+            extends: None,
+            description: Some(
+                "CoreSight component identity register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "preamble",
+                    description: Some(
+                        "Component ID bits [23:16]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr1",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "preamble",
+                    description: Some(
+                        "Component ID bits [11:8]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "class",
+                    description: Some(
+                        "Component ID bits [15:12] - component class",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DbgAuthHost",
+            extends: None,
+            description: Some(
+                "debug host authentication register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "auth_key",
+                    description: Some(
+                        "Device authentication key\r The device specific 64-bit authentication key (OEMn key) must be written to this register (in two successive 32-bit writes, least significant word first) to permit RDP regression. Writing a wrong key locks access to the device and prevent code execution from the Flash memory.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr2",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "jep106id",
+                    description: Some(
+                        "JEP106 identity code bits [6:4]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "jedec",
+                    description: Some(
+                        "JEDEC assigned value",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "revision",
+                    description: Some(
+                        "Component revision number",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr1",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "partnum",
+                    description: Some(
+                        "Part number bits [11:8]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "jep106id",
+                    description: Some(
+                        "JEP106 identity code bits [3:0]",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr0",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 0",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "partnum",
+                    description: Some(
+                        "Part number bits [7:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb1hfzr",
+            extends: None,
+            description: Some(
+                "APB1H peripheral freeze register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_lptim2_stop",
+                    description: Some(
+                        "LPTIM2 stop in CPU debug\r Write access can be protected by GTZC_TZSC.LPTIM2SEC.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idcode",
+            extends: None,
+            description: Some(
+                "identity code register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dev_id",
+                    description: Some(
+                        "Device ID",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rev_id",
+                    description: Some(
+                        "Revision ID",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr4",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 4",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "jep106con",
+                    description: Some(
+                        "JEP106 continuation code",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "f4kcount",
+                    description: Some(
+                        "Register file size",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "DbgAuthDevice",
             extends: None,
             description: Some(
@@ -518,36 +918,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr3",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cmod",
-                    description: Some(
-                        "Customer modified",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "revand",
-                    description: Some(
-                        "Metal fix version",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -644,400 +1014,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cidr3",
+            name: "Pidr3",
             extends: None,
             description: Some(
-                "CoreSight component identity register 3",
+                "CoreSight peripheral identity register 3",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "preamble",
+                    name: "cmod",
                     description: Some(
-                        "Component ID bits [31:24]",
+                        "Customer modified",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2fzr",
-            extends: None,
-            description: Some(
-                "APB2 peripheral freeze register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_tim1_stop",
-                    description: Some(
-                        "TIM1 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM1SEC.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_tim16_stop",
+                    name: "revand",
                     description: Some(
-                        "TIM16 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM16SEC.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim17_stop",
-                    description: Some(
-                        "TIM17 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM17SEC.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr0",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 0",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "partnum",
-                    description: Some(
-                        "Part number bits [7:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr2",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jep106id",
-                    description: Some(
-                        "JEP106 identity code bits [6:4]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jedec",
-                    description: Some(
-                        "JEDEC assigned value",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "revision",
-                    description: Some(
-                        "Component revision number",
+                        "Metal fix version",
                     ),
                     bit_offset: 4,
                     bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some(
-                "status and configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_stop",
-                    description: Some(
-                        "Allows debug in Stop mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI16 oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_standby",
-                    description: Some(
-                        "Allows debug in Standby mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI16 oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpms",
-                    description: Some(
-                        "Device low power mode selected\r 10x: Standby mode\r others reserved",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stopf",
-                    description: Some(
-                        "Device Stop flag",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sbf",
-                    description: Some(
-                        "Device Standby flag",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cs",
-                    description: Some(
-                        "CPU Sleep",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cds",
-                    description: Some(
-                        "CPU DeepSleep",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cidr2",
-            extends: None,
-            description: Some(
-                "CoreSight component identity register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "preamble",
-                    description: Some(
-                        "Component ID bits [23:16]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DbgAuthHost",
-            extends: None,
-            description: Some(
-                "debug host authentication register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "auth_key",
-                    description: Some(
-                        "Device authentication key\r The device specific 64-bit authentication key (OEMn key) must be written to this register (in two successive 32-bit writes, least significant word first) to permit RDP regression. Writing a wrong key locks access to the device and prevent code execution from the Flash memory.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr1",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "partnum",
-                    description: Some(
-                        "Part number bits [11:8]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jep106id",
-                    description: Some(
-                        "JEP106 identity code bits [3:0]",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr4",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 4",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jep106con",
-                    description: Some(
-                        "JEP106 continuation code",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "f4kcount",
-                    description: Some(
-                        "Register file size",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1lfzr",
-            extends: None,
-            description: Some(
-                "APB1L peripheral freeze register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_tim2_stop",
-                    description: Some(
-                        "TIM2 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM2SEC.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim3_stop",
-                    description: Some(
-                        "TIM3 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM3SEC.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_wwdg_stop",
-                    description: Some(
-                        "WWDG stop in CPU debug\r Write access can be protected by GTZC_TZSC.WWDGSEC",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_iwdg_stop",
-                    description: Some(
-                        "IWDG stop in CPU debug\r Write access can be protected by GTZC_TZSC.IWDGSEC.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_i2c1_stop",
-                    description: Some(
-                        "I2C1 SMBUS timeout stop in CPU debug\r Write access can be protected by GTZC_TZSC.I2C1SEC.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pncr",
-            extends: None,
-            description: Some(
-                "part number codification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "codification",
-                    description: Some(
-                        "Part number codification",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cidr0",
-            extends: None,
-            description: Some(
-                "CoreSight component identity register 0",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "preamble",
-                    description: Some(
-                        "Component ID bits [7:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },

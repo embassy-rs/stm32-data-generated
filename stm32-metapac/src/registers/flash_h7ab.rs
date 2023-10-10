@@ -434,200 +434,20 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "BootPrgr",
+            name: "WpsnCurr",
             extends: None,
             description: Some(
-                "FLASH register with boot address",
+                "FLASH write sector protection for bank 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "boot_add0",
+                    name: "wrpsn",
                     description: Some(
-                        "Boot address 0",
+                        "Bank 1 sector write protection option status byte",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "boot_add1",
-                    description: Some(
-                        "Boot address 1",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "PrarCur",
-            extends: None,
-            description: Some(
-                "FLASH protection address for bank 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "prot_area_start",
-                    description: Some(
-                        "Bank 1 lowest PCROP protected address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "prot_area_end",
-                    description: Some(
-                        "Bank 1 highest PCROP protected address",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dmep",
-                    description: Some(
-                        "Bank 1 PCROP protected erase enable option status bit",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optcr",
-            extends: None,
-            description: Some(
-                "FLASH option control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "optlock",
-                    description: Some(
-                        "FLASH_OPTCR lock option configuration bit",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "optstart",
-                    description: Some(
-                        "Option byte start change option configuration bit",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mer",
-                    description: Some(
-                        "Flash mass erase enable bit",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pg_otp",
-                    description: Some(
-                        "OTP program control bit",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "optchangeerrie",
-                    description: Some(
-                        "Option byte change error interrupt enable bit",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "swap_bank",
-                    description: Some(
-                        "Bank swapping configuration bit",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Crceaddr",
-            extends: None,
-            description: Some(
-                "FLASH CRC end address register for bank 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "crc_end_addr",
-                    description: Some(
-                        "CRC end address on bank 1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Crcsaddr",
-            extends: None,
-            description: Some(
-                "FLASH CRC start address register for bank 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "crc_start_addr",
-                    description: Some(
-                        "CRC start address on bank 1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optccr",
-            extends: None,
-            description: Some(
-                "FLASH option clear control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "clr_optchangeerr",
-                    description: Some(
-                        "OPTCHANGEERR reset bit",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -788,6 +608,236 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 31,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Optkeyr",
+            extends: None,
+            description: Some(
+                "FLASH option key register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "optkeyr",
+                    description: Some(
+                        "Unlock key option bytes",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Optcr",
+            extends: None,
+            description: Some(
+                "FLASH option control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "optlock",
+                    description: Some(
+                        "FLASH_OPTCR lock option configuration bit",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "optstart",
+                    description: Some(
+                        "Option byte start change option configuration bit",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mer",
+                    description: Some(
+                        "Flash mass erase enable bit",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pg_otp",
+                    description: Some(
+                        "OTP program control bit",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "optchangeerrie",
+                    description: Some(
+                        "Option byte change error interrupt enable bit",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "swap_bank",
+                    description: Some(
+                        "Bank swapping configuration bit",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "PrarCur",
+            extends: None,
+            description: Some(
+                "FLASH protection address for bank 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "prot_area_start",
+                    description: Some(
+                        "Bank 1 lowest PCROP protected address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prot_area_end",
+                    description: Some(
+                        "Bank 1 highest PCROP protected address",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmep",
+                    description: Some(
+                        "Bank 1 PCROP protected erase enable option status bit",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Crcsaddr",
+            extends: None,
+            description: Some(
+                "FLASH CRC start address register for bank 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "crc_start_addr",
+                    description: Some(
+                        "CRC start address on bank 1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "BootPrgr",
+            extends: None,
+            description: Some(
+                "FLASH register with boot address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "boot_add0",
+                    description: Some(
+                        "Boot address 0",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_add1",
+                    description: Some(
+                        "Boot address 1",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Crceaddr",
+            extends: None,
+            description: Some(
+                "FLASH CRC end address register for bank 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "crc_end_addr",
+                    description: Some(
+                        "CRC end address on bank 1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Acr",
+            extends: None,
+            description: Some(
+                "Access control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "latency",
+                    description: Some(
+                        "Read latency",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrhighfreq",
+                    description: Some(
+                        "Flash signal delay",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
@@ -964,136 +1014,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccr",
-            extends: None,
-            description: Some(
-                "FLASH clear control register for bank 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "clr_eop",
-                    description: Some(
-                        "Bank 1 EOP1 flag clear bit",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_wrperr",
-                    description: Some(
-                        "Bank 1 WRPERR1 flag clear bit",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_pgserr",
-                    description: Some(
-                        "Bank 1 PGSERR1 flag clear bi",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_strberr",
-                    description: Some(
-                        "Bank 1 STRBERR1 flag clear bit",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_incerr",
-                    description: Some(
-                        "Bank 1 INCERR1 flag clear bit",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_operr",
-                    description: Some(
-                        "Bank 1 OPERR1 flag clear bit",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_rdperr",
-                    description: Some(
-                        "Bank 1 RDPERR1 flag clear bit",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_rdserr",
-                    description: Some(
-                        "Bank 1 RDSERR1 flag clear bit",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_sneccerr",
-                    description: Some(
-                        "Bank 1 SNECCERR1 flag clear bit",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_dbeccerr",
-                    description: Some(
-                        "Bank 1 DBECCERR1 flag clear bit",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_crcend",
-                    description: Some(
-                        "Bank 1 CRCEND1 flag clear bit",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clr_crcrderr",
-                    description: Some(
-                        "Bank 1 CRC read error clear bit",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "PrarPrg",
             extends: None,
             description: Some(
@@ -1134,20 +1054,170 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Keyr",
+            name: "Far",
             extends: None,
             description: Some(
-                "FLASH key register for bank 1",
+                "FLASH ECC fail address for bank 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "keyr",
+                    name: "fail_ecc_addr",
                     description: Some(
-                        "Bank 1 access configuration unlock key",
+                        "Bank 1 ECC error address",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 15,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "ScarPrg",
+            extends: None,
+            description: Some(
+                "FLASH secure address for bank 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sec_area_start",
+                    description: Some(
+                        "Bank 1 lowest secure protected address configuration",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sec_area_end",
+                    description: Some(
+                        "Bank 1 highest secure protected address configuration",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmes",
+                    description: Some(
+                        "Bank 1 secure protected erase enable option configuration bit",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Optccr",
+            extends: None,
+            description: Some(
+                "FLASH option clear control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "clr_optchangeerr",
+                    description: Some(
+                        "OPTCHANGEERR reset bit",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Crccr",
+            extends: None,
+            description: Some(
+                "FLASH CRC control register for bank 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "crc_sect",
+                    description: Some(
+                        "Bank 1 CRC sector number",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "all_bank",
+                    description: Some(
+                        "Bank 1 CRC select bit",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crc_by_sect",
+                    description: Some(
+                        "Bank 1 CRC sector mode select bit",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "add_sect",
+                    description: Some(
+                        "Bank 1 CRC sector select bit",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clean_sect",
+                    description: Some(
+                        "Bank 1 CRC sector list clear bit",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "start_crc",
+                    description: Some(
+                        "Bank 1 CRC start bit",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clean_crc",
+                    description: Some(
+                        "Bank 1 CRC clear bit",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crc_burst",
+                    description: Some(
+                        "Bank 1 CRC burst size",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
@@ -1294,86 +1364,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Far",
-            extends: None,
-            description: Some(
-                "FLASH ECC fail address for bank 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fail_ecc_addr",
-                    description: Some(
-                        "Bank 1 ECC error address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 15,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "BootCurr",
-            extends: None,
-            description: Some(
-                "FLASH register with boot address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "boot_add0",
-                    description: Some(
-                        "Boot address 0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "boot_add1",
-                    description: Some(
-                        "Boot address 1",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Acr",
-            extends: None,
-            description: Some(
-                "Access control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "latency",
-                    description: Some(
-                        "Read latency",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrhighfreq",
-                    description: Some(
-                        "Flash signal delay",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "ScarCur",
             extends: None,
             description: Some(
@@ -1414,147 +1404,67 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "ScarPrg",
+            name: "BootCurr",
             extends: None,
             description: Some(
-                "FLASH secure address for bank 1",
+                "FLASH register with boot address",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sec_area_start",
+                    name: "boot_add0",
                     description: Some(
-                        "Bank 1 lowest secure protected address configuration",
+                        "Boot address 0",
                     ),
                     bit_offset: 0,
-                    bit_size: 12,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sec_area_end",
+                    name: "boot_add1",
                     description: Some(
-                        "Bank 1 highest secure protected address configuration",
+                        "Boot address 1",
                     ),
                     bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dmes",
-                    description: Some(
-                        "Bank 1 secure protected erase enable option configuration bit",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Crccr",
+            name: "WpsnPrgr",
             extends: None,
             description: Some(
-                "FLASH CRC control register for bank 1",
+                "FLASH write sector protection for bank 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "crc_sect",
+                    name: "wrpsn",
                     description: Some(
-                        "Bank 1 CRC sector number",
+                        "Bank 1 sector write protection configuration byte",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "all_bank",
-                    description: Some(
-                        "Bank 1 CRC select bit",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crc_by_sect",
-                    description: Some(
-                        "Bank 1 CRC sector mode select bit",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "add_sect",
-                    description: Some(
-                        "Bank 1 CRC sector select bit",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clean_sect",
-                    description: Some(
-                        "Bank 1 CRC sector list clear bit",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "start_crc",
-                    description: Some(
-                        "Bank 1 CRC start bit",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clean_crc",
-                    description: Some(
-                        "Bank 1 CRC clear bit",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crc_burst",
-                    description: Some(
-                        "Bank 1 CRC burst size",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 2,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Crcdatar",
+            name: "Keyr",
             extends: None,
             description: Some(
-                "FLASH CRC data register",
+                "FLASH key register for bank 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "crc_data",
+                    name: "keyr",
                     description: Some(
-                        "CRC result",
+                        "Bank 1 access configuration unlock key",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1774,37 +1684,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "WpsnPrgr",
+            name: "Crcdatar",
             extends: None,
             description: Some(
-                "FLASH write sector protection for bank 1",
+                "FLASH CRC data register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpsn",
+                    name: "crc_data",
                     description: Some(
-                        "Bank 1 sector write protection configuration byte",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some(
-                "FLASH option key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "optkeyr",
-                    description: Some(
-                        "Unlock key option bytes",
+                        "CRC result",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1814,20 +1704,130 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "WpsnCurr",
+            name: "Ccr",
             extends: None,
             description: Some(
-                "FLASH write sector protection for bank 1",
+                "FLASH clear control register for bank 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpsn",
+                    name: "clr_eop",
                     description: Some(
-                        "Bank 1 sector write protection option status byte",
+                        "Bank 1 EOP1 flag clear bit",
                     ),
-                    bit_offset: 0,
-                    bit_size: 8,
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_wrperr",
+                    description: Some(
+                        "Bank 1 WRPERR1 flag clear bit",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_pgserr",
+                    description: Some(
+                        "Bank 1 PGSERR1 flag clear bi",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_strberr",
+                    description: Some(
+                        "Bank 1 STRBERR1 flag clear bit",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_incerr",
+                    description: Some(
+                        "Bank 1 INCERR1 flag clear bit",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_operr",
+                    description: Some(
+                        "Bank 1 OPERR1 flag clear bit",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_rdperr",
+                    description: Some(
+                        "Bank 1 RDPERR1 flag clear bit",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_rdserr",
+                    description: Some(
+                        "Bank 1 RDSERR1 flag clear bit",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_sneccerr",
+                    description: Some(
+                        "Bank 1 SNECCERR1 flag clear bit",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_dbeccerr",
+                    description: Some(
+                        "Bank 1 DBECCERR1 flag clear bit",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_crcend",
+                    description: Some(
+                        "Bank 1 CRCEND1 flag clear bit",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_crcrderr",
+                    description: Some(
+                        "Bank 1 CRC read error clear bit",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },

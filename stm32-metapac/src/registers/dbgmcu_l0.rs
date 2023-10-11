@@ -54,30 +54,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Apb2fzr",
-            extends: None,
-            description: Some("APB High Freeze Register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim21",
-                    description: Some("Debug Timer 21 stopped when Core is halted"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim22",
-                    description: Some("Debug Timer 22 stopped when Core is halted"),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Debug MCU Configuration Register"),
@@ -103,6 +79,30 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "dbg_standby",
                     description: Some("Debug Standby Mode"),
                     bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb2fzr",
+            extends: None,
+            description: Some("APB High Freeze Register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim21",
+                    description: Some("Debug Timer 21 stopped when Core is halted"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim22",
+                    description: Some("Debug Timer 22 stopped when Core is halted"),
+                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,

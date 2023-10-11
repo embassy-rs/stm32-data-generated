@@ -461,7 +461,7 @@ pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400 as usize as _) };
 pub const I3C2: *mut () = 0x4400_3000 as usize as _;
 pub const LPTIM1: *mut () = 0x4400_4400 as usize as _;
-pub const RTC: *mut () = 0x4400_7800 as usize as _;
+pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800 as usize as _) };
 pub const TAMP: *mut () = 0x4400_7c00 as usize as _;
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00 as usize as _) };
@@ -495,6 +495,8 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
+#[path = "../../peripherals/rtc_v3u5.rs"]
+pub mod rtc;
 #[path = "../../peripherals/spi_v4.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_h50.rs"]

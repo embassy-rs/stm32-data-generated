@@ -1946,6 +1946,11 @@
                 {
                     "name": "RTC",
                     "address": 1140881408,
+                    "registers": {
+                        "kind": "rtc",
+                        "version": "v3u5",
+                        "block": "RTC"
+                    },
                     "rcc": {
                         "clock": "APB3",
                         "enable": {

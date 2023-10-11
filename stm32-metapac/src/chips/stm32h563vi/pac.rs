@@ -648,7 +648,7 @@ pub const LPTIM4: *mut () = 0x4400_4c00 as usize as _;
 pub const LPTIM5: *mut () = 0x4400_5000 as usize as _;
 pub const LPTIM6: *mut () = 0x4400_5400 as usize as _;
 pub const VREFBUF: *mut () = 0x4400_7400 as usize as _;
-pub const RTC: *mut () = 0x4400_7800 as usize as _;
+pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800 as usize as _) };
 pub const TAMP: *mut () = 0x4400_7c00 as usize as _;
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00 as usize as _) };
@@ -691,6 +691,8 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
+#[path = "../../peripherals/rtc_v3u5.rs"]
+pub mod rtc;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v4.rs"]

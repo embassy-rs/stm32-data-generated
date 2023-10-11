@@ -422,134 +422,17 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Itline10",
+            name: "Itline12",
             extends: None,
             description: Some(
-                "interrupt line 10 status register",
+                "interrupt line 12 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dma1_ch2",
+                    name: "adc",
                     description: Some(
-                        "DMA1 channel 2 interrupt request pending",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1_ch3",
-                    description: Some(
-                        "DMA1 channel 3 interrupt request pending",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline9",
-            extends: None,
-            description: Some(
-                "interrupt line 9 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dma1_ch1",
-                    description: Some(
-                        "DMA1 channel 1interrupt request pending",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline6",
-            extends: None,
-            description: Some(
-                "interrupt line 6 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "exti",
-                    description: Some(
-                        "EXTI",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline21",
-            extends: None,
-            description: Some(
-                "interrupt line 21 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim16",
-                    description: Some(
-                        "Timer 16 interrupt request pending",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline16",
-            extends: None,
-            description: Some(
-                "interrupt line 16 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim3",
-                    description: Some(
-                        "Timer 3 interrupt request pending",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline0",
-            extends: None,
-            description: Some(
-                "interrupt line 0 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wwdg",
-                    description: Some(
-                        "Window watchdog interrupt pending flag",
+                        "ADC interrupt request pending",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -703,17 +586,164 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline12",
+            name: "Itline21",
             extends: None,
             description: Some(
-                "interrupt line 12 status register",
+                "interrupt line 21 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "adc",
+                    name: "tim16",
                     description: Some(
-                        "ADC interrupt request pending",
+                        "Timer 16 interrupt request pending",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline22",
+            extends: None,
+            description: Some(
+                "interrupt line 22 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim17",
+                    description: Some(
+                        "Timer 17 interrupt request pending",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline11",
+            extends: None,
+            description: Some(
+                "interrupt line 11 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dmamux",
+                    description: Some(
+                        "DMAMUX interrupt request pending",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr2",
+            extends: None,
+            description: Some(
+                "configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lockup_lock",
+                    description: Some(
+                        "Cortex<Superscript>�<Default � Font>-M0+ LOCKUP enable\r This bit is set by software and cleared by system reset. When set, it enables the connection of Cortex<Superscript>�<Default � Font>-M0+ LOCKUP (HardFault) output to the TIM1/16/17 Break input.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline6",
+            extends: None,
+            description: Some(
+                "interrupt line 6 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti",
+                    description: Some(
+                        "EXTI",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline16",
+            extends: None,
+            description: Some(
+                "interrupt line 16 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim3",
+                    description: Some(
+                        "Timer 3 interrupt request pending",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline0",
+            extends: None,
+            description: Some(
+                "interrupt line 0 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wwdg",
+                    description: Some(
+                        "Window watchdog interrupt pending flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline4",
+            extends: None,
+            description: Some(
+                "interrupt line 4 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rcc",
+                    description: Some(
+                        "Reset and clock control interrupt request pending",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -743,17 +773,67 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline25",
+            name: "Itline13",
             extends: None,
             description: Some(
-                "interrupt line 25 status register",
+                "interrupt line 13 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "spi1",
+                    name: "tim1_ccu",
                     description: Some(
-                        "SPI1 interrupt request pending",
+                        "Timer 1 commutation interrupt request pending",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim1_trg",
+                    description: Some(
+                        "Timer 1 trigger interrupt request pending",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim1_upd",
+                    description: Some(
+                        "Timer 1 update interrupt request pending",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim1_brk",
+                    description: Some(
+                        "Timer 1 break interrupt request pending",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline9",
+            extends: None,
+            description: Some(
+                "interrupt line 9 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dma1_ch1",
+                    description: Some(
+                        "DMA1 channel 1interrupt request pending",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -763,44 +843,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline5",
+            name: "Itline19",
             extends: None,
             description: Some(
-                "interrupt line 5 status register",
+                "interrupt line 19 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "exti",
+                    name: "tim14",
                     description: Some(
-                        "EXTI",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline11",
-            extends: None,
-            description: Some(
-                "interrupt line 11 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dmamux",
-                    description: Some(
-                        "DMAMUX interrupt request pending",
+                        "Timer 14 interrupt request pending",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -810,19 +863,59 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline4",
+            name: "Itline14",
             extends: None,
             description: Some(
-                "interrupt line 4 status register",
+                "interrupt line 14 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rcc",
+                    name: "tim1_cc",
                     description: Some(
-                        "Reset and clock control interrupt request pending",
+                        "Timer 1 capture compare interrupt request pending",
                     ),
                     bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline27",
+            extends: None,
+            description: Some(
+                "interrupt line 27 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usart1",
+                    description: Some(
+                        "USART1 interrupt request pending, combined with EXTI line 25",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline3",
+            extends: None,
+            description: Some(
+                "interrupt line 3 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "flash_itf",
+                    description: Some(
+                        "Flash interface interrupt request pending",
+                    ),
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -912,6 +1005,26 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Itline28",
+            extends: None,
+            description: Some(
+                "interrupt line 28 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usart2",
+                    description: Some(
+                        "USART2 interrupt request pending (EXTI line 26)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Itline7",
             extends: None,
             description: Some(
@@ -939,81 +1052,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline19",
+            name: "Itline5",
             extends: None,
             description: Some(
-                "interrupt line 19 status register",
+                "interrupt line 5 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim14",
+                    name: "exti",
                     description: Some(
-                        "Timer 14 interrupt request pending",
+                        "EXTI",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline14",
-            extends: None,
-            description: Some(
-                "interrupt line 14 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1_cc",
-                    description: Some(
-                        "Timer 1 capture compare interrupt request pending",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline3",
-            extends: None,
-            description: Some(
-                "interrupt line 3 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "flash_itf",
-                    description: Some(
-                        "Flash interface interrupt request pending",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline22",
-            extends: None,
-            description: Some(
-                "interrupt line 22 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim17",
-                    description: Some(
-                        "Timer 17 interrupt request pending",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],
@@ -1039,17 +1099,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline28",
+            name: "Itline25",
             extends: None,
             description: Some(
-                "interrupt line 28 status register",
+                "interrupt line 25 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "usart2",
+                    name: "spi1",
                     description: Some(
-                        "USART2 interrupt request pending (EXTI line 26)",
+                        "SPI1 interrupt request pending",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1059,17 +1119,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline13",
+            name: "Itline10",
             extends: None,
             description: Some(
-                "interrupt line 13 status register",
+                "interrupt line 10 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim1_ccu",
+                    name: "dma1_ch2",
                     description: Some(
-                        "Timer 1 commutation interrupt request pending",
+                        "DMA1 channel 2 interrupt request pending",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1077,71 +1137,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim1_trg",
+                    name: "dma1_ch3",
                     description: Some(
-                        "Timer 1 trigger interrupt request pending",
+                        "DMA1 channel 3 interrupt request pending",
                     ),
                     bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim1_upd",
-                    description: Some(
-                        "Timer 1 update interrupt request pending",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim1_brk",
-                    description: Some(
-                        "Timer 1 break interrupt request pending",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline27",
-            extends: None,
-            description: Some(
-                "interrupt line 27 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "usart1",
-                    description: Some(
-                        "USART1 interrupt request pending, combined with EXTI line 25",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr2",
-            extends: None,
-            description: Some(
-                "configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lockup_lock",
-                    description: Some(
-                        "Cortex<Superscript>�<Default � Font>-M0+ LOCKUP enable\r This bit is set by software and cleared by system reset. When set, it enables the connection of Cortex<Superscript>�<Default � Font>-M0+ LOCKUP (HardFault) output to the TIM1/16/17 Break input.",
-                    ),
-                    bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1235,90 +1235,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pinmux4",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_E2",
-                    description: Some(
-                        "PA7",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1",
-                    description: Some(
-                        "PA7",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_E2",
-                    description: Some(
-                        "PA12",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1",
-                    description: Some(
-                        "PA12",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pinmux5",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
-                    description: Some(
-                        "PA3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3",
-                    description: Some(
-                        "PA3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
-                    description: Some(
-                        "PA4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3",
-                    description: Some(
-                        "PA4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
-                    description: Some(
-                        "PA5",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
-                    description: Some(
-                        "PA6",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Pinmux2",
             description: None,
             bit_size: 2,
@@ -1396,30 +1312,51 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "IrMod",
+            name: "Pinmux5",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "TIM16",
+                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
                     description: Some(
-                        "TIM16",
+                        "PA3",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "USART1",
+                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3",
                     description: Some(
-                        "USART1",
+                        "PA3",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    description: Some(
+                        "PA4",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "USART2",
+                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3",
                     description: Some(
-                        "USART2",
+                        "PA4",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    description: Some(
+                        "PA5",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "B_0X3_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    description: Some(
+                        "PA6",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -1455,6 +1392,69 @@ pub(crate) static REGISTERS: IR = IR {
                         "Embedded SRAM mapped at address 0",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Pinmux4",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_E2",
+                    description: Some(
+                        "PA7",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1",
+                    description: Some(
+                        "PA7",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_E2",
+                    description: Some(
+                        "PA12",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1",
+                    description: Some(
+                        "PA12",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "IrMod",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "TIM16",
+                    description: Some(
+                        "TIM16",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "USART1",
+                    description: Some(
+                        "USART1",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "USART2",
+                    description: Some(
+                        "USART2",
+                    ),
+                    value: 2,
                 },
             ],
         },

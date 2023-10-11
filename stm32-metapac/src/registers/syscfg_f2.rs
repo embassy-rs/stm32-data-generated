@@ -54,17 +54,17 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Memrmp",
+            name: "Pmc",
             extends: None,
-            description: Some("memory remap register"),
+            description: Some("peripheral mode configuration register"),
             bit_size: 32,
             fields: &[Field {
-                name: "mem_mode",
-                description: Some("Memory mapping selection"),
-                bit_offset: 0,
-                bit_size: 2,
+                name: "mii_rmii_sel",
+                description: Some("Ethernet PHY interface selection"),
+                bit_offset: 23,
+                bit_size: 1,
                 array: None,
-                enumm: Some("MemMode"),
+                enumm: None,
             }],
         },
         FieldSet {
@@ -79,6 +79,20 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_size: 4,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Memrmp",
+            extends: None,
+            description: Some("memory remap register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "mem_mode",
+                description: Some("Memory mapping selection"),
+                bit_offset: 0,
+                bit_size: 2,
+                array: None,
+                enumm: Some("MemMode"),
             }],
         },
         FieldSet {
@@ -104,20 +118,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Pmc",
-            extends: None,
-            description: Some("peripheral mode configuration register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "mii_rmii_sel",
-                description: Some("Ethernet PHY interface selection"),
-                bit_offset: 23,
-                bit_size: 1,
-                array: None,
-                enumm: None,
-            }],
         },
     ],
     enums: &[Enum {

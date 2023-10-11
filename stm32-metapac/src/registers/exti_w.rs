@@ -3,35 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Cpu",
-            extends: None,
-            description: Some("CPU-specific registers"),
-            items: &[
-                BlockItem {
-                    name: "imr",
-                    description: Some("CPU x interrupt mask register"),
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Lines"),
-                    }),
-                },
-                BlockItem {
-                    name: "emr",
-                    description: Some("CPU x event mask register"),
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Lines"),
-                    }),
-                },
-            ],
-        },
-        Block {
             name: "Exti",
             extends: None,
             description: Some("External interrupt/event controller"),
@@ -86,6 +57,35 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 64 })),
                     byte_offset: 128,
                     inner: BlockItemInner::Block(BlockItemBlock { block: "Cpu" }),
+                },
+            ],
+        },
+        Block {
+            name: "Cpu",
+            extends: None,
+            description: Some("CPU-specific registers"),
+            items: &[
+                BlockItem {
+                    name: "imr",
+                    description: Some("CPU x interrupt mask register"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Lines"),
+                    }),
+                },
+                BlockItem {
+                    name: "emr",
+                    description: Some("CPU x event mask register"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Lines"),
+                    }),
                 },
             ],
         },

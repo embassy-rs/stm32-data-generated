@@ -66,7 +66,7 @@ impl Pwr {
     }
     #[doc = "disable Backup domain register"]
     #[inline(always)]
-    pub const fn dbpr(self) -> crate::common::Reg<regs::Dbpr, crate::common::RW> {
+    pub const fn dbpcr(self) -> crate::common::Reg<regs::Dbpcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
     }
     #[doc = "USB Type-C™ and Power Delivery register"]
@@ -654,24 +654,24 @@ pub mod regs {
     #[doc = "disable Backup domain register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Dbpr(pub u32);
-    impl Dbpr {
+    pub struct Dbpcr(pub u32);
+    impl Dbpcr {
         #[doc = "Disable Backup domain write protection In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers."]
         #[inline(always)]
-        pub const fn dbp(&self) -> super::vals::Dbp {
+        pub const fn dbp(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Dbp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Disable Backup domain write protection In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers."]
         #[inline(always)]
-        pub fn set_dbp(&mut self, val: super::vals::Dbp) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_dbp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
-    impl Default for Dbpr {
+    impl Default for Dbpcr {
         #[inline(always)]
-        fn default() -> Dbpr {
-            Dbpr(0)
+        fn default() -> Dbpcr {
+            Dbpcr(0)
         }
     }
     #[doc = "Power Port pull control register"]
@@ -1539,36 +1539,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Actvos) -> u8 {
             Actvos::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dbp {
-        #[doc = "Write access to Backup domain disabled"]
-        DISABLED = 0,
-        #[doc = "Write access to Backup domain enabled"]
-        ENABLED = 0x01,
-    }
-    impl Dbp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dbp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dbp {
-        #[inline(always)]
-        fn from(val: u8) -> Dbp {
-            Dbp::from_bits(val)
-        }
-    }
-    impl From<Dbp> for u8 {
-        #[inline(always)]
-        fn from(val: Dbp) -> u8 {
-            Dbp::to_bits(val)
         }
     }
     #[repr(u8)]

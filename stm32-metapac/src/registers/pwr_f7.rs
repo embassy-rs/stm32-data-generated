@@ -174,6 +174,54 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some("power control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cwupf",
+                    description: Some("Clear Wakeup Pin flag for PA0"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "wupp",
+                    description: Some("Wakeup pin polarity bit for PA0"),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Csr2",
+            extends: None,
+            description: Some("power control/status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wupf",
+                    description: Some("Wakeup Pin flag for PA0"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "ewup",
+                    description: Some("Enable Wakeup pin for PA0"),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Csr1",
             extends: None,
             description: Some("power control/status register"),
@@ -261,56 +309,25 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some("power control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cwupf",
-                    description: Some("Clear Wakeup Pin flag for PA0"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "wupp",
-                    description: Some("Wakeup pin polarity bit for PA0"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Csr2",
-            extends: None,
-            description: Some("power control/status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wupf",
-                    description: Some("Wakeup Pin flag for PA0"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "ewup",
-                    description: Some("Enable Wakeup pin for PA0"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
+        Enum {
+            name: "Pdds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STOP_MODE",
+                    description: Some("Enter Stop mode when the CPU enters deepsleep"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STANDBY_MODE",
+                    description: Some("Enter Standby mode when the CPU enters deepsleep"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Vos",
             description: None,
@@ -330,23 +347,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SCALE1",
                     description: Some("Scale 1 mode (reset value)"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Pdds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STOP_MODE",
-                    description: Some("Enter Stop mode when the CPU enters deepsleep"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STANDBY_MODE",
-                    description: Some("Enter Standby mode when the CPU enters deepsleep"),
-                    value: 1,
                 },
             ],
         },

@@ -235,138 +235,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Pmcr",
-            extends: None,
-            description: Some(
-                "SBS product mode and configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "boosten",
-                    description: Some(
-                        "booster enable\r Set this bit to reduce the total harmonic distortion of the analog switch when the processor supply is below 2.7 V. The booster can be activated to guaranty AC performance on analog switch when the supply is below 2.7 V. When the booster is activated, the analog switch performances are the same as with the full voltage range.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "boostvddsel",
-                    description: Some(
-                        "booster V<sub>DD</sub> selection\r Note: Booster must not be used when V<sub>DDA</sub> < 2.7 V, but V<sub>DD</sub> > 2.7 V (add current consumption).\r Note: When both V<sub>DD</sub> < 2.7 V and V<sub>DDA</sub> < 2.7 V, booster is needed to get full AC performances from I/O analog switches.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pb6_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(6)",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pb7_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(7)",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pb8_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(8)",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdplsr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdpl",
-                    description: Some(
-                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Hdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr2",
-            extends: None,
-            description: Some(
-                "SBS Class B register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cll",
-                    description: Some(
-                        "core lockup lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the lockup (HardFault) output of Cortex-M33 with TIM1 break inputs.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sel",
-                    description: Some(
-                        "SRAM ECC error lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM double ECC error signal with break input of TIM1.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvdl",
-                    description: Some(
-                        "PVD lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection with TIM1 break inputs.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eccl",
-                    description: Some(
-                        "ECC lock\r This bit is set and cleared by software. It can be used to enable and lock the Flash memory double ECC error with break input of TIM1.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ccswcr",
             extends: None,
             description: Some(
@@ -417,46 +285,32 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hdplcr",
+            name: "Mesr",
             extends: None,
             description: Some(
-                "SBS temporal isolation control register",
+                "SBS memory erase status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "incr_hdpl",
+                    name: "mclr",
                     description: Some(
-                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
+                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, ICACHE. It is set by hardware and reset by software",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "IncrHdpl",
-                    ),
+                    enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Dbglockr",
-            extends: None,
-            description: Some(
-                "SBS debug lock register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "dbgcfg_lock",
+                    name: "ipmee",
                     description: Some(
-                        "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
+                        "end-of-erase status for ICACHE\r This bit shows the status of the protection for ICACHE. It is set by hardware and reset by software.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 8,
+                    bit_offset: 16,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "DbgcfgLock",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -544,36 +398,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mesr",
-            extends: None,
-            description: Some(
-                "SBS memory erase status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mclr",
-                    description: Some(
-                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, ICACHE. It is set by hardware and reset by software",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ipmee",
-                    description: Some(
-                        "end-of-erase status for ICACHE\r This bit shows the status of the protection for ICACHE. It is set by hardware and reset by software.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ccvalr",
             extends: None,
             description: Some(
@@ -624,20 +448,82 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fpuimr",
+            name: "Hdplsr",
             extends: None,
             description: Some(
-                "SBS FPU interrupt mask register",
+                "SBS temporal isolation status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fpu_ie",
+                    name: "hdpl",
                     description: Some(
-                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
+                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "Hdpl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pmcr",
+            extends: None,
+            description: Some(
+                "SBS product mode and configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "boosten",
+                    description: Some(
+                        "booster enable\r Set this bit to reduce the total harmonic distortion of the analog switch when the processor supply is below 2.7 V. The booster can be activated to guaranty AC performance on analog switch when the supply is below 2.7 V. When the booster is activated, the analog switch performances are the same as with the full voltage range.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boostvddsel",
+                    description: Some(
+                        "booster V<sub>DD</sub> selection\r Note: Booster must not be used when V<sub>DDA</sub> < 2.7 V, but V<sub>DD</sub> > 2.7 V (add current consumption).\r Note: When both V<sub>DD</sub> < 2.7 V and V<sub>DDA</sub> < 2.7 V, booster is needed to get full AC performances from I/O analog switches.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pb6_fmplus",
+                    description: Some(
+                        "Fast-mode Plus command on PB(6)",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pb7_fmplus",
+                    description: Some(
+                        "Fast-mode Plus command on PB(7)",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pb8_fmplus",
+                    description: Some(
+                        "Fast-mode Plus command on PB(8)",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -668,6 +554,98 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 1,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr2",
+            extends: None,
+            description: Some(
+                "SBS Class B register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cll",
+                    description: Some(
+                        "core lockup lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the lockup (HardFault) output of Cortex-M33 with TIM1 break inputs.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "SRAM ECC error lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM double ECC error signal with break input of TIM1.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdl",
+                    description: Some(
+                        "PVD lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection with TIM1 break inputs.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccl",
+                    description: Some(
+                        "ECC lock\r This bit is set and cleared by software. It can be used to enable and lock the Flash memory double ECC error with break input of TIM1.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dbglockr",
+            extends: None,
+            description: Some(
+                "SBS debug lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbgcfg_lock",
+                    description: Some(
+                        "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "DbgcfgLock",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "SBS FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
@@ -715,8 +693,100 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Hdplcr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "incr_hdpl",
+                    description: Some(
+                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "IncrHdpl",
+                    ),
+                },
+            ],
+        },
     ],
     enums: &[
+        Enum {
+            name: "DbgcfgLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "Writes to SBS_DBGCR allowed (default)",
+                    ),
+                    value: 180,
+                },
+            ],
+        },
+        Enum {
+            name: "Hdpl",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X51",
+                    description: Some(
+                        "HDPL1, iRoT",
+                    ),
+                    value: 81,
+                },
+                EnumVariant {
+                    name: "B_0X6F",
+                    description: Some(
+                        "HDPL3, application",
+                    ),
+                    value: 111,
+                },
+                EnumVariant {
+                    name: "B_0X8A",
+                    description: Some(
+                        "HDPL2, uRoT",
+                    ),
+                    value: 138,
+                },
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "HDPL0, RSS",
+                    ),
+                    value: 180,
+                },
+            ],
+        },
+        Enum {
+            name: "IncrHdpl",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X6A",
+                    description: Some(
+                        "recommended value to increment HDPL level by one",
+                    ),
+                    value: 106,
+                },
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "no increment",
+                    ),
+                    value: 180,
+                },
+            ],
+        },
         Enum {
             name: "Cs",
             description: None,
@@ -763,76 +833,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "HDPL2",
                     ),
                     value: 138,
-                },
-            ],
-        },
-        Enum {
-            name: "DbgcfgLock",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "Writes to SBS_DBGCR allowed (default)",
-                    ),
-                    value: 180,
-                },
-            ],
-        },
-        Enum {
-            name: "IncrHdpl",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X6A",
-                    description: Some(
-                        "recommended value to increment HDPL level by one",
-                    ),
-                    value: 106,
-                },
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "no increment",
-                    ),
-                    value: 180,
-                },
-            ],
-        },
-        Enum {
-            name: "Hdpl",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X51",
-                    description: Some(
-                        "HDPL1, iRoT",
-                    ),
-                    value: 81,
-                },
-                EnumVariant {
-                    name: "B_0X6F",
-                    description: Some(
-                        "HDPL3, application",
-                    ),
-                    value: 111,
-                },
-                EnumVariant {
-                    name: "B_0X8A",
-                    description: Some(
-                        "HDPL2, uRoT",
-                    ),
-                    value: 138,
-                },
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "HDPL0, RSS",
-                    ),
-                    value: 180,
                 },
             ],
         },

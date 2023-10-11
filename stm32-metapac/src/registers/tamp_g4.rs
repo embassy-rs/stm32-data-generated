@@ -157,70 +157,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Misr",
-            extends: None,
-            description: Some(
-                "TAMP masked interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampmf",
-                    description: Some(
-                        "Tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampmf",
-                    description: Some(
-                        "Internal tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bkpr",
-            extends: None,
-            description: Some(
-                "TAMP backup register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bkp",
-                    description: Some(
-                        "BKP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr2",
             extends: None,
             description: Some(
@@ -282,17 +218,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Scr",
+            name: "Misr",
             extends: None,
             description: Some(
-                "TAMP status clear register",
+                "TAMP masked interrupt status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ctampf",
+                    name: "tampmf",
                     description: Some(
-                        "Clear tamper X detection flag",
+                        "Tamper X interrupt masked flag",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -307,9 +243,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "citampf",
+                    name: "itampmf",
                     description: Some(
-                        "Clear internal tamper X detection flag",
+                        "Internal tamper X interrupt masked flag",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -326,45 +262,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ier",
+            name: "Bkpr",
             extends: None,
             description: Some(
-                "TAMP interrupt enable register",
+                "TAMP backup register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampie",
+                    name: "bkp",
                     description: Some(
-                        "Tamper X interrupt enable",
+                        "BKP",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampie",
-                    description: Some(
-                        "Internal tamper X interrupt enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    bit_size: 32,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -492,6 +404,94 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "itampf",
                     description: Some(
                         "Internal tamper X detection flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Scr",
+            extends: None,
+            description: Some(
+                "TAMP status clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ctampf",
+                    description: Some(
+                        "Clear tamper X detection flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "citampf",
+                    description: Some(
+                        "Clear internal tamper X detection flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ier",
+            extends: None,
+            description: Some(
+                "TAMP interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampie",
+                    description: Some(
+                        "Tamper X interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampie",
+                    description: Some(
+                        "Internal tamper X interrupt enable",
                     ),
                     bit_offset: 16,
                     bit_size: 1,

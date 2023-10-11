@@ -215,58 +215,81 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cr1",
+            name: "Cr3",
             extends: None,
             description: Some(
-                "Power control register 1",
+                "Power control register 3",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lpms",
+                    name: "ewup",
                     description: Some(
-                        "Low-power mode selection",
+                        "Enable Wakeup pin WKUP",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 5,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "rrs",
+                    description: Some(
+                        "SRAM2 retention in Standby mode",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Lpms",
+                        "Rrs",
                     ),
                 },
                 Field {
-                    name: "dbp",
+                    name: "apc",
                     description: Some(
-                        "Disable backup domain write protection",
+                        "Apply pull-up and pull-down configuration",
                     ),
-                    bit_offset: 8,
+                    bit_offset: 10,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vos",
+                    name: "ulpmen",
                     description: Some(
-                        "Voltage scaling range selection",
+                        "ULPMEN",
                     ),
-                    bit_offset: 9,
-                    bit_size: 2,
+                    bit_offset: 11,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lpr",
+                    name: "ucpd_stdby",
                     description: Some(
-                        "Low-power run",
+                        "UCPD_STDBY",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucpd_dbdis",
+                    description: Some(
+                        "UCPD_DBDIS",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lpr",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -366,6 +389,150 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr1",
+            extends: None,
+            description: Some(
+                "Power status register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cwuf1",
+                    description: Some(
+                        "Wakeup flag 1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf2",
+                    description: Some(
+                        "Wakeup flag 2",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf3",
+                    description: Some(
+                        "Wakeup flag 3",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf4",
+                    description: Some(
+                        "Wakeup flag 4",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf5",
+                    description: Some(
+                        "Wakeup flag 5",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "csbf",
+                    description: Some(
+                        "Standby flag",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wufi",
+                    description: Some(
+                        "Wakeup flag internal",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Scr",
+            extends: None,
+            description: Some(
+                "Power status clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cwuf",
+                    description: Some(
+                        "Clear wakeup flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 5,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "sbf",
+                    description: Some(
+                        "Clear standby flag",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pcr",
+            extends: None,
+            description: Some(
+                "Power Port pull control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p",
+                    description: Some(
+                        "Port pull bit y (y=0..15)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -491,28 +658,91 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pcr",
+            name: "Sr2",
             extends: None,
             description: Some(
-                "Power Port pull control register",
+                "Power status register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "p",
+                    name: "reglps",
                     description: Some(
-                        "Port pull bit y (y=0..15)",
+                        "Low-power regulator started",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 8,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reglpf",
+                    description: Some(
+                        "Low-power regulator flag",
                     ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vosf",
+                    description: Some(
+                        "Voltage scaling flag",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "Power voltage detector output",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo1",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDUSB vs. 1.2 V",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo2",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDIO2 vs. 0.9 V",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo3",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDA vs. 1.62 V",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvmo4",
+                    description: Some(
+                        "Peripheral voltage monitoring output: VDDA vs. 2.2 V",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -531,165 +761,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "PRIV",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr1",
-            extends: None,
-            description: Some(
-                "Power status register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cwuf1",
-                    description: Some(
-                        "Wakeup flag 1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf2",
-                    description: Some(
-                        "Wakeup flag 2",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf3",
-                    description: Some(
-                        "Wakeup flag 3",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf4",
-                    description: Some(
-                        "Wakeup flag 4",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf5",
-                    description: Some(
-                        "Wakeup flag 5",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csbf",
-                    description: Some(
-                        "Standby flag",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wufi",
-                    description: Some(
-                        "Wakeup flag internal",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr3",
-            extends: None,
-            description: Some(
-                "Power control register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ewup",
-                    description: Some(
-                        "Enable Wakeup pin WKUP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 5,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "rrs",
-                    description: Some(
-                        "SRAM2 retention in Standby mode",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Rrs",
-                    ),
-                },
-                Field {
-                    name: "apc",
-                    description: Some(
-                        "Apply pull-up and pull-down configuration",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ulpmen",
-                    description: Some(
-                        "ULPMEN",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd_stdby",
-                    description: Some(
-                        "UCPD_STDBY",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd_dbdis",
-                    description: Some(
-                        "UCPD_DBDIS",
-                    ),
-                    bit_offset: 14,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -789,54 +860,29 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Scr",
+            name: "Cr1",
             extends: None,
             description: Some(
-                "Power status clear register",
+                "Power control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cwuf",
+                    name: "lpms",
                     description: Some(
-                        "Clear wakeup flag",
+                        "Low-power mode selection",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 5,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "sbf",
-                    description: Some(
-                        "Clear standby flag",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
+                    bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Lpms",
+                    ),
                 },
-            ],
-        },
-        FieldSet {
-            name: "Sr2",
-            extends: None,
-            description: Some(
-                "Power status register 2",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "reglps",
+                    name: "dbp",
                     description: Some(
-                        "Low-power regulator started",
+                        "Disable backup domain write protection",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -844,79 +890,82 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "reglpf",
+                    name: "vos",
                     description: Some(
-                        "Low-power regulator flag",
+                        "Voltage scaling range selection",
                     ),
                     bit_offset: 9,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vosf",
-                    description: Some(
-                        "Voltage scaling flag",
+                    enumm: Some(
+                        "Vos",
                     ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
-                    name: "pvdo",
+                    name: "lpr",
                     description: Some(
-                        "Power voltage detector output",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo1",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDUSB vs. 1.2 V",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo2",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDIO2 vs. 0.9 V",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo3",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDA vs. 1.62 V",
+                        "Low-power run",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvmo4",
-                    description: Some(
-                        "Peripheral voltage monitoring output: VDDA vs. 2.2 V",
+                    enumm: Some(
+                        "Lpr",
                     ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
+        Enum {
+            name: "Vos",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "RANGE0",
+                    description: Some(
+                        "Range 0",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RANGE1",
+                    description: Some(
+                        "Range 1",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RANGE2",
+                    description: Some(
+                        "Range 2",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MAINMODE",
+                    description: Some(
+                        "Voltage regulator in Main mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOWPOWERMODE",
+                    description: Some(
+                        "Voltage regulator in low-power mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Pls",
             description: None,
@@ -977,55 +1026,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "External input analog voltage PVD_IN (compared internally to VREFINT)",
                     ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Lpr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MAINMODE",
-                    description: Some(
-                        "Voltage regulator in Main mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOWPOWERMODE",
-                    description: Some(
-                        "Voltage regulator in low-power mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vos",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "RANGE0",
-                    description: Some(
-                        "Range 0",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RANGE1",
-                    description: Some(
-                        "Range 1",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RANGE2",
-                    description: Some(
-                        "Range 2",
-                    ),
-                    value: 2,
                 },
             ],
         },

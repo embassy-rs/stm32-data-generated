@@ -473,107 +473,49 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Csr",
+            name: "Sscgr",
             extends: None,
             description: Some(
-                "clock control & status register",
+                "spread spectrum clock generation register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lsion",
+                    name: "modper",
                     description: Some(
-                        "Internal low-speed oscillator enable",
+                        "Modulation period",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "lsirdy",
+                    name: "incstep",
                     description: Some(
-                        "Internal low-speed oscillator ready",
+                        "Incrementation step",
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
+                    bit_offset: 13,
+                    bit_size: 15,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rmvf",
+                    name: "spreadsel",
                     description: Some(
-                        "Remove reset flag",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "borrstf",
-                    description: Some(
-                        "BOR reset flag",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "padrstf",
-                    description: Some(
-                        "PIN reset flag",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "porrstf",
-                    description: Some(
-                        "POR/PDR reset flag",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sftrstf",
-                    description: Some(
-                        "Software reset flag",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdgrstf",
-                    description: Some(
-                        "Independent watchdog reset flag",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wwdgrstf",
-                    description: Some(
-                        "Window watchdog reset flag",
+                        "Spread Select",
                     ),
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Spreadsel",
+                    ),
                 },
                 Field {
-                    name: "lpwrrstf",
+                    name: "sscgen",
                     description: Some(
-                        "Low-power reset flag",
+                        "Spread spectrum modulation enable",
                     ),
                     bit_offset: 31,
                     bit_size: 1,
@@ -583,17 +525,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ahb1lpenr",
+            name: "Ahb2rstr",
             extends: None,
             description: Some(
-                "AHB1 peripheral clock enable in low power mode register",
+                "AHB2 peripheral reset register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "gpioalpen",
+                    name: "dcmirst",
                     description: Some(
-                        "IO port A clock enable during sleep mode",
+                        "Camera interface reset",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -601,39 +543,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpioblpen",
+                    name: "cryprst",
                     description: Some(
-                        "IO port B clock enable during Sleep mode",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpioclpen",
-                    description: Some(
-                        "IO port C clock enable during Sleep mode",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiodlpen",
-                    description: Some(
-                        "IO port D clock enable during Sleep mode",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpioelpen",
-                    description: Some(
-                        "IO port E clock enable during Sleep mode",
+                        "CRYP module reset",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -641,9 +553,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpioflpen",
+                    name: "hsahrst",
                     description: Some(
-                        "IO port F clock enable during Sleep mode",
+                        "Hash module reset",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -651,9 +563,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpioglpen",
+                    name: "rngrst",
                     description: Some(
-                        "IO port G clock enable during Sleep mode",
+                        "Random number generator module reset",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -661,201 +573,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpiohlpen",
+                    name: "usb_otg_fsrst",
                     description: Some(
-                        "IO port H clock enable during Sleep mode",
+                        "USB OTG FS module reset",
                     ),
                     bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpioilpen",
-                    description: Some(
-                        "IO port I clock enable during Sleep mode",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiojlpen",
-                    description: Some(
-                        "IO port J clock enable during Sleep mode",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpioklpen",
-                    description: Some(
-                        "IO port K clock enable during Sleep mode",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crclpen",
-                    description: Some(
-                        "CRC clock enable during Sleep mode",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "flashlpen",
-                    description: Some(
-                        "Flash interface clock enable during Sleep mode",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sram1lpen",
-                    description: Some(
-                        "SRAM 1interface clock enable during Sleep mode",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sram2lpen",
-                    description: Some(
-                        "SRAM 2 interface clock enable during Sleep mode",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bkpsramlpen",
-                    description: Some(
-                        "Backup SRAM interface clock enable during Sleep mode",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sram3lpen",
-                    description: Some(
-                        "SRAM 3 interface clock enable during Sleep mode",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1lpen",
-                    description: Some(
-                        "DMA1 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma2lpen",
-                    description: Some(
-                        "DMA2 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma2dlpen",
-                    description: Some(
-                        "DMA2D clock enable during Sleep mode",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ethlpen",
-                    description: Some(
-                        "Ethernet MAC clock enable during Sleep mode",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ethtxlpen",
-                    description: Some(
-                        "Ethernet transmission clock enable during Sleep mode",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ethrxlpen",
-                    description: Some(
-                        "Ethernet reception clock enable during Sleep mode",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ethptplpen",
-                    description: Some(
-                        "Ethernet PTP clock enable during Sleep mode",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb_otg_hslpen",
-                    description: Some(
-                        "USB OTG HS clock enable during Sleep mode",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb_otg_hsulpilpen",
-                    description: Some(
-                        "USB OTG HS ULPI clock enable during Sleep mode",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rnglpen",
-                    description: Some(
-                        "RNG clock enable during sleep mode",
-                    ),
-                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -943,818 +665,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb2lpenr",
-            extends: None,
-            description: Some(
-                "AHB2 peripheral clock enable in low power mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dcmilpen",
-                    description: Some(
-                        "Camera interface enable during Sleep mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fsmclpen",
-                    description: Some(
-                        "Flexible memory controller module clock enable during Sleep mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "qspilpen",
-                    description: Some(
-                        "QUADSPI memory controller module clock enable during Sleep mode",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cryplpen",
-                    description: Some(
-                        "Cryptography modules clock enable during Sleep mode",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hashlpen",
-                    description: Some(
-                        "Hash modules clock enable during Sleep mode",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rnglpen",
-                    description: Some(
-                        "Random number generator clock enable during Sleep mode",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb_otg_fslpen",
-                    description: Some(
-                        "USB OTG FS clock enable during Sleep mode",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some(
-                "clock control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hsion",
-                    description: Some(
-                        "Internal high-speed clock enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsirdy",
-                    description: Some(
-                        "Internal high-speed clock ready flag",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsitrim",
-                    description: Some(
-                        "Internal high-speed clock trimming",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsical",
-                    description: Some(
-                        "Internal high-speed clock calibration",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hseon",
-                    description: Some(
-                        "HSE clock enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hserdy",
-                    description: Some(
-                        "HSE clock ready flag",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsebyp",
-                    description: Some(
-                        "HSE clock bypass",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csson",
-                    description: Some(
-                        "Clock security system enable",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllon",
-                    description: Some(
-                        "Main PLL (PLL) enable",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllrdy",
-                    description: Some(
-                        "Main PLL (PLL) clock ready flag",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "plli2son",
-                    description: Some(
-                        "PLLI2S enable",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "plli2srdy",
-                    description: Some(
-                        "PLLI2S clock ready flag",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllsaion",
-                    description: Some(
-                        "PLLSAI enable",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllsairdy",
-                    description: Some(
-                        "PLLSAI clock ready flag",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1enr",
-            extends: None,
-            description: Some(
-                "APB1 peripheral clock enable register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim2en",
-                    description: Some(
-                        "TIM2 clock enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim3en",
-                    description: Some(
-                        "TIM3 clock enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim4en",
-                    description: Some(
-                        "TIM4 clock enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim5en",
-                    description: Some(
-                        "TIM5 clock enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim6en",
-                    description: Some(
-                        "TIM6 clock enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim7en",
-                    description: Some(
-                        "TIM7 clock enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim12en",
-                    description: Some(
-                        "TIM12 clock enable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim13en",
-                    description: Some(
-                        "TIM13 clock enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim14en",
-                    description: Some(
-                        "TIM14 clock enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lptim1en",
-                    description: Some(
-                        "LPTIM1 clock enable",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rtcapben",
-                    description: Some(
-                        "RTC APB clock enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wwdgen",
-                    description: Some(
-                        "Window watchdog clock enable",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi2en",
-                    description: Some(
-                        "SPI2 clock enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3en",
-                    description: Some(
-                        "SPI3 clock enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spdifen",
-                    description: Some(
-                        "SPDIF-IN clock enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart2en",
-                    description: Some(
-                        "USART 2 clock enable",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart3en",
-                    description: Some(
-                        "USART3 clock enable",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart4en",
-                    description: Some(
-                        "UART4 clock enable",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart5en",
-                    description: Some(
-                        "UART5 clock enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1en",
-                    description: Some(
-                        "I2C1 clock enable",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c2en",
-                    description: Some(
-                        "I2C2 clock enable",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c3en",
-                    description: Some(
-                        "I2C3 clock enable",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fmpi2c1en",
-                    description: Some(
-                        "FMPI2C1 clock enable",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can1en",
-                    description: Some(
-                        "CAN 1 clock enable",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can2en",
-                    description: Some(
-                        "CAN 2 clock enable",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can3en",
-                    description: Some(
-                        "CAN 3 clock enable",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cecen",
-                    description: Some(
-                        "CEC interface clock enable",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwren",
-                    description: Some(
-                        "Power interface clock enable",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dacen",
-                    description: Some(
-                        "DAC interface clock enable",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart7en",
-                    description: Some(
-                        "UART7 clock enable",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart8en",
-                    description: Some(
-                        "UART8 clock enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb1rstr",
-            extends: None,
-            description: Some(
-                "AHB1 peripheral reset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "gpioarst",
-                    description: Some(
-                        "IO port A reset",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiobrst",
-                    description: Some(
-                        "IO port B reset",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiocrst",
-                    description: Some(
-                        "IO port C reset",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiodrst",
-                    description: Some(
-                        "IO port D reset",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpioerst",
-                    description: Some(
-                        "IO port E reset",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiofrst",
-                    description: Some(
-                        "IO port F reset",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiogrst",
-                    description: Some(
-                        "IO port G reset",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiohrst",
-                    description: Some(
-                        "IO port H reset",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpioirst",
-                    description: Some(
-                        "IO port I reset",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiojrst",
-                    description: Some(
-                        "IO port J reset",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiokrst",
-                    description: Some(
-                        "IO port K reset",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crcrst",
-                    description: Some(
-                        "CRC reset",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1rst",
-                    description: Some(
-                        "DMA2 reset",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma2rst",
-                    description: Some(
-                        "DMA2 reset",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma2drst",
-                    description: Some(
-                        "DMA2D reset",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ethrst",
-                    description: Some(
-                        "Ethernet MAC reset",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb_otg_hsrst",
-                    description: Some(
-                        "USB OTG HS module reset",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dckcfgr2",
-            extends: None,
-            description: Some(
-                "dedicated clocks configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fmpi2c1sel",
-                    description: Some(
-                        "FMPI2C1 kernel clock source selection",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Fmpicsel",
-                    ),
-                },
-                Field {
-                    name: "cecsel",
-                    description: Some(
-                        "HDMI CEC clock source selection",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cecsel",
-                    ),
-                },
-                Field {
-                    name: "ck48msel",
-                    description: Some(
-                        "SDIO/USB clock selection",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ckmsel",
-                    ),
-                },
-                Field {
-                    name: "sdiosel",
-                    description: Some(
-                        "SDIO clock selection",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sdiosel",
-                    ),
-                },
-                Field {
-                    name: "spdifrxsel",
-                    description: Some(
-                        "SPDIF clock selection",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Spdifrxsel",
-                    ),
-                },
-                Field {
-                    name: "lptim1sel",
-                    description: Some(
-                        "LPTIM1SEL",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Lptimsel",
-                    ),
                 },
             ],
         },
@@ -2257,17 +1167,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ahb2rstr",
+            name: "Cr",
             extends: None,
             description: Some(
-                "AHB2 peripheral reset register",
+                "clock control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dcmirst",
+                    name: "hsion",
                     description: Some(
-                        "Camera interface reset",
+                        "Internal high-speed clock enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2275,9 +1185,189 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cryprst",
+                    name: "hsirdy",
                     description: Some(
-                        "CRYP module reset",
+                        "Internal high-speed clock ready flag",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsitrim",
+                    description: Some(
+                        "Internal high-speed clock trimming",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsical",
+                    description: Some(
+                        "Internal high-speed clock calibration",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hseon",
+                    description: Some(
+                        "HSE clock enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hserdy",
+                    description: Some(
+                        "HSE clock ready flag",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsebyp",
+                    description: Some(
+                        "HSE clock bypass",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "csson",
+                    description: Some(
+                        "Clock security system enable",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllon",
+                    description: Some(
+                        "Main PLL (PLL) enable",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllrdy",
+                    description: Some(
+                        "Main PLL (PLL) clock ready flag",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plli2son",
+                    description: Some(
+                        "PLLI2S enable",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plli2srdy",
+                    description: Some(
+                        "PLLI2S clock ready flag",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsaion",
+                    description: Some(
+                        "PLLSAI enable",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsairdy",
+                    description: Some(
+                        "PLLSAI clock ready flag",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ckgatenr",
+            extends: None,
+            description: Some(
+                "clocks gated enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ahb2apb1_cken",
+                    description: Some(
+                        "AHB to APB1 Bridge clock enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ahb2apb2_cken",
+                    description: Some(
+                        "AHB to APB2 Bridge clock enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cm4dbg_cken",
+                    description: Some(
+                        "Cortex M4 ETM clock enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spare_cken",
+                    description: Some(
+                        "Spare clock enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sram_cken",
+                    description: Some(
+                        "SRAM controller clock enable",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -2285,9 +1375,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsahrst",
+                    name: "flash_cken",
                     description: Some(
-                        "Hash module reset",
+                        "Flash interface clock enable",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -2295,9 +1385,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rngrst",
+                    name: "rcc_cken",
                     description: Some(
-                        "Random number generator module reset",
+                        "RCC clock enable",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -2305,9 +1395,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "usb_otg_fsrst",
+                    name: "evtcl_cken",
                     description: Some(
-                        "USB OTG FS module reset",
+                        "EVTCL clock enable",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -2317,17 +1407,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ahb2enr",
+            name: "Apb2rstr",
             extends: None,
             description: Some(
-                "AHB2 peripheral clock enable register",
+                "APB2 peripheral reset register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dcmien",
+                    name: "tim1rst",
                     description: Some(
-                        "Camera interface enable",
+                        "TIM1 reset",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2335,9 +1425,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "crypen",
+                    name: "tim8rst",
                     description: Some(
-                        "CRYP clock enable",
+                        "TIM8 reset",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart1rst",
+                    description: Some(
+                        "USART1 reset",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -2345,9 +1445,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hashen",
+                    name: "usart6rst",
                     description: Some(
-                        "Hash modules clock enable",
+                        "USART6 reset",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -2355,9 +1455,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rngen",
+                    name: "uart9rst",
                     description: Some(
-                        "Random number generator clock enable",
+                        "UART9 reset",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -2365,12 +1465,1370 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "usb_otg_fsen",
+                    name: "uart10rst",
                     description: Some(
-                        "USB OTG FS clock enable",
+                        "UART10 reset",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adcrst",
+                    description: Some(
+                        "ADC interface reset (common to all ADCs)",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdiorst",
+                    description: Some(
+                        "SDIO reset",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi1rst",
+                    description: Some(
+                        "SPI 1 reset",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi4rst",
+                    description: Some(
+                        "SPI4 reset",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "syscfgrst",
+                    description: Some(
+                        "System configuration controller reset",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim9rst",
+                    description: Some(
+                        "TIM9 reset",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim10rst",
+                    description: Some(
+                        "TIM10 reset",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim11rst",
+                    description: Some(
+                        "TIM11 reset",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi5rst",
+                    description: Some(
+                        "SPI5 reset",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi6rst",
+                    description: Some(
+                        "SPI6 reset",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sai1rst",
+                    description: Some(
+                        "SAI1 reset",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sai2rst",
+                    description: Some(
+                        "SAI2 reset",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dfsdmrst",
+                    description: Some(
+                        "DFSDMRST",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dfsdm2rst",
+                    description: Some(
+                        "DFSDM2 reset",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ltdcrst",
+                    description: Some(
+                        "LTDC reset",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dsirst",
+                    description: Some(
+                        "DSI host reset",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pllcfgr",
+            extends: None,
+            description: Some(
+                "PLL configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pllm",
+                    description: Some(
+                        "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: Some(
+                        "Pllm",
+                    ),
+                },
+                Field {
+                    name: "plln",
+                    description: Some(
+                        "Main PLL (PLL) multiplication factor for VCO",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 9,
+                    array: None,
+                    enumm: Some(
+                        "Plln",
+                    ),
+                },
+                Field {
+                    name: "pllp",
+                    description: Some(
+                        "Main PLL (PLL) division factor for main system clock",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Pllp",
+                    ),
+                },
+                Field {
+                    name: "pllsrc",
+                    description: Some(
+                        "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pllsrc",
+                    ),
+                },
+                Field {
+                    name: "pllq",
+                    description: Some(
+                        "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Pllq",
+                    ),
+                },
+                Field {
+                    name: "pllr",
+                    description: Some(
+                        "PLL division factor for I2S and System clocks",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Pllr",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb1rstr",
+            extends: None,
+            description: Some(
+                "AHB1 peripheral reset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "gpioarst",
+                    description: Some(
+                        "IO port A reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiobrst",
+                    description: Some(
+                        "IO port B reset",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiocrst",
+                    description: Some(
+                        "IO port C reset",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiodrst",
+                    description: Some(
+                        "IO port D reset",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpioerst",
+                    description: Some(
+                        "IO port E reset",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiofrst",
+                    description: Some(
+                        "IO port F reset",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiogrst",
+                    description: Some(
+                        "IO port G reset",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiohrst",
+                    description: Some(
+                        "IO port H reset",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpioirst",
+                    description: Some(
+                        "IO port I reset",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiojrst",
+                    description: Some(
+                        "IO port J reset",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiokrst",
+                    description: Some(
+                        "IO port K reset",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crcrst",
+                    description: Some(
+                        "CRC reset",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dma1rst",
+                    description: Some(
+                        "DMA2 reset",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dma2rst",
+                    description: Some(
+                        "DMA2 reset",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dma2drst",
+                    description: Some(
+                        "DMA2D reset",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ethrst",
+                    description: Some(
+                        "Ethernet MAC reset",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb_otg_hsrst",
+                    description: Some(
+                        "USB OTG HS module reset",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb2lpenr",
+            extends: None,
+            description: Some(
+                "AHB2 peripheral clock enable in low power mode register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcmilpen",
+                    description: Some(
+                        "Camera interface enable during Sleep mode",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fsmclpen",
+                    description: Some(
+                        "Flexible memory controller module clock enable during Sleep mode",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "qspilpen",
+                    description: Some(
+                        "QUADSPI memory controller module clock enable during Sleep mode",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cryplpen",
+                    description: Some(
+                        "Cryptography modules clock enable during Sleep mode",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hashlpen",
+                    description: Some(
+                        "Hash modules clock enable during Sleep mode",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rnglpen",
+                    description: Some(
+                        "Random number generator clock enable during Sleep mode",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb_otg_fslpen",
+                    description: Some(
+                        "USB OTG FS clock enable during Sleep mode",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb2lpenr",
+            extends: None,
+            description: Some(
+                "APB2 peripheral clock enabled in low power mode register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim1lpen",
+                    description: Some(
+                        "TIM1 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim8lpen",
+                    description: Some(
+                        "TIM8 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart1lpen",
+                    description: Some(
+                        "USART1 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart6lpen",
+                    description: Some(
+                        "USART6 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart9lpen",
+                    description: Some(
+                        "UART9 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart10lpen",
+                    description: Some(
+                        "UART10 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adc1lpen",
+                    description: Some(
+                        "ADC1 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adc2lpen",
+                    description: Some(
+                        "ADC2 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adc3lpen",
+                    description: Some(
+                        "ADC 3 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdiolpen",
+                    description: Some(
+                        "SDIO clock enable during Sleep mode",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi1lpen",
+                    description: Some(
+                        "SPI 1 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi4lpen",
+                    description: Some(
+                        "SPI4 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "syscfglpen",
+                    description: Some(
+                        "System configuration controller clock enable during Sleep mode",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "extitlpen",
+                    description: Some(
+                        "EXTI and External IT clock enable during sleep mode",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim9lpen",
+                    description: Some(
+                        "TIM9 clock enable during sleep mode",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim10lpen",
+                    description: Some(
+                        "TIM10 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim11lpen",
+                    description: Some(
+                        "TIM11 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi5lpen",
+                    description: Some(
+                        "SPI5 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi6lpen",
+                    description: Some(
+                        "SPI 6 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sai1lpen",
+                    description: Some(
+                        "SAI1 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sai2lpen",
+                    description: Some(
+                        "SAI2 clock enable",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dfsdmlpen",
+                    description: Some(
+                        "DFSDMLPEN",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dfsdm2lpen",
+                    description: Some(
+                        "DFSDM2 clock enable during Sleep mode",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ltdclpen",
+                    description: Some(
+                        "LTDC clock enable during Sleep mode",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dsilpen",
+                    description: Some(
+                        "DSI clocks enable during Sleep mode",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb1rstr",
+            extends: None,
+            description: Some(
+                "APB1 peripheral reset register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim2rst",
+                    description: Some(
+                        "TIM2 reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim3rst",
+                    description: Some(
+                        "TIM3 reset",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim4rst",
+                    description: Some(
+                        "TIM4 reset",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim5rst",
+                    description: Some(
+                        "TIM5 reset",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim6rst",
+                    description: Some(
+                        "TIM6 reset",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim7rst",
+                    description: Some(
+                        "TIM7 reset",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim12rst",
+                    description: Some(
+                        "TIM12 reset",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim13rst",
+                    description: Some(
+                        "TIM13 reset",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim14rst",
+                    description: Some(
+                        "TIM14 reset",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptim1rst",
+                    description: Some(
+                        "LPTIM1 reset",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wwdgrst",
+                    description: Some(
+                        "Window watchdog reset",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi2rst",
+                    description: Some(
+                        "SPI 2 reset",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi3rst",
+                    description: Some(
+                        "SPI 3 reset",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spdifrst",
+                    description: Some(
+                        "SPDIF-IN reset",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart2rst",
+                    description: Some(
+                        "USART 2 reset",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart3rst",
+                    description: Some(
+                        "USART 3 reset",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart4rst",
+                    description: Some(
+                        "UART 4 reset",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart5rst",
+                    description: Some(
+                        "UART 5 reset",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c1rst",
+                    description: Some(
+                        "I2C 1 reset",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c2rst",
+                    description: Some(
+                        "I2C 2 reset",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c3rst",
+                    description: Some(
+                        "I2C3 reset",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fmpi2c1rst",
+                    description: Some(
+                        "FMPI2C1 reset",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "can1rst",
+                    description: Some(
+                        "CAN1 reset",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "can2rst",
+                    description: Some(
+                        "CAN2 reset",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "can3rst",
+                    description: Some(
+                        "CAN 3 reset",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pwrrst",
+                    description: Some(
+                        "Power interface reset",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dacrst",
+                    description: Some(
+                        "DAC reset",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart7rst",
+                    description: Some(
+                        "UART 7 reset",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart8rst",
+                    description: Some(
+                        "UART 8 reset",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr",
+            extends: None,
+            description: Some(
+                "clock configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sw",
+                    description: Some(
+                        "System clock switch",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Sw",
+                    ),
+                },
+                Field {
+                    name: "sws",
+                    description: Some(
+                        "System clock switch status",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Sw",
+                    ),
+                },
+                Field {
+                    name: "hpre",
+                    description: Some(
+                        "AHB prescaler",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Hpre",
+                    ),
+                },
+                Field {
+                    name: "mco1en",
+                    description: Some(
+                        "MCO output enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mco2en",
+                    description: Some(
+                        "MCO output enable",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ppre1",
+                    description: Some(
+                        "APB Low speed prescaler (APB1)",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Ppre",
+                    ),
+                },
+                Field {
+                    name: "ppre2",
+                    description: Some(
+                        "APB high-speed prescaler (APB2)",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Ppre",
+                    ),
+                },
+                Field {
+                    name: "rtcpre",
+                    description: Some(
+                        "HSE division factor for RTC clock",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mco1sel",
+                    description: Some(
+                        "Microcontroller clock output 1",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Mco1sel",
+                    ),
+                },
+                Field {
+                    name: "i2ssrc",
+                    description: Some(
+                        "I2S clock selection",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Issrc",
+                    ),
+                },
+                Field {
+                    name: "mco1pre",
+                    description: Some(
+                        "MCO1 prescaler",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Mcopre",
+                    ),
+                },
+                Field {
+                    name: "mco2pre",
+                    description: Some(
+                        "MCO2 prescaler",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Mcopre",
+                    ),
+                },
+                Field {
+                    name: "mco2sel",
+                    description: Some(
+                        "Microcontroller clock output 2",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Mco2sel",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Plli2scfgr",
+            extends: None,
+            description: Some(
+                "PLLI2S configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "plli2sm",
+                    description: Some(
+                        "Division factor for the audio PLL (PLLI2S) input clock",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plli2sn",
+                    description: Some(
+                        "PLLI2S multiplication factor for VCO",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plli2sp",
+                    description: Some(
+                        "PLLI2S division factor for SPDIF-IN clock",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Plli2sp",
+                    ),
+                },
+                Field {
+                    name: "plli2ssrc",
+                    description: Some(
+                        "PLLI2S entry clock source",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Plli2ssrc",
+                    ),
+                },
+                Field {
+                    name: "plli2sq",
+                    description: Some(
+                        "PLLI2S division factor for USB OTG FS/SDIO/RNG clock",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plli2sr",
+                    description: Some(
+                        "PLLI2S division factor for I2S clocks",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pllsaicfgr",
+            extends: None,
+            description: Some(
+                "PLL configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pllsaim",
+                    description: Some(
+                        "Division factor for audio PLLSAI input clock",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsain",
+                    description: Some(
+                        "PLLSAI division factor for VCO",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsaip",
+                    description: Some(
+                        "PLLSAI division factor for 48 MHz clock",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Pllsaip",
+                    ),
+                },
+                Field {
+                    name: "pllsaiq",
+                    description: Some(
+                        "PLLSAI division factor for SAI1 clock",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsair",
+                    description: Some(
+                        "PLLSAI division factor for LCD clock",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
@@ -2697,199 +3155,109 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cfgr",
+            name: "Csr",
             extends: None,
             description: Some(
-                "clock configuration register",
+                "clock control & status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sw",
+                    name: "lsion",
                     description: Some(
-                        "System clock switch",
+                        "Internal low-speed oscillator enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Sw",
-                    ),
-                },
-                Field {
-                    name: "sws",
-                    description: Some(
-                        "System clock switch status",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Sw",
-                    ),
-                },
-                Field {
-                    name: "hpre",
-                    description: Some(
-                        "AHB prescaler",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Hpre",
-                    ),
-                },
-                Field {
-                    name: "mco1en",
-                    description: Some(
-                        "MCO output enable",
-                    ),
-                    bit_offset: 8,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "mco2en",
+                    name: "lsirdy",
                     description: Some(
-                        "MCO output enable",
+                        "Internal low-speed oscillator ready",
                     ),
-                    bit_offset: 9,
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ppre1",
+                    name: "rmvf",
                     description: Some(
-                        "APB Low speed prescaler (APB1)",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Ppre",
-                    ),
-                },
-                Field {
-                    name: "ppre2",
-                    description: Some(
-                        "APB high-speed prescaler (APB2)",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Ppre",
-                    ),
-                },
-                Field {
-                    name: "rtcpre",
-                    description: Some(
-                        "HSE division factor for RTC clock",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mco1sel",
-                    description: Some(
-                        "Microcontroller clock output 1",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Mco1sel",
-                    ),
-                },
-                Field {
-                    name: "i2ssrc",
-                    description: Some(
-                        "I2S clock selection",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Issrc",
-                    ),
-                },
-                Field {
-                    name: "mco1pre",
-                    description: Some(
-                        "MCO1 prescaler",
+                        "Remove reset flag",
                     ),
                     bit_offset: 24,
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mcopre",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "mco2pre",
+                    name: "borrstf",
                     description: Some(
-                        "MCO2 prescaler",
+                        "BOR reset flag",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "padrstf",
+                    description: Some(
+                        "PIN reset flag",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "porrstf",
+                    description: Some(
+                        "POR/PDR reset flag",
                     ),
                     bit_offset: 27,
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mcopre",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "mco2sel",
+                    name: "sftrstf",
                     description: Some(
-                        "Microcontroller clock output 2",
+                        "Software reset flag",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdgrstf",
+                    description: Some(
+                        "Independent watchdog reset flag",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wwdgrstf",
+                    description: Some(
+                        "Window watchdog reset flag",
                     ),
                     bit_offset: 30,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Mco2sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb3rstr",
-            extends: None,
-            description: Some(
-                "AHB3 peripheral reset register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fmcrst",
-                    description: Some(
-                        "Flexible static memory controller module reset",
-                    ),
-                    bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "fsmcrst",
+                    name: "lpwrrstf",
                     description: Some(
-                        "Flexible static memory controller module reset",
+                        "Low-power reset flag",
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "qspirst",
-                    description: Some(
-                        "QUADSPI module reset",
-                    ),
-                    bit_offset: 1,
+                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2897,17 +3265,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ckgatenr",
+            name: "Apb1enr",
             extends: None,
             description: Some(
-                "clocks gated enable register",
+                "APB1 peripheral clock enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ahb2apb1_cken",
+                    name: "tim2en",
                     description: Some(
-                        "AHB to APB1 Bridge clock enable",
+                        "TIM2 clock enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2915,9 +3283,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ahb2apb2_cken",
+                    name: "tim3en",
                     description: Some(
-                        "AHB to APB2 Bridge clock enable",
+                        "TIM3 clock enable",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -2925,9 +3293,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cm4dbg_cken",
+                    name: "tim4en",
                     description: Some(
-                        "Cortex M4 ETM clock enable",
+                        "TIM4 clock enable",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -2935,9 +3303,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "spare_cken",
+                    name: "tim5en",
                     description: Some(
-                        "Spare clock enable",
+                        "TIM5 clock enable",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -2945,9 +3313,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sram_cken",
+                    name: "tim6en",
                     description: Some(
-                        "SRAM controller clock enable",
+                        "TIM6 clock enable",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -2955,9 +3323,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "flash_cken",
+                    name: "tim7en",
                     description: Some(
-                        "Flash interface clock enable",
+                        "TIM7 clock enable",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -2965,9 +3333,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rcc_cken",
+                    name: "tim12en",
                     description: Some(
-                        "RCC clock enable",
+                        "TIM12 clock enable",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -2975,170 +3343,366 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "evtcl_cken",
+                    name: "tim13en",
                     description: Some(
-                        "EVTCL clock enable",
+                        "TIM13 clock enable",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Pllcfgr",
-            extends: None,
-            description: Some(
-                "PLL configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "pllm",
+                    name: "tim14en",
                     description: Some(
-                        "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock",
+                        "TIM14 clock enable",
                     ),
-                    bit_offset: 0,
-                    bit_size: 6,
+                    bit_offset: 8,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pllm",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "plln",
+                    name: "lptim1en",
                     description: Some(
-                        "Main PLL (PLL) multiplication factor for VCO",
+                        "LPTIM1 clock enable",
                     ),
-                    bit_offset: 6,
-                    bit_size: 9,
+                    bit_offset: 9,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Plln",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "pllp",
+                    name: "rtcapben",
                     description: Some(
-                        "Main PLL (PLL) division factor for main system clock",
+                        "RTC APB clock enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wwdgen",
+                    description: Some(
+                        "Window watchdog clock enable",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi2en",
+                    description: Some(
+                        "SPI2 clock enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi3en",
+                    description: Some(
+                        "SPI3 clock enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spdifen",
+                    description: Some(
+                        "SPDIF-IN clock enable",
                     ),
                     bit_offset: 16,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pllp",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "pllsrc",
+                    name: "usart2en",
                     description: Some(
-                        "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source",
+                        "USART 2 clock enable",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart3en",
+                    description: Some(
+                        "USART3 clock enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart4en",
+                    description: Some(
+                        "UART4 clock enable",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart5en",
+                    description: Some(
+                        "UART5 clock enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c1en",
+                    description: Some(
+                        "I2C1 clock enable",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c2en",
+                    description: Some(
+                        "I2C2 clock enable",
                     ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pllsrc",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "pllq",
+                    name: "i2c3en",
                     description: Some(
-                        "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks",
+                        "I2C3 clock enable",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fmpi2c1en",
+                    description: Some(
+                        "FMPI2C1 clock enable",
                     ),
                     bit_offset: 24,
-                    bit_size: 4,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pllq",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "pllr",
+                    name: "can1en",
                     description: Some(
-                        "PLL division factor for I2S and System clocks",
+                        "CAN 1 clock enable",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "can2en",
+                    description: Some(
+                        "CAN 2 clock enable",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "can3en",
+                    description: Some(
+                        "CAN 3 clock enable",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cecen",
+                    description: Some(
+                        "CEC interface clock enable",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pwren",
+                    description: Some(
+                        "Power interface clock enable",
                     ),
                     bit_offset: 28,
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pllr",
+                    enumm: None,
+                },
+                Field {
+                    name: "dacen",
+                    description: Some(
+                        "DAC interface clock enable",
                     ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart7en",
+                    description: Some(
+                        "UART7 clock enable",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uart8en",
+                    description: Some(
+                        "UART8 clock enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Plli2scfgr",
+            name: "Ahb3lpenr",
             extends: None,
             description: Some(
-                "PLLI2S configuration register",
+                "AHB3 peripheral clock enable in low power mode register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "plli2sm",
+                    name: "fmclpen",
                     description: Some(
-                        "Division factor for the audio PLL (PLLI2S) input clock",
+                        "Flexible static memory controller module clock enable during Sleep mode",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "plli2sn",
+                    name: "fsmclpen",
                     description: Some(
-                        "PLLI2S multiplication factor for VCO",
+                        "Flexible static memory controller module clock enable during Sleep mode",
                     ),
-                    bit_offset: 6,
-                    bit_size: 9,
+                    bit_offset: 0,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "plli2sp",
+                    name: "qspilpen",
                     description: Some(
-                        "PLLI2S division factor for SPDIF-IN clock",
+                        "QUADSPI memory controller module clock enable during Sleep mode",
                     ),
-                    bit_offset: 16,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dckcfgr2",
+            extends: None,
+            description: Some(
+                "dedicated clocks configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fmpi2c1sel",
+                    description: Some(
+                        "FMPI2C1 kernel clock source selection",
+                    ),
+                    bit_offset: 22,
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Plli2sp",
+                        "Fmpicsel",
                     ),
                 },
                 Field {
-                    name: "plli2ssrc",
+                    name: "cecsel",
                     description: Some(
-                        "PLLI2S entry clock source",
+                        "HDMI CEC clock source selection",
                     ),
-                    bit_offset: 22,
+                    bit_offset: 26,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Plli2ssrc",
+                        "Cecsel",
                     ),
                 },
                 Field {
-                    name: "plli2sq",
+                    name: "ck48msel",
                     description: Some(
-                        "PLLI2S division factor for USB OTG FS/SDIO/RNG clock",
+                        "SDIO/USB clock selection",
                     ),
-                    bit_offset: 24,
-                    bit_size: 4,
+                    bit_offset: 27,
+                    bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Ckmsel",
+                    ),
                 },
                 Field {
-                    name: "plli2sr",
+                    name: "sdiosel",
                     description: Some(
-                        "PLLI2S division factor for I2S clocks",
+                        "SDIO clock selection",
                     ),
                     bit_offset: 28,
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Sdiosel",
+                    ),
+                },
+                Field {
+                    name: "spdifrxsel",
+                    description: Some(
+                        "SPDIF clock selection",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Spdifrxsel",
+                    ),
+                },
+                Field {
+                    name: "lptim1sel",
+                    description: Some(
+                        "LPTIM1SEL",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Lptimsel",
+                    ),
                 },
             ],
         },
@@ -3376,148 +3940,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "USB OTG HSULPI clock enable",
                     ),
                     bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pllsaicfgr",
-            extends: None,
-            description: Some(
-                "PLL configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pllsaim",
-                    description: Some(
-                        "Division factor for audio PLLSAI input clock",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllsain",
-                    description: Some(
-                        "PLLSAI division factor for VCO",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 9,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllsaip",
-                    description: Some(
-                        "PLLSAI division factor for 48 MHz clock",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Pllsaip",
-                    ),
-                },
-                Field {
-                    name: "pllsaiq",
-                    description: Some(
-                        "PLLSAI division factor for SAI1 clock",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllsair",
-                    description: Some(
-                        "PLLSAI division factor for LCD clock",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb3lpenr",
-            extends: None,
-            description: Some(
-                "AHB3 peripheral clock enable in low power mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fmclpen",
-                    description: Some(
-                        "Flexible static memory controller module clock enable during Sleep mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fsmclpen",
-                    description: Some(
-                        "Flexible static memory controller module clock enable during Sleep mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "qspilpen",
-                    description: Some(
-                        "QUADSPI memory controller module clock enable during Sleep mode",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahb3enr",
-            extends: None,
-            description: Some(
-                "AHB3 peripheral clock enable register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fmcen",
-                    description: Some(
-                        "Flexible static memory controller module clock enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fsmcen",
-                    description: Some(
-                        "Flexible static memory controller module clock enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "quadspien",
-                    description: Some(
-                        "QUADSPI memory controller module clock enable",
-                    ),
-                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3765,17 +4187,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Apb1rstr",
+            name: "Ahb3rstr",
             extends: None,
             description: Some(
-                "APB1 peripheral reset register",
+                "AHB3 peripheral reset register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim2rst",
+                    name: "fmcrst",
                     description: Some(
-                        "TIM2 reset",
+                        "Flexible static memory controller module reset",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -3783,9 +4205,109 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim3rst",
+                    name: "fsmcrst",
                     description: Some(
-                        "TIM3 reset",
+                        "Flexible static memory controller module reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "qspirst",
+                    description: Some(
+                        "QUADSPI module reset",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb2enr",
+            extends: None,
+            description: Some(
+                "AHB2 peripheral clock enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcmien",
+                    description: Some(
+                        "Camera interface enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "crypen",
+                    description: Some(
+                        "CRYP clock enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hashen",
+                    description: Some(
+                        "Hash modules clock enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rngen",
+                    description: Some(
+                        "Random number generator clock enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb_otg_fsen",
+                    description: Some(
+                        "USB OTG FS clock enable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb1lpenr",
+            extends: None,
+            description: Some(
+                "AHB1 peripheral clock enable in low power mode register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "gpioalpen",
+                    description: Some(
+                        "IO port A clock enable during sleep mode",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpioblpen",
+                    description: Some(
+                        "IO port B clock enable during Sleep mode",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -3793,9 +4315,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim4rst",
+                    name: "gpioclpen",
                     description: Some(
-                        "TIM4 reset",
+                        "IO port C clock enable during Sleep mode",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -3803,9 +4325,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim5rst",
+                    name: "gpiodlpen",
                     description: Some(
-                        "TIM5 reset",
+                        "IO port D clock enable during Sleep mode",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -3813,9 +4335,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim6rst",
+                    name: "gpioelpen",
                     description: Some(
-                        "TIM6 reset",
+                        "IO port E clock enable during Sleep mode",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -3823,9 +4345,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim7rst",
+                    name: "gpioflpen",
                     description: Some(
-                        "TIM7 reset",
+                        "IO port F clock enable during Sleep mode",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
@@ -3833,9 +4355,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim12rst",
+                    name: "gpioglpen",
                     description: Some(
-                        "TIM12 reset",
+                        "IO port G clock enable during Sleep mode",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -3843,9 +4365,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim13rst",
+                    name: "gpiohlpen",
                     description: Some(
-                        "TIM13 reset",
+                        "IO port H clock enable during Sleep mode",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -3853,9 +4375,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim14rst",
+                    name: "gpioilpen",
                     description: Some(
-                        "TIM14 reset",
+                        "IO port I clock enable during Sleep mode",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -3863,9 +4385,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lptim1rst",
+                    name: "gpiojlpen",
                     description: Some(
-                        "LPTIM1 reset",
+                        "IO port J clock enable during Sleep mode",
                     ),
                     bit_offset: 9,
                     bit_size: 1,
@@ -3873,341 +4395,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wwdgrst",
+                    name: "gpioklpen",
                     description: Some(
-                        "Window watchdog reset",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi2rst",
-                    description: Some(
-                        "SPI 2 reset",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3rst",
-                    description: Some(
-                        "SPI 3 reset",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spdifrst",
-                    description: Some(
-                        "SPDIF-IN reset",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart2rst",
-                    description: Some(
-                        "USART 2 reset",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart3rst",
-                    description: Some(
-                        "USART 3 reset",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart4rst",
-                    description: Some(
-                        "UART 4 reset",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart5rst",
-                    description: Some(
-                        "UART 5 reset",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1rst",
-                    description: Some(
-                        "I2C 1 reset",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c2rst",
-                    description: Some(
-                        "I2C 2 reset",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c3rst",
-                    description: Some(
-                        "I2C3 reset",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fmpi2c1rst",
-                    description: Some(
-                        "FMPI2C1 reset",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can1rst",
-                    description: Some(
-                        "CAN1 reset",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can2rst",
-                    description: Some(
-                        "CAN2 reset",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can3rst",
-                    description: Some(
-                        "CAN 3 reset",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwrrst",
-                    description: Some(
-                        "Power interface reset",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dacrst",
-                    description: Some(
-                        "DAC reset",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart7rst",
-                    description: Some(
-                        "UART 7 reset",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart8rst",
-                    description: Some(
-                        "UART 8 reset",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sscgr",
-            extends: None,
-            description: Some(
-                "spread spectrum clock generation register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "modper",
-                    description: Some(
-                        "Modulation period",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "incstep",
-                    description: Some(
-                        "Incrementation step",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 15,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spreadsel",
-                    description: Some(
-                        "Spread Select",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Spreadsel",
-                    ),
-                },
-                Field {
-                    name: "sscgen",
-                    description: Some(
-                        "Spread spectrum modulation enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2lpenr",
-            extends: None,
-            description: Some(
-                "APB2 peripheral clock enabled in low power mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1lpen",
-                    description: Some(
-                        "TIM1 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim8lpen",
-                    description: Some(
-                        "TIM8 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart1lpen",
-                    description: Some(
-                        "USART1 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart6lpen",
-                    description: Some(
-                        "USART6 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart9lpen",
-                    description: Some(
-                        "UART9 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart10lpen",
-                    description: Some(
-                        "UART10 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adc1lpen",
-                    description: Some(
-                        "ADC1 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adc2lpen",
-                    description: Some(
-                        "ADC2 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adc3lpen",
-                    description: Some(
-                        "ADC 3 clock enable during Sleep mode",
+                        "IO port K clock enable during Sleep mode",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -4215,19 +4405,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sdiolpen",
+                    name: "crclpen",
                     description: Some(
-                        "SDIO clock enable during Sleep mode",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi1lpen",
-                    description: Some(
-                        "SPI 1 clock enable during Sleep mode",
+                        "CRC clock enable during Sleep mode",
                     ),
                     bit_offset: 12,
                     bit_size: 1,
@@ -4235,29 +4415,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "spi4lpen",
+                    name: "flashlpen",
                     description: Some(
-                        "SPI4 clock enable during Sleep mode",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "syscfglpen",
-                    description: Some(
-                        "System configuration controller clock enable during Sleep mode",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "extitlpen",
-                    description: Some(
-                        "EXTI and External IT clock enable during sleep mode",
+                        "Flash interface clock enable during Sleep mode",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
@@ -4265,9 +4425,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim9lpen",
+                    name: "sram1lpen",
                     description: Some(
-                        "TIM9 clock enable during sleep mode",
+                        "SRAM 1interface clock enable during Sleep mode",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -4275,9 +4435,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim10lpen",
+                    name: "sram2lpen",
                     description: Some(
-                        "TIM10 clock enable during Sleep mode",
+                        "SRAM 2 interface clock enable during Sleep mode",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
@@ -4285,9 +4445,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim11lpen",
+                    name: "bkpsramlpen",
                     description: Some(
-                        "TIM11 clock enable during Sleep mode",
+                        "Backup SRAM interface clock enable during Sleep mode",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
@@ -4295,19 +4455,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "spi5lpen",
+                    name: "sram3lpen",
                     description: Some(
-                        "SPI5 clock enable during Sleep mode",
+                        "SRAM 3 interface clock enable during Sleep mode",
                     ),
-                    bit_offset: 20,
+                    bit_offset: 19,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "spi6lpen",
+                    name: "dma1lpen",
                     description: Some(
-                        "SPI 6 clock enable during Sleep mode",
+                        "DMA1 clock enable during Sleep mode",
                     ),
                     bit_offset: 21,
                     bit_size: 1,
@@ -4315,9 +4475,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sai1lpen",
+                    name: "dma2lpen",
                     description: Some(
-                        "SAI1 clock enable during Sleep mode",
+                        "DMA2 clock enable during Sleep mode",
                     ),
                     bit_offset: 22,
                     bit_size: 1,
@@ -4325,9 +4485,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sai2lpen",
+                    name: "dma2dlpen",
                     description: Some(
-                        "SAI2 clock enable",
+                        "DMA2D clock enable during Sleep mode",
                     ),
                     bit_offset: 23,
                     bit_size: 1,
@@ -4335,19 +4495,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dfsdmlpen",
+                    name: "ethlpen",
                     description: Some(
-                        "DFSDMLPEN",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dfsdm2lpen",
-                    description: Some(
-                        "DFSDM2 clock enable during Sleep mode",
+                        "Ethernet MAC clock enable during Sleep mode",
                     ),
                     bit_offset: 25,
                     bit_size: 1,
@@ -4355,9 +4505,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ltdclpen",
+                    name: "ethtxlpen",
                     description: Some(
-                        "LTDC clock enable during Sleep mode",
+                        "Ethernet transmission clock enable during Sleep mode",
                     ),
                     bit_offset: 26,
                     bit_size: 1,
@@ -4365,11 +4515,51 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dsilpen",
+                    name: "ethrxlpen",
                     description: Some(
-                        "DSI clocks enable during Sleep mode",
+                        "Ethernet reception clock enable during Sleep mode",
                     ),
                     bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ethptplpen",
+                    description: Some(
+                        "Ethernet PTP clock enable during Sleep mode",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb_otg_hslpen",
+                    description: Some(
+                        "USB OTG HS clock enable during Sleep mode",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usb_otg_hsulpilpen",
+                    description: Some(
+                        "USB OTG HS ULPI clock enable during Sleep mode",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rnglpen",
+                    description: Some(
+                        "RNG clock enable during sleep mode",
+                    ),
+                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4377,17 +4567,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Apb2rstr",
+            name: "Ahb3enr",
             extends: None,
             description: Some(
-                "APB2 peripheral reset register",
+                "AHB3 peripheral clock enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim1rst",
+                    name: "fmcen",
                     description: Some(
-                        "TIM1 reset",
+                        "Flexible static memory controller module clock enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -4395,211 +4585,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim8rst",
+                    name: "fsmcen",
                     description: Some(
-                        "TIM8 reset",
+                        "Flexible static memory controller module clock enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "quadspien",
+                    description: Some(
+                        "QUADSPI memory controller module clock enable",
                     ),
                     bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart1rst",
-                    description: Some(
-                        "USART1 reset",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart6rst",
-                    description: Some(
-                        "USART6 reset",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart9rst",
-                    description: Some(
-                        "UART9 reset",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uart10rst",
-                    description: Some(
-                        "UART10 reset",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adcrst",
-                    description: Some(
-                        "ADC interface reset (common to all ADCs)",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdiorst",
-                    description: Some(
-                        "SDIO reset",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi1rst",
-                    description: Some(
-                        "SPI 1 reset",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi4rst",
-                    description: Some(
-                        "SPI4 reset",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "syscfgrst",
-                    description: Some(
-                        "System configuration controller reset",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim9rst",
-                    description: Some(
-                        "TIM9 reset",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim10rst",
-                    description: Some(
-                        "TIM10 reset",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim11rst",
-                    description: Some(
-                        "TIM11 reset",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi5rst",
-                    description: Some(
-                        "SPI5 reset",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi6rst",
-                    description: Some(
-                        "SPI6 reset",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sai1rst",
-                    description: Some(
-                        "SAI1 reset",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sai2rst",
-                    description: Some(
-                        "SAI2 reset",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dfsdmrst",
-                    description: Some(
-                        "DFSDMRST",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dfsdm2rst",
-                    description: Some(
-                        "DFSDM2 reset",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ltdcrst",
-                    description: Some(
-                        "LTDC reset",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dsirst",
-                    description: Some(
-                        "DSI host reset",
-                    ),
-                    bit_offset: 27,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4609,380 +4609,254 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Lptimsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "APB1",
-                    description: Some(
-                        "APB1 clock (PCLK1) selected as LPTILM1 clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some(
-                        "LSI clock is selected as LPTILM1 clock",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "HSI clock is selected as LPTILM1 clock",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE clock is selected as LPTILM1 clock",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Mco1sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "HSI clock selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE oscillator selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some(
-                        "HSE oscillator clock selected",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PLL",
-                    description: Some(
-                        "PLL clock selected",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Timpre",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MUL2",
-                    description: Some(
-                        "If the APB prescaler is configured 1, TIMxCLK = PCLKx. Otherwise, TIMxCLK = 2xPCLKx",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MUL4",
-                    description: Some(
-                        "If the APB prescaler is configured 1, 2 or 4, TIMxCLK = HCLK. Otherwise, TIMxCLK = 4xPCLKx",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cecsel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE clock is selected as HDMI-CEC clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HSI_DIV488",
-                    description: Some(
-                        "HSI divided by 488 clock is selected as HDMI-CEC clock",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLLP=2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLLP=4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLLP=6",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLLP=8",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Plli2sdivr",
+            name: "Plldivr",
             description: None,
             bit_size: 5,
             variants: &[
                 EnumVariant {
                     name: "DIV1",
                     description: Some(
-                        "PLLI2SDIVQ = /1",
+                        "PLLSAIDIVQ = /1",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
                     description: Some(
-                        "PLLI2SDIVQ = /2",
+                        "PLLSAIDIVQ = /2",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "DIV3",
                     description: Some(
-                        "PLLI2SDIVQ = /3",
+                        "PLLSAIDIVQ = /3",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DIV4",
                     description: Some(
-                        "PLLI2SDIVQ = /4",
+                        "PLLSAIDIVQ = /4",
                     ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "DIV5",
                     description: Some(
-                        "PLLI2SDIVQ = /5",
+                        "PLLSAIDIVQ = /5",
                     ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "DIV6",
                     description: Some(
-                        "PLLI2SDIVQ = /6",
+                        "PLLSAIDIVQ = /6",
                     ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "DIV7",
                     description: Some(
-                        "PLLI2SDIVQ = /7",
+                        "PLLSAIDIVQ = /7",
                     ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "DIV8",
                     description: Some(
-                        "PLLI2SDIVQ = /8",
+                        "PLLSAIDIVQ = /8",
                     ),
                     value: 7,
                 },
                 EnumVariant {
                     name: "DIV9",
                     description: Some(
-                        "PLLI2SDIVQ = /9",
+                        "PLLSAIDIVQ = /9",
                     ),
                     value: 8,
                 },
                 EnumVariant {
                     name: "DIV10",
                     description: Some(
-                        "PLLI2SDIVQ = /10",
+                        "PLLSAIDIVQ = /10",
                     ),
                     value: 9,
                 },
                 EnumVariant {
                     name: "DIV11",
                     description: Some(
-                        "PLLI2SDIVQ = /11",
+                        "PLLSAIDIVQ = /11",
                     ),
                     value: 10,
                 },
                 EnumVariant {
                     name: "DIV12",
                     description: Some(
-                        "PLLI2SDIVQ = /12",
+                        "PLLSAIDIVQ = /12",
                     ),
                     value: 11,
                 },
                 EnumVariant {
                     name: "DIV13",
                     description: Some(
-                        "PLLI2SDIVQ = /13",
+                        "PLLSAIDIVQ = /13",
                     ),
                     value: 12,
                 },
                 EnumVariant {
                     name: "DIV14",
                     description: Some(
-                        "PLLI2SDIVQ = /14",
+                        "PLLSAIDIVQ = /14",
                     ),
                     value: 13,
                 },
                 EnumVariant {
                     name: "DIV15",
                     description: Some(
-                        "PLLI2SDIVQ = /15",
+                        "PLLSAIDIVQ = /15",
                     ),
                     value: 14,
                 },
                 EnumVariant {
                     name: "DIV16",
                     description: Some(
-                        "PLLI2SDIVQ = /16",
+                        "PLLSAIDIVQ = /16",
                     ),
                     value: 15,
                 },
                 EnumVariant {
                     name: "DIV17",
                     description: Some(
-                        "PLLI2SDIVQ = /17",
+                        "PLLSAIDIVQ = /17",
                     ),
                     value: 16,
                 },
                 EnumVariant {
                     name: "DIV18",
                     description: Some(
-                        "PLLI2SDIVQ = /18",
+                        "PLLSAIDIVQ = /18",
                     ),
                     value: 17,
                 },
                 EnumVariant {
                     name: "DIV19",
                     description: Some(
-                        "PLLI2SDIVQ = /19",
+                        "PLLSAIDIVQ = /19",
                     ),
                     value: 18,
                 },
                 EnumVariant {
                     name: "DIV20",
                     description: Some(
-                        "PLLI2SDIVQ = /20",
+                        "PLLSAIDIVQ = /20",
                     ),
                     value: 19,
                 },
                 EnumVariant {
                     name: "DIV21",
                     description: Some(
-                        "PLLI2SDIVQ = /21",
+                        "PLLSAIDIVQ = /21",
                     ),
                     value: 20,
                 },
                 EnumVariant {
                     name: "DIV22",
                     description: Some(
-                        "PLLI2SDIVQ = /22",
+                        "PLLSAIDIVQ = /22",
                     ),
                     value: 21,
                 },
                 EnumVariant {
                     name: "DIV23",
                     description: Some(
-                        "PLLI2SDIVQ = /23",
+                        "PLLSAIDIVQ = /23",
                     ),
                     value: 22,
                 },
                 EnumVariant {
                     name: "DIV24",
                     description: Some(
-                        "PLLI2SDIVQ = /24",
+                        "PLLSAIDIVQ = /24",
                     ),
                     value: 23,
                 },
                 EnumVariant {
                     name: "DIV25",
                     description: Some(
-                        "PLLI2SDIVQ = /25",
+                        "PLLSAIDIVQ = /25",
                     ),
                     value: 24,
                 },
                 EnumVariant {
                     name: "DIV26",
                     description: Some(
-                        "PLLI2SDIVQ = /26",
+                        "PLLSAIDIVQ = /26",
                     ),
                     value: 25,
                 },
                 EnumVariant {
                     name: "DIV27",
                     description: Some(
-                        "PLLI2SDIVQ = /27",
+                        "PLLSAIDIVQ = /27",
                     ),
                     value: 26,
                 },
                 EnumVariant {
                     name: "DIV28",
                     description: Some(
-                        "PLLI2SDIVQ = /28",
+                        "PLLSAIDIVQ = /28",
                     ),
                     value: 27,
                 },
                 EnumVariant {
                     name: "DIV29",
                     description: Some(
-                        "PLLI2SDIVQ = /29",
+                        "PLLSAIDIVQ = /29",
                     ),
                     value: 28,
                 },
                 EnumVariant {
                     name: "DIV30",
                     description: Some(
-                        "PLLI2SDIVQ = /30",
+                        "PLLSAIDIVQ = /30",
                     ),
                     value: 29,
                 },
                 EnumVariant {
                     name: "DIV31",
                     description: Some(
-                        "PLLI2SDIVQ = /31",
+                        "PLLSAIDIVQ = /31",
                     ),
                     value: 30,
                 },
                 EnumVariant {
                     name: "DIV32",
                     description: Some(
-                        "PLLI2SDIVQ = /32",
+                        "PLLSAIDIVQ = /32",
                     ),
                     value: 31,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckdfsdmsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "APB2",
+                    description: Some(
+                        "APB2 clock used as Kernel clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYSCLK",
+                    description: Some(
+                        "System clock used as Kernel clock",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -5029,95 +4903,177 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lsemod",
+            name: "Cecsel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
+                    name: "LSE",
                     description: Some(
-                        "LSE oscillator low power mode selection",
+                        "LSE clock is selected as HDMI-CEC clock",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HIGH",
+                    name: "HSI_DIV488",
                     description: Some(
-                        "LSE oscillator high drive mode selection",
+                        "HSI divided by 488 clock is selected as HDMI-CEC clock",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Pllr",
+            name: "Pllsrc",
             description: None,
-            bit_size: 3,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIV2",
-                    description: None,
-                    value: 2,
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock selected as PLL and PLLI2S clock entry",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "DIV3",
-                    description: None,
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: None,
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: None,
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: None,
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: None,
-                    value: 7,
+                    name: "HSE",
+                    description: Some(
+                        "HSE oscillator clock selected as PLL and PLLI2S clock entry",
+                    ),
+                    value: 1,
                 },
             ],
         },
         Enum {
-            name: "Sai2src",
+            name: "Pllsaip",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "PLL*P=2",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "PLL*P=4",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "PLL*P=6",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "PLL*P=8",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Sai1src",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "PLLSAI",
                     description: Some(
-                        "SAI2 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
+                        "SAI1 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLLI2S",
                     description: Some(
-                        "SAI2 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
+                        "SAI1 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLLR",
                     description: Some(
-                        "SAI2 clock frequency = f(PLL_R)",
+                        "SAI1 clock frequency = f(PLL_R)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_HSE",
+                    name: "I2S_CKIN",
                     description: Some(
-                        "SAI2 clock frequency = Alternate function input frequency",
+                        "I2S_CKIN Alternate function input frequency",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckmsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PLL",
+                    description: Some(
+                        "48MHz clock from PLL is selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLSAI",
+                    description: Some(
+                        "48MHz clock from PLLSAI is selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Plli2ssrc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "HSE_HSI",
+                    description: Some(
+                        "HSE or HSI depending on PLLSRC of PLLCFGR",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EXTERNAL",
+                    description: Some(
+                        "External AFI clock (CK_PLLI2S_EXT) selected as PLL clock entry",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Spreadsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CENTER",
+                    description: Some(
+                        "Center spread",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DOWN",
+                    description: Some(
+                        "Down spread",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -7044,6 +7000,272 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Plli2sdivr",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "PLLI2SDIVQ = /1",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "PLLI2SDIVQ = /2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "PLLI2SDIVQ = /3",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "PLLI2SDIVQ = /4",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "PLLI2SDIVQ = /5",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "PLLI2SDIVQ = /6",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: Some(
+                        "PLLI2SDIVQ = /7",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "PLLI2SDIVQ = /8",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: Some(
+                        "PLLI2SDIVQ = /9",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "PLLI2SDIVQ = /10",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: Some(
+                        "PLLI2SDIVQ = /11",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "PLLI2SDIVQ = /12",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: Some(
+                        "PLLI2SDIVQ = /13",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: Some(
+                        "PLLI2SDIVQ = /14",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: Some(
+                        "PLLI2SDIVQ = /15",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "PLLI2SDIVQ = /16",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "DIV17",
+                    description: Some(
+                        "PLLI2SDIVQ = /17",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "DIV18",
+                    description: Some(
+                        "PLLI2SDIVQ = /18",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "DIV19",
+                    description: Some(
+                        "PLLI2SDIVQ = /19",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "DIV20",
+                    description: Some(
+                        "PLLI2SDIVQ = /20",
+                    ),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "DIV21",
+                    description: Some(
+                        "PLLI2SDIVQ = /21",
+                    ),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "DIV22",
+                    description: Some(
+                        "PLLI2SDIVQ = /22",
+                    ),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "DIV23",
+                    description: Some(
+                        "PLLI2SDIVQ = /23",
+                    ),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "DIV24",
+                    description: Some(
+                        "PLLI2SDIVQ = /24",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "DIV25",
+                    description: Some(
+                        "PLLI2SDIVQ = /25",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "DIV26",
+                    description: Some(
+                        "PLLI2SDIVQ = /26",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "DIV27",
+                    description: Some(
+                        "PLLI2SDIVQ = /27",
+                    ),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "DIV28",
+                    description: Some(
+                        "PLLI2SDIVQ = /28",
+                    ),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "DIV29",
+                    description: Some(
+                        "PLLI2SDIVQ = /29",
+                    ),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "DIV30",
+                    description: Some(
+                        "PLLI2SDIVQ = /30",
+                    ),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "DIV31",
+                    description: Some(
+                        "PLLI2SDIVQ = /31",
+                    ),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "PLLI2SDIVQ = /32",
+                    ),
+                    value: 31,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "PLLP=2",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "PLLP=4",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "PLLP=6",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "PLLP=8",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "Plli2sp",
             description: None,
             bit_size: 2,
@@ -7079,23 +7301,625 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pllsrc",
+            name: "Pllq",
             description: None,
-            bit_size: 1,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: None,
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: None,
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: None,
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: None,
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: None,
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: None,
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: None,
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: None,
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: None,
+                    value: 15,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllsaidivr",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "PLLSAIDIVR = /2",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "PLLSAIDIVR = /4",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "PLLSAIDIVR = /8",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "PLLSAIDIVR = /16",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Sw",
+            description: None,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI clock selected as PLL and PLLI2S clock entry",
+                        "HSI oscillator used as system clock",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "HSE",
                     description: Some(
-                        "HSE oscillator clock selected as PLL and PLLI2S clock entry",
+                        "HSE oscillator used as system clock",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "PLL",
+                    description: Some(
+                        "PLL used as system clock",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckdfsdmasel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "I2S1",
+                    description: Some(
+                        "CK_I2S_APB1 selected as audio clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "I2S2",
+                    description: Some(
+                        "CK_I2S_APB2 selected as audio clock",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mcopre",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "No division",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "Division by 2",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "Division by 3",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "Division by 4",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "Division by 5",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Plli2sdivq",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "PLLI2SDIVQ = /1",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "PLLI2SDIVQ = /2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "PLLI2SDIVQ = /3",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "PLLI2SDIVQ = /4",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "PLLI2SDIVQ = /5",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "PLLI2SDIVQ = /6",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: Some(
+                        "PLLI2SDIVQ = /7",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "PLLI2SDIVQ = /8",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: Some(
+                        "PLLI2SDIVQ = /9",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "PLLI2SDIVQ = /10",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: Some(
+                        "PLLI2SDIVQ = /11",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "PLLI2SDIVQ = /12",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: Some(
+                        "PLLI2SDIVQ = /13",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: Some(
+                        "PLLI2SDIVQ = /14",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: Some(
+                        "PLLI2SDIVQ = /15",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "PLLI2SDIVQ = /16",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "DIV17",
+                    description: Some(
+                        "PLLI2SDIVQ = /17",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "DIV18",
+                    description: Some(
+                        "PLLI2SDIVQ = /18",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "DIV19",
+                    description: Some(
+                        "PLLI2SDIVQ = /19",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "DIV20",
+                    description: Some(
+                        "PLLI2SDIVQ = /20",
+                    ),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "DIV21",
+                    description: Some(
+                        "PLLI2SDIVQ = /21",
+                    ),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "DIV22",
+                    description: Some(
+                        "PLLI2SDIVQ = /22",
+                    ),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "DIV23",
+                    description: Some(
+                        "PLLI2SDIVQ = /23",
+                    ),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "DIV24",
+                    description: Some(
+                        "PLLI2SDIVQ = /24",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "DIV25",
+                    description: Some(
+                        "PLLI2SDIVQ = /25",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "DIV26",
+                    description: Some(
+                        "PLLI2SDIVQ = /26",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "DIV27",
+                    description: Some(
+                        "PLLI2SDIVQ = /27",
+                    ),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "DIV28",
+                    description: Some(
+                        "PLLI2SDIVQ = /28",
+                    ),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "DIV29",
+                    description: Some(
+                        "PLLI2SDIVQ = /29",
+                    ),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "DIV30",
+                    description: Some(
+                        "PLLI2SDIVQ = /30",
+                    ),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "DIV31",
+                    description: Some(
+                        "PLLI2SDIVQ = /31",
+                    ),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "PLLI2SDIVQ = /32",
+                    ),
+                    value: 31,
+                },
+            ],
+        },
+        Enum {
+            name: "Lsemod",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "LSE oscillator low power mode selection",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some(
+                        "LSE oscillator high drive mode selection",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Saiasrc",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLLSAI",
+                    description: Some(
+                        "SAI1-A clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLI2S",
+                    description: Some(
+                        "SAI1-A clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "I2S_CKIN",
+                    description: Some(
+                        "SAI1-A clock frequency = Alternate function input frequency",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Rtcsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOCLOCK",
+                    description: Some(
+                        "No clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE oscillator clock used as RTC clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI oscillator clock used as RTC clock",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: Some(
+                        "HSE oscillator clock divided by a prescaler used as RTC clock",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Mco1sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE oscillator selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: Some(
+                        "HSE oscillator clock selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PLL",
+                    description: Some(
+                        "PLL clock selected",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Hpre",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "SYSCLK not divided",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "SYSCLK divided by 2",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "SYSCLK divided by 4",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "SYSCLK divided by 8",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "SYSCLK divided by 16",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV64",
+                    description: Some(
+                        "SYSCLK divided by 64",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "SYSCLK divided by 128",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV256",
+                    description: Some(
+                        "SYSCLK divided by 256",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV512",
+                    description: Some(
+                        "SYSCLK divided by 512",
+                    ),
+                    value: 15,
                 },
             ],
         },
@@ -7117,6 +7941,386 @@ pub(crate) static REGISTERS: IR = IR {
                         "External clock mapped on the I2S_CKIN pin used as I2S clock source",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Timpre",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MUL2",
+                    description: Some(
+                        "If the APB prescaler is configured 1, TIMxCLK = PCLKx. Otherwise, TIMxCLK = 2xPCLKx",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MUL4",
+                    description: Some(
+                        "If the APB prescaler is configured 1, 2 or 4, TIMxCLK = HCLK. Otherwise, TIMxCLK = 4xPCLKx",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptimsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "APB1",
+                    description: Some(
+                        "APB1 clock (PCLK1) selected as LPTILM1 clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "LSI clock is selected as LPTILM1 clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock is selected as LPTILM1 clock",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE clock is selected as LPTILM1 clock",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Spdifrxsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PLL",
+                    description: Some(
+                        "SPDIF-Rx clock from PLL is selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLI2S",
+                    description: Some(
+                        "SPDIF-Rx clock from PLLI2S is selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllr",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: None,
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllsaidivq",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "PLLSAIDIVQ = /1",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "PLLSAIDIVQ = /2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "PLLSAIDIVQ = /3",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "PLLSAIDIVQ = /4",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "PLLSAIDIVQ = /5",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "PLLSAIDIVQ = /6",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: Some(
+                        "PLLSAIDIVQ = /7",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "PLLSAIDIVQ = /8",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: Some(
+                        "PLLSAIDIVQ = /9",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "PLLSAIDIVQ = /10",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: Some(
+                        "PLLSAIDIVQ = /11",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "PLLSAIDIVQ = /12",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: Some(
+                        "PLLSAIDIVQ = /13",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: Some(
+                        "PLLSAIDIVQ = /14",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: Some(
+                        "PLLSAIDIVQ = /15",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "PLLSAIDIVQ = /16",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "DIV17",
+                    description: Some(
+                        "PLLSAIDIVQ = /17",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "DIV18",
+                    description: Some(
+                        "PLLSAIDIVQ = /18",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "DIV19",
+                    description: Some(
+                        "PLLSAIDIVQ = /19",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "DIV20",
+                    description: Some(
+                        "PLLSAIDIVQ = /20",
+                    ),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "DIV21",
+                    description: Some(
+                        "PLLSAIDIVQ = /21",
+                    ),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "DIV22",
+                    description: Some(
+                        "PLLSAIDIVQ = /22",
+                    ),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "DIV23",
+                    description: Some(
+                        "PLLSAIDIVQ = /23",
+                    ),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "DIV24",
+                    description: Some(
+                        "PLLSAIDIVQ = /24",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "DIV25",
+                    description: Some(
+                        "PLLSAIDIVQ = /25",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "DIV26",
+                    description: Some(
+                        "PLLSAIDIVQ = /26",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "DIV27",
+                    description: Some(
+                        "PLLSAIDIVQ = /27",
+                    ),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "DIV28",
+                    description: Some(
+                        "PLLSAIDIVQ = /28",
+                    ),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "DIV29",
+                    description: Some(
+                        "PLLSAIDIVQ = /29",
+                    ),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "DIV30",
+                    description: Some(
+                        "PLLSAIDIVQ = /30",
+                    ),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "DIV31",
+                    description: Some(
+                        "PLLSAIDIVQ = /31",
+                    ),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "PLLSAIDIVQ = /32",
+                    ),
+                    value: 31,
+                },
+            ],
+        },
+        Enum {
+            name: "I2s1src",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLLI2SR",
+                    description: Some(
+                        "I2Sx clock frequency = f(PLLI2S_R)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "I2S_CKIN",
+                    description: Some(
+                        "I2Sx clock frequency = I2S_CKIN Alternate function input frequency",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PLLR",
+                    description: Some(
+                        "I2Sx clock frequency = f(PLL_R)",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSI_HSE",
+                    description: Some(
+                        "I2Sx clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -7438,1014 +8642,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ckmsel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PLL",
-                    description: Some(
-                        "48MHz clock from PLL is selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLLSAI",
-                    description: Some(
-                        "48MHz clock from PLLSAI is selected",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mcopre",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "No division",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "Division by 2",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "Division by 3",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "Division by 4",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: Some(
-                        "Division by 5",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Sdiosel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CK48M",
-                    description: Some(
-                        "48 MHz clock is selected as SD clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYSCLK",
-                    description: Some(
-                        "System clock is selected as SD clock",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2s1src",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLLI2SR",
-                    description: Some(
-                        "I2Sx clock frequency = f(PLLI2S_R)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "I2S_CKIN",
-                    description: Some(
-                        "I2Sx clock frequency = I2S_CKIN Alternate function input frequency",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PLLR",
-                    description: Some(
-                        "I2Sx clock frequency = f(PLL_R)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_HSE",
-                    description: Some(
-                        "I2Sx clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Plldivr",
-            description: None,
-            bit_size: 5,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "PLLSAIDIVQ = /1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLLSAIDIVQ = /2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "PLLSAIDIVQ = /3",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLLSAIDIVQ = /4",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: Some(
-                        "PLLSAIDIVQ = /5",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLLSAIDIVQ = /6",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: Some(
-                        "PLLSAIDIVQ = /7",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLLSAIDIVQ = /8",
-                    ),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV9",
-                    description: Some(
-                        "PLLSAIDIVQ = /9",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV10",
-                    description: Some(
-                        "PLLSAIDIVQ = /10",
-                    ),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "DIV11",
-                    description: Some(
-                        "PLLSAIDIVQ = /11",
-                    ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV12",
-                    description: Some(
-                        "PLLSAIDIVQ = /12",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV13",
-                    description: Some(
-                        "PLLSAIDIVQ = /13",
-                    ),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV14",
-                    description: Some(
-                        "PLLSAIDIVQ = /14",
-                    ),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV15",
-                    description: Some(
-                        "PLLSAIDIVQ = /15",
-                    ),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "PLLSAIDIVQ = /16",
-                    ),
-                    value: 15,
-                },
-                EnumVariant {
-                    name: "DIV17",
-                    description: Some(
-                        "PLLSAIDIVQ = /17",
-                    ),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "DIV18",
-                    description: Some(
-                        "PLLSAIDIVQ = /18",
-                    ),
-                    value: 17,
-                },
-                EnumVariant {
-                    name: "DIV19",
-                    description: Some(
-                        "PLLSAIDIVQ = /19",
-                    ),
-                    value: 18,
-                },
-                EnumVariant {
-                    name: "DIV20",
-                    description: Some(
-                        "PLLSAIDIVQ = /20",
-                    ),
-                    value: 19,
-                },
-                EnumVariant {
-                    name: "DIV21",
-                    description: Some(
-                        "PLLSAIDIVQ = /21",
-                    ),
-                    value: 20,
-                },
-                EnumVariant {
-                    name: "DIV22",
-                    description: Some(
-                        "PLLSAIDIVQ = /22",
-                    ),
-                    value: 21,
-                },
-                EnumVariant {
-                    name: "DIV23",
-                    description: Some(
-                        "PLLSAIDIVQ = /23",
-                    ),
-                    value: 22,
-                },
-                EnumVariant {
-                    name: "DIV24",
-                    description: Some(
-                        "PLLSAIDIVQ = /24",
-                    ),
-                    value: 23,
-                },
-                EnumVariant {
-                    name: "DIV25",
-                    description: Some(
-                        "PLLSAIDIVQ = /25",
-                    ),
-                    value: 24,
-                },
-                EnumVariant {
-                    name: "DIV26",
-                    description: Some(
-                        "PLLSAIDIVQ = /26",
-                    ),
-                    value: 25,
-                },
-                EnumVariant {
-                    name: "DIV27",
-                    description: Some(
-                        "PLLSAIDIVQ = /27",
-                    ),
-                    value: 26,
-                },
-                EnumVariant {
-                    name: "DIV28",
-                    description: Some(
-                        "PLLSAIDIVQ = /28",
-                    ),
-                    value: 27,
-                },
-                EnumVariant {
-                    name: "DIV29",
-                    description: Some(
-                        "PLLSAIDIVQ = /29",
-                    ),
-                    value: 28,
-                },
-                EnumVariant {
-                    name: "DIV30",
-                    description: Some(
-                        "PLLSAIDIVQ = /30",
-                    ),
-                    value: 29,
-                },
-                EnumVariant {
-                    name: "DIV31",
-                    description: Some(
-                        "PLLSAIDIVQ = /31",
-                    ),
-                    value: 30,
-                },
-                EnumVariant {
-                    name: "DIV32",
-                    description: Some(
-                        "PLLSAIDIVQ = /32",
-                    ),
-                    value: 31,
-                },
-            ],
-        },
-        Enum {
-            name: "Dsisel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DSI_PHY",
-                    description: Some(
-                        "DSI-PHY used as DSI byte lane clock source (usual case)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLLR",
-                    description: Some(
-                        "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Spreadsel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CENTER",
-                    description: Some(
-                        "Center spread",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DOWN",
-                    description: Some(
-                        "Down spread",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllsaidivq",
-            description: None,
-            bit_size: 5,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "PLLSAIDIVQ = /1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLLSAIDIVQ = /2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "PLLSAIDIVQ = /3",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLLSAIDIVQ = /4",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: Some(
-                        "PLLSAIDIVQ = /5",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLLSAIDIVQ = /6",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: Some(
-                        "PLLSAIDIVQ = /7",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLLSAIDIVQ = /8",
-                    ),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV9",
-                    description: Some(
-                        "PLLSAIDIVQ = /9",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV10",
-                    description: Some(
-                        "PLLSAIDIVQ = /10",
-                    ),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "DIV11",
-                    description: Some(
-                        "PLLSAIDIVQ = /11",
-                    ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV12",
-                    description: Some(
-                        "PLLSAIDIVQ = /12",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV13",
-                    description: Some(
-                        "PLLSAIDIVQ = /13",
-                    ),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV14",
-                    description: Some(
-                        "PLLSAIDIVQ = /14",
-                    ),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV15",
-                    description: Some(
-                        "PLLSAIDIVQ = /15",
-                    ),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "PLLSAIDIVQ = /16",
-                    ),
-                    value: 15,
-                },
-                EnumVariant {
-                    name: "DIV17",
-                    description: Some(
-                        "PLLSAIDIVQ = /17",
-                    ),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "DIV18",
-                    description: Some(
-                        "PLLSAIDIVQ = /18",
-                    ),
-                    value: 17,
-                },
-                EnumVariant {
-                    name: "DIV19",
-                    description: Some(
-                        "PLLSAIDIVQ = /19",
-                    ),
-                    value: 18,
-                },
-                EnumVariant {
-                    name: "DIV20",
-                    description: Some(
-                        "PLLSAIDIVQ = /20",
-                    ),
-                    value: 19,
-                },
-                EnumVariant {
-                    name: "DIV21",
-                    description: Some(
-                        "PLLSAIDIVQ = /21",
-                    ),
-                    value: 20,
-                },
-                EnumVariant {
-                    name: "DIV22",
-                    description: Some(
-                        "PLLSAIDIVQ = /22",
-                    ),
-                    value: 21,
-                },
-                EnumVariant {
-                    name: "DIV23",
-                    description: Some(
-                        "PLLSAIDIVQ = /23",
-                    ),
-                    value: 22,
-                },
-                EnumVariant {
-                    name: "DIV24",
-                    description: Some(
-                        "PLLSAIDIVQ = /24",
-                    ),
-                    value: 23,
-                },
-                EnumVariant {
-                    name: "DIV25",
-                    description: Some(
-                        "PLLSAIDIVQ = /25",
-                    ),
-                    value: 24,
-                },
-                EnumVariant {
-                    name: "DIV26",
-                    description: Some(
-                        "PLLSAIDIVQ = /26",
-                    ),
-                    value: 25,
-                },
-                EnumVariant {
-                    name: "DIV27",
-                    description: Some(
-                        "PLLSAIDIVQ = /27",
-                    ),
-                    value: 26,
-                },
-                EnumVariant {
-                    name: "DIV28",
-                    description: Some(
-                        "PLLSAIDIVQ = /28",
-                    ),
-                    value: 27,
-                },
-                EnumVariant {
-                    name: "DIV29",
-                    description: Some(
-                        "PLLSAIDIVQ = /29",
-                    ),
-                    value: 28,
-                },
-                EnumVariant {
-                    name: "DIV30",
-                    description: Some(
-                        "PLLSAIDIVQ = /30",
-                    ),
-                    value: 29,
-                },
-                EnumVariant {
-                    name: "DIV31",
-                    description: Some(
-                        "PLLSAIDIVQ = /31",
-                    ),
-                    value: 30,
-                },
-                EnumVariant {
-                    name: "DIV32",
-                    description: Some(
-                        "PLLSAIDIVQ = /32",
-                    ),
-                    value: 31,
-                },
-            ],
-        },
-        Enum {
-            name: "Ckdfsdmasel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "I2S1",
-                    description: Some(
-                        "CK_I2S_APB1 selected as audio clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "I2S2",
-                    description: Some(
-                        "CK_I2S_APB2 selected as audio clock",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hpre",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "SYSCLK not divided",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "SYSCLK divided by 2",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "SYSCLK divided by 4",
-                    ),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "SYSCLK divided by 8",
-                    ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "SYSCLK divided by 16",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV64",
-                    description: Some(
-                        "SYSCLK divided by 64",
-                    ),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV128",
-                    description: Some(
-                        "SYSCLK divided by 128",
-                    ),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "SYSCLK divided by 256",
-                    ),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV512",
-                    description: Some(
-                        "SYSCLK divided by 512",
-                    ),
-                    value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Saibsrc",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLLSAI",
-                    description: Some(
-                        "SAI1-B clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLLI2S",
-                    description: Some(
-                        "SAI1-B clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "I2S_CKIN",
-                    description: Some(
-                        "SAI1-B clock frequency = Alternate function input frequency",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Plli2sdivq",
-            description: None,
-            bit_size: 5,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "PLLI2SDIVQ = /1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLLI2SDIVQ = /2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "PLLI2SDIVQ = /3",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLLI2SDIVQ = /4",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: Some(
-                        "PLLI2SDIVQ = /5",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLLI2SDIVQ = /6",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: Some(
-                        "PLLI2SDIVQ = /7",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLLI2SDIVQ = /8",
-                    ),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV9",
-                    description: Some(
-                        "PLLI2SDIVQ = /9",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV10",
-                    description: Some(
-                        "PLLI2SDIVQ = /10",
-                    ),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "DIV11",
-                    description: Some(
-                        "PLLI2SDIVQ = /11",
-                    ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV12",
-                    description: Some(
-                        "PLLI2SDIVQ = /12",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV13",
-                    description: Some(
-                        "PLLI2SDIVQ = /13",
-                    ),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV14",
-                    description: Some(
-                        "PLLI2SDIVQ = /14",
-                    ),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV15",
-                    description: Some(
-                        "PLLI2SDIVQ = /15",
-                    ),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "PLLI2SDIVQ = /16",
-                    ),
-                    value: 15,
-                },
-                EnumVariant {
-                    name: "DIV17",
-                    description: Some(
-                        "PLLI2SDIVQ = /17",
-                    ),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "DIV18",
-                    description: Some(
-                        "PLLI2SDIVQ = /18",
-                    ),
-                    value: 17,
-                },
-                EnumVariant {
-                    name: "DIV19",
-                    description: Some(
-                        "PLLI2SDIVQ = /19",
-                    ),
-                    value: 18,
-                },
-                EnumVariant {
-                    name: "DIV20",
-                    description: Some(
-                        "PLLI2SDIVQ = /20",
-                    ),
-                    value: 19,
-                },
-                EnumVariant {
-                    name: "DIV21",
-                    description: Some(
-                        "PLLI2SDIVQ = /21",
-                    ),
-                    value: 20,
-                },
-                EnumVariant {
-                    name: "DIV22",
-                    description: Some(
-                        "PLLI2SDIVQ = /22",
-                    ),
-                    value: 21,
-                },
-                EnumVariant {
-                    name: "DIV23",
-                    description: Some(
-                        "PLLI2SDIVQ = /23",
-                    ),
-                    value: 22,
-                },
-                EnumVariant {
-                    name: "DIV24",
-                    description: Some(
-                        "PLLI2SDIVQ = /24",
-                    ),
-                    value: 23,
-                },
-                EnumVariant {
-                    name: "DIV25",
-                    description: Some(
-                        "PLLI2SDIVQ = /25",
-                    ),
-                    value: 24,
-                },
-                EnumVariant {
-                    name: "DIV26",
-                    description: Some(
-                        "PLLI2SDIVQ = /26",
-                    ),
-                    value: 25,
-                },
-                EnumVariant {
-                    name: "DIV27",
-                    description: Some(
-                        "PLLI2SDIVQ = /27",
-                    ),
-                    value: 26,
-                },
-                EnumVariant {
-                    name: "DIV28",
-                    description: Some(
-                        "PLLI2SDIVQ = /28",
-                    ),
-                    value: 27,
-                },
-                EnumVariant {
-                    name: "DIV29",
-                    description: Some(
-                        "PLLI2SDIVQ = /29",
-                    ),
-                    value: 28,
-                },
-                EnumVariant {
-                    name: "DIV30",
-                    description: Some(
-                        "PLLI2SDIVQ = /30",
-                    ),
-                    value: 29,
-                },
-                EnumVariant {
-                    name: "DIV31",
-                    description: Some(
-                        "PLLI2SDIVQ = /31",
-                    ),
-                    value: 30,
-                },
-                EnumVariant {
-                    name: "DIV32",
-                    description: Some(
-                        "PLLI2SDIVQ = /32",
-                    ),
-                    value: 31,
-                },
-            ],
-        },
-        Enum {
-            name: "Rtcsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOCLOCK",
-                    description: Some(
-                        "No clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "LSE oscillator clock used as RTC clock",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some(
-                        "LSI oscillator clock used as RTC clock",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some(
-                        "HSE oscillator clock divided by a prescaler used as RTC clock",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Fmpicsel",
             description: None,
             bit_size: 2,
@@ -8474,21 +8670,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Plli2ssrc",
+            name: "Sdiosel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSE_HSI",
+                    name: "CK48M",
                     description: Some(
-                        "HSE or HSI depending on PLLSRC of PLLCFGR",
+                        "48 MHz clock is selected as SD clock",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "EXTERNAL",
+                    name: "SYSCLK",
                     description: Some(
-                        "External AFI clock (CK_PLLI2S_EXT) selected as PLL clock entry",
+                        "System clock is selected as SD clock",
                     ),
                     value: 1,
                 },
@@ -8530,282 +8726,86 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pllsaidivr",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLLSAIDIVR = /2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLLSAIDIVR = /4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLLSAIDIVR = /8",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "PLLSAIDIVR = /16",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Saiasrc",
+            name: "Sai2src",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "PLLSAI",
                     description: Some(
-                        "SAI1-A clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
+                        "SAI2 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLLI2S",
                     description: Some(
-                        "SAI1-A clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "I2S_CKIN",
-                    description: Some(
-                        "SAI1-A clock frequency = Alternate function input frequency",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Sw",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "HSI oscillator used as system clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some(
-                        "HSE oscillator used as system clock",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PLL",
-                    description: Some(
-                        "PLL used as system clock",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Spdifrxsel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PLL",
-                    description: Some(
-                        "SPDIF-Rx clock from PLL is selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLLI2S",
-                    description: Some(
-                        "SPDIF-Rx clock from PLLI2S is selected",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sai1src",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLLSAI",
-                    description: Some(
-                        "SAI1 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLLI2S",
-                    description: Some(
-                        "SAI1 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
+                        "SAI2 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLLR",
                     description: Some(
-                        "SAI1 clock frequency = f(PLL_R)",
+                        "SAI2 clock frequency = f(PLL_R)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "I2S_CKIN",
+                    name: "HSI_HSE",
                     description: Some(
-                        "I2S_CKIN Alternate function input frequency",
+                        "SAI2 clock frequency = Alternate function input frequency",
                     ),
                     value: 3,
                 },
             ],
         },
         Enum {
-            name: "Pllsaip",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLL*P=2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLL*P=4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLL*P=6",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLL*P=8",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllq",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: None,
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: None,
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: None,
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: None,
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: None,
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: None,
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: None,
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV9",
-                    description: None,
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "DIV10",
-                    description: None,
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV11",
-                    description: None,
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV12",
-                    description: None,
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV13",
-                    description: None,
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV14",
-                    description: None,
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV15",
-                    description: None,
-                    value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Ckdfsdmsel",
+            name: "Dsisel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "APB2",
+                    name: "DSI_PHY",
                     description: Some(
-                        "APB2 clock used as Kernel clock",
+                        "DSI-PHY used as DSI byte lane clock source (usual case)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "PLLR",
                     description: Some(
-                        "System clock used as Kernel clock",
+                        "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Saibsrc",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLLSAI",
+                    description: Some(
+                        "SAI1-B clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLI2S",
+                    description: Some(
+                        "SAI1-B clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "I2S_CKIN",
+                    description: Some(
+                        "SAI1-B clock frequency = Alternate function input frequency",
+                    ),
+                    value: 2,
                 },
             ],
         },

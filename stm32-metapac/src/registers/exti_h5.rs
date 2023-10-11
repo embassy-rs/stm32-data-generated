@@ -271,17 +271,44 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Priv",
+            name: "Lines",
             extends: None,
             description: Some(
-                "privilege configuration register",
+                "EXTI lines register, 1 bit per line",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "priv_",
+                    name: "line",
                     description: Some(
-                        "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
+                        "EXTI line",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sec",
+            extends: None,
+            description: Some(
+                "security configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sec",
+                    description: Some(
+                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -294,7 +321,7 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: Some(
-                        "Priv",
+                        "Sec",
                     ),
                 },
             ],
@@ -347,17 +374,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sec",
+            name: "Priv",
             extends: None,
             description: Some(
-                "security configuration register",
+                "privilege configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "sec",
+                    name: "priv_",
                     description: Some(
-                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
+                        "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -370,61 +397,13 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: Some(
-                        "Sec",
+                        "Priv",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lines",
-            extends: None,
-            description: Some(
-                "EXTI lines register, 1 bit per line",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "line",
-                    description: Some(
-                        "EXTI line",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
-                    description: Some(
-                        "Event security disabled (non-secure)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "Event security enabled (secure)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Priv",
             description: None,
@@ -441,6 +420,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILEGED",
                     description: Some(
                         "Event privilege enabled (privileged)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sec",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NONSECURE",
+                    description: Some(
+                        "Event security disabled (non-secure)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SECURE",
+                    description: Some(
+                        "Event security enabled (secure)",
                     ),
                     value: 1,
                 },

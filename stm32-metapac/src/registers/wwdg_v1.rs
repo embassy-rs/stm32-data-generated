@@ -115,23 +115,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Wdga",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Watchdog disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Watchdog enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Wdgtb",
             description: None,
             bit_size: 2,
@@ -155,6 +138,23 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV8",
                     description: Some("Counter clock (PCLK1 div 4096) div 8"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wdga",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Watchdog disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Watchdog enabled"),
+                    value: 1,
                 },
             ],
         },

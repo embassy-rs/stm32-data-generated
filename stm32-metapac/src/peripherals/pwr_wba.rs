@@ -56,7 +56,7 @@ impl Pwr {
     }
     #[doc = "disable Backup domain register"]
     #[inline(always)]
-    pub const fn dbpr(self) -> crate::common::Reg<regs::Dbpr, crate::common::RW> {
+    pub const fn dbpcr(self) -> crate::common::Reg<regs::Dbpcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
     }
     #[doc = "security configuration register"]
@@ -257,8 +257,8 @@ pub mod regs {
     #[doc = "disable Backup domain register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Dbpr(pub u32);
-    impl Dbpr {
+    pub struct Dbpcr(pub u32);
+    impl Dbpcr {
         #[doc = "Disable Backup domain write protection In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers."]
         #[inline(always)]
         pub const fn dbp(&self) -> bool {
@@ -271,10 +271,10 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
-    impl Default for Dbpr {
+    impl Default for Dbpcr {
         #[inline(always)]
-        fn default() -> Dbpr {
-            Dbpr(0)
+        fn default() -> Dbpcr {
+            Dbpcr(0)
         }
     }
     #[doc = "port A Standby IO retention enable register"]

@@ -80,24 +80,62 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Htcr",
+            name: "Sr",
             extends: None,
             description: Some(
-                "Health test control register",
+                "status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "htcfg",
+                    name: "drdy",
                     description: Some(
-                        "Health test configuration",
+                        "Data ready",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Htcfg",
+                    enumm: None,
+                },
+                Field {
+                    name: "cecs",
+                    description: Some(
+                        "Clock error current status",
                     ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "secs",
+                    description: Some(
+                        "Seed error current status",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ceis",
+                    description: Some(
+                        "Clock error interrupt status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "seis",
+                    description: Some(
+                        "Seed error interrupt status",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -222,62 +260,24 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sr",
+            name: "Htcr",
             extends: None,
             description: Some(
-                "status register",
+                "Health test control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "drdy",
+                    name: "htcfg",
                     description: Some(
-                        "Data ready",
+                        "Health test configuration",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cecs",
-                    description: Some(
-                        "Clock error current status",
+                    enumm: Some(
+                        "Htcfg",
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "secs",
-                    description: Some(
-                        "Seed error current status",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ceis",
-                    description: Some(
-                        "Clock error interrupt status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "seis",
-                    description: Some(
-                        "Seed error interrupt status",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -305,23 +305,16 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Nistc",
+            name: "RngConfig2",
             description: None,
-            bit_size: 1,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DEFAULT",
+                    name: "CONFIGA_B",
                     description: Some(
-                        "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used",
+                        "Recommended value for config A and B",
                     ),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "CUSTOM",
-                    description: Some(
-                        "Custom values for NIST compliant RNG",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -343,6 +336,48 @@ pub(crate) static REGISTERS: IR = IR {
                         "Recommended value for config B (not NIST certifiable)",
                     ),
                     value: 24,
+                },
+            ],
+        },
+        Enum {
+            name: "Htcfg",
+            description: None,
+            bit_size: 32,
+            variants: &[
+                EnumVariant {
+                    name: "RECOMMENDED",
+                    description: Some(
+                        "Recommended value for RNG certification (0x0000_AA74)",
+                    ),
+                    value: 43636,
+                },
+                EnumVariant {
+                    name: "MAGIC",
+                    description: Some(
+                        "Magic number to be written before any write (0x1759_0ABC)",
+                    ),
+                    value: 391711420,
+                },
+            ],
+        },
+        Enum {
+            name: "Nistc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DEFAULT",
+                    description: Some(
+                        "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CUSTOM",
+                    description: Some(
+                        "Custom values for NIST compliant RNG",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -462,41 +497,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Divide RNG clock by 2^15",
                     ),
                     value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "RngConfig2",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "CONFIGA_B",
-                    description: Some(
-                        "Recommended value for config A and B",
-                    ),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Htcfg",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "RECOMMENDED",
-                    description: Some(
-                        "Recommended value for RNG certification (0x0000_AA74)",
-                    ),
-                    value: 43636,
-                },
-                EnumVariant {
-                    name: "MAGIC",
-                    description: Some(
-                        "Magic number to be written before any write (0x1759_0ABC)",
-                    ),
-                    value: 391711420,
                 },
             ],
         },

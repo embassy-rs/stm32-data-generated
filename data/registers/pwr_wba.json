@@ -51,10 +51,10 @@
         "fieldset": "WUCR3"
       },
       {
-        "name": "DBPR",
+        "name": "DBPCR",
         "description": "disable Backup domain register",
         "byte_offset": 40,
-        "fieldset": "DBPR"
+        "fieldset": "DBPCR"
       },
       {
         "name": "SECCFGR",
@@ -203,7 +203,7 @@
       }
     ]
   },
-  "fieldset/DBPR": {
+  "fieldset/DBPCR": {
     "description": "disable Backup domain register",
     "fields": [
       {

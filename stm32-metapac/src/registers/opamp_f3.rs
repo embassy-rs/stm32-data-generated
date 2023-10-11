@@ -155,36 +155,24 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     enums: &[
         Enum {
-            name: "Tstref",
+            name: "VpsSel",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "OUTPUT",
-                    description: Some("VREFOPAMP2 is output"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOTOUTPUT",
-                    description: Some("VREFOPAMP2 is not output"),
+                    name: "PB14",
+                    description: Some("PB14 used as OPAMP2 non-inverting input when TCM_EN=1"),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "ForceVp",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Normal operating mode"),
-                    value: 0,
+                    name: "PB0",
+                    description: Some("PB0 used as OPAMP2 non-inverting input when TCM_EN=1"),
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "CALIBRATION",
-                    description: Some("Calibration mode. Non-inverting input connected to calibration reference"),
-                    value: 1,
+                    name: "PA7",
+                    description: Some("PA7 used as OPAMP2 non-inverting input when TCM_EN=1"),
+                    value: 3,
                 },
             ],
         },
@@ -212,6 +200,140 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FOLLOWER",
                     description: Some("Follower mode"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lock",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNLOCKED",
+                    description: Some("Comparator CSR bits are read-write"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOCKED",
+                    description: Some("Comparator CSR bits are read-only"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "VpSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PB14",
+                    description: Some("PB14 used as OPAMP2 non-inverting input"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PB0",
+                    description: Some("PB0 used as OPAMP2 non-inverting input"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PA7",
+                    description: Some("PA7 used as OPAMP2 non-inverting input"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "VmsSel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PC5",
+                    description: Some("PC5 (VM0) used as OPAMP2 inverting input when TCM_EN=1"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PA5",
+                    description: Some("PA5 (VM1) used as OPAMP2 inverting input when TCM_EN=1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tstref",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "OUTPUT",
+                    description: Some("VREFOPAMP2 is output"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NOTOUTPUT",
+                    description: Some("VREFOPAMP2 is not output"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Outcal",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some("Non-inverting < inverting"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some("Non-inverting > inverting"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Calsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PERCENT3_3",
+                    description: Some("VREFOPAMP=3.3% VDDA"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PERCENT10",
+                    description: Some("VREFOPAMP=10% VDDA"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PERCENT50",
+                    description: Some("VREFOPAMP=50% VDDA"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PERCENT90",
+                    description: Some("VREFOPAMP=90% VDDA"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "ForceVp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some("Normal operating mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CALIBRATION",
+                    description: Some("Calibration mode. Non-inverting input connected to calibration reference"),
+                    value: 1,
                 },
             ],
         },
@@ -279,128 +401,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "GAIN16_VM1",
                     description: Some("Gain 16, feedback connected to VM1"),
                     value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Lock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some("Comparator CSR bits are read-write"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some("Comparator CSR bits are read-only"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "VpSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PB14",
-                    description: Some("PB14 used as OPAMP2 non-inverting input"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PB0",
-                    description: Some("PB0 used as OPAMP2 non-inverting input"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PA7",
-                    description: Some("PA7 used as OPAMP2 non-inverting input"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "VmsSel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PC5",
-                    description: Some("PC5 (VM0) used as OPAMP2 inverting input when TCM_EN=1"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PA5",
-                    description: Some("PA5 (VM1) used as OPAMP2 inverting input when TCM_EN=1"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Calsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PERCENT3_3",
-                    description: Some("VREFOPAMP=3.3% VDDA"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PERCENT10",
-                    description: Some("VREFOPAMP=10% VDDA"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PERCENT50",
-                    description: Some("VREFOPAMP=50% VDDA"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PERCENT90",
-                    description: Some("VREFOPAMP=90% VDDA"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "VpsSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PB14",
-                    description: Some("PB14 used as OPAMP2 non-inverting input when TCM_EN=1"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PB0",
-                    description: Some("PB0 used as OPAMP2 non-inverting input when TCM_EN=1"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PA7",
-                    description: Some("PA7 used as OPAMP2 non-inverting input when TCM_EN=1"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Outcal",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LOW",
-                    description: Some("Non-inverting < inverting"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some("Non-inverting > inverting"),
-                    value: 1,
                 },
             ],
         },

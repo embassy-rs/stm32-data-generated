@@ -131,20 +131,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Exticr",
-            extends: None,
-            description: Some("external interrupt configuration register 1"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "exti",
-                description: Some("EXTI configuration bits"),
-                bit_offset: 0,
-                bit_size: 8,
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Lines",
             extends: None,
             description: Some("EXTI lines register, 1 bit per line"),
@@ -159,12 +145,26 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Seccfgr",
+            name: "Exticr",
             extends: None,
-            description: Some("Security configuration register"),
+            description: Some("external interrupt configuration register 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "sec",
+                name: "exti",
+                description: Some("EXTI configuration bits"),
+                bit_offset: 0,
+                bit_size: 8,
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Privcfgr",
+            extends: None,
+            description: Some("Privilege configuration register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "priv_",
                 description: Some("Security enable on event input x"),
                 bit_offset: 0,
                 bit_size: 1,
@@ -187,12 +187,12 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Privcfgr",
+            name: "Seccfgr",
             extends: None,
-            description: Some("Privilege configuration register"),
+            description: Some("Security configuration register"),
             bit_size: 32,
             fields: &[Field {
-                name: "priv_",
+                name: "sec",
                 description: Some("Security enable on event input x"),
                 bit_offset: 0,
                 bit_size: 1,

@@ -201,430 +201,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Isr",
-            extends: None,
-            description: Some(
-                "Interrupt and Status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txe",
-                    description: Some(
-                        "Transmit data register empty (transmitters)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txis",
-                    description: Some(
-                        "Transmit interrupt status (transmitters)",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxne",
-                    description: Some(
-                        "Receive data register not empty (receivers)",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "addr",
-                    description: Some(
-                        "Address matched (slave mode)",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nackf",
-                    description: Some(
-                        "Not acknowledge received flag",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stopf",
-                    description: Some(
-                        "Stop detection flag",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tc",
-                    description: Some(
-                        "Transfer Complete (master mode)",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcr",
-                    description: Some(
-                        "Transfer Complete Reload",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "berr",
-                    description: Some(
-                        "Bus error",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "arlo",
-                    description: Some(
-                        "Arbitration lost",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ovr",
-                    description: Some(
-                        "Overrun/Underrun (slave mode)",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pecerr",
-                    description: Some(
-                        "PEC Error in reception",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "timeout",
-                    description: Some(
-                        "Timeout or t_low detection flag",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alert",
-                    description: Some(
-                        "SMBus alert",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "busy",
-                    description: Some(
-                        "Bus busy",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dir",
-                    description: Some(
-                        "Transfer direction (Slave mode)",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dir",
-                    ),
-                },
-                Field {
-                    name: "addcode",
-                    description: Some(
-                        "Address match code (Slave mode)",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Timingr",
-            extends: None,
-            description: Some(
-                "Timing register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "scll",
-                    description: Some(
-                        "SCL low period (master mode)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sclh",
-                    description: Some(
-                        "SCL high period (master mode)",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdadel",
-                    description: Some(
-                        "Data hold time",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "scldel",
-                    description: Some(
-                        "Data setup time",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "presc",
-                    description: Some(
-                        "Timing prescaler",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rxdr",
-            extends: None,
-            description: Some(
-                "Receive data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxdata",
-                    description: Some(
-                        "8-bit receive data",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pecr",
-            extends: None,
-            description: Some(
-                "PEC register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pec",
-                    description: Some(
-                        "Packet error checking register",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Oar1",
-            extends: None,
-            description: Some(
-                "Own address register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "oa1",
-                    description: Some(
-                        "Interface address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "oa1mode",
-                    description: Some(
-                        "Own Address 1 10-bit mode",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Addmode",
-                    ),
-                },
-                Field {
-                    name: "oa1en",
-                    description: Some(
-                        "Own Address 1 enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Icr",
-            extends: None,
-            description: Some(
-                "Interrupt clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrcf",
-                    description: Some(
-                        "Address Matched flag clear",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nackcf",
-                    description: Some(
-                        "Not Acknowledge flag clear",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stopcf",
-                    description: Some(
-                        "Stop detection flag clear",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "berrcf",
-                    description: Some(
-                        "Bus error flag clear",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "arlocf",
-                    description: Some(
-                        "Arbitration lost flag clear",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ovrcf",
-                    description: Some(
-                        "Overrun/Underrun flag clear",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "peccf",
-                    description: Some(
-                        "PEC Error flag clear",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "timoutcf",
-                    description: Some(
-                        "Timeout detection flag clear",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alertcf",
-                    description: Some(
-                        "Alert flag clear",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr1",
             extends: None,
             description: Some(
@@ -827,26 +403,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Txdr",
-            extends: None,
-            description: Some(
-                "Transmit data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txdata",
-                    description: Some(
-                        "8-bit transmit data",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cr2",
             extends: None,
             description: Some(
@@ -977,42 +533,60 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Oar2",
+            name: "Timingr",
             extends: None,
             description: Some(
-                "Own address register 2",
+                "Timing register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "oa2",
+                    name: "scll",
                     description: Some(
-                        "Interface address",
+                        "SCL low period (master mode)",
                     ),
-                    bit_offset: 1,
-                    bit_size: 7,
+                    bit_offset: 0,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "oa2msk",
+                    name: "sclh",
                     description: Some(
-                        "Own Address 2 masks",
+                        "SCL high period (master mode)",
                     ),
                     bit_offset: 8,
-                    bit_size: 3,
+                    bit_size: 8,
                     array: None,
-                    enumm: Some(
-                        "Oamsk",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "oa2en",
+                    name: "sdadel",
                     description: Some(
-                        "Own Address 2 enable",
+                        "Data hold time",
                     ),
-                    bit_offset: 15,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "scldel",
+                    description: Some(
+                        "Data setup time",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "presc",
+                    description: Some(
+                        "Timing prescaler",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -1078,131 +652,452 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Txdr",
+            extends: None,
+            description: Some(
+                "Transmit data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txdata",
+                    description: Some(
+                        "8-bit transmit data",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Oar2",
+            extends: None,
+            description: Some(
+                "Own address register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "oa2",
+                    description: Some(
+                        "Interface address",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oa2msk",
+                    description: Some(
+                        "Own Address 2 masks",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Oamsk",
+                    ),
+                },
+                Field {
+                    name: "oa2en",
+                    description: Some(
+                        "Own Address 2 enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pecr",
+            extends: None,
+            description: Some(
+                "PEC register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pec",
+                    description: Some(
+                        "Packet error checking register",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Oar1",
+            extends: None,
+            description: Some(
+                "Own address register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "oa1",
+                    description: Some(
+                        "Interface address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oa1mode",
+                    description: Some(
+                        "Own Address 1 10-bit mode",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Addmode",
+                    ),
+                },
+                Field {
+                    name: "oa1en",
+                    description: Some(
+                        "Own Address 1 enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Icr",
+            extends: None,
+            description: Some(
+                "Interrupt clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrcf",
+                    description: Some(
+                        "Address Matched flag clear",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nackcf",
+                    description: Some(
+                        "Not Acknowledge flag clear",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stopcf",
+                    description: Some(
+                        "Stop detection flag clear",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "berrcf",
+                    description: Some(
+                        "Bus error flag clear",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "arlocf",
+                    description: Some(
+                        "Arbitration lost flag clear",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ovrcf",
+                    description: Some(
+                        "Overrun/Underrun flag clear",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "peccf",
+                    description: Some(
+                        "PEC Error flag clear",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "timoutcf",
+                    description: Some(
+                        "Timeout detection flag clear",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "alertcf",
+                    description: Some(
+                        "Alert flag clear",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rxdr",
+            extends: None,
+            description: Some(
+                "Receive data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxdata",
+                    description: Some(
+                        "8-bit receive data",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Isr",
+            extends: None,
+            description: Some(
+                "Interrupt and Status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txe",
+                    description: Some(
+                        "Transmit data register empty (transmitters)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txis",
+                    description: Some(
+                        "Transmit interrupt status (transmitters)",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxne",
+                    description: Some(
+                        "Receive data register not empty (receivers)",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "addr",
+                    description: Some(
+                        "Address matched (slave mode)",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nackf",
+                    description: Some(
+                        "Not acknowledge received flag",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stopf",
+                    description: Some(
+                        "Stop detection flag",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tc",
+                    description: Some(
+                        "Transfer Complete (master mode)",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tcr",
+                    description: Some(
+                        "Transfer Complete Reload",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "berr",
+                    description: Some(
+                        "Bus error",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "arlo",
+                    description: Some(
+                        "Arbitration lost",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ovr",
+                    description: Some(
+                        "Overrun/Underrun (slave mode)",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pecerr",
+                    description: Some(
+                        "PEC Error in reception",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "timeout",
+                    description: Some(
+                        "Timeout or t_low detection flag",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "alert",
+                    description: Some(
+                        "SMBus alert",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "busy",
+                    description: Some(
+                        "Bus busy",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dir",
+                    description: Some(
+                        "Transfer direction (Slave mode)",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dir",
+                    ),
+                },
+                Field {
+                    name: "addcode",
+                    description: Some(
+                        "Address match code (Slave mode)",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
         Enum {
-            name: "Addmode",
+            name: "Reload",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT7",
+                    name: "COMPLETED",
                     description: Some(
-                        "7-bit addressing mode",
+                        "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BIT10",
+                    name: "NOTCOMPLETED",
                     description: Some(
-                        "10-bit addressing mode",
+                        "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dir",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "WRITE",
-                    description: Some(
-                        "Write transfer, slave enters receiver mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READ",
-                    description: Some(
-                        "Read transfer, slave enters transmitter mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Headr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some(
-                        "The master sends the complete 10 bit slave address read sequence",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PARTIAL",
-                    description: Some(
-                        "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Oamsk",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "NOMASK",
-                    description: Some(
-                        "No mask",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASK1",
-                    description: Some(
-                        "OA2[1] is masked and don’t care. Only OA2[7:2] are compared",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MASK2",
-                    description: Some(
-                        "OA2[2:1] are masked and don’t care. Only OA2[7:3] are compared",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MASK3",
-                    description: Some(
-                        "OA2[3:1] are masked and don’t care. Only OA2[7:4] are compared",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "MASK4",
-                    description: Some(
-                        "OA2[4:1] are masked and don’t care. Only OA2[7:5] are compared",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "MASK5",
-                    description: Some(
-                        "OA2[5:1] are masked and don’t care. Only OA2[7:6] are compared",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "MASK6",
-                    description: Some(
-                        "OA2[6:1] are masked and don’t care. Only OA2[7] is compared.",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "MASK7",
-                    description: Some(
-                        "OA2[7:1] are masked and don’t care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged",
-                    ),
-                    value: 7,
                 },
             ],
         },
@@ -1326,6 +1221,90 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Addmode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some(
+                        "7-bit addressing mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT10",
+                    description: Some(
+                        "10-bit addressing mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Oamsk",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "NOMASK",
+                    description: Some(
+                        "No mask",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MASK1",
+                    description: Some(
+                        "OA2[1] is masked and don’t care. Only OA2[7:2] are compared",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MASK2",
+                    description: Some(
+                        "OA2[2:1] are masked and don’t care. Only OA2[7:3] are compared",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MASK3",
+                    description: Some(
+                        "OA2[3:1] are masked and don’t care. Only OA2[7:4] are compared",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "MASK4",
+                    description: Some(
+                        "OA2[4:1] are masked and don’t care. Only OA2[7:5] are compared",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "MASK5",
+                    description: Some(
+                        "OA2[5:1] are masked and don’t care. Only OA2[7:6] are compared",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "MASK6",
+                    description: Some(
+                        "OA2[6:1] are masked and don’t care. Only OA2[7] is compared.",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "MASK7",
+                    description: Some(
+                        "OA2[7:1] are masked and don’t care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
             name: "Autoend",
             description: None,
             bit_size: 1,
@@ -1347,21 +1326,42 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Reload",
+            name: "Dir",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "COMPLETED",
+                    name: "WRITE",
                     description: Some(
-                        "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)",
+                        "Write transfer, slave enters receiver mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTCOMPLETED",
+                    name: "READ",
                     description: Some(
-                        "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)",
+                        "Read transfer, slave enters transmitter mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Headr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some(
+                        "The master sends the complete 10 bit slave address read sequence",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PARTIAL",
+                    description: Some(
+                        "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction",
                     ),
                     value: 1,
                 },

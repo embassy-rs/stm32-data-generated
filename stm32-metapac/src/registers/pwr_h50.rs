@@ -269,36 +269,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ioretr",
-            extends: None,
-            description: Some(
-                "PWR I/O retention register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ioreten",
-                    description: Some(
-                        "IO retention enable:\r When entering into standby mode, the output is sampled, and applied to the output IO during the standby power mode. \r Note: the IO state is not retained if the DBG_STANDBY bit is set in DBGMCU_CR register.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jtagioreten",
-                    description: Some(
-                        "IO retention enable for JTAG IOs\r when entering into standby mode, the output is sampled, and applied to the output IO during the standby power mode",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Pmcr",
             extends: None,
             description: Some(
@@ -391,29 +361,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Vmsr",
+            name: "Bdsr",
             extends: None,
             description: Some(
-                "PWR voltage monitor status register",
+                "PWR Backup domain status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "avdo",
+                    name: "brrdy",
                     description: Some(
-                        "analog voltage detector output on V<sub>DDA</sub>\r This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit.\r Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after standby or reset until the AVDEN bit is set.",
+                        "backup regulator ready\r This bit is set by hardware to indicate that the backup regulator is ready.",
                     ),
-                    bit_offset: 19,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Avdo",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "vddio2rdy",
+                    name: "vbatl",
                     description: Some(
-                        "voltage detector output on V<sub>DDIO2</sub>\r This bit is set and cleared by hardware.",
+                        "V<sub>BAT</sub> level monitoring versus low threshold",
                     ),
                     bit_offset: 20,
                     bit_size: 1,
@@ -421,53 +389,103 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pvdo",
+                    name: "vbath",
                     description: Some(
-                        "programmable voltage detect output\r This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit.\r Note: Since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
+                        "V<sub>BAT</sub> level monitoring versus high threshold",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "templ",
+                    description: Some(
+                        "temperature level monitoring versus low threshold",
                     ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pvdo",
-                    ),
+                    enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Privcfgr",
-            extends: None,
-            description: Some(
-                "PWR privilege configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "nspriv",
+                    name: "temph",
                     description: Some(
-                        "PWR functions privilege configuration\r Set and reset by software. This bit can be written only by privileged access.",
+                        "temperature level monitoring versus high threshold",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 23,
                     bit_size: 1,
                     array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Vmcr",
+            extends: None,
+            description: Some(
+                "PWR voltage monitor control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvde",
+                    description: Some(
+                        "PVD enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pls",
+                    description: Some(
+                        "programmable voltage detector (PVD) level selection\r These bits select the voltage threshold detected by the PVD.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 3,
+                    array: None,
                     enumm: Some(
-                        "Priv",
+                        "Pls",
+                    ),
+                },
+                Field {
+                    name: "avden",
+                    description: Some(
+                        "peripheral voltage monitor on V<sub>DDA</sub> enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "als",
+                    description: Some(
+                        "analog voltage detector (AVD) level selection\r These bits select the voltage threshold detected by the AVD.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Als",
                     ),
                 },
             ],
         },
         FieldSet {
-            name: "Wuscr",
+            name: "Wusr",
             extends: None,
             description: Some(
-                "PWR wakeup status clear register",
+                "PWR wakeup status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cwuf",
+                    name: "wuf",
                     description: Some(
-                        "clear wakeup pin flag for WUFx\r These bits are always read as 0.",
+                        "wakeup pin WUFx flag\r This bit is set by hardware and cleared only by a RESET pin or by setting the CWUFx bit in PWR_WUSCR register.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -536,28 +554,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Voscr",
-            extends: None,
-            description: Some(
-                "PWR voltage scaling control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vos",
-                    description: Some(
-                        "voltage scaling selection according to performance\r These bits control the V<sub>CORE</sub> voltage level and allow to obtain the best trade-off between power consumption and performance:\r - In bypass mode, these bits must also be set according to the external provided core voltage level and related performance.\r - When increasing the performance, the voltage scaling must be changed before increasing the system frequency.\r - When decreasing performance, the system frequency must first be decreased before changing the voltage scaling.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Sccr",
             extends: None,
             description: Some(
@@ -588,77 +584,39 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bdsr",
+            name: "Privcfgr",
             extends: None,
             description: Some(
-                "PWR Backup domain status register",
+                "PWR privilege configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "brrdy",
+                    name: "nspriv",
                     description: Some(
-                        "backup regulator ready\r This bit is set by hardware to indicate that the backup regulator is ready.",
+                        "PWR functions privilege configuration\r Set and reset by software. This bit can be written only by privileged access.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbatl",
-                    description: Some(
-                        "V<sub>BAT</sub> level monitoring versus low threshold",
+                    enumm: Some(
+                        "Priv",
                     ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbath",
-                    description: Some(
-                        "V<sub>BAT</sub> level monitoring versus high threshold",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "templ",
-                    description: Some(
-                        "temperature level monitoring versus low threshold",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "temph",
-                    description: Some(
-                        "temperature level monitoring versus high threshold",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Wusr",
+            name: "Wuscr",
             extends: None,
             description: Some(
-                "PWR wakeup status register",
+                "PWR wakeup status clear register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wuf",
+                    name: "cwuf",
                     description: Some(
-                        "wakeup pin WUFx flag\r This bit is set by hardware and cleared only by a RESET pin or by setting the CWUFx bit in PWR_WUSCR register.",
+                        "clear wakeup pin flag for WUFx\r These bits are always read as 0.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -671,60 +629,6 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Vmcr",
-            extends: None,
-            description: Some(
-                "PWR voltage monitor control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pvde",
-                    description: Some(
-                        "PVD enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pls",
-                    description: Some(
-                        "programmable voltage detector (PVD) level selection\r These bits select the voltage threshold detected by the PVD.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Pls",
-                    ),
-                },
-                Field {
-                    name: "avden",
-                    description: Some(
-                        "peripheral voltage monitor on V<sub>DDA</sub> enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "als",
-                    description: Some(
-                        "analog voltage detector (AVD) level selection\r These bits select the voltage threshold detected by the AVD.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Als",
-                    ),
                 },
             ],
         },
@@ -836,6 +740,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Voscr",
+            extends: None,
+            description: Some(
+                "PWR voltage scaling control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vos",
+                    description: Some(
+                        "voltage scaling selection according to performance\r These bits control the V<sub>CORE</sub> voltage level and allow to obtain the best trade-off between power consumption and performance:\r - In bypass mode, these bits must also be set according to the external provided core voltage level and related performance.\r - When increasing the performance, the voltage scaling must be changed before increasing the system frequency.\r - When decreasing performance, the system frequency must first be decreased before changing the voltage scaling.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Vos",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Pmsr",
             extends: None,
             description: Some(
@@ -885,38 +811,133 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Vmsr",
+            extends: None,
+            description: Some(
+                "PWR voltage monitor status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "avdo",
+                    description: Some(
+                        "analog voltage detector output on V<sub>DDA</sub>\r This bit is set and cleared by hardware. It is valid only if AVD on VDDA is enabled by the AVDEN bit.\r Note: Since the AVD is disabled in Standby mode, this bit is equal to 0 after standby or reset until the AVDEN bit is set.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Avdo",
+                    ),
+                },
+                Field {
+                    name: "vddio2rdy",
+                    description: Some(
+                        "voltage detector output on V<sub>DDIO2</sub>\r This bit is set and cleared by hardware.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "programmable voltage detect output\r This bit is set and cleared by hardware. It is valid only if the PVD has been enabled by the PVDE bit.\r Note: Since the PVD is disabled in Standby mode, this bit is equal to 0 after Standby or reset until the PVDE bit is set.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pvdo",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ioretr",
+            extends: None,
+            description: Some(
+                "PWR I/O retention register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ioreten",
+                    description: Some(
+                        "IO retention enable:\r When entering into standby mode, the output is sampled, and applied to the output IO during the standby power mode. \r Note: the IO state is not retained if the DBG_STANDBY bit is set in DBGMCU_CR register.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "jtagioreten",
+                    description: Some(
+                        "IO retention enable for JTAG IOs\r when entering into standby mode, the output is sampled, and applied to the output IO during the standby power mode",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
         Enum {
-            name: "Wuppupd",
+            name: "Avdo",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "no pull-up",
+                        "V<sub>DDA</sub> is equal or higher than the AVD threshold selected with the ALS[2:0] bits.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "pull-up",
+                        "V<sub>DDA</sub> is lower than the AVD threshold selected with the ALS[2:0] bits.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Vos",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SCALE3",
+                    description: Some(
+                        "scale 3 (default)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SCALE2",
+                    description: Some(
+                        "scale 2",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "SCALE1",
                     description: Some(
-                        "pull-down",
+                        "scale 1",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "SCALE0",
                     description: Some(
-                        "reserved",
+                        "scale 0",
                     ),
                     value: 3,
                 },
@@ -938,83 +959,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "B_0X1",
                     description: Some(
                         "V<sub>DD</sub> is lower than the PVD threshold selected through the PLS[2:0] bits.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Read and write to PWR functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Read and write to PWR functions can be done by privileged access only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Actvos",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "VOS3 (lowest power)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "VOS2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "VOS1",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3",
-                    description: Some(
-                        "VOS0 (highest frequency)",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Vbrs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Charge V<sub>BAT</sub> through a 5 kΩ resistor.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Charge V<sub>BAT</sub> through a 1.5 kΩ resistor.",
                     ),
                     value: 1,
                 },
@@ -1052,6 +996,104 @@ pub(crate) static REGISTERS: IR = IR {
                         "2.8 V",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Priv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Read and write to PWR functions can be done by privileged or unprivileged access.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Read and write to PWR functions can be done by privileged access only.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wupp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "detection on high level (rising edge)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "detection on low level (falling edge)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wuppupd",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "no pull-up",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "pull-up",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "pull-down",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "B_0X3",
+                    description: Some(
+                        "reserved",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Vbrs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Charge V<sub>BAT</sub> through a 5 kΩ resistor.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Charge V<sub>BAT</sub> through a 1.5 kΩ resistor.",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -1119,23 +1161,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wupp",
+            name: "Actvos",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "detection on high level (rising edge)",
+                        "VOS3 (lowest power)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "detection on low level (falling edge)",
+                        "VOS2",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "VOS1",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "B_0X3",
+                    description: Some(
+                        "VOS0 (highest frequency)",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -1171,62 +1227,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "SVOS3 scale 3 (default).",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Vos",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SCALE3",
-                    description: Some(
-                        "scale 3 (default)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SCALE2",
-                    description: Some(
-                        "scale 2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "SCALE1",
-                    description: Some(
-                        "scale 1",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "SCALE0",
-                    description: Some(
-                        "scale 0",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Avdo",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "V<sub>DDA</sub> is equal or higher than the AVD threshold selected with the ALS[2:0] bits.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "V<sub>DDA</sub> is lower than the AVD threshold selected with the ALS[2:0] bits.",
-                    ),
-                    value: 1,
                 },
             ],
         },

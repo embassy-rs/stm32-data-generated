@@ -123,6 +123,108 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
+            name: "Txcrcr",
+            extends: None,
+            description: Some("TX CRC register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "tx_crc",
+                description: Some("Tx CRC register"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "I2spr",
+            extends: None,
+            description: Some("I2S prescaler register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "i2sdiv",
+                    description: Some("I2S Linear prescaler"),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "odd",
+                    description: Some("Odd factor for the prescaler"),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Odd"),
+                },
+                Field {
+                    name: "mckoe",
+                    description: Some("Master clock output enable"),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some("control register 2"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxdmaen",
+                    description: Some("Rx buffer DMA enable"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txdmaen",
+                    description: Some("Tx buffer DMA enable"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ssoe",
+                    description: Some("SS output enable"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "errie",
+                    description: Some("Error interrupt enable"),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxneie",
+                    description: Some("RX buffer not empty interrupt enable"),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txeie",
+                    description: Some("Tx buffer empty interrupt enable"),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Sr",
             extends: None,
             description: Some("status register"),
@@ -195,13 +297,13 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Txcrcr",
+            name: "Rxcrcr",
             extends: None,
-            description: Some("TX CRC register"),
+            description: Some("RX CRC register"),
             bit_size: 32,
             fields: &[Field {
-                name: "tx_crc",
-                description: Some("Tx CRC register"),
+                name: "rx_crc",
+                description: Some("Rx CRC register"),
                 bit_offset: 0,
                 bit_size: 16,
                 array: None,
@@ -329,90 +431,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dr",
-            extends: None,
-            description: Some("data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "dr",
-                description: Some("Data register"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some("control register 2"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxdmaen",
-                    description: Some("Rx buffer DMA enable"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txdmaen",
-                    description: Some("Tx buffer DMA enable"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ssoe",
-                    description: Some("SS output enable"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "errie",
-                    description: Some("Error interrupt enable"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxneie",
-                    description: Some("RX buffer not empty interrupt enable"),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txeie",
-                    description: Some("Tx buffer empty interrupt enable"),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rxcrcr",
-            extends: None,
-            description: Some("RX CRC register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "rx_crc",
-                description: Some("Rx CRC register"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "I2scfgr",
             extends: None,
             description: Some("I2S configuration register"),
@@ -485,202 +503,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "I2spr",
+            name: "Dr",
             extends: None,
-            description: Some("I2S prescaler register"),
+            description: Some("data register"),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "i2sdiv",
-                    description: Some("I2S Linear prescaler"),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "odd",
-                    description: Some("Odd factor for the prescaler"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Odd"),
-                },
-                Field {
-                    name: "mckoe",
-                    description: Some("Master clock output enable"),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "dr",
+                description: Some("Data register"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
         },
     ],
     enums: &[
-        Enum {
-            name: "Rxonly",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FULLDUPLEX",
-                    description: Some("Full duplex (Transmit and receive)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OUTPUTDISABLED",
-                    description: Some("Output disabled (Receive-only mode)"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ckpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "IDLELOW",
-                    description: Some("I2S clock inactive state is low level"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "IDLEHIGH",
-                    description: Some("I2S clock inactive state is high level"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Crcnext",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TXBUFFER",
-                    description: Some("Next transmit value is from Tx buffer"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CRC",
-                    description: Some("Next transmit value is from Tx CRC register"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2scfg",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SLAVETX",
-                    description: Some("Slave - transmit"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SLAVERX",
-                    description: Some("Slave - receive"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MASTERTX",
-                    description: Some("Master - transmit"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MASTERRX",
-                    description: Some("Master - receive"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Mstr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SLAVE",
-                    description: Some("Slave configuration"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MASTER",
-                    description: Some("Master configuration"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpha",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FIRSTEDGE",
-                    description: Some("The first clock transition is the first data capture edge"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECONDEDGE",
-                    description: Some("The second clock transition is the first data capture edge"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Bidioe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "OUTPUTDISABLED",
-                    description: Some("Output disabled (receive-only mode)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OUTPUTENABLED",
-                    description: Some("Output enabled (transmit-only mode)"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Chside",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LEFT",
-                    description: Some("Channel left has to be transmitted or has been received"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RIGHT",
-                    description: Some("Channel right has to be transmitted or has been received"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "IDLELOW",
-                    description: Some("CK to 0 when idle"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "IDLEHIGH",
-                    description: Some("CK to 1 when idle"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "I2sstd",
             description: None,
@@ -709,52 +546,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dff",
+            name: "Chside",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EIGHTBIT",
-                    description: Some("8-bit data frame format is selected for transmission/reception"),
+                    name: "LEFT",
+                    description: Some("Channel left has to be transmitted or has been received"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SIXTEENBIT",
-                    description: Some("16-bit data frame format is selected for transmission/reception"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsbfirst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MSBFIRST",
-                    description: Some("Data is transmitted/received with the MSB first"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSBFIRST",
-                    description: Some("Data is transmitted/received with the LSB first"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Odd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EVEN",
-                    description: Some("Real divider value is I2SDIV * 2"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ODD",
-                    description: Some("Real divider value is (I2SDIV * 2) + 1"),
+                    name: "RIGHT",
+                    description: Some("Channel right has to be transmitted or has been received"),
                     value: 1,
                 },
             ],
@@ -782,6 +585,57 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Crcnext",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TXBUFFER",
+                    description: Some("Next transmit value is from Tx buffer"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CRC",
+                    description: Some("Next transmit value is from Tx CRC register"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "IDLELOW",
+                    description: Some("I2S clock inactive state is low level"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "IDLEHIGH",
+                    description: Some("I2S clock inactive state is high level"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cpha",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FIRSTEDGE",
+                    description: Some("The first clock transition is the first data capture edge"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SECONDEDGE",
+                    description: Some("The second clock transition is the first data capture edge"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Bidimode",
             description: None,
             bit_size: 1,
@@ -794,6 +648,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "BIDIRECTIONAL",
                     description: Some("1-line bidirectional data mode selected"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Odd",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "EVEN",
+                    description: Some("Real divider value is I2SDIV * 2"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ODD",
+                    description: Some("Real divider value is (I2SDIV * 2) + 1"),
                     value: 1,
                 },
             ],
@@ -816,19 +687,80 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pcmsync",
+            name: "Dff",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SHORT",
-                    description: Some("Short frame synchronisation"),
+                    name: "EIGHTBIT",
+                    description: Some("8-bit data frame format is selected for transmission/reception"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LONG",
-                    description: Some("Long frame synchronisation"),
+                    name: "SIXTEENBIT",
+                    description: Some("16-bit data frame format is selected for transmission/reception"),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Bidioe",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "OUTPUTDISABLED",
+                    description: Some("Output disabled (receive-only mode)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OUTPUTENABLED",
+                    description: Some("Output enabled (transmit-only mode)"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mstr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SLAVE",
+                    description: Some("Slave configuration"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MASTER",
+                    description: Some("Master configuration"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "I2scfg",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SLAVETX",
+                    description: Some("Slave - transmit"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SLAVERX",
+                    description: Some("Slave - receive"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MASTERTX",
+                    description: Some("Master - transmit"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MASTERRX",
+                    description: Some("Master - receive"),
+                    value: 3,
                 },
             ],
         },
@@ -876,6 +808,74 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV256",
                     description: Some("f_PCLK / 256"),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Pcmsync",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SHORT",
+                    description: Some("Short frame synchronisation"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LONG",
+                    description: Some("Long frame synchronisation"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "IDLELOW",
+                    description: Some("CK to 0 when idle"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "IDLEHIGH",
+                    description: Some("CK to 1 when idle"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rxonly",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FULLDUPLEX",
+                    description: Some("Full duplex (Transmit and receive)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OUTPUTDISABLED",
+                    description: Some("Output disabled (Receive-only mode)"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lsbfirst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MSBFIRST",
+                    description: Some("Data is transmitted/received with the MSB first"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSBFIRST",
+                    description: Some("Data is transmitted/received with the LSB first"),
+                    value: 1,
                 },
             ],
         },

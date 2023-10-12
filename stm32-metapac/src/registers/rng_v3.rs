@@ -80,6 +80,66 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "drdy",
+                    description: Some(
+                        "Data ready",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cecs",
+                    description: Some(
+                        "Clock error current status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "secs",
+                    description: Some(
+                        "Seed error current status",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ceis",
+                    description: Some(
+                        "Clock error interrupt status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "seis",
+                    description: Some(
+                        "Seed error interrupt status",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some(
@@ -231,82 +291,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some(
-                "status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "drdy",
-                    description: Some(
-                        "Data ready",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cecs",
-                    description: Some(
-                        "Clock error current status",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "secs",
-                    description: Some(
-                        "Seed error current status",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ceis",
-                    description: Some(
-                        "Clock error interrupt status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "seis",
-                    description: Some(
-                        "Seed error interrupt status",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
-        Enum {
-            name: "RngConfig2",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "CONFIGA_B",
-                    description: Some(
-                        "Recommended value for config A and B",
-                    ),
-                    value: 0,
-                },
-            ],
-        },
         Enum {
             name: "Htcfg",
             description: None,
@@ -329,23 +315,16 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RngConfig1",
+            name: "RngConfig2",
             description: None,
-            bit_size: 6,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGA",
+                    name: "CONFIGA_B",
                     description: Some(
-                        "Recommended value for config A (NIST certifiable)",
+                        "Recommended value for config A and B",
                     ),
-                    value: 15,
-                },
-                EnumVariant {
-                    name: "CONFIGB",
-                    description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
-                    ),
-                    value: 24,
+                    value: 0,
                 },
             ],
         },
@@ -465,6 +444,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "Divide RNG clock by 2^15",
                     ),
                     value: 15,
+                },
+            ],
+        },
+        Enum {
+            name: "RngConfig1",
+            description: None,
+            bit_size: 6,
+            variants: &[
+                EnumVariant {
+                    name: "CONFIGA",
+                    description: Some(
+                        "Recommended value for config A (NIST certifiable)",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "CONFIGB",
+                    description: Some(
+                        "Recommended value for config B (not NIST certifiable)",
+                    ),
+                    value: 24,
                 },
             ],
         },

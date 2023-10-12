@@ -3043,6 +3043,11 @@
                 {
                     "name": "OCTOSPI1",
                     "address": 2415919104,
+                    "registers": {
+                        "kind": "octospi",
+                        "version": "v1",
+                        "block": "OCTOSPI"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -3060,6 +3065,11 @@
                 {
                     "name": "OCTOSPI2",
                     "address": 1879048192,
+                    "registers": {
+                        "kind": "octospi",
+                        "version": "v1",
+                        "block": "OCTOSPI"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -3077,6 +3087,11 @@
                 {
                     "name": "OCTOSPIM",
                     "address": 1342577664,
+                    "registers": {
+                        "kind": "octospim",
+                        "version": "v1",
+                        "block": "OCTOSPIM"
+                    },
                     "pins": [
                         {
                             "pin": "PA1",

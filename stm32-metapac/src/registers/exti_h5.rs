@@ -298,62 +298,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sec",
-            extends: None,
-            description: Some(
-                "security configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sec",
-                    description: Some(
-                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Exti",
-            extends: None,
-            description: Some(
-                "EXTI external interrupt selection register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "exti",
-                    description: Some(
-                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Lockr",
             extends: None,
             description: Some(
@@ -402,29 +346,64 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
+        FieldSet {
+            name: "Exti",
+            extends: None,
+            description: Some(
+                "EXTI external interrupt selection register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti",
                     description: Some(
-                        "Event privilege disabled (unprivileged)",
+                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
                     ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Event privilege enabled (privileged)",
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 8,
+                            },
+                        ),
                     ),
-                    value: 1,
+                    enumm: None,
                 },
             ],
         },
+        FieldSet {
+            name: "Sec",
+            extends: None,
+            description: Some(
+                "security configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sec",
+                    description: Some(
+                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+            ],
+        },
+    ],
+    enums: &[
         Enum {
             name: "Sec",
             description: None,
@@ -441,6 +420,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SECURE",
                     description: Some(
                         "Event security enabled (secure)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Priv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UNPRIVILEGED",
+                    description: Some(
+                        "Event privilege disabled (unprivileged)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PRIVILEGED",
+                    description: Some(
+                        "Event privilege enabled (privileged)",
                     ),
                     value: 1,
                 },

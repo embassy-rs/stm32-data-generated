@@ -43,9 +43,9 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Btr",
+            name: "Bwtr",
             extends: None,
-            description: Some("SRAM/NOR-Flash chip-select timing register"),
+            description: Some("SRAM/NOR-Flash write timing registers"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -76,22 +76,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "busturn",
                     description: Some("Bus turnaround phase duration"),
                     bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clkdiv",
-                    description: Some("Clock divide ratio (for FMC_CLK signal)"),
-                    bit_offset: 20,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "datlat",
-                    description: Some("Data latency for synchronous memory"),
-                    bit_offset: 24,
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -235,9 +219,9 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bwtr",
+            name: "Btr",
             extends: None,
-            description: Some("SRAM/NOR-Flash write timing registers"),
+            description: Some("SRAM/NOR-Flash chip-select timing register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -273,6 +257,22 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "clkdiv",
+                    description: Some("Clock divide ratio (for FMC_CLK signal)"),
+                    bit_offset: 20,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "datlat",
+                    description: Some("Data latency for synchronous memory"),
+                    bit_offset: 24,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "accmod",
                     description: Some("Access mode"),
                     bit_offset: 28,
@@ -284,6 +284,28 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Mtyp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SRAM",
+                    description: Some("SRAM memory type"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PSRAM",
+                    description: Some("PSRAM (CRAM) memory type"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FLASH",
+                    description: Some("NOR Flash/OneNAND Flash"),
+                    value: 2,
+                },
+            ],
+        },
         Enum {
             name: "Mwid",
             description: None,
@@ -303,6 +325,38 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS32",
                     description: Some("Memory data bus width 32 bits"),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Cpsize",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "NOBURSTSPLIT",
+                    description: Some("No burst split when crossing page boundary"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BYTES128",
+                    description: Some("128 bytes CRAM page size"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BYTES256",
+                    description: Some("256 bytes CRAM page size"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BYTES512",
+                    description: Some("512 bytes CRAM page size"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BYTES1024",
+                    description: Some("1024 bytes CRAM page size"),
+                    value: 4,
                 },
             ],
         },
@@ -347,60 +401,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ACTIVEHIGH",
                     description: Some("NWAIT active high"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mtyp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SRAM",
-                    description: Some("SRAM memory type"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PSRAM",
-                    description: Some("PSRAM (CRAM) memory type"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FLASH",
-                    description: Some("NOR Flash/OneNAND Flash"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpsize",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "NOBURSTSPLIT",
-                    description: Some("No burst split when crossing page boundary"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYTES128",
-                    description: Some("128 bytes CRAM page size"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BYTES256",
-                    description: Some("256 bytes CRAM page size"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BYTES512",
-                    description: Some("512 bytes CRAM page size"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BYTES1024",
-                    description: Some("1024 bytes CRAM page size"),
-                    value: 4,
                 },
             ],
         },

@@ -242,50 +242,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Misr",
-            extends: None,
-            description: Some(
-                "TAMP masked interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampmf",
-                    description: Some(
-                        "Tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampmf",
-                    description: Some(
-                        "Internal tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Scr",
             extends: None,
             description: Some(
@@ -360,6 +316,126 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Bkpr",
+            extends: None,
+            description: Some(
+                "TAMP backup register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bkp",
+                    description: Some(
+                        "BKP",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fltcr",
+            extends: None,
+            description: Some(
+                "TAMP filter control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampfreq",
+                    description: Some(
+                        "Tamper sampling frequency. Determines the frequency at which each of the INx inputs are sampled.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tampflt",
+                    description: Some(
+                        "INx filter count. These bits determines the number of consecutive samples at the specified level (TAMP*TRG) needed to activate a tamper event. TAMPFLT is valid for each of the INx inputs.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tampprch",
+                    description: Some(
+                        "INx precharge duration. These bit determines the duration of time during which the pull-up/is activated before each sample. TAMPPRCH is valid for each of the INx inputs.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tamppudis",
+                    description: Some(
+                        "INx pull-up disable. This bit determines if each of the TAMPx pins are precharged before each sample.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hwcfgr1",
+            extends: None,
+            description: Some(
+                "TAMP hardware configuration register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "backup_regs",
+                    description: Some(
+                        "BACKUP_REGS",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tamper",
+                    description: Some(
+                        "TAMPER",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "active_tamper",
+                    description: Some(
+                        "ACTIVE_TAMPER",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "int_tamper",
+                    description: Some(
+                        "INT_TAMPER",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr2",
             extends: None,
             description: Some(
@@ -421,17 +497,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr1",
+            name: "Sr",
             extends: None,
             description: Some(
-                "control register 1",
+                "TAMP status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampe",
+                    name: "tampf",
                     description: Some(
-                        "Tamper detection on IN X enable",
+                        "Tamper X detection flag",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -446,9 +522,73 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "itampe",
+                    name: "itampf",
                     description: Some(
-                        "Internal tamper X enable",
+                        "Internal tamper X detection flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 7,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sidr",
+            extends: None,
+            description: Some(
+                "EXTI Size ID register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sid",
+                    description: Some(
+                        "Size Identification",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Misr",
+            extends: None,
+            description: Some(
+                "TAMP masked interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampmf",
+                    description: Some(
+                        "Tamper X interrupt masked flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampmf",
+                    description: Some(
+                        "Internal tamper X interrupt masked flag",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -465,50 +605,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fltcr",
+            name: "Hwcfgr2",
             extends: None,
             description: Some(
-                "TAMP filter control register",
+                "TAMP hardware configuration register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampfreq",
+                    name: "ptionreg_out",
                     description: Some(
-                        "Tamper sampling frequency. Determines the frequency at which each of the INx inputs are sampled.",
+                        "PTIONREG_OUT",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "tampflt",
+                    name: "trust_zone",
                     description: Some(
-                        "INx filter count. These bits determines the number of consecutive samples at the specified level (TAMP*TRG) needed to activate a tamper event. TAMPFLT is valid for each of the INx inputs.",
+                        "TRUST_ZONE",
                     ),
-                    bit_offset: 3,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tampprch",
-                    description: Some(
-                        "INx precharge duration. These bit determines the duration of time during which the pull-up/is activated before each sample. TAMPPRCH is valid for each of the INx inputs.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tamppudis",
-                    description: Some(
-                        "INx pull-up disable. This bit determines if each of the TAMPx pins are precharged before each sample.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
+                    bit_offset: 8,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -529,56 +649,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hwcfgr1",
-            extends: None,
-            description: Some(
-                "TAMP hardware configuration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "backup_regs",
-                    description: Some(
-                        "BACKUP_REGS",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tamper",
-                    description: Some(
-                        "TAMPER",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "active_tamper",
-                    description: Some(
-                        "ACTIVE_TAMPER",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "int_tamper",
-                    description: Some(
-                        "INT_TAMPER",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -629,87 +699,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bkpr",
+            name: "Cr1",
             extends: None,
             description: Some(
-                "TAMP backup register",
+                "control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bkp",
+                    name: "tampe",
                     description: Some(
-                        "BKP",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hwcfgr2",
-            extends: None,
-            description: Some(
-                "TAMP hardware configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ptionreg_out",
-                    description: Some(
-                        "PTIONREG_OUT",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trust_zone",
-                    description: Some(
-                        "TRUST_ZONE",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sidr",
-            extends: None,
-            description: Some(
-                "EXTI Size ID register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sid",
-                    description: Some(
-                        "Size Identification",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some(
-                "TAMP status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampf",
-                    description: Some(
-                        "Tamper X detection flag",
+                        "Tamper detection on IN X enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -724,16 +724,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "itampf",
+                    name: "itampe",
                     description: Some(
-                        "Internal tamper X detection flag",
+                        "Internal tamper X enable",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 7,
+                                len: 6,
                                 stride: 1,
                             },
                         ),

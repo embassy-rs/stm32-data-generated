@@ -658,7 +658,7 @@ pub const DBGMCU: *mut () = 0x4402_4000 as usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000 as usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8c00 as usize as _) };
 pub const FMC: *mut () = 0x6000_0000 as usize as _;
-pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -687,6 +687,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/pwr_h5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h5.rs"]

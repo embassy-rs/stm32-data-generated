@@ -130,95 +130,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Rgcr",
-            extends: None,
-            description: Some(
-                "DMAMux - DMA request generator channel x control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sig_id",
-                    description: Some(
-                        "DMA request trigger input selected",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "oie",
-                    description: Some(
-                        "Interrupt enable at trigger event overrun",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ge",
-                    description: Some(
-                        "DMA request generator channel enable/disable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpol",
-                    description: Some(
-                        "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Pol",
-                    ),
-                },
-                Field {
-                    name: "gnbreq",
-                    description: Some(
-                        "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some(
-                "DMAMUX request line multiplexer interrupt channel status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sof",
-                    description: Some(
-                        "Synchronization overrun event flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ccr",
             extends: None,
             description: Some(
@@ -294,6 +205,95 @@ pub(crate) static REGISTERS: IR = IR {
                         "Synchronization input selected",
                     ),
                     bit_offset: 24,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Csr",
+            extends: None,
+            description: Some(
+                "DMAMUX request line multiplexer interrupt channel status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sof",
+                    description: Some(
+                        "Synchronization overrun event flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rgcr",
+            extends: None,
+            description: Some(
+                "DMAMux - DMA request generator channel x control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sig_id",
+                    description: Some(
+                        "DMA request trigger input selected",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oie",
+                    description: Some(
+                        "Interrupt enable at trigger event overrun",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ge",
+                    description: Some(
+                        "DMA request generator channel enable/disable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpol",
+                    description: Some(
+                        "DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Pol",
+                    ),
+                },
+                Field {
+                    name: "gnbreq",
+                    description: Some(
+                        "Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.",
+                    ),
+                    bit_offset: 19,
                     bit_size: 5,
                     array: None,
                     enumm: None,

@@ -481,11 +481,11 @@ pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5004_0000 as usize as _
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5004_0300 as usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x5005_0000 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
-pub const OCTOSPIM: *mut () = 0x5006_1c00 as usize as _;
+pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x5006_1c00 as usize as _) };
 pub const SDMMC1: *mut () = 0x5006_2400 as usize as _;
 pub const FMC: *mut () = 0x6000_0000 as usize as _;
-pub const OCTOSPI2: *mut () = 0x7000_0000 as usize as _;
-pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
+pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x7000_0000 as usize as _) };
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -529,6 +529,10 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../../peripherals/ltdc_v1.rs"]
 pub mod ltdc;
+#[path = "../../peripherals/octospi_v1.rs"]
+pub mod octospi;
+#[path = "../../peripherals/octospim_v1.rs"]
+pub mod octospim;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pwr_l4.rs"]

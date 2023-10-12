@@ -43,6 +43,30 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Pmc",
+            extends: None,
+            description: Some("peripheral mode configuration register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usb_pu",
+                    description: Some("USB pull-up"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lcd_capa",
+                    description: Some("USB pull-up enable on DP line"),
+                    bit_offset: 1,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Memrmp",
             extends: None,
             description: Some("memory remap register"),
@@ -79,30 +103,6 @@ pub(crate) static REGISTERS: IR = IR {
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
             }],
-        },
-        FieldSet {
-            name: "Pmc",
-            extends: None,
-            description: Some("peripheral mode configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "usb_pu",
-                    description: Some("USB pull-up"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcd_capa",
-                    description: Some("USB pull-up enable on DP line"),
-                    bit_offset: 1,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
         },
     ],
     enums: &[],

@@ -2536,7 +2536,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OCTOSPI1",
         address: 2415919104,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v1",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
@@ -2565,7 +2570,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OCTOSPI2",
         address: 1879048192,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v1",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
@@ -2594,7 +2604,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OCTOSPIM",
         address: 1108099072,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospim",
+            version: "v1",
+            block: "OCTOSPIM",
+            ir: &octospim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB2",
             enable: Some(PeripheralRccRegister {
@@ -7039,6 +7054,10 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/octospi_v1.rs"]
+pub mod octospi;
+#[path = "../registers/octospim_v1.rs"]
+pub mod octospim;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
 #[path = "../registers/pwr_u5.rs"]

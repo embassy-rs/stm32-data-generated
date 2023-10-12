@@ -3231,6 +3231,11 @@
                 {
                     "name": "OCTOSPI1",
                     "address": 2415919104,
+                    "registers": {
+                        "kind": "octospi",
+                        "version": "v1",
+                        "block": "OCTOSPI"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {
@@ -3259,6 +3264,11 @@
                 {
                     "name": "OCTOSPI2",
                     "address": 1879048192,
+                    "registers": {
+                        "kind": "octospi",
+                        "version": "v1",
+                        "block": "OCTOSPI"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {
@@ -3287,6 +3297,11 @@
                 {
                     "name": "OCTOSPIM",
                     "address": 1108099072,
+                    "registers": {
+                        "kind": "octospim",
+                        "version": "v1",
+                        "block": "OCTOSPIM"
+                    },
                     "rcc": {
                         "clock": "AHB2",
                         "enable": {

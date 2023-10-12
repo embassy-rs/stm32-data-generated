@@ -90,6 +90,20 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
+            name: "Brr",
+            extends: None,
+            description: Some("Port bit reset register (GPIOn_BRR)"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "br",
+                description: Some("Reset bit"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Lckr",
             extends: None,
             description: Some("Port configuration lock register"),
@@ -112,6 +126,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Lckk"),
                 },
             ],
+        },
+        FieldSet {
+            name: "Idr",
+            extends: None,
+            description: Some("Port input data register (GPIOn_IDR)"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "idr",
+                description: Some("Port input data"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
+                enumm: Some("Idr"),
+            }],
         },
         FieldSet {
             name: "Cr",
@@ -146,34 +174,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Brr",
-            extends: None,
-            description: Some("Port bit reset register (GPIOn_BRR)"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "br",
-                description: Some("Reset bit"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Idr",
-            extends: None,
-            description: Some("Port input data register (GPIOn_IDR)"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "idr",
-                description: Some("Port input data"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 16, stride: 1 })),
-                enumm: Some("Idr"),
-            }],
-        },
-        FieldSet {
             name: "Bsrr",
             extends: None,
             description: Some("Port bit set/reset register (GPIOn_BSRR)"),
@@ -199,6 +199,67 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Idr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some("Input is logic low"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some("Input is logic high"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Mode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "INPUT",
+                    description: Some("Input mode (reset state)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OUTPUT10MHZ",
+                    description: Some("Output mode 10 MHz"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "OUTPUT2MHZ",
+                    description: Some("Output mode 2 MHz"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "OUTPUT50MHZ",
+                    description: Some("Output mode 50 MHz"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Lckk",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTACTIVE",
+                    description: Some("Port configuration lock key not active"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVE",
+                    description: Some("Port configuration lock key active"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "CnfOut",
             description: None,
@@ -240,67 +301,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LOCKED",
                     description: Some("Port configuration locked"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Idr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LOW",
-                    description: Some("Input is logic low"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some("Input is logic high"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lckk",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some("Port configuration lock key not active"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some("Port configuration lock key active"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mode",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "INPUT",
-                    description: Some("Input mode (reset state)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OUTPUT10MHZ",
-                    description: Some("Output mode 10 MHz"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "OUTPUT2MHZ",
-                    description: Some("Output mode 2 MHz"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "OUTPUT50MHZ",
-                    description: Some("Output mode 50 MHz"),
-                    value: 3,
                 },
             ],
         },

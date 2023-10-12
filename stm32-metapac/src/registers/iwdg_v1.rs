@@ -54,20 +54,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Pr",
-            extends: None,
-            description: Some("Prescaler register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "pr",
-                description: Some("Prescaler divider"),
-                bit_offset: 0,
-                bit_size: 3,
-                array: None,
-                enumm: Some("Pr"),
-            }],
-        },
-        FieldSet {
             name: "Rlr",
             extends: None,
             description: Some("Reload register"),
@@ -79,6 +65,20 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_size: 12,
                 array: None,
                 enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Pr",
+            extends: None,
+            description: Some("Prescaler register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "pr",
+                description: Some("Prescaler divider"),
+                bit_offset: 0,
+                bit_size: 3,
+                array: None,
+                enumm: Some("Pr"),
             }],
         },
         FieldSet {

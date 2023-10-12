@@ -76,6 +76,30 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Idc",
+            extends: None,
+            description: Some("Identity code"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dev_id",
+                    description: Some("Device ID"),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rev_id",
+                    description: Some("Revision ID"),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Configuration register"),
@@ -380,30 +404,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("HRTIM stop in debug mode"),
                     bit_offset: 29,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Idc",
-            extends: None,
-            description: Some("Identity code"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dev_id",
-                    description: Some("Device ID"),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rev_id",
-                    description: Some("Revision ID"),
-                    bit_offset: 16,
-                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },

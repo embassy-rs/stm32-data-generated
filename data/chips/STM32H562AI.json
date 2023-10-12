@@ -3262,6 +3262,11 @@
                 {
                     "name": "OCTOSPI1",
                     "address": 2415919104,
+                    "registers": {
+                        "kind": "octospi",
+                        "version": "v2",
+                        "block": "OCTOSPI"
+                    },
                     "rcc": {
                         "clock": "AHB4",
                         "enable": {

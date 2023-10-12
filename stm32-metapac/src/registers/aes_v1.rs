@@ -76,20 +76,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Sr",
             extends: None,
             description: Some("Status register"),
@@ -120,6 +106,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
+        },
+        FieldSet {
+            name: "Dinr",
+            extends: None,
+            description: Some("Data input register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "din",
+                description: Some("Input data word"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Keyr",
+            extends: None,
+            description: Some("Key register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "key",
+                description: Some("Cryptographic key"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Cr",
@@ -208,20 +222,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Dinr",
-            extends: None,
-            description: Some("Data input register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "din",
-                description: Some("Input data word"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Doutr",

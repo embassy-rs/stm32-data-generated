@@ -555,7 +555,7 @@ pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _)
 pub const PKA: *mut () = 0x420c_2000 as usize as _;
 pub const OTFDEC1: *mut () = 0x420c_5000 as usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000 as usize as _) };
-pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
 pub const DBGMCU: *mut () = 0xe004_4000 as usize as _;
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -593,6 +593,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/pwr_l5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_l5.rs"]

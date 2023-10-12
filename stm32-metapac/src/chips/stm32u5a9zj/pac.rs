@@ -684,7 +684,7 @@ pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SAES: *mut () = 0x420c_0c00 as usize as _;
 pub const PKA: *mut () = 0x420c_2000 as usize as _;
-pub const OCTOSPIM: *mut () = 0x420c_4000 as usize as _;
+pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x420c_4000 as usize as _) };
 pub const OTFDEC1: *mut () = 0x420c_5000 as usize as _;
 pub const OTFDEC2: *mut () = 0x420c_5400 as usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000 as usize as _) };
@@ -711,8 +711,8 @@ pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000 as usize 
 pub const ADF1: *mut () = 0x4602_4000 as usize as _;
 pub const LPDMA1: *mut () = 0x4602_5000 as usize as _;
 pub const FMC: *mut () = 0x6000_0000 as usize as _;
-pub const OCTOSPI2: *mut () = 0x7000_0000 as usize as _;
-pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
+pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x7000_0000 as usize as _) };
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -750,6 +750,10 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/ltdc_v1.rs"]
 pub mod ltdc;
+#[path = "../../peripherals/octospi_v1.rs"]
+pub mod octospi;
+#[path = "../../peripherals/octospim_v1.rs"]
+pub mod octospim;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pwr_u5.rs"]

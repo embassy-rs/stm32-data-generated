@@ -164,16 +164,54 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Sqr2",
+            name: "Jsqr",
             extends: None,
-            description: Some("regular sequence register 2"),
+            description: Some("injected sequence register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "jsq",
+                    description: Some("1st conversion in injected sequence"),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: Some(Array::Regular(RegularArray { len: 4, stride: 5 })),
+                    enumm: None,
+                },
+                Field {
+                    name: "jl",
+                    description: Some("Injected sequence length"),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dr",
+            extends: None,
+            description: Some("regular data register"),
             bit_size: 32,
             fields: &[Field {
-                name: "sq",
-                description: Some("7th conversion in regular sequence"),
+                name: "data",
+                description: Some("Regular data"),
                 bit_offset: 0,
-                bit_size: 5,
-                array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Ltr",
+            extends: None,
+            description: Some("watchdog lower threshold register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "lt",
+                description: Some("Analog watchdog lower threshold"),
+                bit_offset: 0,
+                bit_size: 12,
+                array: None,
                 enumm: None,
             }],
         },
@@ -202,31 +240,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dr",
+            name: "Smpr2",
             extends: None,
-            description: Some("regular data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "data",
-                description: Some("Regular data"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Smpr1",
-            extends: None,
-            description: Some("sample time register 1"),
+            description: Some("sample time register 2"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "smp",
-                    description: Some("Channel 10 sampling time selection"),
+                    description: Some("Channel 0 sampling time selection"),
                     bit_offset: 0,
                     bit_size: 3,
-                    array: Some(Array::Regular(RegularArray { len: 9, stride: 3 })),
+                    array: Some(Array::Regular(RegularArray { len: 10, stride: 3 })),
                     enumm: Some("SampleTime"),
                 },
                 Field {
@@ -238,6 +262,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("SmprSmpxX"),
                 },
             ],
+        },
+        FieldSet {
+            name: "Sqr3",
+            extends: None,
+            description: Some("regular sequence register 3"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "sq",
+                description: Some("1st conversion in regular sequence"),
+                bit_offset: 0,
+                bit_size: 5,
+                array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Cr1",
@@ -360,6 +398,72 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Htr",
+            extends: None,
+            description: Some("watchdog higher threshold register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ht",
+                description: Some("Analog watchdog higher threshold"),
+                bit_offset: 0,
+                bit_size: 12,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Jdr",
+            extends: None,
+            description: Some("injected data register x"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "jdata",
+                description: Some("Injected data"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Sqr2",
+            extends: None,
+            description: Some("regular sequence register 2"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "sq",
+                description: Some("7th conversion in regular sequence"),
+                bit_offset: 0,
+                bit_size: 5,
+                array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Smpr1",
+            extends: None,
+            description: Some("sample time register 1"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "smp",
+                    description: Some("Channel 10 sampling time selection"),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: Some(Array::Regular(RegularArray { len: 9, stride: 3 })),
+                    enumm: Some("SampleTime"),
+                },
+                Field {
+                    name: "smpx_x",
+                    description: Some("Sample time bits"),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some("SmprSmpxX"),
+                },
+            ],
+        },
+        FieldSet {
             name: "Cr2",
             extends: None,
             description: Some("control register 2"),
@@ -478,58 +582,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Jsqr",
-            extends: None,
-            description: Some("injected sequence register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jsq",
-                    description: Some("1st conversion in injected sequence"),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: Some(Array::Regular(RegularArray { len: 4, stride: 5 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "jl",
-                    description: Some("Injected sequence length"),
-                    bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Htr",
-            extends: None,
-            description: Some("watchdog higher threshold register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ht",
-                description: Some("Analog watchdog higher threshold"),
-                bit_offset: 0,
-                bit_size: 12,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Jdr",
-            extends: None,
-            description: Some("injected data register x"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "jdata",
-                description: Some("Injected data"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Sr",
             extends: None,
             description: Some("status register"),
@@ -585,197 +637,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Ltr",
-            extends: None,
-            description: Some("watchdog lower threshold register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "lt",
-                description: Some("Analog watchdog lower threshold"),
-                bit_offset: 0,
-                bit_size: 12,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Smpr2",
-            extends: None,
-            description: Some("sample time register 2"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "smp",
-                    description: Some("Channel 0 sampling time selection"),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: Some(Array::Regular(RegularArray { len: 10, stride: 3 })),
-                    enumm: Some("SampleTime"),
-                },
-                Field {
-                    name: "smpx_x",
-                    description: Some("Sample time bits"),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: Some("SmprSmpxX"),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sqr3",
-            extends: None,
-            description: Some("regular sequence register 3"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "sq",
-                description: Some("1st conversion in regular sequence"),
-                bit_offset: 0,
-                bit_size: 5,
-                array: Some(Array::Regular(RegularArray { len: 6, stride: 5 })),
-                enumm: None,
-            }],
-        },
     ],
     enums: &[
-        Enum {
-            name: "Eocs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EACHSEQUENCE",
-                    description: Some("The EOC bit is set at the end of each sequence of regular conversions"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EACHCONVERSION",
-                    description: Some("The EOC bit is set at the end of each regular conversion"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jeoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Extsel",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "TIM1CC1",
-                    description: Some("Timer 1 CC1 event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM1CC2",
-                    description: Some("Timer 1 CC2 event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM1CC3",
-                    description: Some("Timer 1 CC3 event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM2CC2",
-                    description: Some("Timer 2 CC2 event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM2CC3",
-                    description: Some("Timer 2 CC3 event"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "TIM2CC4",
-                    description: Some("Timer 2 CC4 event"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "TIM2TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 6,
-                },
-            ],
-        },
-        Enum {
-            name: "Align",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RIGHT",
-                    description: Some("Right alignment"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LEFT",
-                    description: Some("Left alignment"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jexten",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Trigger detection disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some("Trigger detection on the rising edge"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some("Trigger detection on the falling edge"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BOTHEDGES",
-                    description: Some("Trigger detection on both the rising and falling edges"),
-                    value: 3,
-                },
-            ],
-        },
         Enum {
             name: "SampleTime",
             description: None,
@@ -824,74 +687,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Strt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No regular channel conversion started"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some("Regular channel conversion has started"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Eoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cont",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SINGLE",
-                    description: Some("Single conversion mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTINUOUS",
-                    description: Some("Continuous conversion mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Res",
             description: None,
             bit_size: 2,
@@ -915,6 +710,57 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SIXBIT",
                     description: Some("6-bit (9 ADCCLK cycles)"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Awdsgl",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ALLCHANNELS",
+                    description: Some("Analog watchdog enabled on all channels"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SINGLECHANNEL",
+                    description: Some("Analog watchdog enabled on a single channel"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Eocs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "EACHSEQUENCE",
+                    description: Some("The EOC bit is set at the end of each sequence of regular conversions"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "EACHCONVERSION",
+                    description: Some("The EOC bit is set at the end of each regular conversion"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jeoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
                 },
             ],
         },
@@ -996,80 +842,95 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Awdsgl",
+            name: "Ovr",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALLCHANNELS",
-                    description: Some("Analog watchdog enabled on all channels"),
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SINGLECHANNEL",
-                    description: Some("Analog watchdog enabled on a single channel"),
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Jstrt",
+            name: "Awd",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No injected channel conversion started"),
+                    name: "NOEVENT",
+                    description: Some("No analog watchdog event occurred"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STARTED",
-                    description: Some("Injected channel conversion has started"),
+                    name: "EVENT",
+                    description: Some("Analog watchdog event occurred"),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Dds",
+            name: "Extsel",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "TIM1CC1",
+                    description: Some("Timer 1 CC1 event"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM1CC2",
+                    description: Some("Timer 1 CC2 event"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "TIM1CC3",
+                    description: Some("Timer 1 CC3 event"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "TIM2CC2",
+                    description: Some("Timer 2 CC2 event"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "TIM2CC3",
+                    description: Some("Timer 2 CC3 event"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "TIM2CC4",
+                    description: Some("Timer 2 CC4 event"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "TIM2TRGO",
+                    description: Some("Timer 2 TRGO event"),
+                    value: 6,
+                },
+            ],
+        },
+        Enum {
+            name: "Cont",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "SINGLE",
-                    description: Some("No new DMA request is issued after the last transfer"),
+                    description: Some("Single conversion mode"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CONTINUOUS",
-                    description: Some("DMA requests are issued as long as data are converted and DMA=1"),
+                    description: Some("Continuous conversion mode"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Exten",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Trigger detection disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some("Trigger detection on the rising edge"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some("Trigger detection on the falling edge"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BOTHEDGES",
-                    description: Some("Trigger detection on both the rising and falling edges"),
-                    value: 3,
                 },
             ],
         },
@@ -1117,6 +978,145 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CYCLES480",
                     description: Some("480 cycles"),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Eoc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Align",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RIGHT",
+                    description: Some("Right alignment"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LEFT",
+                    description: Some("Left alignment"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jexten",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Trigger detection disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some("Trigger detection on the rising edge"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some("Trigger detection on the falling edge"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BOTHEDGES",
+                    description: Some("Trigger detection on both the rising and falling edges"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Dds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "SINGLE",
+                    description: Some("No new DMA request is issued after the last transfer"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONTINUOUS",
+                    description: Some("DMA requests are issued as long as data are converted and DMA=1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Strt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSTARTED",
+                    description: Some("No regular channel conversion started"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some("Regular channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jstrt",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTSTARTED",
+                    description: Some("No injected channel conversion started"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STARTED",
+                    description: Some("Injected channel conversion has started"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Exten",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Trigger detection disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some("Trigger detection on the rising edge"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some("Trigger detection on the falling edge"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BOTHEDGES",
+                    description: Some("Trigger detection on both the rising and falling edges"),
+                    value: 3,
                 },
             ],
         },

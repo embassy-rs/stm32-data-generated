@@ -43,20 +43,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Status register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ewif",
-                description: Some("Early wakeup interrupt flag"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Cfr",
             extends: None,
             description: Some("Configuration register"),
@@ -112,8 +98,39 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some("Status register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ewif",
+                description: Some("Early wakeup interrupt flag"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
+        },
     ],
     enums: &[
+        Enum {
+            name: "Wdga",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Watchdog disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Watchdog enabled"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Wdgtb",
             description: None,
@@ -138,23 +155,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV8",
                     description: Some("Counter clock (PCLK1 div 4096) div 8"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Wdga",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Watchdog disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Watchdog enabled"),
-                    value: 1,
                 },
             ],
         },

@@ -652,7 +652,7 @@ pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000 as u
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x5200_3000 as usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x5200_7000 as usize as _) };
 pub const RAMECC: *mut () = 0x5200_9000 as usize as _;
-pub const OCTOSPIM: *mut () = 0x5200_b400 as usize as _;
+pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x5200_b400 as usize as _) };
 pub const OTFDEC1: *mut () = 0x5200_b800 as usize as _;
 pub const GFXMMU: *mut () = 0x5200_c000 as usize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0000 as usize as _) };
@@ -685,8 +685,8 @@ pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x5802_4800 as usize as _)
 pub const BDMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x5802_5400 as usize as _) };
 pub const DMAMUX2: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x5802_5800 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x5c00_1000 as usize as _) };
-pub const OCTOSPI2: *mut () = 0x7000_0000 as usize as _;
-pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
+pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x7000_0000 as usize as _) };
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -733,6 +733,10 @@ pub mod iwdg;
 pub mod jpeg;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
+#[path = "../../peripherals/octospi_v1.rs"]
+pub mod octospi;
+#[path = "../../peripherals/octospim_v1.rs"]
+pub mod octospim;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pwr_h7rm0455.rs"]

@@ -3,725 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "TimGp32",
-            extends: Some(
-                "TIM_GP16",
-            ),
-            description: Some(
-                "General purpose 32-bit timer",
-            ),
-            items: &[
-                BlockItem {
-                    name: "cr1",
-                    description: Some(
-                        "control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr2",
-                    description: Some(
-                        "control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smcr",
-                    description: Some(
-                        "slave mode control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dier",
-                    description: Some(
-                        "DMA/Interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DierGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "egr",
-                    description: Some(
-                        "event generation register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EgrGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccmr_input",
-                    description: Some(
-                        "capture/compare mode register 1 (input mode)",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcmrInput",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccmr_output",
-                    description: Some(
-                        "capture/compare mode register 1 (output mode)",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcmrOutput",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccer",
-                    description: Some(
-                        "capture/compare enable register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcerGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cnt",
-                    description: Some(
-                        "counter",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cnt32",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psc",
-                    description: Some(
-                        "prescaler",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "arr",
-                    description: Some(
-                        "auto-reload register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Arr32",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccr",
-                    description: Some(
-                        "capture/compare register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccr32",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dcr",
-                    description: Some(
-                        "DMA control register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmar",
-                    description: Some(
-                        "DMA address for full transfer",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmar",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "TimGp16",
-            extends: Some(
-                "TIM_BASIC",
-            ),
-            description: Some(
-                "General purpose 16-bit timer",
-            ),
-            items: &[
-                BlockItem {
-                    name: "cr1",
-                    description: Some(
-                        "control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr2",
-                    description: Some(
-                        "control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smcr",
-                    description: Some(
-                        "slave mode control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dier",
-                    description: Some(
-                        "DMA/Interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DierGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "egr",
-                    description: Some(
-                        "event generation register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EgrGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccmr_input",
-                    description: Some(
-                        "capture/compare mode register 1 (input mode)",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcmrInput",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccmr_output",
-                    description: Some(
-                        "capture/compare mode register 1 (output mode)",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcmrOutput",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccer",
-                    description: Some(
-                        "capture/compare enable register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcerGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cnt",
-                    description: Some(
-                        "counter",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cnt16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psc",
-                    description: Some(
-                        "prescaler",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "arr",
-                    description: Some(
-                        "auto-reload register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Arr16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccr",
-                    description: Some(
-                        "capture/compare register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccr16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dcr",
-                    description: Some(
-                        "DMA control register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmar",
-                    description: Some(
-                        "DMA address for full transfer",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmar",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "TimBasic",
-            extends: None,
-            description: Some(
-                "Basic timer",
-            ),
-            items: &[
-                BlockItem {
-                    name: "cr1",
-                    description: Some(
-                        "control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1Basic",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr2",
-                    description: Some(
-                        "control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2Basic",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dier",
-                    description: Some(
-                        "DMA/Interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DierBasic",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrBasic",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "egr",
-                    description: Some(
-                        "event generation register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EgrBasic",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cnt",
-                    description: Some(
-                        "counter",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cnt16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psc",
-                    description: Some(
-                        "prescaler",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "arr",
-                    description: Some(
-                        "auto-reload register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Arr16",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
             name: "TimAdv",
             extends: Some(
                 "TIM_GP16",
@@ -1042,52 +323,741 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    fieldsets: &[
-        FieldSet {
-            name: "Dcr",
+        Block {
+            name: "TimBasic",
             extends: None,
             description: Some(
-                "DMA control register",
+                "Basic timer",
             ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dba",
+            items: &[
+                BlockItem {
+                    name: "cr1",
                     description: Some(
-                        "DMA base address",
+                        "control register 1",
                     ),
-                    bit_offset: 0,
-                    bit_size: 5,
                     array: None,
-                    enumm: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr1Basic",
+                            ),
+                        },
+                    ),
                 },
-                Field {
-                    name: "dbl",
+                BlockItem {
+                    name: "cr2",
                     description: Some(
-                        "DMA burst length",
+                        "control register 2",
                     ),
-                    bit_offset: 8,
-                    bit_size: 5,
                     array: None,
-                    enumm: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr2Basic",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dier",
+                    description: Some(
+                        "DMA/Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DierBasic",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "status register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "SrBasic",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "egr",
+                    description: Some(
+                        "event generation register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EgrBasic",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psc",
+                    description: Some(
+                        "prescaler",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "arr",
+                    description: Some(
+                        "auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Arr16",
+                            ),
+                        },
+                    ),
                 },
             ],
         },
-        FieldSet {
-            name: "DierGp",
+        Block {
+            name: "TimGp16",
             extends: Some(
-                "DIER_BASIC",
+                "TIM_BASIC",
             ),
             description: Some(
-                "DMA/Interrupt enable register",
+                "General purpose 16-bit timer",
+            ),
+            items: &[
+                BlockItem {
+                    name: "cr1",
+                    description: Some(
+                        "control register 1",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr1Gp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr2",
+                    description: Some(
+                        "control register 2",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr2Gp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "smcr",
+                    description: Some(
+                        "slave mode control register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Smcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dier",
+                    description: Some(
+                        "DMA/Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DierGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "status register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "SrGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "egr",
+                    description: Some(
+                        "event generation register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EgrGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccmr_input",
+                    description: Some(
+                        "capture/compare mode register 1 (input mode)",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcmrInput",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccmr_output",
+                    description: Some(
+                        "capture/compare mode register 1 (output mode)",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcmrOutput",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccer",
+                    description: Some(
+                        "capture/compare enable register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcerGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psc",
+                    description: Some(
+                        "prescaler",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "arr",
+                    description: Some(
+                        "auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Arr16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccr",
+                    description: Some(
+                        "capture/compare register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccr16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dcr",
+                    description: Some(
+                        "DMA control register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmar",
+                    description: Some(
+                        "DMA address for full transfer",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmar",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
+            name: "TimGp32",
+            extends: Some(
+                "TIM_GP16",
+            ),
+            description: Some(
+                "General purpose 32-bit timer",
+            ),
+            items: &[
+                BlockItem {
+                    name: "cr1",
+                    description: Some(
+                        "control register 1",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr1Gp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr2",
+                    description: Some(
+                        "control register 2",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr2Gp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "smcr",
+                    description: Some(
+                        "slave mode control register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Smcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dier",
+                    description: Some(
+                        "DMA/Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DierGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "status register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "SrGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "egr",
+                    description: Some(
+                        "event generation register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EgrGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccmr_input",
+                    description: Some(
+                        "capture/compare mode register 1 (input mode)",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcmrInput",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccmr_output",
+                    description: Some(
+                        "capture/compare mode register 1 (output mode)",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcmrOutput",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccer",
+                    description: Some(
+                        "capture/compare enable register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcerGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt32",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psc",
+                    description: Some(
+                        "prescaler",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "arr",
+                    description: Some(
+                        "auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Arr32",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccr",
+                    description: Some(
+                        "capture/compare register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccr32",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dcr",
+                    description: Some(
+                        "DMA control register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmar",
+                    description: Some(
+                        "DMA address for full transfer",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmar",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "SrAdv",
+            extends: Some(
+                "SR_GP",
+            ),
+            description: Some(
+                "status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "uie",
+                    name: "uif",
                     description: Some(
-                        "Update interrupt enable",
+                        "Update interrupt flag",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1095,9 +1065,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ccie",
+                    name: "ccif",
                     description: Some(
-                        "Capture/Compare 1 interrupt enable",
+                        "Capture/compare 1 interrupt flag",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -1112,9 +1082,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tie",
+                    name: "comif",
                     description: Some(
-                        "Trigger interrupt enable",
+                        "COM interrupt flag",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tif",
+                    description: Some(
+                        "Trigger interrupt flag",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -1122,19 +1102,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ude",
+                    name: "bif",
                     description: Some(
-                        "Update DMA request enable",
+                        "Break interrupt flag",
                     ),
-                    bit_offset: 8,
+                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ccde",
+                    name: "ccof",
                     description: Some(
-                        "Capture/Compare 1 DMA request enable",
+                        "Capture/Compare 1 overcapture flag",
                     ),
                     bit_offset: 9,
                     bit_size: 1,
@@ -1148,13 +1128,320 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Arr32",
+            extends: None,
+            description: Some(
+                "auto-reload register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "tde",
+                    name: "arr",
                     description: Some(
-                        "Trigger DMA request enable",
+                        "Auto-reload value",
                     ),
-                    bit_offset: 14,
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr2Basic",
+            extends: None,
+            description: Some(
+                "control register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mms",
+                    description: Some(
+                        "Master mode selection",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Mms",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "EgrBasic",
+            extends: None,
+            description: Some(
+                "event generation register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ug",
+                    description: Some(
+                        "Update generation",
+                    ),
+                    bit_offset: 0,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "SrGp",
+            extends: Some(
+                "SR_BASIC",
+            ),
+            description: Some(
+                "status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "uif",
+                    description: Some(
+                        "Update interrupt flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ccif",
+                    description: Some(
+                        "Capture/compare 1 interrupt flag",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "comif",
+                    description: Some(
+                        "COM interrupt flag",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tif",
+                    description: Some(
+                        "Trigger interrupt flag",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bif",
+                    description: Some(
+                        "Break interrupt flag",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ccof",
+                    description: Some(
+                        "Capture/Compare 1 overcapture flag",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rcr",
+            extends: None,
+            description: Some(
+                "repetition counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rep",
+                    description: Some(
+                        "Repetition counter value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EgrAdv",
+            extends: Some(
+                "EGR_GP",
+            ),
+            description: Some(
+                "event generation register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ug",
+                    description: Some(
+                        "Update generation",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ccg",
+                    description: Some(
+                        "Capture/compare 1 generation",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "comg",
+                    description: Some(
+                        "Capture/Compare control update generation",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tg",
+                    description: Some(
+                        "Trigger generation",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bg",
+                    description: Some(
+                        "Break generation",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccr16",
+            extends: None,
+            description: Some(
+                "capture/compare register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ccr",
+                    description: Some(
+                        "Capture/Compare 1 value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cnt32",
+            extends: None,
+            description: Some(
+                "counter",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cnt",
+                    description: Some(
+                        "counter value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Arr16",
+            extends: None,
+            description: Some(
+                "auto-reload register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "arr",
+                    description: Some(
+                        "Auto-reload value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmar",
+            extends: None,
+            description: Some(
+                "DMA address for full transfer",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dmab",
+                    description: Some(
+                        "DMA register for burst accesses",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -1209,41 +1496,242 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cnt16",
+            name: "Dcr",
             extends: None,
             description: Some(
-                "counter",
+                "DMA control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cnt",
+                    name: "dba",
                     description: Some(
-                        "counter value",
+                        "DMA base address",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbl",
+                    description: Some(
+                        "DMA burst length",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 5,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Psc",
+            name: "DierBasic",
             extends: None,
             description: Some(
-                "prescaler",
+                "DMA/Interrupt enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "psc",
+                    name: "uie",
                     description: Some(
-                        "Prescaler value",
+                        "Update interrupt enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 1,
                     array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ude",
+                    description: Some(
+                        "Update DMA request enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "CcmrOutput",
+            extends: None,
+            description: Some(
+                "capture/compare mode register 2 (output mode)",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ccs",
+                    description: Some(
+                        "Capture/Compare 3 selection",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "CcmrOutputCcs",
+                    ),
+                },
+                Field {
+                    name: "ocfe",
+                    description: Some(
+                        "Output compare 3 fast enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "ocpe",
+                    description: Some(
+                        "Output compare 3 preload enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Ocpe",
+                    ),
+                },
+                Field {
+                    name: "ocm",
+                    description: Some(
+                        "Output compare 3 mode",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Ocm",
+                    ),
+                },
+                Field {
+                    name: "occe",
+                    description: Some(
+                        "Output compare 3 clear enable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "CcerAdv",
+            extends: Some(
+                "CCER_GP",
+            ),
+            description: Some(
+                "capture/compare enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cce",
+                    description: Some(
+                        "Capture/Compare 1 output enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "ccp",
+                    description: Some(
+                        "Capture/Compare 1 output Polarity",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "ccne",
+                    description: Some(
+                        "Capture/Compare 1 complementary output enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "ccnp",
+                    description: Some(
+                        "Capture/Compare 1 output Polarity",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -1365,158 +1853,103 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "CcerAdv",
-            extends: Some(
-                "CCER_GP",
-            ),
+            name: "Cr1Basic",
+            extends: None,
             description: Some(
-                "capture/compare enable register",
+                "control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cce",
+                    name: "cen",
                     description: Some(
-                        "Capture/Compare 1 output enable",
+                        "Counter enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ccp",
+                    name: "udis",
                     description: Some(
-                        "Capture/Compare 1 output Polarity",
+                        "Update disable",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ccne",
+                    name: "urs",
                     description: Some(
-                        "Capture/Compare 1 complementary output enable",
+                        "Update request source",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
+                    array: None,
+                    enumm: Some(
+                        "Urs",
                     ),
-                    enumm: None,
                 },
                 Field {
-                    name: "ccnp",
+                    name: "opm",
                     description: Some(
-                        "Capture/Compare 1 output Polarity",
+                        "One-pulse mode",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
+                    array: None,
+                    enumm: Some(
+                        "Opm",
                     ),
-                    enumm: None,
+                },
+                Field {
+                    name: "arpe",
+                    description: Some(
+                        "Auto-reload preload enable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Arpe",
+                    ),
                 },
             ],
         },
         FieldSet {
-            name: "CcerGp",
+            name: "Cnt16",
             extends: None,
             description: Some(
-                "capture/compare enable register",
+                "counter",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cce",
+                    name: "cnt",
                     description: Some(
-                        "Capture/Compare 1 output enable",
+                        "counter value",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "ccp",
-                    description: Some(
-                        "Capture/Compare 1 output Polarity",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "ccnp",
-                    description: Some(
-                        "Capture/Compare 1 output Polarity",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    bit_size: 16,
+                    array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "CcmrOutput",
+            name: "CcmrInput",
             extends: None,
             description: Some(
-                "capture/compare mode register 2 (output mode)",
+                "capture/compare mode register 1 (input mode)",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ccs",
                     description: Some(
-                        "Capture/Compare 3 selection",
+                        "Capture/Compare 1 selection",
                     ),
                     bit_offset: 0,
                     bit_size: 2,
@@ -1529,16 +1962,16 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: Some(
-                        "CcmrOutputCcs",
+                        "CcmrInputCcs",
                     ),
                 },
                 Field {
-                    name: "ocfe",
+                    name: "icpsc",
                     description: Some(
-                        "Output compare 3 fast enable",
+                        "Input capture 1 prescaler",
                     ),
                     bit_offset: 2,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: Some(
                         Array::Regular(
                             RegularArray {
@@ -1550,31 +1983,12 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ocpe",
+                    name: "icf",
                     description: Some(
-                        "Output compare 3 preload enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Ocpe",
-                    ),
-                },
-                Field {
-                    name: "ocm",
-                    description: Some(
-                        "Output compare 3 mode",
+                        "Input capture 1 filter",
                     ),
                     bit_offset: 4,
-                    bit_size: 3,
+                    bit_size: 4,
                     array: Some(
                         Array::Regular(
                             RegularArray {
@@ -1584,43 +1998,92 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: Some(
-                        "Ocm",
+                        "Icf",
                     ),
-                },
-                Field {
-                    name: "occe",
-                    description: Some(
-                        "Output compare 3 clear enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Ccr16",
-            extends: None,
+            name: "DierGp",
+            extends: Some(
+                "DIER_BASIC",
+            ),
             description: Some(
-                "capture/compare register 1",
+                "DMA/Interrupt enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ccr",
+                    name: "uie",
                     description: Some(
-                        "Capture/Compare 1 value",
+                        "Update interrupt enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ccie",
+                    description: Some(
+                        "Capture/Compare 1 interrupt enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "tie",
+                    description: Some(
+                        "Trigger interrupt enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ude",
+                    description: Some(
+                        "Update DMA request enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ccde",
+                    description: Some(
+                        "Capture/Compare 1 DMA request enable",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "tde",
+                    description: Some(
+                        "Trigger DMA request enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1742,93 +2205,68 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bdtr",
-            extends: None,
+            name: "EgrGp",
+            extends: Some(
+                "EGR_BASIC",
+            ),
             description: Some(
-                "break and dead-time register",
+                "event generation register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dtg",
+                    name: "ug",
                     description: Some(
-                        "Dead-time generator setup",
+                        "Update generation",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lock",
-                    description: Some(
-                        "Lock configuration",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ossi",
-                    description: Some(
-                        "Off-state selection for Idle mode",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ossi",
-                    ),
-                },
-                Field {
-                    name: "ossr",
-                    description: Some(
-                        "Off-state selection for Run mode",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ossr",
-                    ),
-                },
-                Field {
-                    name: "bke",
-                    description: Some(
-                        "Break enable",
-                    ),
-                    bit_offset: 12,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "bkp",
+                    name: "ccg",
                     description: Some(
-                        "Break polarity",
+                        "Capture/compare 1 generation",
                     ),
-                    bit_offset: 13,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "comg",
+                    description: Some(
+                        "Capture/Compare control update generation",
+                    ),
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "aoe",
+                    name: "tg",
                     description: Some(
-                        "Automatic output enable",
+                        "Trigger generation",
                     ),
-                    bit_offset: 14,
+                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "moe",
+                    name: "bg",
                     description: Some(
-                        "Main output enable",
+                        "Break generation",
                     ),
-                    bit_offset: 15,
+                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1836,80 +2274,81 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cnt32",
+            name: "CcerGp",
             extends: None,
             description: Some(
-                "counter",
+                "capture/compare enable register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cnt",
+                    name: "cce",
                     description: Some(
-                        "counter value",
+                        "Capture/Compare 1 output enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "ccp",
+                    description: Some(
+                        "Capture/Compare 1 output Polarity",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "ccnp",
+                    description: Some(
+                        "Capture/Compare 1 output Polarity",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Ccr32",
+            name: "SrBasic",
             extends: None,
             description: Some(
-                "capture/compare register 1",
+                "status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ccr",
+                    name: "uif",
                     description: Some(
-                        "Capture/Compare 1 value",
+                        "Update interrupt flag",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Arr16",
-            extends: None,
-            description: Some(
-                "auto-reload register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "arr",
-                    description: Some(
-                        "Auto-reload value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Arr32",
-            extends: None,
-            description: Some(
-                "auto-reload register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "arr",
-                    description: Some(
-                        "Auto-reload value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -2020,17 +2459,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dmar",
+            name: "Psc",
             extends: None,
             description: Some(
-                "DMA address for full transfer",
+                "prescaler",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dmab",
+                    name: "psc",
                     description: Some(
-                        "DMA register for burst accesses",
+                        "Prescaler value",
                     ),
                     bit_offset: 0,
                     bit_size: 16,
@@ -2040,359 +2479,114 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "EgrAdv",
-            extends: Some(
-                "EGR_GP",
-            ),
-            description: Some(
-                "event generation register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ug",
-                    description: Some(
-                        "Update generation",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccg",
-                    description: Some(
-                        "Capture/compare 1 generation",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "comg",
-                    description: Some(
-                        "Capture/Compare control update generation",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tg",
-                    description: Some(
-                        "Trigger generation",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bg",
-                    description: Some(
-                        "Break generation",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "EgrGp",
-            extends: Some(
-                "EGR_BASIC",
-            ),
-            description: Some(
-                "event generation register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ug",
-                    description: Some(
-                        "Update generation",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccg",
-                    description: Some(
-                        "Capture/compare 1 generation",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "comg",
-                    description: Some(
-                        "Capture/Compare control update generation",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tg",
-                    description: Some(
-                        "Trigger generation",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bg",
-                    description: Some(
-                        "Break generation",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "CcmrInput",
+            name: "Ccr32",
             extends: None,
             description: Some(
-                "capture/compare mode register 1 (input mode)",
+                "capture/compare register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ccs",
+                    name: "ccr",
                     description: Some(
-                        "Capture/Compare 1 selection",
+                        "Capture/Compare 1 value",
                     ),
                     bit_offset: 0,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "CcmrInputCcs",
-                    ),
-                },
-                Field {
-                    name: "icpsc",
-                    description: Some(
-                        "Input capture 1 prescaler",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "icf",
-                    description: Some(
-                        "Input capture 1 filter",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Icf",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "SrGp",
-            extends: Some(
-                "SR_BASIC",
-            ),
-            description: Some(
-                "status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "uif",
-                    description: Some(
-                        "Update interrupt flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccif",
-                    description: Some(
-                        "Capture/compare 1 interrupt flag",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "comif",
-                    description: Some(
-                        "COM interrupt flag",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tif",
-                    description: Some(
-                        "Trigger interrupt flag",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bif",
-                    description: Some(
-                        "Break interrupt flag",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccof",
-                    description: Some(
-                        "Capture/Compare 1 overcapture flag",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "DierBasic",
+            name: "Bdtr",
             extends: None,
             description: Some(
-                "DMA/Interrupt enable register",
+                "break and dead-time register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "uie",
+                    name: "dtg",
                     description: Some(
-                        "Update interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ude",
-                    description: Some(
-                        "Update DMA request enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "SrBasic",
-            extends: None,
-            description: Some(
-                "status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "uif",
-                    description: Some(
-                        "Update interrupt flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rcr",
-            extends: None,
-            description: Some(
-                "repetition counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rep",
-                    description: Some(
-                        "Repetition counter value",
+                        "Dead-time generator setup",
                     ),
                     bit_offset: 0,
                     bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lock",
+                    description: Some(
+                        "Lock configuration",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ossi",
+                    description: Some(
+                        "Off-state selection for Idle mode",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ossi",
+                    ),
+                },
+                Field {
+                    name: "ossr",
+                    description: Some(
+                        "Off-state selection for Run mode",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ossr",
+                    ),
+                },
+                Field {
+                    name: "bke",
+                    description: Some(
+                        "Break enable",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bkp",
+                    description: Some(
+                        "Break polarity",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "aoe",
+                    description: Some(
+                        "Automatic output enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "moe",
+                    description: Some(
+                        "Main output enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -2492,318 +2686,110 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cr2Basic",
-            extends: None,
-            description: Some(
-                "control register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mms",
-                    description: Some(
-                        "Master mode selection",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Mms",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "EgrBasic",
-            extends: None,
-            description: Some(
-                "event generation register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ug",
-                    description: Some(
-                        "Update generation",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1Basic",
-            extends: None,
-            description: Some(
-                "control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cen",
-                    description: Some(
-                        "Counter enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "udis",
-                    description: Some(
-                        "Update disable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "urs",
-                    description: Some(
-                        "Update request source",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Urs",
-                    ),
-                },
-                Field {
-                    name: "opm",
-                    description: Some(
-                        "One-pulse mode",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Opm",
-                    ),
-                },
-                Field {
-                    name: "arpe",
-                    description: Some(
-                        "Auto-reload preload enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Arpe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "SrAdv",
-            extends: Some(
-                "SR_GP",
-            ),
-            description: Some(
-                "status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "uif",
-                    description: Some(
-                        "Update interrupt flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccif",
-                    description: Some(
-                        "Capture/compare 1 interrupt flag",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "comif",
-                    description: Some(
-                        "COM interrupt flag",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tif",
-                    description: Some(
-                        "Trigger interrupt flag",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bif",
-                    description: Some(
-                        "Break interrupt flag",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ccof",
-                    description: Some(
-                        "Capture/Compare 1 overcapture flag",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
         Enum {
-            name: "Ossi",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "When inactive, OC/OCN outputs are disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "IDLELEVEL",
-                    description: Some(
-                        "When inactive, OC/OCN outputs are forced to idle level",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dir",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UP",
-                    description: Some(
-                        "Counter used as upcounter",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DOWN",
-                    description: Some(
-                        "Counter used as downcounter",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Etp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTINVERTED",
-                    description: Some(
-                        "ETR is noninverted, active at high level or rising edge",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INVERTED",
-                    description: Some(
-                        "ETR is inverted, active at low level or falling edge",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ossr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "When inactive, OC/OCN outputs are disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "IDLELEVEL",
-                    description: Some(
-                        "When inactive, OC/OCN outputs are enabled with their inactive level",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cms",
+            name: "CcmrInputCcs",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "EDGEALIGNED",
+                    name: "TI4",
                     description: Some(
-                        "The counter counts up or down depending on the direction bit",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CENTERALIGNED1",
-                    description: Some(
-                        "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting down.",
+                        "CCx channel is configured as input, normal mapping: ICx mapped to TIx",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CENTERALIGNED2",
+                    name: "TI3",
                     description: Some(
-                        "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting up.",
+                        "CCx channel is configured as input, alternate mapping (switches 1 with 2, 3 with 4)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CENTERALIGNED3",
+                    name: "TRC",
                     description: Some(
-                        "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down.",
+                        "CCx channel is configured as input, ICx is mapped on TRC",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Ocpe",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Preload register on CCR2 disabled. New values written to CCR2 are taken into account immediately",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Preload register on CCR2 enabled. Preload value is loaded into active register on each update event",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ece",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "External clock mode 2 disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Urs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ANYEVENT",
+                    description: Some(
+                        "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COUNTERONLY",
+                    description: Some(
+                        "Only counter overflow/underflow generates an update interrupt or DMA request",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "CcmrOutputCcs",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "OUTPUT",
+                    description: Some(
+                        "CCx channel is configured as output",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2871,6 +2857,202 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Ts",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "ITR0",
+                    description: Some(
+                        "Internal Trigger 0 (ITR0)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ITR1",
+                    description: Some(
+                        "Internal Trigger 1 (ITR1)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "ITR2",
+                    description: Some(
+                        "Internal Trigger 2 (ITR2)",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "ITR3",
+                    description: Some(
+                        "Internal Trigger 3 (ITR3)",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "TI1F_ED",
+                    description: Some(
+                        "TI1 Edge Detector (TI1F_ED)",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "TI1FP1",
+                    description: Some(
+                        "Filtered Timer Input 1 (TI1FP1)",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "TI2FP2",
+                    description: Some(
+                        "Filtered Timer Input 2 (TI2FP2)",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "ETRF",
+                    description: Some(
+                        "External Trigger input (ETRF)",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Mms",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "RESET",
+                    description: Some(
+                        "The UG bit from the TIMx_EGR register is used as trigger output",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLE",
+                    description: Some(
+                        "The counter enable signal, CNT_EN, is used as trigger output",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "UPDATE",
+                    description: Some(
+                        "The update event is selected as trigger output",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "COMPAREPULSE",
+                    description: Some(
+                        "The trigger output send a positive pulse when the CC1IF flag it to be set, as soon as a capture or a compare match occurred",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "COMPAREOC1",
+                    description: Some(
+                        "OC1REF signal is used as trigger output",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "COMPAREOC2",
+                    description: Some(
+                        "OC2REF signal is used as trigger output",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "COMPAREOC3",
+                    description: Some(
+                        "OC3REF signal is used as trigger output",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "COMPAREOC4",
+                    description: Some(
+                        "OC4REF signal is used as trigger output",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Ccds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONCOMPARE",
+                    description: Some(
+                        "CCx DMA request sent when CCx event occurs",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ONUPDATE",
+                    description: Some(
+                        "CCx DMA request sent when update event occurs",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckd",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "t_DTS = t_CK_INT",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "t_DTS = 2 × t_CK_INT",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "t_DTS = 4 × t_CK_INT",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Ossi",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "When inactive, OC/OCN outputs are disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "IDLELEVEL",
+                    description: Some(
+                        "When inactive, OC/OCN outputs are forced to idle level",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Msm",
             description: None,
             bit_size: 1,
@@ -2886,90 +3068,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SYNC",
                     description: Some(
                         "The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ocm",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "FROZEN",
-                    description: Some(
-                        "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEONMATCH",
-                    description: Some(
-                        "Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "INACTIVEONMATCH",
-                    description: Some(
-                        "Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TOGGLE",
-                    description: Some(
-                        "OCyREF toggles when TIMx_CNT=TIMx_CCRy",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "FORCEINACTIVE",
-                    description: Some(
-                        "OCyREF is forced low",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "FORCEACTIVE",
-                    description: Some(
-                        "OCyREF is forced high",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "PWMMODE1",
-                    description: Some(
-                        "In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "PWMMODE2",
-                    description: Some(
-                        "Inversely to PwmMode1",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Urs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ANYEVENT",
-                    description: Some(
-                        "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COUNTERONLY",
-                    description: Some(
-                        "Only counter overflow/underflow generates an update interrupt or DMA request",
                     ),
                     value: 1,
                 },
@@ -3091,216 +3189,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "fSAMPLING=fDTS/32, N=8",
                     ),
                     value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Arpe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "TIMx_APRR register is not buffered",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "TIMx_APRR register is buffered",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ckd",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "t_DTS = t_CK_INT",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "t_DTS = 2 × t_CK_INT",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "t_DTS = 4 × t_CK_INT",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Ccds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ONCOMPARE",
-                    description: Some(
-                        "CCx DMA request sent when CCx event occurs",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ONUPDATE",
-                    description: Some(
-                        "CCx DMA request sent when update event occurs",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ts",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "ITR0",
-                    description: Some(
-                        "Internal Trigger 0 (ITR0)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ITR1",
-                    description: Some(
-                        "Internal Trigger 1 (ITR1)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ITR2",
-                    description: Some(
-                        "Internal Trigger 2 (ITR2)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "ITR3",
-                    description: Some(
-                        "Internal Trigger 3 (ITR3)",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TI1F_ED",
-                    description: Some(
-                        "TI1 Edge Detector (TI1F_ED)",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "TI1FP1",
-                    description: Some(
-                        "Filtered Timer Input 1 (TI1FP1)",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "TI2FP2",
-                    description: Some(
-                        "Filtered Timer Input 2 (TI2FP2)",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "ETRF",
-                    description: Some(
-                        "External Trigger input (ETRF)",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "CcmrOutputCcs",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "OUTPUT",
-                    description: Some(
-                        "CCx channel is configured as output",
-                    ),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Opm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Counter is not stopped at update event",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Counter stops counting at the next update event (clearing the CEN bit)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ece",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "External clock mode 2 disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tis",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "The TIMx_CH1 pin is connected to TI1 input",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "XOR",
-                    description: Some(
-                        "The TIMx_CH1, CH2, CH3 pins are connected to TI1 input",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -3459,114 +3347,226 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "CcmrInputCcs",
+            name: "Etp",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TI4",
+                    name: "NOTINVERTED",
                     description: Some(
-                        "CCx channel is configured as input, normal mapping: ICx mapped to TIx",
+                        "ETR is noninverted, active at high level or rising edge",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "INVERTED",
+                    description: Some(
+                        "ETR is inverted, active at low level or falling edge",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "TI3",
-                    description: Some(
-                        "CCx channel is configured as input, alternate mapping (switches 1 with 2, 3 with 4)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TRC",
-                    description: Some(
-                        "CCx channel is configured as input, ICx is mapped on TRC",
-                    ),
-                    value: 3,
                 },
             ],
         },
         Enum {
-            name: "Ocpe",
+            name: "Arpe",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
                     description: Some(
-                        "Preload register on CCR2 disabled. New values written to CCR2 are taken into account immediately",
+                        "TIMx_APRR register is not buffered",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "ENABLED",
                     description: Some(
-                        "Preload register on CCR2 enabled. Preload value is loaded into active register on each update event",
+                        "TIMx_APRR register is buffered",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Mms",
+            name: "Opm",
             description: None,
-            bit_size: 3,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET",
+                    name: "DISABLED",
                     description: Some(
-                        "The UG bit from the TIMx_EGR register is used as trigger output",
+                        "Counter is not stopped at update event",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLE",
+                    name: "ENABLED",
                     description: Some(
-                        "The counter enable signal, CNT_EN, is used as trigger output",
+                        "Counter stops counting at the next update event (clearing the CEN bit)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tis",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some(
+                        "The TIMx_CH1 pin is connected to TI1 input",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "XOR",
+                    description: Some(
+                        "The TIMx_CH1, CH2, CH3 pins are connected to TI1 input",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dir",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "UP",
+                    description: Some(
+                        "Counter used as upcounter",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DOWN",
+                    description: Some(
+                        "Counter used as downcounter",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ocm",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "FROZEN",
+                    description: Some(
+                        "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVEONMATCH",
+                    description: Some(
+                        "Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "UPDATE",
+                    name: "INACTIVEONMATCH",
                     description: Some(
-                        "The update event is selected as trigger output",
+                        "Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "COMPAREPULSE",
+                    name: "TOGGLE",
                     description: Some(
-                        "The trigger output send a positive pulse when the CC1IF flag it to be set, as soon as a capture or a compare match occurred",
+                        "OCyREF toggles when TIMx_CNT=TIMx_CCRy",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "COMPAREOC1",
+                    name: "FORCEINACTIVE",
                     description: Some(
-                        "OC1REF signal is used as trigger output",
+                        "OCyREF is forced low",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "COMPAREOC2",
+                    name: "FORCEACTIVE",
                     description: Some(
-                        "OC2REF signal is used as trigger output",
+                        "OCyREF is forced high",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "COMPAREOC3",
+                    name: "PWMMODE1",
                     description: Some(
-                        "OC3REF signal is used as trigger output",
+                        "In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "COMPAREOC4",
+                    name: "PWMMODE2",
                     description: Some(
-                        "OC4REF signal is used as trigger output",
+                        "Inversely to PwmMode1",
                     ),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Cms",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "EDGEALIGNED",
+                    description: Some(
+                        "The counter counts up or down depending on the direction bit",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CENTERALIGNED1",
+                    description: Some(
+                        "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting down.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "CENTERALIGNED2",
+                    description: Some(
+                        "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting up.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "CENTERALIGNED3",
+                    description: Some(
+                        "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down.",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Ossr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "When inactive, OC/OCN outputs are disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "IDLELEVEL",
+                    description: Some(
+                        "When inactive, OC/OCN outputs are enabled with their inactive level",
+                    ),
+                    value: 1,
                 },
             ],
         },

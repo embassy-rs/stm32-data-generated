@@ -157,6 +157,26 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Btable",
+            extends: None,
+            description: Some(
+                "Buffer table address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "btable",
+                    description: Some(
+                        "BTABLE",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Fnr",
             extends: None,
             description: Some(
@@ -377,244 +397,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Epr",
-            extends: None,
-            description: Some(
-                "endpoint register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ea",
-                    description: Some(
-                        "EA",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stat_tx",
-                    description: Some(
-                        "STAT_TX",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_tx",
-                    description: Some(
-                        "DTOG_TX",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_tx",
-                    description: Some(
-                        "CTR_TX",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_kind",
-                    description: Some(
-                        "EP_KIND",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_type",
-                    description: Some(
-                        "EPTYPE",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "EpType",
-                    ),
-                },
-                Field {
-                    name: "setup",
-                    description: Some(
-                        "SETUP",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stat_rx",
-                    description: Some(
-                        "STAT_RX",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_rx",
-                    description: Some(
-                        "DTOG_RX",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_rx",
-                    description: Some(
-                        "CTR_RX",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bcdr",
-            extends: None,
-            description: Some(
-                "Battery Charging Detector",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bcden",
-                    description: Some(
-                        "Battery charging detector mode enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dcden",
-                    description: Some(
-                        "Data contact detection mode enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pden",
-                    description: Some(
-                        "Primary detection mode enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sden",
-                    description: Some(
-                        "Secondary detection mode enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dcdet",
-                    description: Some(
-                        "Data contact detection status",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pdet",
-                    description: Some(
-                        "Primary detection status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdet",
-                    description: Some(
-                        "Secondary detection status",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sdet",
-                    ),
-                },
-                Field {
-                    name: "ps2det",
-                    description: Some(
-                        "DM pull-up detection status",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dppu",
-                    description: Some(
-                        "DP pull-up control",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Btable",
-            extends: None,
-            description: Some(
-                "Buffer table address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "btable",
-                    description: Some(
-                        "BTABLE",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Istr",
             extends: None,
             description: Some(
@@ -737,6 +519,152 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Daddr",
+            extends: None,
+            description: Some(
+                "device address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "add",
+                    description: Some(
+                        "device address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ef",
+                    description: Some(
+                        "USB device enabled",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Epr",
+            extends: None,
+            description: Some(
+                "endpoint register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ea",
+                    description: Some(
+                        "EA",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_tx",
+                    description: Some(
+                        "STAT_TX",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_tx",
+                    description: Some(
+                        "DTOG_TX",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_tx",
+                    description: Some(
+                        "CTR_TX",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_kind",
+                    description: Some(
+                        "EP_KIND",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_type",
+                    description: Some(
+                        "EPTYPE",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "EpType",
+                    ),
+                },
+                Field {
+                    name: "setup",
+                    description: Some(
+                        "SETUP",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_rx",
+                    description: Some(
+                        "STAT_RX",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_rx",
+                    description: Some(
+                        "DTOG_RX",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_rx",
+                    description: Some(
+                        "CTR_RX",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Lpmcsr",
             extends: None,
             description: Some(
@@ -789,29 +717,101 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Daddr",
+            name: "Bcdr",
             extends: None,
             description: Some(
-                "device address",
+                "Battery Charging Detector",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "add",
+                    name: "bcden",
                     description: Some(
-                        "device address",
+                        "Battery charging detector mode enable",
                     ),
                     bit_offset: 0,
-                    bit_size: 7,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ef",
+                    name: "dcden",
                     description: Some(
-                        "USB device enabled",
+                        "Data contact detection mode enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pden",
+                    description: Some(
+                        "Primary detection mode enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sden",
+                    description: Some(
+                        "Secondary detection mode enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dcdet",
+                    description: Some(
+                        "Data contact detection status",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pdet",
+                    description: Some(
+                        "Primary detection status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdet",
+                    description: Some(
+                        "Secondary detection status",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sdet",
+                    ),
+                },
+                Field {
+                    name: "ps2det",
+                    description: Some(
+                        "DM pull-up detection status",
                     ),
                     bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dppu",
+                    description: Some(
+                        "DP pull-up control",
+                    ),
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -838,6 +838,76 @@ pub(crate) static REGISTERS: IR = IR {
                         "DCP detected",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Stat",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "all requests addressed to this endpoint are ignored",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STALL",
+                    description: Some(
+                        "the endpoint is stalled and all requests result in a STALL handshake",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NAK",
+                    description: Some(
+                        "the endpoint is naked and all requests result in a NAK handshake",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VALID",
+                    description: Some(
+                        "this endpoint is enabled, requests are ACKed",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "EpType",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BULK",
+                    description: Some(
+                        "Bulk endpoint",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONTROL",
+                    description: Some(
+                        "Control endpoint",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "ISO",
+                    description: Some(
+                        "Iso endpoint",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "INTERRUPT",
+                    description: Some(
+                        "Interrupt endpoint",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -880,76 +950,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "data received by the USB peripheral from the host PC",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EpType",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BULK",
-                    description: Some(
-                        "Bulk endpoint",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTROL",
-                    description: Some(
-                        "Control endpoint",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ISO",
-                    description: Some(
-                        "Iso endpoint",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "INTERRUPT",
-                    description: Some(
-                        "Interrupt endpoint",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Stat",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "all requests addressed to this endpoint are ignored",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STALL",
-                    description: Some(
-                        "the endpoint is stalled and all requests result in a STALL handshake",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "NAK",
-                    description: Some(
-                        "the endpoint is naked and all requests result in a NAK handshake",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "VALID",
-                    description: Some(
-                        "this endpoint is enabled, requests are ACKed",
-                    ),
-                    value: 3,
                 },
             ],
         },

@@ -400,29 +400,160 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Wucr1",
+            name: "Apcr",
             extends: None,
             description: Some(
-                "wakeup control register 1",
+                "apply pull configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wupen",
+                    name: "apc",
                     description: Some(
-                        "Wakeup pin WKUP1 enable",
+                        "Apply pull-up and pull-down configuration\r When this bit is set, the I/O pull-up and pull-down configurations defined in PUCRx and PDCRx are applied. When this bit is cleared, PUCRx and PDCRx are not applied to the I/Os.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr1",
+            extends: None,
+            description: Some(
+                "control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lpms",
+                    description: Some(
+                        "Low-power mode selection\r These bits select the low-power mode entered when the CPU enters the Deepsleep mode.\r 10x: Standby mode (Standby mode also entered if LPMS=11X in CR1\r with BREN=1 in BDCR1)\r 11x: Shutdown mode if BREN = 0 in BDCR1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Lpms",
+                    ),
+                },
+                Field {
+                    name: "rrsb1",
+                    description: Some(
+                        "SRAM2 page 1 retention in Stop 3 and Standby modes\r This bit is used to keep the SRAM2 page 1 content in Stop 3 and Standby modes. The SRAM2 page 1 corresponds to the first 8 Kbytes of the SRAM2\r (from SRAM2 base address to SRAM2 base address + 0x1FFF).\r Note: This bit has no effect in Shutdown mode.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rrsb",
+                    ),
+                },
+                Field {
+                    name: "rrsb2",
+                    description: Some(
+                        "SRAM2 page 2 retention in Stop 3 and Standby modes\r This bit is used to keep the SRAM2 page 2 content in Stop 3 and Standby modes. The SRAM2 page 2 corresponds to the last 56 Kbytes of the SRAM2\r (from SRAM2 base address + 0x2000 to SRAM2 base address + 0xFFFF).\r Note: This bit has no effect in Shutdown mode.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rrsb",
+                    ),
+                },
+                Field {
+                    name: "ulpmen",
+                    description: Some(
+                        "BOR ultra-low power mode\r This bit is used to reduce the consumption by configuring the BOR in discontinuous mode.\r This bit must be set to reach the lowest power consumption in the low-power modes.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sram1pd",
+                    description: Some(
+                        "SRAM1 power down\r This bit is used to reduce the consumption by powering off the SRAM1.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Srampd",
+                    ),
+                },
+                Field {
+                    name: "sram2pd",
+                    description: Some(
+                        "SRAM2 power down\r This bit is used to reduce the consumption by powering off the SRAM2.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Srampd",
+                    ),
+                },
+                Field {
+                    name: "sram3pd",
+                    description: Some(
+                        "SRAM3 power down\r This bit is used to reduce the consumption by powering off the SRAM3.",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Srampd",
+                    ),
+                },
+                Field {
+                    name: "sram4pd",
+                    description: Some(
+                        "SRAM4 power down\r This bit is used to reduce the consumption by powering off the SRAM4.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Srampd",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Privcfgr",
+            extends: None,
+            description: Some(
+                "privilege control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "spriv",
+                    description: Some(
+                        "secure functions privilege configuration\r This bit is set and reset by software. It can be written only by a secure privileged access.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Priv",
+                    ),
+                },
+                Field {
+                    name: "nspriv",
+                    description: Some(
+                        "non-secure functions privilege configuration\r This bit is set and reset by software. It can be written only by privileged access, secure or non-secure.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Priv",
+                    ),
                 },
             ],
         },
@@ -456,6 +587,186 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Bdsr",
+            extends: None,
+            description: Some(
+                "Backup domain status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vbath",
+                    description: Some(
+                        "Backup domain voltage level monitoring versus high threshold",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Vbath",
+                    ),
+                },
+                Field {
+                    name: "templ",
+                    description: Some(
+                        "Temperature level monitoring versus low threshold",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Templ",
+                    ),
+                },
+                Field {
+                    name: "temph",
+                    description: Some(
+                        "Temperature level monitoring versus high threshold",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Temph",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr3",
+            extends: None,
+            description: Some(
+                "control register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "regsel",
+                    description: Some(
+                        "Regulator selection\r Note: REGSEL is reserved and must be kept at reset value in packages without SMPS.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Regsel",
+                    ),
+                },
+                Field {
+                    name: "fsten",
+                    description: Some(
+                        "Fast soft start",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Svmcr",
+            extends: None,
+            description: Some(
+                "supply voltage monitoring control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvde",
+                    description: Some(
+                        "Power voltage detector enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pvdls",
+                    description: Some(
+                        "Power voltage detector level selection\r These bits select the voltage threshold detected by the power voltage detector:",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Pvdls",
+                    ),
+                },
+                Field {
+                    name: "uvmen",
+                    description: Some(
+                        "VDDUSB independent USB voltage monitor enable",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "io2vmen",
+                    description: Some(
+                        "VDDIO2 independent I/Os voltage monitor enable",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "avm1en",
+                    description: Some(
+                        "VDDA independent analog supply voltage monitor 1 enable (1.6V threshold)",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "avm2en",
+                    description: Some(
+                        "VDDA independent analog supply voltage monitor 2 enable (1.8V threshold)",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usv",
+                    description: Some(
+                        "VDDUSB independent USB supply valid",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "io2sv",
+                    description: Some(
+                        "VDDIO2 independent I/Os supply valid\r This bit is used to validate the VDDIO2 supply for electrical and logical isolation purpose.\r Setting this bit is mandatory to use PG[15:2]. If VDDIO2 is not always present in the application, the VDDIO2 voltage monitor can be used to determine whether this supply is ready or not.",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "asv",
+                    description: Some(
+                        "VDDA independent analog supply valid",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Pcr",
             extends: None,
             description: Some(
@@ -483,17 +794,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Sr",
+            name: "Wuscr",
             extends: None,
             description: Some(
-                "status register",
+                "wakeup status clear register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cssf",
+                    name: "cwuf1",
                     description: Some(
-                        "Clear Stop and Standby flags\r This bit is protected against non-secure access when LPMSEC=1 in SECCFGR.\r This bit is protected against unprivileged access when LPMSEC=1 and SPRIV=1 in PRIVCFGR, or when LPMSEC=0 and NSPRIV=1.\r Writing 1 to this bit clears the STOPF and SBF flags.",
+                        "Wakeup flag 1\r Writing 1 to this bit clears the WUF1 flag in WUSR.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -501,9 +812,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "stopf",
+                    name: "cwuf2",
                     description: Some(
-                        "Stop flag\r This bit is set by hardware when the device enters a Stop mode, and is cleared by software by writing 1 to the CSSF bit.",
+                        "Wakeup flag 2\r Writing 1 to this bit clears the WUF2 flag in WUSR.",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -511,14 +822,488 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sbf",
+                    name: "cwuf3",
                     description: Some(
-                        "Standby flag\r This bit is set by hardware when the device enters the Standby mode, and is cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset.",
+                        "Wakeup flag 3\r Writing 1 to this bit clears the WUF3 flag in WUSR.",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "cwuf4",
+                    description: Some(
+                        "Wakeup flag 4\r Writing 1 to this bit clears the WUF4 flag in WUSR.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf5",
+                    description: Some(
+                        "Wakeup flag 5\r Writing 1 to this bit clears the WUF5 flag in WUSR.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf6",
+                    description: Some(
+                        "Wakeup flag 6\r Writing 1 to this bit clears the WUF6 flag in WUSR.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf7",
+                    description: Some(
+                        "Wakeup flag 7\r Writing 1 to this bit clears the WUF7 flag in WUSR.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cwuf8",
+                    description: Some(
+                        "Wakeup flag 8\r Writing 1 to this bit clears the WUF8 flag in WUSR.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wucr1",
+            extends: None,
+            description: Some(
+                "wakeup control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wupen",
+                    description: Some(
+                        "Wakeup pin WKUP1 enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dbpcr",
+            extends: None,
+            description: Some(
+                "disable Backup domain register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbp",
+                    description: Some(
+                        "Disable Backup domain write protection\r In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bdcr1",
+            extends: None,
+            description: Some(
+                "Backup domain control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bren",
+                    description: Some(
+                        "Backup RAM retention in Standby and VBAT modes\r When this bit is set, the backup RAM content is kept in Standby and VBAT modes.\r If BREN is reset, the backup RAM can still be used in Run, Sleep and Stop modes. However, its content is lost in Standby, Shutdown and VBAT modes. This bit can be written only when the regulator is LDO, which must be configured before switching to SMPS.\r Note: Backup RAM cannot be preserved in Shutdown mode.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "monen",
+                    description: Some(
+                        "Backup domain voltage and temperature monitoring enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Svmsr",
+            extends: None,
+            description: None,
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "regs",
+                    description: Some(
+                        "Regulator selection",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Regsel",
+                    ),
+                },
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "VDD voltage detector output",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pvdo",
+                    ),
+                },
+                Field {
+                    name: "actvosrdy",
+                    description: Some(
+                        "Voltage level ready for currently used VOS",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "actvos",
+                    description: Some(
+                        "VOS currently applied to VCORE\r This field provides the last VOS value.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Actvos",
+                    ),
+                },
+                Field {
+                    name: "vddusbrdy",
+                    description: Some(
+                        "VDDUSB ready",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vddio2rdy",
+                    description: Some(
+                        "VDDIO2 ready",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vdda1rdy",
+                    description: Some(
+                        "VDDA ready versus 1.6V voltage monitor",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vdda2rdy",
+                    description: Some(
+                        "VDDA ready versus 1.8V voltage monitor",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Seccfgr",
+            extends: None,
+            description: Some(
+                "security configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wup1sec",
+                    description: Some(
+                        "WUP1 secure protection",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+                Field {
+                    name: "lpmsec",
+                    description: Some(
+                        "Low-power modes secure protection",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+                Field {
+                    name: "vdmsec",
+                    description: Some(
+                        "Voltage detection and monitoring secure protection",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+                Field {
+                    name: "vbsec",
+                    description: Some(
+                        "Backup domain secure protection",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+                Field {
+                    name: "apcsec",
+                    description: Some(
+                        "Pull-up/pull-down secure protection",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wusr",
+            extends: None,
+            description: Some(
+                "wakeup status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wuf1",
+                    description: Some(
+                        "Wakeup flag 1\r This bit is set when a wakeup event is detected on WKUP1 pin. This bit is cleared by writing 1 in the CWUF1 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN1=0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf2",
+                    description: Some(
+                        "Wakeup flag 2\r This bit is set when a wakeup event is detected on WKUP2 pin. This bit is cleared by writing 1 in the CWUF2 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN2=0.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf3",
+                    description: Some(
+                        "Wakeup flag 3\r This bit is set when a wakeup event is detected on WKUP3 pin. This bit is cleared by writing 1 in the CWUF3 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN3=0.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf4",
+                    description: Some(
+                        "Wakeup flag 4\r This bit is set when a wakeup event is detected on WKUP4 pin. This bit is cleared by writing 1 in the CWUF4 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN4=0.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf5",
+                    description: Some(
+                        "Wakeup flag 5\r This bit is set when a wakeup event is detected on WKUP5 pin. This bit is cleared by writing 1 in the CWUF5 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN5=0.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf6",
+                    description: Some(
+                        "Wakeup flag 6\r This bit is set when a wakeup event is detected on WKUP6 pin. This bit is cleared by writing 1 in the CWUF6 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN6=0.\r If WUSEL=11, this bit is cleared by hardware when all internal wakeup source are cleared.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf7",
+                    description: Some(
+                        "Wakeup flag 7\r This bit is set when a wakeup event is detected on WKUP7 pin. This bit is cleared by writing 1 in the CWUF7 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN7=0.\r If WUSEL=11, this bit is cleared by hardware when all internal wakeup source are cleared.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf8",
+                    description: Some(
+                        "Wakeup flag 8\r This bit is set when a wakeup event is detected on WKUP8 pin. This bit is cleared by writing 1 in the CWUF8 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN8=0.\r If WUSEL=11, this bit is cleared by hardware when all internal wakeup source are cleared.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Vosr",
+            extends: None,
+            description: Some(
+                "voltage scaling register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "boostrdy",
+                    description: Some(
+                        "EPOD booster ready\r This bit is set to 1 by hardware when the power booster startup time is reached. The system clock frequency can be switched higher than 50 MHz only after this bit is set.",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vosrdy",
+                    description: Some(
+                        "Ready bit for VCORE voltage scaling output selection",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vos",
+                    description: Some(
+                        "Voltage scaling range selection\r This field is protected against non-secure access when SYSCLKSEC=1 in RCC_SECCFGR. It is protected against unprivileged access when SYSCLKSEC=1 in RCC_SECCFGR and SPRIV=1 in PRIVCFGR, or when SYSCLKSEC=0 and NSPRIV=1.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Vos",
+                    ),
+                },
+                Field {
+                    name: "boosten",
+                    description: Some(
+                        "EPOD booster enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bdcr2",
+            extends: None,
+            description: Some(
+                "Backup domain control register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vbe",
+                    description: Some(
+                        "VBAT charging enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Vbe",
+                    ),
+                },
+                Field {
+                    name: "vbrs",
+                    description: Some(
+                        "VBAT charging resistor selection",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Vbrs",
+                    ),
                 },
             ],
         },
@@ -629,100 +1414,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Svmsr",
-            extends: None,
-            description: None,
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "regs",
-                    description: Some(
-                        "Regulator selection",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Regsel",
-                    ),
-                },
-                Field {
-                    name: "pvdo",
-                    description: Some(
-                        "VDD voltage detector output",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pvdo",
-                    ),
-                },
-                Field {
-                    name: "actvosrdy",
-                    description: Some(
-                        "Voltage level ready for currently used VOS",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "actvos",
-                    description: Some(
-                        "VOS currently applied to VCORE\r This field provides the last VOS value.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Actvos",
-                    ),
-                },
-                Field {
-                    name: "vddusbrdy",
-                    description: Some(
-                        "VDDUSB ready",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vddio2rdy",
-                    description: Some(
-                        "VDDIO2 ready",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vdda1rdy",
-                    description: Some(
-                        "VDDA ready versus 1.6V voltage monitor",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vdda2rdy",
-                    description: Some(
-                        "VDDA ready versus 1.8V voltage monitor",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ucpdr",
             extends: None,
             description: Some(
@@ -753,17 +1444,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bdcr1",
+            name: "Sr",
             extends: None,
             description: Some(
-                "Backup domain control register 1",
+                "status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bren",
+                    name: "cssf",
                     description: Some(
-                        "Backup RAM retention in Standby and VBAT modes\r When this bit is set, the backup RAM content is kept in Standby and VBAT modes.\r If BREN is reset, the backup RAM can still be used in Run, Sleep and Stop modes. However, its content is lost in Standby, Shutdown and VBAT modes. This bit can be written only when the regulator is LDO, which must be configured before switching to SMPS.\r Note: Backup RAM cannot be preserved in Shutdown mode.",
+                        "Clear Stop and Standby flags\r This bit is protected against non-secure access when LPMSEC=1 in SECCFGR.\r This bit is protected against unprivileged access when LPMSEC=1 and SPRIV=1 in PRIVCFGR, or when LPMSEC=0 and NSPRIV=1.\r Writing 1 to this bit clears the STOPF and SBF flags.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -771,678 +1462,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "monen",
+                    name: "stopf",
                     description: Some(
-                        "Backup domain voltage and temperature monitoring enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bdsr",
-            extends: None,
-            description: Some(
-                "Backup domain status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vbath",
-                    description: Some(
-                        "Backup domain voltage level monitoring versus high threshold",
+                        "Stop flag\r This bit is set by hardware when the device enters a Stop mode, and is cleared by software by writing 1 to the CSSF bit.",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Vbath",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "templ",
+                    name: "sbf",
                     description: Some(
-                        "Temperature level monitoring versus low threshold",
+                        "Standby flag\r This bit is set by hardware when the device enters the Standby mode, and is cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset.",
                     ),
                     bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Templ",
-                    ),
-                },
-                Field {
-                    name: "temph",
-                    description: Some(
-                        "Temperature level monitoring versus high threshold",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Temph",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apcr",
-            extends: None,
-            description: Some(
-                "apply pull configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "apc",
-                    description: Some(
-                        "Apply pull-up and pull-down configuration\r When this bit is set, the I/O pull-up and pull-down configurations defined in PUCRx and PDCRx are applied. When this bit is cleared, PUCRx and PDCRx are not applied to the I/Os.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Svmcr",
-            extends: None,
-            description: Some(
-                "supply voltage monitoring control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pvde",
-                    description: Some(
-                        "Power voltage detector enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pvdls",
-                    description: Some(
-                        "Power voltage detector level selection\r These bits select the voltage threshold detected by the power voltage detector:",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Pvdls",
-                    ),
-                },
-                Field {
-                    name: "uvmen",
-                    description: Some(
-                        "VDDUSB independent USB voltage monitor enable",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "io2vmen",
-                    description: Some(
-                        "VDDIO2 independent I/Os voltage monitor enable",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "avm1en",
-                    description: Some(
-                        "VDDA independent analog supply voltage monitor 1 enable (1.6V threshold)",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "avm2en",
-                    description: Some(
-                        "VDDA independent analog supply voltage monitor 2 enable (1.8V threshold)",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usv",
-                    description: Some(
-                        "VDDUSB independent USB supply valid",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "io2sv",
-                    description: Some(
-                        "VDDIO2 independent I/Os supply valid\r This bit is used to validate the VDDIO2 supply for electrical and logical isolation purpose.\r Setting this bit is mandatory to use PG[15:2]. If VDDIO2 is not always present in the application, the VDDIO2 voltage monitor can be used to determine whether this supply is ready or not.",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "asv",
-                    description: Some(
-                        "VDDA independent analog supply valid",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some(
-                "security configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wup1sec",
-                    description: Some(
-                        "WUP1 secure protection",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-                Field {
-                    name: "lpmsec",
-                    description: Some(
-                        "Low-power modes secure protection",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-                Field {
-                    name: "vdmsec",
-                    description: Some(
-                        "Voltage detection and monitoring secure protection",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-                Field {
-                    name: "vbsec",
-                    description: Some(
-                        "Backup domain secure protection",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-                Field {
-                    name: "apcsec",
-                    description: Some(
-                        "Pull-up/pull-down secure protection",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lpms",
-                    description: Some(
-                        "Low-power mode selection\r These bits select the low-power mode entered when the CPU enters the Deepsleep mode.\r 10x: Standby mode (Standby mode also entered if LPMS=11X in CR1\r with BREN=1 in BDCR1)\r 11x: Shutdown mode if BREN = 0 in BDCR1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Lpms",
-                    ),
-                },
-                Field {
-                    name: "rrsb1",
-                    description: Some(
-                        "SRAM2 page 1 retention in Stop 3 and Standby modes\r This bit is used to keep the SRAM2 page 1 content in Stop 3 and Standby modes. The SRAM2 page 1 corresponds to the first 8 Kbytes of the SRAM2\r (from SRAM2 base address to SRAM2 base address + 0x1FFF).\r Note: This bit has no effect in Shutdown mode.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rrsb",
-                    ),
-                },
-                Field {
-                    name: "rrsb2",
-                    description: Some(
-                        "SRAM2 page 2 retention in Stop 3 and Standby modes\r This bit is used to keep the SRAM2 page 2 content in Stop 3 and Standby modes. The SRAM2 page 2 corresponds to the last 56 Kbytes of the SRAM2\r (from SRAM2 base address + 0x2000 to SRAM2 base address + 0xFFFF).\r Note: This bit has no effect in Shutdown mode.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rrsb",
-                    ),
-                },
-                Field {
-                    name: "ulpmen",
-                    description: Some(
-                        "BOR ultra-low power mode\r This bit is used to reduce the consumption by configuring the BOR in discontinuous mode.\r This bit must be set to reach the lowest power consumption in the low-power modes.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sram1pd",
-                    description: Some(
-                        "SRAM1 power down\r This bit is used to reduce the consumption by powering off the SRAM1.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Srampd",
-                    ),
-                },
-                Field {
-                    name: "sram2pd",
-                    description: Some(
-                        "SRAM2 power down\r This bit is used to reduce the consumption by powering off the SRAM2.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Srampd",
-                    ),
-                },
-                Field {
-                    name: "sram3pd",
-                    description: Some(
-                        "SRAM3 power down\r This bit is used to reduce the consumption by powering off the SRAM3.",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Srampd",
-                    ),
-                },
-                Field {
-                    name: "sram4pd",
-                    description: Some(
-                        "SRAM4 power down\r This bit is used to reduce the consumption by powering off the SRAM4.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Srampd",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dbpcr",
-            extends: None,
-            description: Some(
-                "disable Backup domain register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbp",
-                    description: Some(
-                        "Disable Backup domain write protection\r In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Privcfgr",
-            extends: None,
-            description: Some(
-                "privilege control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spriv",
-                    description: Some(
-                        "secure functions privilege configuration\r This bit is set and reset by software. It can be written only by a secure privileged access.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-                Field {
-                    name: "nspriv",
-                    description: Some(
-                        "non-secure functions privilege configuration\r This bit is set and reset by software. It can be written only by privileged access, secure or non-secure.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Vosr",
-            extends: None,
-            description: Some(
-                "voltage scaling register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "boostrdy",
-                    description: Some(
-                        "EPOD booster ready\r This bit is set to 1 by hardware when the power booster startup time is reached. The system clock frequency can be switched higher than 50 MHz only after this bit is set.",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vosrdy",
-                    description: Some(
-                        "Ready bit for VCORE voltage scaling output selection",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vos",
-                    description: Some(
-                        "Voltage scaling range selection\r This field is protected against non-secure access when SYSCLKSEC=1 in RCC_SECCFGR. It is protected against unprivileged access when SYSCLKSEC=1 in RCC_SECCFGR and SPRIV=1 in PRIVCFGR, or when SYSCLKSEC=0 and NSPRIV=1.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Vos",
-                    ),
-                },
-                Field {
-                    name: "boosten",
-                    description: Some(
-                        "EPOD booster enable",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wuscr",
-            extends: None,
-            description: Some(
-                "wakeup status clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cwuf1",
-                    description: Some(
-                        "Wakeup flag 1\r Writing 1 to this bit clears the WUF1 flag in WUSR.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf2",
-                    description: Some(
-                        "Wakeup flag 2\r Writing 1 to this bit clears the WUF2 flag in WUSR.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf3",
-                    description: Some(
-                        "Wakeup flag 3\r Writing 1 to this bit clears the WUF3 flag in WUSR.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf4",
-                    description: Some(
-                        "Wakeup flag 4\r Writing 1 to this bit clears the WUF4 flag in WUSR.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf5",
-                    description: Some(
-                        "Wakeup flag 5\r Writing 1 to this bit clears the WUF5 flag in WUSR.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf6",
-                    description: Some(
-                        "Wakeup flag 6\r Writing 1 to this bit clears the WUF6 flag in WUSR.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf7",
-                    description: Some(
-                        "Wakeup flag 7\r Writing 1 to this bit clears the WUF7 flag in WUSR.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cwuf8",
-                    description: Some(
-                        "Wakeup flag 8\r Writing 1 to this bit clears the WUF8 flag in WUSR.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr3",
-            extends: None,
-            description: Some(
-                "control register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "regsel",
-                    description: Some(
-                        "Regulator selection\r Note: REGSEL is reserved and must be kept at reset value in packages without SMPS.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Regsel",
-                    ),
-                },
-                Field {
-                    name: "fsten",
-                    description: Some(
-                        "Fast soft start",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wusr",
-            extends: None,
-            description: Some(
-                "wakeup status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wuf1",
-                    description: Some(
-                        "Wakeup flag 1\r This bit is set when a wakeup event is detected on WKUP1 pin. This bit is cleared by writing 1 in the CWUF1 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN1=0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf2",
-                    description: Some(
-                        "Wakeup flag 2\r This bit is set when a wakeup event is detected on WKUP2 pin. This bit is cleared by writing 1 in the CWUF2 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN2=0.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf3",
-                    description: Some(
-                        "Wakeup flag 3\r This bit is set when a wakeup event is detected on WKUP3 pin. This bit is cleared by writing 1 in the CWUF3 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN3=0.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf4",
-                    description: Some(
-                        "Wakeup flag 4\r This bit is set when a wakeup event is detected on WKUP4 pin. This bit is cleared by writing 1 in the CWUF4 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN4=0.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf5",
-                    description: Some(
-                        "Wakeup flag 5\r This bit is set when a wakeup event is detected on WKUP5 pin. This bit is cleared by writing 1 in the CWUF5 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN5=0.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf6",
-                    description: Some(
-                        "Wakeup flag 6\r This bit is set when a wakeup event is detected on WKUP6 pin. This bit is cleared by writing 1 in the CWUF6 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN6=0.\r If WUSEL=11, this bit is cleared by hardware when all internal wakeup source are cleared.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf7",
-                    description: Some(
-                        "Wakeup flag 7\r This bit is set when a wakeup event is detected on WKUP7 pin. This bit is cleared by writing 1 in the CWUF7 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN7=0.\r If WUSEL=11, this bit is cleared by hardware when all internal wakeup source are cleared.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wuf8",
-                    description: Some(
-                        "Wakeup flag 8\r This bit is set when a wakeup event is detected on WKUP8 pin. This bit is cleared by writing 1 in the CWUF8 bit of WUSCR when WUSEL ≠ 11, or by hardware when WUPEN8=0.\r If WUSEL=11, this bit is cleared by hardware when all internal wakeup source are cleared.",
-                    ),
-                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1721,168 +1755,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Bdcr2",
-            extends: None,
-            description: Some(
-                "Backup domain control register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vbe",
-                    description: Some(
-                        "VBAT charging enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Vbe",
-                    ),
-                },
-                Field {
-                    name: "vbrs",
-                    description: Some(
-                        "VBAT charging resistor selection",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Vbrs",
-                    ),
-                },
-            ],
-        },
     ],
     enums: &[
-        Enum {
-            name: "Pds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "Content retained in Stop modes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOST",
-                    description: Some(
-                        "Content lost in Stop modes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged access only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vbath",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Backup domain voltage level < high threshold",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Backup domain voltage level ≥ high threshold",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vbe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "VBAT battery charging disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "VBAT battery charging enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pvdo",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ABOVEOREQUAL",
-                    description: Some(
-                        "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BELOW",
-                    description: Some(
-                        "VDD is below the PVD threshold selected by PVDLS[2:0].",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sramfwu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "SRAM4 enters low-power mode in Stop 0, 1 and 2 modes (source biasing for lower-power consumption).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "SRAM4 remains in normal mode in Stop 0, 1 and 2 modes (higher consumption but no SRAM4 wakeup time).",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Vos",
             description: None,
@@ -1919,63 +1793,42 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Vbrs",
+            name: "Priv",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "UNPRIVILEGED",
                     description: Some(
-                        "Charge VBAT through a 5 kΩ resistor",
+                        "Read and write to non-secure functions can be done by privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "PRIVILEGED",
                     description: Some(
-                        "Charge VBAT through a 1.5 kΩ resistor",
+                        "Read and write to non-secure functions can be done by privileged access only.",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Temph",
+            name: "Sramfwu",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "Temperature < high threshold",
+                        "SRAM4 enters low-power mode in Stop 0, 1 and 2 modes (source biasing for lower-power consumption).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "Temperature ≥ high threshold",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Flashfwu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LOWPOWER",
-                    description: Some(
-                        "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time).",
+                        "SRAM4 remains in normal mode in Stop 0, 1 and 2 modes (higher consumption but no SRAM4 wakeup time).",
                     ),
                     value: 1,
                 },
@@ -1999,6 +1852,62 @@ pub(crate) static REGISTERS: IR = IR {
                         "Detection on low level (falling edge)",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Vbe",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "VBAT battery charging disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "VBAT battery charging enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Actvos",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "RANGE4",
+                    description: Some(
+                        "Range 4 (lowest power)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RANGE3",
+                    description: Some(
+                        "Range 3",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RANGE2",
+                    description: Some(
+                        "Range 2",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RANGE1",
+                    description: Some(
+                        "Range 1 (highest frequency)",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -2066,6 +1975,48 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Pvdo",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ABOVEOREQUAL",
+                    description: Some(
+                        "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BELOW",
+                    description: Some(
+                        "VDD is below the PVD threshold selected by PVDLS[2:0].",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rrsb",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTRETAINED",
+                    description: Some(
+                        "SRAM2 page1 content not retained in Stop 3 and Standby modes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RETAINED",
+                    description: Some(
+                        "SRAM2 page1 content retained in Stop 3 and Standby modes",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Wusel",
             description: None,
             bit_size: 2,
@@ -2122,56 +2073,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Actvos",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "RANGE4",
-                    description: Some(
-                        "Range 4 (lowest power)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RANGE3",
-                    description: Some(
-                        "Range 3",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RANGE2",
-                    description: Some(
-                        "Range 2",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "RANGE1",
-                    description: Some(
-                        "Range 1 (highest frequency)",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Rrsb",
+            name: "Vbrs",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTRETAINED",
+                    name: "B_0X0",
                     description: Some(
-                        "SRAM2 page1 content not retained in Stop 3 and Standby modes",
+                        "Charge VBAT through a 5 kΩ resistor",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RETAINED",
+                    name: "B_0X1",
                     description: Some(
-                        "SRAM2 page1 content retained in Stop 3 and Standby modes",
+                        "Charge VBAT through a 1.5 kΩ resistor",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Regsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LDO",
+                    description: Some(
+                        "LDO selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SMPS",
+                    description: Some(
+                        "SMPS selected",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Temph",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Temperature < high threshold",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Temperature ≥ high threshold",
                     ),
                     value: 1,
                 },
@@ -2199,21 +2157,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Regsel",
+            name: "Flashfwu",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LDO",
+                    name: "LOWPOWER",
                     description: Some(
-                        "LDO selected",
+                        "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SMPS",
+                    name: "NORMAL",
                     description: Some(
-                        "SMPS selected",
+                        "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Vbath",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Backup domain voltage level < high threshold",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Backup domain voltage level ≥ high threshold",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pds",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RETAINED",
+                    description: Some(
+                        "Content retained in Stop modes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOST",
+                    description: Some(
+                        "Content lost in Stop modes",
                     ),
                     value: 1,
                 },

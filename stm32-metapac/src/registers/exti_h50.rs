@@ -230,33 +230,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Exti",
-            extends: None,
-            description: Some(
-                "EXTI external interrupt selection register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "exti",
-                    description: Some(
-                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Lines",
             extends: None,
             description: Some(
@@ -276,6 +249,33 @@ pub(crate) static REGISTERS: IR = IR {
                             RegularArray {
                                 len: 32,
                                 stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Exti",
+            extends: None,
+            description: Some(
+                "EXTI external interrupt selection register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti",
+                    description: Some(
+                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 8,
                             },
                         ),
                     ),

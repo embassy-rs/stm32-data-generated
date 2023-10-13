@@ -68,6 +68,30 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some("Status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvu",
+                    description: Some("Watchdog prescaler value update"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rvu",
+                    description: Some("Watchdog counter reload value update"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Pr",
             extends: None,
             description: Some("Prescaler register"),
@@ -95,54 +119,8 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: Some("Key"),
             }],
         },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pvu",
-                    description: Some("Watchdog prescaler value update"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rvu",
-                    description: Some("Watchdog counter reload value update"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
-        Enum {
-            name: "Key",
-            description: None,
-            bit_size: 16,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLE",
-                    description: Some("Enable access to PR, RLR and WINR registers (0x5555)"),
-                    value: 21845,
-                },
-                EnumVariant {
-                    name: "RESET",
-                    description: Some("Reset the watchdog value (0xAAAA)"),
-                    value: 43690,
-                },
-                EnumVariant {
-                    name: "START",
-                    description: Some("Start the watchdog (0xCCCC)"),
-                    value: 52428,
-                },
-            ],
-        },
         Enum {
             name: "Pr",
             description: None,
@@ -187,6 +165,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIVIDEBY256BIS",
                     description: Some("Divider /256"),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Key",
+            description: None,
+            bit_size: 16,
+            variants: &[
+                EnumVariant {
+                    name: "ENABLE",
+                    description: Some("Enable access to PR, RLR and WINR registers (0x5555)"),
+                    value: 21845,
+                },
+                EnumVariant {
+                    name: "RESET",
+                    description: Some("Reset the watchdog value (0xAAAA)"),
+                    value: 43690,
+                },
+                EnumVariant {
+                    name: "START",
+                    description: Some("Start the watchdog (0xCCCC)"),
+                    value: 52428,
                 },
             ],
         },

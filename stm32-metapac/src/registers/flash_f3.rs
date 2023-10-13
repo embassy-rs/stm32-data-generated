@@ -98,6 +98,48 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Ar",
+            extends: None,
+            description: Some("Flash address register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "far",
+                description: Some("Flash address"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Wrpr",
+            extends: None,
+            description: Some("Write protection register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "wrp",
+                description: Some("Write protect"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Optkeyr",
+            extends: None,
+            description: Some("Flash option key register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "optkeyr",
+                description: Some("Option byte key"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Flash control register"),
@@ -187,6 +229,46 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "obl_launch",
                     description: Some("Force option byte loading"),
                     bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some("Flash status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bsy",
+                    description: Some("Busy"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pgerr",
+                    description: Some("Programming error"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrprterr",
+                    description: Some("Write protection error"),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eop",
+                    description: Some("End of operation"),
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -290,20 +372,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some("Flash option key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkeyr",
-                description: Some("Option byte key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Acr",
             extends: None,
             description: Some("Flash access control register"),
@@ -357,76 +425,30 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: None,
             }],
         },
-        FieldSet {
-            name: "Wrpr",
-            extends: None,
-            description: Some("Write protection register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "wrp",
-                description: Some("Write protect"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Ar",
-            extends: None,
-            description: Some("Flash address register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "far",
-                description: Some("Flash address"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Flash status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bsy",
-                    description: Some("Busy"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
+    ],
+    enums: &[
+        Enum {
+            name: "Latency",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "WS0",
+                    description: Some("0 wait states, if 0 < HCLK <= 24 MHz"),
+                    value: 0,
                 },
-                Field {
-                    name: "pgerr",
-                    description: Some("Programming error"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
+                EnumVariant {
+                    name: "WS1",
+                    description: Some("1 wait state, if 24 < HCLK <= 48 MHz"),
+                    value: 1,
                 },
-                Field {
-                    name: "wrprterr",
-                    description: Some("Write protection error"),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eop",
-                    description: Some("End of operation"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
+                EnumVariant {
+                    name: "WS2",
+                    description: Some("2 wait states, if 48 < HCLK <= 72 MHz"),
+                    value: 2,
                 },
             ],
         },
-    ],
-    enums: &[
         Enum {
             name: "NRstStdby",
             description: None,
@@ -435,6 +457,40 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "RESET",
                     description: Some("Reset generated when entering Standby mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NORESET",
+                    description: Some("No reset generated"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "WdgSw",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "HARDWARE",
+                    description: Some("Hardware watchdog"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SOFTWARE",
+                    description: Some("Software watchdog"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "NRstStop",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RESET",
+                    description: Some("Reset generated when entering Stop mode"),
                     value: 0,
                 },
                 EnumVariant {
@@ -463,62 +519,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LEVEL2",
                     description: Some("Level 2"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "NRstStop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some("Reset generated when entering Stop mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NORESET",
-                    description: Some("No reset generated"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Latency",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "WS0",
-                    description: Some("0 wait states, if 0 < HCLK <= 24 MHz"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "WS1",
-                    description: Some("1 wait state, if 24 < HCLK <= 48 MHz"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "WS2",
-                    description: Some("2 wait states, if 48 < HCLK <= 72 MHz"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "WdgSw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "HARDWARE",
-                    description: Some("Hardware watchdog"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some("Software watchdog"),
-                    value: 1,
                 },
             ],
         },

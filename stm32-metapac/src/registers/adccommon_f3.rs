@@ -115,6 +115,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cdr",
+            extends: None,
+            description: Some("ADC common regular data register for dual and triple modes"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdata_mst",
+                    description: Some("Regular data of the master ADC"),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rdata_slv",
+                    description: Some("Regular data of the master ADC"),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Csr",
             extends: None,
             description: None,
@@ -298,71 +322,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cdr",
-            extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdata_mst",
-                    description: Some("Regular data of the master ADC"),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rdata_slv",
-                    description: Some("Regular data of the master ADC"),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
-        Enum {
-            name: "Ended",
-            description: Some("End of operation"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTENDED",
-                    description: Some("Operation is not ended"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENDED",
-                    description: Some("Operation is ended"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mdma",
-            description: Some("Direct memory access mode for multi ADC mode"),
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("MDMA mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS12_10",
-                    description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BIT8_6",
-                    description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
-                    value: 3,
-                },
-            ],
-        },
         Enum {
             name: "Dual",
             description: Some("Dual ADC mode selection"),
@@ -411,6 +372,45 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Mdma",
+            description: Some("Direct memory access mode for multi ADC mode"),
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("MDMA mode disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS12_10",
+                    description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BIT8_6",
+                    description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Ended",
+            description: Some("End of operation"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTENDED",
+                    description: Some("Operation is not ended"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENDED",
+                    description: Some("Operation is ended"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Dmacfg",
             description: Some("DMA configuration (for multi-ADC mode)"),
             bit_size: 1,
@@ -423,23 +423,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "CIRCULATOR",
                     description: Some("DMA circular mode selected"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovr",
-            description: Some("Overrun flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
                     value: 1,
                 },
             ],
@@ -472,18 +455,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Jqovf",
-            description: Some("Injected context queue overflow flag"),
+            name: "Ovr",
+            description: Some("Overrun flag"),
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow"),
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow"),
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
                     value: 1,
                 },
             ],
@@ -501,6 +484,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "EVENT",
                     description: Some("Analog watchdog event occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Jqovf",
+            description: Some("Injected context queue overflow flag"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERFLOW",
+                    description: Some("No injected context queue overflow"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERFLOW",
+                    description: Some("Injected context queue overflow"),
                     value: 1,
                 },
             ],

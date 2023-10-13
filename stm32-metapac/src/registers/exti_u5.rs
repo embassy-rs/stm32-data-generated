@@ -159,20 +159,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some("Security configuration register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "sec",
-                description: Some("Security enable on event input x"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Lines",
             extends: None,
             description: Some("EXTI lines register, 1 bit per line"),
@@ -180,6 +166,20 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "line",
                 description: Some("EXTI line"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Seccfgr",
+            extends: None,
+            description: Some("Security configuration register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "sec",
+                description: Some("Security enable on event input x"),
                 bit_offset: 0,
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),

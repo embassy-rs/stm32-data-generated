@@ -120,80 +120,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Ccr",
-            extends: None,
-            description: Some("common configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vrefen",
-                    description: Some("Temperature sensor and VREFINT enable"),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tsen",
-                    description: Some("Temperature sensor enable"),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbaten",
-                    description: Some("VBAT enable"),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr2",
-            extends: None,
-            description: Some("configuration register 2"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ckmode",
-                description: Some("ADC clock mode"),
-                bit_offset: 30,
-                bit_size: 2,
-                array: None,
-                enumm: Some("Ckmode"),
-            }],
-        },
-        FieldSet {
-            name: "Chselr",
-            extends: None,
-            description: Some("channel selection register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "chselx",
-                description: Some("Channel-x selection"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 19, stride: 1 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Dr",
-            extends: None,
-            description: Some("data register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "data",
-                description: Some("Converted data"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("control register"),
@@ -240,6 +166,58 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
+        },
+        FieldSet {
+            name: "Tr",
+            extends: None,
+            description: Some("watchdog threshold register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lt",
+                    description: Some("Analog watchdog lower threshold"),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ht",
+                    description: Some("Analog watchdog higher threshold"),
+                    bit_offset: 16,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr2",
+            extends: None,
+            description: Some("configuration register 2"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ckmode",
+                description: Some("ADC clock mode"),
+                bit_offset: 30,
+                bit_size: 2,
+                array: None,
+                enumm: Some("Ckmode"),
+            }],
+        },
+        FieldSet {
+            name: "Smpr",
+            extends: None,
+            description: Some("sampling time register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "smp",
+                description: Some("Sampling time selection"),
+                bit_offset: 0,
+                bit_size: 3,
+                array: None,
+                enumm: Some("SampleTime"),
+            }],
         },
         FieldSet {
             name: "Cfgr1",
@@ -370,28 +348,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Tr",
+            name: "Chselr",
             extends: None,
-            description: Some("watchdog threshold register"),
+            description: Some("channel selection register"),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lt",
-                    description: Some("Analog watchdog lower threshold"),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ht",
-                    description: Some("Analog watchdog higher threshold"),
-                    bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "chselx",
+                description: Some("Channel-x selection"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 19, stride: 1 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Isr",
@@ -450,17 +418,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Smpr",
+            name: "Dr",
             extends: None,
-            description: Some("sampling time register"),
+            description: Some("data register"),
             bit_size: 32,
             fields: &[Field {
-                name: "smp",
-                description: Some("Sampling time selection"),
+                name: "data",
+                description: Some("Converted data"),
                 bit_offset: 0,
-                bit_size: 3,
+                bit_size: 16,
                 array: None,
-                enumm: Some("SampleTime"),
+                enumm: None,
             }],
         },
         FieldSet {
@@ -519,108 +487,54 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Extsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM1_TRGO",
-                    description: Some("Timer 1 TRGO Event"),
-                    value: 0,
+        FieldSet {
+            name: "Ccr",
+            extends: None,
+            description: Some("common configuration register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vrefen",
+                    description: Some("Temperature sensor and VREFINT enable"),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "TIM1_CC4",
-                    description: Some("Timer 1 CC4 event"),
-                    value: 1,
+                Field {
+                    name: "tsen",
+                    description: Some("Temperature sensor enable"),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "TIM2_TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM3_TRGO",
-                    description: Some("Timer 3 TRGO event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM15_TRGO",
-                    description: Some("Timer 15 TRGO event"),
-                    value: 4,
+                Field {
+                    name: "vbaten",
+                    description: Some("VBAT enable"),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
+    ],
+    enums: &[
         Enum {
-            name: "Awdsgl",
+            name: "Dmacfg",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALLCHANNELS",
-                    description: Some("Analog watchdog enabled on all channels"),
+                    name: "ONESHOT",
+                    description: Some("DMA one shot mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SINGLECHANNEL",
-                    description: Some("Analog watchdog enabled on a single channel"),
+                    name: "CIRCULAR",
+                    description: Some("DMA circular mode"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Exten",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Trigger detection disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some("Trigger detection on the rising edge"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some("Trigger detection on the falling edge"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BOTHEDGES",
-                    description: Some("Trigger detection on both the rising and falling edges"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Res",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "TWELVEBIT",
-                    description: Some("12-bit (14 ADCCLK cycles)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TENBIT",
-                    description: Some("10-bit (13 ADCCLK cycles)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "EIGHTBIT",
-                    description: Some("8-bit (11 ADCCLK cycles)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "SIXBIT",
-                    description: Some("6-bit (9 ADCCLK cycles)"),
-                    value: 3,
                 },
             ],
         },
@@ -672,41 +586,29 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ckmode",
+            name: "Exten",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ADCCLK",
-                    description: Some("Asynchronous clock mode"),
+                    name: "DISABLED",
+                    description: Some("Trigger detection disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PCLK_DIV2",
-                    description: Some("Synchronous clock mode (PCLK/2)"),
+                    name: "RISINGEDGE",
+                    description: Some("Trigger detection on the rising edge"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PCLK_DIV4",
-                    description: Some("Sychronous clock mode (PCLK/4)"),
+                    name: "FALLINGEDGE",
+                    description: Some("Trigger detection on the falling edge"),
                     value: 2,
                 },
-            ],
-        },
-        Enum {
-            name: "Align",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "RIGHT",
-                    description: Some("Right alignment"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LEFT",
-                    description: Some("Left alignment"),
-                    value: 1,
+                    name: "BOTHEDGES",
+                    description: Some("Trigger detection on both the rising and falling edges"),
+                    value: 3,
                 },
             ],
         },
@@ -730,6 +632,72 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Res",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "TWELVEBIT",
+                    description: Some("12-bit (14 ADCCLK cycles)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TENBIT",
+                    description: Some("10-bit (13 ADCCLK cycles)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "EIGHTBIT",
+                    description: Some("8-bit (11 ADCCLK cycles)"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "SIXBIT",
+                    description: Some("6-bit (9 ADCCLK cycles)"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Awdsgl",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ALLCHANNELS",
+                    description: Some("Analog watchdog enabled on all channels"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SINGLECHANNEL",
+                    description: Some("Analog watchdog enabled on a single channel"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ckmode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "ADCCLK",
+                    description: Some("Asynchronous clock mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PCLK_DIV2",
+                    description: Some("Synchronous clock mode (PCLK/2)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PCLK_DIV4",
+                    description: Some("Sychronous clock mode (PCLK/4)"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Scandir",
             description: None,
             bit_size: 1,
@@ -747,18 +715,50 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dmacfg",
+            name: "Extsel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "TIM1_TRGO",
+                    description: Some("Timer 1 TRGO Event"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM1_CC4",
+                    description: Some("Timer 1 CC4 event"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "TIM2_TRGO",
+                    description: Some("Timer 2 TRGO event"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "TIM3_TRGO",
+                    description: Some("Timer 3 TRGO event"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "TIM15_TRGO",
+                    description: Some("Timer 15 TRGO event"),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Align",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONESHOT",
-                    description: Some("DMA one shot mode"),
+                    name: "RIGHT",
+                    description: Some("Right alignment"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CIRCULAR",
-                    description: Some("DMA circular mode"),
+                    name: "LEFT",
+                    description: Some("Left alignment"),
                     value: 1,
                 },
             ],

@@ -271,33 +271,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Lines",
-            extends: None,
-            description: Some(
-                "EXTI lines register, 1 bit per line",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "line",
-                    description: Some(
-                        "EXTI line",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Lockr",
             extends: None,
             description: Some(
@@ -313,6 +286,33 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Exti",
+            extends: None,
+            description: Some(
+                "EXTI external interrupt selection register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti",
+                    description: Some(
+                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 8,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -347,25 +347,25 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Exti",
+            name: "Lines",
             extends: None,
             description: Some(
-                "EXTI external interrupt selection register",
+                "EXTI lines register, 1 bit per line",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "exti",
+                    name: "line",
                     description: Some(
-                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
+                        "EXTI line",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 1,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 4,
-                                stride: 8,
+                                len: 32,
+                                stride: 1,
                             },
                         ),
                     ),
@@ -405,27 +405,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
-                    description: Some(
-                        "Event security disabled (non-secure)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "Event security enabled (secure)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Priv",
             description: None,
             bit_size: 1,
@@ -441,6 +420,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILEGED",
                     description: Some(
                         "Event privilege enabled (privileged)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sec",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NONSECURE",
+                    description: Some(
+                        "Event security disabled (non-secure)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SECURE",
+                    description: Some(
+                        "Event security enabled (secure)",
                     ),
                     value: 1,
                 },

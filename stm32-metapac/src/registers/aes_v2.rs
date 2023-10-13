@@ -89,6 +89,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Ivr",
+            extends: None,
+            description: Some("Initialization vector register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ivi",
+                description: Some("Initialization vector input"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Cr",
             extends: None,
             description: Some("Control register"),
@@ -209,6 +223,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Doutr",
+            extends: None,
+            description: Some("Data output register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "dout",
+                description: Some("Output data word"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Dinr",
+            extends: None,
+            description: Some("Data input register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "din",
+                description: Some("Input data word"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Sr",
             extends: None,
             description: Some("Status register"),
@@ -249,20 +291,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Suspr",
             extends: None,
             description: Some("Suspend register"),
@@ -277,41 +305,13 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Doutr",
+            name: "Keyr",
             extends: None,
-            description: Some("Data output register"),
+            description: Some("Key register"),
             bit_size: 32,
             fields: &[Field {
-                name: "dout",
-                description: Some("Output data word"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Ivr",
-            extends: None,
-            description: Some("Initialization vector register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "ivi",
-                description: Some("Initialization vector input"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Dinr",
-            extends: None,
-            description: Some("Data input register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "din",
-                description: Some("Input data word"),
+                name: "key",
+                description: Some("Cryptographic key"),
                 bit_offset: 0,
                 bit_size: 32,
                 array: None,
@@ -320,33 +320,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Gcmph",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "INITPHASE",
-                    description: Some("Init phase"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HEADERPHASE",
-                    description: Some("Header phase"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PAYLOADPHASE",
-                    description: Some("Payload phase"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FINALPHASE",
-                    description: Some("Final phase"),
-                    value: 3,
-                },
-            ],
-        },
         Enum {
             name: "Mode",
             description: None,
@@ -397,6 +370,33 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "BIT",
                     description: Some("Bit"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Gcmph",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "INITPHASE",
+                    description: Some("Init phase"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HEADERPHASE",
+                    description: Some("Header phase"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PAYLOADPHASE",
+                    description: Some("Payload phase"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FINALPHASE",
+                    description: Some("Final phase"),
                     value: 3,
                 },
             ],

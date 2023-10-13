@@ -354,110 +354,60 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Sr",
+            name: "Pncr",
             extends: None,
             description: Some(
-                "status register",
+                "part number codification register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ap_present",
+                    name: "codification",
                     description: Some(
-                        "Bit n identifies whether access port APn is present in device \r Bit n�=�0: APn absent \r Bit n�=�1: APn present",
+                        "Part number codification",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ap_enabled",
-                    description: Some(
-                        "Bit n identifies whether access port APn is open (can be accessed via the debug port) or locked (debug access to the APn is blocked, except for access) \r Bit n�=�0: APn locked (except for access to DBGMCU)\r Bit n�=�1: APn enabled",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Pidr0",
+            name: "Apb2fzr",
             extends: None,
             description: Some(
-                "CoreSight peripheral identity register 0",
+                "APB2 peripheral freeze register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "partnum",
+                    name: "dbg_tim1_stop",
                     description: Some(
-                        "Part number bits [7:0]",
+                        "TIM1 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM1SEC.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr2",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jep106id",
-                    description: Some(
-                        "JEP106 identity code bits [6:4]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jedec",
-                    description: Some(
-                        "JEDEC assigned value",
-                    ),
-                    bit_offset: 3,
+                    bit_offset: 11,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "revision",
+                    name: "dbg_tim16_stop",
                     description: Some(
-                        "Component revision number",
+                        "TIM16 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM16SEC.",
                     ),
-                    bit_offset: 4,
-                    bit_size: 4,
+                    bit_offset: 17,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Cidr0",
-            extends: None,
-            description: Some(
-                "CoreSight component identity register 0",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "preamble",
+                    name: "dbg_tim17_stop",
                     description: Some(
-                        "Component ID bits [7:0]",
+                        "TIM17 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM17SEC.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 8,
+                    bit_offset: 18,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -478,6 +428,26 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 5,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DbgAuthDevice",
+            extends: None,
+            description: Some(
+                "debug device authentication register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "auth_id",
+                    description: Some(
+                        "Device specific ID\r Device specific ID used for RDP regression.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -544,167 +514,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ahb1fzr",
+            name: "Cidr0",
             extends: None,
             description: Some(
-                "AHB1 peripheral freeze register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_gpdma1_ch0_stop",
-                    description: Some(
-                        "GPDMA 1 channel 0 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch1_stop",
-                    description: Some(
-                        "GPDMA 1 channel 1 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC1.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch2_stop",
-                    description: Some(
-                        "GPDMA 1 channel 2 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC2.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch3_stop",
-                    description: Some(
-                        "GPDMA 1 channel 3 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC3.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch4_stop",
-                    description: Some(
-                        "GPDMA 1 channel 4 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC4.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch5_stop",
-                    description: Some(
-                        "GPDMA 1 channel 5 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC5.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch6_stop",
-                    description: Some(
-                        "GPDMA 1 channel 6 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC6.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch7_stop",
-                    description: Some(
-                        "GPDMA 1 channel 7 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC7.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pncr",
-            extends: None,
-            description: Some(
-                "part number codification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "codification",
-                    description: Some(
-                        "Part number codification",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2fzr",
-            extends: None,
-            description: Some(
-                "APB2 peripheral freeze register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_tim1_stop",
-                    description: Some(
-                        "TIM1 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM1SEC.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim16_stop",
-                    description: Some(
-                        "TIM16 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM16SEC.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim17_stop",
-                    description: Some(
-                        "TIM17 stop in CPU debug\r Write access can be protected by GTZC_TZSC.TIM17SEC.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cidr2",
-            extends: None,
-            description: Some(
-                "CoreSight component identity register 2",
+                "CoreSight component identity register 0",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "preamble",
                     description: Some(
-                        "Component ID bits [23:16]",
+                        "Component ID bits [7:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr3",
+            extends: None,
+            description: Some(
+                "CoreSight component identity register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "preamble",
+                    description: Some(
+                        "Component ID bits [31:24]",
                     ),
                     bit_offset: 0,
                     bit_size: 8,
@@ -834,17 +674,47 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cidr3",
+            name: "Sr",
             extends: None,
             description: Some(
-                "CoreSight component identity register 3",
+                "status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ap_present",
+                    description: Some(
+                        "Bit n identifies whether access port APn is present in device \r Bit n�=�0: APn absent \r Bit n�=�1: APn present",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ap_enabled",
+                    description: Some(
+                        "Bit n identifies whether access port APn is open (can be accessed via the debug port) or locked (debug access to the APn is blocked, except for access) \r Bit n�=�0: APn locked (except for access to DBGMCU)\r Bit n�=�1: APn enabled",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr2",
+            extends: None,
+            description: Some(
+                "CoreSight component identity register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "preamble",
                     description: Some(
-                        "Component ID bits [31:24]",
+                        "Component ID bits [23:16]",
                     ),
                     bit_offset: 0,
                     bit_size: 8,
@@ -884,36 +754,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pidr4",
-            extends: None,
-            description: Some(
-                "CoreSight peripheral identity register 4",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jep106con",
-                    description: Some(
-                        "JEP106 continuation code",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "f4kcount",
-                    description: Some(
-                        "Register file size",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Idcode",
             extends: None,
             description: Some(
@@ -944,20 +784,140 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DbgAuthDevice",
+            name: "Pidr4",
             extends: None,
             description: Some(
-                "debug device authentication register",
+                "CoreSight peripheral identity register 4",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "auth_id",
+                    name: "jep106con",
                     description: Some(
-                        "Device specific ID\r Device specific ID used for RDP regression.",
+                        "JEP106 continuation code",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "f4kcount",
+                    description: Some(
+                        "Register file size",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr0",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 0",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "partnum",
+                    description: Some(
+                        "Part number bits [7:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ahb1fzr",
+            extends: None,
+            description: Some(
+                "AHB1 peripheral freeze register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_gpdma1_ch0_stop",
+                    description: Some(
+                        "GPDMA 1 channel 0 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch1_stop",
+                    description: Some(
+                        "GPDMA 1 channel 1 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC1.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch2_stop",
+                    description: Some(
+                        "GPDMA 1 channel 2 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC2.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch3_stop",
+                    description: Some(
+                        "GPDMA 1 channel 3 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC3.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch4_stop",
+                    description: Some(
+                        "GPDMA 1 channel 4 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC4.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch5_stop",
+                    description: Some(
+                        "GPDMA 1 channel 5 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC5.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch6_stop",
+                    description: Some(
+                        "GPDMA 1 channel 6 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC6.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_gpdma1_ch7_stop",
+                    description: Some(
+                        "GPDMA 1 channel 7 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC7.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1008,6 +968,46 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr2",
+            extends: None,
+            description: Some(
+                "CoreSight peripheral identity register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "jep106id",
+                    description: Some(
+                        "JEP106 identity code bits [6:4]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "jedec",
+                    description: Some(
+                        "JEDEC assigned value",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "revision",
+                    description: Some(
+                        "Component revision number",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },

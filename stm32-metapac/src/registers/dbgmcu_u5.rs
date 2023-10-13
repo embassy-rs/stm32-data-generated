@@ -354,49 +354,79 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ahb3fzr",
+            name: "DbgmcuDbgAuthDevice",
             extends: None,
             description: Some(
-                "Debug MCU AHB3 peripheral freeze register",
+                "DBGMCU debug device authentication register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dbg_lpdma0_stop",
+                    name: "auth_id",
                     description: Some(
-                        "LPDMA channel 0 stop in debug",
+                        "Device specific ID\r \tDevice specific ID used for RDP regression.",
                     ),
                     bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Apb3fzr",
+            extends: None,
+            description: Some(
+                "Debug MCU APB3 peripheral freeze register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_i2c3_stop",
+                    description: Some(
+                        "I2C3 stop in debug",
+                    ),
+                    bit_offset: 10,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_lpdma1_stop",
+                    name: "dbg_lptim1_stop",
                     description: Some(
-                        "LPDMA channel 1 stop in debug",
+                        "LPTIM1 stop in debug",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_lpdma2_stop",
+                    name: "dbg_lptim3_stop",
                     description: Some(
-                        "LPDMA channel 2 stop in debug",
+                        "LPTIM3 stop in debug",
                     ),
-                    bit_offset: 2,
+                    bit_offset: 18,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_lpdma3_stop",
+                    name: "dbg_lptim4_stop",
                     description: Some(
-                        "LPDMA channel 3 stop in debug",
+                        "LPTIM4 stop in debug",
                     ),
-                    bit_offset: 3,
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_rtc_stop",
+                    description: Some(
+                        "RTC stop in debug",
+                    ),
+                    bit_offset: 30,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -404,20 +434,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cidr2",
+            name: "Pidr2",
             extends: None,
             description: Some(
-                "Debug MCU CoreSight component identity register 2",
+                "Debug MCU CoreSight peripheral identity register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "preamble",
+                    name: "jep106id",
                     description: Some(
-                        "component identification bits [23:16]",
+                        "JEP106 identity code bits [6:4]",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "jedec",
+                    description: Some(
+                        "JEDEC assigned value",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "revision",
+                    description: Some(
+                        "component revision number",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
@@ -454,36 +504,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Idcode",
-            extends: None,
-            description: Some(
-                "DBGMCU_IDCODE",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dev_id",
-                    description: Some(
-                        "Device dentification",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rev_id",
-                    description: Some(
-                        "Revision",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Apb1hfzr",
             extends: None,
             description: Some(
@@ -508,6 +528,156 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 5,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr0",
+            extends: None,
+            description: Some(
+                "Debug MCU CoreSight component identity register 0",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "preamble",
+                    description: Some(
+                        "component identification bits [7:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DbgmcuSr",
+            extends: None,
+            description: Some(
+                "DBGMCU status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ap_present",
+                    description: Some(
+                        "Bit n identifies whether access port AP n is present in device\r \tBit n\u{a0}=\u{a0}0: APn absent\r \tBit n\u{a0}=\u{a0}1: APn present",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ap_locked",
+                    description: Some(
+                        "DECLARATION TO BE CONFIRMED by PRODUCT OWNER! Bit n identifies whether access port AP n is open (can be accessed via the debug port) or locked (debug access to the AP is blocked)\r \tBit n\u{a0}=\u{a0}0: APn locked\r \tBit n\u{a0}=\u{a0}1: APn enabled",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cidr2",
+            extends: None,
+            description: Some(
+                "Debug MCU CoreSight component identity register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "preamble",
+                    description: Some(
+                        "component identification bits [23:16]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some(
+                "Debug MCU configuration\r register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_stop",
+                    description: Some(
+                        "Debug Stop mode",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_standby",
+                    description: Some(
+                        "Debug Standby mode",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trace_ioen",
+                    description: Some(
+                        "Trace pin assignment\r control",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trace_en",
+                    description: Some(
+                        "trace port and clock\r enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trace_mode",
+                    description: Some(
+                        "Trace pin assignment\r control",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pidr0",
+            extends: None,
+            description: Some(
+                "Debug MCU CoreSight peripheral identity register 0",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "partnum",
+                    description: Some(
+                        "part number bits [7:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -624,96 +794,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pidr4",
-            extends: None,
-            description: Some(
-                "Debug MCU CoreSight peripheral identity register 4",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jep106con",
-                    description: Some(
-                        "JEP106 continuation code",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "kcount_4",
-                    description: Some(
-                        "register file size",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2fzr",
-            extends: None,
-            description: Some(
-                "Debug MCU APB2 peripheral freeze register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_tim1_stop",
-                    description: Some(
-                        "TIM1 counter stopped when core is\r halted",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim8_stop",
-                    description: Some(
-                        "TIM8 stop in debug",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim15_stop",
-                    description: Some(
-                        "TIM15 counter stopped when core is\r halted",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim16_stop",
-                    description: Some(
-                        "TIM16 counter stopped when core is\r halted",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_tim17_stop",
-                    description: Some(
-                        "DBG_TIM17_STOP",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cidr1",
             extends: None,
             description: Some(
@@ -735,106 +815,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "class",
                     description: Some(
                         "component identification bits [15:12] - component class",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some(
-                "Debug MCU configuration\r register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_stop",
-                    description: Some(
-                        "Debug Stop mode",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_standby",
-                    description: Some(
-                        "Debug Standby mode",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trace_ioen",
-                    description: Some(
-                        "Trace pin assignment\r control",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trace_en",
-                    description: Some(
-                        "trace port and clock\r enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trace_mode",
-                    description: Some(
-                        "Trace pin assignment\r control",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr2",
-            extends: None,
-            description: Some(
-                "Debug MCU CoreSight peripheral identity register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "jep106id",
-                    description: Some(
-                        "JEP106 identity code bits [6:4]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "jedec",
-                    description: Some(
-                        "JEDEC assigned value",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "revision",
-                    description: Some(
-                        "component revision number",
                     ),
                     bit_offset: 4,
                     bit_size: 4,
@@ -1014,6 +994,56 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Ahb3fzr",
+            extends: None,
+            description: Some(
+                "Debug MCU AHB3 peripheral freeze register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbg_lpdma0_stop",
+                    description: Some(
+                        "LPDMA channel 0 stop in debug",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_lpdma1_stop",
+                    description: Some(
+                        "LPDMA channel 1 stop in debug",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_lpdma2_stop",
+                    description: Some(
+                        "LPDMA channel 2 stop in debug",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_lpdma3_stop",
+                    description: Some(
+                        "LPDMA channel 3 stop in debug",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Pidr1",
             extends: None,
             description: Some(
@@ -1044,67 +1074,47 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cidr0",
+            name: "Apb2fzr",
             extends: None,
             description: Some(
-                "Debug MCU CoreSight component identity register 0",
+                "Debug MCU APB2 peripheral freeze register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "preamble",
+                    name: "dbg_tim1_stop",
                     description: Some(
-                        "component identification bits [7:0]",
+                        "TIM1 counter stopped when core is\r halted",
                     ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pidr0",
-            extends: None,
-            description: Some(
-                "Debug MCU CoreSight peripheral identity register 0",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "partnum",
-                    description: Some(
-                        "part number bits [7:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb3fzr",
-            extends: None,
-            description: Some(
-                "Debug MCU APB3 peripheral freeze register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_i2c3_stop",
-                    description: Some(
-                        "I2C3 stop in debug",
-                    ),
-                    bit_offset: 10,
+                    bit_offset: 11,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_lptim1_stop",
+                    name: "dbg_tim8_stop",
                     description: Some(
-                        "LPTIM1 stop in debug",
+                        "TIM8 stop in debug",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_tim15_stop",
+                    description: Some(
+                        "TIM15 counter stopped when core is\r halted",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_tim16_stop",
+                    description: Some(
+                        "TIM16 counter stopped when core is\r halted",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
@@ -1112,32 +1122,42 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_lptim3_stop",
+                    name: "dbg_tim17_stop",
                     description: Some(
-                        "LPTIM3 stop in debug",
+                        "DBG_TIM17_STOP",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Idcode",
+            extends: None,
+            description: Some(
+                "DBGMCU_IDCODE",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "dbg_lptim4_stop",
+                    name: "dev_id",
                     description: Some(
-                        "LPTIM4 stop in debug",
+                        "Device dentification",
                     ),
-                    bit_offset: 19,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 12,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dbg_rtc_stop",
+                    name: "rev_id",
                     description: Some(
-                        "RTC stop in debug",
+                        "Revision",
                     ),
-                    bit_offset: 30,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -1164,50 +1184,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DbgmcuDbgAuthDevice",
+            name: "Pidr4",
             extends: None,
             description: Some(
-                "DBGMCU debug device authentication register",
+                "Debug MCU CoreSight peripheral identity register 4",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "auth_id",
+                    name: "jep106con",
                     description: Some(
-                        "Device specific ID\r \tDevice specific ID used for RDP regression.",
+                        "JEP106 continuation code",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DbgmcuSr",
-            extends: None,
-            description: Some(
-                "DBGMCU status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ap_present",
-                    description: Some(
-                        "Bit n identifies whether access port AP n is present in device\r \tBit n\u{a0}=\u{a0}0: APn absent\r \tBit n\u{a0}=\u{a0}1: APn present",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ap_locked",
+                    name: "kcount_4",
                     description: Some(
-                        "DECLARATION TO BE CONFIRMED by PRODUCT OWNER! Bit n identifies whether access port AP n is open (can be accessed via the debug port) or locked (debug access to the AP is blocked)\r \tBit n\u{a0}=\u{a0}0: APn locked\r \tBit n\u{a0}=\u{a0}1: APn enabled",
+                        "register file size",
                     ),
-                    bit_offset: 8,
-                    bit_size: 8,
+                    bit_offset: 4,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },

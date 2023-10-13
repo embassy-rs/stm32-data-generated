@@ -284,20 +284,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "RngConfig2",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "CONFIGA_B",
-                    description: Some(
-                        "Recommended value for config A and B",
-                    ),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Nistc",
             description: None,
             bit_size: 1,
@@ -319,23 +305,16 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RngConfig3",
+            name: "RngConfig2",
             description: None,
-            bit_size: 4,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGB",
+                    name: "CONFIGA_B",
                     description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
+                        "Recommended value for config A and B",
                     ),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "CONFIGA",
-                    description: Some(
-                        "Recommended value for config A (NIST certifiable)",
-                    ),
-                    value: 13,
                 },
             ],
         },
@@ -459,6 +438,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "RngConfig1",
+            description: None,
+            bit_size: 6,
+            variants: &[
+                EnumVariant {
+                    name: "CONFIGA",
+                    description: Some(
+                        "Recommended value for config A (NIST certifiable)",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "CONFIGB",
+                    description: Some(
+                        "Recommended value for config B (not NIST certifiable)",
+                    ),
+                    value: 24,
+                },
+            ],
+        },
+        Enum {
             name: "Htcfg",
             description: None,
             bit_size: 32,
@@ -480,23 +480,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RngConfig1",
+            name: "RngConfig3",
             description: None,
-            bit_size: 6,
+            bit_size: 4,
             variants: &[
-                EnumVariant {
-                    name: "CONFIGA",
-                    description: Some(
-                        "Recommended value for config A (NIST certifiable)",
-                    ),
-                    value: 15,
-                },
                 EnumVariant {
                     name: "CONFIGB",
                     description: Some(
                         "Recommended value for config B (not NIST certifiable)",
                     ),
-                    value: 24,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONFIGA",
+                    description: Some(
+                        "Recommended value for config A (NIST certifiable)",
+                    ),
+                    value: 13,
                 },
             ],
         },

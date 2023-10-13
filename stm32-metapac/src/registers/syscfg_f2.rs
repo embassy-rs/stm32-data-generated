@@ -54,6 +54,20 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Pmc",
+            extends: None,
+            description: Some("peripheral mode configuration register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "mii_rmii_sel",
+                description: Some("Ethernet PHY interface selection"),
+                bit_offset: 23,
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Memrmp",
             extends: None,
             description: Some("memory remap register"),
@@ -90,20 +104,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Pmc",
-            extends: None,
-            description: Some("peripheral mode configuration register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "mii_rmii_sel",
-                description: Some("Ethernet PHY interface selection"),
-                bit_offset: 23,
-                bit_size: 1,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Exticr",

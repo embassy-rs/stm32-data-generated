@@ -5766,7 +5766,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Icsel {
         #[doc = "rcc_pclk1 selected as peripheral clock"]
-        RCC_PCLK1 = 0,
+        APB1 = 0,
         #[doc = "pll3_r selected as peripheral clock"]
         PLL3_R = 0x01,
         #[doc = "hsi_ker selected as peripheral clock"]
@@ -5800,7 +5800,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptimsel {
         #[doc = "rcc_pclk3 selected as peripheral clock"]
-        RCC_PCLK3 = 0,
+        APB3 = 0,
         #[doc = "pll2_p selected as peripheral clock"]
         PLL2_P = 0x01,
         #[doc = "pll3_r selected as peripheral clock"]
@@ -5840,7 +5840,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpuartsel {
         #[doc = "rcc_pclk3 selected as kernel clock (default after reset)"]
-        RCC_PCLK3 = 0,
+        APB3 = 0,
         #[doc = "pll2_q_ck selected as kernel clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q_ck selected as kernel clock"]
@@ -7373,7 +7373,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spi4sel {
         #[doc = "rcc_pclk2 selected as kernel clock (default after reset)"]
-        RCC_PCLK2 = 0,
+        APB2 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
@@ -7413,7 +7413,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spi5sel {
         #[doc = "rcc_pclk3 selected as kernel clock (default after reset)"]
-        RCC_PCLK3 = 0,
+        APB3 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
@@ -7715,7 +7715,7 @@ selected as clock source"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Uartsel {
         #[doc = "rcc_pclk1 selected as peripheral clock"]
-        RCC_PCLK1 = 0,
+        APB1 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
@@ -7755,7 +7755,7 @@ selected as clock source"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usartsel {
         #[doc = "rcc_pclk2 selected as peripheral clock"]
-        RCC_PCLK2 = 0,
+        APB2 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]

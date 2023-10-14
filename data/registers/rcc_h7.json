@@ -5281,7 +5281,7 @@
         "value": 1
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 2
       }
@@ -5346,8 +5346,8 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "RCC_HCLK3",
-        "description": "rcc_hclk3 selected as peripheral clock",
+        "name": "AHB3",
+        "description": "AHB3 selected as peripheral clock",
         "value": 0
       },
       {
@@ -5471,12 +5471,12 @@
         "value": 1
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 2
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 3
       }
@@ -5496,12 +5496,12 @@
         "value": 1
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 2
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 3
       }
@@ -5596,12 +5596,12 @@
         "value": 2
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       },
@@ -8832,7 +8832,7 @@
         "value": 2
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       }
@@ -8857,12 +8857,12 @@
         "value": 2
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       },
@@ -8892,12 +8892,12 @@
         "value": 2
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       },
@@ -8957,7 +8957,7 @@
         "value": 0
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 1
       }
@@ -8997,12 +8997,12 @@
         "value": 2
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       },
@@ -9032,12 +9032,12 @@
         "value": 2
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       },

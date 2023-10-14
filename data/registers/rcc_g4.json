@@ -2021,17 +2021,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NOCLK",
+        "name": "DISABLE",
         "description": "No clock selected",
         "value": 0
       },
       {
-        "name": "PLLP",
+        "name": "PLL1_P",
         "description": "PLL 'P' clock selected as ADC clock",
         "value": 1
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected as ADC clock",
         "value": 2
       }
@@ -2166,7 +2166,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected as MCO source",
         "value": 1
       },

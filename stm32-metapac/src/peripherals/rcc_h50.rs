@@ -3426,7 +3426,7 @@ pub mod vals {
         #[doc = "rcc_hclk selected as kernel clock (default after reset)"]
         HCLK = 0,
         #[doc = "sys_ck selected as kernel clock"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "pll2_r_ck selected as kernel clock"]
         PLL2_R = 0x02,
         #[doc = "hse_ck selected as kernel clock"]
@@ -3920,7 +3920,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mco2sel {
         #[doc = "System clock selected for micro-controller clock output"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "pll2_p selected for micro-controller clock output"]
         PLL2_P = 0x01,
         #[doc = "HSE selected for micro-controller clock output"]

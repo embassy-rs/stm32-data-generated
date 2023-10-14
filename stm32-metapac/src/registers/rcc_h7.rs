@@ -7189,7 +7189,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 2,
                 },
@@ -7262,8 +7262,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "RCC_HCLK3",
-                    description: Some("rcc_hclk3 selected as peripheral clock"),
+                    name: "AHB3",
+                    description: Some("AHB3 selected as peripheral clock"),
                     value: 0,
                 },
                 EnumVariant {
@@ -7395,12 +7395,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 3,
                 },
@@ -7422,12 +7422,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 3,
                 },
@@ -7528,12 +7528,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 4,
                 },
@@ -11497,7 +11497,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 3,
                 },
@@ -11524,12 +11524,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 4,
                 },
@@ -11561,12 +11561,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 4,
                 },
@@ -11632,7 +11632,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 1,
                 },
@@ -11676,12 +11676,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 4,
                 },
@@ -11713,12 +11713,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_KER",
+                    name: "HSI",
                     description: Some("hsi_ker selected as peripheral clock"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CSI_KER",
+                    name: "CSI",
                     description: Some("csi_ker selected as peripheral clock"),
                     value: 4,
                 },

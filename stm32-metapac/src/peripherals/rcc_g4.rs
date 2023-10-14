@@ -3579,11 +3579,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcsel {
         #[doc = "No clock selected"]
-        NOCLK = 0,
+        DISABLE = 0,
         #[doc = "PLL 'P' clock selected as ADC clock"]
-        PLLP = 0x01,
+        PLL1_P = 0x01,
         #[doc = "System clock selected as ADC clock"]
-        SYSCLK = 0x02,
+        SYS = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Adcsel {
@@ -3770,7 +3770,7 @@ pub mod vals {
         #[doc = "No clock, MCO output disabled"]
         NOCLOCK = 0,
         #[doc = "SYSCLK selected as MCO source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "HSI16 selected as MCO source"]
         HSI16 = 0x03,

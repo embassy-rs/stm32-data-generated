@@ -9297,7 +9297,7 @@ pub mod vals {
         #[doc = "LSI selected as peripheral clock"]
         LSI = 0x01,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x02,
+        CSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Cecsel {
@@ -9359,7 +9359,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dfsdmsel {
         #[doc = "rcc_pclk2 selected as peripheral clock"]
-        RCC_PCLK2 = 0,
+        APB2 = 0,
         #[doc = "System clock selected as peripheral clock"]
         SYS = 0x01,
     }
@@ -9422,7 +9422,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fmcsel {
         #[doc = "rcc_hclk3 selected as peripheral clock"]
-        RCC_HCLK3 = 0,
+        AHB3 = 0,
         #[doc = "pll1_q selected as peripheral clock"]
         PLL1_Q = 0x01,
         #[doc = "pll2_r selected as peripheral clock"]
@@ -9571,13 +9571,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c1235sel {
         #[doc = "rcc_pclk1 selected as peripheral clock"]
-        RCC_PCLK1 = 0,
+        APB1 = 0,
         #[doc = "pll3_r selected as peripheral clock"]
         PLL3_R = 0x01,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x02,
+        HSI = 0x02,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x03,
+        CSI = 0x03,
     }
     impl I2c1235sel {
         #[inline(always)]
@@ -9605,13 +9605,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c4sel {
         #[doc = "rcc_pclk4 selected as peripheral clock"]
-        RCC_PCLK4 = 0,
+        APB4 = 0,
         #[doc = "pll3_r selected as peripheral clock"]
         PLL3_R = 0x01,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x02,
+        HSI = 0x02,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x03,
+        CSI = 0x03,
     }
     impl I2c4sel {
         #[inline(always)]
@@ -9639,7 +9639,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptim1sel {
         #[doc = "rcc_pclk1 selected as peripheral clock"]
-        RCC_PCLK1 = 0,
+        APB1 = 0,
         #[doc = "pll2_p selected as peripheral clock"]
         PLL2_P = 0x01,
         #[doc = "pll3_r selected as peripheral clock"]
@@ -9679,7 +9679,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptim2sel {
         #[doc = "rcc_pclk4 selected as peripheral clock"]
-        RCC_PCLK4 = 0,
+        APB4 = 0,
         #[doc = "pll2_p selected as peripheral clock"]
         PLL2_P = 0x01,
         #[doc = "pll3_r selected as peripheral clock"]
@@ -9725,9 +9725,9 @@ pub mod vals {
         #[doc = "pll3_q selected as peripheral clock"]
         PLL3_Q = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x03,
+        HSI = 0x03,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x04,
+        CSI = 0x04,
         #[doc = "LSE selected as peripheral clock"]
         LSE = 0x05,
         _RESERVED_6 = 0x06,
@@ -11026,7 +11026,7 @@ pub mod vals {
         #[doc = "pll3_r selected as peripheral clock"]
         PLL3_R = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x03,
+        HSI = 0x03,
     }
     impl Spdifrxsel {
         #[inline(always)]
@@ -11060,9 +11060,9 @@ pub mod vals {
         #[doc = "pll3_q selected as peripheral clock"]
         PLL3_Q = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x03,
+        HSI = 0x03,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x04,
+        CSI = 0x04,
         #[doc = "HSE selected as peripheral clock"]
         HSE = 0x05,
         _RESERVED_6 = 0x06,
@@ -11094,15 +11094,15 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spi6sel {
         #[doc = "rcc_pclk4 selected as peripheral clock"]
-        RCC_PCLK4 = 0,
+        APB4 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
         PLL3_Q = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x03,
+        HSI = 0x03,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x04,
+        CSI = 0x04,
         #[doc = "HSE selected as peripheral clock"]
         HSE = 0x05,
         _RESERVED_6 = 0x06,
@@ -11204,7 +11204,7 @@ pub mod vals {
         #[doc = "pclk selected as peripheral clock"]
         PCLK = 0,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x01,
+        HSI = 0x01,
     }
     impl Swpsel {
         #[inline(always)]
@@ -11262,15 +11262,15 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart16910sel {
         #[doc = "rcc_pclk2 selected as peripheral clock"]
-        RCC_PCLK2 = 0,
+        APB2 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
         PLL3_Q = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x03,
+        HSI = 0x03,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x04,
+        CSI = 0x04,
         #[doc = "LSE selected as peripheral clock"]
         LSE = 0x05,
         _RESERVED_6 = 0x06,
@@ -11302,15 +11302,15 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart234578sel {
         #[doc = "rcc_pclk1 selected as peripheral clock"]
-        RCC_PCLK1 = 0,
+        APB1 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
         PLL3_Q = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI_KER = 0x03,
+        HSI = 0x03,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI_KER = 0x04,
+        CSI = 0x04,
         #[doc = "LSE selected as peripheral clock"]
         LSE = 0x05,
         _RESERVED_6 = 0x06,

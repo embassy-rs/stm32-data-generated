@@ -3169,7 +3169,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "sys_ck selected as kernel clock",
         "value": 1
       },
@@ -3434,7 +3434,7 @@
         "value": 1
       },
       {
-        "name": "PLL3_1",
+        "name": "PLL3_Q",
         "description": "pll3_q_ck selected as kernel clock",
         "value": 2
       },
@@ -3544,7 +3544,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected for micro-controller clock output",
         "value": 0
       },

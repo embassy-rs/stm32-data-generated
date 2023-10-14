@@ -2805,17 +2805,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLK",
+                    name: "DISABLE",
                     description: Some("No clock selected"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLP",
+                    name: "PLL1_P",
                     description: Some("PLL 'P' clock selected as ADC clock"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("System clock selected as ADC clock"),
                     value: 2,
                 },
@@ -2960,7 +2960,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("SYSCLK selected as MCO source"),
                     value: 1,
                 },

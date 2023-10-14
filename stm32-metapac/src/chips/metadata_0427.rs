@@ -1913,7 +1913,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "ahb3rstr",
                 field: "fmcrst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "d1ccipr",
+                field: "fmcsel",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3280,7 +3283,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb4rstr",
                 field: "i2c4rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "d3ccipr",
+                field: "i2c4sel",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3514,7 +3520,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb4rstr",
                 field: "lptim2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "d3ccipr",
+                field: "lptim2sel",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3654,7 +3663,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb4rstr",
                 field: "lpuart1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "d3ccipr",
+                field: "lpuart1sel",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -6147,7 +6159,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb4rstr",
                 field: "spi6rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "d3ccipr",
+                field: "spi6sel",
+            }),
         }),
         pins: &[
             PeripheralPin {

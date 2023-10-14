@@ -32,62 +32,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "OpampTcmr",
-            extends: None,
-            description: Some("OPAMP timer controlled mode register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vms_sel",
-                    description: Some("VMS_SEL"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vps_sel",
-                    description: Some("VPS_SEL"),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("OpampTcmrVpsSel"),
-                },
-                Field {
-                    name: "t1cm_en",
-                    description: Some("T1CM_EN"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "t8cm_en",
-                    description: Some("T8CM_EN"),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "t20cm_en",
-                    description: Some("T20CM_EN"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lock",
-                    description: Some("LOCK"),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OpampTcmrLock"),
-                },
-            ],
-        },
-        FieldSet {
             name: "OpampCsr",
             extends: None,
             description: Some("OPAMP control/status register"),
@@ -207,6 +151,62 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "OpampTcmr",
+            extends: None,
+            description: Some("OPAMP timer controlled mode register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vms_sel",
+                    description: Some("VMS_SEL"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vps_sel",
+                    description: Some("VPS_SEL"),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("OpampTcmrVpsSel"),
+                },
+                Field {
+                    name: "t1cm_en",
+                    description: Some("T1CM_EN"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "t8cm_en",
+                    description: Some("T8CM_EN"),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "t20cm_en",
+                    description: Some("T20CM_EN"),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lock",
+                    description: Some("LOCK"),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("OpampTcmrLock"),
+                },
+            ],
+        },
     ],
     enums: &[
         Enum {
@@ -237,6 +237,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "OpampCsrForceVp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some("Non-inverting input connected configured inputs"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CALIBRATIONVERIFICATION",
+                    description: Some("Non-inverting input connected to calibration reference voltage"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "OpampCsrLock",
             description: None,
             bit_size: 1,
@@ -254,50 +271,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OpampTcmrVpsSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "VINP0",
-                    description: Some("VINP0 connected to VINP input"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "VINP1",
-                    description: Some("VINP1 connected to VINP input"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "VINP2",
-                    description: Some("VINP2 connected to VINP input"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DAC3_CH1",
-                    description: Some("DAC3_CH1 connected to VINP input"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrUsertrim",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FACTORY",
-                    description: Some("Factory trim used"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "USER",
-                    description: Some("User trim used"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "OpampCsrOpahsm",
             description: None,
             bit_size: 1,
@@ -310,6 +283,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HIGHSPEED",
                     description: Some("OpAmp in high speed mode"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampCsrOpaintoen",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "OUTPUTPIN",
+                    description: Some("Output is connected to the output Pin"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ADCCHANNEL",
+                    description: Some("Output is connected internally to ADC channel"),
                     value: 1,
                 },
             ],
@@ -454,62 +444,18 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OpampCsrVpSel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "VINP0",
-                    description: Some("VINP0 connected to VINP input"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "VINP1",
-                    description: Some("VINP1 connected to VINP input"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "VINP2",
-                    description: Some("VINP2 connected to VINP input"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DAC3_CH1",
-                    description: Some("DAC3_CH1 connected to VINP input"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrOpaintoen",
+            name: "OpampCsrUsertrim",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "OUTPUTPIN",
-                    description: Some("Output is connected to the output Pin"),
+                    name: "FACTORY",
+                    description: Some("Factory trim used"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ADCCHANNEL",
-                    description: Some("Output is connected internally to ADC channel"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrForceVp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Non-inverting input connected configured inputs"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CALIBRATIONVERIFICATION",
-                    description: Some("Non-inverting input connected to calibration reference voltage"),
+                    name: "USER",
+                    description: Some("User trim used"),
                     value: 1,
                 },
             ],
@@ -542,6 +488,33 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "OpampCsrVpSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "VINP0",
+                    description: Some("VINP0 connected to VINP input"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "VINP1",
+                    description: Some("VINP1 connected to VINP input"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "VINP2",
+                    description: Some("VINP2 connected to VINP input"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DAC3_CH1",
+                    description: Some("DAC3_CH1 connected to VINP input"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "OpampTcmrLock",
             description: None,
             bit_size: 1,
@@ -555,6 +528,33 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "READONLY",
                     description: Some("TCMR is read-only, can only be cleared by system reset"),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OpampTcmrVpsSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "VINP0",
+                    description: Some("VINP0 connected to VINP input"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "VINP1",
+                    description: Some("VINP1 connected to VINP input"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "VINP2",
+                    description: Some("VINP2 connected to VINP input"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DAC3_CH1",
+                    description: Some("DAC3_CH1 connected to VINP input"),
+                    value: 3,
                 },
             ],
         },

@@ -171,54 +171,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bwtr",
-            extends: None,
-            description: Some("SRAM/NOR-Flash write timing registers"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addset",
-                    description: Some("Address setup phase duration"),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "addhld",
-                    description: Some("Address-hold phase duration"),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "datast",
-                    description: Some("Data-phase duration"),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "busturn",
-                    description: Some("Bus turnaround phase duration"),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "accmod",
-                    description: Some("Access mode"),
-                    bit_offset: 28,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Accmod"),
-                },
-            ],
-        },
-        FieldSet {
             name: "Btr",
             extends: None,
             description: Some("SRAM/NOR-Flash chip-select timing register"),
@@ -282,25 +234,56 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Waitcfg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BEFOREWAITSTATE",
-                    description: Some("NWAIT signal is active one data cycle before wait state"),
-                    value: 0,
+        FieldSet {
+            name: "Bwtr",
+            extends: None,
+            description: Some("SRAM/NOR-Flash write timing registers"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addset",
+                    description: Some("Address setup phase duration"),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "DURINGWAITSTATE",
-                    description: Some("NWAIT signal is active during wait state"),
-                    value: 1,
+                Field {
+                    name: "addhld",
+                    description: Some("Address-hold phase duration"),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "datast",
+                    description: Some("Data-phase duration"),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "busturn",
+                    description: Some("Bus turnaround phase duration"),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "accmod",
+                    description: Some("Access mode"),
+                    bit_offset: 28,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Accmod"),
                 },
             ],
         },
+    ],
+    enums: &[
         Enum {
             name: "Accmod",
             description: None,
@@ -325,45 +308,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "D",
                     description: Some("Access mode D"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Mwid",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some("Memory data bus width 8 bits"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("Memory data bus width 16 bits"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("Memory data bus width 32 bits"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Waitpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVELOW",
-                    description: Some("NWAIT active low"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEHIGH",
-                    description: Some("NWAIT active high"),
-                    value: 1,
                 },
             ],
         },
@@ -418,6 +362,62 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FLASH",
                     description: Some("NOR Flash/OneNAND Flash"),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Mwid",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("Memory data bus width 8 bits"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("Memory data bus width 16 bits"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("Memory data bus width 32 bits"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitcfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BEFOREWAITSTATE",
+                    description: Some("NWAIT signal is active one data cycle before wait state"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DURINGWAITSTATE",
+                    description: Some("NWAIT signal is active during wait state"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Waitpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ACTIVELOW",
+                    description: Some("NWAIT active low"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVEHIGH",
+                    description: Some("NWAIT active high"),
+                    value: 1,
                 },
             ],
         },

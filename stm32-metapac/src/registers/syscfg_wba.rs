@@ -10,120 +10,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "seccfgr",
+                    name: "cccr",
                     description: Some(
-                        "secure configuration register",
+                        "compensation cell code register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 36,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seccfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfgr1",
-                    description: Some(
-                        "configuration register 1",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfgr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fpuimr",
-                    description: Some(
-                        "FPU interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fpuimr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cnslckr",
-                    description: Some(
-                        "CPU non-secure lock register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cnslckr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cslockr",
-                    description: Some(
-                        "CPU secure lock register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cslockr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfgr2",
-                    description: Some(
-                        "configuration register 2",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mesr",
-                    description: Some(
-                        "memory erase status register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mesr",
+                                "Cccr",
                             ),
                         },
                     ),
@@ -163,18 +61,103 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cccr",
+                    name: "cfgr1",
                     description: Some(
-                        "compensation cell code register",
+                        "configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cccr",
+                                "Cfgr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr2",
+                    description: Some(
+                        "configuration register 2",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnslckr",
+                    description: Some(
+                        "CPU non-secure lock register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnslckr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cslockr",
+                    description: Some(
+                        "CPU secure lock register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cslockr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fpuimr",
+                    description: Some(
+                        "FPU interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fpuimr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mesr",
+                    description: Some(
+                        "memory erase status register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mesr",
                             ),
                         },
                     ),
@@ -196,10 +179,127 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "seccfgr",
+                    description: Some(
+                        "secure configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Seccfgr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Cccr",
+            extends: None,
+            description: Some(
+                "compensation cell code register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ncc1",
+                    description: Some(
+                        "NMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcc1",
+                    description: Some(
+                        "PMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cccsr",
+            extends: None,
+            description: Some(
+                "compensation cell control/status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en1",
+                    description: Some(
+                        "VDD I/Os compensation cell enable\r This bit enables the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cs1",
+                    description: Some(
+                        "VDD I/Os code selection\r This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rdy1",
+                    description: Some(
+                        "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION).",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccvr",
+            extends: None,
+            description: Some(
+                "compensation cell value register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ncv1",
+                    description: Some(
+                        "NMOS compensation value of the I/Os supplied by V<sub>DD</sub>\r This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcv1",
+                    description: Some(
+                        "PMOS compensation value of the I/Os supplied by V<sub>DD</sub>\r This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Cfgr1",
             extends: None,
@@ -271,17 +371,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Seccfgr",
+            name: "Cfgr2",
             extends: None,
             description: Some(
-                "secure configuration register",
+                "configuration register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "syscfgsec",
+                    name: "cll",
                     description: Some(
-                        "clock control, memory erase status and compensation cell registers security",
+                        "Cortex-M33 LOCKUP (hardfault) output enable\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the connection of Cortex-M33 LOCKUP (hardfault) output to TIM1/16/17 break input.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -289,9 +389,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "classbsec",
+                    name: "spl",
                     description: Some(
-                        "Class B security",
+                        "SRAM2 parity lock bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM2 parity error signal connection to TIM1/16/17 break inputs.",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -299,9 +399,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "fpusec",
+                    name: "pvdl",
                     description: Some(
-                        "FPU security",
+                        "PVD lock enable bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection to TIM1/16/17 break input, as well as the PVDE and PVDLS[2:0] in the PWR register.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccl",
+                    description: Some(
+                        "ECC lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -311,47 +421,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccvr",
+            name: "Cnslckr",
             extends: None,
             description: Some(
-                "compensation cell value register",
+                "CPU non-secure lock register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ncv1",
+                    name: "locknsvtor",
                     description: Some(
-                        "NMOS compensation value of the I/Os supplied by V<sub>DD</sub>\r This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pcv1",
-                    description: Some(
-                        "PMOS compensation value of the I/Os supplied by V<sub>DD</sub>\r This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cccsr",
-            extends: None,
-            description: Some(
-                "compensation cell control/status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "en1",
-                    description: Some(
-                        "VDD I/Os compensation cell enable\r This bit enables the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
+                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -359,21 +439,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cs1",
+                    name: "locknsmpu",
                     description: Some(
-                        "VDD I/Os code selection\r This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DD</sub>.",
+                        "Non-secure MPU registers lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
                     ),
                     bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rdy1",
-                    description: Some(
-                        "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION).",
-                    ),
-                    bit_offset: 8,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -421,6 +491,26 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "Floating point unit interrupts enable bits\r FPU_IE[5]: Inexact interrupt enable (interrupt disable at reset)\r FPU_IE[4]: Input abnormal interrupt enable\r FPU_IE[3]: Overflow interrupt enable\r FPU_IE[2]: Underflow interrupt enable\r FPU_IE[1]: Divide-by-zero interrupt enable\r FPU_IE[0]: Invalid operation Interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Mesr",
             extends: None,
             description: Some(
@@ -451,86 +541,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cccr",
-            extends: None,
-            description: Some(
-                "compensation cell code register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ncc1",
-                    description: Some(
-                        "NMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pcc1",
-                    description: Some(
-                        "PMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fpuimr",
-            extends: None,
-            description: Some(
-                "FPU interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fpu_ie",
-                    description: Some(
-                        "Floating point unit interrupts enable bits\r FPU_IE[5]: Inexact interrupt enable (interrupt disable at reset)\r FPU_IE[4]: Input abnormal interrupt enable\r FPU_IE[3]: Overflow interrupt enable\r FPU_IE[2]: Underflow interrupt enable\r FPU_IE[1]: Divide-by-zero interrupt enable\r FPU_IE[0]: Invalid operation Interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cnslckr",
-            extends: None,
-            description: Some(
-                "CPU non-secure lock register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "locknsvtor",
-                    description: Some(
-                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "locknsmpu",
-                    description: Some(
-                        "Non-secure MPU registers lock\r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Rsscmdr",
             extends: None,
             description: Some(
@@ -551,17 +561,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cfgr2",
+            name: "Seccfgr",
             extends: None,
             description: Some(
-                "configuration register 2",
+                "secure configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cll",
+                    name: "syscfgsec",
                     description: Some(
-                        "Cortex-M33 LOCKUP (hardfault) output enable\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the connection of Cortex-M33 LOCKUP (hardfault) output to TIM1/16/17 break input.",
+                        "clock control, memory erase status and compensation cell registers security",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -569,9 +579,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "spl",
+                    name: "classbsec",
                     description: Some(
-                        "SRAM2 parity lock bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM2 parity error signal connection to TIM1/16/17 break inputs.",
+                        "Class B security",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -579,19 +589,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pvdl",
+                    name: "fpusec",
                     description: Some(
-                        "PVD lock enable bit\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection to TIM1/16/17 break input, as well as the PVDE and PVDLS[2:0] in the PWR register.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eccl",
-                    description: Some(
-                        "ECC lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input.",
+                        "FPU security",
                     ),
                     bit_offset: 3,
                     bit_size: 1,

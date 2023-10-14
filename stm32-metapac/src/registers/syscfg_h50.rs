@@ -10,125 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "hdplcr",
-                    description: Some(
-                        "SBS temporal isolation control register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdplcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdplsr",
-                    description: Some(
-                        "SBS temporal isolation status register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdplsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbgcr",
-                    description: Some(
-                        "SBS debug control register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dbgcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbglockr",
-                    description: Some(
-                        "SBS debug lock register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dbglockr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pmcr",
-                    description: Some(
-                        "SBS product mode and configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pmcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fpuimr",
-                    description: Some(
-                        "SBS FPU interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fpuimr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mesr",
-                    description: Some(
-                        "SBS memory erase status register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mesr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cccsr",
                     description: Some(
                         "SBS compensation cell for I/Os control and status register",
@@ -146,23 +27,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ccvalr",
-                    description: Some(
-                        "SBS compensation cell for I/Os value register",
-                    ),
-                    array: None,
-                    byte_offset: 276,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccvalr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "ccswcr",
                     description: Some(
                         "SBS compensation cell for I/Os software code register",
@@ -175,6 +39,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Ccswcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccvalr",
+                    description: Some(
+                        "SBS compensation cell for I/Os value register",
+                    ),
+                    array: None,
+                    byte_offset: 276,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccvalr",
                             ),
                         },
                     ),
@@ -214,6 +95,40 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "dbgcr",
+                    description: Some(
+                        "SBS debug control register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dbgcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dbglockr",
+                    description: Some(
+                        "SBS debug lock register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dbglockr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "eccnmir",
                     description: Some(
                         "SBS flift ECC NMI mask register",
@@ -230,32 +145,95 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-            ],
-        },
-    ],
-    fieldsets: &[
-        FieldSet {
-            name: "Hdplcr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "incr_hdpl",
+                BlockItem {
+                    name: "fpuimr",
                     description: Some(
-                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
+                        "SBS FPU interrupt mask register",
                     ),
-                    bit_offset: 0,
-                    bit_size: 8,
                     array: None,
-                    enumm: Some(
-                        "IncrHdpl",
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fpuimr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdplcr",
+                    description: Some(
+                        "SBS temporal isolation control register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdplcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdplsr",
+                    description: Some(
+                        "SBS temporal isolation status register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdplsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mesr",
+                    description: Some(
+                        "SBS memory erase status register",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mesr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pmcr",
+                    description: Some(
+                        "SBS product mode and configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pmcr",
+                            ),
+                        },
                     ),
                 },
             ],
         },
+    ],
+    fieldsets: &[
         FieldSet {
             name: "Cccsr",
             extends: None,
@@ -370,142 +348,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dbgcr",
-            extends: None,
-            description: Some(
-                "SBS debug control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ap_unlock",
-                    description: Some(
-                        "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_unlock",
-                    description: Some(
-                        "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_auth_hdpl",
-                    description: Some(
-                        "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "DbgAuthHdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dbglockr",
-            extends: None,
-            description: Some(
-                "SBS debug lock register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbgcfg_lock",
-                    description: Some(
-                        "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "DbgcfgLock",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fpuimr",
-            extends: None,
-            description: Some(
-                "SBS FPU interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fpu_ie",
-                    description: Some(
-                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdplsr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdpl",
-                    description: Some(
-                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Hdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cnslckr",
-            extends: None,
-            description: Some(
-                "SBS CPU lock register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "locknsvtor",
-                    description: Some(
-                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "locknsmpu",
-                    description: Some(
-                        "MPU register lock \r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Ccvalr",
             extends: None,
             description: Some(
@@ -606,6 +448,214 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cnslckr",
+            extends: None,
+            description: Some(
+                "SBS CPU lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "locknsvtor",
+                    description: Some(
+                        "VTOR_NS register lock\r This bit is set by software and cleared only by a system reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "locknsmpu",
+                    description: Some(
+                        "MPU register lock \r This bit is set by software and cleared only by a system reset. When set, this bit disables write access to MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dbgcr",
+            extends: None,
+            description: Some(
+                "SBS debug control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ap_unlock",
+                    description: Some(
+                        "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_unlock",
+                    description: Some(
+                        "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_auth_hdpl",
+                    description: Some(
+                        "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "DbgAuthHdpl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dbglockr",
+            extends: None,
+            description: Some(
+                "SBS debug lock register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dbgcfg_lock",
+                    description: Some(
+                        "debug configuration lock\r Reading this bitfield returns 0x6A if the bitfield value is different from 0xB4.\r 0xC3 is the recommended value to lock the debug configuration using this bitfield.\r Other: Writes to SBS_DBGCR ignored",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "DbgcfgLock",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccnmir",
+            extends: None,
+            description: Some(
+                "SBS flift ECC NMI mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "eccnmi_mask_en",
+                    description: Some(
+                        "NMI behavior setup when a double ECC error occurs on flitf data part",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "SBS FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hdplcr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "incr_hdpl",
+                    description: Some(
+                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "IncrHdpl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hdplsr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdpl",
+                    description: Some(
+                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "Hdpl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mesr",
+            extends: None,
+            description: Some(
+                "SBS memory erase status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mclr",
+                    description: Some(
+                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, ICACHE. It is set by hardware and reset by software",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ipmee",
+                    description: Some(
+                        "end-of-erase status for ICACHE\r This bit shows the status of the protection for ICACHE. It is set by hardware and reset by software.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Pmcr",
             extends: None,
             description: Some(
@@ -665,69 +715,26 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Eccnmir",
-            extends: None,
-            description: Some(
-                "SBS flift ECC NMI mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eccnmi_mask_en",
-                    description: Some(
-                        "NMI behavior setup when a double ECC error occurs on flitf data part",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mesr",
-            extends: None,
-            description: Some(
-                "SBS memory erase status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mclr",
-                    description: Some(
-                        "erase after reset status\r This bit shows the status of the protection for SRAM2, BKPRAM, ICACHE, ICACHE. It is set by hardware and reset by software",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ipmee",
-                    description: Some(
-                        "end-of-erase status for ICACHE\r This bit shows the status of the protection for ICACHE. It is set by hardware and reset by software.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
         Enum {
-            name: "DbgcfgLock",
+            name: "Cs",
             description: None,
-            bit_size: 8,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0XB4",
+                    name: "CELL",
                     description: Some(
-                        "Writes to SBS_DBGCR allowed (default)",
+                        "Code from the cell (available in SBS_CCVR)",
                     ),
-                    value: 180,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SOFTWARE",
+                    description: Some(
+                        "Code from SBS_CCCR",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -756,6 +763,20 @@ pub(crate) static REGISTERS: IR = IR {
                         "HDPL2",
                     ),
                     value: 138,
+                },
+            ],
+        },
+        Enum {
+            name: "DbgcfgLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "Writes to SBS_DBGCR allowed (default)",
+                    ),
+                    value: 180,
                 },
             ],
         },
@@ -812,27 +833,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "no increment",
                     ),
                     value: 180,
-                },
-            ],
-        },
-        Enum {
-            name: "Cs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CELL",
-                    description: Some(
-                        "Code from the cell (available in SBS_CCVR)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some(
-                        "Code from SBS_CCCR",
-                    ),
-                    value: 1,
                 },
             ],
         },

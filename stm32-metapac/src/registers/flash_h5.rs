@@ -27,273 +27,205 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "nskeyr",
+                    name: "bootr_prg",
                     description: Some(
-                        "FLASH non-secure key register",
+                        "FLASH secure boot register",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 140,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nskeyr",
+                                "Bootr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "seckeyr",
+                    name: "ecccorr",
                     description: Some(
-                        "FLASH secure key register",
+                        "FLASH ECC correction register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 256,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seckeyr",
+                                "Ecccorr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "optkeyr",
+                    name: "eccdetr",
                     description: Some(
-                        "FLASH option key register",
+                        "FLASH ECC detection register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 260,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Optkeyr",
+                                "Eccdetr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "nsobkkeyr",
+                    name: "eccdr",
                     description: Some(
-                        "FLASH non-secure OBK key register",
+                        "FLASH ECC data",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 264,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nsobkkeyr",
+                                "Eccdr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "secobkkeyr",
+                    name: "edata1r_cur",
                     description: Some(
-                        "FLASH secure OBK key register",
+                        "FLASH data sector configuration Bank 1",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 240,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secobkkeyr",
+                                "Edata1r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "opsr",
+                    name: "edata1r_prg",
                     description: Some(
-                        "FLASH operation status register",
+                        "FLASH data sector configuration Bank 1",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 244,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Opsr",
+                                "Edata1r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "optcr",
+                    name: "edata2r_cur",
                     description: Some(
-                        "FLASH option control register",
+                        "FLASH data sectors configuration Bank 2",
                     ),
                     array: None,
-                    byte_offset: 28,
+                    byte_offset: 496,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Optcr",
+                                "Edata2r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "nssr",
+                    name: "edata2r_prg",
                     description: Some(
-                        "FLASH non-secure status register",
+                        "FLASH data sector configuration Bank 2",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 500,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nssr",
+                                "Edata2r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "secsr",
+                    name: "hdp1r_cur",
                     description: Some(
-                        "FLASH secure status register",
+                        "FLASH HDP Bank 1 configuration",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 248,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secsr",
+                                "Hdp1r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "nscr",
+                    name: "hdp1r_prg",
                     description: Some(
-                        "FLASH non-secure control register",
+                        "FLASH HDP Bank 1 configuration",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 252,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nscr",
+                                "Hdp1r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "seccr",
+                    name: "hdp2r_cur",
                     description: Some(
-                        "FLASH secure control register",
+                        "FLASH HDP Bank 2 configuration",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 504,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seccr",
+                                "Hdp2r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "nsccr",
+                    name: "hdp2r_prg",
                     description: Some(
-                        "FLASH non-secure clear control register",
+                        "FLASH HDP Bank 2 configuration",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 508,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nsccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secccr",
-                    description: Some(
-                        "FLASH secure clear control register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "privcfgr",
-                    description: Some(
-                        "FLASH privilege configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 60,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Privcfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nsobkcfgr",
-                    description: Some(
-                        "FLASH non-secure OBK configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nsobkcfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secobkcfgr",
-                    description: Some(
-                        "FLASH secure OBK configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 68,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secobkcfgr",
+                                "Hdp2r",
                             ),
                         },
                     ),
@@ -311,108 +243,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Hdpextr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optsr_cur",
-                    description: Some(
-                        "FLASH option status register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optsr_prg",
-                    description: Some(
-                        "FLASH option status register",
-                    ),
-                    array: None,
-                    byte_offset: 84,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nsepochr_cur",
-                    description: Some(
-                        "FLASH non-secure EPOCH register",
-                    ),
-                    array: None,
-                    byte_offset: 96,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nsepochr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secepochr_cur",
-                    description: Some(
-                        "FLASH secure EPOCH register",
-                    ),
-                    array: None,
-                    byte_offset: 104,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secepochr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optsr2_cur",
-                    description: Some(
-                        "FLASH option status register 2",
-                    ),
-                    array: None,
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optsr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optsr2_prg",
-                    description: Some(
-                        "FLASH option status register 2",
-                    ),
-                    array: None,
-                    byte_offset: 116,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optsr2",
                             ),
                         },
                     ),
@@ -452,35 +282,239 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "secbootr_cur",
+                    name: "nsccr",
                     description: Some(
-                        "FLASH secure boot register",
+                        "FLASH non-secure clear control register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secbootr",
+                                "Nsccr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "bootr_prg",
+                    name: "nscr",
                     description: Some(
-                        "FLASH secure boot register",
+                        "FLASH non-secure control register",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Bootr",
+                                "Nscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nsepochr_cur",
+                    description: Some(
+                        "FLASH non-secure EPOCH register",
+                    ),
+                    array: None,
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nsepochr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nskeyr",
+                    description: Some(
+                        "FLASH non-secure key register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nskeyr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nsobkcfgr",
+                    description: Some(
+                        "FLASH non-secure OBK configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nsobkcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nsobkkeyr",
+                    description: Some(
+                        "FLASH non-secure OBK key register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nsobkkeyr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nssr",
+                    description: Some(
+                        "FLASH non-secure status register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "opsr",
+                    description: Some(
+                        "FLASH operation status register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Opsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optcr",
+                    description: Some(
+                        "FLASH option control register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optkeyr",
+                    description: Some(
+                        "FLASH option key register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optkeyr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr2_cur",
+                    description: Some(
+                        "FLASH option status register 2",
+                    ),
+                    array: None,
+                    byte_offset: 112,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optsr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr2_prg",
+                    description: Some(
+                        "FLASH option status register 2",
+                    ),
+                    array: None,
+                    byte_offset: 116,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optsr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr_cur",
+                    description: Some(
+                        "FLASH option status register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr_prg",
+                    description: Some(
+                        "FLASH option status register",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optsr",
                             ),
                         },
                     ),
@@ -515,74 +549,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Otpblr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secbb1r1",
-                    description: Some(
-                        "FLASH secure block based register for Bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 160,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secbb",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secbb1r2",
-                    description: Some(
-                        "FLASH secure block based register for Bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 164,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secbb",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secbb1r3",
-                    description: Some(
-                        "FLASH secure block based register for Bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 168,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secbb",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secbb1r4",
-                    description: Some(
-                        "FLASH secure block based register for Bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 172,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secbb",
                             ),
                         },
                     ),
@@ -656,188 +622,154 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "secwm1r_cur",
+                    name: "privbb2r1",
                     description: Some(
-                        "FLASH security watermark for Bank 1",
+                        "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 224,
+                    byte_offset: 448,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secwm",
+                                "Privbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "secwm1r_prg",
+                    name: "privbb2r2",
                     description: Some(
-                        "FLASH security watermark for Bank 1",
+                        "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 228,
+                    byte_offset: 452,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secwm",
+                                "Privbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wrp1r_cur",
+                    name: "privbb2r3",
                     description: Some(
-                        "FLASH write sector group protection for Bank 1",
+                        "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 232,
+                    byte_offset: 456,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wrp",
+                                "Privbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wrp1r_prg",
+                    name: "privbb2r4",
                     description: Some(
-                        "FLASH write sector group protection for Bank 1",
+                        "FLASH privilege block-based register for Bank 2",
                     ),
                     array: None,
-                    byte_offset: 236,
+                    byte_offset: 460,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wrp",
+                                "Privbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "edata1r_cur",
+                    name: "privcfgr",
                     description: Some(
-                        "FLASH data sector configuration Bank 1",
+                        "FLASH privilege configuration register",
                     ),
                     array: None,
-                    byte_offset: 240,
+                    byte_offset: 60,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Edata1r",
+                                "Privcfgr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "edata1r_prg",
+                    name: "secbb1r1",
                     description: Some(
-                        "FLASH data sector configuration Bank 1",
+                        "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 244,
+                    byte_offset: 160,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Edata1r",
+                                "Secbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "hdp1r_cur",
+                    name: "secbb1r2",
                     description: Some(
-                        "FLASH HDP Bank 1 configuration",
+                        "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 248,
+                    byte_offset: 164,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Hdp1r",
+                                "Secbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "hdp1r_prg",
+                    name: "secbb1r3",
                     description: Some(
-                        "FLASH HDP Bank 1 configuration",
+                        "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 252,
+                    byte_offset: 168,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Hdp1r",
+                                "Secbb",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ecccorr",
+                    name: "secbb1r4",
                     description: Some(
-                        "FLASH ECC correction register",
+                        "FLASH secure block based register for Bank 1",
                     ),
                     array: None,
-                    byte_offset: 256,
+                    byte_offset: 172,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ecccorr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "eccdetr",
-                    description: Some(
-                        "FLASH ECC detection register",
-                    ),
-                    array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Eccdetr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "eccdr",
-                    description: Some(
-                        "FLASH ECC data",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Eccdr",
+                                "Secbb",
                             ),
                         },
                     ),
@@ -911,69 +843,171 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "privbb2r1",
+                    name: "secbootr_cur",
                     description: Some(
-                        "FLASH privilege block-based register for Bank 2",
+                        "FLASH secure boot register",
                     ),
                     array: None,
-                    byte_offset: 448,
+                    byte_offset: 136,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Privbb",
+                                "Secbootr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "privbb2r2",
+                    name: "secccr",
                     description: Some(
-                        "FLASH privilege block-based register for Bank 2",
+                        "FLASH secure clear control register",
                     ),
                     array: None,
-                    byte_offset: 452,
+                    byte_offset: 52,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Privbb",
+                                "Secccr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "privbb2r3",
+                    name: "seccr",
                     description: Some(
-                        "FLASH privilege block-based register for Bank 2",
+                        "FLASH secure control register",
                     ),
                     array: None,
-                    byte_offset: 456,
+                    byte_offset: 44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Privbb",
+                                "Seccr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "privbb2r4",
+                    name: "secepochr_cur",
                     description: Some(
-                        "FLASH privilege block-based register for Bank 2",
+                        "FLASH secure EPOCH register",
                     ),
                     array: None,
-                    byte_offset: 460,
+                    byte_offset: 104,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Privbb",
+                                "Secepochr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "seckeyr",
+                    description: Some(
+                        "FLASH secure key register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Seckeyr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secobkcfgr",
+                    description: Some(
+                        "FLASH secure OBK configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 68,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secobkcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secobkkeyr",
+                    description: Some(
+                        "FLASH secure OBK key register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secobkkeyr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secsr",
+                    description: Some(
+                        "FLASH secure status register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secwm1r_cur",
+                    description: Some(
+                        "FLASH security watermark for Bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 224,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secwm",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secwm1r_prg",
+                    description: Some(
+                        "FLASH security watermark for Bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 228,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secwm",
                             ),
                         },
                     ),
@@ -1013,6 +1047,40 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "wrp1r_cur",
+                    description: Some(
+                        "FLASH write sector group protection for Bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 232,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wrp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wrp1r_prg",
+                    description: Some(
+                        "FLASH write sector group protection for Bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 236,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wrp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "wrp2r_cur",
                     description: Some(
                         "FLASH write sector group protection for Bank 2",
@@ -1046,78 +1114,82 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-                BlockItem {
-                    name: "edata2r_cur",
-                    description: Some(
-                        "FLASH data sectors configuration Bank 2",
-                    ),
-                    array: None,
-                    byte_offset: 496,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Edata2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "edata2r_prg",
-                    description: Some(
-                        "FLASH data sector configuration Bank 2",
-                    ),
-                    array: None,
-                    byte_offset: 500,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Edata2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdp2r_cur",
-                    description: Some(
-                        "FLASH HDP Bank 2 configuration",
-                    ),
-                    array: None,
-                    byte_offset: 504,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdp2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdp2r_prg",
-                    description: Some(
-                        "FLASH HDP Bank 2 configuration",
-                    ),
-                    array: None,
-                    byte_offset: 508,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdp2r",
-                            ),
-                        },
-                    ),
-                },
             ],
         },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Acr",
+            extends: None,
+            description: Some(
+                "FLASH access control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "latency",
+                    description: Some(
+                        "Read latency\r These bits are used to control the number of wait states used during read operations on both nonvolatile memory banks. The application software has to program them to the correct value depending on the embedded flash memory interface frequency and voltage conditions.\r ...\r Note: No check is performed by hardware to verify that the configuration is correct.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrhighfreq",
+                    description: Some(
+                        "Flash signal delay \r These bits are used to control the delay between nonvolatile memory signals during programming operations. Application software has to program them to the correct value depending on the embedded flash memory interface frequency. Please refer to Table�44 for details.\r Note: No check is performed to verify that the configuration is correct. \r Note: Two WRHIGHFREQ values can be selected for some frequencies.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prften",
+                    description: Some(
+                        "Prefetch enable. When bit value is modified, user must read back ACR register to be sure PRFTEN has been taken into account.\r Bits used to control the prefetch.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Bootr",
+            extends: None,
+            description: Some(
+                "FLASH secure boot register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "secboot_lock",
+                    description: Some(
+                        "A field locking the values of UBE, SWAP_ BANK, and SECBOOTADD setting.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "BootrSecbootLock",
+                    ),
+                },
+                Field {
+                    name: "secbootadd",
+                    description: Some(
+                        "Secure unique boot entry address.\r These bits allow configuring the secure UBE address.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 24,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Ecccorr",
             extends: None,
@@ -1209,149 +1281,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nsbootr",
+            name: "Eccdetr",
             extends: None,
             description: Some(
-                "FLASH non-secure boot register",
+                "FLASH ECC detection register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "nsboot_lock",
+                    name: "addr_ecc",
                     description: Some(
-                        "A field locking the values of SWAP_ BANK, and NSBOOTADD settings.",
+                        "ECC error address\r When an ECC error occurs (double detection) during a read operation, the ADDR_ECC contains the address that generated the error. \r ADDR_ECC is reset when the flag error is reset. \r The flash interface programs the address in this register only when no ECC error flags are set. This means that only the first address that generated an double ECC error is saved.\r The address in ADDR_ECC is relative to the flash memory area where the error occurred (user flash memory, system flash memory, data area, read-only/OTP area).",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "NsbootrNsbootLock",
-                    ),
-                },
-                Field {
-                    name: "nsbootadd",
-                    description: Some(
-                        "Non secure unique boot entry address \r These bits allow configuring the Non secure BOOT address",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 24,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdpextr",
-            extends: None,
-            description: Some(
-                "FLASH HDP extension register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdp1_ext",
-                    description: Some(
-                        "HDP area extension in 8�Kbytes sectors in Bank1. Extension is added after the HDP1_END sector (included).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "hdp2_ext",
+                    name: "obk_ecc",
                     description: Some(
-                        "HDP area extension in 8�Kbytes sectors in bank 2. Extension is added after the HDP2_END sector (included).",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nssr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bsy",
-                    description: Some(
-                        "busy flag\r BSY flag indicates that a flash memory is busy by an operation (write, erase, option byte change, OBK operation). It is set at the beginning of a flash memory operation and cleared when the operation finishes, or an error occurs.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wbne",
-                    description: Some(
-                        "write buffer not empty flag \r WBNE flag is set when the flash interface is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below:\r the application software forces the write operation using FW bit in FLASH_NSCR\r the embedded flash memory detects an error that involves data loss\r This bit cannot be reset by software writing 0 directly. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbne",
-                    description: Some(
-                        "data buffer not empty flag \r DBNE flag is set when the flash interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eop",
-                    description: Some(
-                        "end of operation flag\r EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to 1. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_NSCCR register.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrperr",
-                    description: Some(
-                        "write protection error flag\r WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_NSCCR register clears WRPERR.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pgserr",
-                    description: Some(
-                        "programming sequence error flag\r PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_NSCCR register clears PGSERR.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "strberr",
-                    description: Some(
-                        "strobe error flag \r STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_NSCCR register clears STRBERR.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "incerr",
-                    description: Some(
-                        "inconsistency error flag\r NSINCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_NSCCR register clears NSINCERR.",
+                        "ECC fail double ECC error in flash OB Keys storage area. It indicates the OBK storage concerned by ECC error.",
                     ),
                     bit_offset: 20,
                     bit_size: 1,
@@ -1359,9 +1309,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "obkerr",
+                    name: "edata_ecc",
                     description: Some(
-                        "OBK general error flag\r OBKERR flag is raised when the OBK-HDPL signal from the SBS does not match the HDPL value associated with the key slot during access to the key location. Alternatively also when the ALT_SECT is unexpectedly changed while the write buffer is being filled.",
+                        "ECC fail double ECC error in flash high-cycle data area\r It indicates if flash high-cycle data area is concerned by ECC error.",
                     ),
                     bit_offset: 21,
                     bit_size: 1,
@@ -1369,9 +1319,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "obkwerr",
+                    name: "bk_ecc",
                     description: Some(
-                        "OBK write error flag\r OBKWERR flag is raised when the address is not virgin on a write access to the OBK storage. Alternatively also when the OBK selector in the alternate sector is not virgin during a swap operation.",
+                        "ECC fail bank for double ECC error\r It indicates which bank is concerned by ECC error",
                     ),
                     bit_offset: 22,
                     bit_size: 1,
@@ -1379,131 +1329,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "optchangeerr",
+                    name: "sysf_ecc",
                     description: Some(
-                        "Option byte change error flag \r OPTCHANGEERR flag indicates that an error occurred during an option byte change operation. When OPTCHANGEERR is set to 1, the option byte change operation did not successfully complete. An interrupt is generated when this flag is raised if the OPTCHANGEERRIE bit of FLASH_NSCR register is set to 1. \r Writing 1 to CLR_OPTCHANGEERR of register FLASH_NSCCR clears OPTCHANGEERR.\r Note: The OPTSTRT bit in FLASH_OPTCR cannot be set while OPTCHANGEERR is set.",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secepochr",
-            extends: None,
-            description: Some(
-                "FLASH secure EPOCH register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sec_epoch",
-                    description: Some(
-                        "Non-volatile secure EPOCH counter",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 24,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seckeyr",
-            extends: None,
-            description: Some(
-                "FLASH secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "seckey",
-                    description: Some(
-                        "Non-volatile memory secure configuration access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secbootr",
-            extends: None,
-            description: Some(
-                "FLASH secure boot register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "secboot_lock",
-                    description: Some(
-                        "A field locking the values of UBE, SWAP_BANK, and SECBOOTADD settings.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "SecbootrSecbootLock",
-                    ),
-                },
-                Field {
-                    name: "secbootadd",
-                    description: Some(
-                        "Unique boot entry secure address \r These bits reflect the Secure UBE address",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 24,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Opsr",
-            extends: None,
-            description: Some(
-                "FLASH operation status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addr_op",
-                    description: Some(
-                        "Interrupted operation address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 20,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "data_op",
-                    description: Some(
-                        "Flash high-cycle data area operation interrupted\r It indicates if flash high-cycle data area is concerned by operation.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bk_op",
-                    description: Some(
-                        "Interrupted operation bank\r It indicates which bank was concerned by operation.",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sysf_op",
-                    description: Some(
-                        "Operation in system flash memory interrupted \r Indicates that reset interrupted an ongoing operation in system flash.",
+                        "ECC fail for double ECC error in system flash memory\r It indicates if system flash memory is concerned by ECC error.",
                     ),
                     bit_offset: 23,
                     bit_size: 1,
@@ -1511,9 +1339,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "otp_op",
+                    name: "otp_ecc",
                     description: Some(
-                        "OTP operation interrupted\r Indicates that reset interrupted an ongoing operation in OTP area (or OBKeys area).",
+                        "OTP ECC error bit\r This bit is set to 1 when double ECC detection occurred during the last read operation from the read-only/ OTP area. The address of the ECC error is available in ADDR_ECC bitfield.",
                     ),
                     bit_offset: 24,
                     bit_size: 1,
@@ -1521,182 +1349,62 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "code_op",
+                    name: "eccd",
                     description: Some(
-                        "Flash memory operation code",
+                        "ECC detection\r Set by hardware when two ECC error has been detected.\r When this bit is set, a NMI is generated.\r Cleared by writing 1. Needs to be cleared in order to detect subsequent double ECC errors.",
                     ),
-                    bit_offset: 29,
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccdr",
+            extends: None,
+            description: Some(
+                "FLASH ECC data",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "data_ecc",
+                    description: Some(
+                        "ECC error data\r When an double detection ECC error occurs on special areas with 6-bit ECC on 16-bit data (data area, read-only/OTP area), the failing data is read to this register.\r By checking if it is possible to determine whether the failure was on a real data, or due to access to uninitialized memory.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Edata1r",
+            extends: None,
+            description: Some(
+                "FLASH data sector configuration Bank 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "edata1_strt",
+                    description: Some(
+                        "EDATA1_STRT contains the start sectors of the flash high-cycle data area in Bank 1 There is no hardware effect to those bits. They shall be managed by ST tools in Flasher.\r ...\r Note: 111: The eight last sectors of the Bank 1 are reserved for flash high-cycle data",
+                    ),
+                    bit_offset: 0,
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "CodeOp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secobkkeyr",
-            extends: None,
-            description: Some(
-                "FLASH secure OBK key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "secobkkey",
-                    description: Some(
-                        "FLASH secure option bytes keys control access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optsr2",
-            extends: None,
-            description: Some(
-                "FLASH option status register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sram13_rst",
-                    description: Some(
-                        "SRAM1 and SRAM3 erase upon system reset",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sram2_rst",
+                    name: "edata1_en",
                     description: Some(
-                        "SRAM2 erase when system reset",
+                        "Bank 1 flash high-cycle data enable",
                     ),
-                    bit_offset: 3,
+                    bit_offset: 15,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bkpram_ecc",
-                    description: Some(
-                        "Backup RAM ECC detection and correction disable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "OptsrBkpramEcc",
-                    ),
-                },
-                Field {
-                    name: "sram3_ecc",
-                    description: Some(
-                        "SRAM3 ECC detection and correction disable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "OptsrSramEcc",
-                    ),
-                },
-                Field {
-                    name: "sram2_ecc",
-                    description: Some(
-                        "SRAM2 ECC detection and correction disable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "OptsrSramEcc",
-                    ),
-                },
-                Field {
-                    name: "usbpd_dis",
-                    description: Some(
-                        "USB power delivery configuration option bit",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tzen",
-                    description: Some(
-                        "TrustZone enable configuration bits\r This bit enables the device is in TrustZone mode during an option byte change.",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "OptsrTzen",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Acr",
-            extends: None,
-            description: Some(
-                "FLASH access control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "latency",
-                    description: Some(
-                        "Read latency\r These bits are used to control the number of wait states used during read operations on both nonvolatile memory banks. The application software has to program them to the correct value depending on the embedded flash memory interface frequency and voltage conditions.\r ...\r Note: No check is performed by hardware to verify that the configuration is correct.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrhighfreq",
-                    description: Some(
-                        "Flash signal delay \r These bits are used to control the delay between nonvolatile memory signals during programming operations. Application software has to program them to the correct value depending on the embedded flash memory interface frequency. Please refer to Table�44 for details.\r Note: No check is performed to verify that the configuration is correct. \r Note: Two WRHIGHFREQ values can be selected for some frequencies.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "prften",
-                    description: Some(
-                        "Prefetch enable. When bit value is modified, user must read back ACR register to be sure PRFTEN has been taken into account.\r Bits used to control the prefetch.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Otpblr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure OTP block lock",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lockbl",
-                    description: Some(
-                        "OTP block lock \r Block n corresponds to OTP 16-bit word 32 x n to 32 x n + 31.\r LOCKBL[n] = 1 indicates that all OTP 16-bit words in OTP Block n are locked and attempt to program them results in WRPERR.\r LOCKBL[n] = 0 indicates that all OTP 16-bit words in OTP Block n are not locked.\r When one block is locked, it’s not possible to remove the write protection.\r Also if not locked, it is not possible to erase OTP words.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1733,186 +1441,124 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Optkeyr",
+            name: "Hdp1r",
             extends: None,
             description: Some(
-                "FLASH option key register",
+                "FLASH HDP Bank 1 configuration",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "optkey",
+                    name: "hdp1_strt",
                     description: Some(
-                        "FLASH option bytes control access unlock key",
+                        "HDPL barrier start set in number of 8-Kbyte sectors",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nsobkkeyr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure OBK key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nsobkkey",
-                    description: Some(
-                        "FLASH non-secure option bytes keys control access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Privbb",
-            extends: None,
-            description: Some(
-                "FLASH privilege block-based register for Bank 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "privbb",
-                    description: Some(
-                        "Privileged / non-privileged 8-Kbyte flash Bank 2 sector attribute",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: Some(
-                        "PrivbbrPrivbb",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Eccdr",
-            extends: None,
-            description: Some(
-                "FLASH ECC data",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "data_ecc",
-                    description: Some(
-                        "ECC error data\r When an double detection ECC error occurs on special areas with 6-bit ECC on 16-bit data (data area, read-only/OTP area), the failing data is read to this register.\r By checking if it is possible to determine whether the failure was on a real data, or due to access to uninitialized memory.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nsobkcfgr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure OBK configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lock",
-                    description: Some(
-                        "OBKCFGR lock option configuration bit\r This bit locks the FLASH_NSOBKCFGR register. The correct write sequence to FLASH_NSOBKKEYR register unlocks this bit. If a wrong sequence is executed, or if the unlock sequence to FLASH_NSOBKKEYR is performed twice, this bit remains locked until the next system reset. LOCK can be set by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When LOCK changes from 0 to 1, the other bits of FLASH_NSCR register do not change.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "swap_sect_req",
+                    name: "hdp1_end",
                     description: Some(
-                        "OBK swap sector request bit\r When set, all the OBKs which have not been updated in the alternate sector is copied from current sector to alternate one.\r The SWAP_OFFSET value must be a certain minimum value in order for the swap to be launched in OBK-HDPL\u{a0}≠\u{a0}0. Minimum value is 16 for OBK-HDPL\u{a0}=\u{a0}1, 144 for OBK-HDPL\u{a0}=\u{a0}2 and\u{a0}192 for OBK-HDPL\u{a0}=\u{a0}3.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alt_sect",
-                    description: Some(
-                        "alternate sector bit\r This bit must not change while filling the write buffer, otherwise an error (OBKERR) is generated",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alt_sect_erase",
-                    description: Some(
-                        "alternate sector erase bit\r When ALT_SECT bit is set, use this bit to generate an erase command for the OBK alternate sector. It is set only by Software and cleared when the OBK swap operation is completed or an error occurs (PGSERR). It is reseted at the same time as BUSY bit.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "swap_offset",
-                    description: Some(
-                        "Key index (offset /16 bits) pointing for next swap.\r 0x01 means that only the first OBK data (128 bits) is copied from current to alternate OBK sector\r 0x02 means that the two first OBK data is copied …\r …",
+                        "HDPL barrier end set in number of 8-Kbyte sectors",
                     ),
                     bit_offset: 16,
-                    bit_size: 9,
+                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Optcr",
+            name: "Hdp2r",
             extends: None,
             description: Some(
-                "FLASH option control register",
+                "FLASH HDP Bank 2 configuration",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "optlock",
+                    name: "hdp2_strt",
                     description: Some(
-                        "FLASH_OPTCR lock option configuration bit\r The OPTLOCK bit locks the FLASH_OPTCR register as well as all _PRG registers. The correct write sequence to FLASH_OPTKEYR register unlocks this bit. If a wrong sequence is executed, or the unlock sequence to FLASH_OPTKEYR is performed twice, this bit remains locked until next system reset. \r It is possible to set OPTLOCK by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When OPTLOCK changes from 0 to 1, the others bits of FLASH_OPTCR register do not change.",
+                        "HDPL barrier start set in number of 8-Kbyte sectors",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "optstrt",
+                    name: "hdp2_end",
                     description: Some(
-                        "Option byte start change option configuration bit\r OPTSTRT triggers an option byte change operation. The user can set OPTSTRT only when the OPTLOCK bit is cleared to 0. It is set only by Software and cleared when the option byte change is completed or an error occurs (PGSERR or OPTCHANGEERR). It is reseted at the same time as BSY bit.\r The user application cannot modify any FLASH_XXX_PRG flash interface register until the option change operation has been completed.\r Before setting this bit, the user has to write the required values in the FLASH_XXX_PRG registers. The FLASH_XXX_PRG registers are locked until the option byte change operation has been executed in nonvolatile memory.",
+                        "HDPL barrier end set in number of 8-Kbyte sectors",
                     ),
-                    bit_offset: 1,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hdpextr",
+            extends: None,
+            description: Some(
+                "FLASH HDP extension register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdp1_ext",
+                    description: Some(
+                        "HDP area extension in 8�Kbytes sectors in Bank1. Extension is added after the HDP1_END sector (included).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "swap_bank",
+                    name: "hdp2_ext",
                     description: Some(
-                        "Bank swapping option configuration bit\r SWAP_BANK controls whether Bank1 and Bank2 are swapped or not. This bit is loaded with the SWAP_BANK bit of FLASH_OPTSR_CUR register only after reset or POR.",
+                        "HDP area extension in 8�Kbytes sectors in bank 2. Extension is added after the HDP2_END sector (included).",
                     ),
-                    bit_offset: 31,
-                    bit_size: 1,
+                    bit_offset: 16,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nsbootr",
+            extends: None,
+            description: Some(
+                "FLASH non-secure boot register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "nsboot_lock",
+                    description: Some(
+                        "A field locking the values of SWAP_ BANK, and NSBOOTADD settings.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
                     array: None,
                     enumm: Some(
-                        "OptcrSwapBank",
+                        "NsbootrNsbootLock",
                     ),
+                },
+                Field {
+                    name: "nsbootadd",
+                    description: Some(
+                        "Non secure unique boot entry address \r These bits allow configuring the Non secure BOOT address",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 24,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -2001,146 +1647,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 23,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secsr",
-            extends: None,
-            description: Some(
-                "FLASH secure status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bsy",
-                    description: Some(
-                        "busy flag\r BSY flag indicates that a FLASH memory is busy (write, erase, option byte change, OBK operations). It is set at the beginning of a flash memory operation and cleared when the operation finishes or an error occurs.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wbne",
-                    description: Some(
-                        "write buffer not empty flag \r WBNE flag is set when the flash interface is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below:\r the application software forces the write operation using FW bit in FLASH_SECCR\r the flash interface detects an error that involves data loss\r This bit cannot be reset by writing 0 directly by software. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbne",
-                    description: Some(
-                        "data buffer not empty flag \r DBNE flag is set when the embedded flash memory interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eop",
-                    description: Some(
-                        "end of operation flag\r EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_SECCCR register.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrperr",
-                    description: Some(
-                        "write protection error flag\r WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_SECCCR register clears WRPERR.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pgserr",
-                    description: Some(
-                        "programming sequence error flag\r PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_SECCCR register clears PGSERR.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "strberr",
-                    description: Some(
-                        "strobe error flag \r STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_SECCCR register clears STRBERR.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "incerr",
-                    description: Some(
-                        "inconsistency error flag\r INCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_SECCCR register clears INCERR.",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "obkerr",
-                    description: Some(
-                        "OBK general error flag\r OBKERR flag is raised when the OBK-HDPL signal from the SBS does not match the HDPL value associated with the key slot during access to the key location. Alternatively also when the ALT_SECT is unexpectedly changed while the write buffer is being filled.",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "obkwerr",
-                    description: Some(
-                        "OBK write error flag\r OBKWERR flag is raised when the address is not virgin on a write access to the OBK storage. Alternatively also when the OBK selector in the alternate sector is not virgin during a swap operation.",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secwm",
-            extends: None,
-            description: Some(
-                "FLASH security watermark for Bank 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "secwmstrt",
-                    description: Some(
-                        "Bank2 security WM area start sector",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "secwmend",
-                    description: Some(
-                        "Bank2 security WM end sector",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 7,
                     array: None,
                     enumm: None,
                 },
@@ -2329,17 +1835,167 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Secccr",
+            name: "Nsepochr",
             extends: None,
             description: Some(
-                "FLASH secure clear control register",
+                "FLASH non-secure EPOCH register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "clr_eop",
+                    name: "ns_epoch",
                     description: Some(
-                        "EOP flag clear bit\r Setting this bit to 1 resets to 0 EOP flag in FLASH_SECSR register.",
+                        "Non-volatile non-secure EPOCH counter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 24,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nskeyr",
+            extends: None,
+            description: Some(
+                "FLASH non-secure key register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "nskey",
+                    description: Some(
+                        "Non-volatile memory non-secure configuration access unlock key",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nsobkcfgr",
+            extends: None,
+            description: Some(
+                "FLASH non-secure OBK configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lock",
+                    description: Some(
+                        "OBKCFGR lock option configuration bit\r This bit locks the FLASH_NSOBKCFGR register. The correct write sequence to FLASH_NSOBKKEYR register unlocks this bit. If a wrong sequence is executed, or if the unlock sequence to FLASH_NSOBKKEYR is performed twice, this bit remains locked until the next system reset. LOCK can be set by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When LOCK changes from 0 to 1, the other bits of FLASH_NSCR register do not change.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "swap_sect_req",
+                    description: Some(
+                        "OBK swap sector request bit\r When set, all the OBKs which have not been updated in the alternate sector is copied from current sector to alternate one.\r The SWAP_OFFSET value must be a certain minimum value in order for the swap to be launched in OBK-HDPL\u{a0}≠\u{a0}0. Minimum value is 16 for OBK-HDPL\u{a0}=\u{a0}1, 144 for OBK-HDPL\u{a0}=\u{a0}2 and\u{a0}192 for OBK-HDPL\u{a0}=\u{a0}3.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "alt_sect",
+                    description: Some(
+                        "alternate sector bit\r This bit must not change while filling the write buffer, otherwise an error (OBKERR) is generated",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "alt_sect_erase",
+                    description: Some(
+                        "alternate sector erase bit\r When ALT_SECT bit is set, use this bit to generate an erase command for the OBK alternate sector. It is set only by Software and cleared when the OBK swap operation is completed or an error occurs (PGSERR). It is reseted at the same time as BUSY bit.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "swap_offset",
+                    description: Some(
+                        "Key index (offset /16 bits) pointing for next swap.\r 0x01 means that only the first OBK data (128 bits) is copied from current to alternate OBK sector\r 0x02 means that the two first OBK data is copied …\r …",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nsobkkeyr",
+            extends: None,
+            description: Some(
+                "FLASH non-secure OBK key register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "nsobkkey",
+                    description: Some(
+                        "FLASH non-secure option bytes keys control access unlock key",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nssr",
+            extends: None,
+            description: Some(
+                "FLASH non-secure status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bsy",
+                    description: Some(
+                        "busy flag\r BSY flag indicates that a flash memory is busy by an operation (write, erase, option byte change, OBK operation). It is set at the beginning of a flash memory operation and cleared when the operation finishes, or an error occurs.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wbne",
+                    description: Some(
+                        "write buffer not empty flag \r WBNE flag is set when the flash interface is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below:\r the application software forces the write operation using FW bit in FLASH_NSCR\r the embedded flash memory detects an error that involves data loss\r This bit cannot be reset by software writing 0 directly. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbne",
+                    description: Some(
+                        "data buffer not empty flag \r DBNE flag is set when the flash interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eop",
+                    description: Some(
+                        "end of operation flag\r EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to 1. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_NSCCR register.",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -2347,9 +2003,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clr_wrperr",
+                    name: "wrperr",
                     description: Some(
-                        "WRPERR flag clear bit\r Setting this bit to 1 resets to 0 WRPERR flag in FLASH_SECSR register.",
+                        "write protection error flag\r WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_NSCCR register clears WRPERR.",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
@@ -2357,9 +2013,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clr_pgserr",
+                    name: "pgserr",
                     description: Some(
-                        "PGSERR flag clear bit\r Setting this bit to 1 resets to 0 PGSERR flag in FLASH_SECSR register.",
+                        "programming sequence error flag\r PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_NSCCR register clears PGSERR.",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
@@ -2367,9 +2023,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clr_strberr",
+                    name: "strberr",
                     description: Some(
-                        "STRBERR flag clear bit\r Setting this bit to 1 resets to 0 STRBERR flag in FLASH_SECSR register.",
+                        "strobe error flag \r STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_NSCCR register clears STRBERR.",
                     ),
                     bit_offset: 19,
                     bit_size: 1,
@@ -2377,9 +2033,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clr_incerr",
+                    name: "incerr",
                     description: Some(
-                        "INCERR flag clear bit\r Setting this bit to 1 resets to 0 INCERR flag in FLASH_SECSR register.",
+                        "inconsistency error flag\r NSINCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_NSCCR register clears NSINCERR.",
                     ),
                     bit_offset: 20,
                     bit_size: 1,
@@ -2387,9 +2043,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clr_obkerr",
+                    name: "obkerr",
                     description: Some(
-                        "OBKWERR flag clear bit\r Setting this bit to 1 resets to 0 OBKWERR flag in FLASH_SECSR register.",
+                        "OBK general error flag\r OBKERR flag is raised when the OBK-HDPL signal from the SBS does not match the HDPL value associated with the key slot during access to the key location. Alternatively also when the ALT_SECT is unexpectedly changed while the write buffer is being filled.",
                     ),
                     bit_offset: 21,
                     bit_size: 1,
@@ -2397,11 +2053,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clr_obkwerr",
+                    name: "obkwerr",
                     description: Some(
-                        "OBKWERR flag clear bit\r Setting this bit to 1 resets to 0 OBKWERR flag in FLASH_SECSR register.",
+                        "OBK write error flag\r OBKWERR flag is raised when the address is not virgin on a write access to the OBK storage. Alternatively also when the OBK selector in the alternate sector is not virgin during a swap operation.",
                     ),
                     bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "optchangeerr",
+                    description: Some(
+                        "Option byte change error flag \r OPTCHANGEERR flag indicates that an error occurred during an option byte change operation. When OPTCHANGEERR is set to 1, the option byte change operation did not successfully complete. An interrupt is generated when this flag is raised if the OPTCHANGEERRIE bit of FLASH_NSCR register is set to 1. \r Writing 1 to CLR_OPTCHANGEERR of register FLASH_NSCCR clears OPTCHANGEERR.\r Note: The OPTSTRT bit in FLASH_OPTCR cannot be set while OPTCHANGEERR is set.",
+                    ),
+                    bit_offset: 23,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2409,17 +2075,131 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Wrp",
+            name: "Opsr",
             extends: None,
             description: Some(
-                "FLASH write sector group protection for Bank 1",
+                "FLASH operation status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpsg",
+                    name: "addr_op",
                     description: Some(
-                        "Bank1 sector group protection option status byte\r Setting WRPSG1 bits to 0 write protects the corresponding group of four consecutive sectors in bank 1 (0: the group is write protected; 1: the group is not write protected)\r Bit 0: Group embedding sectors 0 to 3\r Bit 1: Group embedding sectors 4 to 7\r Bit N: Group embedding sectors 4 x N to 4 x N + 3\r Bit 31: Group embedding sectors 124 to 127",
+                        "Interrupted operation address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "data_op",
+                    description: Some(
+                        "Flash high-cycle data area operation interrupted\r It indicates if flash high-cycle data area is concerned by operation.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bk_op",
+                    description: Some(
+                        "Interrupted operation bank\r It indicates which bank was concerned by operation.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sysf_op",
+                    description: Some(
+                        "Operation in system flash memory interrupted \r Indicates that reset interrupted an ongoing operation in system flash.",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otp_op",
+                    description: Some(
+                        "OTP operation interrupted\r Indicates that reset interrupted an ongoing operation in OTP area (or OBKeys area).",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "code_op",
+                    description: Some(
+                        "Flash memory operation code",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "CodeOp",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Optcr",
+            extends: None,
+            description: Some(
+                "FLASH option control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "optlock",
+                    description: Some(
+                        "FLASH_OPTCR lock option configuration bit\r The OPTLOCK bit locks the FLASH_OPTCR register as well as all _PRG registers. The correct write sequence to FLASH_OPTKEYR register unlocks this bit. If a wrong sequence is executed, or the unlock sequence to FLASH_OPTKEYR is performed twice, this bit remains locked until next system reset. \r It is possible to set OPTLOCK by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When OPTLOCK changes from 0 to 1, the others bits of FLASH_OPTCR register do not change.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "optstrt",
+                    description: Some(
+                        "Option byte start change option configuration bit\r OPTSTRT triggers an option byte change operation. The user can set OPTSTRT only when the OPTLOCK bit is cleared to 0. It is set only by Software and cleared when the option byte change is completed or an error occurs (PGSERR or OPTCHANGEERR). It is reseted at the same time as BSY bit.\r The user application cannot modify any FLASH_XXX_PRG flash interface register until the option change operation has been completed.\r Before setting this bit, the user has to write the required values in the FLASH_XXX_PRG registers. The FLASH_XXX_PRG registers are locked until the option byte change operation has been executed in nonvolatile memory.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "swap_bank",
+                    description: Some(
+                        "Bank swapping option configuration bit\r SWAP_BANK controls whether Bank1 and Bank2 are swapped or not. This bit is loaded with the SWAP_BANK bit of FLASH_OPTSR_CUR register only after reset or POR.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "OptcrSwapBank",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Optkeyr",
+            extends: None,
+            description: Some(
+                "FLASH option key register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "optkey",
+                    description: Some(
+                        "FLASH option bytes control access unlock key",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -2591,27 +2371,275 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Eccdetr",
+            name: "Optsr2",
             extends: None,
             description: Some(
-                "FLASH ECC detection register",
+                "FLASH option status register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "addr_ecc",
+                    name: "sram13_rst",
                     description: Some(
-                        "ECC error address\r When an ECC error occurs (double detection) during a read operation, the ADDR_ECC contains the address that generated the error. \r ADDR_ECC is reset when the flag error is reset. \r The flash interface programs the address in this register only when no ECC error flags are set. This means that only the first address that generated an double ECC error is saved.\r The address in ADDR_ECC is relative to the flash memory area where the error occurred (user flash memory, system flash memory, data area, read-only/OTP area).",
+                        "SRAM1 and SRAM3 erase upon system reset",
                     ),
-                    bit_offset: 0,
-                    bit_size: 16,
+                    bit_offset: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "obk_ecc",
+                    name: "sram2_rst",
                     description: Some(
-                        "ECC fail double ECC error in flash OB Keys storage area. It indicates the OBK storage concerned by ECC error.",
+                        "SRAM2 erase when system reset",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bkpram_ecc",
+                    description: Some(
+                        "Backup RAM ECC detection and correction disable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "OptsrBkpramEcc",
+                    ),
+                },
+                Field {
+                    name: "sram3_ecc",
+                    description: Some(
+                        "SRAM3 ECC detection and correction disable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "OptsrSramEcc",
+                    ),
+                },
+                Field {
+                    name: "sram2_ecc",
+                    description: Some(
+                        "SRAM2 ECC detection and correction disable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "OptsrSramEcc",
+                    ),
+                },
+                Field {
+                    name: "usbpd_dis",
+                    description: Some(
+                        "USB power delivery configuration option bit",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tzen",
+                    description: Some(
+                        "TrustZone enable configuration bits\r This bit enables the device is in TrustZone mode during an option byte change.",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "OptsrTzen",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Otpblr",
+            extends: None,
+            description: Some(
+                "FLASH non-secure OTP block lock",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lockbl",
+                    description: Some(
+                        "OTP block lock \r Block n corresponds to OTP 16-bit word 32 x n to 32 x n + 31.\r LOCKBL[n] = 1 indicates that all OTP 16-bit words in OTP Block n are locked and attempt to program them results in WRPERR.\r LOCKBL[n] = 0 indicates that all OTP 16-bit words in OTP Block n are not locked.\r When one block is locked, it’s not possible to remove the write protection.\r Also if not locked, it is not possible to erase OTP words.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Privbb",
+            extends: None,
+            description: Some(
+                "FLASH privilege block-based register for Bank 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "privbb",
+                    description: Some(
+                        "Privileged / non-privileged 8-Kbyte flash Bank 2 sector attribute",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some(
+                        "PrivbbrPrivbb",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Privcfgr",
+            extends: None,
+            description: Some(
+                "FLASH privilege configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "spriv",
+                    description: Some(
+                        "privilege attribute for secure registers",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Spriv",
+                    ),
+                },
+                Field {
+                    name: "nspriv",
+                    description: Some(
+                        "privilege attribute for non secure registers",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Nspriv",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secbb",
+            extends: None,
+            description: Some(
+                "FLASH secure block-based register for Bank 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "secbb",
+                    description: Some(
+                        "Secure/non-secure flash Bank 2 sector attribute",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some(
+                        "SecbbrSecbb",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secbootr",
+            extends: None,
+            description: Some(
+                "FLASH secure boot register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "secboot_lock",
+                    description: Some(
+                        "A field locking the values of UBE, SWAP_BANK, and SECBOOTADD settings.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "SecbootrSecbootLock",
+                    ),
+                },
+                Field {
+                    name: "secbootadd",
+                    description: Some(
+                        "Unique boot entry secure address \r These bits reflect the Secure UBE address",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 24,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secccr",
+            extends: None,
+            description: Some(
+                "FLASH secure clear control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "clr_eop",
+                    description: Some(
+                        "EOP flag clear bit\r Setting this bit to 1 resets to 0 EOP flag in FLASH_SECSR register.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_wrperr",
+                    description: Some(
+                        "WRPERR flag clear bit\r Setting this bit to 1 resets to 0 WRPERR flag in FLASH_SECSR register.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_pgserr",
+                    description: Some(
+                        "PGSERR flag clear bit\r Setting this bit to 1 resets to 0 PGSERR flag in FLASH_SECSR register.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_strberr",
+                    description: Some(
+                        "STRBERR flag clear bit\r Setting this bit to 1 resets to 0 STRBERR flag in FLASH_SECSR register.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clr_incerr",
+                    description: Some(
+                        "INCERR flag clear bit\r Setting this bit to 1 resets to 0 INCERR flag in FLASH_SECSR register.",
                     ),
                     bit_offset: 20,
                     bit_size: 1,
@@ -2619,9 +2647,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "edata_ecc",
+                    name: "clr_obkerr",
                     description: Some(
-                        "ECC fail double ECC error in flash high-cycle data area\r It indicates if flash high-cycle data area is concerned by ECC error.",
+                        "OBKWERR flag clear bit\r Setting this bit to 1 resets to 0 OBKWERR flag in FLASH_SECSR register.",
                     ),
                     bit_offset: 21,
                     bit_size: 1,
@@ -2629,41 +2657,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "bk_ecc",
+                    name: "clr_obkwerr",
                     description: Some(
-                        "ECC fail bank for double ECC error\r It indicates which bank is concerned by ECC error",
+                        "OBKWERR flag clear bit\r Setting this bit to 1 resets to 0 OBKWERR flag in FLASH_SECSR register.",
                     ),
                     bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sysf_ecc",
-                    description: Some(
-                        "ECC fail for double ECC error in system flash memory\r It indicates if system flash memory is concerned by ECC error.",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "otp_ecc",
-                    description: Some(
-                        "OTP ECC error bit\r This bit is set to 1 when double ECC detection occurred during the last read operation from the read-only/ OTP area. The address of the ECC error is available in ADDR_ECC bitfield.",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eccd",
-                    description: Some(
-                        "ECC detection\r Set by hardware when two ECC error has been detected.\r When this bit is set, a NMI is generated.\r Cleared by writing 1. Needs to be cleared in order to detect subsequent double ECC errors.",
-                    ),
-                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2853,17 +2851,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nsepochr",
+            name: "Secepochr",
             extends: None,
             description: Some(
-                "FLASH non-secure EPOCH register",
+                "FLASH secure EPOCH register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ns_epoch",
+                    name: "sec_epoch",
                     description: Some(
-                        "Non-volatile non-secure EPOCH counter",
+                        "Non-volatile secure EPOCH counter",
                     ),
                     bit_offset: 0,
                     bit_size: 24,
@@ -2873,146 +2871,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Privcfgr",
+            name: "Seckeyr",
             extends: None,
             description: Some(
-                "FLASH privilege configuration register",
+                "FLASH secure key register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "spriv",
+                    name: "seckey",
                     description: Some(
-                        "privilege attribute for secure registers",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Spriv",
-                    ),
-                },
-                Field {
-                    name: "nspriv",
-                    description: Some(
-                        "privilege attribute for non secure registers",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Nspriv",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdp2r",
-            extends: None,
-            description: Some(
-                "FLASH HDP Bank 2 configuration",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdp2_strt",
-                    description: Some(
-                        "HDPL barrier start set in number of 8-Kbyte sectors",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hdp2_end",
-                    description: Some(
-                        "HDPL barrier end set in number of 8-Kbyte sectors",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nskeyr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nskey",
-                    description: Some(
-                        "Non-volatile memory non-secure configuration access unlock key",
+                        "Non-volatile memory secure configuration access unlock key",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Edata1r",
-            extends: None,
-            description: Some(
-                "FLASH data sector configuration Bank 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "edata1_strt",
-                    description: Some(
-                        "EDATA1_STRT contains the start sectors of the flash high-cycle data area in Bank 1 There is no hardware effect to those bits. They shall be managed by ST tools in Flasher.\r ...\r Note: 111: The eight last sectors of the Bank 1 are reserved for flash high-cycle data",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "edata1_en",
-                    description: Some(
-                        "Bank 1 flash high-cycle data enable",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Bootr",
-            extends: None,
-            description: Some(
-                "FLASH secure boot register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "secboot_lock",
-                    description: Some(
-                        "A field locking the values of UBE, SWAP_ BANK, and SECBOOTADD setting.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "BootrSecbootLock",
-                    ),
-                },
-                Field {
-                    name: "secbootadd",
-                    description: Some(
-                        "Secure unique boot entry address.\r These bits allow configuring the secure UBE address.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 24,
                     array: None,
                     enumm: None,
                 },
@@ -3079,17 +2951,147 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hdp1r",
+            name: "Secobkkeyr",
             extends: None,
             description: Some(
-                "FLASH HDP Bank 1 configuration",
+                "FLASH secure OBK key register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hdp1_strt",
+                    name: "secobkkey",
                     description: Some(
-                        "HDPL barrier start set in number of 8-Kbyte sectors",
+                        "FLASH secure option bytes keys control access unlock key",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secsr",
+            extends: None,
+            description: Some(
+                "FLASH secure status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bsy",
+                    description: Some(
+                        "busy flag\r BSY flag indicates that a FLASH memory is busy (write, erase, option byte change, OBK operations). It is set at the beginning of a flash memory operation and cleared when the operation finishes or an error occurs.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wbne",
+                    description: Some(
+                        "write buffer not empty flag \r WBNE flag is set when the flash interface is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below:\r the application software forces the write operation using FW bit in FLASH_SECCR\r the flash interface detects an error that involves data loss\r This bit cannot be reset by writing 0 directly by software. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbne",
+                    description: Some(
+                        "data buffer not empty flag \r DBNE flag is set when the embedded flash memory interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eop",
+                    description: Some(
+                        "end of operation flag\r EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_SECCCR register.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrperr",
+                    description: Some(
+                        "write protection error flag\r WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_SECCCR register clears WRPERR.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pgserr",
+                    description: Some(
+                        "programming sequence error flag\r PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_SECCCR register clears PGSERR.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "strberr",
+                    description: Some(
+                        "strobe error flag \r STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_SECCCR register clears STRBERR.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "incerr",
+                    description: Some(
+                        "inconsistency error flag\r INCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_SECCCR register clears INCERR.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "obkerr",
+                    description: Some(
+                        "OBK general error flag\r OBKERR flag is raised when the OBK-HDPL signal from the SBS does not match the HDPL value associated with the key slot during access to the key location. Alternatively also when the ALT_SECT is unexpectedly changed while the write buffer is being filled.",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "obkwerr",
+                    description: Some(
+                        "OBK write error flag\r OBKWERR flag is raised when the address is not virgin on a write access to the OBK storage. Alternatively also when the OBK selector in the alternate sector is not virgin during a swap operation.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secwm",
+            extends: None,
+            description: Some(
+                "FLASH security watermark for Bank 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "secwmstrt",
+                    description: Some(
+                        "Bank2 security WM area start sector",
                     ),
                     bit_offset: 0,
                     bit_size: 7,
@@ -3097,9 +3099,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hdp1_end",
+                    name: "secwmend",
                     description: Some(
-                        "HDPL barrier end set in number of 8-Kbyte sectors",
+                        "Bank2 security WM end sector",
                     ),
                     bit_offset: 16,
                     bit_size: 7,
@@ -3109,24 +3111,22 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Secbb",
+            name: "Wrp",
             extends: None,
             description: Some(
-                "FLASH secure block-based register for Bank 2",
+                "FLASH write sector group protection for Bank 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "secbb",
+                    name: "wrpsg",
                     description: Some(
-                        "Secure/non-secure flash Bank 2 sector attribute",
+                        "Bank1 sector group protection option status byte\r Setting WRPSG1 bits to 0 write protects the corresponding group of four consecutive sectors in bank 1 (0: the group is write protected; 1: the group is not write protected)\r Bit 0: Group embedding sectors 0 to 3\r Bit 1: Group embedding sectors 4 to 7\r Bit N: Group embedding sectors 4 x N to 4 x N + 3\r Bit 31: Group embedding sectors 124 to 127",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
                     array: None,
-                    enumm: Some(
-                        "SecbbrSecbb",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -3150,489 +3150,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "The BOOT_UBE, SWAP_ BANK and SECBOOTADD can still be modified following their individual rules.",
                     ),
                     value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrBorLev",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "BOR Level 2, the threshold level is medium (around 2.4 V)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "BOR Level 3, the threshold level is high (around 2.7 V)",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrBootUbe",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "OEM-iRoT (user flash) selected. In Open PRODUCT_STATE this value selects bootloader. Defaut value.",
-                    ),
-                    value: 180,
-                },
-                EnumVariant {
-                    name: "B_0XC3",
-                    description: Some(
-                        "ST-iRoT (system flash) selected",
-                    ),
-                    value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrNrstStop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "a reset is generated when entering Stop mode on core domain",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "no reset generated when entering Stop mode on core domain.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "SecbootrSecbootLock",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "The BOOT_UBE and SECBOOTADD are frozen. SWAP_ BANK can only be modified with TZEN set to 0xC3 (disabled).",
-                    ),
-                    value: 180,
-                },
-                EnumVariant {
-                    name: "B_0XC3",
-                    description: Some(
-                        "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules.",
-                    ),
-                    value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrWwdgSw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "WWDG watchdog is controlled by hardware",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "WWDG watchdog is controlled by software",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrSwapBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Bank1 and Bank2 not swapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Bank1 and Bank2 swapped",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "NsbootrNsbootLock",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "The NSBOOTADD is frozen. SWAP_ BANK can only be modified with TZEN set to 0xB4 (enabled).",
-                    ),
-                    value: 180,
-                },
-                EnumVariant {
-                    name: "B_0XC3",
-                    description: Some(
-                        "The SWAP_ BANK and NSBOOTADD can still be modified following their individual rules.",
-                    ),
-                    value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "SecbbrSecbb",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "sectors (32 * (x-1) + y) in bank 2 is non secure",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "sector (32 * (x-1) + y) in bank 2 is secure",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptcrSwapBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Bank1 and Bank2 not swapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Bank1 and Bank2 swapped",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrIoVddioHslv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "High-speed IO at low V<sub>DDIO2</sub> voltage feature disabled (V<sub>DDIO2</sub> can exceed 2.7�V)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "High-speed IO at low V<sub>DDIO2</sub> voltage feature enabled (V<sub>DDIO2</sub> remains below 2.7�V)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrNrstStdby",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "a reset is generated when entering Standby mode on core domain",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "no reset generated when entering Standby mode on core domain.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrIoVddHslv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "High-speed IO at low V<sub>DD</sub> voltage feature disabled (V<sub>DD</sub> can exceed 2.7�V)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "High-speed IO at low V<sub>DD</sub> voltage feature enabled (V<sub>DD</sub> remains below 2.7�V)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Nspriv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "access to non secure registers is always granted",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "access to non secure registers is denied in case of unprivileged access.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrTzen",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "TrustZone enabled.",
-                    ),
-                    value: 180,
-                },
-                EnumVariant {
-                    name: "B_0XC3",
-                    description: Some(
-                        "TrustZone disabled",
-                    ),
-                    value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrIwdgSw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "IWDG watchdog is controlled by hardware",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "IWDG watchdog is controlled by software",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "NscrBksel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Bank1 is selected for Bank erase / sector erase / interrupt enable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Bank2 is selected for BER / SER",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Spriv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "access to secure registers is always granted",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "access to secure registers is denied in case of unprivileged access.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrSramEcc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "SRAM2 ECC check enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "SRAM2 ECC check disabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "SeccrBksel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Bank1 is selected for Bank erase / sector erase / interrupt enable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Bank2 is selected for BER / SER",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrIwdgStdby",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Independent watchdog frozen in Standby mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Independent watchdog keep running in Standby mode.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "PrivbbrPrivbb",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "sectors (32 * (x-1) + y) in bank 2 is unprivileged",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "sector (32 * (x-1) + y) in bank 2 is privileged",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrIwdgStop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Independent watchdog frozen in system Stop mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Independent watchdog keep running in system Stop mode.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrBkpramEcc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "BKPRAM ECC check enabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "BKPRAM ECC check disabled",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -3696,6 +3213,489 @@ pub(crate) static REGISTERS: IR = IR {
                         "OBK swap sector request",
                     ),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "NsbootrNsbootLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "The NSBOOTADD is frozen. SWAP_ BANK can only be modified with TZEN set to 0xB4 (enabled).",
+                    ),
+                    value: 180,
+                },
+                EnumVariant {
+                    name: "B_0XC3",
+                    description: Some(
+                        "The SWAP_ BANK and NSBOOTADD can still be modified following their individual rules.",
+                    ),
+                    value: 195,
+                },
+            ],
+        },
+        Enum {
+            name: "NscrBksel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Bank1 is selected for Bank erase / sector erase / interrupt enable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Bank2 is selected for BER / SER",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Nspriv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "access to non secure registers is always granted",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "access to non secure registers is denied in case of unprivileged access.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptcrSwapBank",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Bank1 and Bank2 not swapped",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Bank1 and Bank2 swapped",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrBkpramEcc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "BKPRAM ECC check enabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "BKPRAM ECC check disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrBootUbe",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "OEM-iRoT (user flash) selected. In Open PRODUCT_STATE this value selects bootloader. Defaut value.",
+                    ),
+                    value: 180,
+                },
+                EnumVariant {
+                    name: "B_0XC3",
+                    description: Some(
+                        "ST-iRoT (system flash) selected",
+                    ),
+                    value: 195,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrBorLev",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "BOR Level 2, the threshold level is medium (around 2.4 V)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "BOR Level 3, the threshold level is high (around 2.7 V)",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrIoVddHslv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "High-speed IO at low V<sub>DD</sub> voltage feature disabled (V<sub>DD</sub> can exceed 2.7�V)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "High-speed IO at low V<sub>DD</sub> voltage feature enabled (V<sub>DD</sub> remains below 2.7�V)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrIoVddioHslv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "High-speed IO at low V<sub>DDIO2</sub> voltage feature disabled (V<sub>DDIO2</sub> can exceed 2.7�V)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "High-speed IO at low V<sub>DDIO2</sub> voltage feature enabled (V<sub>DDIO2</sub> remains below 2.7�V)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrIwdgStdby",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Independent watchdog frozen in Standby mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Independent watchdog keep running in Standby mode.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrIwdgStop",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Independent watchdog frozen in system Stop mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Independent watchdog keep running in system Stop mode.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrIwdgSw",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "IWDG watchdog is controlled by hardware",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "IWDG watchdog is controlled by software",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrNrstStdby",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "a reset is generated when entering Standby mode on core domain",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "no reset generated when entering Standby mode on core domain.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrNrstStop",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "a reset is generated when entering Stop mode on core domain",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "no reset generated when entering Stop mode on core domain.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrSramEcc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "SRAM2 ECC check enabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "SRAM2 ECC check disabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrSwapBank",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Bank1 and Bank2 not swapped",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Bank1 and Bank2 swapped",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrTzen",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "TrustZone enabled.",
+                    ),
+                    value: 180,
+                },
+                EnumVariant {
+                    name: "B_0XC3",
+                    description: Some(
+                        "TrustZone disabled",
+                    ),
+                    value: 195,
+                },
+            ],
+        },
+        Enum {
+            name: "OptsrWwdgSw",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "WWDG watchdog is controlled by hardware",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "WWDG watchdog is controlled by software",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "PrivbbrPrivbb",
+            description: None,
+            bit_size: 32,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "sectors (32 * (x-1) + y) in bank 2 is unprivileged",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "sector (32 * (x-1) + y) in bank 2 is privileged",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "SecbbrSecbb",
+            description: None,
+            bit_size: 32,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "sectors (32 * (x-1) + y) in bank 2 is non secure",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "sector (32 * (x-1) + y) in bank 2 is secure",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "SecbootrSecbootLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "The BOOT_UBE and SECBOOTADD are frozen. SWAP_ BANK can only be modified with TZEN set to 0xC3 (disabled).",
+                    ),
+                    value: 180,
+                },
+                EnumVariant {
+                    name: "B_0XC3",
+                    description: Some(
+                        "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules.",
+                    ),
+                    value: 195,
+                },
+            ],
+        },
+        Enum {
+            name: "SeccrBksel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Bank1 is selected for Bank erase / sector erase / interrupt enable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Bank2 is selected for BER / SER",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Spriv",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "access to secure registers is always granted",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "access to secure registers is denied in case of unprivileged access.",
+                    ),
+                    value: 1,
                 },
             ],
         },

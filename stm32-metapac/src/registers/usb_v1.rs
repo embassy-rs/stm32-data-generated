@@ -10,6 +10,57 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
+                    name: "btable",
+                    description: Some(
+                        "Buffer table address",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Btable",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cntr",
+                    description: Some(
+                        "control register",
+                    ),
+                    array: None,
+                    byte_offset: 64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cntr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "daddr",
+                    description: Some(
+                        "device address",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Daddr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "epr",
                     description: Some(
                         "endpoint register",
@@ -34,18 +85,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cntr",
+                    name: "fnr",
                     description: Some(
-                        "control register",
+                        "frame number register",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cntr",
+                                "Fnr",
                             ),
                         },
                     ),
@@ -67,207 +118,10 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-                BlockItem {
-                    name: "fnr",
-                    description: Some(
-                        "frame number register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fnr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "daddr",
-                    description: Some(
-                        "device address",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Daddr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "btable",
-                    description: Some(
-                        "Buffer table address",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Btable",
-                            ),
-                        },
-                    ),
-                },
             ],
         },
     ],
     fieldsets: &[
-        FieldSet {
-            name: "Epr",
-            extends: None,
-            description: Some(
-                "endpoint register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ea",
-                    description: Some(
-                        "EA",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stat_tx",
-                    description: Some(
-                        "STAT_TX",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_tx",
-                    description: Some(
-                        "DTOG_TX",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_tx",
-                    description: Some(
-                        "CTR_TX",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_kind",
-                    description: Some(
-                        "EP_KIND",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ep_type",
-                    description: Some(
-                        "EPTYPE",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "EpType",
-                    ),
-                },
-                Field {
-                    name: "setup",
-                    description: Some(
-                        "SETUP",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stat_rx",
-                    description: Some(
-                        "STAT_RX",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stat",
-                    ),
-                },
-                Field {
-                    name: "dtog_rx",
-                    description: Some(
-                        "DTOG_RX",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctr_rx",
-                    description: Some(
-                        "CTR_RX",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Daddr",
-            extends: None,
-            description: Some(
-                "device address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "add",
-                    description: Some(
-                        "device address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ef",
-                    description: Some(
-                        "USB device enabled",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
         FieldSet {
             name: "Btable",
             extends: None,
@@ -283,66 +137,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 3,
                     bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fnr",
-            extends: None,
-            description: Some(
-                "frame number register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fn_",
-                    description: Some(
-                        "FN",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lsof",
-                    description: Some(
-                        "LSOF",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lck",
-                    description: Some(
-                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdm",
-                    description: Some(
-                        "received data minus upstream port data line",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdp",
-                    description: Some(
-                        "received data plus upstream port data line",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -480,6 +274,212 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ctrm",
                     description: Some(
                         "CTR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Daddr",
+            extends: None,
+            description: Some(
+                "device address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "add",
+                    description: Some(
+                        "device address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ef",
+                    description: Some(
+                        "USB device enabled",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Epr",
+            extends: None,
+            description: Some(
+                "endpoint register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ea",
+                    description: Some(
+                        "EA",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_tx",
+                    description: Some(
+                        "STAT_TX",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_tx",
+                    description: Some(
+                        "DTOG_TX",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_tx",
+                    description: Some(
+                        "CTR_TX",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_kind",
+                    description: Some(
+                        "EP_KIND",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ep_type",
+                    description: Some(
+                        "EPTYPE",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "EpType",
+                    ),
+                },
+                Field {
+                    name: "setup",
+                    description: Some(
+                        "SETUP",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stat_rx",
+                    description: Some(
+                        "STAT_RX",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stat",
+                    ),
+                },
+                Field {
+                    name: "dtog_rx",
+                    description: Some(
+                        "DTOG_RX",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctr_rx",
+                    description: Some(
+                        "CTR_RX",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fnr",
+            extends: None,
+            description: Some(
+                "frame number register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fn_",
+                    description: Some(
+                        "FN",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lsof",
+                    description: Some(
+                        "LSOF",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lck",
+                    description: Some(
+                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdm",
+                    description: Some(
+                        "received data minus upstream port data line",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdp",
+                    description: Some(
+                        "received data plus upstream port data line",
                     ),
                     bit_offset: 15,
                     bit_size: 1,

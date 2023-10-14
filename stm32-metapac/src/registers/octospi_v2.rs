@@ -10,6 +10,57 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
+                    name: "abr",
+                    description: Some(
+                        "alternate bytes register",
+                    ),
+                    array: None,
+                    byte_offset: 288,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Abr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ar",
+                    description: Some(
+                        "address register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccr",
+                    description: Some(
+                        "communication configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "cr",
                     description: Some(
                         "control register",
@@ -95,40 +146,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fcr",
-                    description: Some(
-                        "flag clear register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "dlr",
                     description: Some(
                         "data length register",
@@ -141,23 +158,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Dlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ar",
-                    description: Some(
-                        "address register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ar",
                             ),
                         },
                     ),
@@ -180,86 +180,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "psmkr",
+                    name: "fcr",
                     description: Some(
-                        "polling status mask register",
+                        "flag clear register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 36,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
-                                "Psmkr",
+                                "Fcr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "psmar",
+                    name: "hlcr",
                     description: Some(
-                        "polling status match register",
+                        "OCTOSPI HyperBus latency configuration register",
                     ),
                     array: None,
-                    byte_offset: 136,
+                    byte_offset: 512,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Psmar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pir",
-                    description: Some(
-                        "polling interval register",
-                    ),
-                    array: None,
-                    byte_offset: 144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccr",
-                    description: Some(
-                        "communication configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tcr",
-                    description: Some(
-                        "timing configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Tcr",
+                                "Hlcr",
                             ),
                         },
                     ),
@@ -282,23 +231,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "abr",
-                    description: Some(
-                        "alternate bytes register",
-                    ),
-                    array: None,
-                    byte_offset: 288,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Abr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "lptr",
                     description: Some(
                         "low-power timeout register",
@@ -316,120 +248,86 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "wpccr",
+                    name: "pir",
                     description: Some(
-                        "wrap communication configuration register",
+                        "polling interval register",
                     ),
                     array: None,
-                    byte_offset: 320,
+                    byte_offset: 144,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wpccr",
+                                "Pir",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wptcr",
+                    name: "psmar",
                     description: Some(
-                        "wrap timing configuration register",
+                        "polling status match register",
                     ),
                     array: None,
-                    byte_offset: 328,
+                    byte_offset: 136,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wptcr",
+                                "Psmar",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wpir",
+                    name: "psmkr",
                     description: Some(
-                        "wrap instruction register",
+                        "polling status mask register",
                     ),
                     array: None,
-                    byte_offset: 336,
+                    byte_offset: 128,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wpir",
+                                "Psmkr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wpabr",
+                    name: "sr",
                     description: Some(
-                        "wrap alternate bytes register",
+                        "status register",
                     ),
                     array: None,
-                    byte_offset: 352,
+                    byte_offset: 32,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wpabr",
+                                "Sr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wccr",
+                    name: "tcr",
                     description: Some(
-                        "write communication configuration register",
+                        "timing configuration register",
                     ),
                     array: None,
-                    byte_offset: 384,
+                    byte_offset: 264,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "wtcr",
-                    description: Some(
-                        "write timing configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 392,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Wtcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "wir",
-                    description: Some(
-                        "write instruction register",
-                    ),
-                    array: None,
-                    byte_offset: 400,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Wir",
+                                "Tcr",
                             ),
                         },
                     ),
@@ -452,18 +350,120 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "hlcr",
+                    name: "wccr",
                     description: Some(
-                        "OCTOSPI HyperBus latency configuration register",
+                        "write communication configuration register",
                     ),
                     array: None,
-                    byte_offset: 512,
+                    byte_offset: 384,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Hlcr",
+                                "Wccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wir",
+                    description: Some(
+                        "write instruction register",
+                    ),
+                    array: None,
+                    byte_offset: 400,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wpabr",
+                    description: Some(
+                        "wrap alternate bytes register",
+                    ),
+                    array: None,
+                    byte_offset: 352,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wpabr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wpccr",
+                    description: Some(
+                        "wrap communication configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 320,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wpccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wpir",
+                    description: Some(
+                        "wrap instruction register",
+                    ),
+                    array: None,
+                    byte_offset: 336,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wpir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wptcr",
+                    description: Some(
+                        "wrap timing configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 328,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wptcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wtcr",
+                    description: Some(
+                        "write timing configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 392,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wtcr",
                             ),
                         },
                     ),
@@ -473,17 +473,17 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Wir",
+            name: "Abr",
             extends: None,
             description: Some(
-                "write instruction register",
+                "alternate bytes register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "instruction",
+                    name: "alternate",
                     description: Some(
-                        "Instruction Instruction to be sent to the external SPI device",
+                        "Alternate bytes",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -493,37 +493,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Lptr",
+            name: "Ar",
             extends: None,
             description: Some(
-                "low-power timeout register",
+                "address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "timeout",
+                    name: "address",
                     description: Some(
-                        "[15: 0]: Timeout period After each access in Memory-mapped mode, the OCTOSPI prefetches the subsequent bytes and hold them in the FIFO. This field indicates how many CLK cycles the OCTOSPI waits after the clock becomes inactive and until it raises the NCS, putting the external device in a lower-consumption state.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dcr4",
-            extends: None,
-            description: Some(
-                "device configuration register 4",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "refresh",
-                    description: Some(
-                        "Refresh rate. This field enables the refresh rate feature. The NCS is released every REFRESH + 1 clock cycles for writes, and REFRESH + 4 clock cycles for reads. Note: These two values can be extended with few clock cycles when refresh occurs during a byte transmission in Single-, Dual- or Quad-SPI mode, because the byte transmission must be completed. others: Maximum communication length is set to REFRESH + 1 clock cycles.",
+                        "Address to be sent to the external device. In HyperBus protocol, this field must be even as this protocol is 16-bit word oriented. In dual-memory configuration, AR[0] is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 11 (Memory-mapped mode).",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -533,50 +513,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pir",
+            name: "Ccr",
             extends: None,
             description: Some(
-                "polling interval register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "interval",
-                    description: Some(
-                        "[15: 0]: Polling interval Number of CLK cycle between a read during the Automatic status-polling phases",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wtcr",
-            extends: None,
-            description: Some(
-                "write timing configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dcyc",
-                    description: Some(
-                        "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wpccr",
-            extends: None,
-            description: Some(
-                "OCTOSPI wrap communication configuration register",
+                "communication configuration register",
             ),
             bit_size: 32,
             fields: &[
@@ -605,7 +545,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "isize",
                     description: Some(
-                        "Instruction size. This field defines instruction size.",
+                        "Instruction size. This bit defines instruction size.",
                     ),
                     bit_offset: 4,
                     bit_size: 2,
@@ -651,7 +591,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "abmode",
                     description: Some(
-                        "Alternate-byte mode. This field defines the alternate byte phase mode of operation. 101-111: Reserved",
+                        "Alternate-byte mode. This field defines the alternate-byte phase mode of operation. 101-111: Reserved",
                     ),
                     bit_offset: 16,
                     bit_size: 3,
@@ -663,7 +603,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "abdtr",
                     description: Some(
-                        "Alternate bytes double transfer rate. This bit sets the DTR mode for the alternate bytes phase.",
+                        "Alternate bytes double transfer rate. This bit sets the DTR mode for the alternate bytes phase. This field can be written only when BUSY = 0.",
                     ),
                     bit_offset: 19,
                     bit_size: 1,
@@ -714,165 +654,13 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Tcr",
-            extends: None,
-            description: Some(
-                "timing configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "dcyc",
+                    name: "sioo",
                     description: Some(
-                        "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least six dummy cycles when using memories with DQS activated.",
+                        "Send instruction only once mode. This bit has no effect when IMODE = 00 (see ).",
                     ),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dhqc",
-                    description: Some(
-                        "Delay hold quarter cycle",
-                    ),
-                    bit_offset: 28,
+                    bit_offset: 31,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sshift",
-                    description: Some(
-                        "Sample shift By default, the OCTOSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The software must ensure that SSHIFT = 0 when the data phase is configured in DTR mode (when DDTR = 1.)",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "SampleShift",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wpabr",
-            extends: None,
-            description: Some(
-                "wrap alternate bytes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "alternate",
-                    description: Some(
-                        "[31: 0]: Alternate bytes Optional data to be sent to the external SPI device right after the address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some(
-                "status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tef",
-                    description: Some(
-                        "Transfer error flag. This bit is set in Indirect mode when an invalid address is being accessed in Indirect mode. It is cleared by writing 1 to CTEF.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcf",
-                    description: Some(
-                        "Transfer complete flag. This bit is set in Indirect mode when the programmed number of data has been transferred or in any mode when the transfer has been aborted.It is cleared by writing 1 to CTCF.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ftf",
-                    description: Some(
-                        "FIFO threshold flag In Indirect mode, this bit is set when the FIFO threshold has been reached, or if there is any data left in the FIFO after the reads from the external device are complete. It is cleared automatically as soon as the threshold condition is no longer true. In Automatic status-polling mode, this bit is set every time the status register is read, and the bit is cleared when the data register is read.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "smf",
-                    description: Some(
-                        "Status match flag. This bit is set in Automatic status-polling mode when the unmasked received data matches the corresponding bits in the match register (PSMAR). It is cleared by writing 1 to CSMF.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tof",
-                    description: Some(
-                        "Timeout flag. This bit is set when timeout occurs. It is cleared by writing 1 to CTOF.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "busy",
-                    description: Some(
-                        "Busy. This bit is set when an operation is ongoing. It is cleared automatically when the operation with the external device is finished and the FIFO is empty.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "flevel",
-                    description: Some(
-                        "FIFO level. This field gives the number of valid bytes that are being held in the FIFO. FLEVEL = 0 when the FIFO is empty, and 32 when it is full. In Automatic status-polling mode, FLEVEL is zero.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Psmkr",
-            extends: None,
-            description: Some(
-                "polling status mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mask",
-                    description: Some(
-                        "Status mask Mask to be applied to the status bytes received in Automatic status-polling mode For bit n:",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1043,422 +831,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Psmar",
-            extends: None,
-            description: Some(
-                "polling status match register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "match_",
-                    description: Some(
-                        "[31: 0]: Status match Value to be compared with the masked status register to get a match",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ar",
-            extends: None,
-            description: Some(
-                "address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "address",
-                    description: Some(
-                        "Address to be sent to the external device. In HyperBus protocol, this field must be even as this protocol is 16-bit word oriented. In dual-memory configuration, AR[0] is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 11 (Memory-mapped mode).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dcr3",
-            extends: None,
-            description: Some(
-                "device configuration register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "csbound",
-                    description: Some(
-                        "NCS boundary. This field enables the transaction boundary feature. When active, a minimum value of 3 is recommended. The NCS is released on each boundary of 2CSBOUND bytes. others: NCS boundary set to 2CSBOUND bytes",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fcr",
-            extends: None,
-            description: Some(
-                "flag clear register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ctef",
-                    description: Some(
-                        "Clear transfer error flag Writing 1 clears the TEF flag in the SR register.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctcf",
-                    description: Some(
-                        "Clear transfer complete flag Writing 1 clears the TCF flag in the SR register.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csmf",
-                    description: Some(
-                        "Clear status match flag Writing 1 clears the SMF flag in the SR register.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctof",
-                    description: Some(
-                        "Clear timeout flag Writing 1 clears the TOF flag in the SR register.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ir",
-            extends: None,
-            description: Some(
-                "instruction register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "instruction",
-                    description: Some(
-                        "Instruction to be sent to the external SPI device",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Abr",
-            extends: None,
-            description: Some(
-                "alternate bytes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "alternate",
-                    description: Some(
-                        "Alternate bytes",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wabr",
-            extends: None,
-            description: Some(
-                "write alternate bytes register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "alternate",
-                    description: Some(
-                        "[31: 0]: Alternate bytes. Optional data to be sent to the external SPI device right after the address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wptcr",
-            extends: None,
-            description: Some(
-                "wrap timing configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dcyc",
-                    description: Some(
-                        "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dhqc",
-                    description: Some(
-                        "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement.",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sshift",
-                    description: Some(
-                        "Sample shift By default, the OCTOSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The firmware must assure that SSHIFT=0 when the data phase is configured in DTR mode (when DDTR = 1).",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "SampleShift",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dcr2",
-            extends: None,
-            description: Some(
-                "device configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "prescaler",
-                    description: Some(
-                        "Clock prescaler. This field defines the scaler factor for generating the CLK based on the kernel clock (value + 1). 2: FCLK = FKERNEL/3 ... 255: FCLK = FKERNEL/256 For odd clock division factors, the CLK duty cycle is not 50 %. The clock signal remains low one cycle longer than it stays high.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrapsize",
-                    description: Some(
-                        "Wrap size. This field indicates the wrap size to which the memory is configured. For memories which have a separate command for wrapped instructions, this field indicates the wrap-size associated with the command held in the OCTOSPI1_WPIR register. 110-111: Reserved",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ccr",
-            extends: None,
-            description: Some(
-                "communication configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "imode",
-                    description: Some(
-                        "Instruction mode. This field defines the instruction phase mode of operation. 101-111: Reserved",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "PhaseMode",
-                    ),
-                },
-                Field {
-                    name: "idtr",
-                    description: Some(
-                        "Instruction double transfer rate. This bit sets the DTR mode for the instruction phase.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "isize",
-                    description: Some(
-                        "Instruction size. This bit defines instruction size.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "SizeInBits",
-                    ),
-                },
-                Field {
-                    name: "admode",
-                    description: Some(
-                        "Address mode. This field defines the address phase mode of operation. 101-111: Reserved",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "PhaseMode",
-                    ),
-                },
-                Field {
-                    name: "addtr",
-                    description: Some(
-                        "Address double transfer rate. This bit sets the DTR mode for the address phase.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adsize",
-                    description: Some(
-                        "Address size. This field defines address size.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "SizeInBits",
-                    ),
-                },
-                Field {
-                    name: "abmode",
-                    description: Some(
-                        "Alternate-byte mode. This field defines the alternate-byte phase mode of operation. 101-111: Reserved",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "PhaseMode",
-                    ),
-                },
-                Field {
-                    name: "abdtr",
-                    description: Some(
-                        "Alternate bytes double transfer rate. This bit sets the DTR mode for the alternate bytes phase. This field can be written only when BUSY = 0.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "absize",
-                    description: Some(
-                        "Alternate bytes size. This bit defines alternate bytes size.",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "SizeInBits",
-                    ),
-                },
-                Field {
-                    name: "dmode",
-                    description: Some(
-                        "Data mode. This field defines the data phase mode of operation. 101-111: Reserved",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "PhaseMode",
-                    ),
-                },
-                Field {
-                    name: "ddtr",
-                    description: Some(
-                        "Data double transfer rate. This bit sets the DTR mode for the data phase.",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dqse",
-                    description: Some(
-                        "DQS enable. This bit enables the data strobe management.",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sioo",
-                    description: Some(
-                        "Send instruction only once mode. This bit has no effect when IMODE = 00 (see ).",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wpir",
-            extends: None,
-            description: Some(
-                "wrap instruction register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "instruction",
-                    description: Some(
-                        "[31: 0]: Instruction Instruction to be sent to the external SPI device",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Dcr1",
             extends: None,
             description: Some(
@@ -1531,6 +903,76 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Dcr2",
+            extends: None,
+            description: Some(
+                "device configuration register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "prescaler",
+                    description: Some(
+                        "Clock prescaler. This field defines the scaler factor for generating the CLK based on the kernel clock (value + 1). 2: FCLK = FKERNEL/3 ... 255: FCLK = FKERNEL/256 For odd clock division factors, the CLK duty cycle is not 50 %. The clock signal remains low one cycle longer than it stays high.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrapsize",
+                    description: Some(
+                        "Wrap size. This field indicates the wrap size to which the memory is configured. For memories which have a separate command for wrapped instructions, this field indicates the wrap-size associated with the command held in the OCTOSPI1_WPIR register. 110-111: Reserved",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dcr3",
+            extends: None,
+            description: Some(
+                "device configuration register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "csbound",
+                    description: Some(
+                        "NCS boundary. This field enables the transaction boundary feature. When active, a minimum value of 3 is recommended. The NCS is released on each boundary of 2CSBOUND bytes. others: NCS boundary set to 2CSBOUND bytes",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dcr4",
+            extends: None,
+            description: Some(
+                "device configuration register 4",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "refresh",
+                    description: Some(
+                        "Refresh rate. This field enables the refresh rate feature. The NCS is released every REFRESH + 1 clock cycles for writes, and REFRESH + 4 clock cycles for reads. Note: These two values can be extended with few clock cycles when refresh occurs during a byte transmission in Single-, Dual- or Quad-SPI mode, because the byte transmission must be completed. others: Maximum communication length is set to REFRESH + 1 clock cycles.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Dlr",
             extends: None,
             description: Some(
@@ -1545,6 +987,76 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dr",
+            extends: None,
+            description: Some(
+                "data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "data",
+                    description: Some(
+                        "[31: 0]: Data Data to be sent/received to/from the external SPI device In Indirect-write mode, data written to this register is stored on the FIFO before it is sent to the external device during the data phase. If the FIFO is too full, a write operation is stalled until the FIFO has enough space to accept the amount of data being written. In Indirect-read mode, reading this register gives (via the FIFO) the data that was received from the external device. If the FIFO does not have as many bytes as requested by the read operation and if BUSY = 1, the read operation is stalled until enough data is present or until the transfer is complete, whichever happens first. In Automatic status-polling mode, this register contains the last data read from the external device (without masking). Word, half-word, and byte accesses to this register are supported. In Indirect-write mode, a byte write adds 1 byte to the FIFO, a half-word write 2 bytes, and a word write 4 bytes. Similarly, in Indirect-read mode, a byte read removes 1 byte from the FIFO, a halfword read 2 bytes, and a word read 4 bytes. Accesses in Indirect mode must be aligned to the bottom of. this register: A byte read must read DATA[7:0] and a half-word read must read DATA[15:0].",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fcr",
+            extends: None,
+            description: Some(
+                "flag clear register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ctef",
+                    description: Some(
+                        "Clear transfer error flag Writing 1 clears the TEF flag in the SR register.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctcf",
+                    description: Some(
+                        "Clear transfer complete flag Writing 1 clears the TCF flag in the SR register.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "csmf",
+                    description: Some(
+                        "Clear status match flag Writing 1 clears the SMF flag in the SR register.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctof",
+                    description: Some(
+                        "Clear timeout flag Writing 1 clears the TOF flag in the SR register.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1601,17 +1113,239 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dr",
+            name: "Ir",
             extends: None,
             description: Some(
-                "data register",
+                "instruction register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "data",
+                    name: "instruction",
                     description: Some(
-                        "[31: 0]: Data Data to be sent/received to/from the external SPI device In Indirect-write mode, data written to this register is stored on the FIFO before it is sent to the external device during the data phase. If the FIFO is too full, a write operation is stalled until the FIFO has enough space to accept the amount of data being written. In Indirect-read mode, reading this register gives (via the FIFO) the data that was received from the external device. If the FIFO does not have as many bytes as requested by the read operation and if BUSY = 1, the read operation is stalled until enough data is present or until the transfer is complete, whichever happens first. In Automatic status-polling mode, this register contains the last data read from the external device (without masking). Word, half-word, and byte accesses to this register are supported. In Indirect-write mode, a byte write adds 1 byte to the FIFO, a half-word write 2 bytes, and a word write 4 bytes. Similarly, in Indirect-read mode, a byte read removes 1 byte from the FIFO, a halfword read 2 bytes, and a word read 4 bytes. Accesses in Indirect mode must be aligned to the bottom of. this register: A byte read must read DATA[7:0] and a half-word read must read DATA[15:0].",
+                        "Instruction to be sent to the external SPI device",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Lptr",
+            extends: None,
+            description: Some(
+                "low-power timeout register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "timeout",
+                    description: Some(
+                        "[15: 0]: Timeout period After each access in Memory-mapped mode, the OCTOSPI prefetches the subsequent bytes and hold them in the FIFO. This field indicates how many CLK cycles the OCTOSPI waits after the clock becomes inactive and until it raises the NCS, putting the external device in a lower-consumption state.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pir",
+            extends: None,
+            description: Some(
+                "polling interval register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "interval",
+                    description: Some(
+                        "[15: 0]: Polling interval Number of CLK cycle between a read during the Automatic status-polling phases",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Psmar",
+            extends: None,
+            description: Some(
+                "polling status match register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "match_",
+                    description: Some(
+                        "[31: 0]: Status match Value to be compared with the masked status register to get a match",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Psmkr",
+            extends: None,
+            description: Some(
+                "polling status mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mask",
+                    description: Some(
+                        "Status mask Mask to be applied to the status bytes received in Automatic status-polling mode For bit n:",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tef",
+                    description: Some(
+                        "Transfer error flag. This bit is set in Indirect mode when an invalid address is being accessed in Indirect mode. It is cleared by writing 1 to CTEF.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tcf",
+                    description: Some(
+                        "Transfer complete flag. This bit is set in Indirect mode when the programmed number of data has been transferred or in any mode when the transfer has been aborted.It is cleared by writing 1 to CTCF.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ftf",
+                    description: Some(
+                        "FIFO threshold flag In Indirect mode, this bit is set when the FIFO threshold has been reached, or if there is any data left in the FIFO after the reads from the external device are complete. It is cleared automatically as soon as the threshold condition is no longer true. In Automatic status-polling mode, this bit is set every time the status register is read, and the bit is cleared when the data register is read.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smf",
+                    description: Some(
+                        "Status match flag. This bit is set in Automatic status-polling mode when the unmasked received data matches the corresponding bits in the match register (PSMAR). It is cleared by writing 1 to CSMF.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tof",
+                    description: Some(
+                        "Timeout flag. This bit is set when timeout occurs. It is cleared by writing 1 to CTOF.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "busy",
+                    description: Some(
+                        "Busy. This bit is set when an operation is ongoing. It is cleared automatically when the operation with the external device is finished and the FIFO is empty.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "flevel",
+                    description: Some(
+                        "FIFO level. This field gives the number of valid bytes that are being held in the FIFO. FLEVEL = 0 when the FIFO is empty, and 32 when it is full. In Automatic status-polling mode, FLEVEL is zero.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tcr",
+            extends: None,
+            description: Some(
+                "timing configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcyc",
+                    description: Some(
+                        "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least six dummy cycles when using memories with DQS activated.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dhqc",
+                    description: Some(
+                        "Delay hold quarter cycle",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sshift",
+                    description: Some(
+                        "Sample shift By default, the OCTOSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The software must ensure that SSHIFT = 0 when the data phase is configured in DTR mode (when DDTR = 1.)",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SampleShift",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wabr",
+            extends: None,
+            description: Some(
+                "write alternate bytes register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "alternate",
+                    description: Some(
+                        "[31: 0]: Alternate bytes. Optional data to be sent to the external SPI device right after the address",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1764,8 +1498,351 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Wir",
+            extends: None,
+            description: Some(
+                "write instruction register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "instruction",
+                    description: Some(
+                        "Instruction Instruction to be sent to the external SPI device",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wpabr",
+            extends: None,
+            description: Some(
+                "wrap alternate bytes register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "alternate",
+                    description: Some(
+                        "[31: 0]: Alternate bytes Optional data to be sent to the external SPI device right after the address",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wpccr",
+            extends: None,
+            description: Some(
+                "OCTOSPI wrap communication configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "imode",
+                    description: Some(
+                        "Instruction mode. This field defines the instruction phase mode of operation. 101-111: Reserved",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "PhaseMode",
+                    ),
+                },
+                Field {
+                    name: "idtr",
+                    description: Some(
+                        "Instruction double transfer rate. This bit sets the DTR mode for the instruction phase.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "isize",
+                    description: Some(
+                        "Instruction size. This field defines instruction size.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "SizeInBits",
+                    ),
+                },
+                Field {
+                    name: "admode",
+                    description: Some(
+                        "Address mode. This field defines the address phase mode of operation. 101-111: Reserved",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "PhaseMode",
+                    ),
+                },
+                Field {
+                    name: "addtr",
+                    description: Some(
+                        "Address double transfer rate. This bit sets the DTR mode for the address phase.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "adsize",
+                    description: Some(
+                        "Address size. This field defines address size.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "SizeInBits",
+                    ),
+                },
+                Field {
+                    name: "abmode",
+                    description: Some(
+                        "Alternate-byte mode. This field defines the alternate byte phase mode of operation. 101-111: Reserved",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "PhaseMode",
+                    ),
+                },
+                Field {
+                    name: "abdtr",
+                    description: Some(
+                        "Alternate bytes double transfer rate. This bit sets the DTR mode for the alternate bytes phase.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "absize",
+                    description: Some(
+                        "Alternate bytes size. This bit defines alternate bytes size.",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "SizeInBits",
+                    ),
+                },
+                Field {
+                    name: "dmode",
+                    description: Some(
+                        "Data mode. This field defines the data phase mode of operation. 101-111: Reserved",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "PhaseMode",
+                    ),
+                },
+                Field {
+                    name: "ddtr",
+                    description: Some(
+                        "Data double transfer rate. This bit sets the DTR mode for the data phase.",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dqse",
+                    description: Some(
+                        "DQS enable. This bit enables the data strobe management.",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wpir",
+            extends: None,
+            description: Some(
+                "wrap instruction register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "instruction",
+                    description: Some(
+                        "[31: 0]: Instruction Instruction to be sent to the external SPI device",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wptcr",
+            extends: None,
+            description: Some(
+                "wrap timing configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcyc",
+                    description: Some(
+                        "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dhqc",
+                    description: Some(
+                        "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement.",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sshift",
+                    description: Some(
+                        "Sample shift By default, the OCTOSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The firmware must assure that SSHIFT=0 when the data phase is configured in DTR mode (when DDTR = 1).",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SampleShift",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wtcr",
+            extends: None,
+            description: Some(
+                "write timing configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcyc",
+                    description: Some(
+                        "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
+        Enum {
+            name: "CycleDelay",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NONE",
+                    description: Some(
+                        "No delay hold",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "QUARTERCYCLE",
+                    description: Some(
+                        "1/4 cycle hold",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FlashSelect",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FLASHONE",
+                    description: Some(
+                        "FLASH 1 selected (data exchanged over IO[3:0])",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FLASHTWO",
+                    description: Some(
+                        "FLASH 2 selected (data exchanged over IO[7:4])",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FunctionalMode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "INDIRECTWRITE",
+                    description: Some(
+                        "Indirect-write mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "INDIRECTREAD",
+                    description: Some(
+                        "Indirect-read mode",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "AUTOSTATUSPOLLING",
+                    description: Some(
+                        "Automatic status-polling mode",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MEMORYMAPPED",
+                    description: Some(
+                        "Memory-mapped mode",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
         Enum {
             name: "Latency",
             description: None,
@@ -1782,6 +1859,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FIXED",
                     description: Some(
                         "Fixed latency",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "MatchMode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MATCHAND",
+                    description: Some(
+                        "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MATCHOR",
+                    description: Some(
+                        "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register.",
                     ),
                     value: 1,
                 },
@@ -1837,72 +1935,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "SizeInBits",
+            name: "NcsCycleHold",
             description: None,
-            bit_size: 2,
+            bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "_8BIT",
+                    name: "ONECYCLE",
                     description: Some(
-                        "8-bit alternate bytes",
+                        "NCS stays high for at least 1 cycle between external device commands.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "_16BIT",
+                    name: "TWOCYCLES",
                     description: Some(
-                        "16-bit alternate bytes",
+                        "NCS stays high for at least 2 cycles between external device commands.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "_24BIT",
+                    name: "SIXTYFOURCYCLES",
                     description: Some(
-                        "24-bit alternate bytes",
+                        "NCS stays high for at least 64 cycles between external device commands.",
                     ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "_32BIT",
-                    description: Some(
-                        "32-bit alternate bytes",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "FunctionalMode",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "INDIRECTWRITE",
-                    description: Some(
-                        "Indirect-write mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INDIRECTREAD",
-                    description: Some(
-                        "Indirect-read mode",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "AUTOSTATUSPOLLING",
-                    description: Some(
-                        "Automatic status-polling mode",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MEMORYMAPPED",
-                    description: Some(
-                        "Memory-mapped mode",
-                    ),
-                    value: 3,
+                    value: 63,
                 },
             ],
         },
@@ -1949,23 +2005,58 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "MatchMode",
+            name: "SampleShift",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MATCHAND",
+                    name: "NONE",
                     description: Some(
-                        "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register.",
+                        "No shift",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MATCHOR",
+                    name: "HALFCYCLE",
                     description: Some(
-                        "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register.",
+                        "1/2 cycle shift",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "SizeInBits",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "_8BIT",
+                    description: Some(
+                        "8-bit alternate bytes",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "_16BIT",
+                    description: Some(
+                        "16-bit alternate bytes",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "_24BIT",
+                    description: Some(
+                        "24-bit alternate bytes",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "_32BIT",
+                    description: Some(
+                        "32-bit alternate bytes",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -1994,97 +2085,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),
                     value: 31,
-                },
-            ],
-        },
-        Enum {
-            name: "NcsCycleHold",
-            description: None,
-            bit_size: 6,
-            variants: &[
-                EnumVariant {
-                    name: "ONECYCLE",
-                    description: Some(
-                        "NCS stays high for at least 1 cycle between external device commands.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TWOCYCLES",
-                    description: Some(
-                        "NCS stays high for at least 2 cycles between external device commands.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "SIXTYFOURCYCLES",
-                    description: Some(
-                        "NCS stays high for at least 64 cycles between external device commands.",
-                    ),
-                    value: 63,
-                },
-            ],
-        },
-        Enum {
-            name: "FlashSelect",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FLASHONE",
-                    description: Some(
-                        "FLASH 1 selected (data exchanged over IO[3:0])",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FLASHTWO",
-                    description: Some(
-                        "FLASH 2 selected (data exchanged over IO[7:4])",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "SampleShift",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "No shift",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALFCYCLE",
-                    description: Some(
-                        "1/2 cycle shift",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "CycleDelay",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "No delay hold",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "QUARTERCYCLE",
-                    description: Some(
-                        "1/4 cycle hold",
-                    ),
-                    value: 1,
                 },
             ],
         },

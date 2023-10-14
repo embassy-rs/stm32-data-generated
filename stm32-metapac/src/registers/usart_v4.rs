@@ -3,12 +3,29 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Usart",
+            name: "Lpuart",
             extends: None,
             description: Some(
-                "Universal synchronous asynchronous receiver transmitter",
+                "Low-power Universal synchronous asynchronous receiver transmitter",
             ),
             items: &[
+                BlockItem {
+                    name: "brr",
+                    description: Some(
+                        "Baud rate register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Brr",
+                            ),
+                        },
+                    ),
+                },
                 BlockItem {
                     name: "cr1",
                     description: Some(
@@ -61,6 +78,117 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "icr",
+                    description: Some(
+                        "Interrupt flag clear register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "isr",
+                    description: Some(
+                        "Interrupt & status register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Isr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "presc",
+                    description: Some(
+                        "Prescaler register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Presc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rdr",
+                    description: Some(
+                        "Receive data register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rqr",
+                    description: Some(
+                        "Request register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rqr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tdr",
+                    description: Some(
+                        "Transmit data register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
+            name: "Usart",
+            extends: None,
+            description: Some(
+                "Universal synchronous asynchronous receiver transmitter",
+            ),
+            items: &[
+                BlockItem {
                     name: "brr",
                     description: Some(
                         "Baud rate register",
@@ -73,6 +201,57 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Brr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr1",
+                    description: Some(
+                        "Control register 1",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr2",
+                    description: Some(
+                        "Control register 2",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr3",
+                    description: Some(
+                        "Control register 3",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr3",
                             ),
                         },
                     ),
@@ -95,6 +274,91 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "icr",
+                    description: Some(
+                        "Interrupt flag clear register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "isr",
+                    description: Some(
+                        "Interrupt & status register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Isr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "presc",
+                    description: Some(
+                        "Prescaler register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Presc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rdr",
+                    description: Some(
+                        "Receive data register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rqr",
+                    description: Some(
+                        "Request register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rqr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "rtor",
                     description: Some(
                         "Receiver timeout register",
@@ -112,74 +376,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "rqr",
-                    description: Some(
-                        "Request register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rqr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "isr",
-                    description: Some(
-                        "Interrupt & status register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Isr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "icr",
-                    description: Some(
-                        "Interrupt flag clear register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rdr",
-                    description: Some(
-                        "Receive data register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "tdr",
                     description: Some(
                         "Transmit data register",
@@ -192,202 +388,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Dr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "presc",
-                    description: Some(
-                        "Prescaler register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Presc",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "Lpuart",
-            extends: None,
-            description: Some(
-                "Low-power Universal synchronous asynchronous receiver transmitter",
-            ),
-            items: &[
-                BlockItem {
-                    name: "cr1",
-                    description: Some(
-                        "Control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr2",
-                    description: Some(
-                        "Control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr3",
-                    description: Some(
-                        "Control register 3",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "brr",
-                    description: Some(
-                        "Baud rate register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Brr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rqr",
-                    description: Some(
-                        "Request register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rqr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "isr",
-                    description: Some(
-                        "Interrupt & status register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Isr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "icr",
-                    description: Some(
-                        "Interrupt flag clear register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rdr",
-                    description: Some(
-                        "Receive data register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tdr",
-                    description: Some(
-                        "Transmit data register",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "presc",
-                    description: Some(
-                        "Prescaler register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Presc",
                             ),
                         },
                     ),
@@ -396,6 +396,786 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Brr",
+            extends: None,
+            description: Some(
+                "Baud rate register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "brr",
+                    description: Some(
+                        "USARTDIV",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr1",
+            extends: None,
+            description: Some(
+                "Control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ue",
+                    description: Some(
+                        "USART enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uesm",
+                    description: Some(
+                        "USART enable in Stop mode",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "re",
+                    description: Some(
+                        "Receiver enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "te",
+                    description: Some(
+                        "Transmitter enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "idleie",
+                    description: Some(
+                        "IDLE interrupt enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxneie",
+                    description: Some(
+                        "RXNE interrupt enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tcie",
+                    description: Some(
+                        "Transmission complete interrupt enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txeie",
+                    description: Some(
+                        "TXE interrupt enable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "peie",
+                    description: Some(
+                        "PE interrupt enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ps",
+                    description: Some(
+                        "Parity selection",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ps",
+                    ),
+                },
+                Field {
+                    name: "pce",
+                    description: Some(
+                        "Parity control enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wake",
+                    description: Some(
+                        "Receiver wakeup method",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wake",
+                    ),
+                },
+                Field {
+                    name: "m0",
+                    description: Some(
+                        "Word length",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "M0",
+                    ),
+                },
+                Field {
+                    name: "mme",
+                    description: Some(
+                        "Mute mode enable",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cmie",
+                    description: Some(
+                        "Character match interrupt enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "over8",
+                    description: Some(
+                        "Oversampling mode",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Over8",
+                    ),
+                },
+                Field {
+                    name: "dedt",
+                    description: Some(
+                        "Driver Enable deassertion time",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "deat",
+                    description: Some(
+                        "Driver Enable assertion time",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rtoie",
+                    description: Some(
+                        "Receiver timeout interrupt enable",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eobie",
+                    description: Some(
+                        "End of Block interrupt enable",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "m1",
+                    description: Some(
+                        "Word length",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "M1",
+                    ),
+                },
+                Field {
+                    name: "fifoen",
+                    description: Some(
+                        "FIFO mode enable",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txfeie",
+                    description: Some(
+                        "TXFIFO empty interrupt enable",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxffie",
+                    description: Some(
+                        "RXFIFO Full interrupt enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr2",
+            extends: None,
+            description: Some(
+                "Control register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addm",
+                    description: Some(
+                        "7-bit Address Detection/4-bit Address Detection",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Addm",
+                    ),
+                },
+                Field {
+                    name: "lbdl",
+                    description: Some(
+                        "Line break detection length",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lbdl",
+                    ),
+                },
+                Field {
+                    name: "lbdie",
+                    description: Some(
+                        "LIN break detection interrupt enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lbcl",
+                    description: Some(
+                        "Last bit clock pulse",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cpha",
+                    description: Some(
+                        "Clock phase",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cpha",
+                    ),
+                },
+                Field {
+                    name: "cpol",
+                    description: Some(
+                        "Clock polarity",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cpol",
+                    ),
+                },
+                Field {
+                    name: "clken",
+                    description: Some(
+                        "Clock enable",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stop",
+                    description: Some(
+                        "STOP bits",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Stop",
+                    ),
+                },
+                Field {
+                    name: "linen",
+                    description: Some(
+                        "LIN mode enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "swap",
+                    description: Some(
+                        "Swap TX/RX pins",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxinv",
+                    description: Some(
+                        "RX pin active level inversion",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txinv",
+                    description: Some(
+                        "TX pin active level inversion",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "datainv",
+                    description: Some(
+                        "Binary data inversion",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "msbfirst",
+                    description: Some(
+                        "Most significant bit first",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Msbfirst",
+                    ),
+                },
+                Field {
+                    name: "abren",
+                    description: Some(
+                        "Auto baud rate enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "abrmod",
+                    description: Some(
+                        "Auto baud rate mode",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Abrmod",
+                    ),
+                },
+                Field {
+                    name: "rtoen",
+                    description: Some(
+                        "Receiver timeout enable",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "add",
+                    description: Some(
+                        "Address of the USART node",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr3",
+            extends: None,
+            description: Some(
+                "Control register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "eie",
+                    description: Some(
+                        "Error interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iren",
+                    description: Some(
+                        "IrDA mode enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "irlp",
+                    description: Some(
+                        "IrDA low-power",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Irlp",
+                    ),
+                },
+                Field {
+                    name: "hdsel",
+                    description: Some(
+                        "Half-duplex selection",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nack",
+                    description: Some(
+                        "Smartcard NACK enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "scen",
+                    description: Some(
+                        "Smartcard mode enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmar",
+                    description: Some(
+                        "DMA enable receiver",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmat",
+                    description: Some(
+                        "DMA enable transmitter",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rtse",
+                    description: Some(
+                        "RTS enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctse",
+                    description: Some(
+                        "CTS enable",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctsie",
+                    description: Some(
+                        "CTS interrupt enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "onebit",
+                    description: Some(
+                        "One sample bit method enable",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ovrdis",
+                    description: Some(
+                        "Overrun Disable",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ddre",
+                    description: Some(
+                        "DMA Disable on Reception Error",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dem",
+                    description: Some(
+                        "Driver enable mode",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dep",
+                    description: Some(
+                        "Driver enable polarity selection",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dep",
+                    ),
+                },
+                Field {
+                    name: "scarcnt",
+                    description: Some(
+                        "Smartcard auto-retry count",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wus",
+                    description: Some(
+                        "Wakeup from Stop mode interrupt flag selection",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wus",
+                    ),
+                },
+                Field {
+                    name: "wufie",
+                    description: Some(
+                        "Wakeup from Stop mode interrupt enable",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txftie",
+                    description: Some(
+                        "TXFIFO threshold interrupt enable",
+                    ),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxftcfg",
+                    description: Some(
+                        "Receive FIFO threshold configuration",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxftie",
+                    description: Some(
+                        "RXFIFO threshold interrupt enable",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txftcfg",
+                    description: Some(
+                        "TXFIFO threshold configuration",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dr",
+            extends: None,
+            description: Some(
+                "Data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dr",
+                    description: Some(
+                        "Data value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Gtpr",
+            extends: None,
+            description: Some(
+                "Guard time and prescaler register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "psc",
+                    description: Some(
+                        "Prescaler value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gt",
+                    description: Some(
+                        "Guard time value",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Icr",
             extends: None,
@@ -799,6 +1579,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Presc",
+            extends: None,
+            description: Some(
+                "Prescaler register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "prescaler",
+                    description: Some(
+                        "Clock prescaler",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Presc",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Rqr",
             extends: None,
             description: Some(
@@ -888,856 +1690,61 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Brr",
-            extends: None,
-            description: Some(
-                "Baud rate register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "brr",
-                    description: Some(
-                        "USARTDIV",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr2",
-            extends: None,
-            description: Some(
-                "Control register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addm",
-                    description: Some(
-                        "7-bit Address Detection/4-bit Address Detection",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Addm",
-                    ),
-                },
-                Field {
-                    name: "lbdl",
-                    description: Some(
-                        "Line break detection length",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lbdl",
-                    ),
-                },
-                Field {
-                    name: "lbdie",
-                    description: Some(
-                        "LIN break detection interrupt enable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lbcl",
-                    description: Some(
-                        "Last bit clock pulse",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cpha",
-                    description: Some(
-                        "Clock phase",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cpha",
-                    ),
-                },
-                Field {
-                    name: "cpol",
-                    description: Some(
-                        "Clock polarity",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cpol",
-                    ),
-                },
-                Field {
-                    name: "clken",
-                    description: Some(
-                        "Clock enable",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stop",
-                    description: Some(
-                        "STOP bits",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Stop",
-                    ),
-                },
-                Field {
-                    name: "linen",
-                    description: Some(
-                        "LIN mode enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "swap",
-                    description: Some(
-                        "Swap TX/RX pins",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxinv",
-                    description: Some(
-                        "RX pin active level inversion",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txinv",
-                    description: Some(
-                        "TX pin active level inversion",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "datainv",
-                    description: Some(
-                        "Binary data inversion",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "msbfirst",
-                    description: Some(
-                        "Most significant bit first",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Msbfirst",
-                    ),
-                },
-                Field {
-                    name: "abren",
-                    description: Some(
-                        "Auto baud rate enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "abrmod",
-                    description: Some(
-                        "Auto baud rate mode",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Abrmod",
-                    ),
-                },
-                Field {
-                    name: "rtoen",
-                    description: Some(
-                        "Receiver timeout enable",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "add",
-                    description: Some(
-                        "Address of the USART node",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dr",
-            extends: None,
-            description: Some(
-                "Data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dr",
-                    description: Some(
-                        "Data value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 9,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr3",
-            extends: None,
-            description: Some(
-                "Control register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eie",
-                    description: Some(
-                        "Error interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "iren",
-                    description: Some(
-                        "IrDA mode enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "irlp",
-                    description: Some(
-                        "IrDA low-power",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Irlp",
-                    ),
-                },
-                Field {
-                    name: "hdsel",
-                    description: Some(
-                        "Half-duplex selection",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nack",
-                    description: Some(
-                        "Smartcard NACK enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "scen",
-                    description: Some(
-                        "Smartcard mode enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dmar",
-                    description: Some(
-                        "DMA enable receiver",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dmat",
-                    description: Some(
-                        "DMA enable transmitter",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rtse",
-                    description: Some(
-                        "RTS enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctse",
-                    description: Some(
-                        "CTS enable",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctsie",
-                    description: Some(
-                        "CTS interrupt enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "onebit",
-                    description: Some(
-                        "One sample bit method enable",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ovrdis",
-                    description: Some(
-                        "Overrun Disable",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ddre",
-                    description: Some(
-                        "DMA Disable on Reception Error",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dem",
-                    description: Some(
-                        "Driver enable mode",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dep",
-                    description: Some(
-                        "Driver enable polarity selection",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dep",
-                    ),
-                },
-                Field {
-                    name: "scarcnt",
-                    description: Some(
-                        "Smartcard auto-retry count",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wus",
-                    description: Some(
-                        "Wakeup from Stop mode interrupt flag selection",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Wus",
-                    ),
-                },
-                Field {
-                    name: "wufie",
-                    description: Some(
-                        "Wakeup from Stop mode interrupt enable",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txftie",
-                    description: Some(
-                        "TXFIFO threshold interrupt enable",
-                    ),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxftcfg",
-                    description: Some(
-                        "Receive FIFO threshold configuration",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxftie",
-                    description: Some(
-                        "RXFIFO threshold interrupt enable",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txftcfg",
-                    description: Some(
-                        "TXFIFO threshold configuration",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Presc",
-            extends: None,
-            description: Some(
-                "Prescaler register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "prescaler",
-                    description: Some(
-                        "Clock prescaler",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some(
-                        "Presc",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "Control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ue",
-                    description: Some(
-                        "USART enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uesm",
-                    description: Some(
-                        "USART enable in Stop mode",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "re",
-                    description: Some(
-                        "Receiver enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "te",
-                    description: Some(
-                        "Transmitter enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idleie",
-                    description: Some(
-                        "IDLE interrupt enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxneie",
-                    description: Some(
-                        "RXNE interrupt enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tcie",
-                    description: Some(
-                        "Transmission complete interrupt enable",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txeie",
-                    description: Some(
-                        "TXE interrupt enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "peie",
-                    description: Some(
-                        "PE interrupt enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ps",
-                    description: Some(
-                        "Parity selection",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ps",
-                    ),
-                },
-                Field {
-                    name: "pce",
-                    description: Some(
-                        "Parity control enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wake",
-                    description: Some(
-                        "Receiver wakeup method",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Wake",
-                    ),
-                },
-                Field {
-                    name: "m0",
-                    description: Some(
-                        "Word length",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "M0",
-                    ),
-                },
-                Field {
-                    name: "mme",
-                    description: Some(
-                        "Mute mode enable",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cmie",
-                    description: Some(
-                        "Character match interrupt enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "over8",
-                    description: Some(
-                        "Oversampling mode",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Over8",
-                    ),
-                },
-                Field {
-                    name: "dedt",
-                    description: Some(
-                        "Driver Enable deassertion time",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "deat",
-                    description: Some(
-                        "Driver Enable assertion time",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rtoie",
-                    description: Some(
-                        "Receiver timeout interrupt enable",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "eobie",
-                    description: Some(
-                        "End of Block interrupt enable",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "m1",
-                    description: Some(
-                        "Word length",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "M1",
-                    ),
-                },
-                Field {
-                    name: "fifoen",
-                    description: Some(
-                        "FIFO mode enable",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txfeie",
-                    description: Some(
-                        "TXFIFO empty interrupt enable",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxffie",
-                    description: Some(
-                        "RXFIFO Full interrupt enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Gtpr",
-            extends: None,
-            description: Some(
-                "Guard time and prescaler register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "psc",
-                    description: Some(
-                        "Prescaler value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gt",
-                    description: Some(
-                        "Guard time value",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
         Enum {
-            name: "M0",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BIT8",
-                    description: Some(
-                        "1 start bit, 8 data bits, n stop bits",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT9",
-                    description: Some(
-                        "1 start bit, 9 data bits, n stop bits",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wus",
+            name: "Abrmod",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ADDRESS",
+                    name: "START",
                     description: Some(
-                        "WUF active on address match",
+                        "Measurement of the start bit is used to detect the baud rate",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "START",
+                    name: "EDGE",
                     description: Some(
-                        "WuF active on Start bit detection",
+                        "Falling edge to falling edge measurement",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "FRAME7F",
+                    description: Some(
+                        "0x7F frame detection",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RXNE",
+                    name: "FRAME55",
                     description: Some(
-                        "WUF active on RXNE",
+                        "0x55 frame detection",
                     ),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Addm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BIT4",
+                    description: Some(
+                        "4-bit address detection",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some(
+                        "7-bit address detection",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -1763,21 +1770,168 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wake",
+            name: "Cpol",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLELINE",
+                    name: "LOW",
                     description: Some(
-                        "USART wakeup on idle line",
+                        "Steady low value on CK pin outside transmission window",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ADDRESSMARK",
+                    name: "HIGH",
                     description: Some(
-                        "USART wakeup on address mark",
+                        "Steady high value on CK pin outside transmission window",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dep",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some(
+                        "DE signal is active high",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "DE signal is active low",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Irlp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some(
+                        "Normal mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LOWPOWER",
+                    description: Some(
+                        "Low-power mode",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lbdl",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BIT10",
+                    description: Some(
+                        "10-bit break detection",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT11",
+                    description: Some(
+                        "11-bit break detection",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "M0",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "BIT8",
+                    description: Some(
+                        "1 start bit, 8 data bits, n stop bits",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT9",
+                    description: Some(
+                        "1 start bit, 9 data bits, n stop bits",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "M1",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "M0",
+                    description: Some(
+                        "Use M0 to set the data bits",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some(
+                        "1 start bit, 7 data bits, n stop bits",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Msbfirst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LSB",
+                    description: Some(
+                        "data is transmitted/received with data bit 0 first, following the start bit",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MSB",
+                    description: Some(
+                        "data is transmitted/received with MSB (bit 7/8/9) first, following the start bit",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Over8",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "OVERSAMPLING16",
+                    description: Some(
+                        "Oversampling by 16",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERSAMPLING8",
+                    description: Some(
+                        "Oversampling by 8",
                     ),
                     value: 1,
                 },
@@ -1875,21 +2029,42 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lbdl",
+            name: "Ps",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT10",
+                    name: "EVEN",
                     description: Some(
-                        "10-bit break detection",
+                        "Even parity",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BIT11",
+                    name: "ODD",
                     description: Some(
-                        "11-bit break detection",
+                        "Odd parity",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rwu",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ACTIVE",
+                    description: Some(
+                        "Receiver in active mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MUTE",
+                    description: Some(
+                        "Receiver in mute mode",
                     ),
                     value: 1,
                 },
@@ -1931,226 +2106,51 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dep",
+            name: "Wake",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "IDLELINE",
                     description: Some(
-                        "DE signal is active high",
+                        "USART wakeup on idle line",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "ADDRESSMARK",
                     description: Some(
-                        "DE signal is active low",
+                        "USART wakeup on address mark",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "M1",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "M0",
-                    description: Some(
-                        "Use M0 to set the data bits",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT7",
-                    description: Some(
-                        "1 start bit, 7 data bits, n stop bits",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ps",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EVEN",
-                    description: Some(
-                        "Even parity",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ODD",
-                    description: Some(
-                        "Odd parity",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Abrmod",
+            name: "Wus",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "START",
+                    name: "ADDRESS",
                     description: Some(
-                        "Measurement of the start bit is used to detect the baud rate",
+                        "WUF active on address match",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "EDGE",
+                    name: "START",
                     description: Some(
-                        "Falling edge to falling edge measurement",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FRAME7F",
-                    description: Some(
-                        "0x7F frame detection",
+                        "WuF active on Start bit detection",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FRAME55",
+                    name: "RXNE",
                     description: Some(
-                        "0x55 frame detection",
+                        "WUF active on RXNE",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Rwu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Receiver in active mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MUTE",
-                    description: Some(
-                        "Receiver in mute mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Irlp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Normal mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOWPOWER",
-                    description: Some(
-                        "Low-power mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Msbfirst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LSB",
-                    description: Some(
-                        "data is transmitted/received with data bit 0 first, following the start bit",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MSB",
-                    description: Some(
-                        "data is transmitted/received with MSB (bit 7/8/9) first, following the start bit",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Over8",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "OVERSAMPLING16",
-                    description: Some(
-                        "Oversampling by 16",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERSAMPLING8",
-                    description: Some(
-                        "Oversampling by 8",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Addm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BIT4",
-                    description: Some(
-                        "4-bit address detection",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT7",
-                    description: Some(
-                        "7-bit address detection",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "LOW",
-                    description: Some(
-                        "Steady low value on CK pin outside transmission window",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some(
-                        "Steady high value on CK pin outside transmission window",
-                    ),
-                    value: 1,
                 },
             ],
         },

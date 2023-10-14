@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Window watchdog"),
         items: &[
             BlockItem {
-                name: "cr",
-                description: Some("Control register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
                 name: "cfr",
                 description: Some("Configuration register"),
                 array: None,
@@ -26,6 +15,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Cfr"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Control register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
                 }),
             },
             BlockItem {
@@ -42,30 +42,6 @@ pub(crate) static REGISTERS: IR = IR {
         ],
     }],
     fieldsets: &[
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some("Control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "t",
-                    description: Some("7-bit counter (MSB to LSB)"),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdga",
-                    description: Some("Activation bit"),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Wdga"),
-                },
-            ],
-        },
         FieldSet {
             name: "Cfr",
             extends: None,
@@ -95,6 +71,30 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some("Control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "t",
+                    description: Some("7-bit counter (MSB to LSB)"),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdga",
+                    description: Some("Activation bit"),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Wdga"),
                 },
             ],
         },

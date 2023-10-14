@@ -10,9 +10,57 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "rtsr",
+                    name: "emr",
                     description: Some(
-                        "rising trigger selection register",
+                        "CPU wakeup with event mask register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 16,
+                            },
+                        ),
+                    ),
+                    byte_offset: 132,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lines",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "exticr",
+                    description: Some(
+                        "external interrupt selection register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Exti",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fpr",
+                    description: Some(
+                        "falling edge pending register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -22,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 0,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -58,9 +106,50 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "swier",
+                    name: "imr",
                     description: Some(
-                        "software interrupt event register",
+                        "CPU wakeup with interrupt mask register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 16,
+                            },
+                        ),
+                    ),
+                    byte_offset: 128,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lines",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lockr",
+                    description: Some(
+                        "lock register",
+                    ),
+                    array: None,
+                    byte_offset: 112,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lockr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "privcfgr",
+                    description: Some(
+                        "privilege configuration register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -70,13 +159,13 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 8,
+                    byte_offset: 24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Lines",
+                                "Priv",
                             ),
                         },
                     ),
@@ -106,9 +195,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "fpr",
+                    name: "rtsr",
                     description: Some(
-                        "falling edge pending register",
+                        "rising trigger selection register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -118,7 +207,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 16,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -154,9 +243,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "privcfgr",
+                    name: "swier",
                     description: Some(
-                        "privilege configuration register",
+                        "software interrupt event register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -166,96 +255,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Priv",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "exticr",
-                    description: Some(
-                        "external interrupt selection register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 96,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Exti",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "lockr",
-                    description: Some(
-                        "lock register",
-                    ),
-                    array: None,
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lockr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "imr",
-                    description: Some(
-                        "CPU wakeup with interrupt mask register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 128,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lines",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "emr",
-                    description: Some(
-                        "CPU wakeup with event mask register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 132,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -294,64 +294,6 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sec",
-            extends: None,
-            description: Some(
-                "security configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sec",
-                    description: Some(
-                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Sec",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Priv",
-            extends: None,
-            description: Some(
-                "privilege configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "priv_",
-                    description: Some(
-                        "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Priv",
-                    ),
                 },
             ],
         },
@@ -402,29 +344,66 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
+        FieldSet {
+            name: "Priv",
+            extends: None,
+            description: Some(
+                "privilege configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "priv_",
                     description: Some(
-                        "Event security disabled (non-secure)",
+                        "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
                     ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "Event security enabled (secure)",
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    value: 1,
+                    enumm: Some(
+                        "Priv",
+                    ),
                 },
             ],
         },
+        FieldSet {
+            name: "Sec",
+            extends: None,
+            description: Some(
+                "security configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sec",
+                    description: Some(
+                        "Security enable on event input x\r When EXTI_PRIVCFGR.PRIVx is disabled, SECx can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIVx is enabled, SECx can only be written with privileged access. Unprivileged write to this SECx is discarded.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Sec",
+                    ),
+                },
+            ],
+        },
+    ],
+    enums: &[
         Enum {
             name: "Priv",
             description: None,
@@ -441,6 +420,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILEGED",
                     description: Some(
                         "Event privilege enabled (privileged)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Sec",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NONSECURE",
+                    description: Some(
+                        "Event security disabled (non-secure)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SECURE",
+                    description: Some(
+                        "Event security enabled (secure)",
                     ),
                     value: 1,
                 },

@@ -27,23 +27,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "dr",
                     description: Some(
                         "data register",
@@ -75,32 +58,27 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-            ],
-        },
-    ],
-    fieldsets: &[
-        FieldSet {
-            name: "Htcr",
-            extends: None,
-            description: Some(
-                "Health test control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "htcfg",
+                BlockItem {
+                    name: "sr",
                     description: Some(
-                        "Health test configuration",
+                        "status register",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
-                    enumm: Some(
-                        "Htcfg",
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr",
+                            ),
+                        },
                     ),
                 },
             ],
         },
+    ],
+    fieldsets: &[
         FieldSet {
             name: "Cr",
             extends: None,
@@ -228,6 +206,28 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Htcr",
+            extends: None,
+            description: Some(
+                "Health test control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "htcfg",
+                    description: Some(
+                        "Health test configuration",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some(
+                        "Htcfg",
+                    ),
                 },
             ],
         },
@@ -434,16 +434,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RngConfig2",
+            name: "Nistc",
             description: None,
-            bit_size: 3,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGA_B",
+                    name: "DEFAULT",
                     description: Some(
-                        "Recommended value for config A and B",
+                        "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used",
                     ),
                     value: 0,
+                },
+                EnumVariant {
+                    name: "CUSTOM",
+                    description: Some(
+                        "Custom values for NIST compliant RNG",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -469,23 +476,16 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Nistc",
+            name: "RngConfig2",
             description: None,
-            bit_size: 1,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DEFAULT",
+                    name: "CONFIGA_B",
                     description: Some(
-                        "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used",
+                        "Recommended value for config A and B",
                     ),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "CUSTOM",
-                    description: Some(
-                        "Custom values for NIST compliant RNG",
-                    ),
-                    value: 1,
                 },
             ],
         },

@@ -18,17 +18,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "sr",
-                description: Some("Status register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Sr"),
-                }),
-            },
-            BlockItem {
                 name: "dinr",
                 description: Some("Data input register"),
                 array: None,
@@ -51,6 +40,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "ivr",
+                description: Some("Initialization vector register"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 32,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ivr"),
+                }),
+            },
+            BlockItem {
                 name: "keyr",
                 description: Some("Key register"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
@@ -62,79 +62,19 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "ivr",
-                description: Some("Initialization vector register"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 32,
+                name: "sr",
+                description: Some("Status register"),
+                array: None,
+                byte_offset: 4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Ivr"),
+                    fieldset: Some("Sr"),
                 }),
             },
         ],
     }],
     fieldsets: &[
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some("Status register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ccf",
-                    description: Some("Computation complete flag"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rderr",
-                    description: Some("Read error flag"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrerr",
-                    description: Some("Write error flag"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("Cryptographic key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Dinr",
-            extends: None,
-            description: Some("Data input register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "din",
-                description: Some("Input data word"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
         FieldSet {
             name: "Cr",
             extends: None,
@@ -224,6 +164,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Dinr",
+            extends: None,
+            description: Some("Data input register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "din",
+                description: Some("Input data word"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Doutr",
             extends: None,
             description: Some("Data output register"),
@@ -251,35 +205,54 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: None,
             }],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Mode",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "MODE1",
-                    description: Some("Encryption"),
-                    value: 0,
+        FieldSet {
+            name: "Keyr",
+            extends: None,
+            description: Some("Key register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "key",
+                description: Some("Cryptographic key"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some("Status register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ccf",
+                    description: Some("Computation complete flag"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "MODE2",
-                    description: Some("Key derivation (or key preparation for ECB/CBC decryption)"),
-                    value: 1,
+                Field {
+                    name: "rderr",
+                    description: Some("Read error flag"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "MODE3",
-                    description: Some("Decryption"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MODE4",
-                    description: Some("Key derivation then single decryption"),
-                    value: 3,
+                Field {
+                    name: "wrerr",
+                    description: Some("Write error flag"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
+    ],
+    enums: &[
         Enum {
             name: "Datatype",
             description: None,
@@ -303,6 +276,33 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "BIT",
                     description: Some("Bit"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Mode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "MODE1",
+                    description: Some("Encryption"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MODE2",
+                    description: Some("Key derivation (or key preparation for ECB/CBC decryption)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MODE3",
+                    description: Some("Decryption"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MODE4",
+                    description: Some("Key derivation then single decryption"),
                     value: 3,
                 },
             ],

@@ -61,6 +61,71 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "pdcr",
+                    description: Some(
+                        "PWR Port pull-down control register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pucr",
+                    description: Some(
+                        "PWR Port pull-up control register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "scr",
+                    description: Some(
+                        "PWR status clear register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Scr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "sr1",
                     description: Some(
                         "PWR status register 1",
@@ -94,163 +159,44 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-                BlockItem {
-                    name: "scr",
-                    description: Some(
-                        "PWR status clear register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Scr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pucr",
-                    description: Some(
-                        "PWR Port pull-up control register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pdcr",
-                    description: Some(
-                        "PWR Port pull-down control register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcr",
-                            ),
-                        },
-                    ),
-                },
             ],
         },
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cr4",
+            name: "Cr1",
             extends: None,
             description: Some(
-                "PWR control register 4",
+                "PWR control register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wp",
+                    name: "lpms",
                     description: Some(
-                        "Wakeup pin WKUP1 polarity",
+                        "Low-power mode selection\r These bits select the low-power mode entered when CPU enters deepsleep mode.\r 1XX: Shutdown mode",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr2",
-            extends: None,
-            description: Some(
-                "PWR status register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "flash_rdy",
-                    description: Some(
-                        "Flash ready flag\r This bit is set by hardware to indicate when the Flash memory is ready to be accessed after wakeup from power-down. To place the Flash memory in power-down, set either FPD_SLP or FPD_STP bit.\r Note: If the system boots from SRAM, the user application must wait till FLASH_RDY bit is set, prior to jumping to Flash memory.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Sr1",
-            extends: None,
-            description: Some(
-                "PWR status register 1",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "wuf",
+                    name: "fpd_stop",
                     description: Some(
-                        "Wakeup flag",
+                        "Flash memory powered down during Stop mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Stop mode.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "sbf",
-                    description: Some(
-                        "Standby/Shutdown flag\r This bit is set by hardware when the device enters Standby or Shutdown mode and is cleared by setting the CSBF bit in the PWR_SCR register, or by a power-on reset. It is not cleared by the system reset.",
-                    ),
-                    bit_offset: 8,
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "wufi",
+                    name: "fpd_slp",
                     description: Some(
-                        "Wakeup flag internal\r This bit is set when a wakeup condition is detected on the internal wakeup line. It is cleared when all internal wakeup sources are cleared.",
+                        "Flash memory powered down during Sleep mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Sleep mode.",
                     ),
-                    bit_offset: 15,
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -305,41 +251,55 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr1",
+            name: "Cr4",
             extends: None,
             description: Some(
-                "PWR control register 1",
+                "PWR control register 4",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lpms",
+                    name: "wp",
                     description: Some(
-                        "Low-power mode selection\r These bits select the low-power mode entered when CPU enters deepsleep mode.\r 1XX: Shutdown mode",
+                        "Wakeup pin WKUP1 polarity",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Pcr",
+            extends: None,
+            description: Some(
+                "Power Port pull control register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "fpd_stop",
+                    name: "p",
                     description: Some(
-                        "Flash memory powered down during Stop mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Stop mode.",
+                        "Port pull bit y (y=0..15)",
                     ),
-                    bit_offset: 3,
+                    bit_offset: 0,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fpd_slp",
-                    description: Some(
-                        "Flash memory powered down during Sleep mode\r This bit determines whether the Flash memory is put in power-down mode or remains in idle mode when the device enters Sleep mode.",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
             ],
@@ -382,28 +342,68 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pcr",
+            name: "Sr1",
             extends: None,
             description: Some(
-                "Power Port pull control register",
+                "PWR status register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "p",
+                    name: "wuf",
                     description: Some(
-                        "Port pull bit y (y=0..15)",
+                        "Wakeup flag",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 16,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
                     ),
+                    enumm: None,
+                },
+                Field {
+                    name: "sbf",
+                    description: Some(
+                        "Standby/Shutdown flag\r This bit is set by hardware when the device enters Standby or Shutdown mode and is cleared by setting the CSBF bit in the PWR_SCR register, or by a power-on reset. It is not cleared by the system reset.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wufi",
+                    description: Some(
+                        "Wakeup flag internal\r This bit is set when a wakeup condition is detected on the internal wakeup line. It is cleared when all internal wakeup sources are cleared.",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr2",
+            extends: None,
+            description: Some(
+                "PWR status register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "flash_rdy",
+                    description: Some(
+                        "Flash ready flag\r This bit is set by hardware to indicate when the Flash memory is ready to be accessed after wakeup from power-down. To place the Flash memory in power-down, set either FPD_SLP or FPD_STP bit.\r Note: If the system boots from SRAM, the user application must wait till FLASH_RDY bit is set, prior to jumping to Flash memory.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
                     enumm: None,
                 },
             ],

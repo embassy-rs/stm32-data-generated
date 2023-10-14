@@ -3,39 +3,21 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "RamCom",
-            extends: None,
-            description: Some("display memory"),
-            items: &[
-                BlockItem {
-                    name: "low",
-                    description: Some("display memory low word"),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: None,
-                    }),
-                },
-                BlockItem {
-                    name: "high",
-                    description: Some("display memory high word"),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: None,
-                    }),
-                },
-            ],
-        },
-        Block {
             name: "Lcd",
             extends: None,
             description: Some("Liquid crystal display controller"),
             items: &[
+                BlockItem {
+                    name: "clr",
+                    description: Some("clear register"),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
+                        bit_size: 32,
+                        fieldset: Some("Clr"),
+                    }),
+                },
                 BlockItem {
                     name: "cr",
                     description: Some("control register"),
@@ -59,6 +41,13 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
+                    name: "ram_com",
+                    description: Some("display memory"),
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 8 })),
+                    byte_offset: 20,
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "RamCom" }),
+                },
+                BlockItem {
                     name: "sr",
                     description: Some("status register"),
                     array: None,
@@ -69,28 +58,63 @@ pub(crate) static REGISTERS: IR = IR {
                         fieldset: Some("Sr"),
                     }),
                 },
+            ],
+        },
+        Block {
+            name: "RamCom",
+            extends: None,
+            description: Some("display memory"),
+            items: &[
                 BlockItem {
-                    name: "clr",
-                    description: Some("clear register"),
+                    name: "high",
+                    description: Some("display memory high word"),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(Register {
-                        access: Access::Write,
+                        access: Access::ReadWrite,
                         bit_size: 32,
-                        fieldset: Some("Clr"),
+                        fieldset: None,
                     }),
                 },
                 BlockItem {
-                    name: "ram_com",
-                    description: Some("display memory"),
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 8 })),
-                    byte_offset: 20,
-                    inner: BlockItemInner::Block(BlockItemBlock { block: "RamCom" }),
+                    name: "low",
+                    description: Some("display memory low word"),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: None,
+                    }),
                 },
             ],
         },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Clr",
+            extends: None,
+            description: Some("clear register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sofc",
+                    description: Some("Start of frame flag clear"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uddc",
+                    description: Some("Update display done clear"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Cr",
             extends: None,
@@ -230,30 +254,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PS 16-bit prescaler"),
                     bit_offset: 22,
                     bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Clr",
-            extends: None,
-            description: Some("clear register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sofc",
-                    description: Some("Start of frame flag clear"),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "uddc",
-                    description: Some("Update display done clear"),
-                    bit_offset: 3,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },

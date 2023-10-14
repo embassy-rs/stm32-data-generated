@@ -3,16 +3,387 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "EthernetMac",
+            name: "Eth",
             extends: None,
             description: Some(
-                "Ethernet: media access control (MAC)",
+                "Ethernet Peripheral",
             ),
             items: &[
                 BlockItem {
-                    name: "maccr",
+                    name: "ethernet_dma",
                     description: Some(
-                        "Operating mode configuration register",
+                        "Ethernet: DMA mode register (DMA)",
+                    ),
+                    array: None,
+                    byte_offset: 4096,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "EthernetDma",
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ethernet_mac",
+                    description: Some(
+                        "Ethernet: media access control (MAC)",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "EthernetMac",
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ethernet_mtl",
+                    description: Some(
+                        "Ethernet: MTL mode register (MTL)",
+                    ),
+                    array: None,
+                    byte_offset: 3072,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "EthernetMtl",
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
+            name: "EthernetDma",
+            extends: None,
+            description: Some(
+                "Ethernet: DMA mode register (DMA)",
+            ),
+            items: &[
+                BlockItem {
+                    name: "dmaccarx_br",
+                    description: Some(
+                        "Channel current application receive buffer register",
+                    ),
+                    array: None,
+                    byte_offset: 348,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmaccarxBr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaccarx_dr",
+                    description: Some(
+                        "Channel current application receive descriptor register",
+                    ),
+                    array: None,
+                    byte_offset: 332,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmaccarxDr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaccatx_br",
+                    description: Some(
+                        "Channel current application transmit buffer register",
+                    ),
+                    array: None,
+                    byte_offset: 340,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmaccatxBr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaccatx_dr",
+                    description: Some(
+                        "Channel current application transmit descriptor register",
+                    ),
+                    array: None,
+                    byte_offset: 324,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmaccatxDr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaccr",
+                    description: Some(
+                        "Channel control register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmaccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacier",
+                    description: Some(
+                        "Channel interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 308,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmacier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacmfcr",
+                    description: Some(
+                        "Channel missed frame count register",
+                    ),
+                    array: None,
+                    byte_offset: 364,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmacmfcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_cr",
+                    description: Some(
+                        "Channel receive control register",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxCr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_dlar",
+                    description: Some(
+                        "Channel Rx descriptor list address register",
+                    ),
+                    array: None,
+                    byte_offset: 284,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxDlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_dtpr",
+                    description: Some(
+                        "Channel Rx descriptor tail pointer register",
+                    ),
+                    array: None,
+                    byte_offset: 296,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxDtpr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_iwtr",
+                    description: Some(
+                        "Channel Rx interrupt watchdog timer register",
+                    ),
+                    array: None,
+                    byte_offset: 312,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxIwtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_rlr",
+                    description: Some(
+                        "Channel Rx descriptor ring length register",
+                    ),
+                    array: None,
+                    byte_offset: 304,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxRlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacsr",
+                    description: Some(
+                        "Channel status register",
+                    ),
+                    array: None,
+                    byte_offset: 352,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmacsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_cr",
+                    description: Some(
+                        "Channel transmit control register",
+                    ),
+                    array: None,
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxCr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_dlar",
+                    description: Some(
+                        "Channel Tx descriptor list address register",
+                    ),
+                    array: None,
+                    byte_offset: 276,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxDlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_dtpr",
+                    description: Some(
+                        "Channel Tx descriptor tail pointer register",
+                    ),
+                    array: None,
+                    byte_offset: 288,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxDtpr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_rlr",
+                    description: Some(
+                        "Channel Tx descriptor ring length register",
+                    ),
+                    array: None,
+                    byte_offset: 300,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxRlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmadsr",
+                    description: Some(
+                        "Debug status register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmadsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaisr",
+                    description: Some(
+                        "Interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmaisr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmamr",
+                    description: Some(
+                        "DMA mode register",
                     ),
                     array: None,
                     byte_offset: 0,
@@ -21,15 +392,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maccr",
+                                "Dmamr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macecr",
+                    name: "dmasbmr",
                     description: Some(
-                        "Extended operating mode configuration register",
+                        "System bus mode register",
                     ),
                     array: None,
                     byte_offset: 4,
@@ -38,317 +409,20 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macecr",
+                                "Dmasbmr",
                             ),
                         },
                     ),
                 },
-                BlockItem {
-                    name: "macpfr",
-                    description: Some(
-                        "Packet filtering control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macpfr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macwtr",
-                    description: Some(
-                        "Watchdog timeout register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macwtr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macht0r",
-                    description: Some(
-                        "Hash Table 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macht0r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macht1r",
-                    description: Some(
-                        "Hash Table 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macht1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macvtr",
-                    description: Some(
-                        "VLAN tag register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macvtr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macvhtr",
-                    description: Some(
-                        "VLAN Hash table register",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macvhtr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macvir",
-                    description: Some(
-                        "VLAN inclusion register",
-                    ),
-                    array: None,
-                    byte_offset: 96,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macvir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macivir",
-                    description: Some(
-                        "Inner VLAN inclusion register",
-                    ),
-                    array: None,
-                    byte_offset: 100,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macivir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macqtx_fcr",
-                    description: Some(
-                        "Tx Queue flow control register",
-                    ),
-                    array: None,
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MacqtxFcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrx_fcr",
-                    description: Some(
-                        "Rx flow control register",
-                    ),
-                    array: None,
-                    byte_offset: 144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MacrxFcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macisr",
-                    description: Some(
-                        "Interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 176,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macisr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macier",
-                    description: Some(
-                        "Interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 180,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macier",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrx_tx_sr",
-                    description: Some(
-                        "Rx Tx status register",
-                    ),
-                    array: None,
-                    byte_offset: 184,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MacrxTxSr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macpcsr",
-                    description: Some(
-                        "PMT control status register",
-                    ),
-                    array: None,
-                    byte_offset: 192,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macpcsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrwkpfr",
-                    description: Some(
-                        "Remove wakeup packet filter register",
-                    ),
-                    array: None,
-                    byte_offset: 196,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macrwkpfr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maclcsr",
-                    description: Some(
-                        "LPI control status register",
-                    ),
-                    array: None,
-                    byte_offset: 208,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maclcsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macltcr",
-                    description: Some(
-                        "LPI timers control register",
-                    ),
-                    array: None,
-                    byte_offset: 212,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macltcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macletr",
-                    description: Some(
-                        "LPI entry timer register",
-                    ),
-                    array: None,
-                    byte_offset: 216,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macletr",
-                            ),
-                        },
-                    ),
-                },
+            ],
+        },
+        Block {
+            name: "EthernetMac",
+            extends: None,
+            description: Some(
+                "Ethernet: media access control (MAC)",
+            ),
+            items: &[
                 BlockItem {
                     name: "mac1ustcr",
                     description: Some(
@@ -362,108 +436,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Mac1ustcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macvr",
-                    description: Some(
-                        "Version register",
-                    ),
-                    array: None,
-                    byte_offset: 272,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macvr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macdr",
-                    description: Some(
-                        "Debug register",
-                    ),
-                    array: None,
-                    byte_offset: 276,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "machwf1r",
-                    description: Some(
-                        "HW feature 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 288,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Machwf1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "machwf2r",
-                    description: Some(
-                        "HW feature 2 register",
-                    ),
-                    array: None,
-                    byte_offset: 292,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Machwf2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macmdioar",
-                    description: Some(
-                        "MDIO address register",
-                    ),
-                    array: None,
-                    byte_offset: 512,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macmdioar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macmdiodr",
-                    description: Some(
-                        "MDIO data register",
-                    ),
-                    array: None,
-                    byte_offset: 516,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macmdiodr",
                             ),
                         },
                     ),
@@ -605,460 +577,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mmc_control",
+                    name: "macacr",
                     description: Some(
-                        "MMC control register",
+                        "Auxiliary control register",
                     ),
                     array: None,
-                    byte_offset: 1792,
+                    byte_offset: 2880,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MmcControl",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmc_rx_interrupt",
-                    description: Some(
-                        "MMC Rx interrupt register",
-                    ),
-                    array: None,
-                    byte_offset: 1796,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MmcRxInterrupt",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmc_tx_interrupt",
-                    description: Some(
-                        "MMC Tx interrupt register",
-                    ),
-                    array: None,
-                    byte_offset: 1800,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MmcTxInterrupt",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmc_rx_interrupt_mask",
-                    description: Some(
-                        "MMC Rx interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 1804,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MmcRxInterruptMask",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmc_tx_interrupt_mask",
-                    description: Some(
-                        "MMC Tx interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 1808,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MmcTxInterruptMask",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_single_collision_good_packets",
-                    description: Some(
-                        "Tx single collision good packets register",
-                    ),
-                    array: None,
-                    byte_offset: 1868,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxSingleCollisionGoodPackets",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_multiple_collision_good_packets",
-                    description: Some(
-                        "Tx multiple collision good packets register",
-                    ),
-                    array: None,
-                    byte_offset: 1872,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxMultipleCollisionGoodPackets",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_packet_count_good",
-                    description: Some(
-                        "Tx packet count good register",
-                    ),
-                    array: None,
-                    byte_offset: 1896,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxPacketCountGood",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_crc_error_packets",
-                    description: Some(
-                        "Rx CRC error packets register",
-                    ),
-                    array: None,
-                    byte_offset: 1940,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxCrcErrorPackets",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_alignment_error_packets",
-                    description: Some(
-                        "Rx alignment error packets register",
-                    ),
-                    array: None,
-                    byte_offset: 1944,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxAlignmentErrorPackets",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_unicast_packets_good",
-                    description: Some(
-                        "Rx unicast packets good register",
-                    ),
-                    array: None,
-                    byte_offset: 1988,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxUnicastPacketsGood",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_lpi_usec_cntr",
-                    description: Some(
-                        "Tx LPI microsecond timer register",
-                    ),
-                    array: None,
-                    byte_offset: 2028,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxLpiUsecCntr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_lpi_tran_cntr",
-                    description: Some(
-                        "Tx LPI transition counter register",
-                    ),
-                    array: None,
-                    byte_offset: 2032,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxLpiTranCntr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_lpi_usec_cntr",
-                    description: Some(
-                        "Rx LPI microsecond counter register",
-                    ),
-                    array: None,
-                    byte_offset: 2036,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxLpiUsecCntr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_lpi_tran_cntr",
-                    description: Some(
-                        "Rx LPI transition counter register",
-                    ),
-                    array: None,
-                    byte_offset: 2040,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxLpiTranCntr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3l4c0r",
-                    description: Some(
-                        "L3 and L4 control 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 2304,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3l4c0r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl4a0r",
-                    description: Some(
-                        "Layer4 address filter 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 2308,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl4a0r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a00r",
-                    description: Some(
-                        "MACL3A00R",
-                    ),
-                    array: None,
-                    byte_offset: 2320,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a00r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a10r",
-                    description: Some(
-                        "Layer3 address 1 filter 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 2324,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a10r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a20",
-                    description: Some(
-                        "Layer3 Address 2 filter 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 2328,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a20",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a30",
-                    description: Some(
-                        "Layer3 Address 3 filter 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 2332,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a30",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3l4c1r",
-                    description: Some(
-                        "L3 and L4 control 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 2352,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3l4c1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl4a1r",
-                    description: Some(
-                        "Layer 4 address filter 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 2356,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl4a1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a01r",
-                    description: Some(
-                        "Layer3 address 0 filter 1 Register",
-                    ),
-                    array: None,
-                    byte_offset: 2368,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a01r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a11r",
-                    description: Some(
-                        "Layer3 address 1 filter 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 2372,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a11r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a21r",
-                    description: Some(
-                        "Layer3 address 2 filter 1 Register",
-                    ),
-                    array: None,
-                    byte_offset: 2376,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a21r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a31r",
-                    description: Some(
-                        "Layer3 address 3 filter 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 2380,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a31r",
+                                "Macacr",
                             ),
                         },
                     ),
@@ -1076,193 +606,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Macarpar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mactscr",
-                    description: Some(
-                        "Timestamp control Register",
-                    ),
-                    array: None,
-                    byte_offset: 2816,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mactscr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macssir",
-                    description: Some(
-                        "Sub-second increment register",
-                    ),
-                    array: None,
-                    byte_offset: 2820,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macssir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstsr",
-                    description: Some(
-                        "System time seconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2824,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstnr",
-                    description: Some(
-                        "System time nanoseconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2828,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstnr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstsur",
-                    description: Some(
-                        "System time seconds update register",
-                    ),
-                    array: None,
-                    byte_offset: 2832,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstsur",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstnur",
-                    description: Some(
-                        "System time nanoseconds update register",
-                    ),
-                    array: None,
-                    byte_offset: 2836,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstnur",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mactsar",
-                    description: Some(
-                        "Timestamp addend register",
-                    ),
-                    array: None,
-                    byte_offset: 2840,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mactsar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mactssr",
-                    description: Some(
-                        "Timestamp status register",
-                    ),
-                    array: None,
-                    byte_offset: 2848,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mactssr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mactx_tssnr",
-                    description: Some(
-                        "Tx timestamp status nanoseconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2864,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MactxTssnr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mactx_tsssr",
-                    description: Some(
-                        "Tx timestamp status seconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2868,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MactxTsssr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macacr",
-                    description: Some(
-                        "Auxiliary control register",
-                    ),
-                    array: None,
-                    byte_offset: 2880,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macacr",
                             ),
                         },
                     ),
@@ -1302,69 +645,528 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mactsiacr",
+                    name: "maccr",
                     description: Some(
-                        "Timestamp Ingress asymmetric correction register",
+                        "Operating mode configuration register",
                     ),
                     array: None,
-                    byte_offset: 2896,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactsiacr",
+                                "Maccr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactseacr",
+                    name: "macdr",
                     description: Some(
-                        "Timestamp Egress asymmetric correction register",
+                        "Debug register",
                     ),
                     array: None,
-                    byte_offset: 2900,
+                    byte_offset: 276,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactseacr",
+                                "Macdr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactsicnr",
+                    name: "macecr",
                     description: Some(
-                        "Timestamp Ingress correction nanosecond register",
+                        "Extended operating mode configuration register",
                     ),
                     array: None,
-                    byte_offset: 2904,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactsicnr",
+                                "Macecr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactsecnr",
+                    name: "macht0r",
                     description: Some(
-                        "Timestamp Egress correction nanosecond register",
+                        "Hash Table 0 register",
                     ),
                     array: None,
-                    byte_offset: 2908,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactsecnr",
+                                "Macht0r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macht1r",
+                    description: Some(
+                        "Hash Table 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macht1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "machwf1r",
+                    description: Some(
+                        "HW feature 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 288,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Machwf1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "machwf2r",
+                    description: Some(
+                        "HW feature 2 register",
+                    ),
+                    array: None,
+                    byte_offset: 292,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Machwf2r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macier",
+                    description: Some(
+                        "Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 180,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macisr",
+                    description: Some(
+                        "Interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 176,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macisr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macivir",
+                    description: Some(
+                        "Inner VLAN inclusion register",
+                    ),
+                    array: None,
+                    byte_offset: 100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macivir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a00r",
+                    description: Some(
+                        "MACL3A00R",
+                    ),
+                    array: None,
+                    byte_offset: 2320,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a00r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a01r",
+                    description: Some(
+                        "Layer3 address 0 filter 1 Register",
+                    ),
+                    array: None,
+                    byte_offset: 2368,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a01r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a10r",
+                    description: Some(
+                        "Layer3 address 1 filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2324,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a10r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a11r",
+                    description: Some(
+                        "Layer3 address 1 filter 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 2372,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a11r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a20",
+                    description: Some(
+                        "Layer3 Address 2 filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2328,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a20",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a21r",
+                    description: Some(
+                        "Layer3 address 2 filter 1 Register",
+                    ),
+                    array: None,
+                    byte_offset: 2376,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a21r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a30",
+                    description: Some(
+                        "Layer3 Address 3 filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2332,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a30",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a31r",
+                    description: Some(
+                        "Layer3 address 3 filter 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 2380,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a31r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3l4c0r",
+                    description: Some(
+                        "L3 and L4 control 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2304,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3l4c0r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3l4c1r",
+                    description: Some(
+                        "L3 and L4 control 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 2352,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3l4c1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl4a0r",
+                    description: Some(
+                        "Layer4 address filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2308,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl4a0r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl4a1r",
+                    description: Some(
+                        "Layer 4 address filter 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 2356,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl4a1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "maclcsr",
+                    description: Some(
+                        "LPI control status register",
+                    ),
+                    array: None,
+                    byte_offset: 208,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Maclcsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macletr",
+                    description: Some(
+                        "LPI entry timer register",
+                    ),
+                    array: None,
+                    byte_offset: 216,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macletr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "maclmir",
+                    description: Some(
+                        "Log message interval register",
+                    ),
+                    array: None,
+                    byte_offset: 3024,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Maclmir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macltcr",
+                    description: Some(
+                        "LPI timers control register",
+                    ),
+                    array: None,
+                    byte_offset: 212,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macltcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macmdioar",
+                    description: Some(
+                        "MDIO address register",
+                    ),
+                    array: None,
+                    byte_offset: 512,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macmdioar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macmdiodr",
+                    description: Some(
+                        "MDIO data register",
+                    ),
+                    array: None,
+                    byte_offset: 516,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macmdiodr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macpcsr",
+                    description: Some(
+                        "PMT control status register",
+                    ),
+                    array: None,
+                    byte_offset: 192,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macpcsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macpfr",
+                    description: Some(
+                        "Packet filtering control register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macpfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macpocr",
+                    description: Some(
+                        "PTP Offload control register",
+                    ),
+                    array: None,
+                    byte_offset: 3008,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macpocr",
                             ),
                         },
                     ),
@@ -1387,18 +1189,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macppsttsr",
+                    name: "macppsir",
                     description: Some(
-                        "PPS target time seconds register",
+                        "PPS interval register",
                     ),
                     array: None,
-                    byte_offset: 2944,
+                    byte_offset: 2952,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macppsttsr",
+                                "Macppsir",
                             ),
                         },
                     ),
@@ -1421,18 +1223,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macppsir",
+                    name: "macppsttsr",
                     description: Some(
-                        "PPS interval register",
+                        "PPS target time seconds register",
                     ),
                     array: None,
-                    byte_offset: 2952,
+                    byte_offset: 2944,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macppsir",
+                                "Macppsttsr",
                             ),
                         },
                     ),
@@ -1455,18 +1257,69 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macpocr",
+                    name: "macqtx_fcr",
                     description: Some(
-                        "PTP Offload control register",
+                        "Tx Queue flow control register",
                     ),
                     array: None,
-                    byte_offset: 3008,
+                    byte_offset: 112,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macpocr",
+                                "MacqtxFcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrwkpfr",
+                    description: Some(
+                        "Remove wakeup packet filter register",
+                    ),
+                    array: None,
+                    byte_offset: 196,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macrwkpfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrx_fcr",
+                    description: Some(
+                        "Rx flow control register",
+                    ),
+                    array: None,
+                    byte_offset: 144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MacrxFcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrx_tx_sr",
+                    description: Some(
+                        "Rx Tx status register",
+                    ),
+                    array: None,
+                    byte_offset: 184,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MacrxTxSr",
                             ),
                         },
                     ),
@@ -1523,67 +1376,580 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "maclmir",
+                    name: "macssir",
                     description: Some(
-                        "Log message interval register",
+                        "Sub-second increment register",
                     ),
                     array: None,
-                    byte_offset: 3024,
+                    byte_offset: 2820,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maclmir",
+                                "Macssir",
                             ),
                         },
                     ),
                 },
-            ],
-        },
-        Block {
-            name: "Eth",
-            extends: None,
-            description: Some(
-                "Ethernet Peripheral",
-            ),
-            items: &[
                 BlockItem {
-                    name: "ethernet_mac",
+                    name: "macstnr",
                     description: Some(
-                        "Ethernet: media access control (MAC)",
+                        "System time nanoseconds register",
                     ),
                     array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "EthernetMac",
+                    byte_offset: 2828,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macstnr",
+                            ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ethernet_mtl",
+                    name: "macstnur",
                     description: Some(
-                        "Ethernet: MTL mode register (MTL)",
+                        "System time nanoseconds update register",
                     ),
                     array: None,
-                    byte_offset: 3072,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "EthernetMtl",
+                    byte_offset: 2836,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macstnur",
+                            ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ethernet_dma",
+                    name: "macstsr",
                     description: Some(
-                        "Ethernet: DMA mode register (DMA)",
+                        "System time seconds register",
                     ),
                     array: None,
-                    byte_offset: 4096,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "EthernetDma",
+                    byte_offset: 2824,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macstsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macstsur",
+                    description: Some(
+                        "System time seconds update register",
+                    ),
+                    array: None,
+                    byte_offset: 2832,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macstsur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactsar",
+                    description: Some(
+                        "Timestamp addend register",
+                    ),
+                    array: None,
+                    byte_offset: 2840,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactsar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactscr",
+                    description: Some(
+                        "Timestamp control Register",
+                    ),
+                    array: None,
+                    byte_offset: 2816,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactseacr",
+                    description: Some(
+                        "Timestamp Egress asymmetric correction register",
+                    ),
+                    array: None,
+                    byte_offset: 2900,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactseacr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactsecnr",
+                    description: Some(
+                        "Timestamp Egress correction nanosecond register",
+                    ),
+                    array: None,
+                    byte_offset: 2908,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactsecnr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactsiacr",
+                    description: Some(
+                        "Timestamp Ingress asymmetric correction register",
+                    ),
+                    array: None,
+                    byte_offset: 2896,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactsiacr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactsicnr",
+                    description: Some(
+                        "Timestamp Ingress correction nanosecond register",
+                    ),
+                    array: None,
+                    byte_offset: 2904,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactsicnr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactssr",
+                    description: Some(
+                        "Timestamp status register",
+                    ),
+                    array: None,
+                    byte_offset: 2848,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactx_tssnr",
+                    description: Some(
+                        "Tx timestamp status nanoseconds register",
+                    ),
+                    array: None,
+                    byte_offset: 2864,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MactxTssnr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactx_tsssr",
+                    description: Some(
+                        "Tx timestamp status seconds register",
+                    ),
+                    array: None,
+                    byte_offset: 2868,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MactxTsssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvhtr",
+                    description: Some(
+                        "VLAN Hash table register",
+                    ),
+                    array: None,
+                    byte_offset: 88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvhtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvir",
+                    description: Some(
+                        "VLAN inclusion register",
+                    ),
+                    array: None,
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvr",
+                    description: Some(
+                        "Version register",
+                    ),
+                    array: None,
+                    byte_offset: 272,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvtr",
+                    description: Some(
+                        "VLAN tag register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macwtr",
+                    description: Some(
+                        "Watchdog timeout register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macwtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmc_control",
+                    description: Some(
+                        "MMC control register",
+                    ),
+                    array: None,
+                    byte_offset: 1792,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MmcControl",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmc_rx_interrupt",
+                    description: Some(
+                        "MMC Rx interrupt register",
+                    ),
+                    array: None,
+                    byte_offset: 1796,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MmcRxInterrupt",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmc_rx_interrupt_mask",
+                    description: Some(
+                        "MMC Rx interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 1804,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MmcRxInterruptMask",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmc_tx_interrupt",
+                    description: Some(
+                        "MMC Tx interrupt register",
+                    ),
+                    array: None,
+                    byte_offset: 1800,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MmcTxInterrupt",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmc_tx_interrupt_mask",
+                    description: Some(
+                        "MMC Tx interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 1808,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MmcTxInterruptMask",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_alignment_error_packets",
+                    description: Some(
+                        "Rx alignment error packets register",
+                    ),
+                    array: None,
+                    byte_offset: 1944,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxAlignmentErrorPackets",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_crc_error_packets",
+                    description: Some(
+                        "Rx CRC error packets register",
+                    ),
+                    array: None,
+                    byte_offset: 1940,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxCrcErrorPackets",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_lpi_tran_cntr",
+                    description: Some(
+                        "Rx LPI transition counter register",
+                    ),
+                    array: None,
+                    byte_offset: 2040,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxLpiTranCntr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_lpi_usec_cntr",
+                    description: Some(
+                        "Rx LPI microsecond counter register",
+                    ),
+                    array: None,
+                    byte_offset: 2036,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxLpiUsecCntr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_unicast_packets_good",
+                    description: Some(
+                        "Rx unicast packets good register",
+                    ),
+                    array: None,
+                    byte_offset: 1988,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxUnicastPacketsGood",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tx_lpi_tran_cntr",
+                    description: Some(
+                        "Tx LPI transition counter register",
+                    ),
+                    array: None,
+                    byte_offset: 2032,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "TxLpiTranCntr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tx_lpi_usec_cntr",
+                    description: Some(
+                        "Tx LPI microsecond timer register",
+                    ),
+                    array: None,
+                    byte_offset: 2028,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "TxLpiUsecCntr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tx_multiple_collision_good_packets",
+                    description: Some(
+                        "Tx multiple collision good packets register",
+                    ),
+                    array: None,
+                    byte_offset: 1872,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "TxMultipleCollisionGoodPackets",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tx_packet_count_good",
+                    description: Some(
+                        "Tx packet count good register",
+                    ),
+                    array: None,
+                    byte_offset: 1896,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "TxPacketCountGood",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tx_single_collision_good_packets",
+                    description: Some(
+                        "Tx single collision good packets register",
+                    ),
+                    array: None,
+                    byte_offset: 1868,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "TxSingleCollisionGoodPackets",
+                            ),
                         },
                     ),
                 },
@@ -1596,6 +1962,23 @@ pub(crate) static REGISTERS: IR = IR {
                 "Ethernet: MTL mode register (MTL)",
             ),
             items: &[
+                BlockItem {
+                    name: "mtlisr",
+                    description: Some(
+                        "Interrupt status Register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mtlisr",
+                            ),
+                        },
+                    ),
+                },
                 BlockItem {
                     name: "mtlomr",
                     description: Some(
@@ -1614,18 +1997,86 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mtlisr",
+                    name: "mtlqicsr",
                     description: Some(
-                        "Interrupt status Register",
+                        "Queue interrupt control status Register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 300,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mtlqicsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlrx_qdr",
+                    description: Some(
+                        "Rx queue debug register",
+                    ),
+                    array: None,
+                    byte_offset: 312,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mtlisr",
+                                "MtlrxQdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlrx_qmpocr",
+                    description: Some(
+                        "Rx queue missed packet and overflow counter register",
+                    ),
+                    array: None,
+                    byte_offset: 308,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtlrxQmpocr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlrx_qomr",
+                    description: Some(
+                        "Rx queue operating mode register",
+                    ),
+                    array: None,
+                    byte_offset: 304,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtlrxQomr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtltx_qdr",
+                    description: Some(
+                        "Tx queue debug Register",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtltxQdr",
                             ),
                         },
                     ),
@@ -1664,536 +2115,25 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-                BlockItem {
-                    name: "mtltx_qdr",
-                    description: Some(
-                        "Tx queue debug Register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtltxQdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlqicsr",
-                    description: Some(
-                        "Queue interrupt control status Register",
-                    ),
-                    array: None,
-                    byte_offset: 300,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mtlqicsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlrx_qomr",
-                    description: Some(
-                        "Rx queue operating mode register",
-                    ),
-                    array: None,
-                    byte_offset: 304,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtlrxQomr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlrx_qmpocr",
-                    description: Some(
-                        "Rx queue missed packet and overflow counter register",
-                    ),
-                    array: None,
-                    byte_offset: 308,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtlrxQmpocr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlrx_qdr",
-                    description: Some(
-                        "Rx queue debug register",
-                    ),
-                    array: None,
-                    byte_offset: 312,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtlrxQdr",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "EthernetDma",
-            extends: None,
-            description: Some(
-                "Ethernet: DMA mode register (DMA)",
-            ),
-            items: &[
-                BlockItem {
-                    name: "dmamr",
-                    description: Some(
-                        "DMA mode register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmamr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmasbmr",
-                    description: Some(
-                        "System bus mode register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmasbmr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaisr",
-                    description: Some(
-                        "Interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmaisr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmadsr",
-                    description: Some(
-                        "Debug status register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmadsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaccr",
-                    description: Some(
-                        "Channel control register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmaccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_cr",
-                    description: Some(
-                        "Channel transmit control register",
-                    ),
-                    array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxCr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_cr",
-                    description: Some(
-                        "Channel receive control register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxCr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_dlar",
-                    description: Some(
-                        "Channel Tx descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 276,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxDlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_dlar",
-                    description: Some(
-                        "Channel Rx descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 284,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxDlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_dtpr",
-                    description: Some(
-                        "Channel Tx descriptor tail pointer register",
-                    ),
-                    array: None,
-                    byte_offset: 288,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxDtpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_dtpr",
-                    description: Some(
-                        "Channel Rx descriptor tail pointer register",
-                    ),
-                    array: None,
-                    byte_offset: 296,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxDtpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_rlr",
-                    description: Some(
-                        "Channel Tx descriptor ring length register",
-                    ),
-                    array: None,
-                    byte_offset: 300,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxRlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_rlr",
-                    description: Some(
-                        "Channel Rx descriptor ring length register",
-                    ),
-                    array: None,
-                    byte_offset: 304,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxRlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacier",
-                    description: Some(
-                        "Channel interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 308,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmacier",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_iwtr",
-                    description: Some(
-                        "Channel Rx interrupt watchdog timer register",
-                    ),
-                    array: None,
-                    byte_offset: 312,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxIwtr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaccatx_dr",
-                    description: Some(
-                        "Channel current application transmit descriptor register",
-                    ),
-                    array: None,
-                    byte_offset: 324,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmaccatxDr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaccarx_dr",
-                    description: Some(
-                        "Channel current application receive descriptor register",
-                    ),
-                    array: None,
-                    byte_offset: 332,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmaccarxDr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaccatx_br",
-                    description: Some(
-                        "Channel current application transmit buffer register",
-                    ),
-                    array: None,
-                    byte_offset: 340,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmaccatxBr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaccarx_br",
-                    description: Some(
-                        "Channel current application receive buffer register",
-                    ),
-                    array: None,
-                    byte_offset: 348,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmaccarxBr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacsr",
-                    description: Some(
-                        "Channel status register",
-                    ),
-                    array: None,
-                    byte_offset: 352,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmacsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacmfcr",
-                    description: Some(
-                        "Channel missed frame count register",
-                    ),
-                    array: None,
-                    byte_offset: 364,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmacmfcr",
-                            ),
-                        },
-                    ),
-                },
             ],
         },
     ],
     fieldsets: &[
         FieldSet {
-            name: "DmaccatxBr",
+            name: "DmaccarxBr",
             extends: None,
             description: Some(
-                "Channel current application transmit buffer register",
+                "Channel current application receive buffer register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "curtbufaptr",
+                    name: "currbufaptr",
                     description: Some(
-                        "Application Transmit Buffer Address Pointer",
+                        "Application Receive Buffer Address Pointer",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macivir",
-            extends: None,
-            description: Some(
-                "Inner VLAN inclusion register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vlt",
-                    description: Some(
-                        "VLAN Tag for Transmit Packets",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlc",
-                    description: Some(
-                        "VLAN Tag Control in Transmit Packets",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlp",
-                    description: Some(
-                        "VLAN Priority Control",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csvl",
-                    description: Some(
-                        "C-VLAN or S-VLAN",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlti",
-                    description: Some(
-                        "VLAN Tag Input",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -2220,17 +2160,97 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MacqtxFcr",
+            name: "DmaccatxBr",
             extends: None,
             description: Some(
-                "Tx Queue flow control register",
+                "Channel current application transmit buffer register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fcb_bpa",
+                    name: "curtbufaptr",
                     description: Some(
-                        "Flow Control Busy or Backpressure Activate",
+                        "Application Transmit Buffer Address Pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmaccatxDr",
+            extends: None,
+            description: Some(
+                "Channel current application transmit descriptor register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "curtdesaptr",
+                    description: Some(
+                        "Application Transmit Descriptor Address Pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmaccr",
+            extends: None,
+            description: Some(
+                "Channel control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mss",
+                    description: Some(
+                        "Maximum Segment Size",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pblx8",
+                    description: Some(
+                        "8xPBL mode",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dsl",
+                    description: Some(
+                        "Descriptor Skip Length",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmacier",
+            extends: None,
+            description: Some(
+                "Channel interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tie",
+                    description: Some(
+                        "Transmit Interrupt Enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -2238,9 +2258,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tfe",
+                    name: "txse",
                     description: Some(
-                        "Transmit Flow Control Enable",
+                        "Transmit Stopped Enable",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -2248,19 +2268,29 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "plt",
+                    name: "tbue",
                     description: Some(
-                        "Pause Low Threshold",
+                        "Transmit Buffer Unavailable Enable",
                     ),
-                    bit_offset: 4,
-                    bit_size: 3,
+                    bit_offset: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dzpq",
+                    name: "rie",
                     description: Some(
-                        "Disable Zero-Quanta Pause",
+                        "Receive Interrupt Enable",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbue",
+                    description: Some(
+                        "Receive Buffer Unavailable Enable",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -2268,39 +2298,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pt",
+                    name: "rse",
                     description: Some(
-                        "Pause Time",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mtlomr",
-            extends: None,
-            description: Some(
-                "Operating mode Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dtxsts",
-                    description: Some(
-                        "Drop Transmit Status",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntprst",
-                    description: Some(
-                        "Counters Preset",
+                        "Receive Stopped Enable",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -2308,11 +2308,71 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cntclr",
+                    name: "rwte",
                     description: Some(
-                        "Counters Reset",
+                        "Receive Watchdog Timeout Enable",
                     ),
                     bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "etie",
+                    description: Some(
+                        "Early Transmit Interrupt Enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "erie",
+                    description: Some(
+                        "Early Receive Interrupt Enable",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fbee",
+                    description: Some(
+                        "Fatal Bus Error Enable",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cdee",
+                    description: Some(
+                        "Context Descriptor Error Enable",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "aie",
+                    description: Some(
+                        "Abnormal Interrupt Summary Enable",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nie",
+                    description: Some(
+                        "Normal Interrupt Summary Enable",
+                    ),
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2320,20 +2380,320 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macarpar",
+            name: "Dmacmfcr",
             extends: None,
             description: Some(
-                "ARP address register",
+                "Channel missed frame count register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "arppa",
+                    name: "mfc",
                     description: Some(
-                        "ARP Protocol Address",
+                        "Dropped Packet Counters",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mfco",
+                    description: Some(
+                        "Overflow status of the MFC Counter",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacrxCr",
+            extends: None,
+            description: Some(
+                "Channel receive control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sr",
+                    description: Some(
+                        "Start or Stop Receive Command",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbsz",
+                    description: Some(
+                        "Receive Buffer size",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxpbl",
+                    description: Some(
+                        "RXPBL",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rpf",
+                    description: Some(
+                        "DMA Rx Channel Packet Flush",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacrxDlar",
+            extends: None,
+            description: Some(
+                "Channel Rx descriptor list address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdesla",
+                    description: Some(
+                        "Start of Receive List",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacrxDtpr",
+            extends: None,
+            description: Some(
+                "Channel Rx descriptor tail pointer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdt",
+                    description: Some(
+                        "Receive Descriptor Tail Pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacrxIwtr",
+            extends: None,
+            description: Some(
+                "Channel Rx interrupt watchdog timer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rwt",
+                    description: Some(
+                        "Receive Interrupt Watchdog Timer Count",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacrxRlr",
+            extends: None,
+            description: Some(
+                "Channel Rx descriptor ring length register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdrl",
+                    description: Some(
+                        "Receive Descriptor Ring Length",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmacsr",
+            extends: None,
+            description: Some(
+                "Channel status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ti",
+                    description: Some(
+                        "Transmit Interrupt",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tps",
+                    description: Some(
+                        "Transmit Process Stopped",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tbu",
+                    description: Some(
+                        "Transmit Buffer Unavailable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ri",
+                    description: Some(
+                        "Receive Interrupt",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbu",
+                    description: Some(
+                        "Receive Buffer Unavailable",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rps",
+                    description: Some(
+                        "Receive Process Stopped",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwt",
+                    description: Some(
+                        "Receive Watchdog Timeout",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "et",
+                    description: Some(
+                        "Early Transmit Interrupt",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "er",
+                    description: Some(
+                        "Early Receive Interrupt",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fbe",
+                    description: Some(
+                        "Fatal Bus Error",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cde",
+                    description: Some(
+                        "Context Descriptor Error",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ais",
+                    description: Some(
+                        "Abnormal Interrupt Summary",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nis",
+                    description: Some(
+                        "Normal Interrupt Summary",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "teb",
+                    description: Some(
+                        "Tx DMA Error Bits",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reb",
+                    description: Some(
+                        "Rx DMA Error Bits",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
@@ -2390,17 +2750,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macl3a10r",
+            name: "DmactxDlar",
             extends: None,
             description: Some(
-                "Layer3 address 1 filter 0 register",
+                "Channel Tx descriptor list address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "l3a10",
+                    name: "tdesla",
                     description: Some(
-                        "Layer 3 Address 1 Field",
+                        "Start of Transmit List",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -2410,17 +2770,507 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macl3a30",
+            name: "DmactxDtpr",
             extends: None,
             description: Some(
-                "Layer3 Address 3 filter 0 register",
+                "Channel Tx descriptor tail pointer register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "l3a30",
+                    name: "tdt",
                     description: Some(
-                        "Layer 3 Address 3 Field",
+                        "Transmit Descriptor Tail Pointer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmactxRlr",
+            extends: None,
+            description: Some(
+                "Channel Tx descriptor ring length register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tdrl",
+                    description: Some(
+                        "Transmit Descriptor Ring Length",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmadsr",
+            extends: None,
+            description: Some(
+                "Debug status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "axwhsts",
+                    description: Some(
+                        "AHB Master Write Channel",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rps0",
+                    description: Some(
+                        "DMA Channel Receive Process State",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tps0",
+                    description: Some(
+                        "DMA Channel Transmit Process State",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmaisr",
+            extends: None,
+            description: Some(
+                "Interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dc0is",
+                    description: Some(
+                        "DMA Channel Interrupt Status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mtlis",
+                    description: Some(
+                        "MTL Interrupt Status",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "macis",
+                    description: Some(
+                        "MAC Interrupt Status",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmamr",
+            extends: None,
+            description: Some(
+                "DMA mode register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "swr",
+                    description: Some(
+                        "Software Reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "da",
+                    description: Some(
+                        "DMA Tx or Rx Arbitration Scheme",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txpr",
+                    description: Some(
+                        "Transmit priority",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pr",
+                    description: Some(
+                        "Priority ratio",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "intm",
+                    description: Some(
+                        "Interrupt Mode",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dmasbmr",
+            extends: None,
+            description: Some(
+                "System bus mode register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fb",
+                    description: Some(
+                        "Fixed Burst Length",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "aal",
+                    description: Some(
+                        "Address-Aligned Beats",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mb",
+                    description: Some(
+                        "Mixed Burst",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rb",
+                    description: Some(
+                        "Rebuild INCRx Burst",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mac1ustcr",
+            extends: None,
+            description: Some(
+                "1-microsecond-tick counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tic_1us_cntr",
+                    description: Some(
+                        "1 µs tick Counter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca0hr",
+            extends: None,
+            description: Some(
+                "Address 0 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrhi",
+                    description: Some(
+                        "MAC Address0[47:32]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "Address Enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca0lr",
+            extends: None,
+            description: Some(
+                "Address 0 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrlo",
+                    description: Some(
+                        "MAC Address 0 [31:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca1hr",
+            extends: None,
+            description: Some(
+                "Address 1 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrhi",
+                    description: Some(
+                        "MAC Address1 [47:32]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbc",
+                    description: Some(
+                        "Mask Byte Control",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "Source Address",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "Address Enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca1lr",
+            extends: None,
+            description: Some(
+                "Address 1 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrlo",
+                    description: Some(
+                        "MAC Address 1 [31:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca2hr",
+            extends: None,
+            description: Some(
+                "Address 2 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrhi",
+                    description: Some(
+                        "MAC Address2 [47:32]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbc",
+                    description: Some(
+                        "Mask Byte Control",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "Source Address",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "Address Enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca2lr",
+            extends: None,
+            description: Some(
+                "Address 2 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrlo",
+                    description: Some(
+                        "MAC Address 2 [31:0]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca3hr",
+            extends: None,
+            description: Some(
+                "Address 3 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrhi",
+                    description: Some(
+                        "MAC Address3 [47:32]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mbc",
+                    description: Some(
+                        "Mask Byte Control",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "Source Address",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ae",
+                    description: Some(
+                        "Address Enable",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maca3lr",
+            extends: None,
+            description: Some(
+                "Address 3 low register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrlo",
+                    description: Some(
+                        "MAC Address 3 [31:0]",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -2490,17 +3340,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mactsicnr",
+            name: "Macarpar",
             extends: None,
             description: Some(
-                "Timestamp Ingress correction nanosecond register",
+                "ARP address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tsic",
+                    name: "arppa",
                     description: Some(
-                        "Timestamp Ingress Correction",
+                        "ARP Protocol Address",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -2510,420 +3360,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macvir",
+            name: "Macatsnr",
             extends: None,
             description: Some(
-                "VLAN inclusion register",
+                "Auxiliary timestamp nanoseconds register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "vlt",
+                    name: "auxtslo",
                     description: Some(
-                        "VLAN Tag for Transmit Packets",
+                        "Auxiliary Timestamp",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlc",
-                    description: Some(
-                        "VLAN Tag Control in Transmit Packets",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlp",
-                    description: Some(
-                        "VLAN Priority Control",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "csvl",
-                    description: Some(
-                        "C-VLAN or S-VLAN",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vlti",
-                    description: Some(
-                        "VLAN Tag Input",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
+                    bit_size: 31,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "MmcTxInterrupt",
+            name: "Macatssr",
             extends: None,
             description: Some(
-                "MMC Tx interrupt register",
+                "Auxiliary timestamp seconds register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txscolgpis",
+                    name: "auxtshi",
                     description: Some(
-                        "MMC Transmit Single Collision Good Packet Counter Interrupt Status",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txmcolgpis",
-                    description: Some(
-                        "MMC Transmit Multiple Collision Good Packet Counter Interrupt Status",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txgpktis",
-                    description: Some(
-                        "MMC Transmit Good Packet Counter Interrupt Status",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txlpiuscis",
-                    description: Some(
-                        "MMC Transmit LPI microsecond counter interrupt status",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txlpitrcis",
-                    description: Some(
-                        "MMC Transmit LPI transition counter interrupt status",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mactseacr",
-            extends: None,
-            description: Some(
-                "Timestamp Egress asymmetric correction register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "osteac",
-                    description: Some(
-                        "One-Step Timestamp Egress Asymmetry Correction",
+                        "Auxiliary Timestamp",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macletr",
-            extends: None,
-            description: Some(
-                "LPI entry timer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lpiet",
-                    description: Some(
-                        "LPI Entry Timer",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 17,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl3l4c1r",
-            extends: None,
-            description: Some(
-                "L3 and L4 control 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l3pen1",
-                    description: Some(
-                        "Layer 3 Protocol Enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3sam1",
-                    description: Some(
-                        "Layer 3 IP SA Match Enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3saim1",
-                    description: Some(
-                        "Layer 3 IP SA Inverse Match Enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3dam1",
-                    description: Some(
-                        "Layer 3 IP DA Match Enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3daim1",
-                    description: Some(
-                        "Layer 3 IP DA Inverse Match Enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3hsbm1",
-                    description: Some(
-                        "Layer 3 IP SA Higher Bits Match",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3hdbm1",
-                    description: Some(
-                        "Layer 3 IP DA Higher Bits Match",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4pen1",
-                    description: Some(
-                        "Layer 4 Protocol Enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4spm1",
-                    description: Some(
-                        "Layer 4 Source Port Match Enable",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4spim1",
-                    description: Some(
-                        "Layer 4 Source Port Inverse Match Enable",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4dpm1",
-                    description: Some(
-                        "Layer 4 Destination Port Match Enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4dpim1",
-                    description: Some(
-                        "Layer 4 Destination Port Inverse Match Enable",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxDtpr",
-            extends: None,
-            description: Some(
-                "Channel Tx descriptor tail pointer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tdt",
-                    description: Some(
-                        "Transmit Descriptor Tail Pointer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxRlr",
-            extends: None,
-            description: Some(
-                "Channel Tx descriptor ring length register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tdrl",
-                    description: Some(
-                        "Transmit Descriptor Ring Length",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mactssr",
-            extends: None,
-            description: Some(
-                "Timestamp status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tssovf",
-                    description: Some(
-                        "Timestamp Seconds Overflow",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tstargt0",
-                    description: Some(
-                        "Timestamp Target Time Reached",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "auxtstrig",
-                    description: Some(
-                        "Auxiliary Timestamp Trigger Snapshot",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tstrgterr0",
-                    description: Some(
-                        "Timestamp Target Time Error",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txtssis",
-                    description: Some(
-                        "Tx Timestamp Status Interrupt Status",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "atsstn",
-                    description: Some(
-                        "Auxiliary Timestamp Snapshot Trigger Identifier",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "atsstm",
-                    description: Some(
-                        "Auxiliary Timestamp Snapshot Trigger Missed",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "atsns",
-                    description: Some(
-                        "Number of Auxiliary Timestamp Snapshots",
-                    ),
-                    bit_offset: 25,
-                    bit_size: 5,
                     array: None,
                     enumm: None,
                 },
@@ -3170,57 +3640,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MactxTsssr",
+            name: "Macdr",
             extends: None,
             description: Some(
-                "Tx timestamp status seconds register",
+                "Debug register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txtsshi",
+                    name: "rpests",
                     description: Some(
-                        "Transmit Timestamp Status High",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mactsar",
-            extends: None,
-            description: Some(
-                "Timestamp addend register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsar",
-                    description: Some(
-                        "Timestamp Addend Register",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmaisr",
-            extends: None,
-            description: Some(
-                "Interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dc0is",
-                    description: Some(
-                        "DMA Channel Interrupt Status",
+                        "MAC MII Receive Protocol Engine Status",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -3228,9 +3658,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "mtlis",
+                    name: "rfcfcsts",
                     description: Some(
-                        "MTL Interrupt Status",
+                        "MAC Receive Packet Controller FIFO Status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tpests",
+                    description: Some(
+                        "MAC MII Transmit Protocol Engine Status",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -3238,59 +3678,119 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "macis",
+                    name: "tfcsts",
                     description: Some(
-                        "MAC Interrupt Status",
+                        "MAC Transmit Packet Controller Status",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macecr",
+            extends: None,
+            description: Some(
+                "Extended operating mode configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "gpsl",
+                    description: Some(
+                        "Giant Packet Size Limit",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dcrcc",
+                    description: Some(
+                        "Disable CRC Checking for Received Packets",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spen",
+                    description: Some(
+                        "Slow Protocol Detection Enable",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "usp",
+                    description: Some(
+                        "Unicast Slow Protocol Packet Detect",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eipgen",
+                    description: Some(
+                        "Extended Inter-Packet Gap Enable",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eipg",
+                    description: Some(
+                        "Extended Inter-Packet Gap",
+                    ),
+                    bit_offset: 25,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
-            name: "Macvr",
+            name: "Macht0r",
             extends: None,
             description: Some(
-                "Version register",
+                "Hash Table 0 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "snpsver",
+                    name: "ht31t0",
                     description: Some(
-                        "IP version",
+                        "MAC Hash Table First 32 Bits",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "userver",
-                    description: Some(
-                        "ST-defined version",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "RxUnicastPacketsGood",
+            name: "Macht1r",
             extends: None,
             description: Some(
-                "Rx unicast packets good register",
+                "Hash Table 1 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rxucastg",
+                    name: "ht63t32",
                     description: Some(
-                        "Rx Unicast Packets Good",
+                        "MAC Hash Table Second 32 Bits",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -3440,20 +3940,70 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mactsiacr",
+            name: "Machwf2r",
             extends: None,
             description: Some(
-                "Timestamp Ingress asymmetric correction register",
+                "HW feature 2 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ostiac",
+                    name: "rxqcnt",
                     description: Some(
-                        "One-Step Timestamp Ingress Asymmetry Correction",
+                        "Number of MTL Receive Queues",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txqcnt",
+                    description: Some(
+                        "Number of MTL Transmit Queues",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxchcnt",
+                    description: Some(
+                        "Number of DMA Receive Channels",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txchcnt",
+                    description: Some(
+                        "Number of DMA Transmit Channels",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ppsoutnum",
+                    description: Some(
+                        "Number of PPS Outputs",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "auxsnapnum",
+                    description: Some(
+                        "Number of Auxiliary Snapshot Inputs",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
@@ -3630,47 +4180,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macecr",
+            name: "Macivir",
             extends: None,
             description: Some(
-                "Extended operating mode configuration register",
+                "Inner VLAN inclusion register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "gpsl",
+                    name: "vlt",
                     description: Some(
-                        "Giant Packet Size Limit",
+                        "VLAN Tag for Transmit Packets",
                     ),
                     bit_offset: 0,
-                    bit_size: 14,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dcrcc",
+                    name: "vlc",
                     description: Some(
-                        "Disable CRC Checking for Received Packets",
+                        "VLAN Tag Control in Transmit Packets",
                     ),
                     bit_offset: 16,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "spen",
+                    name: "vlp",
                     description: Some(
-                        "Slow Protocol Detection Enable",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usp",
-                    description: Some(
-                        "Unicast Slow Protocol Packet Detect",
+                        "VLAN Priority Control",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
@@ -3678,182 +4218,22 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "eipgen",
+                    name: "csvl",
                     description: Some(
-                        "Extended Inter-Packet Gap Enable",
+                        "C-VLAN or S-VLAN",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 19,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "eipg",
+                    name: "vlti",
                     description: Some(
-                        "Extended Inter-Packet Gap",
+                        "VLAN Tag Input",
                     ),
-                    bit_offset: 25,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca0lr",
-            extends: None,
-            description: Some(
-                "Address 0 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrlo",
-                    description: Some(
-                        "MAC Address 0 [31:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macpocr",
-            extends: None,
-            description: Some(
-                "PTP Offload control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ptoen",
-                    description: Some(
-                        "PTP Offload Enable",
-                    ),
-                    bit_offset: 0,
+                    bit_offset: 20,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "asyncen",
-                    description: Some(
-                        "Automatic PTP SYNC message Enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "apdreqen",
-                    description: Some(
-                        "Automatic PTP Pdelay_Req message Enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "asynctrig",
-                    description: Some(
-                        "Automatic PTP SYNC message Trigger",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "apdreqtrig",
-                    description: Some(
-                        "Automatic PTP Pdelay_Req message Trigger",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "drrdis",
-                    description: Some(
-                        "Disable PTO Delay Request/Response response generation",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dn",
-                    description: Some(
-                        "Domain Number",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macvhtr",
-            extends: None,
-            description: Some(
-                "VLAN Hash table register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vlht",
-                    description: Some(
-                        "VLAN Hash Table",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "RxAlignmentErrorPackets",
-            extends: None,
-            description: Some(
-                "Rx alignment error packets register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxalgnerr",
-                    description: Some(
-                        "Rx Alignment Error Packets",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macspi0r",
-            extends: None,
-            description: Some(
-                "PTP Source Port Identity 0 Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi0",
-                    description: Some(
-                        "Source Port Identity 0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -3880,167 +4260,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtlrxQomr",
+            name: "Macl3a01r",
             extends: None,
             description: Some(
-                "Rx queue operating mode register",
+                "Layer3 address 0 filter 1 Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rtc",
+                    name: "l3a01",
                     description: Some(
-                        "Receive Queue Threshold Control",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fup",
-                    description: Some(
-                        "Forward Undersized Good Packets",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fep",
-                    description: Some(
-                        "Forward Error Packets",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rsf",
-                    description: Some(
-                        "Receive Queue Store and Forward",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dis_tcp_ef",
-                    description: Some(
-                        "Disable Dropping of TCP/IP Checksum Error Packets",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ehfc",
-                    description: Some(
-                        "Enable Hardware Flow Control",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfa",
-                    description: Some(
-                        "Threshold for Activating Flow Control (in half-duplex and full-duplex modes)",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfd",
-                    description: Some(
-                        "Threshold for Deactivating Flow Control (in half-duplex and full-duplex modes)",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rqs",
-                    description: Some(
-                        "Receive Queue Size",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca1hr",
-            extends: None,
-            description: Some(
-                "Address 1 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrhi",
-                    description: Some(
-                        "MAC Address1 [47:32]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "Mask Byte Control",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "Source Address",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "Address Enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca3lr",
-            extends: None,
-            description: Some(
-                "Address 3 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrlo",
-                    description: Some(
-                        "MAC Address 3 [31:0]",
+                        "Layer 3 Address 0 Field",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -4050,257 +4280,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtltxQdr",
+            name: "Macl3a10r",
             extends: None,
             description: Some(
-                "Tx queue debug Register",
+                "Layer3 address 1 filter 0 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txqpaused",
+                    name: "l3a10",
                     description: Some(
-                        "Transmit Queue in Pause",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trcsts",
-                    description: Some(
-                        "MTL Tx Queue Read Controller Status",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "twcsts",
-                    description: Some(
-                        "MTL Tx Queue Write Controller Status",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txqsts",
-                    description: Some(
-                        "MTL Tx Queue Not Empty Status",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txstsfsts",
-                    description: Some(
-                        "MTL Tx Status FIFO Full Status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ptxq",
-                    description: Some(
-                        "Number of Packets in the Transmit Queue",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "stxstsf",
-                    description: Some(
-                        "Number of Status Words in Tx Status FIFO of Queue",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmasbmr",
-            extends: None,
-            description: Some(
-                "System bus mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fb",
-                    description: Some(
-                        "Fixed Burst Length",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "aal",
-                    description: Some(
-                        "Address-Aligned Beats",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mb",
-                    description: Some(
-                        "Mixed Burst",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rb",
-                    description: Some(
-                        "Rebuild INCRx Burst",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macssir",
-            extends: None,
-            description: Some(
-                "Sub-second increment register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "snsinc",
-                    description: Some(
-                        "Sub-nanosecond Increment Value",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ssinc",
-                    description: Some(
-                        "Sub-second Increment Value",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MacrxTxSr",
-            extends: None,
-            description: Some(
-                "Rx Tx status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tjt",
-                    description: Some(
-                        "Transmit Jabber Timeout",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ncarr",
-                    description: Some(
-                        "No Carrier",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcarr",
-                    description: Some(
-                        "Loss of Carrier",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "exdef",
-                    description: Some(
-                        "Excessive Deferral",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcol",
-                    description: Some(
-                        "Late Collision",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "excol",
-                    description: Some(
-                        "Excessive Collisions",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwt",
-                    description: Some(
-                        "Receive Watchdog Timeout",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "TxPacketCountGood",
-            extends: None,
-            description: Some(
-                "Tx packet count good register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txpktg",
-                    description: Some(
-                        "Tx Packet Count Good",
+                        "Layer 3 Address 1 Field",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -4310,100 +4300,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MmcControl",
+            name: "Macl3a11r",
             extends: None,
             description: Some(
-                "MMC control register",
+                "Layer3 address 1 filter 1 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cntrst",
+                    name: "l3a11",
                     description: Some(
-                        "Counters Reset",
+                        "Layer 3 Address 1 Field",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntstopro",
-                    description: Some(
-                        "Counter Stop Rollover",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rstonrd",
-                    description: Some(
-                        "Reset on Read",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntfreez",
-                    description: Some(
-                        "MMC Counter Freeze",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntprst",
-                    description: Some(
-                        "Counters Preset",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntprstlvl",
-                    description: Some(
-                        "Full-Half Preset",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucdbc",
-                    description: Some(
-                        "Update MMC Counters for Dropped Broadcast Packets",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macspi2r",
-            extends: None,
-            description: Some(
-                "PTP Source port identity 2 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi2",
-                    description: Some(
-                        "Source Port Identity 2",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -4430,17 +4340,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "TxLpiUsecCntr",
+            name: "Macl3a21r",
             extends: None,
             description: Some(
-                "Tx LPI microsecond timer register",
+                "Layer3 address 2 filter 1 Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txlpiusc",
+                    name: "l3a21",
                     description: Some(
-                        "Tx LPI Microseconds Counter",
+                        "Layer 3 Address 2 Field",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -4450,20 +4360,500 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DmaccarxBr",
+            name: "Macl3a30",
             extends: None,
             description: Some(
-                "Channel current application receive buffer register",
+                "Layer3 Address 3 filter 0 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "currbufaptr",
+                    name: "l3a30",
                     description: Some(
-                        "Application Receive Buffer Address Pointer",
+                        "Layer 3 Address 3 Field",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macl3a31r",
+            extends: None,
+            description: Some(
+                "Layer3 address 3 filter 1 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "l3a31",
+                    description: Some(
+                        "Layer 3 Address 3 Field",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macl3l4c0r",
+            extends: None,
+            description: Some(
+                "L3 and L4 control 0 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "l3pen0",
+                    description: Some(
+                        "Layer 3 Protocol Enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3sam0",
+                    description: Some(
+                        "Layer 3 IP SA Match Enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3saim0",
+                    description: Some(
+                        "Layer 3 IP SA Inverse Match Enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3dam0",
+                    description: Some(
+                        "Layer 3 IP DA Match Enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3daim0",
+                    description: Some(
+                        "Layer 3 IP DA Inverse Match Enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3hsbm0",
+                    description: Some(
+                        "Layer 3 IP SA Higher Bits Match",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3hdbm0",
+                    description: Some(
+                        "Layer 3 IP DA Higher Bits Match",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4pen0",
+                    description: Some(
+                        "Layer 4 Protocol Enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4spm0",
+                    description: Some(
+                        "Layer 4 Source Port Match Enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4spim0",
+                    description: Some(
+                        "Layer 4 Source Port Inverse Match Enable",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4dpm0",
+                    description: Some(
+                        "Layer 4 Destination Port Match Enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4dpim0",
+                    description: Some(
+                        "Layer 4 Destination Port Inverse Match Enable",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macl3l4c1r",
+            extends: None,
+            description: Some(
+                "L3 and L4 control 1 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "l3pen1",
+                    description: Some(
+                        "Layer 3 Protocol Enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3sam1",
+                    description: Some(
+                        "Layer 3 IP SA Match Enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3saim1",
+                    description: Some(
+                        "Layer 3 IP SA Inverse Match Enable",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3dam1",
+                    description: Some(
+                        "Layer 3 IP DA Match Enable",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3daim1",
+                    description: Some(
+                        "Layer 3 IP DA Inverse Match Enable",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3hsbm1",
+                    description: Some(
+                        "Layer 3 IP SA Higher Bits Match",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l3hdbm1",
+                    description: Some(
+                        "Layer 3 IP DA Higher Bits Match",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4pen1",
+                    description: Some(
+                        "Layer 4 Protocol Enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4spm1",
+                    description: Some(
+                        "Layer 4 Source Port Match Enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4spim1",
+                    description: Some(
+                        "Layer 4 Source Port Inverse Match Enable",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4dpm1",
+                    description: Some(
+                        "Layer 4 Destination Port Match Enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4dpim1",
+                    description: Some(
+                        "Layer 4 Destination Port Inverse Match Enable",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macl4a0r",
+            extends: None,
+            description: Some(
+                "Layer4 address filter 0 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "l4sp0",
+                    description: Some(
+                        "Layer 4 Source Port Number Field",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4dp0",
+                    description: Some(
+                        "Layer 4 Destination Port Number Field",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macl4a1r",
+            extends: None,
+            description: Some(
+                "Layer 4 address filter 1 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "l4sp1",
+                    description: Some(
+                        "Layer 4 Source Port Number Field",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "l4dp1",
+                    description: Some(
+                        "Layer 4 Destination Port Number Field",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Maclcsr",
+            extends: None,
+            description: Some(
+                "LPI control status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tlpien",
+                    description: Some(
+                        "Transmit LPI Entry",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tlpiex",
+                    description: Some(
+                        "Transmit LPI Exit",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rlpien",
+                    description: Some(
+                        "Receive LPI Entry",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rlpiex",
+                    description: Some(
+                        "Receive LPI Exit",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tlpist",
+                    description: Some(
+                        "Transmit LPI State",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rlpist",
+                    description: Some(
+                        "Receive LPI State",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpien",
+                    description: Some(
+                        "LPI Enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pls",
+                    description: Some(
+                        "PHY Link Status",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "plsen",
+                    description: Some(
+                        "PHY Link Status Enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpitxa",
+                    description: Some(
+                        "LPI Tx Automate",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lpite",
+                    description: Some(
+                        "LPI Timer Enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macletr",
+            extends: None,
+            description: Some(
+                "LPI entry timer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lpiet",
+                    description: Some(
+                        "LPI Entry Timer",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 17,
                     array: None,
                     enumm: None,
                 },
@@ -4504,6 +4894,276 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 24,
                     bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macltcr",
+            extends: None,
+            description: Some(
+                "LPI timers control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "twt",
+                    description: Some(
+                        "LPI TW Timer",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lst",
+                    description: Some(
+                        "LPI LS Timer",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macmdioar",
+            extends: None,
+            description: Some(
+                "MDIO address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mb",
+                    description: Some(
+                        "MII Busy",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "c45e",
+                    description: Some(
+                        "Clause 45 PHY Enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "goc",
+                    description: Some(
+                        "MII Operation Command",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "skap",
+                    description: Some(
+                        "Skip Address Packet",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cr",
+                    description: Some(
+                        "CSR Clock Range",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ntc",
+                    description: Some(
+                        "Number of Training Clocks",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rda",
+                    description: Some(
+                        "Register/Device Address",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pa",
+                    description: Some(
+                        "Physical Layer Address",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "btb",
+                    description: Some(
+                        "Back to Back transactions",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pse",
+                    description: Some(
+                        "Preamble Suppression Enable",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macmdiodr",
+            extends: None,
+            description: Some(
+                "MDIO data register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "md",
+                    description: Some(
+                        "MII Data",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ra",
+                    description: Some(
+                        "Register Address",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macpcsr",
+            extends: None,
+            description: Some(
+                "PMT control status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pwrdwn",
+                    description: Some(
+                        "Power Down",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mgkpkten",
+                    description: Some(
+                        "Magic Packet Enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwkpkten",
+                    description: Some(
+                        "Remote wakeup Packet Enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mgkprcvd",
+                    description: Some(
+                        "Magic Packet Received",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwkprcvd",
+                    description: Some(
+                        "Remote wakeup Packet Received",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "glblucast",
+                    description: Some(
+                        "Global Unicast",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwkpfe",
+                    description: Some(
+                        "Remote wakeup Packet Forwarding Enable",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwkptr",
+                    description: Some(
+                        "Remote wakeup FIFO Pointer",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwkfiltrst",
+                    description: Some(
+                        "Remote wakeup Packet Filter Register Pointer Reset",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -4660,17 +5320,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dmadsr",
+            name: "Macpocr",
             extends: None,
             description: Some(
-                "Debug status register",
+                "PTP Offload control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "axwhsts",
+                    name: "ptoen",
                     description: Some(
-                        "AHB Master Write Channel",
+                        "PTP Offload Enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -4678,22 +5338,122 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rps0",
+                    name: "asyncen",
                     description: Some(
-                        "DMA Channel Receive Process State",
+                        "Automatic PTP SYNC message Enable",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "apdreqen",
+                    description: Some(
+                        "Automatic PTP Pdelay_Req message Enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "asynctrig",
+                    description: Some(
+                        "Automatic PTP SYNC message Trigger",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "apdreqtrig",
+                    description: Some(
+                        "Automatic PTP Pdelay_Req message Trigger",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "drrdis",
+                    description: Some(
+                        "Disable PTO Delay Request/Response response generation",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dn",
+                    description: Some(
+                        "Domain Number",
                     ),
                     bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macppscr",
+            extends: None,
+            description: Some(
+                "PPS control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ppsctrl",
+                    description: Some(
+                        "Flexible PPS Output (ptp_pps_o[0]) Control or PPSCTRL PPS Output Frequency Control if PPSEN0 is cleared",
+                    ),
+                    bit_offset: 0,
                     bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "tps0",
+                    name: "ppsen0",
                     description: Some(
-                        "DMA Channel Transmit Process State",
+                        "Flexible PPS Output Mode Enable",
                     ),
-                    bit_offset: 12,
-                    bit_size: 4,
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trgtmodsel0",
+                    description: Some(
+                        "Target Time Register Mode for PPS Output",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macppsir",
+            extends: None,
+            description: Some(
+                "PPS interval register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ppsint0",
+                    description: Some(
+                        "PPS Output Signal Interval",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -4730,97 +5490,57 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtlrxQmpocr",
+            name: "Macppsttsr",
             extends: None,
             description: Some(
-                "Rx queue missed packet and overflow counter register",
+                "PPS target time seconds register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ovfpktcnt",
+                    name: "tstrh0",
                     description: Some(
-                        "Overflow Packet Counter",
+                        "PPS Target Time Seconds Register",
                     ),
                     bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ovfcntovf",
-                    description: Some(
-                        "Overflow Counter Overflow Bit",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mispktcnt",
-                    description: Some(
-                        "Missed Packet Counter",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "miscntovf",
-                    description: Some(
-                        "Missed Packet Counter Overflow Bit",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
+                    bit_size: 31,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Maca0hr",
+            name: "Macppswr",
             extends: None,
             description: Some(
-                "Address 0 high register",
+                "PPS width register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "addrhi",
+                    name: "ppswidth0",
                     description: Some(
-                        "MAC Address0[47:32]",
+                        "PPS Output Signal Width",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "Address Enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Dmacsr",
+            name: "MacqtxFcr",
             extends: None,
             description: Some(
-                "Channel status register",
+                "Tx Queue flow control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ti",
+                    name: "fcb_bpa",
                     description: Some(
-                        "Transmit Interrupt",
+                        "Flow Control Busy or Backpressure Activate",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -4828,9 +5548,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tps",
+                    name: "tfe",
                     description: Some(
-                        "Transmit Process Stopped",
+                        "Transmit Flow Control Enable",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -4838,29 +5558,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tbu",
+                    name: "plt",
                     description: Some(
-                        "Transmit Buffer Unavailable",
+                        "Pause Low Threshold",
                     ),
-                    bit_offset: 2,
-                    bit_size: 1,
+                    bit_offset: 4,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ri",
+                    name: "dzpq",
                     description: Some(
-                        "Receive Interrupt",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rbu",
-                    description: Some(
-                        "Receive Buffer Unavailable",
+                        "Disable Zero-Quanta Pause",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -4868,11 +5578,131 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rps",
+                    name: "pt",
                     description: Some(
-                        "Receive Process Stopped",
+                        "Pause Time",
                     ),
-                    bit_offset: 8,
+                    bit_offset: 16,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macrwkpfr",
+            extends: None,
+            description: Some(
+                "Remove wakeup packet filter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "macrwkpfr",
+                    description: Some(
+                        "Remote wakeup packet filter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MacrxFcr",
+            extends: None,
+            description: Some(
+                "Rx flow control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rfe",
+                    description: Some(
+                        "Receive Flow Control Enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "up",
+                    description: Some(
+                        "Unicast Pause Packet Detect",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MacrxTxSr",
+            extends: None,
+            description: Some(
+                "Rx Tx status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tjt",
+                    description: Some(
+                        "Transmit Jabber Timeout",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ncarr",
+                    description: Some(
+                        "No Carrier",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lcarr",
+                    description: Some(
+                        "Loss of Carrier",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "exdef",
+                    description: Some(
+                        "Excessive Deferral",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lcol",
+                    description: Some(
+                        "Late Collision",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "excol",
+                    description: Some(
+                        "Excessive Collisions",
+                    ),
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -4882,88 +5712,208 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Receive Watchdog Timeout",
                     ),
-                    bit_offset: 9,
+                    bit_offset: 8,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Macspi0r",
+            extends: None,
+            description: Some(
+                "PTP Source Port Identity 0 Register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "et",
+                    name: "spi0",
                     description: Some(
-                        "Early Transmit Interrupt",
+                        "Source Port Identity 0",
                     ),
-                    bit_offset: 10,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Macspi1r",
+            extends: None,
+            description: Some(
+                "PTP Source port identity 1 register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "er",
+                    name: "spi1",
                     description: Some(
-                        "Early Receive Interrupt",
+                        "Source Port Identity 1",
                     ),
-                    bit_offset: 11,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Macspi2r",
+            extends: None,
+            description: Some(
+                "PTP Source port identity 2 register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "fbe",
+                    name: "spi2",
                     description: Some(
-                        "Fatal Bus Error",
+                        "Source Port Identity 2",
                     ),
-                    bit_offset: 12,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Macssir",
+            extends: None,
+            description: Some(
+                "Sub-second increment register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "cde",
+                    name: "snsinc",
                     description: Some(
-                        "Context Descriptor Error",
+                        "Sub-nanosecond Increment Value",
                     ),
-                    bit_offset: 13,
-                    bit_size: 1,
+                    bit_offset: 8,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ais",
+                    name: "ssinc",
                     description: Some(
-                        "Abnormal Interrupt Summary",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nis",
-                    description: Some(
-                        "Normal Interrupt Summary",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "teb",
-                    description: Some(
-                        "Tx DMA Error Bits",
+                        "Sub-second Increment Value",
                     ),
                     bit_offset: 16,
-                    bit_size: 3,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macstnr",
+            extends: None,
+            description: Some(
+                "System time nanoseconds register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsss",
+                    description: Some(
+                        "Timestamp Sub-seconds",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 31,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macstnur",
+            extends: None,
+            description: Some(
+                "System time nanoseconds update register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsss",
+                    description: Some(
+                        "Timestamp Sub-seconds",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 31,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "reb",
+                    name: "addsub",
                     description: Some(
-                        "Rx DMA Error Bits",
+                        "Add or Subtract Time",
                     ),
-                    bit_offset: 19,
-                    bit_size: 3,
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macstsr",
+            extends: None,
+            description: Some(
+                "System time seconds register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tss",
+                    description: Some(
+                        "Timestamp Second",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macstsur",
+            extends: None,
+            description: Some(
+                "System time seconds update register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tss",
+                    description: Some(
+                        "Timestamp Seconds",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mactsar",
+            extends: None,
+            description: Some(
+                "Timestamp addend register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tsar",
+                    description: Some(
+                        "Timestamp Addend Register",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -5150,1450 +6100,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "TxSingleCollisionGoodPackets",
+            name: "Mactseacr",
             extends: None,
             description: Some(
-                "Tx single collision good packets register",
+                "Timestamp Egress asymmetric correction register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txsnglcolg",
+                    name: "osteac",
                     description: Some(
-                        "Tx Single Collision Good Packets",
+                        "One-Step Timestamp Egress Asymmetry Correction",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca2hr",
-            extends: None,
-            description: Some(
-                "Address 2 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrhi",
-                    description: Some(
-                        "MAC Address2 [47:32]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "Mask Byte Control",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "Source Address",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "Address Enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maclcsr",
-            extends: None,
-            description: Some(
-                "LPI control status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tlpien",
-                    description: Some(
-                        "Transmit LPI Entry",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tlpiex",
-                    description: Some(
-                        "Transmit LPI Exit",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rlpien",
-                    description: Some(
-                        "Receive LPI Entry",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rlpiex",
-                    description: Some(
-                        "Receive LPI Exit",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tlpist",
-                    description: Some(
-                        "Transmit LPI State",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rlpist",
-                    description: Some(
-                        "Receive LPI State",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpien",
-                    description: Some(
-                        "LPI Enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pls",
-                    description: Some(
-                        "PHY Link Status",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "plsen",
-                    description: Some(
-                        "PHY Link Status Enable",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpitxa",
-                    description: Some(
-                        "LPI Tx Automate",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpite",
-                    description: Some(
-                        "LPI Timer Enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macht1r",
-            extends: None,
-            description: Some(
-                "Hash Table 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ht63t32",
-                    description: Some(
-                        "MAC Hash Table Second 32 Bits",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Machwf2r",
-            extends: None,
-            description: Some(
-                "HW feature 2 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxqcnt",
-                    description: Some(
-                        "Number of MTL Receive Queues",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txqcnt",
-                    description: Some(
-                        "Number of MTL Transmit Queues",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxchcnt",
-                    description: Some(
-                        "Number of DMA Receive Channels",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txchcnt",
-                    description: Some(
-                        "Number of DMA Transmit Channels",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ppsoutnum",
-                    description: Some(
-                        "Number of PPS Outputs",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "auxsnapnum",
-                    description: Some(
-                        "Number of Auxiliary Snapshot Inputs",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxRlr",
-            extends: None,
-            description: Some(
-                "Channel Rx descriptor ring length register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdrl",
-                    description: Some(
-                        "Receive Descriptor Ring Length",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macstnur",
-            extends: None,
-            description: Some(
-                "System time nanoseconds update register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tsss",
-                    description: Some(
-                        "Timestamp Sub-seconds",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 31,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "addsub",
-                    description: Some(
-                        "Add or Subtract Time",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxDlar",
-            extends: None,
-            description: Some(
-                "Channel Tx descriptor list address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tdesla",
-                    description: Some(
-                        "Start of Transmit List",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macmdiodr",
-            extends: None,
-            description: Some(
-                "MDIO data register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "md",
-                    description: Some(
-                        "MII Data",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ra",
-                    description: Some(
-                        "Register Address",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macdr",
-            extends: None,
-            description: Some(
-                "Debug register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rpests",
-                    description: Some(
-                        "MAC MII Receive Protocol Engine Status",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rfcfcsts",
-                    description: Some(
-                        "MAC Receive Packet Controller FIFO Status",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tpests",
-                    description: Some(
-                        "MAC MII Transmit Protocol Engine Status",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tfcsts",
-                    description: Some(
-                        "MAC Transmit Packet Controller Status",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mtlisr",
-            extends: None,
-            description: Some(
-                "Interrupt status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "q0is",
-                    description: Some(
-                        "Queue interrupt status",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl3a01r",
-            extends: None,
-            description: Some(
-                "Layer3 address 0 filter 1 Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l3a01",
-                    description: Some(
-                        "Layer 3 Address 0 Field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MmcTxInterruptMask",
-            extends: None,
-            description: Some(
-                "MMC Tx interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txscolgpim",
-                    description: Some(
-                        "MMC Transmit Single Collision Good Packet Counter Interrupt Mask",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txmcolgpim",
-                    description: Some(
-                        "MMC Transmit Multiple Collision Good Packet Counter Interrupt Mask",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txgpktim",
-                    description: Some(
-                        "MMC Transmit Good Packet Counter Interrupt Mask",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txlpiuscim",
-                    description: Some(
-                        "MMC Transmit LPI microsecond counter interrupt Mask",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txlpitrcim",
-                    description: Some(
-                        "MMC Transmit LPI transition counter interrupt Mask",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl3a11r",
-            extends: None,
-            description: Some(
-                "Layer3 address 1 filter 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l3a11",
-                    description: Some(
-                        "Layer 3 Address 1 Field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxDlar",
-            extends: None,
-            description: Some(
-                "Channel Rx descriptor list address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdesla",
-                    description: Some(
-                        "Start of Receive List",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macrwkpfr",
-            extends: None,
-            description: Some(
-                "Remove wakeup packet filter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "macrwkpfr",
-                    description: Some(
-                        "Remote wakeup packet filter",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "TxLpiTranCntr",
-            extends: None,
-            description: Some(
-                "Tx LPI transition counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txlpitrc",
-                    description: Some(
-                        "Tx LPI Transition counter",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macatsnr",
-            extends: None,
-            description: Some(
-                "Auxiliary timestamp nanoseconds register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "auxtslo",
-                    description: Some(
-                        "Auxiliary Timestamp",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 31,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MmcRxInterrupt",
-            extends: None,
-            description: Some(
-                "MMC Rx interrupt register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxcrcerpis",
-                    description: Some(
-                        "MMC Receive CRC Error Packet Counter Interrupt Status",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxalgnerpis",
-                    description: Some(
-                        "MMC Receive Alignment Error Packet Counter Interrupt Status",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxucgpis",
-                    description: Some(
-                        "MMC Receive Unicast Good Packet Counter Interrupt Status",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxlpiuscis",
-                    description: Some(
-                        "MMC Receive LPI microsecond counter interrupt status",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxlpitrcis",
-                    description: Some(
-                        "MMC Receive LPI transition counter interrupt status",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl4a0r",
-            extends: None,
-            description: Some(
-                "Layer4 address filter 0 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l4sp0",
-                    description: Some(
-                        "Layer 4 Source Port Number Field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4dp0",
-                    description: Some(
-                        "Layer 4 Destination Port Number Field",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macstsur",
-            extends: None,
-            description: Some(
-                "System time seconds update register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tss",
-                    description: Some(
-                        "Timestamp Seconds",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmacmfcr",
-            extends: None,
-            description: Some(
-                "Channel missed frame count register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mfc",
-                    description: Some(
-                        "Dropped Packet Counters",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mfco",
-                    description: Some(
-                        "Overflow status of the MFC Counter",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macspi1r",
-            extends: None,
-            description: Some(
-                "PTP Source port identity 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi1",
-                    description: Some(
-                        "Source Port Identity 1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxIwtr",
-            extends: None,
-            description: Some(
-                "Channel Rx interrupt watchdog timer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rwt",
-                    description: Some(
-                        "Receive Interrupt Watchdog Timer Count",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl3a31r",
-            extends: None,
-            description: Some(
-                "Layer3 address 3 filter 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l3a31",
-                    description: Some(
-                        "Layer 3 Address 3 Field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MacrxFcr",
-            extends: None,
-            description: Some(
-                "Rx flow control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rfe",
-                    description: Some(
-                        "Receive Flow Control Enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "up",
-                    description: Some(
-                        "Unicast Pause Packet Detect",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dmamr",
-            extends: None,
-            description: Some(
-                "DMA mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "swr",
-                    description: Some(
-                        "Software Reset",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "da",
-                    description: Some(
-                        "DMA Tx or Rx Arbitration Scheme",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txpr",
-                    description: Some(
-                        "Transmit priority",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pr",
-                    description: Some(
-                        "Priority ratio",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "intm",
-                    description: Some(
-                        "Interrupt Mode",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macwtr",
-            extends: None,
-            description: Some(
-                "Watchdog timeout register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wto",
-                    description: Some(
-                        "Watchdog Timeout",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwe",
-                    description: Some(
-                        "Programmable Watchdog Enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmaccatxDr",
-            extends: None,
-            description: Some(
-                "Channel current application transmit descriptor register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "curtdesaptr",
-                    description: Some(
-                        "Application Transmit Descriptor Address Pointer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca2lr",
-            extends: None,
-            description: Some(
-                "Address 2 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrlo",
-                    description: Some(
-                        "MAC Address 2 [31:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macltcr",
-            extends: None,
-            description: Some(
-                "LPI timers control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "twt",
-                    description: Some(
-                        "LPI TW Timer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lst",
-                    description: Some(
-                        "LPI LS Timer",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl3a21r",
-            extends: None,
-            description: Some(
-                "Layer3 address 2 filter 1 Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l3a21",
-                    description: Some(
-                        "Layer 3 Address 2 Field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macstsr",
-            extends: None,
-            description: Some(
-                "System time seconds register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tss",
-                    description: Some(
-                        "Timestamp Second",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mac1ustcr",
-            extends: None,
-            description: Some(
-                "1-microsecond-tick counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tic_1us_cntr",
-                    description: Some(
-                        "1 µs tick Counter",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "RxCrcErrorPackets",
-            extends: None,
-            description: Some(
-                "Rx CRC error packets register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxcrcerr",
-                    description: Some(
-                        "Rx CRC Error Packets",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxCr",
-            extends: None,
-            description: Some(
-                "Channel receive control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sr",
-                    description: Some(
-                        "Start or Stop Receive Command",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rbsz",
-                    description: Some(
-                        "Receive Buffer size",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 14,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxpbl",
-                    description: Some(
-                        "RXPBL",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rpf",
-                    description: Some(
-                        "DMA Rx Channel Packet Flush",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MmcRxInterruptMask",
-            extends: None,
-            description: Some(
-                "MMC Rx interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rxcrcerpim",
-                    description: Some(
-                        "MMC Receive CRC Error Packet Counter Interrupt Mask",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxalgnerpim",
-                    description: Some(
-                        "MMC Receive Alignment Error Packet Counter Interrupt Mask",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxucgpim",
-                    description: Some(
-                        "MMC Receive Unicast Good Packet Counter Interrupt Mask",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxlpiuscim",
-                    description: Some(
-                        "MMC Receive LPI microsecond counter interrupt Mask",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxlpitrcim",
-                    description: Some(
-                        "MMC Receive LPI transition counter interrupt Mask",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macppscr",
-            extends: None,
-            description: Some(
-                "PPS control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ppsctrl",
-                    description: Some(
-                        "Flexible PPS Output (ptp_pps_o[0]) Control or PPSCTRL PPS Output Frequency Control if PPSEN0 is cleared",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ppsen0",
-                    description: Some(
-                        "Flexible PPS Output Mode Enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trgtmodsel0",
-                    description: Some(
-                        "Target Time Register Mode for PPS Output",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxDtpr",
-            extends: None,
-            description: Some(
-                "Channel Rx descriptor tail pointer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdt",
-                    description: Some(
-                        "Receive Descriptor Tail Pointer",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macht0r",
-            extends: None,
-            description: Some(
-                "Hash Table 0 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ht31t0",
-                    description: Some(
-                        "MAC Hash Table First 32 Bits",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macppsir",
-            extends: None,
-            description: Some(
-                "PPS interval register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ppsint0",
-                    description: Some(
-                        "PPS Output Signal Interval",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macmdioar",
-            extends: None,
-            description: Some(
-                "MDIO address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mb",
-                    description: Some(
-                        "MII Busy",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "c45e",
-                    description: Some(
-                        "Clause 45 PHY Enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "goc",
-                    description: Some(
-                        "MII Operation Command",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "skap",
-                    description: Some(
-                        "Skip Address Packet",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cr",
-                    description: Some(
-                        "CSR Clock Range",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ntc",
-                    description: Some(
-                        "Number of Training Clocks",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rda",
-                    description: Some(
-                        "Register/Device Address",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pa",
-                    description: Some(
-                        "Physical Layer Address",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "btb",
-                    description: Some(
-                        "Back to Back transactions",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pse",
-                    description: Some(
-                        "Preamble Suppression Enable",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macl4a1r",
-            extends: None,
-            description: Some(
-                "Layer 4 address filter 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "l4sp1",
-                    description: Some(
-                        "Layer 4 Source Port Number Field",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4dp1",
-                    description: Some(
-                        "Layer 4 Destination Port Number Field",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -6620,227 +6140,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtlrxQdr",
+            name: "Mactsiacr",
             extends: None,
             description: Some(
-                "Rx queue debug register",
+                "Timestamp Ingress asymmetric correction register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "rwcsts",
+                    name: "ostiac",
                     description: Some(
-                        "MTL Rx Queue Write Controller Active Status",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rrcsts",
-                    description: Some(
-                        "MTL Rx Queue Read Controller State",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxqsts",
-                    description: Some(
-                        "MTL Rx Queue Fill-Level Status",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "prxq",
-                    description: Some(
-                        "Number of Packets in Receive Queue",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 14,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MtltxQomr",
-            extends: None,
-            description: Some(
-                "Tx queue operating mode Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ftq",
-                    description: Some(
-                        "Flush Transmit Queue",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tsf",
-                    description: Some(
-                        "Transmit Store and Forward",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txqen",
-                    description: Some(
-                        "Transmit Queue Enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ttc",
-                    description: Some(
-                        "Transmit Threshold Control",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tqs",
-                    description: Some(
-                        "Transmit Queue Size",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macpcsr",
-            extends: None,
-            description: Some(
-                "PMT control status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pwrdwn",
-                    description: Some(
-                        "Power Down",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mgkpkten",
-                    description: Some(
-                        "Magic Packet Enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwkpkten",
-                    description: Some(
-                        "Remote wakeup Packet Enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mgkprcvd",
-                    description: Some(
-                        "Magic Packet Received",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwkprcvd",
-                    description: Some(
-                        "Remote wakeup Packet Received",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "glblucast",
-                    description: Some(
-                        "Global Unicast",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwkpfe",
-                    description: Some(
-                        "Remote wakeup Packet Forwarding Enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwkptr",
-                    description: Some(
-                        "Remote wakeup FIFO Pointer",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwkfiltrst",
-                    description: Some(
-                        "Remote wakeup Packet Filter Register Pointer Reset",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macatssr",
-            extends: None,
-            description: Some(
-                "Auxiliary timestamp seconds register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "auxtshi",
-                    description: Some(
-                        "Auxiliary Timestamp",
+                        "One-Step Timestamp Ingress Asymmetry Correction",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -6850,17 +6160,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dmacier",
+            name: "Mactsicnr",
             extends: None,
             description: Some(
-                "Channel interrupt enable register",
+                "Timestamp Ingress correction nanosecond register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tie",
+                    name: "tsic",
                     description: Some(
-                        "Transmit Interrupt Enable",
+                        "Timestamp Ingress Correction",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mactssr",
+            extends: None,
+            description: Some(
+                "Timestamp status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tssovf",
+                    description: Some(
+                        "Timestamp Seconds Overflow",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -6868,9 +6198,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "txse",
+                    name: "tstargt0",
                     description: Some(
-                        "Transmit Stopped Enable",
+                        "Timestamp Target Time Reached",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -6878,9 +6208,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tbue",
+                    name: "auxtstrig",
                     description: Some(
-                        "Transmit Buffer Unavailable Enable",
+                        "Auxiliary Timestamp Trigger Snapshot",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -6888,162 +6218,52 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rie",
+                    name: "tstrgterr0",
                     description: Some(
-                        "Receive Interrupt Enable",
+                        "Timestamp Target Time Error",
                     ),
-                    bit_offset: 6,
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rbue",
+                    name: "txtssis",
                     description: Some(
-                        "Receive Buffer Unavailable Enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rse",
-                    description: Some(
-                        "Receive Stopped Enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwte",
-                    description: Some(
-                        "Receive Watchdog Timeout Enable",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "etie",
-                    description: Some(
-                        "Early Transmit Interrupt Enable",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "erie",
-                    description: Some(
-                        "Early Receive Interrupt Enable",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fbee",
-                    description: Some(
-                        "Fatal Bus Error Enable",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cdee",
-                    description: Some(
-                        "Context Descriptor Error Enable",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "aie",
-                    description: Some(
-                        "Abnormal Interrupt Summary Enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nie",
-                    description: Some(
-                        "Normal Interrupt Summary Enable",
+                        "Tx Timestamp Status Interrupt Status",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Macppswr",
-            extends: None,
-            description: Some(
-                "PPS width register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "ppswidth0",
+                    name: "atsstn",
                     description: Some(
-                        "PPS Output Signal Width",
+                        "Auxiliary Timestamp Snapshot Trigger Identifier",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_offset: 16,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Macppsttsr",
-            extends: None,
-            description: Some(
-                "PPS target time seconds register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "tstrh0",
+                    name: "atsstm",
                     description: Some(
-                        "PPS Target Time Seconds Register",
+                        "Auxiliary Timestamp Snapshot Trigger Missed",
                     ),
-                    bit_offset: 0,
-                    bit_size: 31,
+                    bit_offset: 24,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Maca1lr",
-            extends: None,
-            description: Some(
-                "Address 1 low register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "addrlo",
+                    name: "atsns",
                     description: Some(
-                        "MAC Address 1 [31:0]",
+                        "Number of Auxiliary Timestamp Snapshots",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_offset: 25,
+                    bit_size: 5,
                     array: None,
                     enumm: None,
                 },
@@ -7080,49 +6300,99 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mtlqicsr",
+            name: "MactxTsssr",
             extends: None,
             description: Some(
-                "Queue interrupt control status Register",
+                "Tx timestamp status seconds register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txunfis",
+                    name: "txtsshi",
                     description: Some(
-                        "Transmit Queue Underflow Interrupt Status",
+                        "Transmit Timestamp Status High",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Macvhtr",
+            extends: None,
+            description: Some(
+                "VLAN Hash table register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "txuie",
+                    name: "vlht",
                     description: Some(
-                        "Transmit Queue Underflow Interrupt Enable",
+                        "VLAN Hash Table",
                     ),
-                    bit_offset: 8,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macvir",
+            extends: None,
+            description: Some(
+                "VLAN inclusion register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vlt",
+                    description: Some(
+                        "VLAN Tag for Transmit Packets",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rxovfis",
+                    name: "vlc",
                     description: Some(
-                        "Receive Queue Overflow Interrupt Status",
+                        "VLAN Tag Control in Transmit Packets",
                     ),
                     bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vlp",
+                    description: Some(
+                        "VLAN Priority Control",
+                    ),
+                    bit_offset: 18,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rxoie",
+                    name: "csvl",
                     description: Some(
-                        "Receive Queue Overflow Interrupt Enable",
+                        "C-VLAN or S-VLAN",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vlti",
+                    description: Some(
+                        "VLAN Tag Input",
+                    ),
+                    bit_offset: 20,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -7130,40 +6400,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dmaccr",
+            name: "Macvr",
             extends: None,
             description: Some(
-                "Channel control register",
+                "Version register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "mss",
+                    name: "snpsver",
                     description: Some(
-                        "Maximum Segment Size",
+                        "IP version",
                     ),
                     bit_offset: 0,
-                    bit_size: 14,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "pblx8",
+                    name: "userver",
                     description: Some(
-                        "8xPBL mode",
+                        "ST-defined version",
                     ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dsl",
-                    description: Some(
-                        "Descriptor Skip Length",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 3,
+                    bit_offset: 8,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -7310,17 +6570,847 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "TxMultipleCollisionGoodPackets",
+            name: "Macwtr",
             extends: None,
             description: Some(
-                "Tx multiple collision good packets register",
+                "Watchdog timeout register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "txmultcolg",
+                    name: "wto",
                     description: Some(
-                        "Tx Multiple Collision Good Packets",
+                        "Watchdog Timeout",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pwe",
+                    description: Some(
+                        "Programmable Watchdog Enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MmcControl",
+            extends: None,
+            description: Some(
+                "MMC control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cntrst",
+                    description: Some(
+                        "Counters Reset",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntstopro",
+                    description: Some(
+                        "Counter Stop Rollover",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rstonrd",
+                    description: Some(
+                        "Reset on Read",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntfreez",
+                    description: Some(
+                        "MMC Counter Freeze",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntprst",
+                    description: Some(
+                        "Counters Preset",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntprstlvl",
+                    description: Some(
+                        "Full-Half Preset",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucdbc",
+                    description: Some(
+                        "Update MMC Counters for Dropped Broadcast Packets",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MmcRxInterrupt",
+            extends: None,
+            description: Some(
+                "MMC Rx interrupt register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxcrcerpis",
+                    description: Some(
+                        "MMC Receive CRC Error Packet Counter Interrupt Status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxalgnerpis",
+                    description: Some(
+                        "MMC Receive Alignment Error Packet Counter Interrupt Status",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxucgpis",
+                    description: Some(
+                        "MMC Receive Unicast Good Packet Counter Interrupt Status",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxlpiuscis",
+                    description: Some(
+                        "MMC Receive LPI microsecond counter interrupt status",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxlpitrcis",
+                    description: Some(
+                        "MMC Receive LPI transition counter interrupt status",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MmcRxInterruptMask",
+            extends: None,
+            description: Some(
+                "MMC Rx interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxcrcerpim",
+                    description: Some(
+                        "MMC Receive CRC Error Packet Counter Interrupt Mask",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxalgnerpim",
+                    description: Some(
+                        "MMC Receive Alignment Error Packet Counter Interrupt Mask",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxucgpim",
+                    description: Some(
+                        "MMC Receive Unicast Good Packet Counter Interrupt Mask",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxlpiuscim",
+                    description: Some(
+                        "MMC Receive LPI microsecond counter interrupt Mask",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxlpitrcim",
+                    description: Some(
+                        "MMC Receive LPI transition counter interrupt Mask",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MmcTxInterrupt",
+            extends: None,
+            description: Some(
+                "MMC Tx interrupt register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txscolgpis",
+                    description: Some(
+                        "MMC Transmit Single Collision Good Packet Counter Interrupt Status",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txmcolgpis",
+                    description: Some(
+                        "MMC Transmit Multiple Collision Good Packet Counter Interrupt Status",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txgpktis",
+                    description: Some(
+                        "MMC Transmit Good Packet Counter Interrupt Status",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txlpiuscis",
+                    description: Some(
+                        "MMC Transmit LPI microsecond counter interrupt status",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txlpitrcis",
+                    description: Some(
+                        "MMC Transmit LPI transition counter interrupt status",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MmcTxInterruptMask",
+            extends: None,
+            description: Some(
+                "MMC Tx interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txscolgpim",
+                    description: Some(
+                        "MMC Transmit Single Collision Good Packet Counter Interrupt Mask",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txmcolgpim",
+                    description: Some(
+                        "MMC Transmit Multiple Collision Good Packet Counter Interrupt Mask",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txgpktim",
+                    description: Some(
+                        "MMC Transmit Good Packet Counter Interrupt Mask",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txlpiuscim",
+                    description: Some(
+                        "MMC Transmit LPI microsecond counter interrupt Mask",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txlpitrcim",
+                    description: Some(
+                        "MMC Transmit LPI transition counter interrupt Mask",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mtlisr",
+            extends: None,
+            description: Some(
+                "Interrupt status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "q0is",
+                    description: Some(
+                        "Queue interrupt status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mtlomr",
+            extends: None,
+            description: Some(
+                "Operating mode Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dtxsts",
+                    description: Some(
+                        "Drop Transmit Status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntprst",
+                    description: Some(
+                        "Counters Preset",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntclr",
+                    description: Some(
+                        "Counters Reset",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mtlqicsr",
+            extends: None,
+            description: Some(
+                "Queue interrupt control status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txunfis",
+                    description: Some(
+                        "Transmit Queue Underflow Interrupt Status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txuie",
+                    description: Some(
+                        "Transmit Queue Underflow Interrupt Enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxovfis",
+                    description: Some(
+                        "Receive Queue Overflow Interrupt Status",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxoie",
+                    description: Some(
+                        "Receive Queue Overflow Interrupt Enable",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MtlrxQdr",
+            extends: None,
+            description: Some(
+                "Rx queue debug register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rwcsts",
+                    description: Some(
+                        "MTL Rx Queue Write Controller Active Status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rrcsts",
+                    description: Some(
+                        "MTL Rx Queue Read Controller State",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxqsts",
+                    description: Some(
+                        "MTL Rx Queue Fill-Level Status",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "prxq",
+                    description: Some(
+                        "Number of Packets in Receive Queue",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MtlrxQmpocr",
+            extends: None,
+            description: Some(
+                "Rx queue missed packet and overflow counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ovfpktcnt",
+                    description: Some(
+                        "Overflow Packet Counter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ovfcntovf",
+                    description: Some(
+                        "Overflow Counter Overflow Bit",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mispktcnt",
+                    description: Some(
+                        "Missed Packet Counter",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "miscntovf",
+                    description: Some(
+                        "Missed Packet Counter Overflow Bit",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MtlrxQomr",
+            extends: None,
+            description: Some(
+                "Rx queue operating mode register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rtc",
+                    description: Some(
+                        "Receive Queue Threshold Control",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fup",
+                    description: Some(
+                        "Forward Undersized Good Packets",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fep",
+                    description: Some(
+                        "Forward Error Packets",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rsf",
+                    description: Some(
+                        "Receive Queue Store and Forward",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dis_tcp_ef",
+                    description: Some(
+                        "Disable Dropping of TCP/IP Checksum Error Packets",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ehfc",
+                    description: Some(
+                        "Enable Hardware Flow Control",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfa",
+                    description: Some(
+                        "Threshold for Activating Flow Control (in half-duplex and full-duplex modes)",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rfd",
+                    description: Some(
+                        "Threshold for Deactivating Flow Control (in half-duplex and full-duplex modes)",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rqs",
+                    description: Some(
+                        "Receive Queue Size",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MtltxQdr",
+            extends: None,
+            description: Some(
+                "Tx queue debug Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txqpaused",
+                    description: Some(
+                        "Transmit Queue in Pause",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trcsts",
+                    description: Some(
+                        "MTL Tx Queue Read Controller Status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "twcsts",
+                    description: Some(
+                        "MTL Tx Queue Write Controller Status",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txqsts",
+                    description: Some(
+                        "MTL Tx Queue Not Empty Status",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txstsfsts",
+                    description: Some(
+                        "MTL Tx Status FIFO Full Status",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ptxq",
+                    description: Some(
+                        "Number of Packets in the Transmit Queue",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "stxstsf",
+                    description: Some(
+                        "Number of Status Words in Tx Status FIFO of Queue",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MtltxQomr",
+            extends: None,
+            description: Some(
+                "Tx queue operating mode Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ftq",
+                    description: Some(
+                        "Flush Transmit Queue",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tsf",
+                    description: Some(
+                        "Transmit Store and Forward",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txqen",
+                    description: Some(
+                        "Transmit Queue Enable",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ttc",
+                    description: Some(
+                        "Transmit Threshold Control",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tqs",
+                    description: Some(
+                        "Transmit Queue Size",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MtltxQur",
+            extends: None,
+            description: Some(
+                "Tx queue underflow register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "uffrmcnt",
+                    description: Some(
+                        "Underflow Packet Counter",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ufcntovf",
+                    description: Some(
+                        "Overflow Bit for Underflow Packet Counter",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "RxAlignmentErrorPackets",
+            extends: None,
+            description: Some(
+                "Rx alignment error packets register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rxalgnerr",
+                    description: Some(
+                        "Rx Alignment Error Packets",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -7330,130 +7420,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macl3l4c0r",
+            name: "RxCrcErrorPackets",
             extends: None,
             description: Some(
-                "L3 and L4 control 0 register",
+                "Rx CRC error packets register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "l3pen0",
+                    name: "rxcrcerr",
                     description: Some(
-                        "Layer 3 Protocol Enable",
+                        "Rx CRC Error Packets",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3sam0",
-                    description: Some(
-                        "Layer 3 IP SA Match Enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3saim0",
-                    description: Some(
-                        "Layer 3 IP SA Inverse Match Enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3dam0",
-                    description: Some(
-                        "Layer 3 IP DA Match Enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3daim0",
-                    description: Some(
-                        "Layer 3 IP DA Inverse Match Enable",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3hsbm0",
-                    description: Some(
-                        "Layer 3 IP SA Higher Bits Match",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l3hdbm0",
-                    description: Some(
-                        "Layer 3 IP DA Higher Bits Match",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4pen0",
-                    description: Some(
-                        "Layer 4 Protocol Enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4spm0",
-                    description: Some(
-                        "Layer 4 Source Port Match Enable",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4spim0",
-                    description: Some(
-                        "Layer 4 Source Port Inverse Match Enable",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4dpm0",
-                    description: Some(
-                        "Layer 4 Destination Port Match Enable",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "l4dpim0",
-                    description: Some(
-                        "Layer 4 Destination Port Inverse Match Enable",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -7500,100 +7480,120 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macstnr",
+            name: "RxUnicastPacketsGood",
             extends: None,
             description: Some(
-                "System time nanoseconds register",
+                "Rx unicast packets good register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tsss",
+                    name: "rxucastg",
                     description: Some(
-                        "Timestamp Sub-seconds",
+                        "Rx Unicast Packets Good",
                     ),
                     bit_offset: 0,
-                    bit_size: 31,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "MtltxQur",
+            name: "TxLpiTranCntr",
             extends: None,
             description: Some(
-                "Tx queue underflow register",
+                "Tx LPI transition counter register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "uffrmcnt",
+                    name: "txlpitrc",
                     description: Some(
-                        "Underflow Packet Counter",
+                        "Tx LPI Transition counter",
                     ),
                     bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ufcntovf",
-                    description: Some(
-                        "Overflow Bit for Underflow Packet Counter",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Maca3hr",
+            name: "TxLpiUsecCntr",
             extends: None,
             description: Some(
-                "Address 3 high register",
+                "Tx LPI microsecond timer register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "addrhi",
+                    name: "txlpiusc",
                     description: Some(
-                        "MAC Address3 [47:32]",
+                        "Tx LPI Microseconds Counter",
                     ),
                     bit_offset: 0,
-                    bit_size: 16,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "TxMultipleCollisionGoodPackets",
+            extends: None,
+            description: Some(
+                "Tx multiple collision good packets register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "mbc",
+                    name: "txmultcolg",
                     description: Some(
-                        "Mask Byte Control",
+                        "Tx Multiple Collision Good Packets",
                     ),
-                    bit_offset: 24,
-                    bit_size: 6,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "TxPacketCountGood",
+            extends: None,
+            description: Some(
+                "Tx packet count good register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "sa",
+                    name: "txpktg",
                     description: Some(
-                        "Source Address",
+                        "Tx Packet Count Good",
                     ),
-                    bit_offset: 30,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "TxSingleCollisionGoodPackets",
+            extends: None,
+            description: Some(
+                "Tx single collision good packets register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "ae",
+                    name: "txsnglcolg",
                     description: Some(
-                        "Address Enable",
+                        "Tx Single Collision Good Packets",
                     ),
-                    bit_offset: 31,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

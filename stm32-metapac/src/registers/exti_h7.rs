@@ -7,10 +7,10 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("External interrupt/event controller"),
         items: &[
             BlockItem {
-                name: "rtsr",
-                description: Some("Rising Trigger selection register"),
+                name: "emr",
+                description: Some("Event mask register"),
                 array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                byte_offset: 0,
+                byte_offset: 132,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -29,17 +29,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "swier",
-                description: Some("Software interrupt event register"),
-                array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Lines"),
-                }),
-            },
-            BlockItem {
                 name: "imr",
                 description: Some("Interrupt mask register"),
                 array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
@@ -51,10 +40,10 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "emr",
-                description: Some("Event mask register"),
+                name: "pr",
+                description: Some("Pending register"),
                 array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                byte_offset: 132,
+                byte_offset: 136,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -62,10 +51,21 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "pr",
-                description: Some("Pending register"),
+                name: "rtsr",
+                description: Some("Rising Trigger selection register"),
                 array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                byte_offset: 136,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Lines"),
+                }),
+            },
+            BlockItem {
+                name: "swier",
+                description: Some("Software interrupt event register"),
+                array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                byte_offset: 8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

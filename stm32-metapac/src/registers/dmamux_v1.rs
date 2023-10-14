@@ -34,6 +34,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "cfr",
+                    description: Some(
+                        "DMAMUX request line multiplexer interrupt clear flag register",
+                    ),
+                    array: None,
+                    byte_offset: 132,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Csr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "csr",
                     description: Some(
                         "DMAMUX request line multiplexer interrupt channel status register",
@@ -51,18 +68,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cfr",
+                    name: "rgcfr",
                     description: Some(
-                        "DMAMUX request line multiplexer interrupt clear flag register",
+                        "DMAMux - DMA request generator clear flag register",
                     ),
                     array: None,
-                    byte_offset: 132,
+                    byte_offset: 324,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
-                                "Csr",
+                                "Rgsr",
                             ),
                         },
                     ),
@@ -101,23 +118,6 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rgsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rgcfr",
-                    description: Some(
-                        "DMAMux - DMA request generator clear flag register",
-                    ),
-                    array: None,
-                    byte_offset: 324,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
                                 "Rgsr",
@@ -212,6 +212,33 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Csr",
+            extends: None,
+            description: Some(
+                "DMAMUX request line multiplexer interrupt channel status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sof",
+                    description: Some(
+                        "Synchronization overrun event flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Rgcr",
             extends: None,
             description: Some(
@@ -292,33 +319,6 @@ pub(crate) static REGISTERS: IR = IR {
                         Array::Regular(
                             RegularArray {
                                 len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some(
-                "DMAMUX request line multiplexer interrupt channel status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sof",
-                    description: Some(
-                        "Synchronization overrun event flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
                                 stride: 1,
                             },
                         ),

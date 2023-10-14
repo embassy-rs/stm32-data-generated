@@ -44,40 +44,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "vrefbuf_csr",
-                    description: Some(
-                        "VREFBUF control and status register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "VrefbufCsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "vrefbuf_ccr",
-                    description: Some(
-                        "VREFBUF calibration control register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "VrefbufCcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "itline0",
                     description: Some(
                         "interrupt line 0 status register",
@@ -107,142 +73,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Itline1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline2",
-                    description: Some(
-                        "interrupt line 2 status register",
-                    ),
-                    array: None,
-                    byte_offset: 136,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline3",
-                    description: Some(
-                        "interrupt line 3 status register",
-                    ),
-                    array: None,
-                    byte_offset: 140,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline4",
-                    description: Some(
-                        "interrupt line 4 status register",
-                    ),
-                    array: None,
-                    byte_offset: 144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline4",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline5",
-                    description: Some(
-                        "interrupt line 5 status register",
-                    ),
-                    array: None,
-                    byte_offset: 148,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline5",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline6",
-                    description: Some(
-                        "interrupt line 6 status register",
-                    ),
-                    array: None,
-                    byte_offset: 152,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline6",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline7",
-                    description: Some(
-                        "interrupt line 7 status register",
-                    ),
-                    array: None,
-                    byte_offset: 156,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline7",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline8",
-                    description: Some(
-                        "interrupt line 8 status register",
-                    ),
-                    array: None,
-                    byte_offset: 160,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline8",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline9",
-                    description: Some(
-                        "interrupt line 9 status register",
-                    ),
-                    array: None,
-                    byte_offset: 164,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline9",
                             ),
                         },
                     ),
@@ -418,6 +248,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "itline2",
+                    description: Some(
+                        "interrupt line 2 status register",
+                    ),
+                    array: None,
+                    byte_offset: 136,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "itline20",
                     description: Some(
                         "interrupt line 20 status register",
@@ -588,6 +435,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "itline3",
+                    description: Some(
+                        "interrupt line 3 status register",
+                    ),
+                    array: None,
+                    byte_offset: 140,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline3",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "itline30",
                     description: Some(
                         "interrupt line 30 status register",
@@ -621,55 +485,273 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "itline4",
+                    description: Some(
+                        "interrupt line 4 status register",
+                    ),
+                    array: None,
+                    byte_offset: 144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline4",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline5",
+                    description: Some(
+                        "interrupt line 5 status register",
+                    ),
+                    array: None,
+                    byte_offset: 148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline5",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline6",
+                    description: Some(
+                        "interrupt line 6 status register",
+                    ),
+                    array: None,
+                    byte_offset: 152,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline6",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline7",
+                    description: Some(
+                        "interrupt line 7 status register",
+                    ),
+                    array: None,
+                    byte_offset: 156,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline7",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline8",
+                    description: Some(
+                        "interrupt line 8 status register",
+                    ),
+                    array: None,
+                    byte_offset: 160,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline8",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline9",
+                    description: Some(
+                        "interrupt line 9 status register",
+                    ),
+                    array: None,
+                    byte_offset: 164,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline9",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "vrefbuf_ccr",
+                    description: Some(
+                        "VREFBUF calibration control register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "VrefbufCcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "vrefbuf_csr",
+                    description: Some(
+                        "VREFBUF control and status register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "VrefbufCsr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
     fieldsets: &[
         FieldSet {
-            name: "Itline0",
+            name: "Cfgr1",
             extends: None,
             description: Some(
-                "interrupt line 0 status register",
+                "configuration register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wwdg",
+                    name: "mem_mode",
                     description: Some(
-                        "Window watchdog interrupt pending flag",
+                        "Memory mapping selection bits. This bitfield controlled by software selects the memory internally mapped at the address 0x0000_0000. Its reset value is determined by the boot mode configuration. Refer to Reference Manual section 2.5 for more details.",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline10",
-            extends: None,
-            description: Some(
-                "interrupt line 10 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dma1_ch2",
-                    description: Some(
-                        "DMA1_CH1",
+                    enumm: Some(
+                        "MemMode",
                     ),
-                    bit_offset: 0,
+                },
+                Field {
+                    name: "pa11_rmp",
+                    description: Some(
+                        "PA11 pin remapping\r This bit is set and cleared by software. When set, it remaps the PA11 pin to operate as PA9 GPIO port, instead as PA11 GPIO port.",
+                    ),
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dma1_ch3",
+                    name: "pa12_rmp",
                     description: Some(
-                        "DMA1_CH3",
+                        "PA12 pin remapping\r This bit is set and cleared by software. When set, it remaps the PA12 pin to operate as PA10 GPIO port, instead as PA12 GPIO port.",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 4,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ir_pol",
+                    description: Some(
+                        "IR output polarity selection",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ir_mod",
+                    description: Some(
+                        "IR Modulation Envelope signal selection.",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boosten",
+                    description: Some(
+                        "I/O analog switch voltage booster enable",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucpd1_strobe",
+                    description: Some(
+                        "Strobe signal bit for UCPD1",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ucpd2_strobe",
+                    description: Some(
+                        "Strobe signal bit for UCPD2",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c_pbx_fmp",
+                    description: Some(
+                        "Fast Mode Plus (FM+) driving capability activation bits",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c1_fmp",
+                    description: Some(
+                        "FM+ driving capability activation for I2C1",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c2_fmp",
+                    description: Some(
+                        "FM+ driving capability activation for I2C2",
+                    ),
+                    bit_offset: 21,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c_pax_fmp",
+                    description: Some(
+                        "Fast Mode Plus (FM+) driving capability activation bits",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
@@ -816,41 +898,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline29",
+            name: "Itline0",
             extends: None,
             description: Some(
-                "interrupt line 29 status register",
+                "interrupt line 0 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "usart3",
-                    description: None,
+                    name: "wwdg",
+                    description: Some(
+                        "Window watchdog interrupt pending flag",
+                    ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart4",
-                    description: None,
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart5",
-                    description: None,
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart6",
-                    description: None,
-                    bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -858,17 +918,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline17",
+            name: "Itline1",
             extends: None,
             description: Some(
-                "interrupt line 17 status register",
+                "interrupt line 1 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim6",
+                    name: "pvdout",
                     description: Some(
-                        "TIM6",
+                        "PVD supply monitoring interrupt request pending (EXTI line 16).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline10",
+            extends: None,
+            description: Some(
+                "interrupt line 10 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dma1_ch2",
+                    description: Some(
+                        "DMA1_CH1",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -876,9 +956,39 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac",
+                    name: "dma1_ch3",
                     description: Some(
-                        "DAC",
+                        "DMA1_CH3",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline11",
+            extends: None,
+            description: Some(
+                "interrupt line 11 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dmamux",
+                    description: Some(
+                        "DMAMUX",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dma1_ch4",
+                    description: Some(
+                        "DMA1_CH4",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -886,61 +996,31 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lptim1",
+                    name: "dma1_ch5",
                     description: Some(
-                        "LPTIM1",
+                        "DMA1_CH5",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Itline24",
-            extends: None,
-            description: Some(
-                "interrupt line 24 status register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "i2c2",
+                    name: "dma1_ch6",
                     description: Some(
-                        "I2C2",
+                        "DMA1_CH6",
                     ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline2",
-            extends: None,
-            description: Some(
-                "interrupt line 2 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tamp",
-                    description: Some(
-                        "TAMP",
-                    ),
-                    bit_offset: 0,
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rtc",
+                    name: "dma1_ch7",
                     description: Some(
-                        "RTC",
+                        "DMA1_CH7",
                     ),
-                    bit_offset: 1,
+                    bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -988,17 +1068,327 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline9",
+            name: "Itline13",
             extends: None,
             description: Some(
-                "interrupt line 9 status register",
+                "interrupt line 13 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dma1_ch1",
+                    name: "tim1_ccu",
                     description: Some(
-                        "DMA1_CH1",
+                        "TIM1_CCU",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim1_trg",
+                    description: Some(
+                        "TIM1_TRG",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim1_upd",
+                    description: Some(
+                        "TIM1_UPD",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim1_brk",
+                    description: Some(
+                        "TIM1_BRK",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline14",
+            extends: None,
+            description: Some(
+                "interrupt line 14 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim1_cc",
+                    description: Some(
+                        "TIM1_CC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline15",
+            extends: None,
+            description: Some(
+                "interrupt line 15 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim2",
+                    description: Some(
+                        "TIM2",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline16",
+            extends: None,
+            description: Some(
+                "interrupt line 16 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim3",
+                    description: Some(
+                        "TIM3",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline17",
+            extends: None,
+            description: Some(
+                "interrupt line 17 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim6",
+                    description: Some(
+                        "TIM6",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dac",
+                    description: Some(
+                        "DAC",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptim1",
+                    description: Some(
+                        "LPTIM1",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline18",
+            extends: None,
+            description: Some(
+                "interrupt line 18 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim7",
+                    description: Some(
+                        "TIM7",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptim2",
+                    description: Some(
+                        "LPTIM2",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline19",
+            extends: None,
+            description: Some(
+                "interrupt line 19 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim14",
+                    description: Some(
+                        "TIM14",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline2",
+            extends: None,
+            description: Some(
+                "interrupt line 2 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tamp",
+                    description: Some(
+                        "TAMP",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rtc",
+                    description: Some(
+                        "RTC",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline20",
+            extends: None,
+            description: Some(
+                "interrupt line 20 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim15",
+                    description: Some(
+                        "TIM15",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline21",
+            extends: None,
+            description: Some(
+                "interrupt line 21 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim16",
+                    description: Some(
+                        "TIM16",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline22",
+            extends: None,
+            description: Some(
+                "interrupt line 22 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tim17",
+                    description: Some(
+                        "TIM17",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline23",
+            extends: None,
+            description: Some(
+                "interrupt line 23 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "i2c1",
+                    description: Some(
+                        "I2C1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline24",
+            extends: None,
+            description: Some(
+                "interrupt line 24 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "i2c2",
+                    description: Some(
+                        "I2C2",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1021,6 +1411,108 @@ pub(crate) static REGISTERS: IR = IR {
                         "SPI1",
                     ),
                     bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline26",
+            extends: None,
+            description: Some(
+                "interrupt line 26 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "spi2",
+                    description: Some(
+                        "SPI2",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline27",
+            extends: None,
+            description: Some(
+                "interrupt line 27 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usart1",
+                    description: Some(
+                        "USART1",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline28",
+            extends: None,
+            description: Some(
+                "interrupt line 28 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usart2",
+                    description: Some(
+                        "USART2",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline29",
+            extends: None,
+            description: Some(
+                "interrupt line 29 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "usart3",
+                    description: None,
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart4",
+                    description: None,
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart5",
+                    description: None,
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart6",
+                    description: None,
+                    bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1058,20 +1550,130 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "VrefbufCcr",
+            name: "Itline30",
             extends: None,
             description: Some(
-                "VREFBUF calibration control register",
+                "interrupt line 30 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "trim",
+                    name: "cec",
                     description: Some(
-                        "Trimming code These bits are automatically initialized after reset with the trimming value stored in the Flash memory during the production test. Writing into these bits allows to tune the internal reference buffer voltage.",
+                        "CEC",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline31",
+            extends: None,
+            description: Some(
+                "interrupt line 31 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rng",
+                    description: Some(
+                        "RNG",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "aes",
+                    description: Some(
+                        "AES",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline4",
+            extends: None,
+            description: Some(
+                "interrupt line 4 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rcc",
+                    description: Some(
+                        "RCC",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline5",
+            extends: None,
+            description: Some(
+                "interrupt line 5 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti0",
+                    description: Some(
+                        "EXTI0",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "exti1",
+                    description: Some(
+                        "EXTI1",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Itline6",
+            extends: None,
+            description: Some(
+                "interrupt line 6 status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti2",
+                    description: Some(
+                        "EXTI2",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "exti3",
+                    description: Some(
+                        "EXTI3",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1208,57 +1810,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline28",
+            name: "Itline8",
             extends: None,
             description: Some(
-                "interrupt line 28 status register",
+                "interrupt line 8 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "usart2",
+                    name: "ucpd1",
                     description: Some(
-                        "USART2",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline30",
-            extends: None,
-            description: Some(
-                "interrupt line 30 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cec",
-                    description: Some(
-                        "CEC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline31",
-            extends: None,
-            description: Some(
-                "interrupt line 31 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rng",
-                    description: Some(
-                        "RNG",
+                        "UCPD1",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1266,79 +1828,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "aes",
+                    name: "ucpd2",
                     description: Some(
-                        "AES",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline23",
-            extends: None,
-            description: Some(
-                "interrupt line 23 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "i2c1",
-                    description: Some(
-                        "I2C1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline19",
-            extends: None,
-            description: Some(
-                "interrupt line 19 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim14",
-                    description: Some(
-                        "TIM14",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline13",
-            extends: None,
-            description: Some(
-                "interrupt line 13 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1_ccu",
-                    description: Some(
-                        "TIM1_CCU",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim1_trg",
-                    description: Some(
-                        "TIM1_TRG",
+                        "UCPD2",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -1346,69 +1838,29 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim1_upd",
+                    name: "usb",
                     description: Some(
-                        "TIM1_UPD",
+                        "USB",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-                Field {
-                    name: "tim1_brk",
-                    description: Some(
-                        "TIM1_BRK",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
             ],
         },
         FieldSet {
-            name: "Itline6",
+            name: "Itline9",
             extends: None,
             description: Some(
-                "interrupt line 6 status register",
+                "interrupt line 9 status register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "exti2",
+                    name: "dma1_ch1",
                     description: Some(
-                        "EXTI2",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "exti3",
-                    description: Some(
-                        "EXTI3",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline20",
-            extends: None,
-            description: Some(
-                "interrupt line 20 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim15",
-                    description: Some(
-                        "TIM15",
+                        "DMA1_CH1",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1418,80 +1870,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Itline21",
+            name: "VrefbufCcr",
             extends: None,
             description: Some(
-                "interrupt line 21 status register",
+                "VREFBUF calibration control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim16",
+                    name: "trim",
                     description: Some(
-                        "TIM16",
+                        "Trimming code These bits are automatically initialized after reset with the trimming value stored in the Flash memory during the production test. Writing into these bits allows to tune the internal reference buffer voltage.",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline4",
-            extends: None,
-            description: Some(
-                "interrupt line 4 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rcc",
-                    description: Some(
-                        "RCC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline14",
-            extends: None,
-            description: Some(
-                "interrupt line 14 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1_cc",
-                    description: Some(
-                        "TIM1_CC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline15",
-            extends: None,
-            description: Some(
-                "interrupt line 15 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim2",
-                    description: Some(
-                        "TIM2",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
@@ -1542,398 +1934,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 4,
                     bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline11",
-            extends: None,
-            description: Some(
-                "interrupt line 11 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dmamux",
-                    description: Some(
-                        "DMAMUX",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1_ch4",
-                    description: Some(
-                        "DMA1_CH4",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1_ch5",
-                    description: Some(
-                        "DMA1_CH5",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1_ch6",
-                    description: Some(
-                        "DMA1_CH6",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dma1_ch7",
-                    description: Some(
-                        "DMA1_CH7",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline5",
-            extends: None,
-            description: Some(
-                "interrupt line 5 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "exti0",
-                    description: Some(
-                        "EXTI0",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "exti1",
-                    description: Some(
-                        "EXTI1",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline18",
-            extends: None,
-            description: Some(
-                "interrupt line 18 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim7",
-                    description: Some(
-                        "TIM7",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lptim2",
-                    description: Some(
-                        "LPTIM2",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline1",
-            extends: None,
-            description: Some(
-                "interrupt line 1 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pvdout",
-                    description: Some(
-                        "PVD supply monitoring interrupt request pending (EXTI line 16).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline26",
-            extends: None,
-            description: Some(
-                "interrupt line 26 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi2",
-                    description: Some(
-                        "SPI2",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline16",
-            extends: None,
-            description: Some(
-                "interrupt line 16 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim3",
-                    description: Some(
-                        "TIM3",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline22",
-            extends: None,
-            description: Some(
-                "interrupt line 22 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim17",
-                    description: Some(
-                        "TIM17",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline27",
-            extends: None,
-            description: Some(
-                "interrupt line 27 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "usart1",
-                    description: Some(
-                        "USART1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr1",
-            extends: None,
-            description: Some(
-                "configuration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mem_mode",
-                    description: Some(
-                        "Memory mapping selection bits. This bitfield controlled by software selects the memory internally mapped at the address 0x0000_0000. Its reset value is determined by the boot mode configuration. Refer to Reference Manual section 2.5 for more details.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "MemMode",
-                    ),
-                },
-                Field {
-                    name: "pa11_rmp",
-                    description: Some(
-                        "PA11 pin remapping\r This bit is set and cleared by software. When set, it remaps the PA11 pin to operate as PA9 GPIO port, instead as PA11 GPIO port.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pa12_rmp",
-                    description: Some(
-                        "PA12 pin remapping\r This bit is set and cleared by software. When set, it remaps the PA12 pin to operate as PA10 GPIO port, instead as PA12 GPIO port.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ir_pol",
-                    description: Some(
-                        "IR output polarity selection",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ir_mod",
-                    description: Some(
-                        "IR Modulation Envelope signal selection.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "boosten",
-                    description: Some(
-                        "I/O analog switch voltage booster enable",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd1_strobe",
-                    description: Some(
-                        "Strobe signal bit for UCPD1",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd2_strobe",
-                    description: Some(
-                        "Strobe signal bit for UCPD2",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c_pbx_fmp",
-                    description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1_fmp",
-                    description: Some(
-                        "FM+ driving capability activation for I2C1",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c2_fmp",
-                    description: Some(
-                        "FM+ driving capability activation for I2C2",
-                    ),
-                    bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c_pax_fmp",
-                    description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Itline8",
-            extends: None,
-            description: Some(
-                "interrupt line 8 status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ucpd1",
-                    description: Some(
-                        "UCPD1",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ucpd2",
-                    description: Some(
-                        "UCPD2",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usb",
-                    description: Some(
-                        "USB",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },

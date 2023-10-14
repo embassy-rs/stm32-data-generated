@@ -10,9 +10,57 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "rtsr",
+                    name: "emr",
                     description: Some(
-                        "rising trigger selection register",
+                        "CPU wakeup with event mask register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 16,
+                            },
+                        ),
+                    ),
+                    byte_offset: 132,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lines",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "exticr",
+                    description: Some(
+                        "external interrupt selection register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Exti",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fpr",
+                    description: Some(
+                        "falling edge pending register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -22,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 0,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -58,67 +106,19 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "swier",
+                    name: "imr",
                     description: Some(
-                        "software interrupt event register",
+                        "CPU wakeup with interrupt mask register",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
                                 len: 2,
-                                stride: 32,
+                                stride: 16,
                             },
                         ),
                     ),
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lines",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rpr",
-                    description: Some(
-                        "rising edge pending register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lines",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fpr",
-                    description: Some(
-                        "falling edge pending register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 16,
+                    byte_offset: 128,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -154,43 +154,19 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "exticr",
+                    name: "rpr",
                     description: Some(
-                        "external interrupt selection register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 96,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Exti",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "imr",
-                    description: Some(
-                        "CPU wakeup with interrupt mask register",
+                        "rising edge pending register",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
                                 len: 2,
-                                stride: 16,
+                                stride: 32,
                             },
                         ),
                     ),
-                    byte_offset: 128,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -202,19 +178,43 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "emr",
+                    name: "rtsr",
                     description: Some(
-                        "CPU wakeup with event mask register",
+                        "rising trigger selection register",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
                                 len: 2,
-                                stride: 16,
+                                stride: 32,
                             },
                         ),
                     ),
-                    byte_offset: 132,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lines",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "swier",
+                    description: Some(
+                        "software interrupt event register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -229,6 +229,33 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Exti",
+            extends: None,
+            description: Some(
+                "EXTI external interrupt selection register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "exti",
+                    description: Some(
+                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Lines",
             extends: None,
@@ -282,33 +309,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "Priv",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Exti",
-            extends: None,
-            description: Some(
-                "EXTI external interrupt selection register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "exti",
-                    description: Some(
-                        "EXTI12 GPIO port selection\r These bits are written by software to select the source input for EXTI12 external interrupt.\r When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access.\r When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded.\r Others: reserved",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
                 },
             ],
         },

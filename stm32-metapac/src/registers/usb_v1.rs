@@ -259,6 +259,66 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Fnr",
+            extends: None,
+            description: Some(
+                "frame number register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fn_",
+                    description: Some(
+                        "FN",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lsof",
+                    description: Some(
+                        "LSOF",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lck",
+                    description: Some(
+                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdm",
+                    description: Some(
+                        "received data minus upstream port data line",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxdp",
+                    description: Some(
+                        "received data plus upstream port data line",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Istr",
             extends: None,
             description: Some(
@@ -364,96 +424,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "endpoint has successfully completed a transaction",
                     ),
                     bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fnr",
-            extends: None,
-            description: Some(
-                "frame number register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fn_",
-                    description: Some(
-                        "FN",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lsof",
-                    description: Some(
-                        "LSOF",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lck",
-                    description: Some(
-                        "the frame timer remains in this state until an USB reset or USB suspend event occurs",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdm",
-                    description: Some(
-                        "received data minus upstream port data line",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxdp",
-                    description: Some(
-                        "received data plus upstream port data line",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Daddr",
-            extends: None,
-            description: Some(
-                "device address",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "add",
-                    description: Some(
-                        "device address",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ef",
-                    description: Some(
-                        "USB device enabled",
-                    ),
-                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -600,43 +570,38 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-    ],
-    enums: &[
-        Enum {
-            name: "Stat",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
+        FieldSet {
+            name: "Daddr",
+            extends: None,
+            description: Some(
+                "device address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "add",
                     description: Some(
-                        "all requests addressed to this endpoint are ignored",
+                        "device address",
                     ),
-                    value: 0,
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
                 },
-                EnumVariant {
-                    name: "STALL",
+                Field {
+                    name: "ef",
                     description: Some(
-                        "the endpoint is stalled and all requests result in a STALL handshake",
+                        "USB device enabled",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "NAK",
-                    description: Some(
-                        "the endpoint is naked and all requests result in a NAK handshake",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "VALID",
-                    description: Some(
-                        "this endpoint is enabled, requests are ACKed",
-                    ),
-                    value: 3,
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
+    ],
+    enums: &[
         Enum {
             name: "EpType",
             description: None,
@@ -667,6 +632,41 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "INTERRUPT",
                     description: Some(
                         "Interrupt endpoint",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Stat",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "all requests addressed to this endpoint are ignored",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STALL",
+                    description: Some(
+                        "the endpoint is stalled and all requests result in a STALL handshake",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NAK",
+                    description: Some(
+                        "the endpoint is naked and all requests result in a NAK handshake",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VALID",
+                    description: Some(
+                        "this endpoint is enabled, requests are ACKed",
                     ),
                     value: 3,
                 },

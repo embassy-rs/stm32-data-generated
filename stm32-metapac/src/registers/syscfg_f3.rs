@@ -123,74 +123,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Cfgr2",
-            extends: None,
-            description: Some(
-                "configuration register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lockup_lock",
-                    description: Some(
-                        "Cortex-M0 LOCKUP bit enable bit",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "LockupLock",
-                    ),
-                },
-                Field {
-                    name: "sram_parity_lock",
-                    description: Some(
-                        "SRAM parity lock bit",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "SramParityLock",
-                    ),
-                },
-                Field {
-                    name: "pvd_lock",
-                    description: Some(
-                        "PVD lock enable bit",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "PvdLock",
-                    ),
-                },
-                Field {
-                    name: "byp_addr_par",
-                    description: Some(
-                        "Bypass address bit 29 in parity calculation",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "BypAddrPar",
-                    ),
-                },
-                Field {
-                    name: "sram_pef",
-                    description: Some(
-                        "SRAM parity flag",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Exticr",
             extends: None,
             description: Some(
@@ -214,6 +146,100 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfgr3",
+            extends: None,
+            description: Some(
+                "configuration register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "spi1_rx_dma_rmp",
+                    description: Some(
+                        "SPI1_RX DMA remapping bit",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Spi1RxDmaRmp",
+                    ),
+                },
+                Field {
+                    name: "spi1_tx_dma_rmp",
+                    description: Some(
+                        "SPI1_TX DMA remapping bit",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Spi1TxDmaRmp",
+                    ),
+                },
+                Field {
+                    name: "i2c1_rx_dma_rmp",
+                    description: Some(
+                        "I2C1_RX DMA remapping bit",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "I2c1RxDmaRmp",
+                    ),
+                },
+                Field {
+                    name: "i2c1_tx_dma_rmp",
+                    description: Some(
+                        "I2C1_TX DMA remapping bit",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "I2c1TxDmaRmp",
+                    ),
+                },
+                Field {
+                    name: "adc2_dma_rmp",
+                    description: Some(
+                        "ADC2 DMA remapping bit",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Adc2DmaRmp",
+                    ),
+                },
+                Field {
+                    name: "dac1_trig3_rmp",
+                    description: Some(
+                        "DAC1_CH1 / DAC1_CH2 Trigger remap",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dac1Trig3Rmp",
+                    ),
+                },
+                Field {
+                    name: "dac1_trig5_rmp",
+                    description: Some(
+                        "DAC1_CH1 / DAC1_CH2 Trigger remap",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dac1Trig5Rmp",
+                    ),
                 },
             ],
         },
@@ -391,6 +417,208 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some(
                         "Adc34Jext14Rmp",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rcr",
+            extends: None,
+            description: Some(
+                "CCM SRAM protection register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "page0_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page1_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page2_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page3_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page4_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page5_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page6_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page7_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page8_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page9_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page10_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page11_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page12_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page13_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page14_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
+                    ),
+                },
+                Field {
+                    name: "page15_wp",
+                    description: Some(
+                        "CCM SRAM page write protection bit",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Page0Wp",
                     ),
                 },
             ],
@@ -766,370 +994,93 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Rcr",
+            name: "Cfgr2",
             extends: None,
             description: Some(
-                "CCM SRAM protection register",
+                "configuration register 2",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "page0_wp",
+                    name: "lockup_lock",
                     description: Some(
-                        "CCM SRAM page write protection bit",
+                        "Cortex-M0 LOCKUP bit enable bit",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Page0Wp",
+                        "LockupLock",
                     ),
                 },
                 Field {
-                    name: "page1_wp",
+                    name: "sram_parity_lock",
                     description: Some(
-                        "CCM SRAM page write protection bit",
+                        "SRAM parity lock bit",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Page0Wp",
+                        "SramParityLock",
                     ),
                 },
                 Field {
-                    name: "page2_wp",
+                    name: "pvd_lock",
                     description: Some(
-                        "CCM SRAM page write protection bit",
+                        "PVD lock enable bit",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Page0Wp",
+                        "PvdLock",
                     ),
                 },
                 Field {
-                    name: "page3_wp",
+                    name: "byp_addr_par",
                     description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page4_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
+                        "Bypass address bit 29 in parity calculation",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Page0Wp",
+                        "BypAddrPar",
                     ),
                 },
                 Field {
-                    name: "page5_wp",
+                    name: "sram_pef",
                     description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page6_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page7_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page8_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
+                        "SRAM parity flag",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page9_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page10_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page11_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page12_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page13_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page14_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page15_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr3",
-            extends: None,
-            description: Some(
-                "configuration register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi1_rx_dma_rmp",
-                    description: Some(
-                        "SPI1_RX DMA remapping bit",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Spi1RxDmaRmp",
-                    ),
-                },
-                Field {
-                    name: "spi1_tx_dma_rmp",
-                    description: Some(
-                        "SPI1_TX DMA remapping bit",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Spi1TxDmaRmp",
-                    ),
-                },
-                Field {
-                    name: "i2c1_rx_dma_rmp",
-                    description: Some(
-                        "I2C1_RX DMA remapping bit",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "I2c1RxDmaRmp",
-                    ),
-                },
-                Field {
-                    name: "i2c1_tx_dma_rmp",
-                    description: Some(
-                        "I2C1_TX DMA remapping bit",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "I2c1TxDmaRmp",
-                    ),
-                },
-                Field {
-                    name: "adc2_dma_rmp",
-                    description: Some(
-                        "ADC2 DMA remapping bit",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Adc2DmaRmp",
-                    ),
-                },
-                Field {
-                    name: "dac1_trig3_rmp",
-                    description: Some(
-                        "DAC1_CH1 / DAC1_CH2 Trigger remap",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dac1Trig3Rmp",
-                    ),
-                },
-                Field {
-                    name: "dac1_trig5_rmp",
-                    description: Some(
-                        "DAC1_CH1 / DAC1_CH2 Trigger remap",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Dac1Trig5Rmp",
-                    ),
+                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
         Enum {
-            name: "Adc34Jext11Rmp",
+            name: "Tim7Dac1Ch2DmaRmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM1",
+                    name: "NOTREMAPPED",
                     description: Some(
-                        "Trigger source is TIM1_CC3",
+                        "Not remapped",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TIM20",
+                    name: "REMAPPED",
                     description: Some(
-                        "Trigger source is TIM20_TRGO2",
+                        "TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc34Ext15Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM2",
-                    description: Some(
-                        "Trigger source is TIM2_CC1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM20",
-                    description: Some(
-                        "Trigger source is TIM20_CC1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc2DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MAPDMA2",
-                    description: Some(
-                        "ADC2 mapped on DMA2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH2",
-                    description: Some(
-                        "ADC2 mapped on DMA1 channel 2",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH4",
-                    description: Some(
-                        "ADC2 mapped on DMA1 channel 4",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -1155,23 +1106,114 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Tim7Dac1Ch2DmaRmp",
+            name: "FpuIe5",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Inexact interrupt disable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Inexact interrupt enable",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc12Ext5Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TIM4",
+                    description: Some(
+                        "Trigger source is TIM4_CC4",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM20",
+                    description: Some(
+                        "Trigger source is TIM20_CC1",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tim6Dac1DmaRmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOTREMAPPED",
                     description: Some(
-                        "Not remapped",
+                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "REMAPPED",
                     description: Some(
-                        "TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4",
+                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "PvdLock",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISCONNECTED",
+                    description: Some(
+                        "PVD interrupt disconnected from TIM15/16/17 Break input",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONNECTED",
+                    description: Some(
+                        "PVD interrupt connected to TIM15/16/17 Break input",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "EncoderMode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOREDIRECTION",
+                    description: Some(
+                        "No redirection",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MAPTIM2TIM15",
+                    description: Some(
+                        "TIM2 IC1 and TIM2 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MAPTIM3TIM15",
+                    description: Some(
+                        "TIM3 IC1 and TIM3 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1211,163 +1253,86 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "FpuIe0",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Invalid operation interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Invalid operation interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c1RxDmaRmp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "MAPDMA1CH7",
-                    description: Some(
-                        "I2C1_RX mapped on DMA1 CH7",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH3",
-                    description: Some(
-                        "I2C1_RX mapped on DMA1 CH3",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH5",
-                    description: Some(
-                        "I2C1_RX mapped on DMA1 CH5",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "PvdLock",
+            name: "SramParityLock",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "DISCONNECTED",
                     description: Some(
-                        "PVD interrupt disconnected from TIM15/16/17 Break input",
+                        "SRAM parity error signal disconnected from TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CONNECTED",
                     description: Some(
-                        "PVD interrupt connected to TIM15/16/17 Break input",
+                        "SRAM parity error signal connected to TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Page0Wp",
+            name: "UsbItRmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "NOTREMAPPED",
                     description: Some(
-                        "Write protection of pagex is disabled",
+                        "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "REMAPPED",
                     description: Some(
-                        "Write protection of pagex is enabled",
+                        "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Adc34Jext5Rmp",
+            name: "Adc12Ext3Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM4",
+                    name: "TIM2",
                     description: Some(
-                        "Trigger source is TIM4_CC3",
+                        "Trigger source is TIM2_CC2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "TIM20",
                     description: Some(
-                        "Trigger source is TIM20_TRGO",
+                        "rigger source is TIM20_TRGO2",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "I2c1Fmp",
+            name: "Adc12Ext15Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDARD",
+                    name: "TIM3",
                     description: Some(
-                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
+                        "Trigger source is TIM3_CC4",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FMP",
+                    name: "TIM20",
                     description: Some(
-                        "FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits",
+                        "Trigger source is TIM20_CC3",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Spi1RxDmaRmp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "MAPDMA1CH3",
-                    description: Some(
-                        "SPI1_RX mapped on DMA1 CH2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH5",
-                    description: Some(
-                        "SPI1_RX mapped on DMA1 CH4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH7",
-                    description: Some(
-                        "SPI1_RX mapped on DMA1 CH6",
-                    ),
-                    value: 2,
                 },
             ],
         },
@@ -1387,48 +1352,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ENABLED",
                     description: Some(
                         "Overflow interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "DacTrigRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC trigger is TIM3_TRGO",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe4",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Input denormal interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Input denormal interrupt enable",
                     ),
                     value: 1,
                 },
@@ -1456,160 +1379,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Adc12Ext2Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM1",
-                    description: Some(
-                        "Trigger source is TIM3_CC3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM20",
-                    description: Some(
-                        "rigger source is TIM20_TRGO",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe1",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Devide-by-zero interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Devide-by-zero interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim6Dac1DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dac1Trig3Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM15",
-                    description: Some(
-                        "DAC trigger is TIM15_TRGO",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HRTIM1",
-                    description: Some(
-                        "DAC trigger is HRTIM1_DAC1_TRIG1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2cPb8Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "PB8 pin operate in standard mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "I2C FM+ mode enabled on PB8 and the Speed control is bypassed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EncoderMode",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOREDIRECTION",
-                    description: Some(
-                        "No redirection",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MAPTIM2TIM15",
-                    description: Some(
-                        "TIM2 IC1 and TIM2 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MAPTIM3TIM15",
-                    description: Some(
-                        "TIM3 IC1 and TIM3 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c2Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Adc12Jext13Rmp",
             description: None,
             bit_size: 1,
@@ -1631,21 +1400,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "FpuIe2",
+            name: "Adc12Jext6Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "EXTI15",
                     description: Some(
-                        "Underflow interrupt disable",
+                        "Trigger source is EXTI line 15",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "TIM20",
                     description: Some(
-                        "Underflow interrupt enable",
+                        "Trigger source is TIM20_TRGO2",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "I2cPb7Fmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "PB7 pin operate in standard mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FMP",
+                    description: Some(
+                        "I2C FM+ mode enabled on PB7 and the Speed control is bypassed",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "BypAddrPar",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOBYPASS",
+                    description: Some(
+                        "The ramload operation is performed taking into consideration bit 29 of the address when the parity is calculated",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BYPASS",
+                    description: Some(
+                        "The ramload operation is performed without taking into consideration bit 29 of the address when the parity is calculated",
                     ),
                     value: 1,
                 },
@@ -1673,42 +1484,343 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Tim7Dac1Out2DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc12Ext3Rmp",
+            name: "Adc12Jext3Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "TIM2",
                     description: Some(
-                        "Trigger source is TIM2_CC2",
+                        "Trigger source is TIM2_CC1",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "TIM20",
                     description: Some(
-                        "rigger source is TIM20_TRGO2",
+                        "Trigger source is TIM20_TRGO",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc34Jext5Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TIM4",
+                    description: Some(
+                        "Trigger source is TIM4_CC3",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM20",
+                    description: Some(
+                        "Trigger source is TIM20_TRGO",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc34Ext15Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TIM2",
+                    description: Some(
+                        "Trigger source is TIM2_CC1",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM20",
+                    description: Some(
+                        "Trigger source is TIM20_CC1",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc34Ext5Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "EXTI2",
+                    description: Some(
+                        "Trigger source is EXTI line 2 when reset at 0",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM20",
+                    description: Some(
+                        "Trigger source is TIM20_TRGO",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FpuIe2",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Underflow interrupt disable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Underflow interrupt enable",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "I2cPb9Fmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "PB9 pin operate in standard mode",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FMP",
+                    description: Some(
+                        "I2C FM+ mode enabled on PB9 and the Speed control is bypassed",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc2DmaRmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MAPDMA2",
+                    description: Some(
+                        "ADC2 mapped on DMA2",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH2",
+                    description: Some(
+                        "ADC2 mapped on DMA1 channel 2",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH4",
+                    description: Some(
+                        "ADC2 mapped on DMA1 channel 4",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Page0Wp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Write protection of pagex is disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Write protection of pagex is enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FpuIe1",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Devide-by-zero interrupt disable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Devide-by-zero interrupt enable",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FpuIe4",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Input denormal interrupt disable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Input denormal interrupt enable",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc34Jext14Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TIM7",
+                    description: Some(
+                        "Trigger source is TIM7_TRGO",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM20",
+                    description: Some(
+                        "Trigger source is TIM20_CC2",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc12Ext2Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "TIM1",
+                    description: Some(
+                        "Trigger source is TIM3_CC3",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TIM20",
+                    description: Some(
+                        "rigger source is TIM20_TRGO",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "VbatMon",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLE",
+                    description: Some(
+                        "Disable the power switch to not deliver VBAT voltage on ADC channel 18 input",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLE",
+                    description: Some(
+                        "Enable the power switch to deliver VBAT voltage on ADC channel 18 input",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dac1TrigRmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREMAPPED",
+                    description: Some(
+                        "DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REMAPPED",
+                    description: Some(
+                        "DAC trigger is TIM3_TRGO",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dac1Trig5Rmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREMAPPED",
+                    description: Some(
+                        "Not remapped",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REMAPPED",
+                    description: Some(
+                        "DAC trigger is HRTIM1_DAC1_TRIG2",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "FpuIe0",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Invalid operation interrupt disable",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Invalid operation interrupt enable",
                     ),
                     value: 1,
                 },
@@ -1757,154 +1869,63 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "SramParityLock",
+            name: "Dac1Trig3Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISCONNECTED",
+                    name: "TIM15",
                     description: Some(
-                        "SRAM parity error signal disconnected from TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
+                        "DAC trigger is TIM15_TRGO",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CONNECTED",
+                    name: "HRTIM1",
                     description: Some(
-                        "SRAM parity error signal connected to TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
+                        "DAC trigger is HRTIM1_DAC1_TRIG1",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Adc34Jext14Rmp",
+            name: "Tim7Dac1Out2DmaRmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM7",
+                    name: "NOTREMAPPED",
                     description: Some(
-                        "Trigger source is TIM7_TRGO",
+                        "TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TIM20",
+                    name: "REMAPPED",
                     description: Some(
-                        "Trigger source is TIM20_CC2",
+                        "TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "I2cPb9Fmp",
+            name: "I2cPb8Fmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "STANDARD",
                     description: Some(
-                        "PB9 pin operate in standard mode",
+                        "PB8 pin operate in standard mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "FMP",
                     description: Some(
-                        "I2C FM+ mode enabled on PB9 and the Speed control is bypassed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc12Ext5Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM4",
-                    description: Some(
-                        "Trigger source is TIM4_CC4",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM20",
-                    description: Some(
-                        "Trigger source is TIM20_CC1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc12Ext15Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM3",
-                    description: Some(
-                        "Trigger source is TIM3_CC4",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM20",
-                    description: Some(
-                        "Trigger source is TIM20_CC3",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c1TxDmaRmp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "MAPDMA1CH6",
-                    description: Some(
-                        "I2C1_TX mapped on DMA1 CH6",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH2",
-                    description: Some(
-                        "I2C1_TX mapped on DMA1 CH2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MAPDMA1CH4",
-                    description: Some(
-                        "I2C1_TX mapped on DMA1 CH4",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc12Ext13Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM6",
-                    description: Some(
-                        "Trigger source is TIM6_TRGO",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM20",
-                    description: Some(
-                        "Trigger source is TIM20_CC2",
+                        "I2C FM+ mode enabled on PB8 and the Speed control is bypassed",
                     ),
                     value: 1,
                 },
@@ -1939,21 +1960,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "BypAddrPar",
+            name: "Dac2Ch1DmaRmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOBYPASS",
+                    name: "NOTREMAPPED",
                     description: Some(
-                        "The ramload operation is performed taking into consideration bit 29 of the address when the parity is calculated",
+                        "Not remapped",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BYPASS",
+                    name: "REMAPPED",
                     description: Some(
-                        "The ramload operation is performed without taking into consideration bit 29 of the address when the parity is calculated",
+                        "DAC2_CH1 DMA requests mapped on DMA1 channel 5",
                     ),
                     value: 1,
                 },
@@ -1981,14 +2002,14 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Adc12Jext6Rmp",
+            name: "Adc34Jext11Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EXTI15",
+                    name: "TIM1",
                     description: Some(
-                        "Trigger source is EXTI line 15",
+                        "Trigger source is TIM1_CC3",
                     ),
                     value: 0,
                 },
@@ -2002,49 +2023,105 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "UsbItRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2cPb7Fmp",
+            name: "I2c2Fmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "STANDARD",
                     description: Some(
-                        "PB7 pin operate in standard mode",
+                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "FMP",
                     description: Some(
-                        "I2C FM+ mode enabled on PB7 and the Speed control is bypassed",
+                        "FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Dac2Ch1DmaRmp",
+            name: "Spi1RxDmaRmp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "MAPDMA1CH3",
+                    description: Some(
+                        "SPI1_RX mapped on DMA1 CH2",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH5",
+                    description: Some(
+                        "SPI1_RX mapped on DMA1 CH4",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH7",
+                    description: Some(
+                        "SPI1_RX mapped on DMA1 CH6",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "I2c1TxDmaRmp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "MAPDMA1CH6",
+                    description: Some(
+                        "I2C1_TX mapped on DMA1 CH6",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH2",
+                    description: Some(
+                        "I2C1_TX mapped on DMA1 CH2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH4",
+                    description: Some(
+                        "I2C1_TX mapped on DMA1 CH4",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Tim17DmaRmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREMAPPED",
+                    description: Some(
+                        "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REMAPPED",
+                    description: Some(
+                        "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tim1Itr3Rmp",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2058,70 +2135,98 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "REMAPPED",
                     description: Some(
-                        "DAC2_CH1 DMA requests mapped on DMA1 channel 5",
+                        "TIM1_ITR3 = TIM17_OC",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Dac1Trig5Rmp",
+            name: "Adc12Ext13Rmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOTREMAPPED",
+                    name: "TIM6",
                     description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC trigger is HRTIM1_DAC1_TRIG2",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc12Jext3Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "TIM2",
-                    description: Some(
-                        "Trigger source is TIM2_CC1",
+                        "Trigger source is TIM6_TRGO",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "TIM20",
                     description: Some(
-                        "Trigger source is TIM20_TRGO",
+                        "Trigger source is TIM20_CC2",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "FpuIe5",
+            name: "I2c1Fmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "STANDARD",
                     description: Some(
-                        "Inexact interrupt disable",
+                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "FMP",
                     description: Some(
-                        "Inexact interrupt enable",
+                        "FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "I2c1RxDmaRmp",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "MAPDMA1CH7",
+                    description: Some(
+                        "I2C1_RX mapped on DMA1 CH7",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH3",
+                    description: Some(
+                        "I2C1_RX mapped on DMA1 CH3",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MAPDMA1CH5",
+                    description: Some(
+                        "I2C1_RX mapped on DMA1 CH5",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "DacTrigRmp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREMAPPED",
+                    description: Some(
+                        "Not remapped",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REMAPPED",
+                    description: Some(
+                        "DAC trigger is TIM3_TRGO",
                     ),
                     value: 1,
                 },
@@ -2164,111 +2269,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "REMAPPED",
                     description: Some(
                         "TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim1Itr3Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM1_ITR3 = TIM17_OC",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dac1TrigRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC trigger is TIM3_TRGO",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim17DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "VbatMon",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLE",
-                    description: Some(
-                        "Disable the power switch to not deliver VBAT voltage on ADC channel 18 input",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLE",
-                    description: Some(
-                        "Enable the power switch to deliver VBAT voltage on ADC channel 18 input",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Adc34Ext5Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EXTI2",
-                    description: Some(
-                        "Trigger source is EXTI line 2 when reset at 0",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM20",
-                    description: Some(
-                        "Trigger source is TIM20_TRGO",
                     ),
                     value: 1,
                 },

@@ -131,6 +131,34 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Lines",
+            extends: None,
+            description: Some("EXTI lines register, 1 bit per line"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "line",
+                description: Some("EXTI line"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Lockrg",
+            extends: None,
+            description: Some("EXTI lock register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "lock",
+                description: Some("LOCK"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Exticr",
             extends: None,
             description: Some("external interrupt configuration register 1"),
@@ -159,20 +187,6 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Lockrg",
-            extends: None,
-            description: Some("EXTI lock register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "lock",
-                description: Some("LOCK"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Privcfgr",
             extends: None,
             description: Some("Privilege configuration register"),
@@ -180,20 +194,6 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "priv_",
                 description: Some("Security enable on event input x"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Lines",
-            extends: None,
-            description: Some("EXTI lines register, 1 bit per line"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "line",
-                description: Some("EXTI line"),
                 bit_offset: 0,
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 32, stride: 1 })),

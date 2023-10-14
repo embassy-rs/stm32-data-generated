@@ -271,6 +271,62 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Lines",
+            extends: None,
+            description: Some(
+                "EXTI lines register, 1 bit per line",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "line",
+                    description: Some(
+                        "EXTI line",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Priv",
+            extends: None,
+            description: Some(
+                "privilege configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "priv_",
+                    description: Some(
+                        "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Priv",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Lockr",
             extends: None,
             description: Some(
@@ -310,62 +366,6 @@ pub(crate) static REGISTERS: IR = IR {
                             RegularArray {
                                 len: 4,
                                 stride: 8,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Priv",
-            extends: None,
-            description: Some(
-                "privilege configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "priv_",
-                    description: Some(
-                        "Security enable on event input x\r When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access.\r When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Priv",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lines",
-            extends: None,
-            description: Some(
-                "EXTI lines register, 1 bit per line",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "line",
-                    description: Some(
-                        "EXTI line",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 1,
                             },
                         ),
                     ),

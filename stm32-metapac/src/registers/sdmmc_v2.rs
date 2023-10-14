@@ -378,57 +378,57 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ver",
+            name: "Power",
             extends: None,
             description: Some(
-                "SDMMC IP version register",
+                "SDMMC power control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "minrev",
+                    name: "pwrctrl",
                     description: Some(
-                        "IP minor revision number.",
+                        "SDMMC state control bits. These bits can only be written when the SDMMC is not in the power-on state (PWRCTRL?11). These bits are used to define the functional state of the SDMMC signals: Any further write will be ignored, PWRCTRL value will keep 11.",
                     ),
                     bit_offset: 0,
-                    bit_size: 4,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "majrev",
+                    name: "vswitch",
                     description: Some(
-                        "IP major revision number.",
+                        "Voltage switch sequence start. This bit is used to start the timing critical section of the voltage switch sequence:",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vswitchen",
+                    description: Some(
+                        "Voltage switch procedure enable. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). This bit is used to stop the SDMMC_CK after the voltage switch command response:",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dirpol",
+                    description: Some(
+                        "Data and command direction signals polarity selection. This bit can only be written when the SDMMC is in the power-off state (PWRCTRL = 00).",
                     ),
                     bit_offset: 4,
-                    bit_size: 4,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Idmabsizer",
-            extends: None,
-            description: Some(
-                "The SDMMC_IDMABSIZER register contains the buffers size when in double buffer configuration.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idmabndt",
-                    description: Some(
-                        "Number of transfers per buffer. This 8-bit value shall be multiplied by 8 to get the size of the buffer in 32-bit words and by 32 to get the size of the buffer in bytes. Example: IDMABNDT = 0x01: buffer size = 8 words = 32 bytes. These bits can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Resp4r",
+            name: "Resp2r",
             extends: None,
             description: Some(
                 "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
@@ -442,216 +442,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Resp1r",
-            extends: None,
-            description: Some(
-                "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cardstatus",
-                    description: Some(
-                        "see Table 432",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Clkcr",
-            extends: None,
-            description: Some(
-                "The SDMMC_CLKCR register controls the SDMMC_CK output clock, the SDMMC_RX_CLK receive clock, and the bus width.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "clkdiv",
-                    description: Some(
-                        "Clock divide factor This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). This field defines the divide factor between the input clock (SDMMCCLK) and the output clock (SDMMC_CK): SDMMC_CK frequency = SDMMCCLK / [2 * CLKDIV]. 0xx: etc.. xxx: etc..",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pwrsav",
-                    description: Some(
-                        "Power saving configuration bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) For power saving, the SDMMC_CK clock output can be disabled when the bus is idle by setting PWRSAV:",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "widbus",
-                    description: Some(
-                        "Wide bus mode enable bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "negedge",
-                    description: Some(
-                        "SDMMC_CK dephasing selection bit for data and Command. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). When clock division = 1 (CLKDIV = 0), this bit has no effect. Data and Command change on SDMMC_CK falling edge. When clock division &gt;1 (CLKDIV &gt; 0) &amp; DDR = 0: - SDMMC_CK edge occurs on SDMMCCLK rising edge. When clock division >1 (CLKDIV > 0) & DDR = 1: - Data changed on the SDMMCCLK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge. - Data changed on the SDMMC_CK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hwfc_en",
-                    description: Some(
-                        "Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ddr",
-                    description: Some(
-                        "Data rate signaling selection This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) DDR rate shall only be selected with 4-bit or 8-bit wide bus mode. (WIDBUS &gt; 00). DDR = 1 has no effect when WIDBUS = 00 (1-bit wide bus). DDR rate shall only be selected with clock division &gt;1. (CLKDIV &gt; 0)",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "busspeed",
-                    description: Some(
-                        "Bus speed mode selection between DS, HS, SDR12, SDR25 and SDR50, DDR50, SDR104. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "selclkrx",
-                    description: Some(
-                        "Receive clock selection. These bits can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)",
-                    ),
-                    bit_offset: 20,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Idmactrlr",
-            extends: None,
-            description: Some(
-                "The receive and transmit FIFOs can be read or written as 32-bit wide registers. The FIFOs contain 32 entries on 32 sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idmaen",
-                    description: Some(
-                        "IDMA enable This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idmabmode",
-                    description: Some(
-                        "Buffer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idmabact",
-                    description: Some(
-                        "Double buffer mode active buffer indication This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). When IDMA is enabled this bit is toggled by hardware.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Id",
-            extends: None,
-            description: Some(
-                "SDMMC IP identification register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ip_id",
-                    description: Some(
-                        "SDMMC IP identification.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Idmabase1r",
-            extends: None,
-            description: Some(
-                "The SDMMC_IDMABASE1R register contains the double buffer configuration second buffer memory base address.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idmabase1",
-                    description: Some(
-                        "Buffer 1 memory base address, shall be word aligned (bit [1:0] are always 0 and read only). This register can be written by firmware when DPSM is inactive (DPSMACT = 0), and can dynamically be written by firmware when DPSM active (DPSMACT = 1) and memory buffer 1 is inactive (IDMABACT = 0).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dcntr",
-            extends: None,
-            description: Some(
-                "The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "datacount",
-                    description: Some(
-                        "Data count value When read, the number of remaining data bytes to be transferred is returned. Write has no effect.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 25,
                     array: None,
                     enumm: None,
                 },
@@ -678,170 +468,40 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Respcmdr",
+            name: "Resp4r",
             extends: None,
             description: Some(
-                "SDMMC command response register",
+                "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "respcmd",
+                    name: "cardstatus",
                     description: Some(
-                        "Response command index",
+                        "see Table404.",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Acktimer",
+            name: "Fifor",
             extends: None,
             description: Some(
-                "The SDMMC_ACKTIMER register contains the acknowledgment timeout period, in SDMMC_CK bus clock periods. A counter loads the value from the SDMMC_ACKTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_Ack state. If the timer reaches 0 while the DPSM is in this states, the acknowledgment timeout status flag is set.",
+                "The receive and transmit FIFOs can be only read or written as word (32-bit) wide registers. The FIFOs contain 16 entries on sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.When accessing SDMMC_FIFOR with half word or byte access an AHB bus fault is generated.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "acktime",
+                    name: "fifodata",
                     description: Some(
-                        "Boot acknowledgment timeout period This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). Boot acknowledgment timeout period expressed in card bus clock periods.",
+                        "Receive and transmit FIFO data This register can only be read or written by firmware when the DPSM is active (DPSMACT=1). The FIFO data occupies 16 entries of 32-bit words.",
                     ),
                     bit_offset: 0,
-                    bit_size: 25,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dctrl",
-            extends: None,
-            description: Some(
-                "The SDMMC_DCTRL register control the data path state machine (DPSM).",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dten",
-                    description: Some(
-                        "Data transfer enable bit This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). This bit is cleared by Hardware when data transfer completes. This bit shall only be used to transfer data when no associated data transfer command is used, i.e. shall not be used with SD or eMMC cards.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dtdir",
-                    description: Some(
-                        "Data transfer direction selection This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dtmode",
-                    description: Some(
-                        "Data transfer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dblocksize",
-                    description: Some(
-                        "Data block size This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). Define the data block length when the block data transfer mode is selected: When DATALENGTH is not a multiple of DBLOCKSIZE, the transfered data is truncated at a multiple of DBLOCKSIZE. (Any remain data will not be transfered.) When DDR = 1, DBLOCKSIZE = 0000 shall not be used. (No data will be transfered)",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwstart",
-                    description: Some(
-                        "Read wait start. If this bit is set, read wait operation starts.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwstop",
-                    description: Some(
-                        "Read wait stop This bit is written by firmware and auto cleared by hardware when the DPSM moves from the READ_WAIT state to the WAIT_R or IDLE state.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwmod",
-                    description: Some(
-                        "Read wait mode. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdioen",
-                    description: Some(
-                        "SD I/O interrupt enable functions This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). If this bit is set, the DPSM enables the SD I/O card specific interrupt operation.",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bootacken",
-                    description: Some(
-                        "Enable the reception of the boot acknowledgment. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fiforst",
-                    description: Some(
-                        "FIFO reset, will flush any remaining data. This bit can only be written by firmware when IDMAEN= 0 and DPSM is active (DPSMACT = 1). This bit will only take effect when a transfer error or transfer hold occurs.",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dlenr",
-            extends: None,
-            description: Some(
-                "The SDMMC_DLENR register contains the number of data bytes to be transferred. The value is loaded into the data counter when data transfer starts.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "datalength",
-                    description: Some(
-                        "Data length value This register can only be written by firmware when DPSM is inactive (DPSMACT = 0). Number of data bytes to be transferred. When DDR = 1 DATALENGTH is truncated to a multiple of 2. (The last odd byte is not transfered) When DATALENGTH = 0 no data will be transfered, when requested by a CPSMEN and CMDTRANS = 1 also no command will be transfered. DTEN and CPSMEN are cleared to 0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 25,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1148,7 +808,247 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Resp3r",
+            name: "Dcntr",
+            extends: None,
+            description: Some(
+                "The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "datacount",
+                    description: Some(
+                        "Data count value When read, the number of remaining data bytes to be transferred is returned. Write has no effect.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 25,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dctrl",
+            extends: None,
+            description: Some(
+                "The SDMMC_DCTRL register control the data path state machine (DPSM).",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dten",
+                    description: Some(
+                        "Data transfer enable bit This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). This bit is cleared by Hardware when data transfer completes. This bit shall only be used to transfer data when no associated data transfer command is used, i.e. shall not be used with SD or eMMC cards.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dtdir",
+                    description: Some(
+                        "Data transfer direction selection This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dtmode",
+                    description: Some(
+                        "Data transfer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dblocksize",
+                    description: Some(
+                        "Data block size This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). Define the data block length when the block data transfer mode is selected: When DATALENGTH is not a multiple of DBLOCKSIZE, the transfered data is truncated at a multiple of DBLOCKSIZE. (Any remain data will not be transfered.) When DDR = 1, DBLOCKSIZE = 0000 shall not be used. (No data will be transfered)",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwstart",
+                    description: Some(
+                        "Read wait start. If this bit is set, read wait operation starts.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwstop",
+                    description: Some(
+                        "Read wait stop This bit is written by firmware and auto cleared by hardware when the DPSM moves from the READ_WAIT state to the WAIT_R or IDLE state.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwmod",
+                    description: Some(
+                        "Read wait mode. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdioen",
+                    description: Some(
+                        "SD I/O interrupt enable functions This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). If this bit is set, the DPSM enables the SD I/O card specific interrupt operation.",
+                    ),
+                    bit_offset: 11,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bootacken",
+                    description: Some(
+                        "Enable the reception of the boot acknowledgment. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fiforst",
+                    description: Some(
+                        "FIFO reset, will flush any remaining data. This bit can only be written by firmware when IDMAEN= 0 and DPSM is active (DPSMACT = 1). This bit will only take effect when a transfer error or transfer hold occurs.",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Id",
+            extends: None,
+            description: Some(
+                "SDMMC IP identification register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ip_id",
+                    description: Some(
+                        "SDMMC IP identification.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idmactrlr",
+            extends: None,
+            description: Some(
+                "The receive and transmit FIFOs can be read or written as 32-bit wide registers. The FIFOs contain 32 entries on 32 sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "idmaen",
+                    description: Some(
+                        "IDMA enable This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "idmabmode",
+                    description: Some(
+                        "Buffer mode selection. This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "idmabact",
+                    description: Some(
+                        "Double buffer mode active buffer indication This bit can only be written by firmware when DPSM is inactive (DPSMACT = 0). When IDMA is enabled this bit is toggled by hardware.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ver",
+            extends: None,
+            description: Some(
+                "SDMMC IP version register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "minrev",
+                    description: Some(
+                        "IP minor revision number.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "majrev",
+                    description: Some(
+                        "IP major revision number.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Respcmdr",
+            extends: None,
+            description: Some(
+                "SDMMC command response register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "respcmd",
+                    description: Some(
+                        "Response command index",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Resp1r",
             extends: None,
             description: Some(
                 "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
@@ -1158,7 +1058,27 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cardstatus",
                     description: Some(
-                        "see Table404.",
+                        "see Table 432",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idmabase1r",
+            extends: None,
+            description: Some(
+                "The SDMMC_IDMABASE1R register contains the double buffer configuration second buffer memory base address.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "idmabase1",
+                    description: Some(
+                        "Buffer 1 memory base address, shall be word aligned (bit [1:0] are always 0 and read only). This register can be written by firmware when DPSM is inactive (DPSMACT = 0), and can dynamically be written by firmware when DPSM active (DPSMACT = 1) and memory buffer 1 is inactive (IDMABACT = 0).",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1188,77 +1108,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Icr",
+            name: "Cmdr",
             extends: None,
             description: Some(
-                "The SDMMC_ICR register is a write-only register. Writing a bit with 1 clears the corresponding bit in the SDMMC_STAR status register.",
+                "The SDMMC_CMDR register contains the command index and command type bits. The command index is sent to a card as part of a command message. The command type bits control the command path state machine (CPSM).",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ccrcfailc",
+                    name: "cmdindex",
                     description: Some(
-                        "CCRCFAIL flag clear bit Set by software to clear the CCRCFAIL flag.",
+                        "Command index. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). The command index is sent to the card as part of a command message.",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
+                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dcrcfailc",
+                    name: "cmdtrans",
                     description: Some(
-                        "DCRCFAIL flag clear bit Set by software to clear the DCRCFAIL flag.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ctimeoutc",
-                    description: Some(
-                        "CTIMEOUT flag clear bit Set by software to clear the CTIMEOUT flag.",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dtimeoutc",
-                    description: Some(
-                        "DTIMEOUT flag clear bit Set by software to clear the DTIMEOUT flag.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txunderrc",
-                    description: Some(
-                        "TXUNDERR flag clear bit Set by software to clear TXUNDERR flag.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxoverrc",
-                    description: Some(
-                        "RXOVERR flag clear bit Set by software to clear the RXOVERR flag.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cmdrendc",
-                    description: Some(
-                        "CMDREND flag clear bit Set by software to clear the CMDREND flag.",
+                        "The CPSM treats the command as a data transfer command, stops the interrupt period, and signals DataEnable to the DPSM This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues an end of interrupt period and issues DataEnable signal to the DPSM when the command is sent.",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -1266,9 +1136,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cmdsentc",
+                    name: "cmdstop",
                     description: Some(
-                        "CMDSENT flag clear bit Set by software to clear the CMDSENT flag.",
+                        "The CPSM treats the command as a Stop Transmission command and signals Abort to the DPSM. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues the Abort signal to the DPSM when the command is sent.",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -1276,29 +1146,19 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dataendc",
+                    name: "waitresp",
                     description: Some(
-                        "DATAEND flag clear bit Set by software to clear the DATAEND flag.",
+                        "Wait for response bits. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). They are used to configure whether the CPSM is to wait for a response, and if yes, which kind of response.",
                     ),
                     bit_offset: 8,
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dholdc",
+                    name: "waitint",
                     description: Some(
-                        "DHOLD flag clear bit Set by software to clear the DHOLD flag.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbckendc",
-                    description: Some(
-                        "DBCKEND flag clear bit Set by software to clear the DBCKEND flag.",
+                        "CPSM waits for interrupt request. If this bit is set, the CPSM disables command timeout and waits for an card interrupt request (Response). If this bit is cleared in the CPSM Wait state, will cause the abort of the interrupt mode.",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -1306,9 +1166,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dabortc",
+                    name: "waitpend",
                     description: Some(
-                        "DABORT flag clear bit Set by software to clear the DABORT flag.",
+                        "CPSM Waits for end of data transfer (CmdPend internal signal) from DPSM. This bit when set, the CPSM waits for the end of data transfer trigger before it starts sending a command. WAITPEND is only taken into account when DTMODE = MMC stream data transfer, WIDBUS = 1-bit wide bus mode, DPSMACT = 1 and DTDIR = from host to card.",
                     ),
                     bit_offset: 11,
                     bit_size: 1,
@@ -1316,82 +1176,72 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "busyd0endc",
+                    name: "cpsmen",
                     description: Some(
-                        "BUSYD0END flag clear bit Set by software to clear the BUSYD0END flag.",
+                        "Command path state machine (CPSM) Enable bit This bit is written 1 by firmware, and cleared by hardware when the CPSM enters the Idle state. If this bit is set, the CPSM is enabled. When DTEN = 1, no command will be transfered nor boot procedure will be started. CPSMEN is cleared to 0.",
                     ),
-                    bit_offset: 21,
+                    bit_offset: 12,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "sdioitc",
+                    name: "dthold",
                     description: Some(
-                        "SDIOIT flag clear bit Set by software to clear the SDIOIT flag.",
+                        "Hold new data block transmission and reception in the DPSM. If this bit is set, the DPSM will not move from the Wait_S state to the Send state or from the Wait_R state to the Receive state.",
                     ),
-                    bit_offset: 22,
+                    bit_offset: 13,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ackfailc",
+                    name: "bootmode",
                     description: Some(
-                        "ACKFAIL flag clear bit Set by software to clear the ACKFAIL flag.",
+                        "Select the boot mode procedure to be used. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0)",
                     ),
-                    bit_offset: 23,
+                    bit_offset: 14,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "acktimeoutc",
+                    name: "booten",
                     description: Some(
-                        "ACKTIMEOUT flag clear bit Set by software to clear the ACKTIMEOUT flag.",
+                        "Enable boot mode procedure.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vswendc",
+                    name: "cmdsuspend",
                     description: Some(
-                        "VSWEND flag clear bit Set by software to clear the VSWEND flag.",
+                        "The CPSM treats the command as a Suspend or Resume command and signals interrupt period start/end. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). CMDSUSPEND = 1 and CMDTRANS = 0 Suspend command, start interrupt period when response bit BS=0. CMDSUSPEND = 1 and CMDTRANS = 1 Resume command with data, end interrupt period when response bit DF=1.",
                     ),
-                    bit_offset: 25,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Resp3r",
+            extends: None,
+            description: Some(
+                "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "ckstopc",
+                    name: "cardstatus",
                     description: Some(
-                        "CKSTOP flag clear bit Set by software to clear the CKSTOP flag.",
+                        "see Table404.",
                     ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idmatec",
-                    description: Some(
-                        "IDMA transfer error clear bit Set by software to clear the IDMATE flag.",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "idmabtcc",
-                    description: Some(
-                        "IDMA buffer transfer complete clear bit Set by software to clear the IDMABTC flag.",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1638,27 +1488,77 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cmdr",
+            name: "Icr",
             extends: None,
             description: Some(
-                "The SDMMC_CMDR register contains the command index and command type bits. The command index is sent to a card as part of a command message. The command type bits control the command path state machine (CPSM).",
+                "The SDMMC_ICR register is a write-only register. Writing a bit with 1 clears the corresponding bit in the SDMMC_STAR status register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cmdindex",
+                    name: "ccrcfailc",
                     description: Some(
-                        "Command index. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). The command index is sent to the card as part of a command message.",
+                        "CCRCFAIL flag clear bit Set by software to clear the CCRCFAIL flag.",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "cmdtrans",
+                    name: "dcrcfailc",
                     description: Some(
-                        "The CPSM treats the command as a data transfer command, stops the interrupt period, and signals DataEnable to the DPSM This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues an end of interrupt period and issues DataEnable signal to the DPSM when the command is sent.",
+                        "DCRCFAIL flag clear bit Set by software to clear the DCRCFAIL flag.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ctimeoutc",
+                    description: Some(
+                        "CTIMEOUT flag clear bit Set by software to clear the CTIMEOUT flag.",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dtimeoutc",
+                    description: Some(
+                        "DTIMEOUT flag clear bit Set by software to clear the DTIMEOUT flag.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txunderrc",
+                    description: Some(
+                        "TXUNDERR flag clear bit Set by software to clear TXUNDERR flag.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxoverrc",
+                    description: Some(
+                        "RXOVERR flag clear bit Set by software to clear the RXOVERR flag.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cmdrendc",
+                    description: Some(
+                        "CMDREND flag clear bit Set by software to clear the CMDREND flag.",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
@@ -1666,9 +1566,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cmdstop",
+                    name: "cmdsentc",
                     description: Some(
-                        "The CPSM treats the command as a Stop Transmission command and signals Abort to the DPSM. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). If this bit is set, the CPSM issues the Abort signal to the DPSM when the command is sent.",
+                        "CMDSENT flag clear bit Set by software to clear the CMDSENT flag.",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
@@ -1676,19 +1576,29 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "waitresp",
+                    name: "dataendc",
                     description: Some(
-                        "Wait for response bits. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). They are used to configure whether the CPSM is to wait for a response, and if yes, which kind of response.",
+                        "DATAEND flag clear bit Set by software to clear the DATAEND flag.",
                     ),
                     bit_offset: 8,
-                    bit_size: 2,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "waitint",
+                    name: "dholdc",
                     description: Some(
-                        "CPSM waits for interrupt request. If this bit is set, the CPSM disables command timeout and waits for an card interrupt request (Response). If this bit is cleared in the CPSM Wait state, will cause the abort of the interrupt mode.",
+                        "DHOLD flag clear bit Set by software to clear the DHOLD flag.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbckendc",
+                    description: Some(
+                        "DBCKEND flag clear bit Set by software to clear the DBCKEND flag.",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -1696,9 +1606,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "waitpend",
+                    name: "dabortc",
                     description: Some(
-                        "CPSM Waits for end of data transfer (CmdPend internal signal) from DPSM. This bit when set, the CPSM waits for the end of data transfer trigger before it starts sending a command. WAITPEND is only taken into account when DTMODE = MMC stream data transfer, WIDBUS = 1-bit wide bus mode, DPSMACT = 1 and DTDIR = from host to card.",
+                        "DABORT flag clear bit Set by software to clear the DABORT flag.",
                     ),
                     bit_offset: 11,
                     bit_size: 1,
@@ -1706,52 +1616,122 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "cpsmen",
+                    name: "busyd0endc",
                     description: Some(
-                        "Command path state machine (CPSM) Enable bit This bit is written 1 by firmware, and cleared by hardware when the CPSM enters the Idle state. If this bit is set, the CPSM is enabled. When DTEN = 1, no command will be transfered nor boot procedure will be started. CPSMEN is cleared to 0.",
+                        "BUSYD0END flag clear bit Set by software to clear the BUSYD0END flag.",
                     ),
-                    bit_offset: 12,
+                    bit_offset: 21,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dthold",
+                    name: "sdioitc",
                     description: Some(
-                        "Hold new data block transmission and reception in the DPSM. If this bit is set, the DPSM will not move from the Wait_S state to the Send state or from the Wait_R state to the Receive state.",
+                        "SDIOIT flag clear bit Set by software to clear the SDIOIT flag.",
                     ),
-                    bit_offset: 13,
+                    bit_offset: 22,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "bootmode",
+                    name: "ackfailc",
                     description: Some(
-                        "Select the boot mode procedure to be used. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0)",
+                        "ACKFAIL flag clear bit Set by software to clear the ACKFAIL flag.",
                     ),
-                    bit_offset: 14,
+                    bit_offset: 23,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "booten",
+                    name: "acktimeoutc",
                     description: Some(
-                        "Enable boot mode procedure.",
+                        "ACKTIMEOUT flag clear bit Set by software to clear the ACKTIMEOUT flag.",
                     ),
-                    bit_offset: 15,
+                    bit_offset: 24,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "cmdsuspend",
+                    name: "vswendc",
                     description: Some(
-                        "The CPSM treats the command as a Suspend or Resume command and signals interrupt period start/end. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). CMDSUSPEND = 1 and CMDTRANS = 0 Suspend command, start interrupt period when response bit BS=0. CMDSUSPEND = 1 and CMDTRANS = 1 Resume command with data, end interrupt period when response bit DF=1.",
+                        "VSWEND flag clear bit Set by software to clear the VSWEND flag.",
                     ),
-                    bit_offset: 16,
+                    bit_offset: 25,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ckstopc",
+                    description: Some(
+                        "CKSTOP flag clear bit Set by software to clear the CKSTOP flag.",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "idmatec",
+                    description: Some(
+                        "IDMA transfer error clear bit Set by software to clear the IDMATE flag.",
+                    ),
+                    bit_offset: 27,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "idmabtcc",
+                    description: Some(
+                        "IDMA buffer transfer complete clear bit Set by software to clear the IDMABTC flag.",
+                    ),
+                    bit_offset: 28,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dlenr",
+            extends: None,
+            description: Some(
+                "The SDMMC_DLENR register contains the number of data bytes to be transferred. The value is loaded into the data counter when data transfer starts.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "datalength",
+                    description: Some(
+                        "Data length value This register can only be written by firmware when DPSM is inactive (DPSMACT = 0). Number of data bytes to be transferred. When DDR = 1 DATALENGTH is truncated to a multiple of 2. (The last odd byte is not transfered) When DATALENGTH = 0 no data will be transfered, when requested by a CPSMEN and CMDTRANS = 1 also no command will be transfered. DTEN and CPSMEN are cleared to 0.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 25,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idmabsizer",
+            extends: None,
+            description: Some(
+                "The SDMMC_IDMABSIZER register contains the buffers size when in double buffer configuration.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "idmabndt",
+                    description: Some(
+                        "Number of transfers per buffer. This 8-bit value shall be multiplied by 8 to get the size of the buffer in 32-bit words and by 32 to get the size of the buffer in bytes. Example: IDMABNDT = 0x01: buffer size = 8 words = 32 bytes. These bits can only be written by firmware when DPSM is inactive (DPSMACT = 0).",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -1778,90 +1758,110 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Fifor",
+            name: "Clkcr",
             extends: None,
             description: Some(
-                "The receive and transmit FIFOs can be only read or written as word (32-bit) wide registers. The FIFOs contain 16 entries on sequential addresses. This allows the CPU to use its load and store multiple operands to read from/write to the FIFO.When accessing SDMMC_FIFOR with half word or byte access an AHB bus fault is generated.",
+                "The SDMMC_CLKCR register controls the SDMMC_CK output clock, the SDMMC_RX_CLK receive clock, and the bus width.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fifodata",
+                    name: "clkdiv",
                     description: Some(
-                        "Receive and transmit FIFO data This register can only be read or written by firmware when the DPSM is active (DPSMACT=1). The FIFO data occupies 16 entries of 32-bit words.",
+                        "Clock divide factor This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). This field defines the divide factor between the input clock (SDMMCCLK) and the output clock (SDMMC_CK): SDMMC_CK frequency = SDMMCCLK / [2 * CLKDIV]. 0xx: etc.. xxx: etc..",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 10,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Resp2r",
-            extends: None,
-            description: Some(
-                "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "cardstatus",
+                    name: "pwrsav",
                     description: Some(
-                        "see Table404.",
+                        "Power saving configuration bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) For power saving, the SDMMC_CK clock output can be disabled when the bus is idle by setting PWRSAV:",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
+                    bit_offset: 12,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Power",
-            extends: None,
-            description: Some(
-                "SDMMC power control register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "pwrctrl",
+                    name: "widbus",
                     description: Some(
-                        "SDMMC state control bits. These bits can only be written when the SDMMC is not in the power-on state (PWRCTRL?11). These bits are used to define the functional state of the SDMMC signals: Any further write will be ignored, PWRCTRL value will keep 11.",
+                        "Wide bus mode enable bit This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)",
                     ),
-                    bit_offset: 0,
+                    bit_offset: 14,
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vswitch",
+                    name: "negedge",
                     description: Some(
-                        "Voltage switch sequence start. This bit is used to start the timing critical section of the voltage switch sequence:",
+                        "SDMMC_CK dephasing selection bit for data and Command. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0). When clock division = 1 (CLKDIV = 0), this bit has no effect. Data and Command change on SDMMC_CK falling edge. When clock division &gt;1 (CLKDIV &gt; 0) &amp; DDR = 0: - SDMMC_CK edge occurs on SDMMCCLK rising edge. When clock division >1 (CLKDIV > 0) & DDR = 1: - Data changed on the SDMMCCLK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge. - Data changed on the SDMMC_CK falling edge succeeding a SDMMC_CK edge. - SDMMC_CK edge occurs on SDMMCCLK rising edge.",
                     ),
-                    bit_offset: 2,
+                    bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "vswitchen",
+                    name: "hwfc_en",
                     description: Some(
-                        "Voltage switch procedure enable. This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). This bit is used to stop the SDMMC_CK after the voltage switch command response:",
+                        "Hardware flow control enable This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) When Hardware flow control is enabled, the meaning of the TXFIFOE and RXFIFOF flags change, please see SDMMC status register definition in Section56.8.11.",
                     ),
-                    bit_offset: 3,
+                    bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "dirpol",
+                    name: "ddr",
                     description: Some(
-                        "Data and command direction signals polarity selection. This bit can only be written when the SDMMC is in the power-off state (PWRCTRL = 00).",
+                        "Data rate signaling selection This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0) DDR rate shall only be selected with 4-bit or 8-bit wide bus mode. (WIDBUS &gt; 00). DDR = 1 has no effect when WIDBUS = 00 (1-bit wide bus). DDR rate shall only be selected with clock division &gt;1. (CLKDIV &gt; 0)",
                     ),
-                    bit_offset: 4,
+                    bit_offset: 18,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "busspeed",
+                    description: Some(
+                        "Bus speed mode selection between DS, HS, SDR12, SDR25 and SDR50, DDR50, SDR104. This bit can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "selclkrx",
+                    description: Some(
+                        "Receive clock selection. These bits can only be written when the CPSM and DPSM are not active (CPSMACT = 0 and DPSMACT = 0)",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Acktimer",
+            extends: None,
+            description: Some(
+                "The SDMMC_ACKTIMER register contains the acknowledgment timeout period, in SDMMC_CK bus clock periods. A counter loads the value from the SDMMC_ACKTIMER register, and starts decrementing when the data path state machine (DPSM) enters the Wait_Ack state. If the timer reaches 0 while the DPSM is in this states, the acknowledgment timeout status flag is set.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "acktime",
+                    description: Some(
+                        "Boot acknowledgment timeout period This bit can only be written by firmware when CPSM is disabled (CPSMEN = 0). Boot acknowledgment timeout period expressed in card bus clock periods.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 25,
                     array: None,
                     enumm: None,
                 },

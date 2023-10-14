@@ -54,6 +54,38 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cfgr1",
+            extends: None,
+            description: Some("configuration register 1"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mem_mode",
+                    description: Some("Memory mapping selection bits"),
+                    bit_offset: 0,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ufb",
+                    description: Some("User bank swapping"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_mode",
+                    description: Some("Boot mode selected by the boot pins status bits"),
+                    bit_offset: 8,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cfgr2",
             extends: None,
             description: Some("CFGR2"),
@@ -138,38 +170,6 @@ pub(crate) static REGISTERS: IR = IR {
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                 enumm: None,
             }],
-        },
-        FieldSet {
-            name: "Cfgr1",
-            extends: None,
-            description: Some("configuration register 1"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mem_mode",
-                    description: Some("Memory mapping selection bits"),
-                    bit_offset: 0,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ufb",
-                    description: Some("User bank swapping"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "boot_mode",
-                    description: Some("Boot mode selected by the boot pins status bits"),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
         },
         FieldSet {
             name: "Cfgr3",

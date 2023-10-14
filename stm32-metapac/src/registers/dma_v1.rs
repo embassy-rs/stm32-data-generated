@@ -3,6 +3,42 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
+            name: "Dma",
+            extends: None,
+            description: Some("DMA controller"),
+            items: &[
+                BlockItem {
+                    name: "isr",
+                    description: Some("low interrupt status register"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Read,
+                        bit_size: 32,
+                        fieldset: Some("Ixr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ifcr",
+                    description: Some("low interrupt flag clear register"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
+                        bit_size: 32,
+                        fieldset: Some("Ixr"),
+                    }),
+                },
+                BlockItem {
+                    name: "st",
+                    description: Some("Stream cluster: S?CR, S?NDTR, S?M0AR, S?M1AR and S?FCR registers"),
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 24 })),
+                    byte_offset: 16,
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "St" }),
+                },
+            ],
+        },
+        Block {
             name: "St",
             extends: None,
             description: Some("Stream cluster: S?CR, S?NDTR, S?M0AR, S?M1AR and S?FCR registers"),
@@ -75,102 +111,8 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        Block {
-            name: "Dma",
-            extends: None,
-            description: Some("DMA controller"),
-            items: &[
-                BlockItem {
-                    name: "isr",
-                    description: Some("low interrupt status register"),
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Read,
-                        bit_size: 32,
-                        fieldset: Some("Ixr"),
-                    }),
-                },
-                BlockItem {
-                    name: "ifcr",
-                    description: Some("low interrupt flag clear register"),
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Write,
-                        bit_size: 32,
-                        fieldset: Some("Ixr"),
-                    }),
-                },
-                BlockItem {
-                    name: "st",
-                    description: Some("Stream cluster: S?CR, S?NDTR, S?M0AR, S?M1AR and S?FCR registers"),
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 24 })),
-                    byte_offset: 16,
-                    inner: BlockItemInner::Block(BlockItemBlock { block: "St" }),
-                },
-            ],
-        },
     ],
     fieldsets: &[
-        FieldSet {
-            name: "Ixr",
-            extends: None,
-            description: Some("interrupt register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "feif",
-                    description: Some("Stream x FIFO error interrupt flag (x=3..0)"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 6, 16, 22],
-                    })),
-                    enumm: None,
-                },
-                Field {
-                    name: "dmeif",
-                    description: Some("Stream x direct mode error interrupt flag (x=3..0)"),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 6, 16, 22],
-                    })),
-                    enumm: None,
-                },
-                Field {
-                    name: "teif",
-                    description: Some("Stream x transfer error interrupt flag (x=3..0)"),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 6, 16, 22],
-                    })),
-                    enumm: None,
-                },
-                Field {
-                    name: "htif",
-                    description: Some("Stream x half transfer interrupt flag (x=3..0)"),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 6, 16, 22],
-                    })),
-                    enumm: None,
-                },
-                Field {
-                    name: "tcif",
-                    description: Some("Stream x transfer complete interrupt flag (x = 3..0)"),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 6, 16, 22],
-                    })),
-                    enumm: None,
-                },
-            ],
-        },
         FieldSet {
             name: "Cr",
             extends: None,
@@ -332,18 +274,62 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ndtr",
+            name: "Ixr",
             extends: None,
-            description: Some("stream x number of data register"),
+            description: Some("interrupt register"),
             bit_size: 32,
-            fields: &[Field {
-                name: "ndt",
-                description: Some("Number of data items to transfer"),
-                bit_offset: 0,
-                bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
+            fields: &[
+                Field {
+                    name: "feif",
+                    description: Some("Stream x FIFO error interrupt flag (x=3..0)"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[0, 6, 16, 22],
+                    })),
+                    enumm: None,
+                },
+                Field {
+                    name: "dmeif",
+                    description: Some("Stream x direct mode error interrupt flag (x=3..0)"),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[0, 6, 16, 22],
+                    })),
+                    enumm: None,
+                },
+                Field {
+                    name: "teif",
+                    description: Some("Stream x transfer error interrupt flag (x=3..0)"),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[0, 6, 16, 22],
+                    })),
+                    enumm: None,
+                },
+                Field {
+                    name: "htif",
+                    description: Some("Stream x half transfer interrupt flag (x=3..0)"),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[0, 6, 16, 22],
+                    })),
+                    enumm: None,
+                },
+                Field {
+                    name: "tcif",
+                    description: Some("Stream x transfer complete interrupt flag (x = 3..0)"),
+                    bit_offset: 5,
+                    bit_size: 1,
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[0, 6, 16, 22],
+                    })),
+                    enumm: None,
+                },
+            ],
         },
         FieldSet {
             name: "Fcr",
@@ -385,86 +371,22 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Ndtr",
+            extends: None,
+            description: Some("stream x number of data register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ndt",
+                description: Some("Number of data items to transfer"),
+                bit_offset: 0,
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
+        },
     ],
     enums: &[
-        Enum {
-            name: "Circ",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Circular mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Circular mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pfctrl",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DMA",
-                    description: Some("The DMA is the flow controller"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PERIPHERAL",
-                    description: Some("The peripheral is the flow controller"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Size",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS8",
-                    description: Some("Byte (8-bit)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("Half-word (16-bit)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("Word (32-bit)"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Dir",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PERIPHERALTOMEMORY",
-                    description: Some("Peripheral-to-memory"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MEMORYTOPERIPHERAL",
-                    description: Some("Memory-to-peripheral"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MEMORYTOMEMORY",
-                    description: Some("Memory-to-memory"),
-                    value: 2,
-                },
-            ],
-        },
         Enum {
             name: "Fth",
             description: None,
@@ -493,6 +415,189 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Pl",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "LOW",
+                    description: Some("Low"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MEDIUM",
+                    description: Some("Medium"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some("High"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VERYHIGH",
+                    description: Some("Very high"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Dir",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PERIPHERALTOMEMORY",
+                    description: Some("Peripheral-to-memory"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MEMORYTOPERIPHERAL",
+                    description: Some("Memory-to-peripheral"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MEMORYTOMEMORY",
+                    description: Some("Memory-to-memory"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Ct",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "MEMORY0",
+                    description: Some("The current target memory is Memory 0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MEMORY1",
+                    description: Some("The current target memory is Memory 1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Size",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("Byte (8-bit)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("Half-word (16-bit)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("Word (32-bit)"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Pfctrl",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DMA",
+                    description: Some("The DMA is the flow controller"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PERIPHERAL",
+                    description: Some("The peripheral is the flow controller"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dbm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("No buffer switching at the end of transfer"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Memory target switched at the end of the DMA transfer"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Circ",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("Circular mode disabled"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("Circular mode enabled"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Inc",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FIXED",
+                    description: Some("Address pointer is fixed"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "INCREMENTED",
+                    description: Some("Address pointer is incremented after each data transfer"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Burst",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SINGLE",
+                    description: Some("Single transfer"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "INCR4",
+                    description: Some("Incremental burst of 4 beats"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "INCR8",
+                    description: Some("Incremental burst of 8 beats"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "INCR16",
+                    description: Some("Incremental burst of 16 beats"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "Dmdis",
             description: None,
             bit_size: 1,
@@ -505,6 +610,25 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "DISABLED",
                     description: Some("Direct mode is disabled"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pincos",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PSIZE",
+                    description: Some("The offset size for the peripheral address calculation is linked to the PSIZE"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FIXED4",
+                    description: Some(
+                        "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)",
+                    ),
                     value: 1,
                 },
             ],
@@ -543,130 +667,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FULL",
                     description: Some("FIFO is full"),
                     value: 5,
-                },
-            ],
-        },
-        Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FIXED",
-                    description: Some("Address pointer is fixed"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INCREMENTED",
-                    description: Some("Address pointer is incremented after each data transfer"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pl",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "LOW",
-                    description: Some("Low"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MEDIUM",
-                    description: Some("Medium"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some("High"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "VERYHIGH",
-                    description: Some("Very high"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Burst",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SINGLE",
-                    description: Some("Single transfer"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INCR4",
-                    description: Some("Incremental burst of 4 beats"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "INCR8",
-                    description: Some("Incremental burst of 8 beats"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "INCR16",
-                    description: Some("Incremental burst of 16 beats"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Dbm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("No buffer switching at the end of transfer"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Memory target switched at the end of the DMA transfer"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pincos",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PSIZE",
-                    description: Some("The offset size for the peripheral address calculation is linked to the PSIZE"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FIXED4",
-                    description: Some(
-                        "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ct",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MEMORY0",
-                    description: Some("The current target memory is Memory 0"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MEMORY1",
-                    description: Some("The current target memory is Memory 1"),
-                    value: 1,
                 },
             ],
         },

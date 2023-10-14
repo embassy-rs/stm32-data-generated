@@ -43,9 +43,9 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "P2cr",
+            name: "P1cr",
             extends: None,
-            description: Some("OctoSPI IO Manager Port 2 Configuration Register"),
+            description: Some("OctoSPI IO Manager Port 1 Configuration Register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -155,9 +155,9 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "P1cr",
+            name: "P2cr",
             extends: None,
-            description: Some("OctoSPI IO Manager Port 1 Configuration Register"),
+            description: Some("OctoSPI IO Manager Port 2 Configuration Register"),
             bit_size: 32,
             fields: &[
                 Field {

@@ -2015,12 +2015,12 @@
         "value": 3
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker_ck selected as kernel clock",
         "value": 4
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker_ck selected as kernel clock",
         "value": 5
       }
@@ -2175,7 +2175,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "RCC_PCLK1",
+        "name": "APB1",
         "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },
@@ -2185,12 +2185,12 @@
         "value": 1
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 2
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 3
       }
@@ -2200,7 +2200,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "RCC_PCLK3",
+        "name": "APB3",
         "description": "rcc_pclk3 selected as peripheral clock",
         "value": 0
       },
@@ -2230,7 +2230,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "RCC_PCLK3",
+        "name": "APB3",
         "description": "rcc_pclk3 selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -2240,12 +2240,12 @@
         "value": 1
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker_ck selected as kernel clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker_ck selected as kernel clock",
         "value": 4
       },
@@ -5381,7 +5381,7 @@
         "value": 2
       },
       {
-        "name": "LSI_KER",
+        "name": "LSI",
         "description": "lsi_ker_ck selected as kernel clock",
         "value": 3
       }
@@ -5416,7 +5416,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "RCC_PCLK4",
+        "name": "APB4",
         "description": "rcc_pclk4 selected as peripheral clock",
         "value": 0
       },
@@ -5426,12 +5426,12 @@
         "value": 1
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       }
@@ -5496,7 +5496,7 @@
         "value": 0
       },
       {
-        "name": "LSI_KER",
+        "name": "LSI",
         "description": "lsi_ker_ck[1] selected as clock source",
         "value": 1
       },
@@ -5541,7 +5541,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "RCC_PCLK2",
+        "name": "APB2",
         "description": "rcc_pclk2 selected as peripheral clock",
         "value": 0
       },
@@ -5551,12 +5551,12 @@
         "value": 1
       },
       {
-        "name": "HSI_KER",
+        "name": "HSI",
         "description": "hsi_ker selected as peripheral clock",
         "value": 3
       },
       {
-        "name": "CSI_KER",
+        "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 4
       },

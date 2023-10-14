@@ -80,6 +80,28 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Htcr",
+            extends: None,
+            description: Some(
+                "Health test control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "htcfg",
+                    description: Some(
+                        "Health test configuration",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: Some(
+                        "Htcfg",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
             name: "Sr",
             extends: None,
             description: Some(
@@ -259,30 +281,29 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Htcr",
-            extends: None,
-            description: Some(
-                "Health test control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "htcfg",
+    ],
+    enums: &[
+        Enum {
+            name: "RngConfig3",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "CONFIGB",
                     description: Some(
-                        "Health test configuration",
+                        "Recommended value for config B (not NIST certifiable)",
                     ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: Some(
-                        "Htcfg",
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CONFIGA",
+                    description: Some(
+                        "Recommended value for config A (NIST certifiable)",
                     ),
+                    value: 13,
                 },
             ],
         },
-    ],
-    enums: &[
         Enum {
             name: "Nistc",
             description: None,
@@ -305,16 +326,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RngConfig2",
+            name: "RngConfig1",
             description: None,
-            bit_size: 3,
+            bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGA_B",
+                    name: "CONFIGA",
                     description: Some(
-                        "Recommended value for config A and B",
+                        "Recommended value for config A (NIST certifiable)",
                     ),
-                    value: 0,
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "CONFIGB",
+                    description: Some(
+                        "Recommended value for config B (not NIST certifiable)",
+                    ),
+                    value: 24,
                 },
             ],
         },
@@ -438,23 +466,16 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RngConfig1",
+            name: "RngConfig2",
             description: None,
-            bit_size: 6,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGA",
+                    name: "CONFIGA_B",
                     description: Some(
-                        "Recommended value for config A (NIST certifiable)",
+                        "Recommended value for config A and B",
                     ),
-                    value: 15,
-                },
-                EnumVariant {
-                    name: "CONFIGB",
-                    description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
-                    ),
-                    value: 24,
+                    value: 0,
                 },
             ],
         },
@@ -476,27 +497,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Magic number to be written before any write (0x1759_0ABC)",
                     ),
                     value: 391711420,
-                },
-            ],
-        },
-        Enum {
-            name: "RngConfig3",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "CONFIGB",
-                    description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONFIGA",
-                    description: Some(
-                        "Recommended value for config A (NIST certifiable)",
-                    ),
-                    value: 13,
                 },
             ],
         },

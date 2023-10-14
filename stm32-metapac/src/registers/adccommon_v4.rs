@@ -54,92 +54,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cdr2",
-            extends: None,
-            description: Some("ADC x common regular data register for 32-bit dual mode"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "rdata_alt",
-                description: Some("Regular data of the master/slave alternated ADCs"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Ccr",
-            extends: None,
-            description: Some("ADC common control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dual",
-                    description: Some("Dual ADC mode selection"),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: Some("Dual"),
-                },
-                Field {
-                    name: "delay",
-                    description: Some("Delay between 2 sampling phases"),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "damdf",
-                    description: Some("Dual ADC Mode Data Format"),
-                    bit_offset: 14,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Damdf"),
-                },
-                Field {
-                    name: "ckmode",
-                    description: Some("ADC clock mode"),
-                    bit_offset: 16,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Ckmode"),
-                },
-                Field {
-                    name: "presc",
-                    description: Some("ADC prescaler"),
-                    bit_offset: 18,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some("Presc"),
-                },
-                Field {
-                    name: "vrefen",
-                    description: Some("VREFINT enable"),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vsenseen",
-                    description: Some("Temperature sensor enable"),
-                    bit_offset: 23,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "vbaten",
-                    description: Some("VBAT enable"),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Cdr",
             extends: None,
             description: Some("ADC common regular data register for dual and triple modes"),
@@ -162,6 +76,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
+        },
+        FieldSet {
+            name: "Cdr2",
+            extends: None,
+            description: Some("ADC x common regular data register for 32-bit dual mode"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "rdata_alt",
+                description: Some("Regular data of the master/slave alternated ADCs"),
+                bit_offset: 0,
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Csr",
@@ -347,8 +275,144 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        FieldSet {
+            name: "Ccr",
+            extends: None,
+            description: Some("ADC common control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dual",
+                    description: Some("Dual ADC mode selection"),
+                    bit_offset: 0,
+                    bit_size: 5,
+                    array: None,
+                    enumm: Some("Dual"),
+                },
+                Field {
+                    name: "delay",
+                    description: Some("Delay between 2 sampling phases"),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "damdf",
+                    description: Some("Dual ADC Mode Data Format"),
+                    bit_offset: 14,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Damdf"),
+                },
+                Field {
+                    name: "ckmode",
+                    description: Some("ADC clock mode"),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Ckmode"),
+                },
+                Field {
+                    name: "presc",
+                    description: Some("ADC prescaler"),
+                    bit_offset: 18,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some("Presc"),
+                },
+                Field {
+                    name: "vrefen",
+                    description: Some("VREFINT enable"),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vsenseen",
+                    description: Some("Temperature sensor enable"),
+                    bit_offset: 23,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vbaten",
+                    description: Some("VBAT enable"),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
     ],
     enums: &[
+        Enum {
+            name: "Dual",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some("Independent mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DUALRJ",
+                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DUALRA",
+                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DUALIJ",
+                    description: Some("Dual, combined interleaved mode + injected simultaneous mode"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DUALJ",
+                    description: Some("Dual, injected simultaneous mode only"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DUALR",
+                    description: Some("Dual, regular simultaneous mode only"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DUALI",
+                    description: Some("Dual, interleaved mode only"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DUALA",
+                    description: Some("Dual, alternate trigger mode only"),
+                    value: 9,
+                },
+            ],
+        },
+        Enum {
+            name: "EosMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Regular sequence is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Regular sequence complete"),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Awd1Mst",
             description: None,
@@ -362,6 +426,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "EVENT",
                     description: Some("Analog watchdog event occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "AdrdyMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREADY",
+                    description: Some("ADC is not ready to start conversion"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "READY",
+                    description: Some("ADC is ready to start conversion"),
                     value: 1,
                 },
             ],
@@ -384,18 +465,108 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "EosMst",
+            name: "Damdf",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "NOPACK",
+                    description: Some("Without data packing, CDR/CDR2 not used"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FORMAT32TO10",
+                    description: Some("CDR formatted for 32-bit down to 10-bit resolution"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "FORMAT8",
+                    description: Some("CDR formatted for 8-bit resolution"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "JeocMst",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOTCOMPLETE",
-                    description: Some("Regular sequence is not complete"),
+                    description: Some("Injected conversion is not complete"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "COMPLETE",
-                    description: Some("Regular sequence complete"),
+                    description: Some("Injected conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "EocMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Regular conversion is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Regular conversion complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "JeosMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTCOMPLETE",
+                    description: Some("Injected sequence is not complete"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMPLETE",
+                    description: Some("Injected sequence complete"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "OvrMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERRUN",
+                    description: Some("No overrun occurred"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some("Overrun occurred"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "EosmpMst",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTENDED",
+                    description: Some("End of sampling phase no yet reached"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENDED",
+                    description: Some("End of sampling phase reached"),
                     value: 1,
                 },
             ],
@@ -468,113 +639,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Damdf",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "NOPACK",
-                    description: Some("Without data packing, CDR/CDR2 not used"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FORMAT32TO10",
-                    description: Some("CDR formatted for 32-bit down to 10-bit resolution"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "FORMAT8",
-                    description: Some("CDR formatted for 8-bit resolution"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "EocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Regular conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Regular conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EosmpMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTENDED",
-                    description: Some("End of sampling phase no yet reached"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENDED",
-                    description: Some("End of sampling phase reached"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "JeocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "AdrdyMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREADY",
-                    description: Some("ADC is not ready to start conversion"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some("ADC is ready to start conversion"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OvrMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ckmode",
             description: None,
             bit_size: 2,
@@ -598,70 +662,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SYNCDIV4",
                     description: Some("Use AHB clock rcc_hclk3 divided by 4"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Dual",
-            description: None,
-            bit_size: 5,
-            variants: &[
-                EnumVariant {
-                    name: "INDEPENDENT",
-                    description: Some("Independent mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DUALRJ",
-                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DUALRA",
-                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DUALIJ",
-                    description: Some("Dual, combined interleaved mode + injected simultaneous mode"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DUALJ",
-                    description: Some("Dual, injected simultaneous mode only"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DUALR",
-                    description: Some("Dual, regular simultaneous mode only"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DUALI",
-                    description: Some("Dual, interleaved mode only"),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DUALA",
-                    description: Some("Dual, alternate trigger mode only"),
-                    value: 9,
-                },
-            ],
-        },
-        Enum {
-            name: "JeosMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected sequence is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected sequence complete"),
-                    value: 1,
                 },
             ],
         },

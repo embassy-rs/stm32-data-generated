@@ -325,87 +325,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Dual",
-            description: Some("Dual ADC mode selection"),
-            bit_size: 5,
-            variants: &[
-                EnumVariant {
-                    name: "INDEPENDENT",
-                    description: Some("Independent mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DUALRJ",
-                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DUALRA",
-                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DUALIJ",
-                    description: Some("Dual, combined injected simultaneous + fast interleaved mode"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DUALJ",
-                    description: Some("Dual, injected simultaneous mode only"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DUALR",
-                    description: Some("Dual, regular simultaneous mode only"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DUALI",
-                    description: Some("dual, interleaved mode only"),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DUALA",
-                    description: Some("Dual, alternate trigger mode only"),
-                    value: 9,
-                },
-            ],
-        },
-        Enum {
-            name: "Dmacfg",
-            description: Some("DMA configuration (for multi-ADC mode)"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ONESHOT",
-                    description: Some("DMA one shot mode selected"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CIRCULATOR",
-                    description: Some("DMA circular mode selected"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jqovf",
-            description: Some("Injected context queue overflow flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Awd",
             description: Some("Analog watchdog flag"),
             bit_size: 1,
@@ -440,6 +359,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Jqovf",
+            description: Some("Injected context queue overflow flag"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOOVERFLOW",
+                    description: Some("No injected context queue overflow"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERFLOW",
+                    description: Some("Injected context queue overflow"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Ended",
             description: Some("End of operation"),
             bit_size: 1,
@@ -452,6 +388,23 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "ENDED",
                     description: Some("Operation is ended"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dmacfg",
+            description: Some("DMA configuration (for multi-ADC mode)"),
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "ONESHOT",
+                    description: Some("DMA one shot mode selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CIRCULATOR",
+                    description: Some("DMA circular mode selected"),
                     value: 1,
                 },
             ],
@@ -502,6 +455,53 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SYNCDIV4",
                     description: Some("Use AHB clock rcc_hclk3 divided by 4."),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Dual",
+            description: Some("Dual ADC mode selection"),
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some("Independent mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DUALRJ",
+                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DUALRA",
+                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DUALIJ",
+                    description: Some("Dual, combined injected simultaneous + fast interleaved mode"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DUALJ",
+                    description: Some("Dual, injected simultaneous mode only"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DUALR",
+                    description: Some("Dual, regular simultaneous mode only"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DUALI",
+                    description: Some("dual, interleaved mode only"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DUALA",
+                    description: Some("Dual, alternate trigger mode only"),
+                    value: 9,
                 },
             ],
         },

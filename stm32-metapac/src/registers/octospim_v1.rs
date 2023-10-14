@@ -43,6 +43,30 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
+            name: "Cr",
+            extends: None,
+            description: Some("control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "muxen",
+                    description: Some("Multiplexed mode enable"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "req2ack_time",
+                    description: Some("REQ to ACK time"),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "P1cr",
             extends: None,
             description: Some("OctoSPI IO Manager Port 1 Configuration Register"),
@@ -125,30 +149,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Source for Port"),
                     bit_offset: 25,
                     bit_size: 2,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some("control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "muxen",
-                    description: Some("Multiplexed mode enable"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "req2ack_time",
-                    description: Some("REQ to ACK time"),
-                    bit_offset: 16,
-                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },

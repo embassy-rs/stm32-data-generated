@@ -201,6 +201,116 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
+            name: "Cfgr1",
+            extends: None,
+            description: Some(
+                "configuration register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "boosten",
+                    description: Some(
+                        "I/O analog switch voltage booster enable\r Access can be protected by GTZC_TZSC ADC4SEC.\r Note: Refer to Table�121 for setting.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "anaswvdd",
+                    description: Some(
+                        "GPIO analog switch control voltage selection\r Access can be protected by GTZC_TZSC ADC4SEC.\r Note: Refer to Table�121 for setting.",
+                    ),
+                    bit_offset: 9,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pa6_fmp",
+                    description: Some(
+                        "Fast-mode Plus drive capability activation on PA6\r This bit can be read and written only with secure access if PA6 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA6 when PA6 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOA SEC6.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pa7_fmp",
+                    description: Some(
+                        "Fast-mode Plus drive capability activation on PA7\r This bit can be read and written only with secure access if PA7 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA7 when PA7 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOA SEC7.",
+                    ),
+                    bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pa15_fmp",
+                    description: Some(
+                        "Fast-mode Plus drive capability activation on PA15\r This bit can be read and written only with secure access if PA15 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA15 when PA15 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOA SEC15.",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pb3_fmp",
+                    description: Some(
+                        "Fast-mode Plus drive capability activation on PB3\r This bit can be read and written only with secure access if PB3 is secure in GPIOB. This bit enables the Fast-mode Plus drive mode for PB3 when PB3 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOB SEC3.",
+                    ),
+                    bit_offset: 19,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Seccfgr",
+            extends: None,
+            description: Some(
+                "secure configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "syscfgsec",
+                    description: Some(
+                        "clock control, memory erase status and compensation cell registers security",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "classbsec",
+                    description: Some(
+                        "Class B security",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fpusec",
+                    description: Some(
+                        "FPU security",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Ccvr",
             extends: None,
             description: Some(
@@ -225,26 +335,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 4,
                     bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fpuimr",
-            extends: None,
-            description: Some(
-                "FPU interrupt mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fpu_ie",
-                    description: Some(
-                        "Floating point unit interrupts enable bits\r FPU_IE[5]: Inexact interrupt enable (interrupt disable at reset)\r FPU_IE[4]: Input abnormal interrupt enable\r FPU_IE[3]: Overflow interrupt enable\r FPU_IE[2]: Underflow interrupt enable\r FPU_IE[1]: Divide-by-zero interrupt enable\r FPU_IE[0]: Invalid operation Interrupt enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 6,
                     array: None,
                     enumm: None,
                 },
@@ -331,76 +421,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cfgr1",
-            extends: None,
-            description: Some(
-                "configuration register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "boosten",
-                    description: Some(
-                        "I/O analog switch voltage booster enable\r Access can be protected by GTZC_TZSC ADC4SEC.\r Note: Refer to Table�121 for setting.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "anaswvdd",
-                    description: Some(
-                        "GPIO analog switch control voltage selection\r Access can be protected by GTZC_TZSC ADC4SEC.\r Note: Refer to Table�121 for setting.",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pa6_fmp",
-                    description: Some(
-                        "Fast-mode Plus drive capability activation on PA6\r This bit can be read and written only with secure access if PA6 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA6 when PA6 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOA SEC6.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pa7_fmp",
-                    description: Some(
-                        "Fast-mode Plus drive capability activation on PA7\r This bit can be read and written only with secure access if PA7 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA7 when PA7 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOA SEC7.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pa15_fmp",
-                    description: Some(
-                        "Fast-mode Plus drive capability activation on PA15\r This bit can be read and written only with secure access if PA15 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA15 when PA15 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOA SEC15.",
-                    ),
-                    bit_offset: 18,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pb3_fmp",
-                    description: Some(
-                        "Fast-mode Plus drive capability activation on PB3\r This bit can be read and written only with secure access if PB3 is secure in GPIOB. This bit enables the Fast-mode Plus drive mode for PB3 when PB3 is not used by I2C peripheral. This can be used to dive a LED for instance.\r Access can be protected by GPIOB SEC3.",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Mesr",
             extends: None,
             description: Some(
@@ -431,6 +451,56 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Cccr",
+            extends: None,
+            description: Some(
+                "compensation cell code register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ncc1",
+                    description: Some(
+                        "NMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcc1",
+                    description: Some(
+                        "PMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "Floating point unit interrupts enable bits\r FPU_IE[5]: Inexact interrupt enable (interrupt disable at reset)\r FPU_IE[4]: Input abnormal interrupt enable\r FPU_IE[3]: Overflow interrupt enable\r FPU_IE[2]: Underflow interrupt enable\r FPU_IE[1]: Divide-by-zero interrupt enable\r FPU_IE[0]: Invalid operation Interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Cnslckr",
             extends: None,
             description: Some(
@@ -455,6 +525,26 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 1,
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Rsscmdr",
+            extends: None,
+            description: Some(
+                "RSS command register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rsscmd",
+                    description: Some(
+                        "RSS commands\r This field defines a command to be executed by the RSS.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -502,96 +592,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "eccl",
                     description: Some(
                         "ECC lock\r This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cccr",
-            extends: None,
-            description: Some(
-                "compensation cell code register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ncc1",
-                    description: Some(
-                        "NMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pcc1",
-                    description: Some(
-                        "PMOS compensation code of the I/Os supplied by V<sub>DD</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Rsscmdr",
-            extends: None,
-            description: Some(
-                "RSS command register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rsscmd",
-                    description: Some(
-                        "RSS commands\r This field defines a command to be executed by the RSS.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some(
-                "secure configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "syscfgsec",
-                    description: Some(
-                        "clock control, memory erase status and compensation cell registers security",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "classbsec",
-                    description: Some(
-                        "Class B security",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fpusec",
-                    description: Some(
-                        "FPU security",
                     ),
                     bit_offset: 3,
                     bit_size: 1,

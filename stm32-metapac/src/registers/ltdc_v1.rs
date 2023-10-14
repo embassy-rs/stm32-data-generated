@@ -468,30 +468,239 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Bfcr",
+            name: "Bccr",
             extends: None,
             description: Some(
-                "Layerx Blending Factors Configuration Register",
+                "Background Color Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bf",
+                    name: "bcblue",
                     description: Some(
-                        "Blending Factor 2",
+                        "Background color blue value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bcgreen",
+                    description: Some(
+                        "Background color green value",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bcred",
+                    description: Some(
+                        "Background color red value",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cdsr",
+            extends: None,
+            description: Some(
+                "Current Display Status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vdes",
+                    description: Some(
+                        "Vertical Data Enable display Status",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Vdes",
+                    ),
+                },
+                Field {
+                    name: "hdes",
+                    description: Some(
+                        "Horizontal Data Enable display Status",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Hdes",
+                    ),
+                },
+                Field {
+                    name: "vsyncs",
+                    description: Some(
+                        "Vertical Synchronization display Status",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Vsyncs",
+                    ),
+                },
+                Field {
+                    name: "hsyncs",
+                    description: Some(
+                        "Horizontal Synchronization display Status",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Hsyncs",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sscr",
+            extends: None,
+            description: Some(
+                "Synchronization Size Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "vsh",
+                    description: Some(
+                        "Vertical Synchronization Height (in units of horizontal scan line)",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hsw",
+                    description: Some(
+                        "Horizontal Synchronization Width (in units of pixel clock period)",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cfblr",
+            extends: None,
+            description: Some(
+                "Layerx Color Frame Buffer Length Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cfbll",
+                    description: Some(
+                        "Color Frame Buffer Line Length",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cfbp",
+                    description: Some(
+                        "Color Frame Buffer Pitch in bytes",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Icr",
+            extends: None,
+            description: Some(
+                "Interrupt Clear Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "clif",
+                    description: Some(
+                        "Clears the Line Interrupt Flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Clif",
+                    ),
+                },
+                Field {
+                    name: "cfuif",
+                    description: Some(
+                        "Clears the FIFO Underrun Interrupt flag",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cfuif",
+                    ),
+                },
+                Field {
+                    name: "cterrif",
+                    description: Some(
+                        "Clears the Transfer Error Interrupt Flag",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cterrif",
+                    ),
+                },
+                Field {
+                    name: "crrif",
+                    description: Some(
+                        "Clears Register Reload Interrupt Flag",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Crrif",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pfcr",
+            extends: None,
+            description: Some(
+                "Layerx Pixel Format Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pf",
+                    description: Some(
+                        "Pixel Format",
                     ),
                     bit_offset: 0,
                     bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 8,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
-                        "Bf2",
+                        "Pf",
                     ),
                 },
             ],
@@ -527,19 +736,117 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cacr",
+            name: "Lipcr",
             extends: None,
             description: Some(
-                "Layerx Constant Alpha Configuration Register",
+                "Line Interrupt Position Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "consta",
+                    name: "lipos",
                     description: Some(
-                        "Constant Alpha",
+                        "Line Interrupt Position",
                     ),
                     bit_offset: 0,
+                    bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Isr",
+            extends: None,
+            description: Some(
+                "Interrupt Status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lif",
+                    description: Some(
+                        "Line Interrupt flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Lif",
+                    ),
+                },
+                Field {
+                    name: "fuif",
+                    description: Some(
+                        "FIFO Underrun Interrupt flag",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Fuif",
+                    ),
+                },
+                Field {
+                    name: "terrif",
+                    description: Some(
+                        "Transfer Error interrupt flag",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Terrif",
+                    ),
+                },
+                Field {
+                    name: "rrif",
+                    description: Some(
+                        "Register Reload Interrupt Flag",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rrif",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ckcr",
+            extends: None,
+            description: Some(
+                "Layerx Color Keying Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ckblue",
+                    description: Some(
+                        "Color Key Blue value",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ckgreen",
+                    description: Some(
+                        "Color Key Green value",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ckred",
+                    description: Some(
+                        "Color Key Red value",
+                    ),
+                    bit_offset: 16,
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -547,30 +854,50 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Awcr",
+            name: "Clutwr",
             extends: None,
             description: Some(
-                "Active Width Configuration Register",
+                "Layerx CLUT Write Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "aah",
+                    name: "blue",
                     description: Some(
-                        "Accumulated Active Height (in units of horizontal scan line)",
+                        "Blue value",
                     ),
                     bit_offset: 0,
-                    bit_size: 11,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "aaw",
+                    name: "green",
                     description: Some(
-                        "Accumulated Active Width (in units of pixel clock period)",
+                        "Green value",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "red",
+                    description: Some(
+                        "Red value",
                     ),
                     bit_offset: 16,
-                    bit_size: 12,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clutadd",
+                    description: Some(
+                        "CLUT Address",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
@@ -611,147 +938,83 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Dccr",
+            name: "Cr",
             extends: None,
             description: Some(
-                "Layerx Default Color Configuration Register",
+                "Layerx Control Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dcblue",
+                    name: "len",
                     description: Some(
-                        "Default Color Blue",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dcgreen",
-                    description: Some(
-                        "Default Color Green",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dcred",
-                    description: Some(
-                        "Default Color Red",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dcalpha",
-                    description: Some(
-                        "Default Color Alpha",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ier",
-            extends: None,
-            description: Some(
-                "Interrupt Enable Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lie",
-                    description: Some(
-                        "Line Interrupt Enable",
+                        "Layer Enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Lie",
+                        "Len",
                     ),
                 },
                 Field {
-                    name: "fuie",
+                    name: "colken",
                     description: Some(
-                        "FIFO Underrun Interrupt Enable",
+                        "Color Keying Enable",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Fuie",
+                        "Colken",
                     ),
                 },
                 Field {
-                    name: "terrie",
+                    name: "cluten",
                     description: Some(
-                        "Transfer Error Interrupt Enable",
+                        "Color Look-Up Table Enable",
                     ),
-                    bit_offset: 2,
+                    bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Terrie",
-                    ),
-                },
-                Field {
-                    name: "rrie",
-                    description: Some(
-                        "Register Reload interrupt enable",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rrie",
+                        "Cluten",
                     ),
                 },
             ],
         },
         FieldSet {
-            name: "Pfcr",
+            name: "Cfblnr",
             extends: None,
             description: Some(
-                "Layerx Pixel Format Configuration Register",
+                "Layerx ColorFrame Buffer Line Number Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pf",
+                    name: "cfblnbr",
                     description: Some(
-                        "Pixel Format",
+                        "Frame Buffer Line Number",
                     ),
                     bit_offset: 0,
-                    bit_size: 3,
+                    bit_size: 11,
                     array: None,
-                    enumm: Some(
-                        "Pf",
-                    ),
+                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Bpcr",
+            name: "Twcr",
             extends: None,
             description: Some(
-                "Back Porch Configuration Register",
+                "Total Width Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "avbp",
+                    name: "totalh",
                     description: Some(
-                        "Accumulated Vertical back porch (in units of horizontal scan line)",
+                        "Total Height (in units of horizontal scan line)",
                     ),
                     bit_offset: 0,
                     bit_size: 11,
@@ -759,9 +1022,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ahbp",
+                    name: "totalw",
                     description: Some(
-                        "Accumulated Horizontal back porch (in units of pixel clock period)",
+                        "Total Width (in units of pixel clock period)",
                     ),
                     bit_offset: 16,
                     bit_size: 12,
@@ -883,66 +1146,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr",
+            name: "Bpcr",
             extends: None,
             description: Some(
-                "Layerx Control Register",
+                "Back Porch Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "len",
+                    name: "avbp",
                     description: Some(
-                        "Layer Enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Len",
-                    ),
-                },
-                Field {
-                    name: "colken",
-                    description: Some(
-                        "Color Keying Enable",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Colken",
-                    ),
-                },
-                Field {
-                    name: "cluten",
-                    description: Some(
-                        "Color Look-Up Table Enable",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cluten",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfblnr",
-            extends: None,
-            description: Some(
-                "Layerx ColorFrame Buffer Line Number Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cfblnbr",
-                    description: Some(
-                        "Frame Buffer Line Number",
+                        "Accumulated Vertical back porch (in units of horizontal scan line)",
                     ),
                     bit_offset: 0,
                     bit_size: 11,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ahbp",
+                    description: Some(
+                        "Accumulated Horizontal back porch (in units of pixel clock period)",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 12,
                     array: None,
                     enumm: None,
                 },
@@ -969,39 +1196,49 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ckcr",
+            name: "Awcr",
             extends: None,
             description: Some(
-                "Layerx Color Keying Configuration Register",
+                "Active Width Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ckblue",
+                    name: "aah",
                     description: Some(
-                        "Color Key Blue value",
+                        "Accumulated Active Height (in units of horizontal scan line)",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 11,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ckgreen",
+                    name: "aaw",
                     description: Some(
-                        "Color Key Green value",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ckred",
-                    description: Some(
-                        "Color Key Red value",
+                        "Accumulated Active Width (in units of pixel clock period)",
                     ),
                     bit_offset: 16,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cacr",
+            extends: None,
+            description: Some(
+                "Layerx Constant Alpha Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "consta",
+                    description: Some(
+                        "Constant Alpha",
+                    ),
+                    bit_offset: 0,
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1009,17 +1246,47 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Bccr",
+            name: "Whpcr",
             extends: None,
             description: Some(
-                "Background Color Configuration Register",
+                "Layerx Window Horizontal Position Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "bcblue",
+                    name: "whstpos",
                     description: Some(
-                        "Background color blue value",
+                        "Window Horizontal Start Position",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "whsppos",
+                    description: Some(
+                        "Window Horizontal Stop Position",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dccr",
+            extends: None,
+            description: Some(
+                "Layerx Default Color Configuration Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dcblue",
+                    description: Some(
+                        "Default Color Blue",
                     ),
                     bit_offset: 0,
                     bit_size: 8,
@@ -1027,9 +1294,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "bcgreen",
+                    name: "dcgreen",
                     description: Some(
-                        "Background color green value",
+                        "Default Color Green",
                     ),
                     bit_offset: 8,
                     bit_size: 8,
@@ -1037,11 +1304,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "bcred",
+                    name: "dcred",
                     description: Some(
-                        "Background color red value",
+                        "Default Color Red",
                     ),
                     bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dcalpha",
+                    description: Some(
+                        "Default Color Alpha",
+                    ),
+                    bit_offset: 24,
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1079,497 +1356,94 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Whpcr",
+            name: "Bfcr",
             extends: None,
             description: Some(
-                "Layerx Window Horizontal Position Configuration Register",
+                "Layerx Blending Factors Configuration Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "whstpos",
+                    name: "bf",
                     description: Some(
-                        "Window Horizontal Start Position",
+                        "Blending Factor 2",
                     ),
                     bit_offset: 0,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "whsppos",
-                    description: Some(
-                        "Window Horizontal Stop Position",
+                    bit_size: 3,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 8,
+                            },
+                        ),
                     ),
-                    bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Bf2",
+                    ),
                 },
             ],
         },
         FieldSet {
-            name: "Cfblr",
+            name: "Ier",
             extends: None,
             description: Some(
-                "Layerx Color Frame Buffer Length Register",
+                "Interrupt Enable Register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "cfbll",
+                    name: "lie",
                     description: Some(
-                        "Color Frame Buffer Line Length",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cfbp",
-                    description: Some(
-                        "Color Frame Buffer Pitch in bytes",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 13,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cdsr",
-            extends: None,
-            description: Some(
-                "Current Display Status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vdes",
-                    description: Some(
-                        "Vertical Data Enable display Status",
+                        "Line Interrupt Enable",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Vdes",
+                        "Lie",
                     ),
                 },
                 Field {
-                    name: "hdes",
+                    name: "fuie",
                     description: Some(
-                        "Horizontal Data Enable display Status",
+                        "FIFO Underrun Interrupt Enable",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Hdes",
+                        "Fuie",
                     ),
                 },
                 Field {
-                    name: "vsyncs",
+                    name: "terrie",
                     description: Some(
-                        "Vertical Synchronization display Status",
+                        "Transfer Error Interrupt Enable",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Vsyncs",
+                        "Terrie",
                     ),
                 },
                 Field {
-                    name: "hsyncs",
+                    name: "rrie",
                     description: Some(
-                        "Horizontal Synchronization display Status",
+                        "Register Reload interrupt enable",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Hsyncs",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Twcr",
-            extends: None,
-            description: Some(
-                "Total Width Configuration Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "totalh",
-                    description: Some(
-                        "Total Height (in units of horizontal scan line)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "totalw",
-                    description: Some(
-                        "Total Width (in units of pixel clock period)",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Isr",
-            extends: None,
-            description: Some(
-                "Interrupt Status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lif",
-                    description: Some(
-                        "Line Interrupt flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lif",
-                    ),
-                },
-                Field {
-                    name: "fuif",
-                    description: Some(
-                        "FIFO Underrun Interrupt flag",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Fuif",
-                    ),
-                },
-                Field {
-                    name: "terrif",
-                    description: Some(
-                        "Transfer Error interrupt flag",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Terrif",
-                    ),
-                },
-                Field {
-                    name: "rrif",
-                    description: Some(
-                        "Register Reload Interrupt Flag",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Rrif",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Lipcr",
-            extends: None,
-            description: Some(
-                "Line Interrupt Position Configuration Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lipos",
-                    description: Some(
-                        "Line Interrupt Position",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sscr",
-            extends: None,
-            description: Some(
-                "Synchronization Size Configuration Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "vsh",
-                    description: Some(
-                        "Vertical Synchronization Height (in units of horizontal scan line)",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsw",
-                    description: Some(
-                        "Horizontal Synchronization Width (in units of pixel clock period)",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 12,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Clutwr",
-            extends: None,
-            description: Some(
-                "Layerx CLUT Write Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "blue",
-                    description: Some(
-                        "Blue value",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "green",
-                    description: Some(
-                        "Green value",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "red",
-                    description: Some(
-                        "Red value",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clutadd",
-                    description: Some(
-                        "CLUT Address",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Icr",
-            extends: None,
-            description: Some(
-                "Interrupt Clear Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "clif",
-                    description: Some(
-                        "Clears the Line Interrupt Flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Clif",
-                    ),
-                },
-                Field {
-                    name: "cfuif",
-                    description: Some(
-                        "Clears the FIFO Underrun Interrupt flag",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cfuif",
-                    ),
-                },
-                Field {
-                    name: "cterrif",
-                    description: Some(
-                        "Clears the Transfer Error Interrupt Flag",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Cterrif",
-                    ),
-                },
-                Field {
-                    name: "crrif",
-                    description: Some(
-                        "Clears Register Reload Interrupt Flag",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Crrif",
+                        "Rrie",
                     ),
                 },
             ],
         },
     ],
     enums: &[
-        Enum {
-            name: "Ltdcen",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "LCD-TFT controller disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "LCD-TFT controller enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREACHED",
-                    description: Some(
-                        "Programmed line not reached",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REACHED",
-                    description: Some(
-                        "Line interrupt generated when a programmed line is reached",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Register reload interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Register reload interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pcpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RISINGEDGE",
-                    description: Some(
-                        "Pixel clock on rising edge",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FALLINGEDGE",
-                    description: Some(
-                        "Pixel clock on falling edge",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Bf2",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "CONSTANT",
-                    description: Some(
-                        "BF2 = 1 - constant alpha",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "PIXEL",
-                    description: Some(
-                        "BF2 = 1 - pixel alpha * constant alpha",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Fuif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOUNDERRUN",
-                    description: Some(
-                        "No FIFO underrun",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "UNDERRUN",
-                    description: Some(
-                        "FIFO underrun interrupt generated, if one of the layer FIFOs is empty and pixel data is read from the FIFO",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Crrif",
             description: None,
@@ -1579,286 +1453,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CLEAR",
                     description: Some(
                         "Clears the RRIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsyncs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in HSYNC phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in HSYNC phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vdes",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in vertical Data Enable phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in vertical Data Enable phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Line interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Line interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Clif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clears the LIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Imr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEFFECT",
-                    description: Some(
-                        "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RELOAD",
-                    description: Some(
-                        "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Len",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Layer disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Layer enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hdes",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in horizontal Data Enable phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in horizontal Data Enable phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vsyncs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in VSYNC phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in VSYNC phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cluten",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Color look-up table disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Color look-up table enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vspol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ACTIVELOW",
-                    description: Some(
-                        "Vertical synchronization polarity is active low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVEHIGH",
-                    description: Some(
-                        "Vertical synchronization polarity is active high",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Den",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Dither disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Dither enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rrif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORELOAD",
-                    description: Some(
-                        "No register reload",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RELOAD",
-                    description: Some(
-                        "Register reload interrupt generated when a vertical blanking reload occurs (and the first line after the active area is reached)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cfuif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "CLEAR",
-                    description: Some(
-                        "Clears the FUIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Terrif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOERROR",
-                    description: Some(
-                        "No transfer error",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ERROR",
-                    description: Some(
-                        "Transfer error interrupt generated when a bus error occurs",
                     ),
                     value: 1,
                 },
@@ -1886,42 +1480,126 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Fuie",
+            name: "Vsyncs",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "NOTACTIVE",
                     description: Some(
-                        "FIFO underrun interrupt disabled",
+                        "Currently not in VSYNC phase",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "ACTIVE",
                     description: Some(
-                        "FIFO underrun interrupt enabled",
+                        "Currently in VSYNC phase",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Vbr",
+            name: "Vspol",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOEFFECT",
+                    name: "ACTIVELOW",
                     description: Some(
-                        "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
+                        "Vertical synchronization polarity is active low",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVEHIGH",
+                    description: Some(
+                        "Vertical synchronization polarity is active high",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rrif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NORELOAD",
+                    description: Some(
+                        "No register reload",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "RELOAD",
                     description: Some(
-                        "The shadow registers are reloaded during the vertical blanking period (at the beginning of the first line after the active display area).",
+                        "Register reload interrupt generated when a vertical blanking reload occurs (and the first line after the active area is reached)",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ltdcen",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "LCD-TFT controller disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "LCD-TFT controller enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Hdes",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTACTIVE",
+                    description: Some(
+                        "Currently not in horizontal Data Enable phase",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVE",
+                    description: Some(
+                        "Currently in horizontal Data Enable phase",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Terrif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOERROR",
+                    description: Some(
+                        "No transfer error",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ERROR",
+                    description: Some(
+                        "Transfer error interrupt generated when a bus error occurs",
                     ),
                     value: 1,
                 },
@@ -1949,21 +1627,56 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Terrie",
+            name: "Imr",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "NOEFFECT",
                     description: Some(
-                        "Transfer error interrupt disabled",
+                        "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "RELOAD",
                     description: Some(
-                        "Transfer error interrupt enabled",
+                        "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cfuif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clears the FUIF flag in the ISR register",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fuif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOUNDERRUN",
+                    description: Some(
+                        "No FIFO underrun",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "UNDERRUN",
+                    description: Some(
+                        "FIFO underrun interrupt generated, if one of the layer FIFOs is empty and pixel data is read from the FIFO",
                     ),
                     value: 1,
                 },
@@ -2033,14 +1746,224 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Cterrif",
+            name: "Vbr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOEFFECT",
+                    description: Some(
+                        "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RELOAD",
+                    description: Some(
+                        "The shadow registers are reloaded during the vertical blanking period (at the beginning of the first line after the active display area).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Den",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Dither disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Dither enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rrie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Register reload interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Register reload interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pcpol",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "RISINGEDGE",
+                    description: Some(
+                        "Pixel clock on rising edge",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FALLINGEDGE",
+                    description: Some(
+                        "Pixel clock on falling edge",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Fuie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "FIFO underrun interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "FIFO underrun interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cluten",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Color look-up table disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Color look-up table enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Terrie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Transfer error interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Transfer error interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Len",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Layer disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Layer enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lie",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Line interrupt disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "Line interrupt enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Hsyncs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTACTIVE",
+                    description: Some(
+                        "Currently not in HSYNC phase",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVE",
+                    description: Some(
+                        "Currently in HSYNC phase",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Clif",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "CLEAR",
                     description: Some(
-                        "Clears the TERRIF flag in the ISR register",
+                        "Clears the LIF flag in the ISR register",
                     ),
                     value: 1,
                 },
@@ -2064,6 +1987,83 @@ pub(crate) static REGISTERS: IR = IR {
                         "Data enable polarity is active high",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTREACHED",
+                    description: Some(
+                        "Programmed line not reached",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "REACHED",
+                    description: Some(
+                        "Line interrupt generated when a programmed line is reached",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Vdes",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOTACTIVE",
+                    description: Some(
+                        "Currently not in vertical Data Enable phase",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ACTIVE",
+                    description: Some(
+                        "Currently in vertical Data Enable phase",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cterrif",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CLEAR",
+                    description: Some(
+                        "Clears the TERRIF flag in the ISR register",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Bf2",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "CONSTANT",
+                    description: Some(
+                        "BF2 = 1 - constant alpha",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "PIXEL",
+                    description: Some(
+                        "BF2 = 1 - pixel alpha * constant alpha",
+                    ),
+                    value: 7,
                 },
             ],
         },

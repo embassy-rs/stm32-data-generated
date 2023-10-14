@@ -1549,6 +1549,11 @@
                 {
                     "name": "GFXMMU",
                     "address": 1073922048,
+                    "registers": {
+                        "kind": "gfxmmu",
+                        "version": "v2",
+                        "block": "GFXMMU"
+                    },
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {

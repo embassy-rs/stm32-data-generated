@@ -3,42 +3,6 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Dma",
-            extends: None,
-            description: Some("DMA controller"),
-            items: &[
-                BlockItem {
-                    name: "isr",
-                    description: Some("DMA interrupt status register (DMA_ISR)"),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Read,
-                        bit_size: 32,
-                        fieldset: Some("Isr"),
-                    }),
-                },
-                BlockItem {
-                    name: "ifcr",
-                    description: Some("DMA interrupt flag clear register (DMA_IFCR)"),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Write,
-                        bit_size: 32,
-                        fieldset: Some("Isr"),
-                    }),
-                },
-                BlockItem {
-                    name: "ch",
-                    description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 20 })),
-                    byte_offset: 8,
-                    inner: BlockItemInner::Block(BlockItemBlock { block: "Ch" }),
-                },
-            ],
-        },
-        Block {
             name: "Ch",
             extends: None,
             description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
@@ -86,6 +50,42 @@ pub(crate) static REGISTERS: IR = IR {
                         bit_size: 32,
                         fieldset: None,
                     }),
+                },
+            ],
+        },
+        Block {
+            name: "Dma",
+            extends: None,
+            description: Some("DMA controller"),
+            items: &[
+                BlockItem {
+                    name: "isr",
+                    description: Some("DMA interrupt status register (DMA_ISR)"),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Read,
+                        bit_size: 32,
+                        fieldset: Some("Isr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ifcr",
+                    description: Some("DMA interrupt flag clear register (DMA_IFCR)"),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
+                        bit_size: 32,
+                        fieldset: Some("Isr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ch",
+                    description: Some("Channel cluster: CCR?, CNDTR?, CPAR?, and CMAR? registers"),
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 20 })),
+                    byte_offset: 8,
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Ch" }),
                 },
             ],
         },
@@ -252,23 +252,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Increment mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Increment mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Memmem",
             description: None,
             bit_size: 1,
@@ -286,24 +269,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Size",
+            name: "Inc",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BITS8",
-                    description: Some("8-bit size"),
+                    name: "DISABLED",
+                    description: Some("Increment mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BITS16",
-                    description: Some("16-bit size"),
+                    name: "ENABLED",
+                    description: Some("Increment mode enabled"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("32-bit size"),
-                    value: 2,
                 },
             ],
         },
@@ -338,6 +316,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ENABLED",
                     description: Some("Circular buffer enabled"),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Size",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("8-bit size"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS16",
+                    description: Some("16-bit size"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some("32-bit size"),
+                    value: 2,
                 },
             ],
         },

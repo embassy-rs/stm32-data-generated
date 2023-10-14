@@ -466,7 +466,7 @@ pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as u
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
 pub const TSC: *mut () = 0x4002_4000 as usize as _;
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000 as usize as _) };
-pub const GFXMMU: *mut () = 0x4002_c000 as usize as _;
+pub const GFXMMU: gfxmmu::Gfxmmu = unsafe { gfxmmu::Gfxmmu::from_ptr(0x4002_c000 as usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0000 as usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0400 as usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0800 as usize as _) };
@@ -521,6 +521,8 @@ pub mod dmamux;
 pub mod exti;
 #[path = "../../peripherals/flash_l4.rs"]
 pub mod flash;
+#[path = "../../peripherals/gfxmmu_v1.rs"]
+pub mod gfxmmu;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]

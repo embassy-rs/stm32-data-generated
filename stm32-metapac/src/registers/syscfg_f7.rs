@@ -54,30 +54,6 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     fieldsets: &[
         FieldSet {
-            name: "Cmpcr",
-            extends: None,
-            description: Some("Compensation cell control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cmp_pd",
-                    description: Some("Compensation cell power-down"),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ready",
-                    description: Some("READY"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Memrmp",
             extends: None,
             description: Some("memory remap register"),
@@ -104,6 +80,30 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("FMC memory mapping swap"),
                     bit_offset: 10,
                     bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cmpcr",
+            extends: None,
+            description: Some("Compensation cell control register"),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cmp_pd",
+                    description: Some("Compensation cell power-down"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ready",
+                    description: Some("READY"),
+                    bit_offset: 8,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },

@@ -191,17 +191,37 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ier",
+            name: "Countr",
             extends: None,
             description: Some(
-                "TAMP interrupt enable register",
+                "monotonic counter register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampie",
+                    name: "count",
                     description: Some(
-                        "Tamper X interrupt enable",
+                        "COUNT",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Misr",
+            extends: None,
+            description: Some(
+                "TAMP masked interrupt status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampmf",
+                    description: Some(
+                        "Tamper X interrupt masked flag",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -216,38 +236,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "itampie",
+                    name: "itampmf",
                     description: Some(
-                        "Internal tamper X interrupt enable",
+                        "Internal tamper X interrupt masked flag",
                     ),
                     bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr3",
-            extends: None,
-            description: Some(
-                "TAMP control register 3",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "itampnoer",
-                    description: Some(
-                        "Internal Tamper X no erase",
-                    ),
-                    bit_offset: 0,
                     bit_size: 1,
                     array: Some(
                         Array::Regular(
@@ -306,6 +299,89 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Fltcr",
+            extends: None,
+            description: Some(
+                "TAMP filter control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampfreq",
+                    description: Some(
+                        "Tamper sampling frequency. Determines the frequency at which each of the INx inputs are sampled.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Tampfreq",
+                    ),
+                },
+                Field {
+                    name: "tampflt",
+                    description: Some(
+                        "INx filter count. These bits determines the number of consecutive samples at the specified level (TAMP*TRG) needed to activate a tamper event. TAMPFLT is valid for each of the INx inputs.",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Tampflt",
+                    ),
+                },
+                Field {
+                    name: "tampprch",
+                    description: Some(
+                        "INx precharge duration. These bit determines the duration of time during which the pull-up/is activated before each sample. TAMPPRCH is valid for each of the INx inputs.",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Tampprch",
+                    ),
+                },
+                Field {
+                    name: "tamppudis",
+                    description: Some(
+                        "INx pull-up disable. This bit determines if each of the TAMPx pins are precharged before each sample.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr3",
+            extends: None,
+            description: Some(
+                "TAMP control register 3",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "itampnoer",
+                    description: Some(
+                        "Internal Tamper X no erase",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Bkpr",
             extends: None,
             description: Some(
@@ -321,6 +397,138 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 32,
                     array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ier",
+            extends: None,
+            description: Some(
+                "TAMP interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampie",
+                    description: Some(
+                        "Tamper X interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampie",
+                    description: Some(
+                        "Internal tamper X interrupt enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr1",
+            extends: None,
+            description: Some(
+                "control register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampe",
+                    description: Some(
+                        "Tamper detection on IN X enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampe",
+                    description: Some(
+                        "Internal tamper X enable",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "TAMP status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tampf",
+                    description: Some(
+                        "Tamper X detection flag",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "itampf",
+                    description: Some(
+                        "Internal tamper X detection flag",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 8,
+                                stride: 1,
+                            },
+                        ),
+                    ),
                     enumm: None,
                 },
             ],
@@ -402,214 +610,6 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Cr1",
-            extends: None,
-            description: Some(
-                "control register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampe",
-                    description: Some(
-                        "Tamper detection on IN X enable",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampe",
-                    description: Some(
-                        "Internal tamper X enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Misr",
-            extends: None,
-            description: Some(
-                "TAMP masked interrupt status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampmf",
-                    description: Some(
-                        "Tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampmf",
-                    description: Some(
-                        "Internal tamper X interrupt masked flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Fltcr",
-            extends: None,
-            description: Some(
-                "TAMP filter control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampfreq",
-                    description: Some(
-                        "Tamper sampling frequency. Determines the frequency at which each of the INx inputs are sampled.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Tampfreq",
-                    ),
-                },
-                Field {
-                    name: "tampflt",
-                    description: Some(
-                        "INx filter count. These bits determines the number of consecutive samples at the specified level (TAMP*TRG) needed to activate a tamper event. TAMPFLT is valid for each of the INx inputs.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Tampflt",
-                    ),
-                },
-                Field {
-                    name: "tampprch",
-                    description: Some(
-                        "INx precharge duration. These bit determines the duration of time during which the pull-up/is activated before each sample. TAMPPRCH is valid for each of the INx inputs.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Tampprch",
-                    ),
-                },
-                Field {
-                    name: "tamppudis",
-                    description: Some(
-                        "INx pull-up disable. This bit determines if each of the TAMPx pins are precharged before each sample.",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sr",
-            extends: None,
-            description: Some(
-                "TAMP status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tampf",
-                    description: Some(
-                        "Tamper X detection flag",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "itampf",
-                    description: Some(
-                        "Internal tamper X detection flag",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 8,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Countr",
-            extends: None,
-            description: Some(
-                "monotonic counter register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "count",
-                    description: Some(
-                        "COUNT",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
     ],
     enums: &[
         Enum {
@@ -630,90 +630,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tamptrg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FILTEREDLOWORUNFILTEREDHIGH",
-                    description: Some(
-                        "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FILTEREDHIGHORUNFILTEREDLOW",
-                    description: Some(
-                        "If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tampfreq",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "HZ_1",
-                    description: Some(
-                        "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HZ_2",
-                    description: Some(
-                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HZ_4",
-                    description: Some(
-                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HZ_8",
-                    description: Some(
-                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "HZ_16",
-                    description: Some(
-                        "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "HZ_32",
-                    description: Some(
-                        "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "HZ_64",
-                    description: Some(
-                        "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "HZ_128",
-                    description: Some(
-                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 7,
                 },
             ],
         },
@@ -788,6 +704,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Tamptrg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "FILTEREDLOWORUNFILTEREDHIGH",
+                    description: Some(
+                        "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "FILTEREDHIGHORUNFILTEREDLOW",
+                    description: Some(
+                        "If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Bkerase",
             description: None,
             bit_size: 1,
@@ -798,6 +735,69 @@ pub(crate) static REGISTERS: IR = IR {
                         "Reset backup registers",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Tampfreq",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "HZ_1",
+                    description: Some(
+                        "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HZ_2",
+                    description: Some(
+                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HZ_4",
+                    description: Some(
+                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HZ_8",
+                    description: Some(
+                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "HZ_16",
+                    description: Some(
+                        "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "HZ_32",
+                    description: Some(
+                        "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "HZ_64",
+                    description: Some(
+                        "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "HZ_128",
+                    description: Some(
+                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 7,
                 },
             ],
         },

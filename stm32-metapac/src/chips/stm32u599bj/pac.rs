@@ -643,7 +643,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _)
 pub const TSC: *mut () = 0x4002_4000 as usize as _;
 pub const MDF1: *mut () = 0x4002_5000 as usize as _;
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000 as usize as _) };
-pub const GFXMMU: *mut () = 0x4002_c000 as usize as _;
+pub const GFXMMU: gfxmmu::Gfxmmu = unsafe { gfxmmu::Gfxmmu::from_ptr(0x4002_c000 as usize as _) };
 pub const GPU2D: *mut () = 0x4002_f000 as usize as _;
 pub const ICACHE: *mut () = 0x4003_0400 as usize as _;
 pub const DCACHE1: *mut () = 0x4003_1400 as usize as _;
@@ -721,6 +721,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../../peripherals/gfxmmu_v2.rs"]
+pub mod gfxmmu;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]

@@ -513,19 +513,49 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Sechdpcr",
+            name: "Pdkeyr",
             extends: None,
             description: Some(
-                "secure HDP control register",
+                "power-down key register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hdp_accdis",
+                    name: "pdkey1",
                     description: Some(
-                        "Secure HDP area access disable \r When set, this bit is only cleared by a system reset.",
+                        "power-down key\r The following values must be written consecutively to unlock the PDREQ bit in ACR:\r PDKEY_1: 0x0415�2637\r PDKEY_2: 0xFAFB�FCFD",
                     ),
                     bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secwmr2",
+            extends: None,
+            description: Some(
+                "secure watermark register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdp_pend",
+                    description: Some(
+                        "End page of secure hide protection area\r This field contains the last page of the secure HDP area.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hdpen",
+                    description: Some(
+                        "Secure Hide protection area enable",
+                    ),
+                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -533,20 +563,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Optkeyr",
+            name: "Prifcfgr",
             extends: None,
             description: Some(
-                "option key register",
+                "privilege configuration register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "optkey",
+                    name: "spriv",
                     description: Some(
-                        "Option byte key\r The LOCK bit in the NSCR1 must be cleared before doing the unlock sequence for OPTLOCK bit. The following values must be written consecutively to unlock the NSCR1.OPTSTRT and OBL_LAUNCH register bits concerning user option operations:\r KEY1: 0x0819�2A3B\r KEY2: 0x4C5D�6E7F",
+                        "Privileged protection for secure registers\r This bit is secure write protected. It can only be written by a secure privileged access when TrustZone is enabled (TZEN�=�1).",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "nspriv",
+                    description: Some(
+                        "Privileged protection for non-secure registers",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -583,69 +623,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Opsr",
+            name: "Nsbootadd0r",
             extends: None,
             description: Some(
-                "operation status register",
+                "boot address 0 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "addr_op",
+                    name: "nsbootadd0",
                     description: Some(
-                        "Interrupted operation address\r This field indicates which address in the memory was accessed when reset occurred. The address is given relative to the base address, from offset 0x0�0000 to 0xF�FFF0.\r Note that bit 19 is reserved on STM32WBAxEx devices.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 20,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sysf_op",
-                    description: Some(
-                        "Operation in system memory interrupted\r This bit indicates that the reset occurred during an operation in the system memory.",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "code_op",
-                    description: Some(
-                        "memory operation code\r This field indicates which memory operation has been interrupted by a system reset:",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "CodeOp",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secbootadd0r",
-            extends: None,
-            description: Some(
-                "secure boot address 0 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "boot_lock",
-                    description: Some(
-                        "Boot lock\r This lock is only used when TZEN = 0.\r When set, the boot is always forced to base address value programmed in SECBOOTADD0[24:0] option bytes whatever the boot selection option. When set, this bit can only be cleared by an RDP regression level 1 to level 0.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "secbootadd0",
-                    description: Some(
-                        "Secure boot base address 0\r This address is only used when TZEN = 1.\r The secure boot memory address can be programmed to any address in the valid address range (see Table�28: Boot space versus RDP protection) with a granularity of 128 bytes. This bits correspond to address [31:7] The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state. \r Examples:\r SECBOOTADD0[24:0] = 0x018 0000: Boot from secure user memory (0x0C00 0000)\r SECBOOTADD0[24:0] = 0x01F F000: Boot from RSS system memory (0x0FF8 0000)\r SECBOOTADD0[24:0] = 0x060 0000: Boot from secure SRAM1 on S-Bus (0x3000 0000)",
+                        "Non-secure boot base address 0\r This address is only used when TZEN = 0.\r The non-secure boot memory address can be programmed to any address in the valid address range (see Table 28: Boot space versus RDP protection) with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state.\r Examples:\r NSBOOTADD0[24:0] = 0x0100000: Boot from memory (0x0800 0000)\r NSBOOTADD0[24:0] = 0x017F100: Boot from system memory bootloader (0x0BF8 8000)\r NSBOOTADD0[24:0] = 0x0400200: Boot from SRAM2 on S-Bus (0x2001 0000)",
                     ),
                     bit_offset: 7,
                     bit_size: 25,
@@ -785,97 +773,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pdkeyr",
+            name: "Secbootadd0r",
             extends: None,
             description: Some(
-                "power-down key register",
+                "secure boot address 0 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pdkey1",
+                    name: "boot_lock",
                     description: Some(
-                        "power-down key\r The following values must be written consecutively to unlock the PDREQ bit in ACR:\r PDKEY_1: 0x0415�2637\r PDKEY_2: 0xFAFB�FCFD",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seckeyr",
-            extends: None,
-            description: Some(
-                "secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "seckey",
-                    description: Some(
-                        "memory secure key\r The following values must be written consecutively to unlock the SECCR1 register, allowing the memory secure programming/erasing operations:\r KEY1: 0x4567�0123\r KEY2: 0xCDEF�89AB",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wrpbr",
-            extends: None,
-            description: Some(
-                "WRP area B address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wrpb_pstrt",
-                    description: Some(
-                        "WRP area B start page\r This field contains the first page of the WRP area B.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrpb_pend",
-                    description: Some(
-                        "WRP area B end page\r This field contains the last page of the WRP area B.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "unlock",
-                    description: Some(
-                        "WPR area B unlock",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nscr2",
-            extends: None,
-            description: Some(
-                "control 2 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ps",
-                    description: Some(
-                        "Program suspend request",
+                        "Boot lock\r This lock is only used when TZEN = 0.\r When set, the boot is always forced to base address value programmed in SECBOOTADD0[24:0] option bytes whatever the boot selection option. When set, this bit can only be cleared by an RDP regression level 1 to level 0.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -883,71 +791,111 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "es",
+                    name: "secbootadd0",
                     description: Some(
-                        "Erase suspend request",
+                        "Secure boot base address 0\r This address is only used when TZEN = 1.\r The secure boot memory address can be programmed to any address in the valid address range (see Table�28: Boot space versus RDP protection) with a granularity of 128 bytes. This bits correspond to address [31:7] The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state. \r Examples:\r SECBOOTADD0[24:0] = 0x018 0000: Boot from secure user memory (0x0C00 0000)\r SECBOOTADD0[24:0] = 0x01F F000: Boot from RSS system memory (0x0FF8 0000)\r SECBOOTADD0[24:0] = 0x060 0000: Boot from secure SRAM1 on S-Bus (0x3000 0000)",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 25,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secsr",
+            extends: None,
+            description: Some(
+                "secure status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "eop",
+                    description: Some(
+                        "Secure end of operation\r This bit is set by hardware when one or more memory secure operation (program/erase) has been completed successfully. This bit is set only if the secure end of operation interrupts are enabled (EOPIE = 1 in SECCR1). This bit is cleared by writing�1.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "operr",
+                    description: Some(
+                        "Secure operation error\r This bit is set by hardware when a memory secure operation (program/erase) completes unsuccessfully. This bit is set only if secure error interrupts are enabled (SECERRIE = 1). This bit is cleared by writing 1.",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Eccr",
-            extends: None,
-            description: Some(
-                "ECC register",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "addr_ecc",
+                    name: "progerr",
                     description: Some(
-                        "ECC fail address\r This field indicates which address is concerned by the ECC error correction or by the double ECC error detection. The address is given relative to base address, from offset 0x0�0000 to 0xF�FFF0.\r Note that bit 19 is reserved on STM32WBAxEx devices.",
+                        "Secure programming error\r This bit is set by hardware when a secure quad-word address to be programmed contains a value different from all 1 before programming, except if the data to write is all 0. This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 0,
-                    bit_size: 20,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sysf_ecc",
-                    description: Some(
-                        "System memory ECC fail\r This bit indicates that the ECC error correction or double ECC error detection is located in the system memory.",
-                    ),
-                    bit_offset: 22,
+                    bit_offset: 3,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "eccie",
+                    name: "wrperr",
                     description: Some(
-                        "ECC correction interrupt enable\r This bit enables the interrupt generation when the ECCC bit in the ECCR register is set.",
+                        "Secure write protection error\r This bit is set by hardware when an secure address to be erased/programmed belongs to a write-protected part (by WRP or HDP) of the memory. This bit is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
                     ),
-                    bit_offset: 24,
+                    bit_offset: 4,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "eccc",
+                    name: "pgaerr",
                     description: Some(
-                        "ECC correction\r This bit is set by hardware when one ECC error has been detected and corrected (only if ECCC and ECCD were previously cleared). An interrupt is generated if ECCIE is set. This bit is cleared by writing 1.",
+                        "Secure programming alignment error\r This bit is set by hardware when the first word to be programmed is not aligned with a quad-word address, or the second, third or forth word does not belong to the same quad-word address.This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 30,
+                    bit_offset: 5,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "eccd",
+                    name: "sizerr",
                     description: Some(
-                        "ECC detection\r This bit is set by hardware when two ECC errors have been detected (only if ECCC and ECCD were previously cleared). When this bit is set, a NMI is generated. This bit is cleared by writing 1.",
+                        "Secure size error\r This bit is set by hardware when the size of the access is a byte or half-word during a secure program sequence. Only quad-word programming is allowed by means of successive word accesses.This bit is cleared by writing 1.",
                     ),
-                    bit_offset: 31,
+                    bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pgserr",
+                    description: Some(
+                        "Secure programming sequence error\r This bit is set by hardware when programming sequence is not correct. It is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
+                    ),
+                    bit_offset: 7,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bsy",
+                    description: Some(
+                        "Secure busy\r This bit indicates that a memory secure or non-secure operation is in progress. This is set on the beginning of a operation and reset when the operation finishes or when an error occurs.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wdw",
+                    description: Some(
+                        "Secure wait data to write\r This bit indicates that the memory write buffer has been written by a secure or non-secure operation. It is set when the first data is stored in the buffer and cleared when the write is performed in the memory.",
+                    ),
+                    bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1008,6 +956,36 @@ pub(crate) static REGISTERS: IR = IR {
                         "memory power-down mode during Sleep mode\r This bit determines whether the memory is in power-down mode or Idle mode when the device is in Sleep mode.\r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.\r The must not be put in power-down while a program or an erase operation is ongoing.",
                     ),
                     bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Nscr2",
+            extends: None,
+            description: Some(
+                "control 2 register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ps",
+                    description: Some(
+                        "Program suspend request",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "es",
+                    description: Some(
+                        "Erase suspend request",
+                    ),
+                    bit_offset: 1,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1169,37 +1147,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nsbootadd1r",
+            name: "Secwmr1",
             extends: None,
             description: Some(
-                "boot address 1 register",
+                "secure watermark register 1",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "nsbootadd1",
+                    name: "secwm_pstrt",
                     description: Some(
-                        "Non-secure boot address 1\r This address is only used when TZEN = 0.\r The non-secure boot memory address can be programmed to any address in the valid address range (see Table 28: Boot space versus RDP protection) with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state. \r Examples:\r NSBOOTADD1[24:0] = 0x0100000: Boot from memory (0x0800 0000)\r NSBOOTADD1[24:0] = 0x017F100: Boot from system memory bootloader (0x0BF8 8000)\r NSBOOTADD1[24:0] = 0x0400200: Boot from SRAM2 (0x2001 0000)",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 25,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Wrpar",
-            extends: None,
-            description: Some(
-                "WRP area A address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "wrpa_pstrt",
-                    description: Some(
-                        "WPR area A start page\r This field contains the first page of the WPR area A.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
+                        "Start page of secure area\r This field contains the first page of the secure area.",
                     ),
                     bit_offset: 0,
                     bit_size: 7,
@@ -1207,22 +1165,12 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wrpa_pend",
+                    name: "secwm_pend",
                     description: Some(
-                        "WPR area A end page\r This field contains the last page of the WPR area A.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
+                        "End page of secure area\r This field contains the last page of the secure area.",
                     ),
                     bit_offset: 16,
                     bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "unlock",
-                    description: Some(
-                        "WPR area A unlock",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1369,17 +1317,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Secwmr2",
+            name: "Wrpar",
             extends: None,
             description: Some(
-                "secure watermark register 2",
+                "WRP area A address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hdp_pend",
+                    name: "wrpa_pstrt",
                     description: Some(
-                        "End page of secure hide protection area\r This field contains the last page of the secure HDP area.",
+                        "WPR area A start page\r This field contains the first page of the WPR area A.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrpa_pend",
+                    description: Some(
+                        "WPR area A end page\r This field contains the last page of the WPR area A.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
                     ),
                     bit_offset: 16,
                     bit_size: 7,
@@ -1387,9 +1345,151 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hdpen",
+                    name: "unlock",
                     description: Some(
-                        "Secure Hide protection area enable",
+                        "WPR area A unlock",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Opsr",
+            extends: None,
+            description: Some(
+                "operation status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addr_op",
+                    description: Some(
+                        "Interrupted operation address\r This field indicates which address in the memory was accessed when reset occurred. The address is given relative to the base address, from offset 0x0�0000 to 0xF�FFF0.\r Note that bit 19 is reserved on STM32WBAxEx devices.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sysf_op",
+                    description: Some(
+                        "Operation in system memory interrupted\r This bit indicates that the reset occurred during an operation in the system memory.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "code_op",
+                    description: Some(
+                        "memory operation code\r This field indicates which memory operation has been interrupted by a system reset:",
+                    ),
+                    bit_offset: 29,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "CodeOp",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr",
+            extends: None,
+            description: Some(
+                "ECC register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addr_ecc",
+                    description: Some(
+                        "ECC fail address\r This field indicates which address is concerned by the ECC error correction or by the double ECC error detection. The address is given relative to base address, from offset 0x0�0000 to 0xF�FFF0.\r Note that bit 19 is reserved on STM32WBAxEx devices.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sysf_ecc",
+                    description: Some(
+                        "System memory ECC fail\r This bit indicates that the ECC error correction or double ECC error detection is located in the system memory.",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccie",
+                    description: Some(
+                        "ECC correction interrupt enable\r This bit enables the interrupt generation when the ECCC bit in the ECCR register is set.",
+                    ),
+                    bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccc",
+                    description: Some(
+                        "ECC correction\r This bit is set by hardware when one ECC error has been detected and corrected (only if ECCC and ECCD were previously cleared). An interrupt is generated if ECCIE is set. This bit is cleared by writing 1.",
+                    ),
+                    bit_offset: 30,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccd",
+                    description: Some(
+                        "ECC detection\r This bit is set by hardware when two ECC errors have been detected (only if ECCC and ECCD were previously cleared). When this bit is set, a NMI is generated. This bit is cleared by writing 1.",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wrpbr",
+            extends: None,
+            description: Some(
+                "WRP area B address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wrpb_pstrt",
+                    description: Some(
+                        "WRP area B start page\r This field contains the first page of the WRP area B.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrpb_pend",
+                    description: Some(
+                        "WRP area B end page\r This field contains the last page of the WRP area B.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "unlock",
+                    description: Some(
+                        "WPR area B unlock",
                     ),
                     bit_offset: 31,
                     bit_size: 1,
@@ -1509,6 +1609,46 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Optkeyr",
+            extends: None,
+            description: Some(
+                "option key register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "optkey",
+                    description: Some(
+                        "Option byte key\r The LOCK bit in the NSCR1 must be cleared before doing the unlock sequence for OPTLOCK bit. The following values must be written consecutively to unlock the NSCR1.OPTSTRT and OBL_LAUNCH register bits concerning user option operations:\r KEY1: 0x0819�2A3B\r KEY2: 0x4C5D�6E7F",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sechdpcr",
+            extends: None,
+            description: Some(
+                "secure HDP control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdp_accdis",
+                    description: Some(
+                        "Secure HDP area access disable \r When set, this bit is only cleared by a system reset.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Bbr",
             extends: None,
             description: Some(
@@ -1534,80 +1674,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Secwmr1",
+            name: "Seckeyr",
             extends: None,
             description: Some(
-                "secure watermark register 1",
+                "secure key register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "secwm_pstrt",
+                    name: "seckey",
                     description: Some(
-                        "Start page of secure area\r This field contains the first page of the secure area.",
+                        "memory secure key\r The following values must be written consecutively to unlock the SECCR1 register, allowing the memory secure programming/erasing operations:\r KEY1: 0x4567�0123\r KEY2: 0xCDEF�89AB",
                     ),
                     bit_offset: 0,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "secwm_pend",
-                    description: Some(
-                        "End page of secure area\r This field contains the last page of the secure area.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Prifcfgr",
-            extends: None,
-            description: Some(
-                "privilege configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spriv",
-                    description: Some(
-                        "Privileged protection for secure registers\r This bit is secure write protected. It can only be written by a secure privileged access when TrustZone is enabled (TZEN�=�1).",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nspriv",
-                    description: Some(
-                        "Privileged protection for non-secure registers",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nsbootadd0r",
-            extends: None,
-            description: Some(
-                "boot address 0 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nsbootadd0",
-                    description: Some(
-                        "Non-secure boot base address 0\r This address is only used when TZEN = 0.\r The non-secure boot memory address can be programmed to any address in the valid address range (see Table 28: Boot space versus RDP protection) with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state.\r Examples:\r NSBOOTADD0[24:0] = 0x0100000: Boot from memory (0x0800 0000)\r NSBOOTADD0[24:0] = 0x017F100: Boot from system memory bootloader (0x0BF8 8000)\r NSBOOTADD0[24:0] = 0x0400200: Boot from SRAM2 on S-Bus (0x2001 0000)",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 25,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1634,100 +1714,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Secsr",
+            name: "Nsbootadd1r",
             extends: None,
             description: Some(
-                "secure status register",
+                "boot address 1 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "eop",
+                    name: "nsbootadd1",
                     description: Some(
-                        "Secure end of operation\r This bit is set by hardware when one or more memory secure operation (program/erase) has been completed successfully. This bit is set only if the secure end of operation interrupts are enabled (EOPIE = 1 in SECCR1). This bit is cleared by writing�1.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "operr",
-                    description: Some(
-                        "Secure operation error\r This bit is set by hardware when a memory secure operation (program/erase) completes unsuccessfully. This bit is set only if secure error interrupts are enabled (SECERRIE = 1). This bit is cleared by writing 1.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "progerr",
-                    description: Some(
-                        "Secure programming error\r This bit is set by hardware when a secure quad-word address to be programmed contains a value different from all 1 before programming, except if the data to write is all 0. This bit is cleared by writing 1.",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wrperr",
-                    description: Some(
-                        "Secure write protection error\r This bit is set by hardware when an secure address to be erased/programmed belongs to a write-protected part (by WRP or HDP) of the memory. This bit is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pgaerr",
-                    description: Some(
-                        "Secure programming alignment error\r This bit is set by hardware when the first word to be programmed is not aligned with a quad-word address, or the second, third or forth word does not belong to the same quad-word address.This bit is cleared by writing 1.",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sizerr",
-                    description: Some(
-                        "Secure size error\r This bit is set by hardware when the size of the access is a byte or half-word during a secure program sequence. Only quad-word programming is allowed by means of successive word accesses.This bit is cleared by writing 1.",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pgserr",
-                    description: Some(
-                        "Secure programming sequence error\r This bit is set by hardware when programming sequence is not correct. It is cleared by writing 1.\r Refer to Section�7.3.10: memory errors flags for full conditions of error flag setting.",
+                        "Non-secure boot address 1\r This address is only used when TZEN = 0.\r The non-secure boot memory address can be programmed to any address in the valid address range (see Table 28: Boot space versus RDP protection) with a granularity of 128 bytes. These bits correspond to address [31:7]. The NSBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 state. \r Examples:\r NSBOOTADD1[24:0] = 0x0100000: Boot from memory (0x0800 0000)\r NSBOOTADD1[24:0] = 0x017F100: Boot from system memory bootloader (0x0BF8 8000)\r NSBOOTADD1[24:0] = 0x0400200: Boot from SRAM2 (0x2001 0000)",
                     ),
                     bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bsy",
-                    description: Some(
-                        "Secure busy\r This bit indicates that a memory secure or non-secure operation is in progress. This is set on the beginning of a operation and reset when the operation finishes or when an error occurs.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdw",
-                    description: Some(
-                        "Secure wait data to write\r This bit indicates that the memory write buffer has been written by a secure or non-secure operation. It is set when the first data is stored in the buffer and cleared when the write is performed in the memory.",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
+                    bit_size: 25,
                     array: None,
                     enumm: None,
                 },
@@ -1735,34 +1735,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Rdp",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X55",
-                    description: Some(
-                        "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)",
-                    ),
-                    value: 85,
-                },
-                EnumVariant {
-                    name: "B_0XAA",
-                    description: Some(
-                        "Level 0 (readout protection not active)",
-                    ),
-                    value: 170,
-                },
-                EnumVariant {
-                    name: "B_0XCC",
-                    description: Some(
-                        "Level 2 (chip readout protection active)",
-                    ),
-                    value: 204,
-                },
-            ],
-        },
         Enum {
             name: "BorLev",
             description: None,
@@ -1802,6 +1774,34 @@ pub(crate) static REGISTERS: IR = IR {
                         "BOR level 4 (reset level threshold around 2.8�V)",
                     ),
                     value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Rdp",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X55",
+                    description: Some(
+                        "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)",
+                    ),
+                    value: 85,
+                },
+                EnumVariant {
+                    name: "B_0XAA",
+                    description: Some(
+                        "Level 0 (readout protection not active)",
+                    ),
+                    value: 170,
+                },
+                EnumVariant {
+                    name: "B_0XCC",
+                    description: Some(
+                        "Level 2 (chip readout protection active)",
+                    ),
+                    value: 204,
                 },
             ],
         },

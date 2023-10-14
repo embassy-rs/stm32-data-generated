@@ -1561,7 +1561,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "GFXMMU",
         address: 1073922048,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gfxmmu",
+            version: "v1",
+            block: "GFXMMU",
+            ir: &gfxmmu::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB1",
             enable: Some(PeripheralRccRegister {
@@ -7106,6 +7111,8 @@ pub mod dmamux;
 pub mod exti;
 #[path = "../registers/flash_l4.rs"]
 pub mod flash;
+#[path = "../registers/gfxmmu_v1.rs"]
+pub mod gfxmmu;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../registers/i2c_v2.rs"]

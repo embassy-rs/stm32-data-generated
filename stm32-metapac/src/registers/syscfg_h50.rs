@@ -235,22 +235,179 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Fpuimr",
+            name: "Hdplcr",
             extends: None,
             description: Some(
-                "SBS FPU interrupt mask register",
+                "SBS temporal isolation control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "fpu_ie",
+                    name: "incr_hdpl",
                     description: Some(
-                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
+                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
                     ),
                     bit_offset: 0,
-                    bit_size: 6,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "IncrHdpl",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cccsr",
+            extends: None,
+            description: Some(
+                "SBS compensation cell for I/Os control and status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en",
+                    description: Some(
+                        "enable compensation cell for VDDIO power rail\r This bit enables the I/O compensation cell.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 2,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "cs",
+                    description: Some(
+                        "code selection for VDDIO power rail (reset value set to 1)\r This bit selects the code to be applied for the I/O compensation cell.",
+                    ),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 2,
+                            },
+                        ),
+                    ),
+                    enumm: Some(
+                        "Cs",
+                    ),
+                },
+                Field {
+                    name: "rdy",
+                    description: Some(
+                        "VDDIO compensation cell ready flag\r This bit provides the status of the compensation cell.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ccswcr",
+            extends: None,
+            description: Some(
+                "SBS compensation cell for I/Os software code register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sw_ansrc1",
+                    description: Some(
+                        "NMOS compensation code for VDD power rails\r This bitfield is written by software to define an I/O compensation cell code for NMOS transistors of the VDD power rail. This code is applied to the I/O when CS1 is set in SBS_CCSR.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "sw_apsrc1",
+                    description: Some(
+                        "PMOS compensation code for the VDD power rails\r This bitfield is written by software to define an I/O compensation cell code for PMOS transistors of the VDDIO power rail. This code is applied to the I/O when CS1 is set in SBS_CCSR.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sw_ansrc2",
+                    description: Some(
+                        "NMOS compensation code for VDDIO power rails\r This bitfield is written by software to define an I/O compensation cell code for NMOS transistors of the VDD power rail. This code is applied to the I/O when CS2 is set in SBS_CCSR.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sw_apsrc2",
+                    description: Some(
+                        "PMOS compensation code for the V<sub>DDIO</sub> power rails\r This bitfield is written by software to define an I/O compensation cell code for PMOS transistors of the VDDIO power rail. This code is applied to the I/O when CS2 is set in SBS_CCSR.",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dbgcr",
+            extends: None,
+            description: Some(
+                "SBS debug control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ap_unlock",
+                    description: Some(
+                        "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_unlock",
+                    description: Some(
+                        "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dbg_auth_hdpl",
+                    description: Some(
+                        "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "DbgAuthHdpl",
+                    ),
                 },
             ],
         },
@@ -272,6 +429,48 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some(
                         "DbgcfgLock",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fpuimr",
+            extends: None,
+            description: Some(
+                "SBS FPU interrupt mask register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "fpu_ie",
+                    description: Some(
+                        "FPU interrupt enable\r Set and cleared by software to enable the Cortex-M33 FPU interrupts\r FPU_IE[5]: inexact interrupt enable (interrupt disabled at reset)\r FPU_IE[4]: input abnormal interrupt enable\r FPU_IE[3]: overflow interrupt enable\r FPU_IE[2]: underflow interrupt enable\r FPU_IE[1]: divide-by-zero interrupt enable\r FPU_IE[0]: invalid operation interrupt enable",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hdplsr",
+            extends: None,
+            description: Some(
+                "SBS temporal isolation status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdpl",
+                    description: Some(
+                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 8,
+                    array: None,
+                    enumm: Some(
+                        "Hdpl",
                     ),
                 },
             ],
@@ -357,68 +556,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Eccnmir",
-            extends: None,
-            description: Some(
-                "SBS flift ECC NMI mask register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eccnmi_mask_en",
-                    description: Some(
-                        "NMI behavior setup when a double ECC error occurs on flitf data part",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Dbgcr",
-            extends: None,
-            description: Some(
-                "SBS debug control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ap_unlock",
-                    description: Some(
-                        "access port unlock\r Write 0xB4 to this bitfield to open the device access port.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_unlock",
-                    description: Some(
-                        "debug unlock when DBG_AUTH_HDPL is reached\r Write 0xB4 to this bitfield to open the debug when HDPL in SBS_HDPLSR equals to DBG_AUTH_HDPL in this register.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_auth_hdpl",
-                    description: Some(
-                        "authenticated debug temporal isolation level\r Writing to this bitfield defines at which HDPL the authenticated debug opens.\r Note: Writing any other values is ignored. Reading any other value means the debug never opens.",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "DbgAuthHdpl",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
             name: "Cfgr2",
             extends: None,
             description: Some(
@@ -464,69 +601,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cccsr",
-            extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os control and status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "en",
-                    description: Some(
-                        "enable compensation cell for VDDIO power rail\r This bit enables the I/O compensation cell.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "cs",
-                    description: Some(
-                        "code selection for VDDIO power rail (reset value set to 1)\r This bit selects the code to be applied for the I/O compensation cell.",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Cs",
-                    ),
-                },
-                Field {
-                    name: "rdy",
-                    description: Some(
-                        "VDDIO compensation cell ready flag\r This bit provides the status of the compensation cell.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
                     enumm: None,
                 },
             ],
@@ -592,24 +666,22 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hdplsr",
+            name: "Eccnmir",
             extends: None,
             description: Some(
-                "SBS temporal isolation status register",
+                "SBS flift ECC NMI mask register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hdpl",
+                    name: "eccnmi_mask_en",
                     description: Some(
-                        "temporal isolation level\r This bitfield returns the current temporal isolation level.",
+                        "NMI behavior setup when a double ECC error occurs on flitf data part",
                     ),
                     bit_offset: 0,
-                    bit_size: 8,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hdpl",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -643,80 +715,50 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
-        FieldSet {
-            name: "Ccswcr",
-            extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os software code register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sw_ansrc1",
-                    description: Some(
-                        "NMOS compensation code for VDD power rails\r This bitfield is written by software to define an I/O compensation cell code for NMOS transistors of the VDD power rail. This code is applied to the I/O when CS1 is set in SBS_CCSR.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sw_apsrc1",
-                    description: Some(
-                        "PMOS compensation code for the VDD power rails\r This bitfield is written by software to define an I/O compensation cell code for PMOS transistors of the VDDIO power rail. This code is applied to the I/O when CS1 is set in SBS_CCSR.",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sw_ansrc2",
-                    description: Some(
-                        "NMOS compensation code for VDDIO power rails\r This bitfield is written by software to define an I/O compensation cell code for NMOS transistors of the VDD power rail. This code is applied to the I/O when CS2 is set in SBS_CCSR.",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sw_apsrc2",
-                    description: Some(
-                        "PMOS compensation code for the V<sub>DDIO</sub> power rails\r This bitfield is written by software to define an I/O compensation cell code for PMOS transistors of the VDDIO power rail. This code is applied to the I/O when CS2 is set in SBS_CCSR.",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdplcr",
-            extends: None,
-            description: Some(
-                "SBS temporal isolation control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "incr_hdpl",
-                    description: Some(
-                        "increment HDPL value\r Other: all other values allow a HDPL level increment.",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "IncrHdpl",
-                    ),
-                },
-            ],
-        },
     ],
     enums: &[
+        Enum {
+            name: "DbgcfgLock",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0XB4",
+                    description: Some(
+                        "Writes to SBS_DBGCR allowed (default)",
+                    ),
+                    value: 180,
+                },
+            ],
+        },
+        Enum {
+            name: "DbgAuthHdpl",
+            description: None,
+            bit_size: 8,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X51",
+                    description: Some(
+                        "HDPL1",
+                    ),
+                    value: 81,
+                },
+                EnumVariant {
+                    name: "B_0X6F",
+                    description: Some(
+                        "HDPL3",
+                    ),
+                    value: 111,
+                },
+                EnumVariant {
+                    name: "B_0X8A",
+                    description: Some(
+                        "HDPL2",
+                    ),
+                    value: 138,
+                },
+            ],
+        },
         Enum {
             name: "Hdpl",
             description: None,
@@ -753,34 +795,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "DbgAuthHdpl",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X51",
-                    description: Some(
-                        "HDPL1",
-                    ),
-                    value: 81,
-                },
-                EnumVariant {
-                    name: "B_0X6F",
-                    description: Some(
-                        "HDPL3",
-                    ),
-                    value: 111,
-                },
-                EnumVariant {
-                    name: "B_0X8A",
-                    description: Some(
-                        "HDPL2",
-                    ),
-                    value: 138,
-                },
-            ],
-        },
-        Enum {
             name: "IncrHdpl",
             description: None,
             bit_size: 8,
@@ -796,20 +810,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "B_0XB4",
                     description: Some(
                         "no increment",
-                    ),
-                    value: 180,
-                },
-            ],
-        },
-        Enum {
-            name: "DbgcfgLock",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B_0XB4",
-                    description: Some(
-                        "Writes to SBS_DBGCR allowed (default)",
                     ),
                     value: 180,
                 },

@@ -1065,7 +1065,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "i2c1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "i2c1sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -1150,7 +1153,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "i2c2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "i2c2sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -2016,7 +2022,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "tim1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "tim1sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -2218,7 +2227,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "tim15rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "tim15sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -2329,7 +2341,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "tim16rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "tim16sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -2440,7 +2455,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "tim17rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "tim17sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -2546,7 +2564,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "tim2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "tim2sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3070,7 +3091,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "tim8rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "tim8sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3415,7 +3439,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "usart1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "usart1sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3499,7 +3526,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "usart2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "usart2sw",
+            }),
         }),
         pins: &[
             PeripheralPin {
@@ -3598,7 +3628,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "usart3rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "cfgr3",
+                field: "usart3sw",
+            }),
         }),
         pins: &[
             PeripheralPin {

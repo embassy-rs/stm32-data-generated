@@ -4932,7 +4932,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rngsel {
         #[doc = "hsi48_ker_ck selected as kernel clock (default after reset)"]
-        HSI48_KER = 0,
+        HSI48 = 0,
         #[doc = "pll1_q_ck selected as kernel clock"]
         PLL1_Q = 0x01,
         #[doc = "lse_ck selected as kernel clock"]

@@ -3674,7 +3674,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "RCC_HCLK4",
+        "name": "AHB4",
         "description": "rcc_hclk4 selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -6605,7 +6605,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HSI48_KER",
+        "name": "HSI48",
         "description": "hsi48_ker_ck selected as kernel clock (default after reset)",
         "value": 0
       },

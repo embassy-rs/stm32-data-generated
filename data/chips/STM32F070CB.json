@@ -310,6 +310,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "adcrst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "adcsw"
                         }
                     },
                     "pins": [
@@ -663,6 +667,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "i2c1rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "i2c1sw"
                         }
                     },
                     "pins": [
@@ -1808,6 +1816,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "usart1rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usart1sw"
                         }
                     },
                     "pins": [
@@ -1894,6 +1906,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "usart2rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usart2sw"
                         }
                     },
                     "pins": [
@@ -1980,6 +1996,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "usart3rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usart3sw"
                         }
                     },
                     "pins": [
@@ -2139,6 +2159,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "usbrst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usbsw"
                         }
                     },
                     "pins": [

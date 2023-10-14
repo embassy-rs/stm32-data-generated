@@ -7972,7 +7972,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSI48_KER",
+                    name: "HSI48",
                     description: Some(
                         "hsi48_ker_ck selected as kernel clock (default after reset)",
                     ),

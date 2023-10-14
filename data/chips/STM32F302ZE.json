@@ -1576,6 +1576,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "i2c1rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "i2c1sw"
                         }
                     },
                     "pins": [
@@ -1653,6 +1657,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "i2c2rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "i2c2sw"
                         }
                     },
                     "pins": [
@@ -1730,6 +1738,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "i2c3rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "i2c3sw"
                         }
                     },
                     "pins": [
@@ -2532,6 +2544,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "tim1rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "tim1sw"
                         }
                     },
                     "pins": [
@@ -2791,6 +2807,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "tim15rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "tim15sw"
                         }
                     },
                     "pins": [
@@ -2903,6 +2923,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "tim16rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "tim16sw"
                         }
                     },
                     "pins": [
@@ -3005,6 +3029,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "tim17rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "tim17sw"
                         }
                     },
                     "pins": [
@@ -3102,6 +3130,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "tim2rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "tim2sw"
                         }
                     },
                     "pins": [
@@ -3806,6 +3838,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "uart4rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "uart4sw"
                         }
                     },
                     "pins": [
@@ -3854,6 +3890,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "uart5rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "uart5sw"
                         }
                     },
                     "pins": [
@@ -3901,6 +3941,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "usart1rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usart1sw"
                         }
                     },
                     "pins": [
@@ -3999,6 +4043,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "usart2rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usart2sw"
                         }
                     },
                     "pins": [
@@ -4122,6 +4170,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "usart3rst"
+                        },
+                        "mux": {
+                            "register": "cfgr3",
+                            "field": "usart3sw"
                         }
                     },
                     "pins": [

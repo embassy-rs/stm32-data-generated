@@ -10,40 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "cccr",
-                    description: Some(
-                        "For details about setting and resetting of single bits see Software initialization.",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ckdiv",
-                    description: Some(
-                        "FDCAN CFG clock divider register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ckdiv",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "crel",
                     description: Some(
                         "FDCAN Core Release Register",
@@ -56,40 +22,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Crel",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbtp",
-                    description: Some(
-                        "This register is only writable if bits CCCR.CCE and CCCR.INIT are set. The CAN bit time may be programed in the range of 4 to 25 time quanta. The CAN time quantum may be programmed in the range of 1 to 1024 FDCAN clock periods. tq = (DBRP + 1) FDCAN clock period. DTSEG1 is the sum of Prop_Seg and Phase_Seg1. DTSEG2 is Phase_Seg2. Therefore the length of the bit time is (programmed values) [DTSEG1 + DTSEG2 + 3] tq or (functional values) [Sync_Seg + Prop_Seg + Phase_Seg1 + Phase_Seg2] tq. The Information Processing Time (IPT) is zero, meaning the data for the next bit is available at the first clock edge after the sample point.",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dbtp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ecr",
-                    description: Some(
-                        "FDCAN Error Counter Register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ecr",
                             ),
                         },
                     ),
@@ -112,223 +44,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "hpms",
+                    name: "dbtp",
                     description: Some(
-                        "This register is updated every time a Message ID filter element configured to generate a priority event match. This can be used to monitor the status of incoming high priority messages and to enable fast access to these messages.",
+                        "This register is only writable if bits CCCR.CCE and CCCR.INIT are set. The CAN bit time may be programed in the range of 4 to 25 time quanta. The CAN time quantum may be programmed in the range of 1 to 1024 FDCAN clock periods. tq = (DBRP + 1) FDCAN clock period. DTSEG1 is the sum of Prop_Seg and Phase_Seg1. DTSEG2 is Phase_Seg2. Therefore the length of the bit time is (programmed values) [DTSEG1 + DTSEG2 + 3] tq or (functional values) [Sync_Seg + Prop_Seg + Phase_Seg1 + Phase_Seg2] tq. The Information Processing Time (IPT) is zero, meaning the data for the next bit is available at the first clock edge after the sample point.",
                     ),
                     array: None,
-                    byte_offset: 136,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hpms",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ie",
-                    description: Some(
-                        "The settings in the Interrupt Enable register determine which status changes in the Interrupt Register will be signaled on an interrupt line.",
-                    ),
-                    array: None,
-                    byte_offset: 84,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ie",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ile",
-                    description: Some(
-                        "Each of the two interrupt lines to the CPU can be enabled/disabled separately by programming bits EINT0 and EINT1.",
-                    ),
-                    array: None,
-                    byte_offset: 92,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ile",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ils",
-                    description: Some(
-                        "The Interrupt Line Select register assigns an interrupt generated by a specific interrupt flag from the Interrupt Register to one of the two module interrupt lines. For interrupt generation the respective interrupt line has to be enabled via ILE[EINT0] and ILE[EINT1].",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ils",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ir",
-                    description: Some(
-                        "The flags are set when one of the listed conditions is detected (edge-sensitive). The flags remain set until the Host clears them. A flag is cleared by writing a 1 to the corresponding bit position. Writing a 0 has no effect. A hard reset will clear the register. The configuration of IE controls whether an interrupt is generated. The configuration of ILS controls on which interrupt line an interrupt is signaled.",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nbtp",
-                    description: Some(
-                        "FDCAN_NBTP",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nbtp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psr",
-                    description: Some(
-                        "FDCAN Protocol Status Register",
-                    ),
-                    array: None,
-                    byte_offset: 68,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rwd",
-                    description: Some(
-                        "The RAM Watchdog monitors the READY output of the Message RAM. A Message RAM access starts the Message RAM Watchdog Counter with the value configured by the RWD[WDC] bits. The counter is reloaded with RWD[WDC] bits when the Message RAM signals successful completion by activating its READY output. In case there is no response from the Message RAM until the counter has counted down to 0, the counter stops and interrupt flag IR[WDI] bit is set. The RAM Watchdog Counter is clocked by the fdcan_pclk clock.",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rwd",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rxfa",
-                    description: Some(
-                        "CAN Rx FIFO 0 Acknowledge Register",
-                    ),
-                    array: Some(
-                        Array::Cursed(
-                            CursedArray {
-                                offsets: &[
-                                    0,
-                                    8,
-                                ],
-                            },
-                        ),
-                    ),
-                    byte_offset: 148,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rxfa",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rxfs",
-                    description: Some(
-                        "FDCAN Rx FIFO X Status Register",
-                    ),
-                    array: Some(
-                        Array::Cursed(
-                            CursedArray {
-                                offsets: &[
-                                    0,
-                                    8,
-                                ],
-                            },
-                        ),
-                    ),
-                    byte_offset: 144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rxfs",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rxgfc",
-                    description: Some(
-                        "Global settings for Message ID filtering. The Global Filter Configuration controls the filter path for standard and extended messages as described in Figure706: Standard Message ID filter path and Figure707: Extended Message ID filter path.",
-                    ),
-                    array: None,
-                    byte_offset: 128,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rxgfc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tdcr",
-                    description: Some(
-                        "FDCAN Transmitter Delay Compensation Register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Tdcr",
+                                "Dbtp",
                             ),
                         },
                     ),
@@ -351,35 +78,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "tocc",
+                    name: "rwd",
                     description: Some(
-                        "FDCAN Timeout Counter Configuration Register",
+                        "The RAM Watchdog monitors the READY output of the Message RAM. A Message RAM access starts the Message RAM Watchdog Counter with the value configured by the RWD[WDC] bits. The counter is reloaded with RWD[WDC] bits when the Message RAM signals successful completion by activating its READY output. In case there is no response from the Message RAM until the counter has counted down to 0, the counter stops and interrupt flag IR[WDI] bit is set. The RAM Watchdog Counter is clocked by the fdcan_pclk clock.",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Tocc",
+                                "Rwd",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "tocv",
+                    name: "cccr",
                     description: Some(
-                        "FDCAN Timeout Counter Value Register",
+                        "For details about setting and resetting of single bits see Software initialization.",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Tocv",
+                                "Cccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nbtp",
+                    description: Some(
+                        "FDCAN_NBTP",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nbtp",
                             ),
                         },
                     ),
@@ -419,18 +163,257 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txbar",
+                    name: "tocc",
                     description: Some(
-                        "FDCAN Tx Buffer Add Request Register",
+                        "FDCAN Timeout Counter Configuration Register",
                     ),
                     array: None,
-                    byte_offset: 204,
+                    byte_offset: 40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Txbar",
+                                "Tocc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tocv",
+                    description: Some(
+                        "FDCAN Timeout Counter Value Register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tocv",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecr",
+                    description: Some(
+                        "FDCAN Error Counter Register",
+                    ),
+                    array: None,
+                    byte_offset: 64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ecr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psr",
+                    description: Some(
+                        "FDCAN Protocol Status Register",
+                    ),
+                    array: None,
+                    byte_offset: 68,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tdcr",
+                    description: Some(
+                        "FDCAN Transmitter Delay Compensation Register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tdcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ir",
+                    description: Some(
+                        "The flags are set when one of the listed conditions is detected (edge-sensitive). The flags remain set until the Host clears them. A flag is cleared by writing a 1 to the corresponding bit position. Writing a 0 has no effect. A hard reset will clear the register. The configuration of IE controls whether an interrupt is generated. The configuration of ILS controls on which interrupt line an interrupt is signaled.",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ie",
+                    description: Some(
+                        "The settings in the Interrupt Enable register determine which status changes in the Interrupt Register will be signaled on an interrupt line.",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ils",
+                    description: Some(
+                        "The Interrupt Line Select register assigns an interrupt generated by a specific interrupt flag from the Interrupt Register to one of the two module interrupt lines. For interrupt generation the respective interrupt line has to be enabled via ILE[EINT0] and ILE[EINT1].",
+                    ),
+                    array: None,
+                    byte_offset: 88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ils",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ile",
+                    description: Some(
+                        "Each of the two interrupt lines to the CPU can be enabled/disabled separately by programming bits EINT0 and EINT1.",
+                    ),
+                    array: None,
+                    byte_offset: 92,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ile",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxgfc",
+                    description: Some(
+                        "Global settings for Message ID filtering. The Global Filter Configuration controls the filter path for standard and extended messages as described in Figure706: Standard Message ID filter path and Figure707: Extended Message ID filter path.",
+                    ),
+                    array: None,
+                    byte_offset: 128,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rxgfc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xidam",
+                    description: Some(
+                        "FDCAN Extended ID and Mask Register",
+                    ),
+                    array: None,
+                    byte_offset: 132,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Xidam",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hpms",
+                    description: Some(
+                        "This register is updated every time a Message ID filter element configured to generate a priority event match. This can be used to monitor the status of incoming high priority messages and to enable fast access to these messages.",
+                    ),
+                    array: None,
+                    byte_offset: 136,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hpms",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxfs",
+                    description: Some(
+                        "FDCAN Rx FIFO X Status Register",
+                    ),
+                    array: Some(
+                        Array::Cursed(
+                            CursedArray {
+                                offsets: &[
+                                    0,
+                                    8,
+                                ],
+                            },
+                        ),
+                    ),
+                    byte_offset: 144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rxfs",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxfa",
+                    description: Some(
+                        "CAN Rx FIFO 0 Acknowledge Register",
+                    ),
+                    array: Some(
+                        Array::Cursed(
+                            CursedArray {
+                                offsets: &[
+                                    0,
+                                    8,
+                                ],
+                            },
+                        ),
+                    ),
+                    byte_offset: 148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rxfa",
                             ),
                         },
                     ),
@@ -453,52 +436,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txbcf",
+                    name: "txfqs",
                     description: Some(
-                        "FDCAN Tx Buffer Cancellation Finished Register",
+                        "The Tx FIFO/Queue status is related to the pending Tx requests listed in register TXBRP. Therefore the effect of Add/Cancellation requests may be delayed due to a running Tx scan (TXBRP not yet updated).",
                     ),
                     array: None,
-                    byte_offset: 216,
+                    byte_offset: 196,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Txbcf",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "txbcie",
-                    description: Some(
-                        "FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register",
-                    ),
-                    array: None,
-                    byte_offset: 224,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Txbcie",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "txbcr",
-                    description: Some(
-                        "FDCAN Tx Buffer Cancellation Request Register",
-                    ),
-                    array: None,
-                    byte_offset: 208,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Txbcr",
+                                "Txfqs",
                             ),
                         },
                     ),
@@ -521,18 +470,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txbtie",
+                    name: "txbar",
                     description: Some(
-                        "FDCAN Tx Buffer Transmission Interrupt Enable Register",
+                        "FDCAN Tx Buffer Add Request Register",
                     ),
                     array: None,
-                    byte_offset: 220,
+                    byte_offset: 204,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Txbtie",
+                                "Txbar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "txbcr",
+                    description: Some(
+                        "FDCAN Tx Buffer Cancellation Request Register",
+                    ),
+                    array: None,
+                    byte_offset: 208,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Txbcr",
                             ),
                         },
                     ),
@@ -555,18 +521,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txefa",
+                    name: "txbcf",
                     description: Some(
-                        "FDCAN Tx Event FIFO Acknowledge Register",
+                        "FDCAN Tx Buffer Cancellation Finished Register",
                     ),
                     array: None,
-                    byte_offset: 232,
+                    byte_offset: 216,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Txbcf",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "txbtie",
+                    description: Some(
+                        "FDCAN Tx Buffer Transmission Interrupt Enable Register",
+                    ),
+                    array: None,
+                    byte_offset: 220,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Txefa",
+                                "Txbtie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "txbcie",
+                    description: Some(
+                        "FDCAN Tx Buffer Cancellation Finished Interrupt Enable Register",
+                    ),
+                    array: None,
+                    byte_offset: 224,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Txbcie",
                             ),
                         },
                     ),
@@ -589,35 +589,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txfqs",
+                    name: "txefa",
                     description: Some(
-                        "The Tx FIFO/Queue status is related to the pending Tx requests listed in register TXBRP. Therefore the effect of Add/Cancellation requests may be delayed due to a running Tx scan (TXBRP not yet updated).",
+                        "FDCAN Tx Event FIFO Acknowledge Register",
                     ),
                     array: None,
-                    byte_offset: 196,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Txfqs",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "xidam",
-                    description: Some(
-                        "FDCAN Extended ID and Mask Register",
-                    ),
-                    array: None,
-                    byte_offset: 132,
+                    byte_offset: 232,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Xidam",
+                                "Txefa",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ckdiv",
+                    description: Some(
+                        "FDCAN CFG clock divider register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ckdiv",
                             ),
                         },
                     ),

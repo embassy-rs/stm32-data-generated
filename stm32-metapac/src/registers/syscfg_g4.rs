@@ -7,6 +7,17 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("System configuration controller"),
         items: &[
             BlockItem {
+                name: "memrmp",
+                description: Some("Remap Memory register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Memrmp"),
+                }),
+            },
+            BlockItem {
                 name: "cfgr1",
                 description: Some("peripheral mode configuration register"),
                 array: None,
@@ -15,17 +26,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Cfgr1"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr2",
-                description: Some("configuration register 2"),
-                array: None,
-                byte_offset: 28,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr2"),
                 }),
             },
             BlockItem {
@@ -40,17 +40,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "memrmp",
-                description: Some("Remap Memory register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Memrmp"),
-                }),
-            },
-            BlockItem {
                 name: "scsr",
                 description: Some("CCM SRAM control and status register"),
                 array: None,
@@ -62,14 +51,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "skr",
-                description: Some("SRAM2 Key Register"),
+                name: "cfgr2",
+                description: Some("configuration register 2"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 28,
                 inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
+                    access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Skr"),
+                    fieldset: Some("Cfgr2"),
                 }),
             },
             BlockItem {
@@ -81,6 +70,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Swpr"),
+                }),
+            },
+            BlockItem {
+                name: "skr",
+                description: Some("SRAM2 Key Register"),
+                array: None,
+                byte_offset: 36,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Skr"),
                 }),
             },
         ],

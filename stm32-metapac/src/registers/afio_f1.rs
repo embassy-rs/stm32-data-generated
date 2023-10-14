@@ -18,17 +18,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "exticr",
-                description: Some("External interrupt configuration register 1 (AFIO_EXTICR1)"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Exticr"),
-                }),
-            },
-            BlockItem {
                 name: "mapr",
                 description: Some("AF remap and debug I/O configuration register (AFIO_MAPR)"),
                 array: None,
@@ -37,6 +26,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Mapr"),
+                }),
+            },
+            BlockItem {
+                name: "exticr",
+                description: Some("External interrupt configuration register 1 (AFIO_EXTICR1)"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Exticr"),
                 }),
             },
             BlockItem {

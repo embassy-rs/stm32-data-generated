@@ -7,6 +7,17 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("System configuration controller"),
         items: &[
             BlockItem {
+                name: "seccfgr",
+                description: Some("SYSCFG secure configuration register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Seccfgr"),
+                }),
+            },
+            BlockItem {
                 name: "cfgr1",
                 description: Some("configuration register 1"),
                 array: None,
@@ -18,14 +29,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "cfgr2",
-                description: Some("CFGR2"),
+                name: "fpuimr",
+                description: Some("FPU interrupt mask register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Cfgr2"),
+                    fieldset: Some("Fpuimr"),
                 }),
             },
             BlockItem {
@@ -51,25 +62,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "fpuimr",
-                description: Some("FPU interrupt mask register"),
+                name: "cfgr2",
+                description: Some("CFGR2"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 20,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Fpuimr"),
-                }),
-            },
-            BlockItem {
-                name: "rsscmdr",
-                description: Some("RSSCMDR"),
-                array: None,
-                byte_offset: 44,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Rsscmdr"),
+                    fieldset: Some("Cfgr2"),
                 }),
             },
             BlockItem {
@@ -81,17 +81,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Scsr"),
-                }),
-            },
-            BlockItem {
-                name: "seccfgr",
-                description: Some("SYSCFG secure configuration register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Seccfgr"),
                 }),
             },
             BlockItem {
@@ -125,6 +114,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::Write,
                     bit_size: 32,
                     fieldset: Some("Swpr2"),
+                }),
+            },
+            BlockItem {
+                name: "rsscmdr",
+                description: Some("RSSCMDR"),
+                array: None,
+                byte_offset: 44,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Rsscmdr"),
                 }),
             },
         ],

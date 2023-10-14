@@ -10,18 +10,120 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ahbenr",
+                    name: "cr",
                     description: Some(
-                        "RCC AHB peripheral clock enable register",
+                        "RCC clock control register",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahbenr",
+                                "Cr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icscr",
+                    description: Some(
+                        "RCC internal clock source calibration register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr",
+                    description: Some(
+                        "RCC clock configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cier",
+                    description: Some(
+                        "RCC clock interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cifr",
+                    description: Some(
+                        "RCC clock interrupt flag register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cifr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cicr",
+                    description: Some(
+                        "RCC clock interrupt clear register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cicr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gpiorstr",
+                    description: Some(
+                        "RCC I/O port reset register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gpiorstr",
                             ),
                         },
                     ),
@@ -44,18 +146,69 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ahbsmenr",
+                    name: "apbrstr1",
                     description: Some(
-                        "RCC AHB peripheral clock enable in Sleep/Stop mode register",
+                        "RCC APB peripheral reset register 1",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 44,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahbsmenr",
+                                "Apbrstr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apbrstr2",
+                    description: Some(
+                        "RCC APB peripheral reset register 2",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apbrstr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gpioenr",
+                    description: Some(
+                        "RCC I/O port clock enable register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gpioenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahbenr",
+                    description: Some(
+                        "RCC AHB peripheral clock enable register",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahbenr",
                             ),
                         },
                     ),
@@ -95,35 +248,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "apbrstr1",
+                    name: "gpiosmenr",
                     description: Some(
-                        "RCC APB peripheral reset register 1",
+                        "RCC I/O port in Sleep mode clock enable register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 68,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apbrstr1",
+                                "Gpiosmenr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "apbrstr2",
+                    name: "ahbsmenr",
                     description: Some(
-                        "RCC APB peripheral reset register 2",
+                        "RCC AHB peripheral clock enable in Sleep/Stop mode register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apbrstr2",
+                                "Ahbsmenr",
                             ),
                         },
                     ),
@@ -180,91 +333,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cfgr",
-                    description: Some(
-                        "RCC clock configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cicr",
-                    description: Some(
-                        "RCC clock interrupt clear register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cicr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cier",
-                    description: Some(
-                        "RCC clock interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cier",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cifr",
-                    description: Some(
-                        "RCC clock interrupt flag register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cifr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr",
-                    description: Some(
-                        "RCC clock control register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "csr1",
                     description: Some(
                         "RCC control/status register 1",
@@ -294,74 +362,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Csr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gpioenr",
-                    description: Some(
-                        "RCC I/O port clock enable register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gpioenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gpiorstr",
-                    description: Some(
-                        "RCC I/O port reset register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gpiorstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gpiosmenr",
-                    description: Some(
-                        "RCC I/O port in Sleep mode clock enable register",
-                    ),
-                    array: None,
-                    byte_offset: 68,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gpiosmenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "icscr",
-                    description: Some(
-                        "RCC internal clock source calibration register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icscr",
                             ),
                         },
                     ),

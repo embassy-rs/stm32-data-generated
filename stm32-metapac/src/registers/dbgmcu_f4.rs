@@ -7,6 +7,28 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Debug support"),
         items: &[
             BlockItem {
+                name: "idcode",
+                description: Some("IDCODE"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Idcode"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Control Register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
                 name: "apb1fzr",
                 description: Some("Debug MCU APB1 Freeze registe"),
                 array: None,
@@ -26,28 +48,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Apb2fzr"),
-                }),
-            },
-            BlockItem {
-                name: "cr",
-                description: Some("Control Register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "idcode",
-                description: Some("IDCODE"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Idcode"),
                 }),
             },
         ],

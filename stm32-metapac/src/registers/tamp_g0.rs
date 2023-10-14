@@ -10,30 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "bkpr",
-                    description: Some(
-                        "TAMP backup register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 5,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bkpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "control register 1",
@@ -85,40 +61,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "hwcfgr1",
-                    description: Some(
-                        "TAMP hardware configuration register 1",
-                    ),
-                    array: None,
-                    byte_offset: 1008,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hwcfgr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hwcfgr2",
-                    description: Some(
-                        "TAMP hardware configuration register 2",
-                    ),
-                    array: None,
-                    byte_offset: 1004,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hwcfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "ier",
                     description: Some(
                         "TAMP interrupt enable register",
@@ -136,18 +78,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ipidr",
+                    name: "sr",
                     description: Some(
-                        "EXTI Identification register",
+                        "TAMP status register",
                     ),
                     array: None,
-                    byte_offset: 1016,
+                    byte_offset: 48,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ipidr",
+                                "Sr",
                             ),
                         },
                     ),
@@ -187,35 +129,59 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sidr",
+                    name: "bkpr",
                     description: Some(
-                        "EXTI Size ID register",
+                        "TAMP backup register",
                     ),
-                    array: None,
-                    byte_offset: 1020,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 5,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 256,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sidr",
+                                "Bkpr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "sr",
+                    name: "hwcfgr2",
                     description: Some(
-                        "TAMP status register",
+                        "TAMP hardware configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 1004,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sr",
+                                "Hwcfgr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hwcfgr1",
+                    description: Some(
+                        "TAMP hardware configuration register 1",
+                    ),
+                    array: None,
+                    byte_offset: 1008,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hwcfgr1",
                             ),
                         },
                     ),
@@ -233,6 +199,40 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Verr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ipidr",
+                    description: Some(
+                        "EXTI Identification register",
+                    ),
+                    array: None,
+                    byte_offset: 1016,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ipidr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sidr",
+                    description: Some(
+                        "EXTI Size ID register",
+                    ),
+                    array: None,
+                    byte_offset: 1020,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sidr",
                             ),
                         },
                     ),

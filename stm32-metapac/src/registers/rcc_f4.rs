@@ -10,273 +10,35 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ahb1enr",
+                    name: "cr",
                     description: Some(
-                        "AHB1 peripheral clock register",
+                        "clock control register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahb1enr",
+                                "Cr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ahb1lpenr",
+                    name: "pllcfgr",
                     description: Some(
-                        "AHB1 peripheral clock enable in low power mode register",
+                        "PLL configuration register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahb1lpenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb1rstr",
-                    description: Some(
-                        "AHB1 peripheral reset register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb1rstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb2enr",
-                    description: Some(
-                        "AHB2 peripheral clock enable register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb2enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb2lpenr",
-                    description: Some(
-                        "AHB2 peripheral clock enable in low power mode register",
-                    ),
-                    array: None,
-                    byte_offset: 84,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb2lpenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb2rstr",
-                    description: Some(
-                        "AHB2 peripheral reset register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb2rstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb3enr",
-                    description: Some(
-                        "AHB3 peripheral clock enable register",
-                    ),
-                    array: None,
-                    byte_offset: 56,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb3enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb3lpenr",
-                    description: Some(
-                        "AHB3 peripheral clock enable in low power mode register",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb3lpenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ahb3rstr",
-                    description: Some(
-                        "AHB3 peripheral reset register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ahb3rstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb1enr",
-                    description: Some(
-                        "APB1 peripheral clock enable register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb1enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb1lpenr",
-                    description: Some(
-                        "APB1 peripheral clock enable in low power mode register",
-                    ),
-                    array: None,
-                    byte_offset: 96,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb1lpenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb1rstr",
-                    description: Some(
-                        "APB1 peripheral reset register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb1rstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb2enr",
-                    description: Some(
-                        "APB2 peripheral clock enable register",
-                    ),
-                    array: None,
-                    byte_offset: 68,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb2enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb2lpenr",
-                    description: Some(
-                        "APB2 peripheral clock enabled in low power mode register",
-                    ),
-                    array: None,
-                    byte_offset: 100,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb2lpenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb2rstr",
-                    description: Some(
-                        "APB2 peripheral reset register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb2rstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bdcr",
-                    description: Some(
-                        "Backup domain control register",
-                    ),
-                    array: None,
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bdcr",
+                                "Pllcfgr",
                             ),
                         },
                     ),
@@ -316,35 +78,273 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ckgatenr",
+                    name: "ahb1rstr",
                     description: Some(
-                        "Clocks gated enable register",
+                        "AHB1 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 144,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ckgatenr",
+                                "Ahb1rstr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cr",
+                    name: "ahb2rstr",
                     description: Some(
-                        "clock control register",
+                        "AHB2 peripheral reset register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cr",
+                                "Ahb2rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb3rstr",
+                    description: Some(
+                        "AHB3 peripheral reset register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb3rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1rstr",
+                    description: Some(
+                        "APB1 peripheral reset register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2rstr",
+                    description: Some(
+                        "APB2 peripheral reset register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb1enr",
+                    description: Some(
+                        "AHB1 peripheral clock register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb1enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb2enr",
+                    description: Some(
+                        "AHB2 peripheral clock enable register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb3enr",
+                    description: Some(
+                        "AHB3 peripheral clock enable register",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb3enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1enr",
+                    description: Some(
+                        "APB1 peripheral clock enable register",
+                    ),
+                    array: None,
+                    byte_offset: 64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2enr",
+                    description: Some(
+                        "APB2 peripheral clock enable register",
+                    ),
+                    array: None,
+                    byte_offset: 68,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb1lpenr",
+                    description: Some(
+                        "AHB1 peripheral clock enable in low power mode register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb1lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb2lpenr",
+                    description: Some(
+                        "AHB2 peripheral clock enable in low power mode register",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb2lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahb3lpenr",
+                    description: Some(
+                        "AHB3 peripheral clock enable in low power mode register",
+                    ),
+                    array: None,
+                    byte_offset: 88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahb3lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1lpenr",
+                    description: Some(
+                        "APB1 peripheral clock enable in low power mode register",
+                    ),
+                    array: None,
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2lpenr",
+                    description: Some(
+                        "APB2 peripheral clock enabled in low power mode register",
+                    ),
+                    array: None,
+                    byte_offset: 100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2lpenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bdcr",
+                    description: Some(
+                        "Backup domain control register",
+                    ),
+                    array: None,
+                    byte_offset: 112,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bdcr",
                             ),
                         },
                     ),
@@ -367,52 +367,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dckcfgr",
+                    name: "sscgr",
                     description: Some(
-                        "RCC Dedicated Clock Configuration Register",
+                        "spread spectrum clock generation register",
                     ),
                     array: None,
-                    byte_offset: 140,
+                    byte_offset: 128,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dckcfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dckcfgr2",
-                    description: Some(
-                        "DCKCFGR2 register",
-                    ),
-                    array: None,
-                    byte_offset: 148,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dckcfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pllcfgr",
-                    description: Some(
-                        "PLL configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pllcfgr",
+                                "Sscgr",
                             ),
                         },
                     ),
@@ -452,18 +418,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sscgr",
+                    name: "dckcfgr",
                     description: Some(
-                        "spread spectrum clock generation register",
+                        "RCC Dedicated Clock Configuration Register",
                     ),
                     array: None,
-                    byte_offset: 128,
+                    byte_offset: 140,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sscgr",
+                                "Dckcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ckgatenr",
+                    description: Some(
+                        "Clocks gated enable register",
+                    ),
+                    array: None,
+                    byte_offset: 144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ckgatenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dckcfgr2",
+                    description: Some(
+                        "DCKCFGR2 register",
+                    ),
+                    array: None,
+                    byte_offset: 148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dckcfgr2",
                             ),
                         },
                     ),

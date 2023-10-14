@@ -7,6 +7,17 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("System configuration controller"),
         items: &[
             BlockItem {
+                name: "memrmp",
+                description: Some("memory remap register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Memrmp"),
+                }),
+            },
+            BlockItem {
                 name: "cfgr1",
                 description: Some("configuration register 1"),
                 array: None,
@@ -15,17 +26,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Cfgr1"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr2",
-                description: Some("CFGR2"),
-                array: None,
-                byte_offset: 28,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr2"),
                 }),
             },
             BlockItem {
@@ -40,28 +40,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "memrmp",
-                description: Some("memory remap register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Memrmp"),
-                }),
-            },
-            BlockItem {
-                name: "rfdcr",
-                description: Some("radio debug control register"),
-                array: None,
-                byte_offset: 520,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Rfdcr"),
-                }),
-            },
-            BlockItem {
                 name: "scsr",
                 description: Some("SCSR"),
                 array: None,
@@ -70,6 +48,28 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Scsr"),
+                }),
+            },
+            BlockItem {
+                name: "cfgr2",
+                description: Some("CFGR2"),
+                array: None,
+                byte_offset: 28,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cfgr2"),
+                }),
+            },
+            BlockItem {
+                name: "swpr",
+                description: Some("SWPR"),
+                array: None,
+                byte_offset: 32,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Swpr"),
                 }),
             },
             BlockItem {
@@ -84,14 +84,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "swpr",
-                description: Some("SWPR"),
+                name: "rfdcr",
+                description: Some("radio debug control register"),
                 array: None,
-                byte_offset: 32,
+                byte_offset: 520,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Swpr"),
+                    fieldset: Some("Rfdcr"),
                 }),
             },
         ],

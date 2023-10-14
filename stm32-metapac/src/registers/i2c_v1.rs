@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Inter-integrated circuit"),
         items: &[
             BlockItem {
-                name: "ccr",
-                description: Some("Clock control register"),
-                array: None,
-                byte_offset: 28,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ccr"),
-                }),
-            },
-            BlockItem {
                 name: "cr1",
                 description: Some("Control register 1"),
                 array: None,
@@ -37,28 +26,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Cr2"),
-                }),
-            },
-            BlockItem {
-                name: "dr",
-                description: Some("Data register"),
-                array: None,
-                byte_offset: 16,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Dr"),
-                }),
-            },
-            BlockItem {
-                name: "fltr",
-                description: Some("FLTR register"),
-                array: None,
-                byte_offset: 36,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Fltr"),
                 }),
             },
             BlockItem {
@@ -84,6 +51,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "dr",
+                description: Some("Data register"),
+                array: None,
+                byte_offset: 16,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dr"),
+                }),
+            },
+            BlockItem {
                 name: "sr1",
                 description: Some("Status register 1"),
                 array: None,
@@ -106,6 +84,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "ccr",
+                description: Some("Clock control register"),
+                array: None,
+                byte_offset: 28,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ccr"),
+                }),
+            },
+            BlockItem {
                 name: "trise",
                 description: Some("TRISE register"),
                 array: None,
@@ -114,6 +103,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Trise"),
+                }),
+            },
+            BlockItem {
+                name: "fltr",
+                description: Some("FLTR register"),
+                array: None,
+                byte_offset: 36,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Fltr"),
                 }),
             },
         ],

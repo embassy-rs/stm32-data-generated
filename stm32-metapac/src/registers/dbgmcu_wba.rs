@@ -10,35 +10,35 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ahb1fzr",
+                    name: "idcode",
                     description: Some(
-                        "AHB1 peripheral freeze register",
+                        "identity code register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahb1fzr",
+                                "Idcode",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "apb1hfzr",
+                    name: "cr",
                     description: Some(
-                        "APB1H peripheral freeze register",
+                        "status and configuration register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apb1hfzr",
+                                "Cr",
                             ),
                         },
                     ),
@@ -56,6 +56,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Apb1lfzr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1hfzr",
+                    description: Some(
+                        "APB1H peripheral freeze register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1hfzr",
                             ),
                         },
                     ),
@@ -95,103 +112,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cidr0",
+                    name: "ahb1fzr",
                     description: Some(
-                        "CoreSight component identity register 0",
+                        "AHB1 peripheral freeze register",
                     ),
                     array: None,
-                    byte_offset: 4080,
+                    byte_offset: 40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cidr0",
+                                "Ahb1fzr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cidr1",
+                    name: "sr",
                     description: Some(
-                        "CoreSight peripheral identity register 1",
+                        "status register",
                     ),
                     array: None,
-                    byte_offset: 4084,
+                    byte_offset: 252,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cidr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cidr2",
-                    description: Some(
-                        "CoreSight component identity register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4088,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cidr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cidr3",
-                    description: Some(
-                        "CoreSight component identity register 3",
-                    ),
-                    array: None,
-                    byte_offset: 4092,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cidr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr",
-                    description: Some(
-                        "status and configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbg_auth_device",
-                    description: Some(
-                        "debug device authentication register",
-                    ),
-                    array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DbgAuthDevice",
+                                "Sr",
                             ),
                         },
                     ),
@@ -214,18 +163,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "idcode",
+                    name: "dbg_auth_device",
                     description: Some(
-                        "identity code register",
+                        "debug device authentication register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 260,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Idcode",
+                                "DbgAuthDevice",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pncr",
+                    description: Some(
+                        "part number codification register",
+                    ),
+                    array: None,
+                    byte_offset: 2012,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pncr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pidr4",
+                    description: Some(
+                        "CoreSight peripheral identity register 4",
+                    ),
+                    array: None,
+                    byte_offset: 4048,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pidr4",
                             ),
                         },
                     ),
@@ -299,52 +282,69 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "pidr4",
+                    name: "cidr0",
                     description: Some(
-                        "CoreSight peripheral identity register 4",
+                        "CoreSight component identity register 0",
                     ),
                     array: None,
-                    byte_offset: 4048,
+                    byte_offset: 4080,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Pidr4",
+                                "Cidr0",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pncr",
+                    name: "cidr1",
                     description: Some(
-                        "part number codification register",
+                        "CoreSight peripheral identity register 1",
                     ),
                     array: None,
-                    byte_offset: 2012,
+                    byte_offset: 4084,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Pncr",
+                                "Cidr1",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "sr",
+                    name: "cidr2",
                     description: Some(
-                        "status register",
+                        "CoreSight component identity register 2",
                     ),
                     array: None,
-                    byte_offset: 252,
+                    byte_offset: 4088,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sr",
+                                "Cidr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cidr3",
+                    description: Some(
+                        "CoreSight component identity register 3",
+                    ),
+                    array: None,
+                    byte_offset: 4092,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cidr3",
                             ),
                         },
                     ),

@@ -6146,7 +6146,7 @@ pub mod vals {
         #[doc = "pll2_r_ck selected as kernel clock"]
         PLL2_R = 0x02,
         #[doc = "per_ck selected as kernel clock"]
-        PER_CLK = 0x03,
+        PER = 0x03,
     }
     impl Octospisel {
         #[inline(always)]

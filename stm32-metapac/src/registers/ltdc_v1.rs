@@ -10,125 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "bfcr",
-                    description: Some(
-                        "Layerx Blending Factors Configuration Register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bfcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cacr",
-                    description: Some(
-                        "Layerx Constant Alpha Configuration Register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cacr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfbar",
-                    description: Some(
-                        "Layerx Color Frame Buffer Address Register",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfbar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfblnr",
-                    description: Some(
-                        "Layerx ColorFrame Buffer Line Number Register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfblnr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfblr",
-                    description: Some(
-                        "Layerx Color Frame Buffer Length Register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfblr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ckcr",
-                    description: Some(
-                        "Layerx Color Keying Configuration Register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ckcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "clutwr",
-                    description: Some(
-                        "Layerx CLUT Write Register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Clutwr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr",
                     description: Some(
                         "Layerx Control Register",
@@ -141,40 +22,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Cr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dccr",
-                    description: Some(
-                        "Layerx Default Color Configuration Register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pfcr",
-                    description: Some(
-                        "Layerx Pixel Format Configuration Register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pfcr",
                             ),
                         },
                     ),
@@ -213,6 +60,159 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "ckcr",
+                    description: Some(
+                        "Layerx Color Keying Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ckcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pfcr",
+                    description: Some(
+                        "Layerx Pixel Format Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pfcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cacr",
+                    description: Some(
+                        "Layerx Constant Alpha Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cacr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dccr",
+                    description: Some(
+                        "Layerx Default Color Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bfcr",
+                    description: Some(
+                        "Layerx Blending Factors Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bfcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfbar",
+                    description: Some(
+                        "Layerx Color Frame Buffer Address Register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfbar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfblr",
+                    description: Some(
+                        "Layerx Color Frame Buffer Length Register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfblr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfblnr",
+                    description: Some(
+                        "Layerx ColorFrame Buffer Line Number Register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfblnr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "clutwr",
+                    description: Some(
+                        "Layerx CLUT Write Register",
+                    ),
+                    array: None,
+                    byte_offset: 64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Clutwr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
         Block {
@@ -223,35 +223,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "awcr",
+                    name: "sscr",
                     description: Some(
-                        "Active Width Configuration Register",
+                        "Synchronization Size Configuration Register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Awcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bccr",
-                    description: Some(
-                        "Background Color Configuration Register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bccr",
+                                "Sscr",
                             ),
                         },
                     ),
@@ -274,35 +257,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cdsr",
+                    name: "awcr",
                     description: Some(
-                        "Current Display Status Register",
+                        "Active Width Configuration Register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cdsr",
+                                "Awcr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cpsr",
+                    name: "twcr",
                     description: Some(
-                        "Current Position Status Register",
+                        "Total Width Configuration Register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cpsr",
+                                "Twcr",
                             ),
                         },
                     ),
@@ -325,18 +308,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "icr",
+                    name: "srcr",
                     description: Some(
-                        "Interrupt Clear Register",
+                        "Shadow Reload Configuration Register",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 36,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Write,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Icr",
+                                "Srcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bccr",
+                    description: Some(
+                        "Background Color Configuration Register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bccr",
                             ),
                         },
                     ),
@@ -376,22 +376,19 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "layer",
+                    name: "icr",
                     description: Some(
-                        "Cluster LAYER%s, containing L?CR, L?WHPCR, L?WVPCR, L?CKCR, L?PFCR, L?CACR, L?DCCR, L?BFCR, L?CFBAR, L?CFBLR, L?CFBLNR, L?CLUTWR",
+                        "Interrupt Clear Register",
                     ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 128,
-                            },
-                        ),
-                    ),
-                    byte_offset: 132,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Layer",
+                    array: None,
+                    byte_offset: 60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
+                            ),
                         },
                     ),
                 },
@@ -413,53 +410,56 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "srcr",
+                    name: "cpsr",
                     description: Some(
-                        "Shadow Reload Configuration Register",
+                        "Current Position Status Register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 68,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Srcr",
+                                "Cpsr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "sscr",
+                    name: "cdsr",
                     description: Some(
-                        "Synchronization Size Configuration Register",
+                        "Current Display Status Register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sscr",
+                                "Cdsr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "twcr",
+                    name: "layer",
                     description: Some(
-                        "Total Width Configuration Register",
+                        "Cluster LAYER%s, containing L?CR, L?WHPCR, L?WVPCR, L?CKCR, L?PFCR, L?CACR, L?DCCR, L?BFCR, L?CFBAR, L?CFBLR, L?CFBLNR, L?CLUTWR",
                     ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Twcr",
-                            ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 128,
+                            },
+                        ),
+                    ),
+                    byte_offset: 132,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "Layer",
                         },
                     ),
                 },

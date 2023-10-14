@@ -10,47 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "bkpr",
-                    description: Some(
-                        "TAMP backup register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 20,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bkpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "countr",
-                    description: Some(
-                        "monotonic counter register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Countr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "control register 1",
@@ -136,6 +95,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "TAMP status register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "misr",
                     description: Some(
                         "TAMP masked interrupt status register",
@@ -170,18 +146,42 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
+                    name: "countr",
                     description: Some(
-                        "TAMP status register",
+                        "monotonic counter register",
                     ),
                     array: None,
-                    byte_offset: 48,
+                    byte_offset: 64,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sr",
+                                "Countr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bkpr",
+                    description: Some(
+                        "TAMP backup register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 20,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bkpr",
                             ),
                         },
                     ),

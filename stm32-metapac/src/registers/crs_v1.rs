@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Clock recovery system"),
         items: &[
             BlockItem {
-                name: "cfgr",
-                description: Some("configuration register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr"),
-                }),
-            },
-            BlockItem {
                 name: "cr",
                 description: Some("control register"),
                 array: None,
@@ -29,14 +18,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "icr",
-                description: Some("interrupt flag clear register"),
+                name: "cfgr",
+                description: Some("configuration register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Icr"),
+                    fieldset: Some("Cfgr"),
                 }),
             },
             BlockItem {
@@ -48,6 +37,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::Read,
                     bit_size: 32,
                     fieldset: Some("Isr"),
+                }),
+            },
+            BlockItem {
+                name: "icr",
+                description: Some("interrupt flag clear register"),
+                array: None,
+                byte_offset: 12,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Icr"),
                 }),
             },
         ],

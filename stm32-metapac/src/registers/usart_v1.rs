@@ -8,6 +8,28 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("Universal asynchronous receiver transmitter"),
             items: &[
                 BlockItem {
+                    name: "sr",
+                    description: Some("Status register"),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sr"),
+                    }),
+                },
+                BlockItem {
+                    name: "dr",
+                    description: Some("Data register"),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Dr"),
+                    }),
+                },
+                BlockItem {
                     name: "brr",
                     description: Some("Baud rate register"),
                     array: None,
@@ -51,17 +73,13 @@ pub(crate) static REGISTERS: IR = IR {
                         fieldset: Some("Cr3"),
                     }),
                 },
-                BlockItem {
-                    name: "dr",
-                    description: Some("Data register"),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Dr"),
-                    }),
-                },
+            ],
+        },
+        Block {
+            name: "Usart",
+            extends: Some("UART"),
+            description: Some("Universal synchronous asynchronous receiver transmitter"),
+            items: &[
                 BlockItem {
                     name: "sr",
                     description: Some("Status register"),
@@ -73,13 +91,17 @@ pub(crate) static REGISTERS: IR = IR {
                         fieldset: Some("Sr"),
                     }),
                 },
-            ],
-        },
-        Block {
-            name: "Usart",
-            extends: Some("UART"),
-            description: Some("Universal synchronous asynchronous receiver transmitter"),
-            items: &[
+                BlockItem {
+                    name: "dr",
+                    description: Some("Data register"),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Dr"),
+                    }),
+                },
                 BlockItem {
                     name: "brr",
                     description: Some("Baud rate register"),
@@ -125,17 +147,6 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
-                    name: "dr",
-                    description: Some("Data register"),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Dr"),
-                    }),
-                },
-                BlockItem {
                     name: "gtpr",
                     description: Some("Guard time and prescaler register"),
                     array: None,
@@ -144,17 +155,6 @@ pub(crate) static REGISTERS: IR = IR {
                         access: Access::ReadWrite,
                         bit_size: 32,
                         fieldset: Some("Gtpr"),
-                    }),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some("Status register"),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Sr"),
                     }),
                 },
             ],

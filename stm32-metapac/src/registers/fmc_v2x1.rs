@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Flexible memory controller"),
         items: &[
             BlockItem {
-                name: "bcr",
-                description: Some("SRAM/NOR-Flash chip-select control register 2-4"),
-                array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Bcr"),
-                }),
-            },
-            BlockItem {
                 name: "bcr1",
                 description: Some("SRAM/NOR-Flash chip-select control register 1"),
                 array: None,
@@ -40,36 +29,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "bwtr",
-                description: Some("SRAM/NOR-Flash write timing registers 1-4"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
-                byte_offset: 260,
+                name: "bcr",
+                description: Some("SRAM/NOR-Flash chip-select control register 2-4"),
+                array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
+                byte_offset: 8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Bwtr"),
-                }),
-            },
-            BlockItem {
-                name: "eccr",
-                description: Some("ECC result register"),
-                array: None,
-                byte_offset: 148,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Eccr"),
-                }),
-            },
-            BlockItem {
-                name: "patt",
-                description: Some("Attribute memory space timing register"),
-                array: None,
-                byte_offset: 140,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Patt"),
+                    fieldset: Some("Bcr"),
                 }),
             },
             BlockItem {
@@ -84,6 +51,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "sr",
+                description: Some("FIFO status and interrupt register"),
+                array: None,
+                byte_offset: 132,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
                 name: "pmem",
                 description: Some("Common memory space timing register"),
                 array: None,
@@ -95,14 +73,36 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "sdcmr",
-                description: Some("SDRAM Command Mode register"),
+                name: "patt",
+                description: Some("Attribute memory space timing register"),
                 array: None,
-                byte_offset: 336,
+                byte_offset: 140,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Sdcmr"),
+                    fieldset: Some("Patt"),
+                }),
+            },
+            BlockItem {
+                name: "eccr",
+                description: Some("ECC result register"),
+                array: None,
+                byte_offset: 148,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Eccr"),
+                }),
+            },
+            BlockItem {
+                name: "bwtr",
+                description: Some("SRAM/NOR-Flash write timing registers 1-4"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
+                byte_offset: 260,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Bwtr"),
                 }),
             },
             BlockItem {
@@ -114,6 +114,28 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Sdcr"),
+                }),
+            },
+            BlockItem {
+                name: "sdtr",
+                description: Some("SDRAM Timing register 1-2"),
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
+                byte_offset: 328,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sdtr"),
+                }),
+            },
+            BlockItem {
+                name: "sdcmr",
+                description: Some("SDRAM Command Mode register"),
+                array: None,
+                byte_offset: 336,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sdcmr"),
                 }),
             },
             BlockItem {
@@ -136,28 +158,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::Read,
                     bit_size: 32,
                     fieldset: Some("Sdsr"),
-                }),
-            },
-            BlockItem {
-                name: "sdtr",
-                description: Some("SDRAM Timing register 1-2"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                byte_offset: 328,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Sdtr"),
-                }),
-            },
-            BlockItem {
-                name: "sr",
-                description: Some("FIFO status and interrupt register"),
-                array: None,
-                byte_offset: 132,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Sr"),
                 }),
             },
         ],

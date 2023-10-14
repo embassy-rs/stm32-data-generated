@@ -10,115 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "atcr1",
-                    description: Some(
-                        "TAMP active tamper control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Atcr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "atcr2",
-                    description: Some(
-                        "TAMP active tamper control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Atcr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ator",
-                    description: Some(
-                        "TAMP active tamper output register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ator",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "atseedr",
-                    description: Some(
-                        "TAMP active tamper seed register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Atseedr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bkpr",
-                    description: Some(
-                        "TAMP backup X register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 32,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bkpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "countr",
-                    description: Some(
-                        "TAMP monotonic counter 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Countr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "TAMP control register 1",
@@ -170,23 +61,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ercfgr",
-                    description: Some(
-                        "TAMP erase configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 84,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ercfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "fltcr",
                     description: Some(
                         "TAMP filter control register",
@@ -204,69 +78,69 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ier",
+                    name: "atcr1",
                     description: Some(
-                        "TAMP interrupt enable register",
+                        "TAMP active tamper control register 1",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ier",
+                                "Atcr1",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "misr",
+                    name: "atseedr",
                     description: Some(
-                        "TAMP non-secure masked interrupt status register",
+                        "TAMP active tamper seed register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Misr",
+                                "Atseedr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "privcr",
+                    name: "ator",
                     description: Some(
-                        "TAMP privilege mode control register",
+                        "TAMP active tamper output register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Privcr",
+                                "Ator",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "scr",
+                    name: "atcr2",
                     description: Some(
-                        "TAMP status clear register",
+                        "TAMP active tamper control register 2",
                     ),
                     array: None,
-                    byte_offset: 60,
+                    byte_offset: 28,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Scr",
+                                "Atcr2",
                             ),
                         },
                     ),
@@ -289,18 +163,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "smisr",
+                    name: "privcr",
                     description: Some(
-                        "TAMP secure masked interrupt status register",
+                        "TAMP privilege mode control register",
                     ),
                     array: None,
-                    byte_offset: 56,
+                    byte_offset: 36,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Smisr",
+                                "Privcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ier",
+                    description: Some(
+                        "TAMP interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ier",
                             ),
                         },
                     ),
@@ -318,6 +209,115 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "misr",
+                    description: Some(
+                        "TAMP non-secure masked interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Misr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "smisr",
+                    description: Some(
+                        "TAMP secure masked interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Smisr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "scr",
+                    description: Some(
+                        "TAMP status clear register",
+                    ),
+                    array: None,
+                    byte_offset: 60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Scr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "countr",
+                    description: Some(
+                        "TAMP monotonic counter 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Countr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ercfgr",
+                    description: Some(
+                        "TAMP erase configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ercfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bkpr",
+                    description: Some(
+                        "TAMP backup X register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bkpr",
                             ),
                         },
                     ),

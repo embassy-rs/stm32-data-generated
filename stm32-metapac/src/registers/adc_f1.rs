@@ -7,6 +7,17 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Analog-to-digital converter"),
         items: &[
             BlockItem {
+                name: "sr",
+                description: Some("status register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
                 name: "cr1",
                 description: Some("control register 1"),
                 array: None,
@@ -29,72 +40,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "dr",
-                description: Some("regular data register"),
-                array: None,
-                byte_offset: 76,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Dr"),
-                }),
-            },
-            BlockItem {
-                name: "htr",
-                description: Some("watchdog higher threshold register"),
-                array: None,
-                byte_offset: 36,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Htr"),
-                }),
-            },
-            BlockItem {
-                name: "jdr",
-                description: Some("injected data register x"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 60,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Jdr"),
-                }),
-            },
-            BlockItem {
-                name: "jofr",
-                description: Some("injected channel data offset register x"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 20,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Jofr"),
-                }),
-            },
-            BlockItem {
-                name: "jsqr",
-                description: Some("injected sequence register"),
-                array: None,
-                byte_offset: 56,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Jsqr"),
-                }),
-            },
-            BlockItem {
-                name: "ltr",
-                description: Some("watchdog lower threshold register"),
-                array: None,
-                byte_offset: 40,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ltr"),
-                }),
-            },
-            BlockItem {
                 name: "smpr1",
                 description: Some("sample time register 1"),
                 array: None,
@@ -114,6 +59,39 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Smpr2"),
+                }),
+            },
+            BlockItem {
+                name: "jofr",
+                description: Some("injected channel data offset register x"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Jofr"),
+                }),
+            },
+            BlockItem {
+                name: "htr",
+                description: Some("watchdog higher threshold register"),
+                array: None,
+                byte_offset: 36,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Htr"),
+                }),
+            },
+            BlockItem {
+                name: "ltr",
+                description: Some("watchdog lower threshold register"),
+                array: None,
+                byte_offset: 40,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ltr"),
                 }),
             },
             BlockItem {
@@ -150,14 +128,36 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "sr",
-                description: Some("status register"),
+                name: "jsqr",
+                description: Some("injected sequence register"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 56,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Sr"),
+                    fieldset: Some("Jsqr"),
+                }),
+            },
+            BlockItem {
+                name: "jdr",
+                description: Some("injected data register x"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 60,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Jdr"),
+                }),
+            },
+            BlockItem {
+                name: "dr",
+                description: Some("regular data register"),
+                array: None,
+                byte_offset: 76,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Dr"),
                 }),
             },
         ],

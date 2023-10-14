@@ -27,52 +27,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cfgr2",
+                    name: "rcr",
                     description: Some(
-                        "configuration register 2",
+                        "CCM SRAM protection register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfgr3",
-                    description: Some(
-                        "configuration register 3",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfgr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfgr4",
-                    description: Some(
-                        "configuration register 4",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfgr4",
+                                "Rcr",
                             ),
                         },
                     ),
@@ -102,18 +68,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "rcr",
+                    name: "cfgr2",
                     description: Some(
-                        "CCM SRAM protection register",
+                        "configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 24,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Rcr",
+                                "Cfgr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr4",
+                    description: Some(
+                        "configuration register 4",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr4",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr3",
+                    description: Some(
+                        "configuration register 3",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr3",
                             ),
                         },
                     ),

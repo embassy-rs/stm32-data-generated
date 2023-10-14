@@ -29,17 +29,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "cfgr3",
-                description: Some("CFGR3"),
-                array: None,
-                byte_offset: 32,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr3"),
-                }),
-            },
-            BlockItem {
                 name: "exticr",
                 description: Some("external interrupt configuration register"),
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
@@ -48,6 +37,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Exticr"),
+                }),
+            },
+            BlockItem {
+                name: "cfgr3",
+                description: Some("CFGR3"),
+                array: None,
+                byte_offset: 32,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cfgr3"),
                 }),
             },
         ],

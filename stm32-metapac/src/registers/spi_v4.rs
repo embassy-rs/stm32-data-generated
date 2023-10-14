@@ -10,40 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "cfg1",
-                    description: Some(
-                        "configuration register 1",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfg1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cfg2",
-                    description: Some(
-                        "configuration register 2",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cfg2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "control register 1",
@@ -78,18 +44,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "crcpoly",
+                    name: "cfg1",
                     description: Some(
-                        "Polynomial Register",
+                        "configuration register 1",
                     ),
                     array: None,
-                    byte_offset: 64,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Crcpoly",
+                                "Cfg1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfg2",
+                    description: Some(
+                        "configuration register 2",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfg2",
                             ),
                         },
                     ),
@@ -112,6 +95,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "Status Register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "ifcr",
                     description: Some(
                         "Interrupt/Status Flags Clear Register",
@@ -129,18 +129,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "rxcrc",
+                    name: "txdr",
                     description: Some(
-                        "Receiver CRC Register",
+                        "Transmit Data Register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 32,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
-                                "Rxcrc",
+                                "Txdr",
                             ),
                         },
                     ),
@@ -163,18 +163,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
+                    name: "crcpoly",
                     description: Some(
-                        "Status Register",
+                        "Polynomial Register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 64,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sr",
+                                "Crcpoly",
                             ),
                         },
                     ),
@@ -197,18 +197,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "txdr",
+                    name: "rxcrc",
                     description: Some(
-                        "Transmit Data Register",
+                        "Receiver CRC Register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Write,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Txdr",
+                                "Rxcrc",
                             ),
                         },
                     ),

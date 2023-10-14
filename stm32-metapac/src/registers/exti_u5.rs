@@ -7,32 +7,10 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("External interrupt/event controller"),
         items: &[
             BlockItem {
-                name: "emr",
-                description: Some("Event mask register"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                byte_offset: 132,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Lines"),
-                }),
-            },
-            BlockItem {
-                name: "exticr",
-                description: Some("Configuration register"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 96,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Exticr"),
-                }),
-            },
-            BlockItem {
-                name: "fpr",
-                description: Some("Falling pending register"),
+                name: "rtsr",
+                description: Some("Rising Trigger selection register"),
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 32 })),
-                byte_offset: 16,
+                byte_offset: 0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -51,36 +29,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "imr",
-                description: Some("Interrupt mask register"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                byte_offset: 128,
+                name: "swier",
+                description: Some("Software interrupt event register"),
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 32 })),
+                byte_offset: 8,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Lines"),
-                }),
-            },
-            BlockItem {
-                name: "lockrg",
-                description: Some("EXTI lock register"),
-                array: None,
-                byte_offset: 112,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Lockrg"),
-                }),
-            },
-            BlockItem {
-                name: "privcfgr",
-                description: Some("Privilege configuration register"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 28 })),
-                byte_offset: 24,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Privcfgr"),
                 }),
             },
             BlockItem {
@@ -95,10 +51,10 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "rtsr",
-                description: Some("Rising Trigger selection register"),
+                name: "fpr",
+                description: Some("Falling pending register"),
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 32 })),
-                byte_offset: 0,
+                byte_offset: 16,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
@@ -117,10 +73,54 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "swier",
-                description: Some("Software interrupt event register"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 32 })),
-                byte_offset: 8,
+                name: "privcfgr",
+                description: Some("Privilege configuration register"),
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 28 })),
+                byte_offset: 24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Privcfgr"),
+                }),
+            },
+            BlockItem {
+                name: "exticr",
+                description: Some("Configuration register"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 96,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Exticr"),
+                }),
+            },
+            BlockItem {
+                name: "lockrg",
+                description: Some("EXTI lock register"),
+                array: None,
+                byte_offset: 112,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Lockrg"),
+                }),
+            },
+            BlockItem {
+                name: "imr",
+                description: Some("Interrupt mask register"),
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                byte_offset: 128,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Lines"),
+                }),
+            },
+            BlockItem {
+                name: "emr",
+                description: Some("Event mask register"),
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                byte_offset: 132,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,

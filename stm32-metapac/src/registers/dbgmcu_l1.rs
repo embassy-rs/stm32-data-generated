@@ -7,6 +7,28 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("debug support"),
         items: &[
             BlockItem {
+                name: "idcode",
+                description: Some("DBGMCU_IDCODE"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Idcode"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Debug MCU configuration register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
                 name: "apb1_fz",
                 description: Some("Debug MCU APB1 freeze register1"),
                 array: None,
@@ -26,28 +48,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Apb2Fz"),
-                }),
-            },
-            BlockItem {
-                name: "cr",
-                description: Some("Debug MCU configuration register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "idcode",
-                description: Some("DBGMCU_IDCODE"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Idcode"),
                 }),
             },
         ],

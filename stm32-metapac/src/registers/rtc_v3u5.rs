@@ -10,25 +10,256 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "alrbinr",
+                    name: "tr",
                     description: Some(
-                        "Alarm binary mode register",
+                        "Time register",
                     ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 112,
+                    array: None,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Alrbinr",
+                                "Tr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dr",
+                    description: Some(
+                        "Date register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ssr",
+                    description: Some(
+                        "Sub second register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icsr",
+                    description: Some(
+                        "Initialization control and status register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "prer",
+                    description: Some(
+                        "Prescaler register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Prer",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wutr",
+                    description: Some(
+                        "Wakeup timer register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wutr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr",
+                    description: Some(
+                        "Control register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "privcr",
+                    description: Some(
+                        "Privilege mode control register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Privcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "seccfgr",
+                    description: Some(
+                        "Secure mode control register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Seccfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wpr",
+                    description: Some(
+                        "Write protection register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wpr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "calr",
+                    description: Some(
+                        "Calibration register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Calr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "shiftr",
+                    description: Some(
+                        "Shift control register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Shiftr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tstr",
+                    description: Some(
+                        "Timestamp time register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tsdr",
+                    description: Some(
+                        "Timestamp date register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tsdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tsssr",
+                    description: Some(
+                        "Timestamp sub second register",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tsssr",
                             ),
                         },
                     ),
@@ -82,69 +313,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "calr",
+                    name: "sr",
                     description: Some(
-                        "Calibration register",
+                        "Status register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 80,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Calr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr",
-                    description: Some(
-                        "Control register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dr",
-                    description: Some(
-                        "Date register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "icsr",
-                    description: Some(
-                        "Initialization control and status register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icsr",
+                                "Sr",
                             ),
                         },
                     ),
@@ -167,35 +347,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "prer",
+                    name: "smisr",
                     description: Some(
-                        "Prescaler register",
+                        "Secure masked interrupt status register",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 88,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Prer",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "privcr",
-                    description: Some(
-                        "Privilege mode control register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Privcr",
+                                "Smisr",
                             ),
                         },
                     ),
@@ -218,188 +381,25 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "seccfgr",
+                    name: "alrbinr",
                     description: Some(
-                        "Secure mode control register",
+                        "Alarm binary mode register",
                     ),
-                    array: None,
-                    byte_offset: 32,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 112,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seccfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "shiftr",
-                    description: Some(
-                        "Shift control register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Shiftr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smisr",
-                    description: Some(
-                        "Secure masked interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smisr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "Status register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ssr",
-                    description: Some(
-                        "Sub second register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ssr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tr",
-                    description: Some(
-                        "Time register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Tr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tsdr",
-                    description: Some(
-                        "Timestamp date register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Tsdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tsssr",
-                    description: Some(
-                        "Timestamp sub second register",
-                    ),
-                    array: None,
-                    byte_offset: 56,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Tsssr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tstr",
-                    description: Some(
-                        "Timestamp time register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Tstr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "wpr",
-                    description: Some(
-                        "Write protection register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Wpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "wutr",
-                    description: Some(
-                        "Wakeup timer register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Wutr",
+                                "Alrbinr",
                             ),
                         },
                     ),

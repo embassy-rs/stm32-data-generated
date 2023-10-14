@@ -18,17 +18,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "dr",
-                description: Some("data register"),
-                array: None,
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: None,
-                }),
-            },
-            BlockItem {
                 name: "sr",
                 description: Some("status register"),
                 array: None,
@@ -37,6 +26,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
+                name: "dr",
+                description: Some("data register"),
+                array: None,
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: None,
                 }),
             },
         ],

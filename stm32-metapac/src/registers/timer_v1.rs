@@ -12,52 +12,103 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "arr",
+                    name: "cr1",
                     description: Some(
-                        "auto-reload register",
+                        "control register 1",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Arr16",
+                                "Cr1Gp",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "bdtr",
+                    name: "cr2",
                     description: Some(
-                        "break and dead-time register",
+                        "control register 2",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Bdtr",
+                                "Cr2Adv",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ccer",
+                    name: "smcr",
                     description: Some(
-                        "capture/compare enable register",
+                        "slave mode control register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "CcerAdv",
+                                "Smcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dier",
+                    description: Some(
+                        "DMA/Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DierAdv",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "status register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "SrAdv",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "egr",
+                    description: Some(
+                        "event generation register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EgrAdv",
                             ),
                         },
                     ),
@@ -111,6 +162,91 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "ccer",
+                    description: Some(
+                        "capture/compare enable register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcerAdv",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psc",
+                    description: Some(
+                        "prescaler",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "arr",
+                    description: Some(
+                        "auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Arr16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rcr",
+                    description: Some(
+                        "repetition counter register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "ccr",
                     description: Some(
                         "capture/compare register",
@@ -135,52 +271,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cnt",
+                    name: "bdtr",
                     description: Some(
-                        "counter",
+                        "break and dead-time register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 68,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cnt16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr1",
-                    description: Some(
-                        "control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr2",
-                    description: Some(
-                        "control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2Adv",
+                                "Bdtr",
                             ),
                         },
                     ),
@@ -203,23 +305,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dier",
-                    description: Some(
-                        "DMA/Interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DierAdv",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "dmar",
                     description: Some(
                         "DMA address for full transfer",
@@ -236,91 +321,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-                BlockItem {
-                    name: "egr",
-                    description: Some(
-                        "event generation register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EgrAdv",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psc",
-                    description: Some(
-                        "prescaler",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rcr",
-                    description: Some(
-                        "repetition counter register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smcr",
-                    description: Some(
-                        "slave mode control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrAdv",
-                            ),
-                        },
-                    ),
-                },
             ],
         },
         Block {
@@ -330,40 +330,6 @@ pub(crate) static REGISTERS: IR = IR {
                 "Basic timer",
             ),
             items: &[
-                BlockItem {
-                    name: "arr",
-                    description: Some(
-                        "auto-reload register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Arr16",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cnt",
-                    description: Some(
-                        "counter",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cnt16",
-                            ),
-                        },
-                    ),
-                },
                 BlockItem {
                     name: "cr1",
                     description: Some(
@@ -416,6 +382,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "status register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "SrBasic",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "egr",
                     description: Some(
                         "event generation register",
@@ -428,6 +411,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "EgrBasic",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt16",
                             ),
                         },
                     ),
@@ -450,34 +450,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrBasic",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "TimGp16",
-            extends: Some(
-                "TIM_BASIC",
-            ),
-            description: Some(
-                "General purpose 16-bit timer",
-            ),
-            items: &[
-                BlockItem {
                     name: "arr",
                     description: Some(
                         "auto-reload register",
@@ -494,19 +466,115 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+            ],
+        },
+        Block {
+            name: "TimGp16",
+            extends: Some(
+                "TIM_BASIC",
+            ),
+            description: Some(
+                "General purpose 16-bit timer",
+            ),
+            items: &[
                 BlockItem {
-                    name: "ccer",
+                    name: "cr1",
                     description: Some(
-                        "capture/compare enable register",
+                        "control register 1",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "CcerGp",
+                                "Cr1Gp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr2",
+                    description: Some(
+                        "control register 2",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr2Gp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "smcr",
+                    description: Some(
+                        "slave mode control register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Smcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dier",
+                    description: Some(
+                        "DMA/Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DierGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "status register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "SrGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "egr",
+                    description: Some(
+                        "event generation register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EgrGp",
                             ),
                         },
                     ),
@@ -555,6 +623,74 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "CcmrOutput",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccer",
+                    description: Some(
+                        "capture/compare enable register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcerGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt16",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psc",
+                    description: Some(
+                        "prescaler",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "arr",
+                    description: Some(
+                        "auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Arr16",
                             ),
                         },
                     ),
@@ -584,22 +720,50 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cnt",
+                    name: "dcr",
                     description: Some(
-                        "counter",
+                        "DMA control register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cnt16",
+                                "Dcr",
                             ),
                         },
                     ),
                 },
+                BlockItem {
+                    name: "dmar",
+                    description: Some(
+                        "DMA address for full transfer",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmar",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
+            name: "TimGp32",
+            extends: Some(
+                "TIM_GP16",
+            ),
+            description: Some(
+                "General purpose 32-bit timer",
+            ),
+            items: &[
                 BlockItem {
                     name: "cr1",
                     description: Some(
@@ -635,18 +799,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dcr",
+                    name: "smcr",
                     description: Some(
-                        "DMA control register",
+                        "slave mode control register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dcr",
+                                "Smcr",
                             ),
                         },
                     ),
@@ -669,18 +833,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmar",
+                    name: "sr",
                     description: Some(
-                        "DMA address for full transfer",
+                        "status register",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmar",
+                                "SrGp",
                             ),
                         },
                     ),
@@ -698,102 +862,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "EgrGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psc",
-                    description: Some(
-                        "prescaler",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smcr",
-                    description: Some(
-                        "slave mode control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrGp",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-        Block {
-            name: "TimGp32",
-            extends: Some(
-                "TIM_GP16",
-            ),
-            description: Some(
-                "General purpose 32-bit timer",
-            ),
-            items: &[
-                BlockItem {
-                    name: "arr",
-                    description: Some(
-                        "auto-reload register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Arr32",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccer",
-                    description: Some(
-                        "capture/compare enable register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "CcerGp",
                             ),
                         },
                     ),
@@ -847,6 +915,74 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "ccer",
+                    description: Some(
+                        "capture/compare enable register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "CcerGp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cnt",
+                    description: Some(
+                        "counter",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cnt32",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "psc",
+                    description: Some(
+                        "prescaler",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Psc",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "arr",
+                    description: Some(
+                        "auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Arr32",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "ccr",
                     description: Some(
                         "capture/compare register",
@@ -871,57 +1007,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cnt",
-                    description: Some(
-                        "counter",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cnt32",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr1",
-                    description: Some(
-                        "control register 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr2",
-                    description: Some(
-                        "control register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2Gp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "dcr",
                     description: Some(
                         "DMA control register",
@@ -939,23 +1024,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dier",
-                    description: Some(
-                        "DMA/Interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DierGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "dmar",
                     description: Some(
                         "DMA address for full transfer",
@@ -968,74 +1036,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Dmar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "egr",
-                    description: Some(
-                        "event generation register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "EgrGp",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "psc",
-                    description: Some(
-                        "prescaler",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Psc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smcr",
-                    description: Some(
-                        "slave mode control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SrGp",
                             ),
                         },
                     ),

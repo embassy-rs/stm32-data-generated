@@ -10,57 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "bcdr",
-                    description: Some(
-                        "Battery charging detector",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bcdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cntr",
-                    description: Some(
-                        "control register",
-                    ),
-                    array: None,
-                    byte_offset: 64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cntr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "daddr",
-                    description: Some(
-                        "device address",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Daddr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "epr",
                     description: Some(
                         "endpoint/channel",
@@ -85,18 +34,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "fnr",
+                    name: "cntr",
                     description: Some(
-                        "frame number register",
+                        "control register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 64,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Fnr",
+                                "Cntr",
                             ),
                         },
                     ),
@@ -119,6 +68,40 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "fnr",
+                    description: Some(
+                        "frame number register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fnr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "daddr",
+                    description: Some(
+                        "device address",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Daddr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "lpmcsr",
                     description: Some(
                         "LPM control and status register",
@@ -131,6 +114,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Lpmcsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bcdr",
+                    description: Some(
+                        "Battery charging detector",
+                    ),
+                    array: None,
+                    byte_offset: 88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bcdr",
                             ),
                         },
                     ),

@@ -78,23 +78,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "icr",
-                    description: Some(
-                        "interrupt clear register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "imr",
                     description: Some(
                         "interrupt mask register",
@@ -112,136 +95,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ipid",
-                    description: Some(
-                        "UCPD IP ID register",
-                    ),
-                    array: None,
-                    byte_offset: 1016,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ipid",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ipver",
-                    description: Some(
-                        "UCPD IP ID register",
-                    ),
-                    array: None,
-                    byte_offset: 1012,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ipver",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mid",
-                    description: Some(
-                        "UCPD IP ID register",
-                    ),
-                    array: None,
-                    byte_offset: 1020,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mid",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_ordextr1",
-                    description: Some(
-                        "Rx ordered set extension register 1",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxOrdextr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_ordextr2",
-                    description: Some(
-                        "Rx ordered set extension register 2",
-                    ),
-                    array: None,
-                    byte_offset: 56,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxOrdextr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_ordsetr",
-                    description: None,
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxOrdsetr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rx_payszr",
-                    description: None,
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "RxPayszr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rxdr",
-                    description: None,
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rxdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "sr",
                     description: Some(
                         "status register",
@@ -254,6 +107,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icr",
+                    description: Some(
+                        "interrupt clear register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
                             ),
                         },
                     ),
@@ -305,6 +175,136 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Txdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_ordsetr",
+                    description: None,
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxOrdsetr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_payszr",
+                    description: None,
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxPayszr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rxdr",
+                    description: None,
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rxdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_ordextr1",
+                    description: Some(
+                        "Rx ordered set extension register 1",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxOrdextr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rx_ordextr2",
+                    description: Some(
+                        "Rx ordered set extension register 2",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "RxOrdextr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ipver",
+                    description: Some(
+                        "UCPD IP ID register",
+                    ),
+                    array: None,
+                    byte_offset: 1012,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ipver",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ipid",
+                    description: Some(
+                        "UCPD IP ID register",
+                    ),
+                    array: None,
+                    byte_offset: 1016,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ipid",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mid",
+                    description: Some(
+                        "UCPD IP ID register",
+                    ),
+                    array: None,
+                    byte_offset: 1020,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mid",
                             ),
                         },
                     ),

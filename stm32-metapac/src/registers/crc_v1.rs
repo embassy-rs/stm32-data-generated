@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Cyclic Redundancy Check calculation unit"),
         items: &[
             BlockItem {
-                name: "cr",
-                description: Some("Control register"),
-                array: None,
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
                 name: "dr",
                 description: Some("Data register"),
                 array: None,
@@ -37,6 +26,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Control register"),
+                array: None,
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
                 }),
             },
         ],

@@ -10,23 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "cpucr",
-                    description: Some(
-                        "This register allows controlling CPU1 power.",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cpucr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "PWR control register 1",
@@ -39,6 +22,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Cr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "csr1",
+                    description: Some(
+                        "PWR control status register 1",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Csr1",
                             ),
                         },
                     ),
@@ -78,18 +78,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "csr1",
+                    name: "cpucr",
                     description: Some(
-                        "PWR control status register 1",
+                        "This register allows controlling CPU1 power.",
                     ),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Csr1",
+                                "Cpucr",
                             ),
                         },
                     ),
@@ -129,23 +129,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "wkupepr",
-                    description: Some(
-                        "Reset only by system reset, not reset by wakeup from Standby mode",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Wkupepr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "wkupfr",
                     description: Some(
                         "reset only by system reset, not reset by wakeup from Standby mode",
@@ -158,6 +141,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Wkupfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wkupepr",
+                    description: Some(
+                        "Reset only by system reset, not reset by wakeup from Standby mode",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wkupepr",
                             ),
                         },
                     ),

@@ -10,108 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "amtcr",
-                    description: Some(
-                        "DMA2D AXI master timer configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Amtcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bgcmar",
-                    description: Some(
-                        "DMA2D background CLUT memory address register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bgcmar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bgcolr",
-                    description: Some(
-                        "DMA2D background color register",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bgcolr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bgmar",
-                    description: Some(
-                        "DMA2D background memory address register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bgmar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bgor",
-                    description: Some(
-                        "DMA2D background offset register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bgor",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bgpfccr",
-                    description: Some(
-                        "DMA2D background PFC control register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bgpfccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr",
                     description: Some(
                         "DMA2D control register",
@@ -129,35 +27,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "fgcmar",
+                    name: "isr",
                     description: Some(
-                        "DMA2D foreground CLUT memory address register",
+                        "DMA2D Interrupt Status Register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Fgcmar",
+                                "Isr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "fgcolr",
+                    name: "ifcr",
                     description: Some(
-                        "DMA2D foreground color register",
+                        "DMA2D interrupt flag clear register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Fgcolr",
+                                "Ifcr",
                             ),
                         },
                     ),
@@ -197,6 +95,40 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "bgmar",
+                    description: Some(
+                        "DMA2D background memory address register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bgmar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bgor",
+                    description: Some(
+                        "DMA2D background offset register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bgor",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "fgpfccr",
                     description: Some(
                         "DMA2D foreground PFC control register",
@@ -214,69 +146,103 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ifcr",
+                    name: "fgcolr",
                     description: Some(
-                        "DMA2D interrupt flag clear register",
+                        "DMA2D foreground color register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 32,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ifcr",
+                                "Fgcolr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "isr",
+                    name: "bgpfccr",
                     description: Some(
-                        "DMA2D Interrupt Status Register",
+                        "DMA2D background PFC control register",
                     ),
                     array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Isr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "lwr",
-                    description: Some(
-                        "DMA2D line watermark register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
+                    byte_offset: 36,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Lwr",
+                                "Bgpfccr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "nlr",
+                    name: "bgcolr",
                     description: Some(
-                        "DMA2D number of line register",
+                        "DMA2D background color register",
                     ),
                     array: None,
-                    byte_offset: 68,
+                    byte_offset: 40,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nlr",
+                                "Bgcolr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fgcmar",
+                    description: Some(
+                        "DMA2D foreground CLUT memory address register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fgcmar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bgcmar",
+                    description: Some(
+                        "DMA2D background CLUT memory address register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bgcmar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "opfccr",
+                    description: Some(
+                        "DMA2D output PFC control register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Opfccr",
                             ),
                         },
                     ),
@@ -333,18 +299,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "opfccr",
+                    name: "nlr",
                     description: Some(
-                        "DMA2D output PFC control register",
+                        "DMA2D number of line register",
                     ),
                     array: None,
-                    byte_offset: 52,
+                    byte_offset: 68,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Opfccr",
+                                "Nlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lwr",
+                    description: Some(
+                        "DMA2D line watermark register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lwr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "amtcr",
+                    description: Some(
+                        "DMA2D AXI master timer configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Amtcr",
                             ),
                         },
                     ),

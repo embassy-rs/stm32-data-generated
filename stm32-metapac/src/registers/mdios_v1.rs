@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Management data input/output slave"),
         items: &[
             BlockItem {
-                name: "clrfr",
-                description: Some("MDIOS clear flag register"),
-                array: None,
-                byte_offset: 24,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Clrfr"),
-                }),
-            },
-            BlockItem {
                 name: "cr",
                 description: Some("MDIOS configuration register"),
                 array: None,
@@ -26,6 +15,39 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
+                name: "wrfr",
+                description: Some("MDIOS write flag register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Wrfr"),
+                }),
+            },
+            BlockItem {
+                name: "cwrfr",
+                description: Some("MDIOS clear write flag register"),
+                array: None,
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cwrfr"),
+                }),
+            },
+            BlockItem {
+                name: "rdfr",
+                description: Some("MDIOS read flag register"),
+                array: None,
+                byte_offset: 12,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Rdfr"),
                 }),
             },
             BlockItem {
@@ -40,14 +62,25 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "cwrfr",
-                description: Some("MDIOS clear write flag register"),
+                name: "sr",
+                description: Some("MDIOS status register"),
                 array: None,
-                byte_offset: 8,
+                byte_offset: 20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
+                name: "clrfr",
+                description: Some("MDIOS clear flag register"),
+                array: None,
+                byte_offset: 24,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Cwrfr"),
+                    fieldset: Some("Clrfr"),
                 }),
             },
             BlockItem {
@@ -70,39 +103,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Doutr"),
-                }),
-            },
-            BlockItem {
-                name: "rdfr",
-                description: Some("MDIOS read flag register"),
-                array: None,
-                byte_offset: 12,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Rdfr"),
-                }),
-            },
-            BlockItem {
-                name: "sr",
-                description: Some("MDIOS status register"),
-                array: None,
-                byte_offset: 20,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Sr"),
-                }),
-            },
-            BlockItem {
-                name: "wrfr",
-                description: Some("MDIOS write flag register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Wrfr"),
                 }),
             },
         ],

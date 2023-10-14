@@ -7,25 +7,14 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("System configuration controller"),
         items: &[
             BlockItem {
-                name: "c2imr1",
-                description: Some("SYSCFG CPU2 interrupt mask register 1"),
+                name: "memrmp",
+                description: Some("memory remap register"),
                 array: None,
-                byte_offset: 264,
+                byte_offset: 0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("C2imr1"),
-                }),
-            },
-            BlockItem {
-                name: "c2imr2",
-                description: Some("SYSCFG CPU2 interrupt mask register 2"),
-                array: None,
-                byte_offset: 268,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("C2imr2"),
+                    fieldset: Some("Memrmp"),
                 }),
             },
             BlockItem {
@@ -40,6 +29,28 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "exticr",
+                description: Some("external interrupt configuration register 1"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Exticr"),
+                }),
+            },
+            BlockItem {
+                name: "scsr",
+                description: Some("SCSR"),
+                array: None,
+                byte_offset: 24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Scsr"),
+                }),
+            },
+            BlockItem {
                 name: "cfgr2",
                 description: Some("CFGR2"),
                 array: None,
@@ -51,14 +62,25 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "exticr",
-                description: Some("external interrupt configuration register 1"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 8,
+                name: "swpr",
+                description: Some("SWPR"),
+                array: None,
+                byte_offset: 32,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Exticr"),
+                    fieldset: Some("Swpr"),
+                }),
+            },
+            BlockItem {
+                name: "skr",
+                description: Some("SKR"),
+                array: None,
+                byte_offset: 36,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Skr"),
                 }),
             },
             BlockItem {
@@ -84,14 +106,25 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "memrmp",
-                description: Some("memory remap register"),
+                name: "c2imr1",
+                description: Some("SYSCFG CPU2 interrupt mask register 1"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 264,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Memrmp"),
+                    fieldset: Some("C2imr1"),
+                }),
+            },
+            BlockItem {
+                name: "c2imr2",
+                description: Some("SYSCFG CPU2 interrupt mask register 2"),
+                array: None,
+                byte_offset: 268,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("C2imr2"),
                 }),
             },
             BlockItem {
@@ -103,39 +136,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Rfdcr"),
-                }),
-            },
-            BlockItem {
-                name: "scsr",
-                description: Some("SCSR"),
-                array: None,
-                byte_offset: 24,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Scsr"),
-                }),
-            },
-            BlockItem {
-                name: "skr",
-                description: Some("SKR"),
-                array: None,
-                byte_offset: 36,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
-                    bit_size: 32,
-                    fieldset: Some("Skr"),
-                }),
-            },
-            BlockItem {
-                name: "swpr",
-                description: Some("SWPR"),
-                array: None,
-                byte_offset: 32,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Swpr"),
                 }),
             },
         ],

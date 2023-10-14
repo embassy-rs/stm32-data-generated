@@ -10,18 +10,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ccr",
+                    name: "keyr",
                     description: Some(
-                        "FLASH clear control register for bank 1",
+                        "FLASH key register for bank 1",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ccr",
+                                "Keyr",
                             ),
                         },
                     ),
@@ -44,86 +44,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "crccr",
+                    name: "sr",
                     description: Some(
-                        "FLASH CRC control register for bank 1",
+                        "FLASH status register for bank 1",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Crccr",
+                                "Sr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "crceaddr",
+                    name: "ccr",
                     description: Some(
-                        "FLASH CRC end address register for bank 1",
+                        "FLASH clear control register for bank 1",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Crceaddr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "crcsaddr",
-                    description: Some(
-                        "FLASH CRC start address register for bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Crcsaddr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "far",
-                    description: Some(
-                        "FLASH ECC fail address for bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 92,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Far",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "keyr",
-                    description: Some(
-                        "FLASH key register for bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Keyr",
+                                "Ccr",
                             ),
                         },
                     ),
@@ -197,23 +146,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "FLASH status register for bank 1",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "wpsn_curr",
                     description: Some(
                         "FLASH write sector protection for bank 1",
@@ -243,6 +175,74 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "WpsnPrgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "crccr",
+                    description: Some(
+                        "FLASH CRC control register for bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Crccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "crcsaddr",
+                    description: Some(
+                        "FLASH CRC start address register for bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Crcsaddr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "crceaddr",
+                    description: Some(
+                        "FLASH CRC end address register for bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Crceaddr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "far",
+                    description: Some(
+                        "FLASH ECC fail address for bank 1",
+                    ),
+                    array: None,
+                    byte_offset: 92,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Far",
                             ),
                         },
                     ),
@@ -294,6 +294,91 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "optkeyr",
+                    description: Some(
+                        "FLASH option key register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optkeyr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optcr",
+                    description: Some(
+                        "FLASH option control register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr_cur",
+                    description: Some(
+                        "FLASH option status register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "OptsrCur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr_prg",
+                    description: Some(
+                        "FLASH option status register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "OptsrPrg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optccr",
+                    description: Some(
+                        "FLASH option clear control register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "boot_curr",
                     description: Some(
                         "FLASH register with boot address",
@@ -340,91 +425,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Crcdatar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optccr",
-                    description: Some(
-                        "FLASH option clear control register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optcr",
-                    description: Some(
-                        "FLASH option control register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optkeyr",
-                    description: Some(
-                        "FLASH option key register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Optkeyr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optsr_cur",
-                    description: Some(
-                        "FLASH option status register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "OptsrCur",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "optsr_prg",
-                    description: Some(
-                        "FLASH option status register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "OptsrPrg",
                             ),
                         },
                     ),

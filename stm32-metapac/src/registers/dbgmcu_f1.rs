@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Debug support"),
         items: &[
             BlockItem {
-                name: "cr",
-                description: Some("DBGMCU_CR"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
                 name: "idcode",
                 description: Some("DBGMCU_IDCODE"),
                 array: None,
@@ -26,6 +15,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::Read,
                     bit_size: 32,
                     fieldset: Some("Idcode"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("DBGMCU_CR"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
                 }),
             },
         ],

@@ -7,28 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Backup registers"),
         items: &[
             BlockItem {
-                name: "cr",
-                description: Some("Control register"),
-                array: None,
-                byte_offset: 44,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "csr",
-                description: Some("Control/status register"),
-                array: None,
-                byte_offset: 48,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Csr"),
-                }),
-            },
-            BlockItem {
                 name: "dr",
                 description: Some("Data register"),
                 array: Some(Array::Cursed(CursedArray {
@@ -53,6 +31,28 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Rtccr"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Control register"),
+                array: None,
+                byte_offset: 44,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
+                name: "csr",
+                description: Some("Control/status register"),
+                array: None,
+                byte_offset: 48,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Csr"),
                 }),
             },
         ],

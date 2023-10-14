@@ -10,47 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "bcr",
-                    description: Some(
-                        "GFXMMU buffer 0 configuration register.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccr",
-                    description: Some(
-                        "GFXMMU cache control register.",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr",
                     description: Some(
                         "GFXMMU configuration register.",
@@ -68,18 +27,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dvr",
+                    name: "sr",
                     description: Some(
-                        "GFXMMU default value register.",
+                        "GFXMMU status register.",
                     ),
                     array: None,
-                    byte_offset: 16,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dvr",
+                                "Sr",
                             ),
                         },
                     ),
@@ -102,25 +61,59 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "luth",
+                    name: "ccr",
                     description: Some(
-                        "GFXMMU LUT entry 0 high.",
+                        "GFXMMU cache control register.",
                     ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1024,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    byte_offset: 4100,
+                    array: None,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Luth",
+                                "Ccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dvr",
+                    description: Some(
+                        "GFXMMU default value register.",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dvr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bcr",
+                    description: Some(
+                        "GFXMMU buffer 0 configuration register.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bcr",
                             ),
                         },
                     ),
@@ -150,18 +143,25 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "sr",
+                    name: "luth",
                     description: Some(
-                        "GFXMMU status register.",
+                        "GFXMMU LUT entry 0 high.",
                     ),
-                    array: None,
-                    byte_offset: 4,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 1024,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 4100,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sr",
+                                "Luth",
                             ),
                         },
                     ),

@@ -18,6 +18,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "sr",
+                description: Some("Status register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
                 name: "dinr",
                 description: Some("Data input register"),
                 array: None,
@@ -40,17 +51,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "ivr",
-                description: Some("Initialization vector register"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 32,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ivr"),
-                }),
-            },
-            BlockItem {
                 name: "keyr",
                 description: Some("Key register"),
                 array: Some(Array::Cursed(CursedArray {
@@ -64,14 +64,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "sr",
-                description: Some("Status register"),
-                array: None,
-                byte_offset: 4,
+                name: "ivr",
+                description: Some("Initialization vector register"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 32,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Sr"),
+                    fieldset: Some("Ivr"),
                 }),
             },
             BlockItem {

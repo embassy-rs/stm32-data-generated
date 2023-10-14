@@ -10,6 +10,278 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
+                    name: "gotgctl",
+                    description: Some(
+                        "Control and status register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gotgctl",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gotgint",
+                    description: Some(
+                        "Interrupt register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gotgint",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gahbcfg",
+                    description: Some(
+                        "AHB configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gahbcfg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gusbcfg",
+                    description: Some(
+                        "USB configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gusbcfg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "grstctl",
+                    description: Some(
+                        "Reset register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Grstctl",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gintsts",
+                    description: Some(
+                        "Core interrupt register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gintsts",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gintmsk",
+                    description: Some(
+                        "Interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gintmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "grxstsr",
+                    description: Some(
+                        "Receive status debug read register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Grxsts",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "grxstsp",
+                    description: Some(
+                        "Status read and pop register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Grxsts",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "grxfsiz",
+                    description: Some(
+                        "Receive FIFO size register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Grxfsiz",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dieptxf0",
+                    description: Some(
+                        "Endpoint 0 transmit FIFO size register (device mode)",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fsiz",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hnptxfsiz",
+                    description: Some(
+                        "Non-periodic transmit FIFO size register (host mode)",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fsiz",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hnptxsts",
+                    description: Some(
+                        "Non-periodic transmit FIFO/queue status register (host mode)",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hnptxsts",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gi2cctl",
+                    description: Some(
+                        "OTG I2C access register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gi2cctl",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gccfg_v1",
+                    description: Some(
+                        "General core configuration register, for core_id 0x0000_1xxx",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "GccfgV1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "gccfg_v2",
+                    description: Some(
+                        "General core configuration register, for core_id 0x0000_[23]xxx",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "GccfgV2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "cid",
                     description: Some(
                         "Core ID register",
@@ -27,35 +299,296 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "daint",
+                    name: "glpmcfg",
                     description: Some(
-                        "Device all endpoints interrupt register",
+                        "OTG core LPM configuration register",
                     ),
                     array: None,
-                    byte_offset: 2072,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Daint",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "daintmsk",
-                    description: Some(
-                        "All endpoints interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 2076,
+                    byte_offset: 84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Daintmsk",
+                                "Glpmcfg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hptxfsiz",
+                    description: Some(
+                        "Host periodic transmit FIFO size register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fsiz",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dieptxf",
+                    description: Some(
+                        "Device IN endpoint transmit FIFO size register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 7,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fsiz",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcfg",
+                    description: Some(
+                        "Host configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 1024,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hcfg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hfir",
+                    description: Some(
+                        "Host frame interval register",
+                    ),
+                    array: None,
+                    byte_offset: 1028,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hfir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hfnum",
+                    description: Some(
+                        "Host frame number/frame time remaining register",
+                    ),
+                    array: None,
+                    byte_offset: 1032,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hfnum",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hptxsts",
+                    description: Some(
+                        "Periodic transmit FIFO/queue status register",
+                    ),
+                    array: None,
+                    byte_offset: 1040,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hptxsts",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "haint",
+                    description: Some(
+                        "Host all channels interrupt register",
+                    ),
+                    array: None,
+                    byte_offset: 1044,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Haint",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "haintmsk",
+                    description: Some(
+                        "Host all channels interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 1048,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Haintmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hprt",
+                    description: Some(
+                        "Host port control and status register",
+                    ),
+                    array: None,
+                    byte_offset: 1088,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hprt",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcchar",
+                    description: Some(
+                        "Host channel characteristics register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 1280,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hcchar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcsplt",
+                    description: Some(
+                        "Host channel split control register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 1284,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcint",
+                    description: Some(
+                        "Host channel interrupt register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 1288,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hcint",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hcintmsk",
+                    description: Some(
+                        "Host channel mask register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 1292,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hcintmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hctsiz",
+                    description: Some(
+                        "Host channel transfer size register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 12,
+                                stride: 32,
+                            },
+                        ),
+                    ),
+                    byte_offset: 1296,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hctsiz",
                             ),
                         },
                     ),
@@ -95,6 +628,142 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "dsts",
+                    description: Some(
+                        "Device status register",
+                    ),
+                    array: None,
+                    byte_offset: 2056,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dsts",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "diepmsk",
+                    description: Some(
+                        "Device IN endpoint common interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 2064,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Diepmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "doepmsk",
+                    description: Some(
+                        "Device OUT endpoint common interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 2068,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Doepmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "daint",
+                    description: Some(
+                        "Device all endpoints interrupt register",
+                    ),
+                    array: None,
+                    byte_offset: 2072,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Daint",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "daintmsk",
+                    description: Some(
+                        "All endpoints interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 2076,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Daintmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dvbusdis",
+                    description: Some(
+                        "Device VBUS discharge time register",
+                    ),
+                    array: None,
+                    byte_offset: 2088,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dvbusdis",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dvbuspulse",
+                    description: Some(
+                        "Device VBUS pulsing time register",
+                    ),
+                    array: None,
+                    byte_offset: 2092,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dvbuspulse",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "diepempmsk",
+                    description: Some(
+                        "Device IN endpoint FIFO empty interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 2100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Diepempmsk",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "diepctl",
                     description: Some(
                         "Device IN endpoint control register",
@@ -114,23 +783,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Diepctl",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "diepempmsk",
-                    description: Some(
-                        "Device IN endpoint FIFO empty interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 2100,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Diepempmsk",
                             ),
                         },
                     ),
@@ -160,23 +812,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "diepmsk",
-                    description: Some(
-                        "Device IN endpoint common interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 2064,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Diepmsk",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "dieptsiz",
                     description: Some(
                         "Device IN endpoint transfer size register",
@@ -201,42 +836,25 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dieptxf",
+                    name: "dtxfsts",
                     description: Some(
-                        "Device IN endpoint transmit FIFO size register",
+                        "Device IN endpoint transmit FIFO status register",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 7,
-                                stride: 4,
+                                len: 16,
+                                stride: 32,
                             },
                         ),
                     ),
-                    byte_offset: 260,
+                    byte_offset: 2328,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Fsiz",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dieptxf0",
-                    description: Some(
-                        "Endpoint 0 transmit FIFO size register (device mode)",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fsiz",
+                                "Dtxfsts",
                             ),
                         },
                     ),
@@ -290,23 +908,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "doepmsk",
-                    description: Some(
-                        "Device OUT endpoint common interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 2068,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Doepmsk",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "doeptsiz",
                     description: Some(
                         "Device OUT endpoint transfer size register",
@@ -331,76 +932,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dsts",
+                    name: "pcgcctl",
                     description: Some(
-                        "Device status register",
+                        "Power and clock gating control register",
                     ),
                     array: None,
-                    byte_offset: 2056,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dtxfsts",
-                    description: Some(
-                        "Device IN endpoint transmit FIFO status register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 2328,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dtxfsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dvbusdis",
-                    description: Some(
-                        "Device VBUS discharge time register",
-                    ),
-                    array: None,
-                    byte_offset: 2088,
+                    byte_offset: 3584,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dvbusdis",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dvbuspulse",
-                    description: Some(
-                        "Device VBUS pulsing time register",
-                    ),
-                    array: None,
-                    byte_offset: 2092,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dvbuspulse",
+                                "Pcgcctl",
                             ),
                         },
                     ),
@@ -425,549 +968,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Fifo",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gahbcfg",
-                    description: Some(
-                        "AHB configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gahbcfg",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gccfg_v1",
-                    description: Some(
-                        "General core configuration register, for core_id 0x0000_1xxx",
-                    ),
-                    array: None,
-                    byte_offset: 56,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "GccfgV1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gccfg_v2",
-                    description: Some(
-                        "General core configuration register, for core_id 0x0000_[23]xxx",
-                    ),
-                    array: None,
-                    byte_offset: 56,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "GccfgV2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gi2cctl",
-                    description: Some(
-                        "OTG I2C access register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gi2cctl",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gintmsk",
-                    description: Some(
-                        "Interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gintmsk",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gintsts",
-                    description: Some(
-                        "Core interrupt register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gintsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "glpmcfg",
-                    description: Some(
-                        "OTG core LPM configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 84,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Glpmcfg",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gotgctl",
-                    description: Some(
-                        "Control and status register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gotgctl",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gotgint",
-                    description: Some(
-                        "Interrupt register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gotgint",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "grstctl",
-                    description: Some(
-                        "Reset register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Grstctl",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "grxfsiz",
-                    description: Some(
-                        "Receive FIFO size register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Grxfsiz",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "grxstsp",
-                    description: Some(
-                        "Status read and pop register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Grxsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "grxstsr",
-                    description: Some(
-                        "Receive status debug read register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Grxsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "gusbcfg",
-                    description: Some(
-                        "USB configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gusbcfg",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "haint",
-                    description: Some(
-                        "Host all channels interrupt register",
-                    ),
-                    array: None,
-                    byte_offset: 1044,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Haint",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "haintmsk",
-                    description: Some(
-                        "Host all channels interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 1048,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Haintmsk",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hcchar",
-                    description: Some(
-                        "Host channel characteristics register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 12,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 1280,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hcchar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hcfg",
-                    description: Some(
-                        "Host configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 1024,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hcfg",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hcint",
-                    description: Some(
-                        "Host channel interrupt register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 12,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 1288,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hcint",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hcintmsk",
-                    description: Some(
-                        "Host channel mask register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 12,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 1292,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hcintmsk",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hcsplt",
-                    description: Some(
-                        "Host channel split control register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 12,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 1284,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: None,
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hctsiz",
-                    description: Some(
-                        "Host channel transfer size register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 12,
-                                stride: 32,
-                            },
-                        ),
-                    ),
-                    byte_offset: 1296,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hctsiz",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hfir",
-                    description: Some(
-                        "Host frame interval register",
-                    ),
-                    array: None,
-                    byte_offset: 1028,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hfir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hfnum",
-                    description: Some(
-                        "Host frame number/frame time remaining register",
-                    ),
-                    array: None,
-                    byte_offset: 1032,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hfnum",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hnptxfsiz",
-                    description: Some(
-                        "Non-periodic transmit FIFO size register (host mode)",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fsiz",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hnptxsts",
-                    description: Some(
-                        "Non-periodic transmit FIFO/queue status register (host mode)",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hnptxsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hprt",
-                    description: Some(
-                        "Host port control and status register",
-                    ),
-                    array: None,
-                    byte_offset: 1088,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hprt",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hptxfsiz",
-                    description: Some(
-                        "Host periodic transmit FIFO size register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fsiz",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hptxsts",
-                    description: Some(
-                        "Periodic transmit FIFO/queue status register",
-                    ),
-                    array: None,
-                    byte_offset: 1040,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hptxsts",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pcgcctl",
-                    description: Some(
-                        "Power and clock gating control register",
-                    ),
-                    array: None,
-                    byte_offset: 3584,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcgcctl",
                             ),
                         },
                     ),

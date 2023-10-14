@@ -8,17 +8,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("Liquid crystal display controller"),
             items: &[
                 BlockItem {
-                    name: "clr",
-                    description: Some("clear register"),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Write,
-                        bit_size: 32,
-                        fieldset: Some("Clr"),
-                    }),
-                },
-                BlockItem {
                     name: "cr",
                     description: Some("control register"),
                     array: None,
@@ -41,13 +30,6 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
-                    name: "ram_com",
-                    description: Some("display memory"),
-                    array: Some(Array::Regular(RegularArray { len: 8, stride: 8 })),
-                    byte_offset: 20,
-                    inner: BlockItemInner::Block(BlockItemBlock { block: "RamCom" }),
-                },
-                BlockItem {
                     name: "sr",
                     description: Some("status register"),
                     array: None,
@@ -58,6 +40,24 @@ pub(crate) static REGISTERS: IR = IR {
                         fieldset: Some("Sr"),
                     }),
                 },
+                BlockItem {
+                    name: "clr",
+                    description: Some("clear register"),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
+                        bit_size: 32,
+                        fieldset: Some("Clr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ram_com",
+                    description: Some("display memory"),
+                    array: Some(Array::Regular(RegularArray { len: 8, stride: 8 })),
+                    byte_offset: 20,
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "RamCom" }),
+                },
             ],
         },
         Block {
@@ -66,10 +66,10 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("display memory"),
             items: &[
                 BlockItem {
-                    name: "high",
-                    description: Some("display memory high word"),
+                    name: "low",
+                    description: Some("display memory low word"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
@@ -77,10 +77,10 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
-                    name: "low",
-                    description: Some("display memory low word"),
+                    name: "high",
+                    description: Some("display memory high word"),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,

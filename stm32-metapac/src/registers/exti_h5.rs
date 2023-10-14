@@ -10,57 +10,9 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "emr",
+                    name: "rtsr",
                     description: Some(
-                        "CPU wakeup with event mask register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 132,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lines",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "exticr",
-                    description: Some(
-                        "external interrupt selection register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 96,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Exti",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fpr",
-                    description: Some(
-                        "falling edge pending register",
+                        "rising trigger selection register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -70,7 +22,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 16,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -106,50 +58,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "imr",
+                    name: "swier",
                     description: Some(
-                        "CPU wakeup with interrupt mask register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 128,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lines",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "lockr",
-                    description: Some(
-                        "lock register",
-                    ),
-                    array: None,
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lockr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "privcfgr",
-                    description: Some(
-                        "privilege configuration register",
+                        "software interrupt event register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -159,13 +70,13 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 24,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Priv",
+                                "Lines",
                             ),
                         },
                     ),
@@ -195,9 +106,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "rtsr",
+                    name: "fpr",
                     description: Some(
-                        "rising trigger selection register",
+                        "falling edge pending register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -207,7 +118,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 0,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -243,9 +154,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "swier",
+                    name: "privcfgr",
                     description: Some(
-                        "software interrupt event register",
+                        "privilege configuration register",
                     ),
                     array: Some(
                         Array::Regular(
@@ -255,7 +166,96 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    byte_offset: 8,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Priv",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "exticr",
+                    description: Some(
+                        "external interrupt selection register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Exti",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lockr",
+                    description: Some(
+                        "lock register",
+                    ),
+                    array: None,
+                    byte_offset: 112,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lockr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "imr",
+                    description: Some(
+                        "CPU wakeup with interrupt mask register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 16,
+                            },
+                        ),
+                    ),
+                    byte_offset: 128,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lines",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "emr",
+                    description: Some(
+                        "CPU wakeup with event mask register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 16,
+                            },
+                        ),
+                    ),
+                    byte_offset: 132,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,

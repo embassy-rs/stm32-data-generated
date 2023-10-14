@@ -3689,7 +3689,7 @@
         "value": 2
       },
       {
-        "name": "PER_CLK",
+        "name": "PER",
         "description": "per_ck selected as kernel clock",
         "value": 3
       }

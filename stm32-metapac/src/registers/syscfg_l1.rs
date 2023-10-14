@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("System configuration controller"),
         items: &[
             BlockItem {
-                name: "exticr",
-                description: Some("external interrupt configuration register 1"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Exticr"),
-                }),
-            },
-            BlockItem {
                 name: "memrmp",
                 description: Some("memory remap register"),
                 array: None,
@@ -37,6 +26,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Pmc"),
+                }),
+            },
+            BlockItem {
+                name: "exticr",
+                description: Some("external interrupt configuration register 1"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Exticr"),
                 }),
             },
         ],

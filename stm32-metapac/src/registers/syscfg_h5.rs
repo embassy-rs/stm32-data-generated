@@ -10,6 +10,193 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
+                    name: "hdplcr",
+                    description: Some(
+                        "SBS temporal isolation control register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdplcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdplsr",
+                    description: Some(
+                        "SBS temporal isolation status register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdplsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nexthdplcr",
+                    description: Some(
+                        "SBS next HDPL control register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nexthdplcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dbgcr",
+                    description: Some(
+                        "SBS debug control register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dbgcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dbglockr",
+                    description: Some(
+                        "SBS debug lock register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dbglockr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rsscmdr",
+                    description: Some(
+                        "SBS RSS command register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rsscmdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "epochselcr",
+                    description: Some(
+                        "SBS EPOCH selection control register",
+                    ),
+                    array: None,
+                    byte_offset: 160,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Epochselcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "seccfgr",
+                    description: Some(
+                        "SBS security mode configuration control register",
+                    ),
+                    array: None,
+                    byte_offset: 192,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Seccfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pmcr",
+                    description: Some(
+                        "SBS product mode and configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pmcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fpuimr",
+                    description: Some(
+                        "SBS FPU interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fpuimr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mesr",
+                    description: Some(
+                        "SBS memory erase status register",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mesr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "cccsr",
                     description: Some(
                         "SBS compensation cell for I/Os control and status register",
@@ -27,23 +214,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ccswcr",
-                    description: Some(
-                        "SBS compensation cell for I/Os software code register",
-                    ),
-                    array: None,
-                    byte_offset: 280,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccswcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "ccvalr",
                     description: Some(
                         "SBS compensation cell for I/Os value register",
@@ -56,6 +226,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Ccvalr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccswcr",
+                    description: Some(
+                        "SBS compensation cell for I/Os software code register",
+                    ),
+                    array: None,
+                    byte_offset: 280,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccswcr",
                             ),
                         },
                     ),
@@ -112,40 +299,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dbgcr",
-                    description: Some(
-                        "SBS debug control register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dbgcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbglockr",
-                    description: Some(
-                        "SBS debug lock register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dbglockr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "eccnmir",
                     description: Some(
                         "SBS flift ECC NMI mask register",
@@ -158,159 +311,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Eccnmir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "epochselcr",
-                    description: Some(
-                        "SBS EPOCH selection control register",
-                    ),
-                    array: None,
-                    byte_offset: 160,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Epochselcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fpuimr",
-                    description: Some(
-                        "SBS FPU interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fpuimr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdplcr",
-                    description: Some(
-                        "SBS temporal isolation control register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdplcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdplsr",
-                    description: Some(
-                        "SBS temporal isolation status register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdplsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mesr",
-                    description: Some(
-                        "SBS memory erase status register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mesr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nexthdplcr",
-                    description: Some(
-                        "SBS next HDPL control register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nexthdplcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pmcr",
-                    description: Some(
-                        "SBS product mode and configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pmcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rsscmdr",
-                    description: Some(
-                        "SBS RSS command register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rsscmdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "seccfgr",
-                    description: Some(
-                        "SBS security mode configuration control register",
-                    ),
-                    array: None,
-                    byte_offset: 192,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Seccfgr",
                             ),
                         },
                     ),

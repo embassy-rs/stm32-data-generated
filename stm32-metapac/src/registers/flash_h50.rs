@@ -27,210 +27,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ecccorr",
-                    description: Some(
-                        "FLASH Flash ECC correction register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ecccorr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "eccdetr",
-                    description: Some(
-                        "FLASH ECC detection register",
-                    ),
-                    array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Eccdetr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "eccdr",
-                    description: Some(
-                        "FLASH ECC data",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Eccdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdp1r_cur",
-                    description: Some(
-                        "FLASH HDP Bank1 register",
-                    ),
-                    array: None,
-                    byte_offset: 248,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdp1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdp1r_prg",
-                    description: Some(
-                        "FLASH HDP Bank1 register",
-                    ),
-                    array: None,
-                    byte_offset: 252,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdp1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdp2r_cur",
-                    description: Some(
-                        "FLASH HDP Bank2 register",
-                    ),
-                    array: None,
-                    byte_offset: 504,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdp2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdp2r_prg",
-                    description: Some(
-                        "FLASH HDP Bank2 register",
-                    ),
-                    array: None,
-                    byte_offset: 508,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdp2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "hdpextr",
-                    description: Some(
-                        "FLASH HDP extension register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Hdpextr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nsbootr_cur",
-                    description: Some(
-                        "FLASH non-secure unique boot entry register",
-                    ),
-                    array: None,
-                    byte_offset: 128,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nsbootr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nsbootr_prg",
-                    description: Some(
-                        "FLASH non-secure unique boot entry address",
-                    ),
-                    array: None,
-                    byte_offset: 132,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nsbootr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nsccr",
-                    description: Some(
-                        "FLASH non-secure clear control register",
-                    ),
-                    array: None,
-                    byte_offset: 48,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nsccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nscr",
-                    description: Some(
-                        "FLASH Non Secure control register",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nscr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "nskeyr",
                     description: Some(
                         "FLASH key register",
@@ -248,18 +44,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "nssr",
+                    name: "optkeyr",
                     description: Some(
-                        "FLASH non-secure status register",
+                        "FLASH option key register",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nssr",
+                                "Optkeyr",
                             ),
                         },
                     ),
@@ -299,18 +95,137 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "optkeyr",
+                    name: "nssr",
                     description: Some(
-                        "FLASH option key register",
+                        "FLASH non-secure status register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 32,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Optkeyr",
+                                "Nssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secsr",
+                    description: Some(
+                        "FLASH secure status register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nscr",
+                    description: Some(
+                        "FLASH Non Secure control register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "nsccr",
+                    description: Some(
+                        "FLASH non-secure clear control register",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Nsccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "privcfgr",
+                    description: Some(
+                        "FLASH privilege configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Privcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdpextr",
+                    description: Some(
+                        "FLASH HDP extension register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdpextr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr_cur",
+                    description: Some(
+                        "FLASH option status register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "optsr_prg",
+                    description: Some(
+                        "FLASH option status register",
+                    ),
+                    array: None,
+                    byte_offset: 84,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Optsr",
                             ),
                         },
                     ),
@@ -350,35 +265,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "optsr_cur",
+                    name: "nsbootr_cur",
                     description: Some(
-                        "FLASH option status register",
+                        "FLASH non-secure unique boot entry register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 128,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Optsr",
+                                "Nsbootr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "optsr_prg",
+                    name: "nsbootr_prg",
                     description: Some(
-                        "FLASH option status register",
+                        "FLASH non-secure unique boot entry address",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 132,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Optsr",
+                                "Nsbootr",
                             ),
                         },
                     ),
@@ -435,40 +350,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "privcfgr",
-                    description: Some(
-                        "FLASH privilege configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 60,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Privcfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "secsr",
-                    description: Some(
-                        "FLASH secure status register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Secsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "wrpsgn1r_cur",
                     description: Some(
                         "FLASH write sector protection for Bank1",
@@ -503,6 +384,91 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "hdp1r_cur",
+                    description: Some(
+                        "FLASH HDP Bank1 register",
+                    ),
+                    array: None,
+                    byte_offset: 248,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdp1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdp1r_prg",
+                    description: Some(
+                        "FLASH HDP Bank1 register",
+                    ),
+                    array: None,
+                    byte_offset: 252,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdp1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecccorr",
+                    description: Some(
+                        "FLASH Flash ECC correction register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ecccorr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccdetr",
+                    description: Some(
+                        "FLASH ECC detection register",
+                    ),
+                    array: None,
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccdetr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccdr",
+                    description: Some(
+                        "FLASH ECC data",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "wrpsgn2r_cur",
                     description: Some(
                         "FLASH write sector protection for Bank2",
@@ -532,6 +498,40 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Wrp",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdp2r_cur",
+                    description: Some(
+                        "FLASH HDP Bank2 register",
+                    ),
+                    array: None,
+                    byte_offset: 504,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdp2r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hdp2r_prg",
+                    description: Some(
+                        "FLASH HDP Bank2 register",
+                    ),
+                    array: None,
+                    byte_offset: 508,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Hdp2r",
                             ),
                         },
                     ),

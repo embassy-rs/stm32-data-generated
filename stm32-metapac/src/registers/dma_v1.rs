@@ -8,23 +8,23 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("DMA controller"),
             items: &[
                 BlockItem {
-                    name: "ifcr",
-                    description: Some("low interrupt flag clear register"),
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::Write,
-                        bit_size: 32,
-                        fieldset: Some("Ixr"),
-                    }),
-                },
-                BlockItem {
                     name: "isr",
                     description: Some("low interrupt status register"),
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
                     byte_offset: 0,
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
+                        bit_size: 32,
+                        fieldset: Some("Ixr"),
+                    }),
+                },
+                BlockItem {
+                    name: "ifcr",
+                    description: Some("low interrupt flag clear register"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
                         bit_size: 32,
                         fieldset: Some("Ixr"),
                     }),
@@ -55,14 +55,25 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
-                    name: "fcr",
-                    description: Some("stream x FIFO control register"),
+                    name: "ndtr",
+                    description: Some("stream x number of data register"),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
-                        fieldset: Some("Fcr"),
+                        fieldset: Some("Ndtr"),
+                    }),
+                },
+                BlockItem {
+                    name: "par",
+                    description: Some("stream x peripheral address register"),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: None,
                     }),
                 },
                 BlockItem {
@@ -88,25 +99,14 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
-                    name: "ndtr",
-                    description: Some("stream x number of data register"),
+                    name: "fcr",
+                    description: Some("stream x FIFO control register"),
                     array: None,
-                    byte_offset: 4,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
-                        fieldset: Some("Ndtr"),
-                    }),
-                },
-                BlockItem {
-                    name: "par",
-                    description: Some("stream x peripheral address register"),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: None,
+                        fieldset: Some("Fcr"),
                     }),
                 },
             ],

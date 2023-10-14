@@ -10,52 +10,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "cccr",
+                    name: "seccfgr",
                     description: Some(
-                        "compensation cell code register",
+                        "secure configuration register",
                     ),
                     array: None,
-                    byte_offset: 36,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cccsr",
-                    description: Some(
-                        "compensation cell control/status register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cccsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ccvr",
-                    description: Some(
-                        "compensation cell value register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ccvr",
+                                "Seccfgr",
                             ),
                         },
                     ),
@@ -78,18 +44,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cfgr2",
+                    name: "fpuimr",
                     description: Some(
-                        "configuration register 2",
+                        "FPU interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cfgr2",
+                                "Fpuimr",
                             ),
                         },
                     ),
@@ -129,18 +95,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "fpuimr",
+                    name: "cfgr2",
                     description: Some(
-                        "FPU interrupt mask register",
+                        "configuration register 2",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Fpuimr",
+                                "Cfgr2",
                             ),
                         },
                     ),
@@ -163,6 +129,57 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "cccsr",
+                    description: Some(
+                        "compensation cell control/status register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cccsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ccvr",
+                    description: Some(
+                        "compensation cell value register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccvr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cccr",
+                    description: Some(
+                        "compensation cell code register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "rsscmdr",
                     description: Some(
                         "RSS command register",
@@ -175,23 +192,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Rsscmdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "seccfgr",
-                    description: Some(
-                        "secure configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Seccfgr",
                             ),
                         },
                     ),

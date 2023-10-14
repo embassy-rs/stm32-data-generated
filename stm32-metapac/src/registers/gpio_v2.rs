@@ -10,81 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "afr",
-                    description: Some(
-                        "GPIO alternate function registers. The register described in the datasheet as AFRL is index 0 in this array, and AFRH is index 1. Note that when operating on AFRH, you need to subtract 8 from any operations on the field array it contains -- the alternate function for pin 9 is at index 1, for instance.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Afr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bsrr",
-                    description: Some(
-                        "GPIO port bit set/reset register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bsrr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "idr",
-                    description: Some(
-                        "GPIO port input data register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Idr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "lckr",
-                    description: Some(
-                        "GPIO port configuration lock register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Lckr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "moder",
                     description: Some(
                         "GPIO port mode register",
@@ -97,40 +22,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Moder",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "odr",
-                    description: Some(
-                        "GPIO port output data register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Odr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ospeedr",
-                    description: Some(
-                        "GPIO port output speed register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ospeedr",
                             ),
                         },
                     ),
@@ -153,6 +44,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "ospeedr",
+                    description: Some(
+                        "GPIO port output speed register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ospeedr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "pupdr",
                     description: Some(
                         "GPIO port pull-up/pull-down register",
@@ -165,6 +73,98 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Pupdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "idr",
+                    description: Some(
+                        "GPIO port input data register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Idr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "odr",
+                    description: Some(
+                        "GPIO port output data register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Odr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bsrr",
+                    description: Some(
+                        "GPIO port bit set/reset register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bsrr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lckr",
+                    description: Some(
+                        "GPIO port configuration lock register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lckr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "afr",
+                    description: Some(
+                        "GPIO alternate function registers. The register described in the datasheet as AFRL is index 0 in this array, and AFRH is index 1. Note that when operating on AFRH, you need to subtract 8 from any operations on the field array it contains -- the alternate function for pin 9 is at index 1, for instance.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Afr",
                             ),
                         },
                     ),

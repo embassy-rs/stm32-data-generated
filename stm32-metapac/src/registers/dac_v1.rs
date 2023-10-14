@@ -18,25 +18,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "dhr12l",
-                description: Some("channel 12-bit left-aligned data holding register"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 12 })),
-                byte_offset: 12,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Dhr12l"),
-                }),
-            },
-            BlockItem {
-                name: "dhr12ld",
-                description: Some("DUAL DAC 12-bit left aligned data holding register"),
+                name: "swtrigr",
+                description: Some("software trigger register"),
                 array: None,
-                byte_offset: 36,
+                byte_offset: 4,
                 inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
+                    access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Dhr12ld"),
+                    fieldset: Some("Swtrigr"),
                 }),
             },
             BlockItem {
@@ -51,14 +40,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "dhr12rd",
-                description: Some("Dual DAC 12-bit right-aligned data holding register"),
-                array: None,
-                byte_offset: 32,
+                name: "dhr12l",
+                description: Some("channel 12-bit left-aligned data holding register"),
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 12 })),
+                byte_offset: 12,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Dhr12rd"),
+                    fieldset: Some("Dhr12l"),
                 }),
             },
             BlockItem {
@@ -70,6 +59,28 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Dhr8r"),
+                }),
+            },
+            BlockItem {
+                name: "dhr12rd",
+                description: Some("Dual DAC 12-bit right-aligned data holding register"),
+                array: None,
+                byte_offset: 32,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dhr12rd"),
+                }),
+            },
+            BlockItem {
+                name: "dhr12ld",
+                description: Some("DUAL DAC 12-bit left aligned data holding register"),
+                array: None,
+                byte_offset: 36,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dhr12ld"),
                 }),
             },
             BlockItem {
@@ -103,17 +114,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Sr"),
-                }),
-            },
-            BlockItem {
-                name: "swtrigr",
-                description: Some("software trigger register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
-                    bit_size: 32,
-                    fieldset: Some("Swtrigr"),
                 }),
             },
         ],

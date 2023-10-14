@@ -7,36 +7,14 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Debug support"),
         items: &[
             BlockItem {
-                name: "apb1hfzr",
-                description: Some("APB Low Freeze Register 2"),
+                name: "idcode",
+                description: Some("MCU Device ID Code Register"),
                 array: None,
-                byte_offset: 12,
+                byte_offset: 0,
                 inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
+                    access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("Apb1hfzr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1lfzr",
-                description: Some("APB Low Freeze Register 1"),
-                array: None,
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1lfzr"),
-                }),
-            },
-            BlockItem {
-                name: "apb2fzr",
-                description: Some("APB High Freeze Register"),
-                array: None,
-                byte_offset: 16,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2fzr"),
+                    fieldset: Some("Idcode"),
                 }),
             },
             BlockItem {
@@ -51,14 +29,36 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "idcode",
-                description: Some("MCU Device ID Code Register"),
+                name: "apb1lfzr",
+                description: Some("APB Low Freeze Register 1"),
                 array: None,
-                byte_offset: 0,
+                byte_offset: 8,
                 inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
+                    access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Idcode"),
+                    fieldset: Some("Apb1lfzr"),
+                }),
+            },
+            BlockItem {
+                name: "apb1hfzr",
+                description: Some("APB Low Freeze Register 2"),
+                array: None,
+                byte_offset: 12,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Apb1hfzr"),
+                }),
+            },
+            BlockItem {
+                name: "apb2fzr",
+                description: Some("APB High Freeze Register"),
+                array: None,
+                byte_offset: 16,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Apb2fzr"),
                 }),
             },
         ],

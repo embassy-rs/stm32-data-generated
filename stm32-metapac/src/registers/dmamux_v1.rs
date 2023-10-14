@@ -34,23 +34,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cfr",
-                    description: Some(
-                        "DMAMUX request line multiplexer interrupt clear flag register",
-                    ),
-                    array: None,
-                    byte_offset: 132,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "csr",
                     description: Some(
                         "DMAMUX request line multiplexer interrupt channel status register",
@@ -68,18 +51,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "rgcfr",
+                    name: "cfr",
                     description: Some(
-                        "DMAMux - DMA request generator clear flag register",
+                        "DMAMUX request line multiplexer interrupt clear flag register",
                     ),
                     array: None,
-                    byte_offset: 324,
+                    byte_offset: 132,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
-                                "Rgsr",
+                                "Csr",
                             ),
                         },
                     ),
@@ -118,6 +101,23 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Rgsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rgcfr",
+                    description: Some(
+                        "DMAMux - DMA request generator clear flag register",
+                    ),
+                    array: None,
+                    byte_offset: 324,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
                                 "Rgsr",

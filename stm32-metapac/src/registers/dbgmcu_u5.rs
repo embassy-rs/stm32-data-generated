@@ -10,52 +10,35 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ahb1fzr",
+                    name: "idcode",
                     description: Some(
-                        "Debug MCU AHB1 peripheral freeze register",
+                        "DBGMCU_IDCODE",
                     ),
                     array: None,
-                    byte_offset: 32,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahb1fzr",
+                                "Idcode",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ahb3fzr",
+                    name: "cr",
                     description: Some(
-                        "Debug MCU AHB3 peripheral freeze register",
+                        "Debug MCU configuration\r register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahb3fzr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb1hfzr",
-                    description: Some(
-                        "Debug MCU APB1H peripheral freeze register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb1hfzr",
+                                "Cr",
                             ),
                         },
                     ),
@@ -73,6 +56,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Apb1lfzr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1hfzr",
+                    description: Some(
+                        "Debug MCU APB1H peripheral freeze register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1hfzr",
                             ),
                         },
                     ),
@@ -112,120 +112,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cidr0",
+                    name: "ahb1fzr",
                     description: Some(
-                        "Debug MCU CoreSight component identity register 0",
+                        "Debug MCU AHB1 peripheral freeze register",
                     ),
                     array: None,
-                    byte_offset: 4080,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cidr0",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cidr1",
-                    description: Some(
-                        "Debug MCU CoreSight component identity register 1",
-                    ),
-                    array: None,
-                    byte_offset: 4084,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cidr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cidr2",
-                    description: Some(
-                        "Debug MCU CoreSight component identity register 2",
-                    ),
-                    array: None,
-                    byte_offset: 4088,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cidr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cidr3",
-                    description: Some(
-                        "Debug MCU CoreSight component identity register 3",
-                    ),
-                    array: None,
-                    byte_offset: 4092,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cidr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr",
-                    description: Some(
-                        "Debug MCU configuration\r register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
+                    byte_offset: 32,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cr",
+                                "Ahb1fzr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dbgmcu_dbg_auth_device",
+                    name: "ahb3fzr",
                     description: Some(
-                        "DBGMCU debug device authentication register",
+                        "Debug MCU AHB3 peripheral freeze register",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 40,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DbgmcuDbgAuthDevice",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbgmcu_dbg_auth_host",
-                    description: Some(
-                        "DBGMCU debug host authentication register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DbgmcuDbgAuthHost",
+                                "Ahb3fzr",
                             ),
                         },
                     ),
@@ -248,18 +163,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "idcode",
+                    name: "dbgmcu_dbg_auth_host",
                     description: Some(
-                        "DBGMCU_IDCODE",
+                        "DBGMCU debug host authentication register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 256,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Idcode",
+                                "DbgmcuDbgAuthHost",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dbgmcu_dbg_auth_device",
+                    description: Some(
+                        "DBGMCU debug device authentication register",
+                    ),
+                    array: None,
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DbgmcuDbgAuthDevice",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pidr4",
+                    description: Some(
+                        "Debug MCU CoreSight peripheral identity register 4",
+                    ),
+                    array: None,
+                    byte_offset: 4048,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pidr4",
                             ),
                         },
                     ),
@@ -333,18 +282,69 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "pidr4",
+                    name: "cidr0",
                     description: Some(
-                        "Debug MCU CoreSight peripheral identity register 4",
+                        "Debug MCU CoreSight component identity register 0",
                     ),
                     array: None,
-                    byte_offset: 4048,
+                    byte_offset: 4080,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Pidr4",
+                                "Cidr0",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cidr1",
+                    description: Some(
+                        "Debug MCU CoreSight component identity register 1",
+                    ),
+                    array: None,
+                    byte_offset: 4084,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cidr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cidr2",
+                    description: Some(
+                        "Debug MCU CoreSight component identity register 2",
+                    ),
+                    array: None,
+                    byte_offset: 4088,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cidr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cidr3",
+                    description: Some(
+                        "Debug MCU CoreSight component identity register 3",
+                    ),
+                    array: None,
+                    byte_offset: 4092,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cidr3",
                             ),
                         },
                     ),

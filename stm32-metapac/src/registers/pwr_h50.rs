@@ -10,74 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "bdcr",
-                    description: Some(
-                        "PWR Backup domain control register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bdcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "bdsr",
-                    description: Some(
-                        "PWR Backup domain status register",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bdsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dbpcr",
-                    description: Some(
-                        "PWR disable backup protection control register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dbpcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ioretr",
-                    description: Some(
-                        "PWR I/O retention register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ioretr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "pmcr",
                     description: Some(
                         "PWR power mode control register",
@@ -112,18 +44,86 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "privcfgr",
+                    name: "voscr",
                     description: Some(
-                        "PWR privilege configuration register",
+                        "PWR voltage scaling control register",
                     ),
                     array: None,
-                    byte_offset: 260,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Privcfgr",
+                                "Voscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "vossr",
+                    description: Some(
+                        "PWR voltage scaling status register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Vossr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bdcr",
+                    description: Some(
+                        "PWR Backup domain control register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bdcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dbpcr",
+                    description: Some(
+                        "PWR disable backup protection control register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dbpcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bdsr",
+                    description: Some(
+                        "PWR Backup domain status register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bdsr",
                             ),
                         },
                     ),
@@ -180,57 +180,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "voscr",
-                    description: Some(
-                        "PWR voltage scaling control register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Voscr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "vossr",
-                    description: Some(
-                        "PWR voltage scaling status register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Vossr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "wucr",
-                    description: Some(
-                        "PWR wakeup configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 72,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Wucr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "wuscr",
                     description: Some(
                         "PWR wakeup status clear register",
@@ -260,6 +209,57 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Wusr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wucr",
+                    description: Some(
+                        "PWR wakeup configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wucr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ioretr",
+                    description: Some(
+                        "PWR I/O retention register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ioretr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "privcfgr",
+                    description: Some(
+                        "PWR privilege configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Privcfgr",
                             ),
                         },
                     ),

@@ -10,19 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ethernet_dma",
-                    description: Some(
-                        "Ethernet: DMA mode register (DMA)",
-                    ),
-                    array: None,
-                    byte_offset: 4096,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "EthernetDma",
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "ethernet_mac",
                     description: Some(
                         "Ethernet: media access control (MAC)",
@@ -48,6 +35,19 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "ethernet_dma",
+                    description: Some(
+                        "Ethernet: DMA mode register (DMA)",
+                    ),
+                    array: None,
+                    byte_offset: 4096,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "EthernetDma",
+                        },
+                    ),
+                },
             ],
         },
         Block {
@@ -58,18 +58,273 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "dmaccarx_br",
+                    name: "dmamr",
                     description: Some(
-                        "Channel current application receive buffer register",
+                        "DMA mode register",
                     ),
                     array: None,
-                    byte_offset: 348,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmamr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmasbmr",
+                    description: Some(
+                        "System bus mode register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmasbmr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaisr",
+                    description: Some(
+                        "Interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmaccarxBr",
+                                "Dmaisr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmadsr",
+                    description: Some(
+                        "Debug status register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmadsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaccr",
+                    description: Some(
+                        "Channel control register",
+                    ),
+                    array: None,
+                    byte_offset: 256,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmaccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_cr",
+                    description: Some(
+                        "Channel transmit control register",
+                    ),
+                    array: None,
+                    byte_offset: 260,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxCr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_cr",
+                    description: Some(
+                        "Channel receive control register",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxCr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_dlar",
+                    description: Some(
+                        "Channel Tx descriptor list address register",
+                    ),
+                    array: None,
+                    byte_offset: 276,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxDlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_dlar",
+                    description: Some(
+                        "Channel Rx descriptor list address register",
+                    ),
+                    array: None,
+                    byte_offset: 284,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxDlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_dtpr",
+                    description: Some(
+                        "Channel Tx descriptor tail pointer register",
+                    ),
+                    array: None,
+                    byte_offset: 288,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxDtpr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_dtpr",
+                    description: Some(
+                        "Channel Rx descriptor tail pointer register",
+                    ),
+                    array: None,
+                    byte_offset: 296,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxDtpr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmactx_rlr",
+                    description: Some(
+                        "Channel Tx descriptor ring length register",
+                    ),
+                    array: None,
+                    byte_offset: 300,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmactxRlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_rlr",
+                    description: Some(
+                        "Channel Rx descriptor ring length register",
+                    ),
+                    array: None,
+                    byte_offset: 304,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxRlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacier",
+                    description: Some(
+                        "Channel interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 308,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmacier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmacrx_iwtr",
+                    description: Some(
+                        "Channel Rx interrupt watchdog timer register",
+                    ),
+                    array: None,
+                    byte_offset: 312,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmacrxIwtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaccatx_dr",
+                    description: Some(
+                        "Channel current application transmit descriptor register",
+                    ),
+                    array: None,
+                    byte_offset: 324,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "DmaccatxDr",
                             ),
                         },
                     ),
@@ -109,154 +364,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmaccatx_dr",
+                    name: "dmaccarx_br",
                     description: Some(
-                        "Channel current application transmit descriptor register",
+                        "Channel current application receive buffer register",
                     ),
                     array: None,
-                    byte_offset: 324,
+                    byte_offset: 348,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmaccatxDr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaccr",
-                    description: Some(
-                        "Channel control register",
-                    ),
-                    array: None,
-                    byte_offset: 256,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmaccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacier",
-                    description: Some(
-                        "Channel interrupt enable register",
-                    ),
-                    array: None,
-                    byte_offset: 308,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmacier",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacmfcr",
-                    description: Some(
-                        "Channel missed frame count register",
-                    ),
-                    array: None,
-                    byte_offset: 364,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmacmfcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_cr",
-                    description: Some(
-                        "Channel receive control register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxCr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_dlar",
-                    description: Some(
-                        "Channel Rx descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 284,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxDlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_dtpr",
-                    description: Some(
-                        "Channel Rx descriptor tail pointer register",
-                    ),
-                    array: None,
-                    byte_offset: 296,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxDtpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_iwtr",
-                    description: Some(
-                        "Channel Rx interrupt watchdog timer register",
-                    ),
-                    array: None,
-                    byte_offset: 312,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxIwtr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmacrx_rlr",
-                    description: Some(
-                        "Channel Rx descriptor ring length register",
-                    ),
-                    array: None,
-                    byte_offset: 304,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmacrxRlr",
+                                "DmaccarxBr",
                             ),
                         },
                     ),
@@ -279,137 +398,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmactx_cr",
+                    name: "dmacmfcr",
                     description: Some(
-                        "Channel transmit control register",
+                        "Channel missed frame count register",
                     ),
                     array: None,
-                    byte_offset: 260,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxCr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_dlar",
-                    description: Some(
-                        "Channel Tx descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 276,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxDlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_dtpr",
-                    description: Some(
-                        "Channel Tx descriptor tail pointer register",
-                    ),
-                    array: None,
-                    byte_offset: 288,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxDtpr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmactx_rlr",
-                    description: Some(
-                        "Channel Tx descriptor ring length register",
-                    ),
-                    array: None,
-                    byte_offset: 300,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "DmactxRlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmadsr",
-                    description: Some(
-                        "Debug status register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
+                    byte_offset: 364,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmadsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmaisr",
-                    description: Some(
-                        "Interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmaisr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmamr",
-                    description: Some(
-                        "DMA mode register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmamr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmasbmr",
-                    description: Some(
-                        "System bus mode register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmasbmr",
+                                "Dmacmfcr",
                             ),
                         },
                     ),
@@ -424,6 +424,346 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
+                    name: "maccr",
+                    description: Some(
+                        "Operating mode configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Maccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macecr",
+                    description: Some(
+                        "Extended operating mode configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macecr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macpfr",
+                    description: Some(
+                        "Packet filtering control register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macpfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macwtr",
+                    description: Some(
+                        "Watchdog timeout register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macwtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macht0r",
+                    description: Some(
+                        "Hash Table 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macht0r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macht1r",
+                    description: Some(
+                        "Hash Table 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macht1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvtr",
+                    description: Some(
+                        "VLAN tag register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvhtr",
+                    description: Some(
+                        "VLAN Hash table register",
+                    ),
+                    array: None,
+                    byte_offset: 88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvhtr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvir",
+                    description: Some(
+                        "VLAN inclusion register",
+                    ),
+                    array: None,
+                    byte_offset: 96,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macivir",
+                    description: Some(
+                        "Inner VLAN inclusion register",
+                    ),
+                    array: None,
+                    byte_offset: 100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macivir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macqtx_fcr",
+                    description: Some(
+                        "Tx Queue flow control register",
+                    ),
+                    array: None,
+                    byte_offset: 112,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MacqtxFcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrx_fcr",
+                    description: Some(
+                        "Rx flow control register",
+                    ),
+                    array: None,
+                    byte_offset: 144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MacrxFcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macisr",
+                    description: Some(
+                        "Interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 176,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macisr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macier",
+                    description: Some(
+                        "Interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 180,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrx_tx_sr",
+                    description: Some(
+                        "Rx Tx status register",
+                    ),
+                    array: None,
+                    byte_offset: 184,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MacrxTxSr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macpcsr",
+                    description: Some(
+                        "PMT control status register",
+                    ),
+                    array: None,
+                    byte_offset: 192,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macpcsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrwkpfr",
+                    description: Some(
+                        "Remove wakeup packet filter register",
+                    ),
+                    array: None,
+                    byte_offset: 196,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macrwkpfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "maclcsr",
+                    description: Some(
+                        "LPI control status register",
+                    ),
+                    array: None,
+                    byte_offset: 208,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Maclcsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macltcr",
+                    description: Some(
+                        "LPI timers control register",
+                    ),
+                    array: None,
+                    byte_offset: 212,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macltcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macletr",
+                    description: Some(
+                        "LPI entry timer register",
+                    ),
+                    array: None,
+                    byte_offset: 216,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macletr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "mac1ustcr",
                     description: Some(
                         "1-microsecond-tick counter register",
@@ -436,6 +776,108 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Mac1ustcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvr",
+                    description: Some(
+                        "Version register",
+                    ),
+                    array: None,
+                    byte_offset: 272,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macdr",
+                    description: Some(
+                        "Debug register",
+                    ),
+                    array: None,
+                    byte_offset: 276,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "machwf1r",
+                    description: Some(
+                        "HW feature 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 288,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Machwf1r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "machwf2r",
+                    description: Some(
+                        "HW feature 2 register",
+                    ),
+                    array: None,
+                    byte_offset: 292,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Machwf2r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macmdioar",
+                    description: Some(
+                        "MDIO address register",
+                    ),
+                    array: None,
+                    byte_offset: 512,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macmdioar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macmdiodr",
+                    description: Some(
+                        "MDIO data register",
+                    ),
+                    array: None,
+                    byte_offset: 516,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macmdiodr",
                             ),
                         },
                     ),
@@ -577,375 +1019,256 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macacr",
+                    name: "mmc_control",
                     description: Some(
-                        "Auxiliary control register",
+                        "MMC control register",
                     ),
                     array: None,
-                    byte_offset: 2880,
+                    byte_offset: 1792,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macacr",
+                                "MmcControl",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macarpar",
+                    name: "mmc_rx_interrupt",
                     description: Some(
-                        "ARP address register",
+                        "MMC Rx interrupt register",
                     ),
                     array: None,
-                    byte_offset: 2784,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macarpar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macatsnr",
-                    description: Some(
-                        "Auxiliary timestamp nanoseconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2888,
+                    byte_offset: 1796,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macatsnr",
+                                "MmcRxInterrupt",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macatssr",
+                    name: "mmc_tx_interrupt",
                     description: Some(
-                        "Auxiliary timestamp seconds register",
+                        "MMC Tx interrupt register",
                     ),
                     array: None,
-                    byte_offset: 2892,
+                    byte_offset: 1800,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macatssr",
+                                "MmcTxInterrupt",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "maccr",
+                    name: "mmc_rx_interrupt_mask",
                     description: Some(
-                        "Operating mode configuration register",
+                        "MMC Rx interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 1804,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maccr",
+                                "MmcRxInterruptMask",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macdr",
+                    name: "mmc_tx_interrupt_mask",
                     description: Some(
-                        "Debug register",
+                        "MMC Tx interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 276,
+                    byte_offset: 1808,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MmcTxInterruptMask",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tx_single_collision_good_packets",
+                    description: Some(
+                        "Tx single collision good packets register",
+                    ),
+                    array: None,
+                    byte_offset: 1868,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macdr",
+                                "TxSingleCollisionGoodPackets",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macecr",
+                    name: "tx_multiple_collision_good_packets",
                     description: Some(
-                        "Extended operating mode configuration register",
+                        "Tx multiple collision good packets register",
                     ),
                     array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macecr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macht0r",
-                    description: Some(
-                        "Hash Table 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macht0r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macht1r",
-                    description: Some(
-                        "Hash Table 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macht1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "machwf1r",
-                    description: Some(
-                        "HW feature 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 288,
+                    byte_offset: 1872,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Machwf1r",
+                                "TxMultipleCollisionGoodPackets",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "machwf2r",
+                    name: "tx_packet_count_good",
                     description: Some(
-                        "HW feature 2 register",
+                        "Tx packet count good register",
                     ),
                     array: None,
-                    byte_offset: 292,
+                    byte_offset: 1896,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Machwf2r",
+                                "TxPacketCountGood",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macier",
+                    name: "rx_crc_error_packets",
                     description: Some(
-                        "Interrupt enable register",
+                        "Rx CRC error packets register",
                     ),
                     array: None,
-                    byte_offset: 180,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macier",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macisr",
-                    description: Some(
-                        "Interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 176,
+                    byte_offset: 1940,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macisr",
+                                "RxCrcErrorPackets",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macivir",
+                    name: "rx_alignment_error_packets",
                     description: Some(
-                        "Inner VLAN inclusion register",
+                        "Rx alignment error packets register",
                     ),
                     array: None,
-                    byte_offset: 100,
+                    byte_offset: 1944,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macivir",
+                                "RxAlignmentErrorPackets",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macl3a00r",
+                    name: "rx_unicast_packets_good",
                     description: Some(
-                        "MACL3A00R",
+                        "Rx unicast packets good register",
                     ),
                     array: None,
-                    byte_offset: 2320,
+                    byte_offset: 1988,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macl3a00r",
+                                "RxUnicastPacketsGood",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macl3a01r",
+                    name: "tx_lpi_usec_cntr",
                     description: Some(
-                        "Layer3 address 0 filter 1 Register",
+                        "Tx LPI microsecond timer register",
                     ),
                     array: None,
-                    byte_offset: 2368,
+                    byte_offset: 2028,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macl3a01r",
+                                "TxLpiUsecCntr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macl3a10r",
+                    name: "tx_lpi_tran_cntr",
                     description: Some(
-                        "Layer3 address 1 filter 0 register",
+                        "Tx LPI transition counter register",
                     ),
                     array: None,
-                    byte_offset: 2324,
+                    byte_offset: 2032,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macl3a10r",
+                                "TxLpiTranCntr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macl3a11r",
+                    name: "rx_lpi_usec_cntr",
                     description: Some(
-                        "Layer3 address 1 filter 1 register",
+                        "Rx LPI microsecond counter register",
                     ),
                     array: None,
-                    byte_offset: 2372,
+                    byte_offset: 2036,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macl3a11r",
+                                "RxLpiUsecCntr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macl3a20",
+                    name: "rx_lpi_tran_cntr",
                     description: Some(
-                        "Layer3 Address 2 filter 0 register",
+                        "Rx LPI transition counter register",
                     ),
                     array: None,
-                    byte_offset: 2328,
+                    byte_offset: 2040,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macl3a20",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a21r",
-                    description: Some(
-                        "Layer3 address 2 filter 1 Register",
-                    ),
-                    array: None,
-                    byte_offset: 2376,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a21r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a30",
-                    description: Some(
-                        "Layer3 Address 3 filter 0 register",
-                    ),
-                    array: None,
-                    byte_offset: 2332,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a30",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macl3a31r",
-                    description: Some(
-                        "Layer3 address 3 filter 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 2380,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3a31r",
+                                "RxLpiTranCntr",
                             ),
                         },
                     ),
@@ -968,23 +1291,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macl3l4c1r",
-                    description: Some(
-                        "L3 and L4 control 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 2352,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macl3l4c1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "macl4a0r",
                     description: Some(
                         "Layer4 address filter 0 register",
@@ -997,6 +1303,91 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Macl4a0r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a00r",
+                    description: Some(
+                        "MACL3A00R",
+                    ),
+                    array: None,
+                    byte_offset: 2320,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a00r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a10r",
+                    description: Some(
+                        "Layer3 address 1 filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2324,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a10r",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a20",
+                    description: Some(
+                        "Layer3 Address 2 filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2328,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a20",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3a30",
+                    description: Some(
+                        "Layer3 Address 3 filter 0 register",
+                    ),
+                    array: None,
+                    byte_offset: 2332,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3a30",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macl3l4c1r",
+                    description: Some(
+                        "L3 and L4 control 1 register",
+                    ),
+                    array: None,
+                    byte_offset: 2352,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macl3l4c1r",
                             ),
                         },
                     ),
@@ -1019,460 +1410,86 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "maclcsr",
+                    name: "macl3a01r",
                     description: Some(
-                        "LPI control status register",
+                        "Layer3 address 0 filter 1 Register",
                     ),
                     array: None,
-                    byte_offset: 208,
+                    byte_offset: 2368,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maclcsr",
+                                "Macl3a01r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macletr",
+                    name: "macl3a11r",
                     description: Some(
-                        "LPI entry timer register",
+                        "Layer3 address 1 filter 1 register",
                     ),
                     array: None,
-                    byte_offset: 216,
+                    byte_offset: 2372,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macletr",
+                                "Macl3a11r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "maclmir",
+                    name: "macl3a21r",
                     description: Some(
-                        "Log message interval register",
+                        "Layer3 address 2 filter 1 Register",
                     ),
                     array: None,
-                    byte_offset: 3024,
+                    byte_offset: 2376,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maclmir",
+                                "Macl3a21r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macltcr",
+                    name: "macl3a31r",
                     description: Some(
-                        "LPI timers control register",
+                        "Layer3 address 3 filter 1 register",
                     ),
                     array: None,
-                    byte_offset: 212,
+                    byte_offset: 2380,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macltcr",
+                                "Macl3a31r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macmdioar",
+                    name: "macarpar",
                     description: Some(
-                        "MDIO address register",
+                        "ARP address register",
                     ),
                     array: None,
-                    byte_offset: 512,
+                    byte_offset: 2784,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macmdioar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macmdiodr",
-                    description: Some(
-                        "MDIO data register",
-                    ),
-                    array: None,
-                    byte_offset: 516,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macmdiodr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macpcsr",
-                    description: Some(
-                        "PMT control status register",
-                    ),
-                    array: None,
-                    byte_offset: 192,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macpcsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macpfr",
-                    description: Some(
-                        "Packet filtering control register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macpfr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macpocr",
-                    description: Some(
-                        "PTP Offload control register",
-                    ),
-                    array: None,
-                    byte_offset: 3008,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macpocr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macppscr",
-                    description: Some(
-                        "PPS control register",
-                    ),
-                    array: None,
-                    byte_offset: 2928,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macppscr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macppsir",
-                    description: Some(
-                        "PPS interval register",
-                    ),
-                    array: None,
-                    byte_offset: 2952,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macppsir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macppsttnr",
-                    description: Some(
-                        "PPS target time nanoseconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2948,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macppsttnr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macppsttsr",
-                    description: Some(
-                        "PPS target time seconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2944,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macppsttsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macppswr",
-                    description: Some(
-                        "PPS width register",
-                    ),
-                    array: None,
-                    byte_offset: 2956,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macppswr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macqtx_fcr",
-                    description: Some(
-                        "Tx Queue flow control register",
-                    ),
-                    array: None,
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MacqtxFcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrwkpfr",
-                    description: Some(
-                        "Remove wakeup packet filter register",
-                    ),
-                    array: None,
-                    byte_offset: 196,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macrwkpfr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrx_fcr",
-                    description: Some(
-                        "Rx flow control register",
-                    ),
-                    array: None,
-                    byte_offset: 144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MacrxFcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrx_tx_sr",
-                    description: Some(
-                        "Rx Tx status register",
-                    ),
-                    array: None,
-                    byte_offset: 184,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MacrxTxSr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macspi0r",
-                    description: Some(
-                        "PTP Source Port Identity 0 Register",
-                    ),
-                    array: None,
-                    byte_offset: 3012,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macspi0r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macspi1r",
-                    description: Some(
-                        "PTP Source port identity 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 3016,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macspi1r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macspi2r",
-                    description: Some(
-                        "PTP Source port identity 2 register",
-                    ),
-                    array: None,
-                    byte_offset: 3020,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macspi2r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macssir",
-                    description: Some(
-                        "Sub-second increment register",
-                    ),
-                    array: None,
-                    byte_offset: 2820,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macssir",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstnr",
-                    description: Some(
-                        "System time nanoseconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2828,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstnr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstnur",
-                    description: Some(
-                        "System time nanoseconds update register",
-                    ),
-                    array: None,
-                    byte_offset: 2836,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstnur",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstsr",
-                    description: Some(
-                        "System time seconds register",
-                    ),
-                    array: None,
-                    byte_offset: 2824,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macstsur",
-                    description: Some(
-                        "System time seconds update register",
-                    ),
-                    array: None,
-                    byte_offset: 2832,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macstsur",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mactsar",
-                    description: Some(
-                        "Timestamp addend register",
-                    ),
-                    array: None,
-                    byte_offset: 2840,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mactsar",
+                                "Macarpar",
                             ),
                         },
                     ),
@@ -1495,69 +1512,103 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mactseacr",
+                    name: "macssir",
                     description: Some(
-                        "Timestamp Egress asymmetric correction register",
+                        "Sub-second increment register",
                     ),
                     array: None,
-                    byte_offset: 2900,
+                    byte_offset: 2820,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactseacr",
+                                "Macssir",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactsecnr",
+                    name: "macstsr",
                     description: Some(
-                        "Timestamp Egress correction nanosecond register",
+                        "System time seconds register",
                     ),
                     array: None,
-                    byte_offset: 2908,
+                    byte_offset: 2824,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactsecnr",
+                                "Macstsr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactsiacr",
+                    name: "macstnr",
                     description: Some(
-                        "Timestamp Ingress asymmetric correction register",
+                        "System time nanoseconds register",
                     ),
                     array: None,
-                    byte_offset: 2896,
+                    byte_offset: 2828,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactsiacr",
+                                "Macstnr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactsicnr",
+                    name: "macstsur",
                     description: Some(
-                        "Timestamp Ingress correction nanosecond register",
+                        "System time seconds update register",
                     ),
                     array: None,
-                    byte_offset: 2904,
+                    byte_offset: 2832,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mactsicnr",
+                                "Macstsur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macstnur",
+                    description: Some(
+                        "System time nanoseconds update register",
+                    ),
+                    array: None,
+                    byte_offset: 2836,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macstnur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactsar",
+                    description: Some(
+                        "Timestamp addend register",
+                    ),
+                    array: None,
+                    byte_offset: 2840,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mactsar",
                             ),
                         },
                     ),
@@ -1614,341 +1665,290 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macvhtr",
+                    name: "macacr",
                     description: Some(
-                        "VLAN Hash table register",
+                        "Auxiliary control register",
                     ),
                     array: None,
-                    byte_offset: 88,
+                    byte_offset: 2880,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macvhtr",
+                                "Macacr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macvir",
+                    name: "macatsnr",
                     description: Some(
-                        "VLAN inclusion register",
+                        "Auxiliary timestamp nanoseconds register",
                     ),
                     array: None,
-                    byte_offset: 96,
+                    byte_offset: 2888,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macatsnr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macatssr",
+                    description: Some(
+                        "Auxiliary timestamp seconds register",
+                    ),
+                    array: None,
+                    byte_offset: 2892,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macatssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mactsiacr",
+                    description: Some(
+                        "Timestamp Ingress asymmetric correction register",
+                    ),
+                    array: None,
+                    byte_offset: 2896,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macvir",
+                                "Mactsiacr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macvr",
+                    name: "mactseacr",
                     description: Some(
-                        "Version register",
+                        "Timestamp Egress asymmetric correction register",
                     ),
                     array: None,
-                    byte_offset: 272,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macvr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macvtr",
-                    description: Some(
-                        "VLAN tag register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
+                    byte_offset: 2900,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macvtr",
+                                "Mactseacr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macwtr",
+                    name: "mactsicnr",
                     description: Some(
-                        "Watchdog timeout register",
+                        "Timestamp Ingress correction nanosecond register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 2904,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macwtr",
+                                "Mactsicnr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mmc_control",
+                    name: "mactsecnr",
                     description: Some(
-                        "MMC control register",
+                        "Timestamp Egress correction nanosecond register",
                     ),
                     array: None,
-                    byte_offset: 1792,
+                    byte_offset: 2908,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MmcControl",
+                                "Mactsecnr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mmc_rx_interrupt",
+                    name: "macppscr",
                     description: Some(
-                        "MMC Rx interrupt register",
+                        "PPS control register",
                     ),
                     array: None,
-                    byte_offset: 1796,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MmcRxInterrupt",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmc_rx_interrupt_mask",
-                    description: Some(
-                        "MMC Rx interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 1804,
+                    byte_offset: 2928,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MmcRxInterruptMask",
+                                "Macppscr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mmc_tx_interrupt",
+                    name: "macppsttsr",
                     description: Some(
-                        "MMC Tx interrupt register",
+                        "PPS target time seconds register",
                     ),
                     array: None,
-                    byte_offset: 1800,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MmcTxInterrupt",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmc_tx_interrupt_mask",
-                    description: Some(
-                        "MMC Tx interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 1808,
+                    byte_offset: 2944,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MmcTxInterruptMask",
+                                "Macppsttsr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "rx_alignment_error_packets",
+                    name: "macppsttnr",
                     description: Some(
-                        "Rx alignment error packets register",
+                        "PPS target time nanoseconds register",
                     ),
                     array: None,
-                    byte_offset: 1944,
+                    byte_offset: 2948,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "RxAlignmentErrorPackets",
+                                "Macppsttnr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "rx_crc_error_packets",
+                    name: "macppsir",
                     description: Some(
-                        "Rx CRC error packets register",
+                        "PPS interval register",
                     ),
                     array: None,
-                    byte_offset: 1940,
+                    byte_offset: 2952,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "RxCrcErrorPackets",
+                                "Macppsir",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "rx_lpi_tran_cntr",
+                    name: "macppswr",
                     description: Some(
-                        "Rx LPI transition counter register",
+                        "PPS width register",
                     ),
                     array: None,
-                    byte_offset: 2040,
+                    byte_offset: 2956,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "RxLpiTranCntr",
+                                "Macppswr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "rx_lpi_usec_cntr",
+                    name: "macpocr",
                     description: Some(
-                        "Rx LPI microsecond counter register",
+                        "PTP Offload control register",
                     ),
                     array: None,
-                    byte_offset: 2036,
+                    byte_offset: 3008,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "RxLpiUsecCntr",
+                                "Macpocr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "rx_unicast_packets_good",
+                    name: "macspi0r",
                     description: Some(
-                        "Rx unicast packets good register",
+                        "PTP Source Port Identity 0 Register",
                     ),
                     array: None,
-                    byte_offset: 1988,
+                    byte_offset: 3012,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "RxUnicastPacketsGood",
+                                "Macspi0r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "tx_lpi_tran_cntr",
+                    name: "macspi1r",
                     description: Some(
-                        "Tx LPI transition counter register",
+                        "PTP Source port identity 1 register",
                     ),
                     array: None,
-                    byte_offset: 2032,
+                    byte_offset: 3016,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "TxLpiTranCntr",
+                                "Macspi1r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "tx_lpi_usec_cntr",
+                    name: "macspi2r",
                     description: Some(
-                        "Tx LPI microsecond timer register",
+                        "PTP Source port identity 2 register",
                     ),
                     array: None,
-                    byte_offset: 2028,
+                    byte_offset: 3020,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "TxLpiUsecCntr",
+                                "Macspi2r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "tx_multiple_collision_good_packets",
+                    name: "maclmir",
                     description: Some(
-                        "Tx multiple collision good packets register",
+                        "Log message interval register",
                     ),
                     array: None,
-                    byte_offset: 1872,
+                    byte_offset: 3024,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "TxMultipleCollisionGoodPackets",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_packet_count_good",
-                    description: Some(
-                        "Tx packet count good register",
-                    ),
-                    array: None,
-                    byte_offset: 1896,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxPacketCountGood",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "tx_single_collision_good_packets",
-                    description: Some(
-                        "Tx single collision good packets register",
-                    ),
-                    array: None,
-                    byte_offset: 1868,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "TxSingleCollisionGoodPackets",
+                                "Maclmir",
                             ),
                         },
                     ),
@@ -1962,23 +1962,6 @@ pub(crate) static REGISTERS: IR = IR {
                 "Ethernet: MTL mode register (MTL)",
             ),
             items: &[
-                BlockItem {
-                    name: "mtlisr",
-                    description: Some(
-                        "Interrupt status Register",
-                    ),
-                    array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mtlisr",
-                            ),
-                        },
-                    ),
-                },
                 BlockItem {
                     name: "mtlomr",
                     description: Some(
@@ -1997,86 +1980,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mtlqicsr",
+                    name: "mtlisr",
                     description: Some(
-                        "Queue interrupt control status Register",
+                        "Interrupt status Register",
                     ),
                     array: None,
-                    byte_offset: 300,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mtlqicsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlrx_qdr",
-                    description: Some(
-                        "Rx queue debug register",
-                    ),
-                    array: None,
-                    byte_offset: 312,
+                    byte_offset: 32,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtlrxQdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlrx_qmpocr",
-                    description: Some(
-                        "Rx queue missed packet and overflow counter register",
-                    ),
-                    array: None,
-                    byte_offset: 308,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtlrxQmpocr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtlrx_qomr",
-                    description: Some(
-                        "Rx queue operating mode register",
-                    ),
-                    array: None,
-                    byte_offset: 304,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtlrxQomr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mtltx_qdr",
-                    description: Some(
-                        "Tx queue debug Register",
-                    ),
-                    array: None,
-                    byte_offset: 264,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "MtltxQdr",
+                                "Mtlisr",
                             ),
                         },
                     ),
@@ -2111,6 +2026,91 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "MtltxQur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtltx_qdr",
+                    description: Some(
+                        "Tx queue debug Register",
+                    ),
+                    array: None,
+                    byte_offset: 264,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtltxQdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlqicsr",
+                    description: Some(
+                        "Queue interrupt control status Register",
+                    ),
+                    array: None,
+                    byte_offset: 300,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mtlqicsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlrx_qomr",
+                    description: Some(
+                        "Rx queue operating mode register",
+                    ),
+                    array: None,
+                    byte_offset: 304,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtlrxQomr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlrx_qmpocr",
+                    description: Some(
+                        "Rx queue missed packet and overflow counter register",
+                    ),
+                    array: None,
+                    byte_offset: 308,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtlrxQmpocr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mtlrx_qdr",
+                    description: Some(
+                        "Rx queue debug register",
+                    ),
+                    array: None,
+                    byte_offset: 312,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MtlrxQdr",
                             ),
                         },
                     ),

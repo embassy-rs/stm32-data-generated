@@ -18,25 +18,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "cr",
-                description: Some("Flash control register"),
+                name: "pdkeyr",
+                description: Some("Power down key register"),
                 array: None,
-                byte_offset: 20,
+                byte_offset: 4,
                 inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
+                    access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "eccr",
-                description: Some("Flash ECC register"),
-                array: None,
-                byte_offset: 24,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Eccr"),
+                    fieldset: Some("Pdkeyr"),
                 }),
             },
             BlockItem {
@@ -62,6 +51,39 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "sr",
+                description: Some("Status register"),
+                array: None,
+                byte_offset: 16,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Flash control register"),
+                array: None,
+                byte_offset: 20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
+                name: "eccr",
+                description: Some("Flash ECC register"),
+                array: None,
+                byte_offset: 24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Eccr"),
+                }),
+            },
+            BlockItem {
                 name: "optr",
                 description: Some("Flash option register"),
                 array: None,
@@ -70,17 +92,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Optr"),
-                }),
-            },
-            BlockItem {
-                name: "pcrop1er",
-                description: Some("Flash Bank 1 PCROP End address register"),
-                array: None,
-                byte_offset: 40,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Pcrop1er"),
                 }),
             },
             BlockItem {
@@ -95,36 +106,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "pdkeyr",
-                description: Some("Power down key register"),
+                name: "pcrop1er",
+                description: Some("Flash Bank 1 PCROP End address register"),
                 array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
-                    bit_size: 32,
-                    fieldset: Some("Pdkeyr"),
-                }),
-            },
-            BlockItem {
-                name: "sec1r",
-                description: Some("securable area bank1 register"),
-                array: None,
-                byte_offset: 112,
+                byte_offset: 40,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Sec1r"),
-                }),
-            },
-            BlockItem {
-                name: "sr",
-                description: Some("Status register"),
-                array: None,
-                byte_offset: 16,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Sr"),
+                    fieldset: Some("Pcrop1er"),
                 }),
             },
             BlockItem {
@@ -147,6 +136,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Wrp1br"),
+                }),
+            },
+            BlockItem {
+                name: "sec1r",
+                description: Some("securable area bank1 register"),
+                array: None,
+                byte_offset: 112,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sec1r"),
                 }),
             },
         ],

@@ -78,6 +78,125 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "itline2",
+                    description: Some(
+                        "interrupt line 2 status register",
+                    ),
+                    array: None,
+                    byte_offset: 136,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline3",
+                    description: Some(
+                        "interrupt line 3 status register",
+                    ),
+                    array: None,
+                    byte_offset: 140,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline3",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline4",
+                    description: Some(
+                        "interrupt line 4 status register",
+                    ),
+                    array: None,
+                    byte_offset: 144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline4",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline5",
+                    description: Some(
+                        "interrupt line 5 status register",
+                    ),
+                    array: None,
+                    byte_offset: 148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline5",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline6",
+                    description: Some(
+                        "interrupt line 6 status register",
+                    ),
+                    array: None,
+                    byte_offset: 152,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline6",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline7",
+                    description: Some(
+                        "interrupt line 7 status register",
+                    ),
+                    array: None,
+                    byte_offset: 156,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline7",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "itline9",
+                    description: Some(
+                        "interrupt line 9 status register",
+                    ),
+                    array: None,
+                    byte_offset: 164,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Itline9",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "itline10",
                     description: Some(
                         "interrupt line 10 status register",
@@ -197,23 +316,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "itline2",
-                    description: Some(
-                        "interrupt line 2 status register",
-                    ),
-                    array: None,
-                    byte_offset: 136,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "itline21",
                     description: Some(
                         "interrupt line 21 status register",
@@ -311,108 +413,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Itline28",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline3",
-                    description: Some(
-                        "interrupt line 3 status register",
-                    ),
-                    array: None,
-                    byte_offset: 140,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline4",
-                    description: Some(
-                        "interrupt line 4 status register",
-                    ),
-                    array: None,
-                    byte_offset: 144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline4",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline5",
-                    description: Some(
-                        "interrupt line 5 status register",
-                    ),
-                    array: None,
-                    byte_offset: 148,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline5",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline6",
-                    description: Some(
-                        "interrupt line 6 status register",
-                    ),
-                    array: None,
-                    byte_offset: 152,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline6",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline7",
-                    description: Some(
-                        "interrupt line 7 status register",
-                    ),
-                    array: None,
-                    byte_offset: 156,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline7",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "itline9",
-                    description: Some(
-                        "interrupt line 9 status register",
-                    ),
-                    array: None,
-                    byte_offset: 164,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Itline9",
                             ),
                         },
                     ),

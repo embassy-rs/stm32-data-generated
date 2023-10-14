@@ -7,17 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Window watchdog"),
         items: &[
             BlockItem {
-                name: "cfr",
-                description: Some("Configuration register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfr"),
-                }),
-            },
-            BlockItem {
                 name: "cr",
                 description: Some("Control register"),
                 array: None,
@@ -26,6 +15,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
+                name: "cfr",
+                description: Some("Configuration register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cfr"),
                 }),
             },
             BlockItem {

@@ -61,71 +61,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "pdcr",
-                    description: Some(
-                        "PWR Port pull-down control register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pucr",
-                    description: Some(
-                        "PWR Port pull-up control register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 8,
-                            },
-                        ),
-                    ),
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "scr",
-                    description: Some(
-                        "PWR status clear register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Scr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "sr1",
                     description: Some(
                         "PWR status register 1",
@@ -155,6 +90,71 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Sr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "scr",
+                    description: Some(
+                        "PWR status clear register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Scr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pucr",
+                    description: Some(
+                        "PWR Port pull-up control register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pdcr",
+                    description: Some(
+                        "PWR Port pull-down control register",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 8,
+                            },
+                        ),
+                    ),
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pcr",
                             ),
                         },
                     ),

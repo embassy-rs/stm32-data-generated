@@ -7,14 +7,36 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Analog-to-digital converter"),
         items: &[
             BlockItem {
-                name: "ccr",
-                description: Some("common configuration register"),
+                name: "isr",
+                description: Some("interrupt and status register"),
                 array: None,
-                byte_offset: 776,
+                byte_offset: 0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Ccr"),
+                    fieldset: Some("Isr"),
+                }),
+            },
+            BlockItem {
+                name: "ier",
+                description: Some("interrupt enable register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ier"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("control register"),
+                array: None,
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
                 }),
             },
             BlockItem {
@@ -40,61 +62,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "chselr",
-                description: Some("channel selection register"),
-                array: None,
-                byte_offset: 40,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Chselr"),
-                }),
-            },
-            BlockItem {
-                name: "cr",
-                description: Some("control register"),
-                array: None,
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "dr",
-                description: Some("data register"),
-                array: None,
-                byte_offset: 64,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Dr"),
-                }),
-            },
-            BlockItem {
-                name: "ier",
-                description: Some("interrupt enable register"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ier"),
-                }),
-            },
-            BlockItem {
-                name: "isr",
-                description: Some("interrupt and status register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Isr"),
-                }),
-            },
-            BlockItem {
                 name: "smpr",
                 description: Some("sampling time register"),
                 array: None,
@@ -114,6 +81,39 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Tr"),
+                }),
+            },
+            BlockItem {
+                name: "chselr",
+                description: Some("channel selection register"),
+                array: None,
+                byte_offset: 40,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Chselr"),
+                }),
+            },
+            BlockItem {
+                name: "dr",
+                description: Some("data register"),
+                array: None,
+                byte_offset: 64,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Dr"),
+                }),
+            },
+            BlockItem {
+                name: "ccr",
+                description: Some("common configuration register"),
+                array: None,
+                byte_offset: 776,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ccr"),
                 }),
             },
         ],

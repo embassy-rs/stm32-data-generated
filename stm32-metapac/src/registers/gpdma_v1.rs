@@ -8,68 +8,19 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             items: &[
                 BlockItem {
-                    name: "br1",
+                    name: "lbar",
                     description: Some(
-                        "GPDMA channel 15 alternate block register 1",
+                        "GPDMA channel 15 linked-list base address register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "ChBr1",
+                                "ChLbar",
                             ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "br2",
-                    description: Some(
-                        "GPDMA channel 15 block register 2",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "ChBr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cr",
-                    description: Some(
-                        "GPDMA channel 15 control register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "ChCr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dar",
-                    description: Some(
-                        "GPDMA channel 15 destination address register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: None,
                         },
                     ),
                 },
@@ -91,55 +42,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "lbar",
-                    description: Some(
-                        "GPDMA channel 15 linked-list base address register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "ChLbar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "llr",
-                    description: Some(
-                        "GPDMA channel 15 alternate linked-list address register",
-                    ),
-                    array: None,
-                    byte_offset: 124,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "ChLlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sar",
-                    description: Some(
-                        "GPDMA channel 15 source address register",
-                    ),
-                    array: None,
-                    byte_offset: 76,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: None,
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "sr",
                     description: Some(
                         "GPDMA channel 15 status register",
@@ -152,6 +54,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "ChSr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr",
+                    description: Some(
+                        "GPDMA channel 15 control register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "ChCr",
                             ),
                         },
                     ),
@@ -191,6 +110,53 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "br1",
+                    description: Some(
+                        "GPDMA channel 15 alternate block register 1",
+                    ),
+                    array: None,
+                    byte_offset: 72,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "ChBr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sar",
+                    description: Some(
+                        "GPDMA channel 15 source address register",
+                    ),
+                    array: None,
+                    byte_offset: 76,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dar",
+                    description: Some(
+                        "GPDMA channel 15 destination address register",
+                    ),
+                    array: None,
+                    byte_offset: 80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "tr3",
                     description: Some(
                         "GPDMA channel 15 transfer register 3",
@@ -207,6 +173,40 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "br2",
+                    description: Some(
+                        "GPDMA channel 15 block register 2",
+                    ),
+                    array: None,
+                    byte_offset: 88,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "ChBr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "llr",
+                    description: Some(
+                        "GPDMA channel 15 alternate linked-list address register",
+                    ),
+                    array: None,
+                    byte_offset: 124,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "ChLlr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
         Block {
@@ -217,36 +217,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ch",
-                    description: None,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 128,
-                            },
-                        ),
-                    ),
-                    byte_offset: 80,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Channel",
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "misr",
+                    name: "seccfgr",
                     description: Some(
-                        "GPDMA non-secure masked interrupt status register",
+                        "GPDMA secure configuration register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Misr",
+                                "Seccfgr",
                             ),
                         },
                     ),
@@ -286,18 +268,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "seccfgr",
+                    name: "misr",
                     description: Some(
-                        "GPDMA secure configuration register",
+                        "GPDMA non-secure masked interrupt status register",
                     ),
                     array: None,
-                    byte_offset: 0,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seccfgr",
+                                "Misr",
                             ),
                         },
                     ),
@@ -316,6 +298,24 @@ pub(crate) static REGISTERS: IR = IR {
                             fieldset: Some(
                                 "Misr",
                             ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ch",
+                    description: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 128,
+                            },
+                        ),
+                    ),
+                    byte_offset: 80,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "Channel",
                         },
                     ),
                 },

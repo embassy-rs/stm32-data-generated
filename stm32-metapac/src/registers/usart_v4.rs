@@ -10,23 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "brr",
-                    description: Some(
-                        "Baud rate register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Brr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "Control register 1",
@@ -78,69 +61,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "icr",
+                    name: "brr",
                     description: Some(
-                        "Interrupt flag clear register",
+                        "Baud rate register",
                     ),
                     array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "isr",
-                    description: Some(
-                        "Interrupt & status register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Isr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "presc",
-                    description: Some(
-                        "Prescaler register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Presc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rdr",
-                    description: Some(
-                        "Receive data register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
+                                "Brr",
                             ),
                         },
                     ),
@@ -163,6 +95,57 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "isr",
+                    description: Some(
+                        "Interrupt & status register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Isr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icr",
+                    description: Some(
+                        "Interrupt flag clear register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rdr",
+                    description: Some(
+                        "Receive data register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "tdr",
                     description: Some(
                         "Transmit data register",
@@ -179,6 +162,23 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "presc",
+                    description: Some(
+                        "Prescaler register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Presc",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
         Block {
@@ -188,23 +188,6 @@ pub(crate) static REGISTERS: IR = IR {
                 "Universal synchronous asynchronous receiver transmitter",
             ),
             items: &[
-                BlockItem {
-                    name: "brr",
-                    description: Some(
-                        "Baud rate register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Brr",
-                            ),
-                        },
-                    ),
-                },
                 BlockItem {
                     name: "cr1",
                     description: Some(
@@ -252,6 +235,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Cr3",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "brr",
+                    description: Some(
+                        "Baud rate register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Brr",
                             ),
                         },
                     ),
@@ -274,69 +274,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "icr",
+                    name: "rtor",
                     description: Some(
-                        "Interrupt flag clear register",
+                        "Receiver timeout register",
                     ),
                     array: None,
-                    byte_offset: 32,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "isr",
-                    description: Some(
-                        "Interrupt & status register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Isr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "presc",
-                    description: Some(
-                        "Prescaler register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
+                    byte_offset: 20,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Presc",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rdr",
-                    description: Some(
-                        "Receive data register",
-                    ),
-                    array: None,
-                    byte_offset: 36,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
+                                "Rtor",
                             ),
                         },
                     ),
@@ -359,18 +308,52 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "rtor",
+                    name: "isr",
                     description: Some(
-                        "Receiver timeout register",
+                        "Interrupt & status register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 28,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Rtor",
+                                "Isr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icr",
+                    description: Some(
+                        "Interrupt flag clear register",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "rdr",
+                    description: Some(
+                        "Receive data register",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
                             ),
                         },
                     ),
@@ -388,6 +371,23 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "presc",
+                    description: Some(
+                        "Prescaler register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Presc",
                             ),
                         },
                     ),

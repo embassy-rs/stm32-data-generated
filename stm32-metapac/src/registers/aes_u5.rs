@@ -18,6 +18,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "sr",
+                description: Some("Status register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
                 name: "dinr",
                 description: Some("Data input register"),
                 array: None,
@@ -40,14 +51,38 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "icr",
-                description: Some("interrupt clear register"),
-                array: None,
-                byte_offset: 776,
+                name: "keyr",
+                description: Some("Key register"),
+                array: Some(Array::Cursed(CursedArray {
+                    offsets: &[0, 4, 8, 12, 32, 36, 40, 44],
+                })),
+                byte_offset: 16,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Icr"),
+                    fieldset: Some("Keyr"),
+                }),
+            },
+            BlockItem {
+                name: "ivr",
+                description: Some("Initialization vector register"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 32,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ivr"),
+                }),
+            },
+            BlockItem {
+                name: "suspr",
+                description: Some("Suspend register"),
+                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                byte_offset: 64,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Suspr"),
                 }),
             },
             BlockItem {
@@ -73,49 +108,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "ivr",
-                description: Some("Initialization vector register"),
-                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
-                byte_offset: 32,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ivr"),
-                }),
-            },
-            BlockItem {
-                name: "keyr",
-                description: Some("Key register"),
-                array: Some(Array::Cursed(CursedArray {
-                    offsets: &[0, 4, 8, 12, 32, 36, 40, 44],
-                })),
-                byte_offset: 16,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Keyr"),
-                }),
-            },
-            BlockItem {
-                name: "sr",
-                description: Some("Status register"),
+                name: "icr",
+                description: Some("interrupt clear register"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 776,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Sr"),
-                }),
-            },
-            BlockItem {
-                name: "suspr",
-                description: Some("Suspend register"),
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
-                byte_offset: 64,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Suspr"),
+                    fieldset: Some("Icr"),
                 }),
             },
         ],

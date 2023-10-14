@@ -10,19 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ethernet_dma",
-                    description: Some(
-                        "Ethernet: DMA mode register (DMA)",
-                    ),
-                    array: None,
-                    byte_offset: 4096,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "EthernetDma",
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "ethernet_mac",
                     description: Some(
                         "Ethernet: media access control (MAC)",
@@ -45,6 +32,19 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Block(
                         BlockItemBlock {
                             block: "EthernetPtp",
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ethernet_dma",
+                    description: Some(
+                        "Ethernet: DMA mode register (DMA)",
+                    ),
+                    array: None,
+                    byte_offset: 4096,
+                    inner: BlockItemInner::Block(
+                        BlockItemBlock {
+                            block: "EthernetDma",
                         },
                     ),
                 },
@@ -75,69 +75,103 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmachrbar",
+                    name: "dmatpdr",
                     description: Some(
-                        "Ethernet DMA current host receive buffer address register",
+                        "Ethernet DMA transmit poll demand register",
                     ),
                     array: None,
-                    byte_offset: 84,
+                    byte_offset: 4,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmachrbar",
+                                "Dmatpdr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmachrdr",
+                    name: "dmarpdr",
                     description: Some(
-                        "Ethernet DMA current host receive descriptor register",
+                        "EHERNET DMA receive poll demand register",
                     ),
                     array: None,
-                    byte_offset: 76,
+                    byte_offset: 8,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmachrdr",
+                                "Dmarpdr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmachtbar",
+                    name: "dmardlar",
                     description: Some(
-                        "Ethernet DMA current host transmit buffer address register",
+                        "Ethernet DMA receive descriptor list address register",
                     ),
                     array: None,
-                    byte_offset: 80,
+                    byte_offset: 12,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmachtbar",
+                                "Dmardlar",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmachtdr",
+                    name: "dmatdlar",
                     description: Some(
-                        "Ethernet DMA current host transmit descriptor register",
+                        "Ethernet DMA transmit descriptor list address register",
                     ),
                     array: None,
-                    byte_offset: 72,
+                    byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmachtdr",
+                                "Dmatdlar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmasr",
+                    description: Some(
+                        "Ethernet DMA status register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmasr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dmaomr",
+                    description: Some(
+                        "Ethernet DMA operation mode register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dmaomr",
                             ),
                         },
                     ),
@@ -177,103 +211,69 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmaomr",
+                    name: "dmachtdr",
                     description: Some(
-                        "Ethernet DMA operation mode register",
+                        "Ethernet DMA current host transmit descriptor register",
                     ),
                     array: None,
-                    byte_offset: 24,
+                    byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmaomr",
+                                "Dmachtdr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmardlar",
+                    name: "dmachrdr",
                     description: Some(
-                        "Ethernet DMA receive descriptor list address register",
+                        "Ethernet DMA current host receive descriptor register",
                     ),
                     array: None,
-                    byte_offset: 12,
+                    byte_offset: 76,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmardlar",
+                                "Dmachrdr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmarpdr",
+                    name: "dmachtbar",
                     description: Some(
-                        "EHERNET DMA receive poll demand register",
+                        "Ethernet DMA current host transmit buffer address register",
                     ),
                     array: None,
-                    byte_offset: 8,
+                    byte_offset: 80,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmarpdr",
+                                "Dmachtbar",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmasr",
+                    name: "dmachrbar",
                     description: Some(
-                        "Ethernet DMA status register",
+                        "Ethernet DMA current host receive buffer address register",
                     ),
                     array: None,
-                    byte_offset: 20,
+                    byte_offset: 84,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::ReadWrite,
+                            access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Dmasr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmatdlar",
-                    description: Some(
-                        "Ethernet DMA transmit descriptor list address register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmatdlar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dmatpdr",
-                    description: Some(
-                        "Ethernet DMA transmit poll demand register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dmatpdr",
+                                "Dmachrbar",
                             ),
                         },
                     ),
@@ -287,6 +287,225 @@ pub(crate) static REGISTERS: IR = IR {
                 "Ethernet: media access control (MAC)",
             ),
             items: &[
+                BlockItem {
+                    name: "maccr",
+                    description: Some(
+                        "Ethernet MAC configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Maccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macffr",
+                    description: Some(
+                        "Ethernet MAC frame filter register",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macffr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "machthr",
+                    description: Some(
+                        "Ethernet MAC hash table high register",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Machthr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "machtlr",
+                    description: Some(
+                        "Ethernet MAC hash table low register",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Machtlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macmiiar",
+                    description: Some(
+                        "Ethernet MAC MII address register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macmiiar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macmiidr",
+                    description: Some(
+                        "Ethernet MAC MII data register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macmiidr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macfcr",
+                    description: Some(
+                        "Ethernet MAC flow control register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macfcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macvlantr",
+                    description: Some(
+                        "Ethernet MAC VLAN tag register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macvlantr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macrwuffr",
+                    description: Some(
+                        "Ethernet MAC remote wakeup frame filter register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macpmtcsr",
+                    description: Some(
+                        "Ethernet MAC PMT control and status register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macpmtcsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macdbgr",
+                    description: Some(
+                        "Ethernet MAC debug register",
+                    ),
+                    array: None,
+                    byte_offset: 52,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macdbgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macsr",
+                    description: Some(
+                        "Ethernet MAC interrupt status register",
+                    ),
+                    array: None,
+                    byte_offset: 56,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "macimr",
+                    description: Some(
+                        "Ethernet MAC interrupt mask register",
+                    ),
+                    array: None,
+                    byte_offset: 60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Macimr",
+                            ),
+                        },
+                    ),
+                },
                 BlockItem {
                     name: "maca0hr",
                     description: Some(
@@ -424,225 +643,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "maccr",
-                    description: Some(
-                        "Ethernet MAC configuration register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macdbgr",
-                    description: Some(
-                        "Ethernet MAC debug register",
-                    ),
-                    array: None,
-                    byte_offset: 52,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macdbgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macfcr",
-                    description: Some(
-                        "Ethernet MAC flow control register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macfcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macffr",
-                    description: Some(
-                        "Ethernet MAC frame filter register",
-                    ),
-                    array: None,
-                    byte_offset: 4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macffr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "machthr",
-                    description: Some(
-                        "Ethernet MAC hash table high register",
-                    ),
-                    array: None,
-                    byte_offset: 8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Machthr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "machtlr",
-                    description: Some(
-                        "Ethernet MAC hash table low register",
-                    ),
-                    array: None,
-                    byte_offset: 12,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Machtlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macimr",
-                    description: Some(
-                        "Ethernet MAC interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 60,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macimr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macmiiar",
-                    description: Some(
-                        "Ethernet MAC MII address register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macmiiar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macmiidr",
-                    description: Some(
-                        "Ethernet MAC MII data register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macmiidr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macpmtcsr",
-                    description: Some(
-                        "Ethernet MAC PMT control and status register",
-                    ),
-                    array: None,
-                    byte_offset: 44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macpmtcsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macrwuffr",
-                    description: Some(
-                        "Ethernet MAC remote wakeup frame filter register",
-                    ),
-                    array: None,
-                    byte_offset: 40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: None,
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macsr",
-                    description: Some(
-                        "Ethernet MAC interrupt status register",
-                    ),
-                    array: None,
-                    byte_offset: 56,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macvlantr",
-                    description: Some(
-                        "Ethernet MAC VLAN tag register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macvlantr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "mmccr",
                     description: Some(
                         "Ethernet MMC control register",
@@ -655,74 +655,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Mmccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmcrfaecr",
-                    description: Some(
-                        "Ethernet MMC received frames with alignment error counter register",
-                    ),
-                    array: None,
-                    byte_offset: 408,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mmcrfaecr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmcrfcecr",
-                    description: Some(
-                        "Ethernet MMC received frames with CRC error counter register",
-                    ),
-                    array: None,
-                    byte_offset: 404,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mmcrfcecr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmcrgufcr",
-                    description: Some(
-                        "MMC received good unicast frames counter register",
-                    ),
-                    array: None,
-                    byte_offset: 452,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mmcrgufcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmcrimr",
-                    description: Some(
-                        "Ethernet MMC receive interrupt mask register",
-                    ),
-                    array: None,
-                    byte_offset: 268,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mmcrimr",
                             ),
                         },
                     ),
@@ -745,52 +677,35 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mmctgfcr",
+                    name: "mmctir",
                     description: Some(
-                        "Ethernet MMC transmitted good frames counter register",
+                        "Ethernet MMC transmit interrupt register",
                     ),
                     array: None,
-                    byte_offset: 360,
+                    byte_offset: 264,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mmctgfcr",
+                                "Mmctir",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mmctgfmsccr",
+                    name: "mmcrimr",
                     description: Some(
-                        "Ethernet MMC transmitted good frames after more than a single collision",
+                        "Ethernet MMC receive interrupt mask register",
                     ),
                     array: None,
-                    byte_offset: 336,
+                    byte_offset: 268,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mmctgfmsccr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "mmctgfsccr",
-                    description: Some(
-                        "Ethernet MMC transmitted good frames after a single collision counter",
-                    ),
-                    array: None,
-                    byte_offset: 332,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Mmctgfsccr",
+                                "Mmcrimr",
                             ),
                         },
                     ),
@@ -813,18 +728,103 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mmctir",
+                    name: "mmctgfsccr",
                     description: Some(
-                        "Ethernet MMC transmit interrupt register",
+                        "Ethernet MMC transmitted good frames after a single collision counter",
                     ),
                     array: None,
-                    byte_offset: 264,
+                    byte_offset: 332,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Mmctir",
+                                "Mmctgfsccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmctgfmsccr",
+                    description: Some(
+                        "Ethernet MMC transmitted good frames after more than a single collision",
+                    ),
+                    array: None,
+                    byte_offset: 336,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mmctgfmsccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmctgfcr",
+                    description: Some(
+                        "Ethernet MMC transmitted good frames counter register",
+                    ),
+                    array: None,
+                    byte_offset: 360,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mmctgfcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmcrfcecr",
+                    description: Some(
+                        "Ethernet MMC received frames with CRC error counter register",
+                    ),
+                    array: None,
+                    byte_offset: 404,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mmcrfcecr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmcrfaecr",
+                    description: Some(
+                        "Ethernet MMC received frames with alignment error counter register",
+                    ),
+                    array: None,
+                    byte_offset: 408,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mmcrfaecr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mmcrgufcr",
+                    description: Some(
+                        "MMC received good unicast frames counter register",
+                    ),
+                    array: None,
+                    byte_offset: 452,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Mmcrgufcr",
                             ),
                         },
                     ),
@@ -839,18 +839,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "ptpppscr",
+                    name: "ptptscr",
                     description: Some(
-                        "Ethernet PTP PPS control register",
+                        "Ethernet PTP time stamp control register",
                     ),
                     array: None,
-                    byte_offset: 44,
+                    byte_offset: 0,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ptpppscr",
+                                "Ptptscr",
                             ),
                         },
                     ),
@@ -873,40 +873,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ptptsar",
-                    description: Some(
-                        "Ethernet PTP time stamp addend register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ptptsar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ptptscr",
-                    description: Some(
-                        "Ethernet PTP time stamp control register",
-                    ),
-                    array: None,
-                    byte_offset: 0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ptptscr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "ptptshr",
                     description: Some(
                         "Ethernet PTP time stamp high register",
@@ -919,23 +885,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Ptptshr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ptptshur",
-                    description: Some(
-                        "Ethernet PTP time stamp high update register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ptptshur",
                             ),
                         },
                     ),
@@ -958,6 +907,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "ptptshur",
+                    description: Some(
+                        "Ethernet PTP time stamp high update register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ptptshur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "ptptslur",
                     description: Some(
                         "Ethernet PTP time stamp low update register",
@@ -975,18 +941,18 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ptptssr",
+                    name: "ptptsar",
                     description: Some(
-                        "Ethernet PTP time stamp status register",
+                        "Ethernet PTP time stamp addend register",
                     ),
                     array: None,
-                    byte_offset: 40,
+                    byte_offset: 24,
                     inner: BlockItemInner::Register(
                         Register {
-                            access: Access::Read,
+                            access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ptptssr",
+                                "Ptptsar",
                             ),
                         },
                     ),
@@ -1021,6 +987,40 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Ptpttlr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ptptssr",
+                    description: Some(
+                        "Ethernet PTP time stamp status register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ptptssr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ptpppscr",
+                    description: Some(
+                        "Ethernet PTP PPS control register",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ptpppscr",
                             ),
                         },
                     ),

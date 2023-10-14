@@ -7,6 +7,28 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Debug support"),
         items: &[
             BlockItem {
+                name: "idcode",
+                description: Some("MCU Device ID Code Register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Idcode"),
+                }),
+            },
+            BlockItem {
+                name: "cr",
+                description: Some("Debug MCU Configuration Register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
                 name: "apb1fzr1",
                 description: Some("APB1 Low Freeze Register CPU1"),
                 array: None,
@@ -18,28 +40,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "apb1fzr2",
-                description: Some("APB1 High Freeze Register CPU1"),
-                array: None,
-                byte_offset: 68,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1fzr2"),
-                }),
-            },
-            BlockItem {
-                name: "apb2fzr",
-                description: Some("APB2 Freeze Register CPU1"),
-                array: None,
-                byte_offset: 76,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2fzr"),
-                }),
-            },
-            BlockItem {
                 name: "c2ap_b1fzr1",
                 description: Some("APB1 Low Freeze Register CPU2"),
                 array: None,
@@ -48,6 +48,17 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("C2apB1fzr1"),
+                }),
+            },
+            BlockItem {
+                name: "apb1fzr2",
+                description: Some("APB1 High Freeze Register CPU1"),
+                array: None,
+                byte_offset: 68,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Apb1fzr2"),
                 }),
             },
             BlockItem {
@@ -73,25 +84,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "cr",
-                description: Some("Debug MCU Configuration Register"),
+                name: "apb2fzr",
+                description: Some("APB2 Freeze Register CPU1"),
                 array: None,
-                byte_offset: 4,
+                byte_offset: 76,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "idcode",
-                description: Some("MCU Device ID Code Register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Idcode"),
+                    fieldset: Some("Apb2fzr"),
                 }),
             },
         ],

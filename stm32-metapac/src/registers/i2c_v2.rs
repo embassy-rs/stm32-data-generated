@@ -44,40 +44,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "icr",
-                    description: Some(
-                        "Interrupt clear register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "isr",
-                    description: Some(
-                        "Interrupt and Status register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Isr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "oar1",
                     description: Some(
                         "Own address register 1",
@@ -112,6 +78,74 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "timingr",
+                    description: Some(
+                        "Timing register",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Timingr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "timeoutr",
+                    description: Some(
+                        "Timeout register",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Timeoutr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "isr",
+                    description: Some(
+                        "Interrupt and Status register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Isr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "icr",
+                    description: Some(
+                        "Interrupt clear register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Icr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "pecr",
                     description: Some(
                         "PEC register",
@@ -141,40 +175,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Rxdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "timeoutr",
-                    description: Some(
-                        "Timeout register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Timeoutr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "timingr",
-                    description: Some(
-                        "Timing register",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Timingr",
                             ),
                         },
                     ),

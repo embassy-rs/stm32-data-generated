@@ -7,6 +7,17 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("Analog-to-Digital Converter"),
         items: &[
             BlockItem {
+                name: "csr",
+                description: Some("ADC Common status register"),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Csr"),
+                }),
+            },
+            BlockItem {
                 name: "ccr",
                 description: Some("ADC common control register"),
                 array: None,
@@ -37,17 +48,6 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::Read,
                     bit_size: 32,
                     fieldset: Some("Cdr2"),
-                }),
-            },
-            BlockItem {
-                name: "csr",
-                description: Some("ADC Common status register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Read,
-                    bit_size: 32,
-                    fieldset: Some("Csr"),
                 }),
             },
         ],

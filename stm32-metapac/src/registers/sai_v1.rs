@@ -10,23 +10,6 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "clrfr",
-                    description: Some(
-                        "Clear flag register",
-                    ),
-                    array: None,
-                    byte_offset: 24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Clrfr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "cr1",
                     description: Some(
                         "Configuration register 1",
@@ -61,23 +44,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dr",
-                    description: Some(
-                        "Data register",
-                    ),
-                    array: None,
-                    byte_offset: 28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "frcr",
                     description: Some(
                         "This register has no meaning in AC97 and SPDIF audio protocol",
@@ -90,23 +56,6 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Frcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "im",
-                    description: Some(
-                        "Interrupt mask register 2",
-                    ),
-                    array: None,
-                    byte_offset: 16,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Im",
                             ),
                         },
                     ),
@@ -129,6 +78,23 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "im",
+                    description: Some(
+                        "Interrupt mask register 2",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Im",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "sr",
                     description: Some(
                         "Status register",
@@ -141,6 +107,40 @@ pub(crate) static REGISTERS: IR = IR {
                             bit_size: 32,
                             fieldset: Some(
                                 "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "clrfr",
+                    description: Some(
+                        "Clear flag register",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Clrfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dr",
+                    description: Some(
+                        "Data register",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dr",
                             ),
                         },
                     ),

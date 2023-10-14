@@ -7,28 +7,6 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("General purpose I/O"),
         items: &[
             BlockItem {
-                name: "brr",
-                description: Some("Port bit reset register (GPIOn_BRR)"),
-                array: None,
-                byte_offset: 20,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
-                    bit_size: 32,
-                    fieldset: Some("Brr"),
-                }),
-            },
-            BlockItem {
-                name: "bsrr",
-                description: Some("Port bit set/reset register (GPIOn_BSRR)"),
-                array: None,
-                byte_offset: 16,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
-                    bit_size: 32,
-                    fieldset: Some("Bsrr"),
-                }),
-            },
-            BlockItem {
                 name: "cr",
                 description: Some("Port configuration register low (GPIOn_CRL)"),
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
@@ -51,17 +29,6 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "lckr",
-                description: Some("Port configuration lock register"),
-                array: None,
-                byte_offset: 24,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Lckr"),
-                }),
-            },
-            BlockItem {
                 name: "odr",
                 description: Some("Port output data register (GPIOn_ODR)"),
                 array: None,
@@ -70,6 +37,39 @@ pub(crate) static REGISTERS: IR = IR {
                     access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Odr"),
+                }),
+            },
+            BlockItem {
+                name: "bsrr",
+                description: Some("Port bit set/reset register (GPIOn_BSRR)"),
+                array: None,
+                byte_offset: 16,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Bsrr"),
+                }),
+            },
+            BlockItem {
+                name: "brr",
+                description: Some("Port bit reset register (GPIOn_BRR)"),
+                array: None,
+                byte_offset: 20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Brr"),
+                }),
+            },
+            BlockItem {
+                name: "lckr",
+                description: Some("Port configuration lock register"),
+                array: None,
+                byte_offset: 24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Lckr"),
                 }),
             },
         ],

@@ -1376,7 +1376,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected as I2C clock source",
         "value": 1
       }
@@ -1386,7 +1386,7 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock used as I2S clock source",
         "value": 0
       },
@@ -1471,7 +1471,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "NoMCO",
+        "name": "DISABLE",
         "description": "MCO output disabled, no clock on MCO",
         "value": 0
       },
@@ -1486,7 +1486,7 @@
         "value": 3
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected",
         "value": 4
       },
@@ -1756,7 +1756,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock",
         "value": 0
       },
@@ -1901,12 +1901,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK selected as USART clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected as USART clock source",
         "value": 1
       },

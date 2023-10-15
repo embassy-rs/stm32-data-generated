@@ -1801,7 +1801,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock"),
                     value: 0,
                 },

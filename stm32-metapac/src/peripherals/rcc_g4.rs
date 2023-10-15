@@ -3615,7 +3615,7 @@ pub mod vals {
         HSI48 = 0,
         _RESERVED_1 = 0x01,
         #[doc = "PLLQCLK selected as 48 MHz clock"]
-        PLLQCLK = 0x02,
+        PLL1_Q = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Clk48sel {
@@ -3768,12 +3768,12 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "No clock, MCO output disabled"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "SYSCLK selected as MCO source"]
         SYS = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "HSI16 selected as MCO source"]
-        HSI16 = 0x03,
+        HSI = 0x03,
         #[doc = "HSE selected as MCO source"]
         HSE = 0x04,
         #[doc = "Main PLLCLK selected as MCO source"]
@@ -4256,10 +4256,10 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock selected as PLL entry clock source"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         _RESERVED_1 = 0x01,
         #[doc = "HSI16 selected as PLL entry clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,
     }
@@ -4336,7 +4336,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock used as RTC clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI used as RTC clock"]
@@ -4371,11 +4371,11 @@ pub mod vals {
     pub enum Sw {
         _RESERVED_0 = 0,
         #[doc = "HSI16 selected as system clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
         #[doc = "PLLRCLK selected as system clock"]
-        PLLRCLK = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

@@ -2377,7 +2377,7 @@ pub mod vals {
         #[doc = "HSI clock selected as I2C clock source"]
         HSI = 0,
         #[doc = "SYSCLK clock selected as I2C clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
     }
     impl Icsw {
         #[inline(always)]
@@ -2405,7 +2405,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Issrc {
         #[doc = "System clock used as I2S clock source"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "External clock mapped on the I2S_CKIN pin used as I2S clock source"]
         CKIN = 0x01,
     }
@@ -2518,7 +2518,7 @@ pub mod vals {
         #[doc = "External low speed (LSE) oscillator clock selected"]
         LSE = 0x03,
         #[doc = "System clock selected"]
-        SYSCLK = 0x04,
+        SYS = 0x04,
         #[doc = "Internal RC 8 MHz (HSI) oscillator clock selected"]
         HSI = 0x05,
         #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
@@ -2799,7 +2799,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]
@@ -2970,9 +2970,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usartsw {
         #[doc = "PCLK selected as USART clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK selected as USART clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "LSE selected as USART clock source"]
         LSE = 0x02,
         #[doc = "HSI selected as USART clock source"]

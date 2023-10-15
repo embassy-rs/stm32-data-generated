@@ -1806,10 +1806,10 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcsel {
         #[doc = "System clock"]
-        SYSCLK = 0,
+        SYS = 0,
         _RESERVED_1 = 0x01,
         #[doc = "HSIKER"]
-        HSIKER = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Adcsel {
@@ -1973,11 +1973,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c1sel {
         #[doc = "PCLK"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSIKER"]
-        HSIKER = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1sel {
@@ -2006,10 +2006,10 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2s1sel {
         #[doc = "SYSCLK"]
-        SYSCLK = 0,
+        SYS = 0,
         _RESERVED_1 = 0x01,
         #[doc = "HSIKER"]
-        HSIKER = 0x02,
+        HSI = 0x02,
         #[doc = "I2S_CKIN"]
         I2S_CKIN = 0x03,
     }
@@ -2153,9 +2153,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "No clock, MCO output disabled"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "SYSCLK selected as MCO source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "HSI48 selected as MCO source"]
         HSI48 = 0x03,
@@ -2240,7 +2240,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock used as RTC clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI used as RTC clock"]
@@ -2354,11 +2354,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "PCLK"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSIKER"]
-        HSIKER = 0x02,
+        HSI = 0x02,
         #[doc = "LSE"]
         LSE = 0x03,
     }

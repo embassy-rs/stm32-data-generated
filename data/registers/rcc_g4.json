@@ -2046,7 +2046,7 @@
         "value": 0
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK selected as 48 MHz clock",
         "value": 2
       }
@@ -2161,7 +2161,7 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock, MCO output disabled",
         "value": 0
       },
@@ -2171,7 +2171,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as MCO source",
         "value": 3
       },
@@ -2940,12 +2940,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock selected as PLL entry clock source",
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as PLL entry clock source",
         "value": 2
       },
@@ -2990,7 +2990,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock used as RTC clock",
         "value": 0
       },
@@ -3015,7 +3015,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as system clock",
         "value": 1
       },
@@ -3025,7 +3025,7 @@
         "value": 2
       },
       {
-        "name": "PLLRCLK",
+        "name": "PLL1_R",
         "description": "PLLRCLK selected as system clock",
         "value": 3
       }

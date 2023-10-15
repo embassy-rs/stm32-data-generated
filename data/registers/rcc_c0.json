@@ -1031,12 +1031,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock",
         "value": 0
       },
       {
-        "name": "HSIKER",
+        "name": "HSI",
         "description": "HSIKER",
         "value": 2
       }
@@ -1186,17 +1186,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK",
         "value": 1
       },
       {
-        "name": "HSIKER",
+        "name": "HSI",
         "description": "HSIKER",
         "value": 2
       }
@@ -1206,12 +1206,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK",
         "value": 0
       },
       {
-        "name": "HSIKER",
+        "name": "HSI",
         "description": "HSIKER",
         "value": 2
       },
@@ -1311,12 +1311,12 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock, MCO output disabled",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected as MCO source",
         "value": 1
       },
@@ -1376,7 +1376,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock used as RTC clock",
         "value": 0
       },
@@ -1471,17 +1471,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK",
         "value": 1
       },
       {
-        "name": "HSIKER",
+        "name": "HSI",
         "description": "HSIKER",
         "value": 2
       },

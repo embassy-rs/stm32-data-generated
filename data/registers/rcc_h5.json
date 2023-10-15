@@ -3164,7 +3164,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "HCLK",
+        "name": "HCLK1",
         "description": "rcc_hclk selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -3364,7 +3364,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },
@@ -3389,7 +3389,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB3",
+        "name": "PCLK3",
         "description": "rcc_pclk3 selected as peripheral clock",
         "value": 0
       },
@@ -3424,7 +3424,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB3",
+        "name": "PCLK3",
         "description": "rcc_pclk3 selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -3674,7 +3674,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "AHB4",
+        "name": "HCLK4",
         "description": "rcc_hclk4 selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -6630,7 +6630,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "no clock (default after Backup domain reset)",
         "value": 0
       },
@@ -6805,7 +6805,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB2",
+        "name": "PCLK2",
         "description": "rcc_pclk2 selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -6840,7 +6840,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB3",
+        "name": "PCLK3",
         "description": "rcc_pclk3 selected as kernel clock (default after reset)",
         "value": 0
       },
@@ -6875,7 +6875,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB4",
+        "name": "PCLK4",
         "description": "rcc_pclk4 selected as peripheral clock",
         "value": 0
       },
@@ -6965,7 +6965,7 @@
         "value": 2
       },
       {
-        "name": "PLL1",
+        "name": "PLL1_P",
         "description": "PLL1 selected as system clock",
         "value": 3
       }
@@ -6975,7 +6975,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HCLK_DIV_8",
+        "name": "HCLK1_DIV_8",
         "description": "rcc_hclk/8 selected as clock source (default after reset)",
         "value": 0
       },
@@ -7025,7 +7025,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },
@@ -7060,7 +7060,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB2",
+        "name": "PCLK2",
         "description": "rcc_pclk2 selected as peripheral clock",
         "value": 0
       },

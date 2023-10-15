@@ -2570,7 +2570,7 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "APB2",
+        "name": "PCLK2",
         "description": "APB2 clock (PCLK2) selected as DFSDM1 Kernel clock source",
         "value": 0
       },
@@ -2685,7 +2685,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "APB1 clock (PCLK1) selected as LPTILM1 clock",
         "value": 0
       },
@@ -5170,7 +5170,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock",
         "value": 0
       },
@@ -5285,7 +5285,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB2",
+        "name": "PCLK2",
         "description": "APB2 clock (PCLK2) is selected as USART clock",
         "value": 0
       },
@@ -5310,7 +5310,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "APB1 clock (PCLK1) is selected as USART clock",
         "value": 0
       },

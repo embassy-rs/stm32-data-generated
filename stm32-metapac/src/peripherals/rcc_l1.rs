@@ -2330,7 +2330,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "No clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "SYSCLK clock selected"]
         SYSCLK = 0x01,
         #[doc = "HSI16 oscillator clock selected"]
@@ -2609,7 +2609,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]

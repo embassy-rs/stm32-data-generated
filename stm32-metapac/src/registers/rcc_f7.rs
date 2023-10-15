@@ -4520,7 +4520,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "APB2",
+                    name: "PCLK2",
                     description: Some(
                         "APB2 clock (PCLK2) selected as DFSDM1 Kernel clock source",
                     ),
@@ -4681,7 +4681,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB1",
+                    name: "PCLK1",
                     description: Some(
                         "APB1 clock (PCLK1) selected as LPTILM1 clock",
                     ),
@@ -7881,7 +7881,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some(
                         "No clock",
                     ),
@@ -8042,7 +8042,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB2",
+                    name: "PCLK2",
                     description: Some(
                         "APB2 clock (PCLK2) is selected as USART clock",
                     ),
@@ -8077,7 +8077,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB1",
+                    name: "PCLK1",
                     description: Some(
                         "APB1 clock (PCLK1) is selected as USART clock",
                     ),

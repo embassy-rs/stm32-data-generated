@@ -2832,7 +2832,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLQCLK",
+                    name: "PLL1_Q",
                     description: Some("PLLQCLK selected as 48 MHz clock"),
                     value: 2,
                 },
@@ -2955,7 +2955,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock, MCO output disabled"),
                     value: 0,
                 },
@@ -2965,7 +2965,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some("HSI16 selected as MCO source"),
                     value: 3,
                 },
@@ -3924,12 +3924,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock selected as PLL entry clock source"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some("HSI16 selected as PLL entry clock source"),
                     value: 2,
                 },
@@ -3978,7 +3978,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock used as RTC clock"),
                     value: 0,
                 },
@@ -4005,7 +4005,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some("HSI16 selected as system clock"),
                     value: 1,
                 },
@@ -4015,7 +4015,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLLRCLK",
+                    name: "PLL1_R",
                     description: Some("PLLRCLK selected as system clock"),
                     value: 3,
                 },

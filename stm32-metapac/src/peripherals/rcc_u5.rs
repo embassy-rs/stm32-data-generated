@@ -8297,7 +8297,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock selected"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock selected"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock selected"]

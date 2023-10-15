@@ -3092,11 +3092,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcsel {
         #[doc = "SYSCLK used as ADC clock source"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "PLLPCLK used as ADC clock source"]
-        PLLPCLK = 0x01,
+        PLL1_P = 0x01,
         #[doc = "HSI16 used as ADC clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Adcsel {
@@ -3155,9 +3155,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fdcansel {
         #[doc = "PCLK used as FDCAN clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "PLLQCLK used as FDCAN clock source"]
-        PLLQCLK = 0x01,
+        PLL1_Q = 0x01,
         #[doc = "HSE used as FDCAN clock source"]
         HSE = 0x02,
         _RESERVED_3 = 0x03,
@@ -3281,11 +3281,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c1sel {
         #[doc = "PCLK used as I2C1 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as I2C1 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as I2C1 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1sel {
@@ -3314,11 +3314,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c2i2s1sel {
         #[doc = "PCLK used as I2C2/I2S2 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as I2C2/I2S2 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as I2C2/I2S2 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "External clock used as I2C2/I2S2 clock source"]
         I2S_CKIN = 0x03,
     }
@@ -3348,11 +3348,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2s1sel {
         #[doc = "SYSCLK used as I2S1 clock source"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "PLLPCLK used as I2S1 clock source"]
-        PLLPCLK = 0x01,
+        PLL1_P = 0x01,
         #[doc = "HSI used as I2S1 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "External clock used as I2S1 clock source"]
         I2S_CKIN = 0x03,
     }
@@ -3382,11 +3382,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2s2sel {
         #[doc = "SYSCLK used as I2S2 clock source"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "PLLPCLK used as I2S2 clock source"]
-        PLLPCLK = 0x01,
+        PLL1_P = 0x01,
         #[doc = "HSI used as I2S2 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "External clock used as I2S2 clock source"]
         I2S_CKIN = 0x03,
     }
@@ -3416,11 +3416,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptim1sel {
         #[doc = "PCLK used as LPTIM1 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "LSI used as LPTIM1 clock source"]
         LSI = 0x01,
         #[doc = "HSI16 used as LPTIM1 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as LPTIM1 clock source"]
         LSE = 0x03,
     }
@@ -3450,11 +3450,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptim2sel {
         #[doc = "PCLK used as LPTIM2 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "LSI used as LPTIM2 clock source"]
         LSI = 0x01,
         #[doc = "HSI16 used as LPTIM2 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as LPTIM2 clock source"]
         LSE = 0x03,
     }
@@ -3484,11 +3484,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpuart1sel {
         #[doc = "PCLK used as LPUART1 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as LPUART1 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as LPUART1 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as LPUART1 clock source"]
         LSE = 0x03,
     }
@@ -3518,11 +3518,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpuart2sel {
         #[doc = "PCLK used as LPUART2 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as LPUART2 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as LPUART2 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as LPUART2 clock source"]
         LSE = 0x03,
     }
@@ -3639,13 +3639,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "No clock, MCO output disabled"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "SYSCLK selected as MCO source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI48 selected as MCO source"]
         HSI48 = 0x02,
         #[doc = "HSI16 selected as MCO source"]
-        HSI16 = 0x03,
+        HSI = 0x03,
         #[doc = "HSE selected as MCO source"]
         HSE = 0x04,
         #[doc = "PLLRCLK selected as MCO source"]
@@ -3655,9 +3655,9 @@ pub mod vals {
         #[doc = "LSE selected as MCO source"]
         LSE = 0x07,
         #[doc = "PLLPCLK selected as MCO source"]
-        PLLPCLK = 0x08,
+        PLL1_P = 0x08,
         #[doc = "PLLQCLK selected as MCO source"]
-        PLLQCLK = 0x09,
+        PLL1_Q = 0x09,
         #[doc = "RTCCLK selected as MCO source"]
         RTCCLK = 0x0a,
         #[doc = "RTC_Wakeup selected as MCO source"]
@@ -4007,10 +4007,10 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock selected as PLL entry clock source"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         _RESERVED_1 = 0x01,
         #[doc = "HSI16 selected as PLL entry clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,
     }
@@ -4121,13 +4121,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rngsel {
         #[doc = "No clock used as RNG clock source"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "HSI divided by 8 used as RNG clock source"]
         HSI16_DIV8 = 0x01,
         #[doc = "SYSCLK used as RNG clock source"]
-        SYSCLK = 0x02,
+        SYS = 0x02,
         #[doc = "PLLQCLK used as RNG clock source"]
-        PLLQCLK = 0x03,
+        PLL1_Q = 0x03,
     }
     impl Rngsel {
         #[inline(always)]
@@ -4155,7 +4155,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock used as RTC clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI used as RTC clock"]
@@ -4193,7 +4193,7 @@ pub mod vals {
         #[doc = "HSE selected as system clock"]
         HSE = 0x01,
         #[doc = "PLLRCLK selected as system clock"]
-        PLLRCLK = 0x02,
+        PLL1_R = 0x02,
         #[doc = "LSI selected as system clock"]
         LSI = 0x03,
         #[doc = "LSE selected as system clock"]
@@ -4230,7 +4230,7 @@ pub mod vals {
         #[doc = "TIMPCLK used as TIM15 clock source"]
         TIMPCLK = 0,
         #[doc = "PLLQCLK used as TIM15 clock source"]
-        PLLQCLK = 0x01,
+        PLL1_Q = 0x01,
     }
     impl Tim15sel {
         #[inline(always)]
@@ -4260,7 +4260,7 @@ pub mod vals {
         #[doc = "TIMPCLK used as TIM1 clock source"]
         TIMPCLK = 0,
         #[doc = "PLLQCLK used as TIM1 clock source"]
-        PLLQCLK = 0x01,
+        PLL1_Q = 0x01,
     }
     impl Tim1sel {
         #[inline(always)]
@@ -4288,11 +4288,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "PCLK used as USART1 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as USART1 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as USART1 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as USART1 clock source"]
         LSE = 0x03,
     }
@@ -4322,11 +4322,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart2sel {
         #[doc = "PCLK used as USART2 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as USART2 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as USART2 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as USART2 clock source"]
         LSE = 0x03,
     }
@@ -4356,11 +4356,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart3sel {
         #[doc = "PCLK used as USART3 clock source"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "SYSCLK used as USART3 clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 used as USART3 clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE used as USART3 clock source"]
         LSE = 0x03,
     }
@@ -4392,7 +4392,7 @@ pub mod vals {
         #[doc = "HSI48 used as USB clock source"]
         HSI48 = 0,
         #[doc = "PLLQCLK used as USB clock source"]
-        PLLQCLK = 0x01,
+        PLL1_Q = 0x01,
         #[doc = "HSE used as USB clock source"]
         HSE = 0x02,
         _RESERVED_3 = 0x03,

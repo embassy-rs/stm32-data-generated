@@ -1745,7 +1745,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB1",
+                    name: "PCLK1",
                     description: Some("APB1 clock (PCLK1) selected as LPTILM1 clock"),
                     value: 0,
                 },
@@ -4287,7 +4287,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock"),
                     value: 0,
                 },

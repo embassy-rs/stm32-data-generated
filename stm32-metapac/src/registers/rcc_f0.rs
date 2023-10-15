@@ -2125,7 +2125,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK clock selected as I2C clock source",
                     ),
@@ -2265,7 +2265,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "System clock selected",
                     ),
@@ -2657,7 +2657,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some(
                         "No clock",
                     ),
@@ -2727,14 +2727,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PCLK",
+                    name: "PCLK1",
                     description: Some(
                         "PCLK selected as USART clock source",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK selected as USART clock source",
                     ),

@@ -3982,7 +3982,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "No clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "SYSCLK clock selected"]
         SYSCLK = 0x01,
         #[doc = "MSI oscillator clock selected"]
@@ -4402,7 +4402,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock selected as PLL entry clock source"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "MSI selected as PLL entry clock source"]
         MSI = 0x01,
         #[doc = "HSI16 selected as PLL entry clock source"]
@@ -4475,7 +4475,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock selected"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock selected"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock selected"]

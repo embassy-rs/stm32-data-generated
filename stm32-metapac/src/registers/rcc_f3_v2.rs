@@ -1800,7 +1800,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("SYSCLK clock selected as I2C clock source"),
                     value: 1,
                 },
@@ -1812,7 +1812,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("System clock used as I2S clock source"),
                     value: 0,
                 },
@@ -1903,7 +1903,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOMCO",
+                    name: "DISABLE",
                     description: Some("MCO output disabled, no clock on MCO"),
                     value: 0,
                 },
@@ -1918,7 +1918,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("System clock selected"),
                     value: 4,
                 },
@@ -2202,7 +2202,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock"),
                     value: 0,
                 },
@@ -2355,12 +2355,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PCLK",
+                    name: "PCLK1",
                     description: Some("PCLK selected as USART clock source"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("SYSCLK selected as USART clock source"),
                     value: 1,
                 },

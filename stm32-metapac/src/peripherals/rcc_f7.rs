@@ -4558,7 +4558,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dfsdmsel {
         #[doc = "APB2 clock (PCLK2) selected as DFSDM1 Kernel clock source"]
-        APB2 = 0,
+        PCLK2 = 0,
         #[doc = "System clock (SYSCLK) clock selected as DFSDM1 Kernel clock source"]
         SYSCLK = 0x01,
     }
@@ -4732,7 +4732,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptimsel {
         #[doc = "APB1 clock (PCLK1) selected as LPTILM1 clock"]
-        APB1 = 0,
+        PCLK1 = 0,
         #[doc = "LSI clock is selected as LPTILM1 clock"]
         LSI = 0x01,
         #[doc = "HSI clock is selected as LPTILM1 clock"]
@@ -5866,7 +5866,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]
@@ -6057,7 +6057,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart1sel {
         #[doc = "APB2 clock (PCLK2) is selected as USART clock"]
-        APB2 = 0,
+        PCLK2 = 0,
         #[doc = "System clock is selected as USART clock"]
         SYSCLK = 0x01,
         #[doc = "HSI clock is selected as USART clock"]
@@ -6091,7 +6091,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usart2sel {
         #[doc = "APB1 clock (PCLK1) is selected as USART clock"]
-        APB1 = 0,
+        PCLK1 = 0,
         #[doc = "System clock is selected as USART clock"]
         SYSCLK = 0x01,
         #[doc = "HSI clock is selected as USART clock"]

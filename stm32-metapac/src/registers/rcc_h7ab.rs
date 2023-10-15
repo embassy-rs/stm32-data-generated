@@ -4996,7 +4996,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "APB2",
+                    name: "PCLK2",
                     description: Some("rcc_pclk2 selected as peripheral clock"),
                     value: 0,
                 },
@@ -5035,7 +5035,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "AHB3",
+                    name: "HCLK3",
                     description: Some("rcc_hclk3 selected as peripheral clock"),
                     value: 0,
                 },
@@ -5158,7 +5158,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB1",
+                    name: "PCLK1",
                     description: Some("rcc_pclk1 selected as peripheral clock"),
                     value: 0,
                 },
@@ -5185,7 +5185,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB4",
+                    name: "PCLK4",
                     description: Some("rcc_pclk4 selected as peripheral clock"),
                     value: 0,
                 },
@@ -5212,7 +5212,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "APB1",
+                    name: "PCLK1",
                     description: Some("rcc_pclk1 selected as peripheral clock"),
                     value: 0,
                 },
@@ -5249,7 +5249,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "APB4",
+                    name: "PCLK4",
                     description: Some("rcc_pclk4 selected as peripheral clock"),
                     value: 0,
                 },
@@ -9147,7 +9147,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NOCLOCK",
+                    name: "DISABLE",
                     description: Some("No clock"),
                     value: 0,
                 },
@@ -9319,7 +9319,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "APB4",
+                    name: "PCLK4",
                     description: Some("rcc_pclk4 selected as peripheral clock"),
                     value: 0,
                 },
@@ -9388,7 +9388,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLL1",
+                    name: "PLL1_P",
                     description: Some("PLL1 selected as system clock"),
                     value: 3,
                 },
@@ -9434,7 +9434,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "APB2",
+                    name: "PCLK2",
                     description: Some("rcc_pclk2 selected as peripheral clock"),
                     value: 0,
                 },
@@ -9471,7 +9471,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "APB1",
+                    name: "PCLK1",
                     description: Some("rcc_pclk1 selected as peripheral clock"),
                     value: 0,
                 },

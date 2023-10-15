@@ -4688,7 +4688,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckdfsdmsel {
         #[doc = "APB2 clock used as Kernel clock"]
-        APB2 = 0,
+        PCLK2 = 0,
         #[doc = "System clock used as Kernel clock"]
         SYSCLK = 0x01,
     }
@@ -4926,7 +4926,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptimsel {
         #[doc = "APB1 clock (PCLK1) selected as LPTILM1 clock"]
-        APB1 = 0,
+        PCLK1 = 0,
         #[doc = "LSI clock is selected as LPTILM1 clock"]
         LSI = 0x01,
         #[doc = "HSI clock is selected as LPTILM1 clock"]
@@ -6266,7 +6266,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock used as RTC clock"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]

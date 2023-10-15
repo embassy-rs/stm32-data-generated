@@ -5311,7 +5311,7 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "APB2",
+        "name": "PCLK2",
         "description": "rcc_pclk2 selected as peripheral clock",
         "value": 0
       },
@@ -5346,7 +5346,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "AHB3",
+        "name": "HCLK3",
         "description": "rcc_hclk3 selected as peripheral clock",
         "value": 0
       },
@@ -5461,7 +5461,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },
@@ -5486,7 +5486,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB4",
+        "name": "PCLK4",
         "description": "rcc_pclk4 selected as peripheral clock",
         "value": 0
       },
@@ -5511,7 +5511,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },
@@ -5546,7 +5546,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB4",
+        "name": "PCLK4",
         "description": "rcc_pclk4 selected as peripheral clock",
         "value": 0
       },
@@ -8717,7 +8717,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock",
         "value": 0
       },
@@ -8877,7 +8877,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB4",
+        "name": "PCLK4",
         "description": "rcc_pclk4 selected as peripheral clock",
         "value": 0
       },
@@ -8942,7 +8942,7 @@
         "value": 2
       },
       {
-        "name": "PLL1",
+        "name": "PLL1_P",
         "description": "PLL1 selected as system clock",
         "value": 3
       }
@@ -8982,7 +8982,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB2",
+        "name": "PCLK2",
         "description": "rcc_pclk2 selected as peripheral clock",
         "value": 0
       },
@@ -9017,7 +9017,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB1",
+        "name": "PCLK1",
         "description": "rcc_pclk1 selected as peripheral clock",
         "value": 0
       },

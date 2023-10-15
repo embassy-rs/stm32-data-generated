@@ -7160,7 +7160,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock selected",
         "value": 0
       },

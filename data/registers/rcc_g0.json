@@ -1763,17 +1763,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as ADC clock source",
         "value": 0
       },
       {
-        "name": "PLLPCLK",
+        "name": "PLL1_P",
         "description": "PLLPCLK used as ADC clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as ADC clock source",
         "value": 2
       }
@@ -1798,12 +1798,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as FDCAN clock source",
         "value": 0
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK used as FDCAN clock source",
         "value": 1
       },
@@ -1913,17 +1913,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as I2C1 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as I2C1 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as I2C1 clock source",
         "value": 2
       }
@@ -1933,17 +1933,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as I2C2/I2S2 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as I2C2/I2S2 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as I2C2/I2S2 clock source",
         "value": 2
       },
@@ -1958,17 +1958,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as I2S1 clock source",
         "value": 0
       },
       {
-        "name": "PLLPCLK",
+        "name": "PLL1_P",
         "description": "PLLPCLK used as I2S1 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI used as I2S1 clock source",
         "value": 2
       },
@@ -1983,17 +1983,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as I2S2 clock source",
         "value": 0
       },
       {
-        "name": "PLLPCLK",
+        "name": "PLL1_P",
         "description": "PLLPCLK used as I2S2 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI used as I2S2 clock source",
         "value": 2
       },
@@ -2008,7 +2008,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as LPTIM1 clock source",
         "value": 0
       },
@@ -2018,7 +2018,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as LPTIM1 clock source",
         "value": 2
       },
@@ -2033,7 +2033,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as LPTIM2 clock source",
         "value": 0
       },
@@ -2043,7 +2043,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as LPTIM2 clock source",
         "value": 2
       },
@@ -2058,17 +2058,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as LPUART1 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as LPUART1 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as LPUART1 clock source",
         "value": 2
       },
@@ -2083,17 +2083,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as LPUART2 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as LPUART2 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as LPUART2 clock source",
         "value": 2
       },
@@ -2193,12 +2193,12 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock, MCO output disabled",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected as MCO source",
         "value": 1
       },
@@ -2208,7 +2208,7 @@
         "value": 2
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as MCO source",
         "value": 3
       },
@@ -2233,12 +2233,12 @@
         "value": 7
       },
       {
-        "name": "PLLPCLK",
+        "name": "PLL1_P",
         "description": "PLLPCLK selected as MCO source",
         "value": 8
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK selected as MCO source",
         "value": 9
       },
@@ -2811,12 +2811,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock selected as PLL entry clock source",
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as PLL entry clock source",
         "value": 2
       },
@@ -2886,7 +2886,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock used as RNG clock source",
         "value": 0
       },
@@ -2896,12 +2896,12 @@
         "value": 1
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as RNG clock source",
         "value": 2
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK used as RNG clock source",
         "value": 3
       }
@@ -2911,7 +2911,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NoClock",
+        "name": "DISABLE",
         "description": "No clock used as RTC clock",
         "value": 0
       },
@@ -2946,7 +2946,7 @@
         "value": 1
       },
       {
-        "name": "PLLRCLK",
+        "name": "PLL1_R",
         "description": "PLLRCLK selected as system clock",
         "value": 2
       },
@@ -2971,7 +2971,7 @@
         "value": 0
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK used as TIM15 clock source",
         "value": 1
       }
@@ -2986,7 +2986,7 @@
         "value": 0
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK used as TIM1 clock source",
         "value": 1
       }
@@ -2996,17 +2996,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as USART1 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as USART1 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as USART1 clock source",
         "value": 2
       },
@@ -3021,17 +3021,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as USART2 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as USART2 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as USART2 clock source",
         "value": 2
       },
@@ -3046,17 +3046,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK used as USART3 clock source",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK used as USART3 clock source",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 used as USART3 clock source",
         "value": 2
       },
@@ -3076,7 +3076,7 @@
         "value": 0
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "PLLQCLK used as USB clock source",
         "value": 1
       },

@@ -3855,7 +3855,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtcsel {
         #[doc = "no clock selected, RTC and TAMP kernel clock disabled"]
-        NOCLOCK = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock selected, and enabled"]
         LSE = 0x01,
         #[doc = "LSI oscillator clock selected, and enabled"]

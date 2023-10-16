@@ -4187,16 +4187,16 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL_Q",
+                    name: "PLLSAI1_Q",
                     description: Some(
-                        "PLL_Q aka PLL48M2CLK clock selected",
+                        "PLLSAI1_Q aka PLL48M1CLK clock selected",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PLLSAI1_Q",
+                    name: "PLL_Q",
                     description: Some(
-                        "PLLSAI1_Q aka PLL48M1CLK clock selected",
+                        "PLL_Q aka PLL48M2CLK clock selected",
                     ),
                     value: 2,
                 },

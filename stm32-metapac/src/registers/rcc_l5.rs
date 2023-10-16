@@ -58,7 +58,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Pllsaicfgr"),
+                    fieldset: Some("Pllcfgr"),
                 }),
             },
             BlockItem {
@@ -69,7 +69,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Pllsaicfgr"),
+                    fieldset: Some("Pllcfgr"),
                 }),
             },
             BlockItem {
@@ -2909,7 +2909,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 26,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Clk48sel"),
                 },
                 Field {
                     name: "adcsel",
@@ -3373,7 +3373,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Msirgsel"),
                 },
                 Field {
                     name: "msirange",
@@ -3689,7 +3689,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[
                 Field {
                     name: "pllsrc",
-                    description: Some("Main PLL, PLLSAI1 and PLLSAI2 entry clock source"),
+                    description: Some("PLL clock source"),
                     bit_offset: 0,
                     bit_size: 2,
                     array: None,
@@ -3697,9 +3697,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllm",
-                    description: Some(
-                        "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock",
-                    ),
+                    description: Some("Division factor for the PLL input clock"),
                     bit_offset: 4,
                     bit_size: 4,
                     array: None,
@@ -3707,7 +3705,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "plln",
-                    description: Some("Main PLL multiplication factor for VCO"),
+                    description: Some("PLL multiplication factor for VCO"),
                     bit_offset: 8,
                     bit_size: 7,
                     array: None,
@@ -3715,7 +3713,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllpen",
-                    description: Some("Main PLL PLLSAI3CLK output enable"),
+                    description: Some("PLL PLLSAI3CLK output enable"),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
@@ -3723,7 +3721,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllpbit",
-                    description: Some("Main PLL division factor for PLLSAI3CLK (SAI1 and SAI2 clock)"),
+                    description: Some("PLL division factor for PLLSAI3CLK (SAI1 and SAI2 clock)"),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -3731,7 +3729,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllqen",
-                    description: Some("Main PLL PLLUSB1CLK output enable"),
+                    description: Some("PLL PLLUSB1CLK output enable"),
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
@@ -3739,7 +3737,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllq",
-                    description: Some("Main PLL division factor for PLLUSB1CLK(48 MHz clock)"),
+                    description: Some("PLL division factor for PLLUSB1CLK(48 MHz clock)"),
                     bit_offset: 21,
                     bit_size: 2,
                     array: None,
@@ -3747,7 +3745,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllren",
-                    description: Some("Main PLL PLLCLK output enable"),
+                    description: Some("PLL PLLCLK output enable"),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -3755,7 +3753,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllr",
-                    description: Some("Main PLL division factor for PLLCLK (system clock)"),
+                    description: Some("PLL division factor for PLLCLK (system clock)"),
                     bit_offset: 25,
                     bit_size: 2,
                     array: None,
@@ -3763,87 +3761,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllp",
-                    description: Some("Main PLL division factor for PLLSAI2CLK"),
-                    bit_offset: 27,
-                    bit_size: 5,
-                    array: None,
-                    enumm: Some("Pllp"),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pllsaicfgr",
-            extends: None,
-            description: Some("PLLSAI configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pllm",
-                    description: Some("Division factor for PLLSAI input clock"),
-                    bit_offset: 4,
-                    bit_size: 4,
-                    array: None,
-                    enumm: Some("Pllm"),
-                },
-                Field {
-                    name: "plln",
-                    description: Some("SAI1PLL multiplication factor for VCO"),
-                    bit_offset: 8,
-                    bit_size: 7,
-                    array: None,
-                    enumm: Some("Plln"),
-                },
-                Field {
-                    name: "pllpen",
-                    description: Some("SAI1PLL PLLSAICLK output enable"),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllpbit",
-                    description: Some("SAI1PLL division factor for PLLSAICLK"),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Pllpbit"),
-                },
-                Field {
-                    name: "pllqen",
-                    description: Some("SAI1PLL PLLUSB2CLK output enable"),
-                    bit_offset: 20,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllq",
-                    description: Some("SAI1PLL division factor for PLLUSB2CLK"),
-                    bit_offset: 21,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Pllq"),
-                },
-                Field {
-                    name: "pllren",
-                    description: Some("PLLSAI PLLADC1CLK output enable"),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pllr",
-                    description: Some("PLLSAI division factor for PLLADC1CLK"),
-                    bit_offset: 25,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Pllr"),
-                },
-                Field {
-                    name: "pllp",
-                    description: Some("PLLSAI division factor for PLLSAICLK"),
+                    description: Some("PLL division factor for PLLSAI2CLK"),
                     bit_offset: 27,
                     bit_size: 5,
                     array: None,
@@ -4077,6 +3995,33 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Clk48sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSI48",
+                    description: Some("HSI48 clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLSAI1_Q",
+                    description: Some("PLLSAI1_Q aka PLL48M1CLK clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PLL_Q",
+                    description: Some("PLL_Q aka PLL48M2CLK clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: Some("MSI clock selected"),
+                    value: 3,
+                },
+            ],
+        },
         Enum {
             name: "Hpre",
             description: None,
@@ -4321,6 +4266,23 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "RANGE48M",
                     description: Some("range 11 around 48 MHz"),
                     value: 11,
+                },
+            ],
+        },
+        Enum {
+            name: "Msirgsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CSR",
+                    description: Some("MSI Range is provided by MSISRANGE[3:0] in RCC_CSR register"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CR",
+                    description: Some("MSI Range is provided by MSIRANGE[3:0] in the RCC_CR register"),
+                    value: 1,
                 },
             ],
         },

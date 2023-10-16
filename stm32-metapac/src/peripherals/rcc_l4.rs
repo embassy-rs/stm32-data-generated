@@ -4113,10 +4113,10 @@ pub mod vals {
     pub enum Clk48sel {
         #[doc = "HSI48 clock selected (only for STM32L41x/L42x/L43x/L44x/L45x/L46x/L49x/L4Ax devices, otherwise no clock selected)"]
         HSI48 = 0,
-        #[doc = "PLL_Q aka PLL48M2CLK clock selected"]
-        PLL_Q = 0x01,
         #[doc = "PLLSAI1_Q aka PLL48M1CLK clock selected"]
-        PLLSAI1_Q = 0x02,
+        PLLSAI1_Q = 0x01,
+        #[doc = "PLL_Q aka PLL48M2CLK clock selected"]
+        PLL_Q = 0x02,
         #[doc = "MSI clock selected"]
         MSI = 0x03,
     }

@@ -1519,17 +1519,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB",
+        "name": "PCLK1",
         "description": "APB clock selected as peripheral clock",
         "value": 0
       },
       {
-        "name": "SYSTEM",
+        "name": "SYS",
         "description": "System clock selected as peripheral clock",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected as peripheral clock",
         "value": 2
       }
@@ -1539,7 +1539,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB",
+        "name": "PCLK1",
         "description": "APB clock selected as Timer clock",
         "value": 0
       },
@@ -1549,7 +1549,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected as Timer clock",
         "value": 2
       },
@@ -1629,7 +1629,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI oscillator clock selected",
         "value": 2
       },
@@ -1779,7 +1779,7 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI selected as PLL input clock",
         "value": 0
       },
@@ -1879,7 +1879,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "Internal 16 MHz (HSI) oscillator selected as wake-up from Stop clock (or HSI16/4 if HSI16DIVEN=1)",
         "value": 1
       }
@@ -1894,7 +1894,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI oscillator used as system clock",
         "value": 1
       },
@@ -1914,17 +1914,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB",
+        "name": "PCLK1",
         "description": "APB clock selected as peripheral clock",
         "value": 0
       },
       {
-        "name": "SYSTEM",
+        "name": "SYS",
         "description": "System clock selected as peripheral clock",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected as peripheral clock",
         "value": 2
       },

@@ -409,7 +409,7 @@
                         "block": "ADC"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "adcen"
@@ -517,7 +517,7 @@
                         "block": "ADC"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "adcen"
@@ -625,7 +625,7 @@
                         "block": "ADC"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "adcen"
@@ -694,7 +694,7 @@
                         "block": "CAN"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "can1en"
@@ -840,7 +840,7 @@
                         "block": "CRC"
                     },
                     "rcc": {
-                        "clock": "AHB1",
+                        "clock": "hclk1",
                         "enable": {
                             "register": "ahb1enr",
                             "field": "crcen"
@@ -860,7 +860,7 @@
                         "block": "DAC"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "dac1en"
@@ -922,14 +922,10 @@
                     "name": "DFSDM1",
                     "address": 1073831936,
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk1",
                         "enable": {
-                            "register": "apb2enr",
+                            "register": "apb1enr2",
                             "field": "dfsdmen"
-                        },
-                        "reset": {
-                            "register": "apb2rstr",
-                            "field": "dfsdmrst"
                         },
                         "mux": {
                             "register": "ccipr",
@@ -1148,7 +1144,7 @@
                         "block": "DMA"
                     },
                     "rcc": {
-                        "clock": "AHB1",
+                        "clock": "hclk1",
                         "enable": {
                             "register": "ahb1enr",
                             "field": "dma1en"
@@ -1198,7 +1194,7 @@
                         "block": "DMA"
                     },
                     "rcc": {
-                        "clock": "AHB1",
+                        "clock": "hclk1",
                         "enable": {
                             "register": "ahb1enr",
                             "field": "dma2en"
@@ -1323,7 +1319,7 @@
                         "block": "FLASH"
                     },
                     "rcc": {
-                        "clock": "AHB1",
+                        "clock": "hclk1",
                         "enable": {
                             "register": "ahb1enr",
                             "field": "flashen"
@@ -1344,7 +1340,7 @@
                     "name": "FMC",
                     "address": 1610612736,
                     "rcc": {
-                        "clock": "AHB3",
+                        "clock": "hclk3",
                         "enable": {
                             "register": "ahb3enr",
                             "field": "fmcen"
@@ -1620,7 +1616,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpioaen"
@@ -1640,7 +1636,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpioben"
@@ -1660,7 +1656,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpiocen"
@@ -1680,7 +1676,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpioden"
@@ -1700,7 +1696,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpioeen"
@@ -1720,7 +1716,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpiofen"
@@ -1740,7 +1736,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpiogen"
@@ -1760,7 +1756,7 @@
                         "block": "GPIO"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "gpiohen"
@@ -1780,7 +1776,7 @@
                         "block": "I2C"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "i2c1en"
@@ -1863,7 +1859,7 @@
                         "block": "I2C"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "i2c2en"
@@ -1936,7 +1932,7 @@
                         "block": "I2C"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "i2c3en"
@@ -2003,7 +1999,7 @@
                     "name": "LPTIM1",
                     "address": 1073773568,
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "lptim1en"
@@ -2070,7 +2066,7 @@
                     "name": "LPTIM2",
                     "address": 1073779712,
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr2",
                             "field": "lptim2en"
@@ -2147,7 +2143,7 @@
                         "block": "LPUART"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr2",
                             "field": "lpuart1en"
@@ -2221,7 +2217,7 @@
                     "name": "OPAMP1",
                     "address": 1073772544,
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "opampen"
@@ -2273,7 +2269,7 @@
                         "block": "PWR"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "pwren"
@@ -2419,7 +2415,7 @@
                         "block": "RNG"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "rngen"
@@ -2445,7 +2441,7 @@
                         "block": "RTC"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "rtcapben"
@@ -2520,7 +2516,7 @@
                         "block": "SAI"
                     },
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk2",
                         "enable": {
                             "register": "apb2enr",
                             "field": "sai1en"
@@ -2674,7 +2670,7 @@
                         "block": "SAI"
                     },
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk2",
                         "enable": {
                             "register": "apb2enr",
                             "field": "sai2en"
@@ -2808,7 +2804,7 @@
                         "block": "SDMMC"
                     },
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk2",
                         "enable": {
                             "register": "apb2enr",
                             "field": "sdmmcen"
@@ -2918,7 +2914,7 @@
                         "block": "SPI"
                     },
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk2",
                         "enable": {
                             "register": "apb2enr",
                             "field": "spi1en"
@@ -3028,7 +3024,7 @@
                         "block": "SPI"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "spi2en"
@@ -3128,7 +3124,7 @@
                         "block": "SPI"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "spi3en"
@@ -3203,7 +3199,7 @@
                     "name": "SWPMI1",
                     "address": 1073776640,
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr2",
                             "field": "swpmi1en"
@@ -3255,7 +3251,7 @@
                         "block": "SYSCFG"
                     },
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk2",
                         "enable": {
                             "register": "apb2enr",
                             "field": "syscfgen"
@@ -3275,7 +3271,7 @@
                         "block": "TIM_ADV"
                     },
                     "rcc": {
-                        "clock": "APB2_TIM",
+                        "clock": "pclk2_tim",
                         "enable": {
                             "register": "apb2enr",
                             "field": "tim1en"
@@ -3501,7 +3497,7 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "APB2_TIM",
+                        "clock": "pclk2_tim",
                         "enable": {
                             "register": "apb2enr",
                             "field": "tim15en"
@@ -3607,7 +3603,7 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "APB2_TIM",
+                        "clock": "pclk2_tim",
                         "enable": {
                             "register": "apb2enr",
                             "field": "tim16en"
@@ -3698,7 +3694,7 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "APB2_TIM",
+                        "clock": "pclk2_tim",
                         "enable": {
                             "register": "apb2enr",
                             "field": "tim17en"
@@ -3794,7 +3790,7 @@
                         "block": "TIM_GP32"
                     },
                     "rcc": {
-                        "clock": "APB1_TIM",
+                        "clock": "pclk1_tim",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "tim2en"
@@ -3925,7 +3921,7 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "APB1_TIM",
+                        "clock": "pclk1_tim",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "tim3en"
@@ -4076,7 +4072,7 @@
                         "block": "TIM_GP16"
                     },
                     "rcc": {
-                        "clock": "APB1_TIM",
+                        "clock": "pclk1_tim",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "tim4en"
@@ -4187,7 +4183,7 @@
                         "block": "TIM_GP32"
                     },
                     "rcc": {
-                        "clock": "APB1_TIM",
+                        "clock": "pclk1_tim",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "tim5en"
@@ -4288,7 +4284,7 @@
                         "block": "TIM_BASIC"
                     },
                     "rcc": {
-                        "clock": "APB1_TIM",
+                        "clock": "pclk1_tim",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "tim6en"
@@ -4342,7 +4338,7 @@
                         "block": "TIM_BASIC"
                     },
                     "rcc": {
-                        "clock": "APB1_TIM",
+                        "clock": "pclk1_tim",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "tim7en"
@@ -4396,7 +4392,7 @@
                         "block": "TIM_ADV"
                     },
                     "rcc": {
-                        "clock": "APB2_TIM",
+                        "clock": "pclk2_tim",
                         "enable": {
                             "register": "apb2enr",
                             "field": "tim8en"
@@ -4572,7 +4568,7 @@
                         "block": "TSC"
                     },
                     "rcc": {
-                        "clock": "AHB1",
+                        "clock": "hclk1",
                         "enable": {
                             "register": "ahb1enr",
                             "field": "tscen"
@@ -4745,7 +4741,7 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "uart4en"
@@ -4824,7 +4820,7 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "uart5en"
@@ -4902,7 +4898,7 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "pclk2",
                         "enable": {
                             "register": "apb2enr",
                             "field": "usart1en"
@@ -5016,7 +5012,7 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "usart2en"
@@ -5120,7 +5116,7 @@
                         "block": "USART"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "usart3en"
@@ -5279,7 +5275,7 @@
                         "block": "OTG"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "hclk2",
                         "enable": {
                             "register": "ahb2enr",
                             "field": "usb_otg_fsen"
@@ -5362,7 +5358,7 @@
                         "block": "WWDG"
                     },
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "pclk1",
                         "enable": {
                             "register": "apb1enr1",
                             "field": "wwdgen"

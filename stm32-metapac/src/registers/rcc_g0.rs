@@ -2429,7 +2429,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSI16_DIV488",
+                    name: "HSI_DIV_488",
                     description: Some("HSI16 divided by 488 used as CEC clock"),
                     value: 0,
                 },
@@ -3715,7 +3715,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI16_DIV8",
+                    name: "HSI_DIV_8",
                     description: Some("HSI divided by 8 used as RNG clock source"),
                     value: 1,
                 },

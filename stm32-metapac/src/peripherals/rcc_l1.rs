@@ -2334,7 +2334,7 @@ pub mod vals {
         #[doc = "SYSCLK clock selected"]
         SYSCLK = 0x01,
         #[doc = "HSI16 oscillator clock selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "MSI oscillator clock selected"]
         MSI = 0x03,
         #[doc = "HSE oscillator clock selected"]
@@ -2506,7 +2506,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "HSI16 selected as PLL input clock"]
-        HSI16 = 0,
+        HSI = 0,
         #[doc = "HSE selected as PLL input clock"]
         HSE = 0x01,
     }
@@ -2646,7 +2646,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[doc = "MSI oscillator used as system clock"]
         MSI = 0,
         #[doc = "HSI16 oscillator used as system clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x02,
         #[doc = "PLL used as system clock"]

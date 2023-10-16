@@ -5,7 +5,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1174540288,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB4",
+            clock: "hclk4",
             enable: Some(PeripheralRccRegister {
                 register: "ahb4enr",
                 field: "adc4en",
@@ -75,7 +75,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1108082688,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "aesen",
@@ -118,7 +118,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &crc::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB1",
+            clock: "hclk1",
             enable: Some(PeripheralRccRegister {
                 register: "ahb1enr",
                 field: "crcen",
@@ -236,7 +236,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &flash::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB1",
+            clock: "hclk1",
             enable: Some(PeripheralRccRegister {
                 register: "ahb1enr",
                 field: "flashen",
@@ -261,7 +261,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &gpdma::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB1",
+            clock: "hclk1",
             enable: Some(PeripheralRccRegister {
                 register: "ahb1enr",
                 field: "gpdma1en",
@@ -319,7 +319,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &gpio::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "gpioaen",
@@ -344,7 +344,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &gpio::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "gpioben",
@@ -369,7 +369,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &gpio::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "gpiocen",
@@ -394,7 +394,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &gpio::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "gpiohen",
@@ -414,7 +414,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1108083712,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "hashen",
@@ -443,7 +443,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1108089856,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "hsemen",
@@ -471,7 +471,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &i2c::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB1",
+            clock: "pclk1",
             enable: Some(PeripheralRccRegister {
                 register: "apb1enr1",
                 field: "i2c1en",
@@ -546,7 +546,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &i2c::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB7",
+            clock: "pclk7",
             enable: Some(PeripheralRccRegister {
                 register: "apb7enr",
                 field: "i2c3en",
@@ -645,7 +645,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB7",
+            clock: "pclk7",
             enable: Some(PeripheralRccRegister {
                 register: "apb7enr",
                 field: "lptim1en",
@@ -724,7 +724,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &lptim::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB1",
+            clock: "pclk1",
             enable: Some(PeripheralRccRegister {
                 register: "apb1enr2",
                 field: "lptim2en",
@@ -798,7 +798,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &usart::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB7",
+            clock: "pclk7",
             enable: Some(PeripheralRccRegister {
                 register: "apb7enr",
                 field: "lpuart1en",
@@ -870,7 +870,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1108090880,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "pkaen",
@@ -898,7 +898,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &pwr::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB4",
+            clock: "hclk4",
             enable: Some(PeripheralRccRegister {
                 register: "ahb4enr",
                 field: "pwren",
@@ -1017,7 +1017,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &rng::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "rngen",
@@ -1048,7 +1048,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &rtc::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB7",
+            clock: "pclk7",
             enable: Some(PeripheralRccRegister {
                 register: "apb7enr",
                 field: "rtcapben",
@@ -1086,7 +1086,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1108085760,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "hclk2",
             enable: Some(PeripheralRccRegister {
                 register: "ahb2enr",
                 field: "saesen",
@@ -1124,7 +1124,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073819648,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "APB2",
+            clock: "pclk2",
             enable: Some(PeripheralRccRegister {
                 register: "apb2enr",
                 field: "spi1en",
@@ -1196,7 +1196,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1174413312,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "APB7",
+            clock: "pclk7",
             enable: Some(PeripheralRccRegister {
                 register: "apb7enr",
                 field: "spi3en",
@@ -1273,7 +1273,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &syscfg::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB7",
+            clock: "pclk7",
             enable: Some(PeripheralRccRegister {
                 register: "apb7enr",
                 field: "syscfgen",
@@ -1341,7 +1341,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB2_TIM",
+            clock: "pclk2_tim",
             enable: Some(PeripheralRccRegister {
                 register: "apb2enr",
                 field: "tim1en",
@@ -1488,7 +1488,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB2_TIM",
+            clock: "pclk2_tim",
             enable: Some(PeripheralRccRegister {
                 register: "apb2enr",
                 field: "tim16en",
@@ -1570,7 +1570,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB2_TIM",
+            clock: "pclk2_tim",
             enable: Some(PeripheralRccRegister {
                 register: "apb2enr",
                 field: "tim17en",
@@ -1652,7 +1652,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB1_TIM",
+            clock: "pclk1_tim",
             enable: Some(PeripheralRccRegister {
                 register: "apb1enr1",
                 field: "tim2en",
@@ -1770,7 +1770,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB1_TIM",
+            clock: "pclk1_tim",
             enable: Some(PeripheralRccRegister {
                 register: "apb1enr1",
                 field: "tim3en",
@@ -1890,7 +1890,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073889280,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "AHB1",
+            clock: "hclk1",
             enable: Some(PeripheralRccRegister {
                 register: "ahb1enr",
                 field: "tscen",
@@ -2003,7 +2003,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &usart::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB2",
+            clock: "pclk2",
             enable: Some(PeripheralRccRegister {
                 register: "apb2enr",
                 field: "usart1en",
@@ -2095,7 +2095,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &usart::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "APB1",
+            clock: "pclk1",
             enable: Some(PeripheralRccRegister {
                 register: "apb1enr1",
                 field: "usart2en",
@@ -2177,7 +2177,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073753088,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "APB1",
+            clock: "pclk1",
             enable: Some(PeripheralRccRegister {
                 register: "apb1enr1",
                 field: "wwdgen",

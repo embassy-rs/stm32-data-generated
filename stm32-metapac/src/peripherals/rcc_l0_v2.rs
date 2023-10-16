@@ -2641,11 +2641,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Icsel {
         #[doc = "APB clock selected as peripheral clock"]
-        APB = 0,
+        PCLK1 = 0,
         #[doc = "System clock selected as peripheral clock"]
-        SYSTEM = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 clock selected as peripheral clock"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Icsel {
@@ -2674,11 +2674,11 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lptimsel {
         #[doc = "APB clock selected as Timer clock"]
-        APB = 0,
+        PCLK1 = 0,
         #[doc = "LSI clock selected as Timer clock"]
         LSI = 0x01,
         #[doc = "HSI16 clock selected as Timer clock"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE clock selected as Timer clock"]
         LSE = 0x03,
     }
@@ -2785,7 +2785,7 @@ pub mod vals {
         #[doc = "SYSCLK clock selected"]
         SYSCLK = 0x01,
         #[doc = "HSI oscillator clock selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "MSI oscillator clock selected"]
         MSI = 0x03,
         #[doc = "HSE oscillator clock selected"]
@@ -2957,7 +2957,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "HSI selected as PLL input clock"]
-        HSI16 = 0,
+        HSI = 0,
         #[doc = "HSE selected as PLL input clock"]
         HSE = 0x01,
     }
@@ -3097,7 +3097,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[doc = "Internal 64 KHz to 4 MHz (MSI) oscillator selected as wake-up from Stop clock"]
         MSI = 0,
         #[doc = "Internal 16 MHz (HSI) oscillator selected as wake-up from Stop clock (or HSI16/4 if HSI16DIVEN=1)"]
-        HSI16 = 0x01,
+        HSI = 0x01,
     }
     impl Stopwuck {
         #[inline(always)]
@@ -3127,7 +3127,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[doc = "MSI oscillator used as system clock"]
         MSI = 0,
         #[doc = "HSI oscillator used as system clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x02,
         #[doc = "PLL used as system clock"]
@@ -3159,11 +3159,11 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Uartsel {
         #[doc = "APB clock selected as peripheral clock"]
-        APB = 0,
+        PCLK1 = 0,
         #[doc = "System clock selected as peripheral clock"]
-        SYSTEM = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 clock selected as peripheral clock"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE clock selected as peripheral clock"]
         LSE = 0x03,
     }

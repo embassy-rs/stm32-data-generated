@@ -2027,7 +2027,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSI_DIV244",
+                    name: "HSI_DIV_244",
                     description: Some(
                         "HSI clock divided by 244 selected as CEC clock source",
                     ),

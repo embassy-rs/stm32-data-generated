@@ -2228,7 +2228,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cecsw {
         #[doc = "HSI clock divided by 244 selected as CEC clock source"]
-        HSI_DIV244 = 0,
+        HSI_DIV_244 = 0,
         #[doc = "LSE clock selected as CEC clock source"]
         LSE = 0x01,
     }

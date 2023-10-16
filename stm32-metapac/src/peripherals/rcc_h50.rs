@@ -5135,7 +5135,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Systicksel {
         #[doc = "rcc_hclk/8 selected as clock source (default after reset)"]
-        HCLK_DIV_8 = 0,
+        HCLK1_DIV_8 = 0,
         #[doc = "lsi_ker_ck\\[1\\]
 selected as clock source"]
         LSI = 0x01,

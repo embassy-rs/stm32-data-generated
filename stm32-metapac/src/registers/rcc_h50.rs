@@ -8147,7 +8147,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HCLK_DIV_8",
+                    name: "HCLK1_DIV_8",
                     description: Some(
                         "rcc_hclk/8 selected as clock source (default after reset)",
                     ),

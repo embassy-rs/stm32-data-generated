@@ -2320,17 +2320,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "Disable",
+        "name": "DISABLE",
         "description": "No clock selected",
         "value": 0
       },
       {
-        "name": "PLLADC1CLK",
+        "name": "PLL1_Q",
         "description": "PLLADC1CLK clock selected",
         "value": 1
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 3
       }
@@ -2350,7 +2350,7 @@
         "value": 1
       },
       {
-        "name": "PLL_Q",
+        "name": "PLL1_Q",
         "description": "PLL_Q aka PLL48M2CLK clock selected",
         "value": 2
       },
@@ -2370,7 +2370,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected as DFSDM kernel clock",
         "value": 1
       }
@@ -2430,17 +2430,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       }
@@ -2450,17 +2450,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       }
@@ -2470,17 +2470,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       }
@@ -2490,7 +2490,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
@@ -2500,7 +2500,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -2515,7 +2515,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
@@ -2525,7 +2525,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -2540,17 +2540,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -2640,7 +2640,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
@@ -2650,7 +2650,7 @@
         "value": 2
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI oscillator clock selected",
         "value": 3
       },
@@ -3477,7 +3477,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI selected as PLL input clock",
         "value": 2
       },
@@ -3557,7 +3557,7 @@
         "value": 1
       },
       {
-        "name": "PLL_P",
+        "name": "PLL1_P",
         "description": "PLLSAI3CLK clock is selected as SAIx clock",
         "value": 2
       },
@@ -3582,7 +3582,7 @@
         "value": 1
       },
       {
-        "name": "PLL_P",
+        "name": "PLL1_P",
         "description": "PLLSAI3CLK clock is selected as SAIx clock",
         "value": 2
       },
@@ -3602,7 +3602,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI oscillator selected as wake-up from Stop clock",
         "value": 1
       }
@@ -3617,7 +3617,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI selected as system clock",
         "value": 1
       },
@@ -3641,7 +3641,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "value": 1
       }
     ]
@@ -3650,17 +3650,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -3675,17 +3675,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -3700,17 +3700,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -3725,17 +3725,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },
@@ -3750,17 +3750,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "PCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK clock selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 2
       },

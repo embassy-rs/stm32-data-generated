@@ -3125,7 +3125,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cecsel {
         #[doc = "HSI16 divided by 488 used as CEC clock"]
-        HSI16_DIV488 = 0,
+        HSI_DIV_488 = 0,
         #[doc = "LSE used as CEC clock"]
         LSE = 0x01,
     }
@@ -4123,7 +4123,7 @@ pub mod vals {
         #[doc = "No clock used as RNG clock source"]
         DISABLE = 0,
         #[doc = "HSI divided by 8 used as RNG clock source"]
-        HSI16_DIV8 = 0x01,
+        HSI_DIV_8 = 0x01,
         #[doc = "SYSCLK used as RNG clock source"]
         SYS = 0x02,
         #[doc = "PLLQCLK used as RNG clock source"]

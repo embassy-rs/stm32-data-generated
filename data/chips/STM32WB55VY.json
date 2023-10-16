@@ -3103,6 +3103,11 @@
                 {
                     "name": "TSC",
                     "address": 1073889280,
+                    "registers": {
+                        "kind": "tsc",
+                        "version": "v2",
+                        "block": "TSC"
+                    },
                     "rcc": {
                         "clock": "AHB1",
                         "enable": {

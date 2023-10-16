@@ -561,7 +561,7 @@ pub const CORDIC: *mut () = 0x4002_1000 as usize as _;
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400 as usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
-pub const TSC: *mut () = 0x4002_4000 as usize as _;
+pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000 as usize as _) };
 pub const MDF1: *mut () = 0x4002_5000 as usize as _;
 pub const ICACHE: *mut () = 0x4003_0400 as usize as _;
 pub const DCACHE1: *mut () = 0x4003_1400 as usize as _;
@@ -647,6 +647,8 @@ pub mod syscfg;
 pub mod tamp;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/tsc_v3.rs"]
+pub mod tsc;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]

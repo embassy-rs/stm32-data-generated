@@ -535,7 +535,7 @@ pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4002_080
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_1000 as usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
-pub const TSC: *mut () = 0x4002_4000 as usize as _;
+pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4002_f400 as usize as _) };
 pub const ICACHE: *mut () = 0x4003_0400 as usize as _;
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000 as usize as _) };
@@ -612,6 +612,8 @@ pub mod syscfg;
 pub mod tamp;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/tsc_v3.rs"]
+pub mod tsc;
 #[path = "../../peripherals/ucpd_v1.rs"]
 pub mod ucpd;
 #[path = "../../peripherals/uid_v1.rs"]

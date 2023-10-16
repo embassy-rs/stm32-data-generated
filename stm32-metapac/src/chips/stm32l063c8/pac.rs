@@ -174,7 +174,7 @@ pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000 as usize as
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_1000 as usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
-pub const TSC: *mut () = 0x4002_4000 as usize as _;
+pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4002_5000 as usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x4002_6000 as usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5000_0000 as usize as _) };
@@ -228,6 +228,8 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
+#[path = "../../peripherals/tsc_v3.rs"]
+pub mod tsc;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v3.rs"]

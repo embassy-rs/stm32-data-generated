@@ -2598,6 +2598,11 @@
                 {
                     "name": "TSC",
                     "address": 1073889280,
+                    "registers": {
+                        "kind": "tsc",
+                        "version": "v3",
+                        "block": "TSC"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",

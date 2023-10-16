@@ -260,7 +260,7 @@ pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x5800_0000 as usize as _)
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x5800_0400 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0800 as usize as _) };
 pub const IPCC: ipcc::Ipcc = unsafe { ipcc::Ipcc::from_ptr(0x5800_0c00 as usize as _) };
-pub const RNG: *mut () = 0x5800_1000 as usize as _;
+pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5800_1000 as usize as _) };
 pub const HSEM: *mut () = 0x5800_1400 as usize as _;
 pub const AES2: *mut () = 0x5800_1800 as usize as _;
 pub const PKA: *mut () = 0x5800_2000 as usize as _;
@@ -306,6 +306,8 @@ pub mod lptim;
 pub mod pwr;
 #[path = "../../peripherals/rcc_wb.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rng_v1.rs"]
+pub mod rng;
 #[path = "../../peripherals/rtc_v2wb.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v2.rs"]

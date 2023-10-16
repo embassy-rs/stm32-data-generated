@@ -946,10 +946,14 @@
                     "name": "DFSDM1",
                     "address": 1073831936,
                     "rcc": {
-                        "clock": "APB1",
+                        "clock": "APB2",
                         "enable": {
-                            "register": "apb1enr2",
+                            "register": "apb2enr",
                             "field": "dfsdmen"
+                        },
+                        "reset": {
+                            "register": "apb2rstr",
+                            "field": "dfsdmrst"
                         },
                         "mux": {
                             "register": "ccipr",

@@ -334,7 +334,7 @@ pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800 as usize
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00 as usize as _) };
 pub const AES: *mut () = 0x420c_0000 as usize as _;
 pub const HASH: *mut () = 0x420c_0400 as usize as _;
-pub const RNG: *mut () = 0x420c_0800 as usize as _;
+pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SAES: *mut () = 0x420c_0c00 as usize as _;
 pub const HSEM: *mut () = 0x420c_1c00 as usize as _;
 pub const PKA: *mut () = 0x420c_2000 as usize as _;
@@ -380,6 +380,8 @@ pub mod lptim;
 pub mod pwr;
 #[path = "../../peripherals/rcc_wba.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rng_v1.rs"]
+pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;
 #[path = "../../peripherals/syscfg_wba.rs"]

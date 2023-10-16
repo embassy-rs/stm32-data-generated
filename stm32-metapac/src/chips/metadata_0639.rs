@@ -817,12 +817,15 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073831936,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "APB1",
+            clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "apb1enr2",
+                register: "apb2enr",
                 field: "dfsdmen",
             }),
-            reset: None,
+            reset: Some(PeripheralRccRegister {
+                register: "apb2rstr",
+                field: "dfsdmrst",
+            }),
             mux: Some(PeripheralRccRegister {
                 register: "ccipr",
                 field: "dfsdmsel",

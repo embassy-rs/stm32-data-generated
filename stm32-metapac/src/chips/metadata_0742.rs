@@ -1872,7 +1872,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "RNG",
         address: 1476399104,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "rng",
+            version: "v1",
+            block: "RNG",
+            ir: &rng::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "AHB3",
             enable: Some(PeripheralRccRegister {
@@ -3747,6 +3752,8 @@ pub mod lptim;
 pub mod pwr;
 #[path = "../registers/rcc_wb.rs"]
 pub mod rcc;
+#[path = "../registers/rng_v1.rs"]
+pub mod rng;
 #[path = "../registers/rtc_v2wb.rs"]
 pub mod rtc;
 #[path = "../registers/sai_v1.rs"]

@@ -941,14 +941,14 @@
                     "name": "DFSDM1",
                     "address": 1073831936,
                     "rcc": {
-                        "clock": "APB2",
+                        "clock": "APB1",
                         "enable": {
-                            "register": "apb2enr",
-                            "field": "dfsdm1en"
+                            "register": "apb1enr2",
+                            "field": "dfsdmen"
                         },
-                        "reset": {
-                            "register": "apb2rstr",
-                            "field": "dfsdm1rst"
+                        "mux": {
+                            "register": "ccipr",
+                            "field": "dfsdmsel"
                         }
                     },
                     "pins": [
@@ -2517,13 +2517,6 @@
                 {
                     "name": "QUADSPI",
                     "address": 2684358656,
-                    "rcc": {
-                        "clock": "AHB3",
-                        "enable": {
-                            "register": "ahb3enr",
-                            "field": "quadspien"
-                        }
-                    },
                     "pins": [
                         {
                             "pin": "PA6",
@@ -3105,14 +3098,14 @@
                         "block": "SDMMC"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "APB2",
                         "enable": {
-                            "register": "ahb2enr",
-                            "field": "sdmmc1en"
+                            "register": "apb2enr",
+                            "field": "sdmmcen"
                         },
                         "reset": {
-                            "register": "ahb2rstr",
-                            "field": "sdmmc1rst"
+                            "register": "apb2rstr",
+                            "field": "sdmmcrst"
                         }
                     },
                     "pins": [

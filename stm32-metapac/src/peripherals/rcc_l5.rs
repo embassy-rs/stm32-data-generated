@@ -3614,13 +3614,13 @@ pub mod regs {
         }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
-        pub const fn clk48msel(&self) -> u8 {
+        pub const fn clk48sel(&self) -> u8 {
             let val = (self.0 >> 26usize) & 0x03;
             val as u8
         }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
-        pub fn set_clk48msel(&mut self, val: u8) {
+        pub fn set_clk48sel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val as u32) & 0x03) << 26usize);
         }
         #[doc = "ADCs clock source selection"]
@@ -5043,15 +5043,15 @@ pub mod regs {
         pub fn set_pllsai2sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "CLK48MSEC"]
+        #[doc = "CLK48SEC"]
         #[inline(always)]
-        pub const fn clk48msec(&self) -> bool {
+        pub const fn clk48sec(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "CLK48MSEC"]
+        #[doc = "CLK48SEC"]
         #[inline(always)]
-        pub fn set_clk48msec(&mut self, val: bool) {
+        pub fn set_clk48sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "HSI48SEC"]
@@ -5198,15 +5198,15 @@ pub mod regs {
         pub fn set_pllsai2secf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "CLK48MSECF"]
+        #[doc = "CLK48SECF"]
         #[inline(always)]
-        pub const fn clk48msecf(&self) -> bool {
+        pub const fn clk48secf(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "CLK48MSECF"]
+        #[doc = "CLK48SECF"]
         #[inline(always)]
-        pub fn set_clk48msecf(&mut self, val: bool) {
+        pub fn set_clk48secf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "HSI48SECF"]

@@ -514,16 +514,16 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073831936,
         registers: None,
         rcc: Some(PeripheralRcc {
-            clock: "APB2",
+            clock: "APB1",
             enable: Some(PeripheralRccRegister {
-                register: "apb2enr",
-                field: "dfsdm1en",
+                register: "apb1enr2",
+                field: "dfsdmen",
             }),
-            reset: Some(PeripheralRccRegister {
-                register: "apb2rstr",
-                field: "dfsdm1rst",
+            reset: None,
+            mux: Some(PeripheralRccRegister {
+                register: "ccipr",
+                field: "dfsdmsel",
             }),
-            mux: None,
         }),
         pins: &[
             PeripheralPin {
@@ -1335,10 +1335,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr2",
                 field: "i2c4rst",
             }),
-            mux: Some(PeripheralRccRegister {
-                register: "ccipr2",
-                field: "i2c4sel",
-            }),
+            mux: None,
         }),
         pins: &[
             PeripheralPin {
@@ -1749,15 +1746,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "QUADSPI",
         address: 2684358656,
         registers: None,
-        rcc: Some(PeripheralRcc {
-            clock: "AHB3",
-            enable: Some(PeripheralRccRegister {
-                register: "ahb3enr",
-                field: "quadspien",
-            }),
-            reset: None,
-            mux: None,
-        }),
+        rcc: None,
         pins: &[
             PeripheralPin {
                 pin: "PA2",
@@ -2269,14 +2258,14 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             ir: &sdmmc::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            clock: "AHB2",
+            clock: "APB2",
             enable: Some(PeripheralRccRegister {
-                register: "ahb2enr",
-                field: "sdmmc1en",
+                register: "apb2enr",
+                field: "sdmmcen",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "ahb2rstr",
-                field: "sdmmc1rst",
+                register: "apb2rstr",
+                field: "sdmmcrst",
             }),
             mux: None,
         }),

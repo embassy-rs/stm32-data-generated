@@ -2945,7 +2945,18 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "PKA",
         address: 1342562304,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "AHB2",
+            enable: Some(PeripheralRccRegister {
+                register: "ahb2enr",
+                field: "pkaen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "ahb2rstr",
+                field: "pkarst",
+            }),
+            mux: None,
+        }),
         pins: &[],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
@@ -3151,7 +3162,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073876992,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
-            version: "l4",
+            version: "l4plus",
             block: "RCC",
             ir: &rcc::REGISTERS,
         }),
@@ -3327,7 +3338,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "sai1rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr",
+                register: "ccipr2",
                 field: "sai1sel",
             }),
         }),
@@ -3574,7 +3585,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "sai2rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr",
+                register: "ccipr2",
                 field: "sai2sel",
             }),
         }),
@@ -3809,7 +3820,18 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "SDMMC2",
         address: 1342580736,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "AHB2",
+            enable: Some(PeripheralRccRegister {
+                register: "ahb2enr",
+                field: "sdmmc2en",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "ahb2rstr",
+                field: "sdmmc2rst",
+            }),
+            mux: None,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA1",
@@ -7057,7 +7079,7 @@ pub mod octospim;
 pub mod otg;
 #[path = "../registers/pwr_l4.rs"]
 pub mod pwr;
-#[path = "../registers/rcc_l4.rs"]
+#[path = "../registers/rcc_l4plus.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v2.rs"]
 pub mod rng;

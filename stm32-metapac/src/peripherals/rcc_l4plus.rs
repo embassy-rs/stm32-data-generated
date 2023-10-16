@@ -169,6 +169,16 @@ impl Rcc {
     pub const fn crrcr(self) -> crate::common::Reg<regs::Crrcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(152usize) as _) }
     }
+    #[doc = "Peripherals independent clock configuration register"]
+    #[inline(always)]
+    pub const fn ccipr2(self) -> crate::common::Reg<regs::Ccipr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(156usize) as _) }
+    }
+    #[doc = "delay configuration register"]
+    #[inline(always)]
+    pub const fn dlycfgr(self) -> crate::common::Reg<regs::Dlycfgr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(164usize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "AHB1 peripheral clock enable register"]
@@ -197,6 +207,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dma2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DMAMUX clock enable"]
+        #[inline(always)]
+        pub const fn dmamux1en(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DMAMUX clock enable"]
+        #[inline(always)]
+        pub fn set_dmamux1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Flash memory interface clock enable"]
         #[inline(always)]
@@ -242,6 +263,17 @@ pub mod regs {
         pub fn set_dma2den(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[doc = "Graphic MMU clock enable"]
+        #[inline(always)]
+        pub const fn gfxmmuen(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Graphic MMU clock enable"]
+        #[inline(always)]
+        pub fn set_gfxmmuen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
     }
     impl Default for Ahb1enr {
         #[inline(always)]
@@ -275,6 +307,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dma2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DMAMUX1RST"]
+        #[inline(always)]
+        pub const fn dmamux1rst(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DMAMUX1RST"]
+        #[inline(always)]
+        pub fn set_dmamux1rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Flash memory interface reset"]
         #[inline(always)]
@@ -320,6 +363,17 @@ pub mod regs {
         pub fn set_dma2drst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[doc = "GFXMMU reset"]
+        #[inline(always)]
+        pub const fn gfxmmurst(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "GFXMMU reset"]
+        #[inline(always)]
+        pub fn set_gfxmmurst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
     }
     impl Default for Ahb1rstr {
         #[inline(always)]
@@ -353,6 +407,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dma2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DMAMUX clock enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn dmamux1smen(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DMAMUX clock enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_dmamux1smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Flash memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
@@ -408,6 +473,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_dma2dsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "GFXMMU clock enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn gfxmmusmen(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "GFXMMU clock enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_gfxmmusmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
     }
     impl Default for Ahb1smenr {
@@ -553,6 +629,17 @@ pub mod regs {
         pub fn set_dcmien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
+        #[doc = "PKA clock enable"]
+        #[inline(always)]
+        pub const fn pkaen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA clock enable"]
+        #[inline(always)]
+        pub fn set_pkaen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
         #[doc = "AES accelerator clock enable"]
         #[inline(always)]
         pub const fn aesen(&self) -> bool {
@@ -585,6 +672,39 @@ pub mod regs {
         #[inline(always)]
         pub fn set_rngen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "OctoSPI IO manager clock enable"]
+        #[inline(always)]
+        pub const fn ospimen(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OctoSPI IO manager clock enable"]
+        #[inline(always)]
+        pub fn set_ospimen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "SDMMC1 clock enable"]
+        #[inline(always)]
+        pub const fn sdmmc1en(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SDMMC1 clock enable"]
+        #[inline(always)]
+        pub fn set_sdmmc1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "SDMMC2 clock enable"]
+        #[inline(always)]
+        pub const fn sdmmc2en(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SDMMC2 clock enable"]
+        #[inline(always)]
+        pub fn set_sdmmc2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
     impl Default for Ahb2enr {
@@ -730,6 +850,17 @@ pub mod regs {
         pub fn set_dcmirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
+        #[doc = "PKA reset"]
+        #[inline(always)]
+        pub const fn pkarst(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA reset"]
+        #[inline(always)]
+        pub fn set_pkarst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
         #[doc = "AES hardware accelerator reset"]
         #[inline(always)]
         pub const fn aesrst(&self) -> bool {
@@ -762,6 +893,39 @@ pub mod regs {
         #[inline(always)]
         pub fn set_rngrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "OCTOSPI IO manager reset"]
+        #[inline(always)]
+        pub const fn ospimrst(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OCTOSPI IO manager reset"]
+        #[inline(always)]
+        pub fn set_ospimrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "SDMMC1 reset"]
+        #[inline(always)]
+        pub const fn sdmmc1rst(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SDMMC1 reset"]
+        #[inline(always)]
+        pub fn set_sdmmc1rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "SDMMC2 reset"]
+        #[inline(always)]
+        pub const fn sdmmc2rst(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SDMMC2 reset"]
+        #[inline(always)]
+        pub fn set_sdmmc2rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
     impl Default for Ahb2rstr {
@@ -885,6 +1049,17 @@ pub mod regs {
         pub fn set_sram2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
+        #[doc = "SRAM2 interface clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn sram3smen(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SRAM2 interface clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_sram3smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
         #[doc = "OTG full speed clocks enable during Sleep and Stop modes"]
         #[inline(always)]
         pub const fn usb_otg_fssmen(&self) -> bool {
@@ -907,6 +1082,17 @@ pub mod regs {
         pub fn set_adcfssmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
+        #[doc = "ADC clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn adcsmen(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ADC clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_adcsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
         #[doc = "DCMI clock enable during Sleep and Stop modes"]
         #[inline(always)]
         pub const fn dcmismen(&self) -> bool {
@@ -918,6 +1104,17 @@ pub mod regs {
         pub fn set_dcmismen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
+        #[doc = "PKA clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn pkasmen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_pkasmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
         #[doc = "AES accelerator clocks enable during Sleep and Stop modes"]
         #[inline(always)]
         pub const fn aessmen(&self) -> bool {
@@ -928,6 +1125,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_aessmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "HASH clock enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn hash1smen(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "HASH clock enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_hash1smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "HASH clock enable during Sleep and Stop modes"]
         #[inline(always)]
@@ -950,6 +1158,39 @@ pub mod regs {
         #[inline(always)]
         pub fn set_rngsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "OctoSPI IO manager clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn ospimsmen(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OctoSPI IO manager clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_ospimsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "SDMMC1 clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn sdmmc1smen(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SDMMC1 clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_sdmmc1smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "SDMMC2 clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn sdmmc2smen(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SDMMC2 clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_sdmmc2smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
     impl Default for Ahb2smenr {
@@ -974,16 +1215,27 @@ pub mod regs {
         pub fn set_fmcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "QSPIEN"]
+        #[doc = "OctoSPI1 memory interface clock enable"]
         #[inline(always)]
-        pub const fn qspien(&self) -> bool {
+        pub const fn ospi1en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "QSPIEN"]
+        #[doc = "OctoSPI1 memory interface clock enable"]
         #[inline(always)]
-        pub fn set_qspien(&mut self, val: bool) {
+        pub fn set_ospi1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "OSPI2EN memory interface clock enable"]
+        #[inline(always)]
+        pub const fn ospi2en(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OSPI2EN memory interface clock enable"]
+        #[inline(always)]
+        pub fn set_ospi2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
     impl Default for Ahb3enr {
@@ -1008,16 +1260,27 @@ pub mod regs {
         pub fn set_fmcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Quad SPI memory interface reset"]
+        #[doc = "OctoSPI1 memory interface reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn ospi1rst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "Quad SPI memory interface reset"]
+        #[doc = "OctoSPI1 memory interface reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_ospi1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "OctOSPI2 memory interface reset"]
+        #[inline(always)]
+        pub const fn ospi2rst(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OctOSPI2 memory interface reset"]
+        #[inline(always)]
+        pub fn set_ospi2rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
     impl Default for Ahb3rstr {
@@ -1042,16 +1305,27 @@ pub mod regs {
         pub fn set_fmcsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "QSPISMEN"]
+        #[doc = "OctoSPI1 memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub const fn qspismen(&self) -> bool {
+        pub const fn ospi1smen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "QSPISMEN"]
+        #[doc = "OctoSPI1 memory interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub fn set_qspismen(&mut self, val: bool) {
+        pub fn set_ospi1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "OctoSPI2 memory interface clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn octospi2(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OctoSPI2 memory interface clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_octospi2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
     impl Default for Ahb3smenr {
@@ -1130,17 +1404,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_tim7en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "LCD clock enable"]
-        #[inline(always)]
-        pub const fn lcden(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "LCD clock enable"]
-        #[inline(always)]
-        pub fn set_lcden(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "RTC APB clock enable"]
         #[inline(always)]
@@ -1285,28 +1548,6 @@ pub mod regs {
         pub fn set_can1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
-        #[doc = "CAN2 clock enable"]
-        #[inline(always)]
-        pub const fn can2en(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "CAN2 clock enable"]
-        #[inline(always)]
-        pub fn set_can2en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
-        #[doc = "USB FS clock enable"]
-        #[inline(always)]
-        pub const fn usben(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "USB FS clock enable"]
-        #[inline(always)]
-        pub fn set_usben(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
         #[doc = "Power interface clock enable"]
         #[inline(always)]
         pub const fn pwren(&self) -> bool {
@@ -1385,17 +1626,6 @@ pub mod regs {
         pub fn set_i2c4en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "Single wire protocol clock enable"]
-        #[inline(always)]
-        pub const fn swpmi1en(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Single wire protocol clock enable"]
-        #[inline(always)]
-        pub fn set_swpmi1en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
         #[doc = "LPTIM2EN"]
         #[inline(always)]
         pub const fn lptim2en(&self) -> bool {
@@ -1406,17 +1636,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_lptim2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "DFSDMEN enable"]
-        #[inline(always)]
-        pub const fn dfsdmen(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "DFSDMEN enable"]
-        #[inline(always)]
-        pub fn set_dfsdmen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
     impl Default for Apb1enr2 {
@@ -1496,17 +1715,6 @@ pub mod regs {
         pub fn set_tim7rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "LCD interface reset"]
-        #[inline(always)]
-        pub const fn lcdrst(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "LCD interface reset"]
-        #[inline(always)]
-        pub fn set_lcdrst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
         #[doc = "SPI2 reset"]
         #[inline(always)]
         pub const fn spi2rst(&self) -> bool {
@@ -1560,17 +1768,6 @@ pub mod regs {
         #[doc = "UART4 reset"]
         #[inline(always)]
         pub fn set_uart4rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
-        }
-        #[doc = "USART4 reset."]
-        #[inline(always)]
-        pub const fn usart4rst(&self) -> bool {
-            let val = (self.0 >> 19usize) & 0x01;
-            val != 0
-        }
-        #[doc = "USART4 reset."]
-        #[inline(always)]
-        pub fn set_usart4rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "UART5 reset"]
@@ -1638,28 +1835,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_can1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
-        }
-        #[doc = "CAN2 reset"]
-        #[inline(always)]
-        pub const fn can2rst(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "CAN2 reset"]
-        #[inline(always)]
-        pub fn set_can2rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
-        #[doc = "USB FS reset"]
-        #[inline(always)]
-        pub const fn usbrst(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "USB FS reset"]
-        #[inline(always)]
-        pub fn set_usbrst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Power interface reset"]
         #[inline(always)]
@@ -1738,17 +1913,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_i2c4rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Single wire protocol reset"]
-        #[inline(always)]
-        pub const fn swpmi1rst(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Single wire protocol reset"]
-        #[inline(always)]
-        pub fn set_swpmi1rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Low-power timer 2 reset"]
         #[inline(always)]
@@ -1838,17 +2002,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_tim7smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "LCD clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub const fn lcdsmen(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "LCD clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub fn set_lcdsmen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "RTC APB clock enable during Sleep and Stop modes"]
         #[inline(always)]
@@ -1993,28 +2146,6 @@ pub mod regs {
         pub fn set_can1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
-        #[doc = "CAN2 clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub const fn can2smen(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "CAN2 clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub fn set_can2smen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
-        #[doc = "USB FS clock enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub const fn usbsmen(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "USB FS clock enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub fn set_usbsmen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
         #[doc = "Power interface clocks enable during Sleep and Stop modes"]
         #[inline(always)]
         pub const fn pwrsmen(&self) -> bool {
@@ -2093,17 +2224,6 @@ pub mod regs {
         pub fn set_i2c4smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "Single wire protocol clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub const fn swpmi1smen(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Single wire protocol clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub fn set_swpmi1smen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
         #[doc = "LPTIM2SMEN"]
         #[inline(always)]
         pub const fn lptim2smen(&self) -> bool {
@@ -2148,17 +2268,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_fwen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "SDMMC clock enable"]
-        #[inline(always)]
-        pub const fn sdmmcen(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDMMC clock enable"]
-        #[inline(always)]
-        pub fn set_sdmmcen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "TIM1 timer clock enable"]
         #[inline(always)]
@@ -2261,14 +2370,36 @@ pub mod regs {
         }
         #[doc = "DFSDM timer clock enable"]
         #[inline(always)]
-        pub const fn dfsdmen(&self) -> bool {
+        pub const fn dfsdm1en(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[doc = "DFSDM timer clock enable"]
         #[inline(always)]
-        pub fn set_dfsdmen(&mut self, val: bool) {
+        pub fn set_dfsdm1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "LCD-TFT clock enable"]
+        #[inline(always)]
+        pub const fn ltdcen(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD-TFT clock enable"]
+        #[inline(always)]
+        pub fn set_ltdcen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "DSI clock enable"]
+        #[inline(always)]
+        pub const fn dsien(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DSI clock enable"]
+        #[inline(always)]
+        pub fn set_dsien(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
     }
     impl Default for Apb2enr {
@@ -2292,17 +2423,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_syscfgrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "SDMMC reset"]
-        #[inline(always)]
-        pub const fn sdmmcrst(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDMMC reset"]
-        #[inline(always)]
-        pub fn set_sdmmcrst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "TIM1 timer reset"]
         #[inline(always)]
@@ -2403,16 +2523,38 @@ pub mod regs {
         pub fn set_sai2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
-        #[doc = "DFSDM filter reset"]
+        #[doc = "Digital filters for sigma-delata modulators (DFSDM) reset"]
         #[inline(always)]
-        pub const fn dfsdmrst(&self) -> bool {
+        pub const fn dfsdm1rst(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
-        #[doc = "DFSDM filter reset"]
+        #[doc = "Digital filters for sigma-delata modulators (DFSDM) reset"]
         #[inline(always)]
-        pub fn set_dfsdmrst(&mut self, val: bool) {
+        pub fn set_dfsdm1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "LCD-TFT reset"]
+        #[inline(always)]
+        pub const fn ltdcrst(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD-TFT reset"]
+        #[inline(always)]
+        pub fn set_ltdcrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "DSI reset"]
+        #[inline(always)]
+        pub const fn dsirst(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DSI reset"]
+        #[inline(always)]
+        pub fn set_dsirst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
     }
     impl Default for Apb2rstr {
@@ -2436,17 +2578,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_syscfgsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "SDMMC clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub const fn sdmmcsmen(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SDMMC clocks enable during Sleep and Stop modes"]
-        #[inline(always)]
-        pub fn set_sdmmcsmen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "TIM1 timer clocks enable during Sleep and Stop modes"]
         #[inline(always)]
@@ -2549,14 +2680,36 @@ pub mod regs {
         }
         #[doc = "DFSDM timer clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub const fn dfsdmsmen(&self) -> bool {
+        pub const fn dfsdm1smen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[doc = "DFSDM timer clocks enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub fn set_dfsdmsmen(&mut self, val: bool) {
+        pub fn set_dfsdm1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "LCD-TFT timer clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn ltdcsmen(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD-TFT timer clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_ltdcsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "DSI clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub const fn dsismen(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DSI clocks enable during Sleep and Stop modes"]
+        #[inline(always)]
+        pub fn set_dsismen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
     }
     impl Default for Apb2smenr {
@@ -2635,6 +2788,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_lsecssd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Disable the Clock LSE propagation to the system"]
+        #[inline(always)]
+        pub const fn lsesysdis(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disable the Clock LSE propagation to the system"]
+        #[inline(always)]
+        pub fn set_lsesysdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "RTC clock source selection"]
         #[inline(always)]
@@ -2824,28 +2988,6 @@ pub mod regs {
         pub fn set_lptim2sel(&mut self, val: super::vals::Lptim2sel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
-        #[doc = "SAI1 clock source selection"]
-        #[inline(always)]
-        pub const fn sai1sel(&self) -> super::vals::Sai1sel {
-            let val = (self.0 >> 22usize) & 0x03;
-            super::vals::Sai1sel::from_bits(val as u8)
-        }
-        #[doc = "SAI1 clock source selection"]
-        #[inline(always)]
-        pub fn set_sai1sel(&mut self, val: super::vals::Sai1sel) {
-            self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
-        }
-        #[doc = "SAI2 clock source selection"]
-        #[inline(always)]
-        pub const fn sai2sel(&self) -> super::vals::Sai2sel {
-            let val = (self.0 >> 24usize) & 0x03;
-            super::vals::Sai2sel::from_bits(val as u8)
-        }
-        #[doc = "SAI2 clock source selection"]
-        #[inline(always)]
-        pub fn set_sai2sel(&mut self, val: super::vals::Sai2sel) {
-            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
-        }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
         pub const fn clk48sel(&self) -> super::vals::Clk48sel {
@@ -2868,33 +3010,122 @@ pub mod regs {
         pub fn set_adcsel(&mut self, val: super::vals::Adcsel) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
-        #[doc = "SWPMI1 clock source selection"]
-        #[inline(always)]
-        pub const fn swpmi1sel(&self) -> super::vals::Swpmi1sel {
-            let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Swpmi1sel::from_bits(val as u8)
-        }
-        #[doc = "SWPMI1 clock source selection"]
-        #[inline(always)]
-        pub fn set_swpmi1sel(&mut self, val: super::vals::Swpmi1sel) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
-        }
-        #[doc = "DFSDM clock source selection"]
-        #[inline(always)]
-        pub const fn dfsdmsel(&self) -> super::vals::Dfsdmsel {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Dfsdmsel::from_bits(val as u8)
-        }
-        #[doc = "DFSDM clock source selection"]
-        #[inline(always)]
-        pub fn set_dfsdmsel(&mut self, val: super::vals::Dfsdmsel) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
-        }
     }
     impl Default for Ccipr {
         #[inline(always)]
         fn default() -> Ccipr {
             Ccipr(0)
+        }
+    }
+    #[doc = "Peripherals independent clock configuration register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ccipr2(pub u32);
+    impl Ccipr2 {
+        #[doc = "I2C4 clock source selection"]
+        #[inline(always)]
+        pub const fn i2c4sel(&self) -> super::vals::I2c4sel {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::I2c4sel::from_bits(val as u8)
+        }
+        #[doc = "I2C4 clock source selection"]
+        #[inline(always)]
+        pub fn set_i2c4sel(&mut self, val: super::vals::I2c4sel) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Digital filter for sigma delta modulator kernel clock source selection"]
+        #[inline(always)]
+        pub const fn dfsdmsel(&self) -> super::vals::Dfsdmsel {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Dfsdmsel::from_bits(val as u8)
+        }
+        #[doc = "Digital filter for sigma delta modulator kernel clock source selection"]
+        #[inline(always)]
+        pub fn set_dfsdmsel(&mut self, val: super::vals::Dfsdmsel) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Digital filter for sigma delta modulator audio clock source selection"]
+        #[inline(always)]
+        pub const fn adfsdmsel(&self) -> super::vals::Adfsdmsel {
+            let val = (self.0 >> 3usize) & 0x03;
+            super::vals::Adfsdmsel::from_bits(val as u8)
+        }
+        #[doc = "Digital filter for sigma delta modulator audio clock source selection"]
+        #[inline(always)]
+        pub fn set_adfsdmsel(&mut self, val: super::vals::Adfsdmsel) {
+            self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
+        }
+        #[doc = "SAI1 clock source selection"]
+        #[inline(always)]
+        pub const fn sai1sel(&self) -> super::vals::Sai1sel {
+            let val = (self.0 >> 5usize) & 0x07;
+            super::vals::Sai1sel::from_bits(val as u8)
+        }
+        #[doc = "SAI1 clock source selection"]
+        #[inline(always)]
+        pub fn set_sai1sel(&mut self, val: super::vals::Sai1sel) {
+            self.0 = (self.0 & !(0x07 << 5usize)) | (((val.to_bits() as u32) & 0x07) << 5usize);
+        }
+        #[doc = "SAI2 clock source selection"]
+        #[inline(always)]
+        pub const fn sai2sel(&self) -> super::vals::Sai2sel {
+            let val = (self.0 >> 8usize) & 0x07;
+            super::vals::Sai2sel::from_bits(val as u8)
+        }
+        #[doc = "SAI2 clock source selection"]
+        #[inline(always)]
+        pub fn set_sai2sel(&mut self, val: super::vals::Sai2sel) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
+        }
+        #[doc = "clock selection"]
+        #[inline(always)]
+        pub const fn dsisel(&self) -> super::vals::Dsisel {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Dsisel::from_bits(val as u8)
+        }
+        #[doc = "clock selection"]
+        #[inline(always)]
+        pub fn set_dsisel(&mut self, val: super::vals::Dsisel) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "SDMMC clock selection"]
+        #[inline(always)]
+        pub const fn sdmmcsel(&self) -> super::vals::Sdmmcsel {
+            let val = (self.0 >> 14usize) & 0x01;
+            super::vals::Sdmmcsel::from_bits(val as u8)
+        }
+        #[doc = "SDMMC clock selection"]
+        #[inline(always)]
+        pub fn set_sdmmcsel(&mut self, val: super::vals::Sdmmcsel) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        }
+        #[doc = "division factor for LTDC clock"]
+        #[inline(always)]
+        pub const fn ltdcdiv(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x03;
+            val as u8
+        }
+        #[doc = "division factor for LTDC clock"]
+        #[inline(always)]
+        pub fn set_ltdcdiv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
+        }
+        #[doc = "Octospi clock source selection"]
+        #[inline(always)]
+        pub const fn ospisel(&self) -> super::vals::Ospisel {
+            let val = (self.0 >> 20usize) & 0x03;
+            super::vals::Ospisel::from_bits(val as u8)
+        }
+        #[doc = "Octospi clock source selection"]
+        #[inline(always)]
+        pub fn set_ospisel(&mut self, val: super::vals::Ospisel) {
+            self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
+        }
+    }
+    impl Default for Ccipr2 {
+        #[inline(always)]
+        fn default() -> Ccipr2 {
+            Ccipr2(0)
         }
     }
     #[doc = "Clock configuration register"]
@@ -3678,6 +3909,17 @@ pub mod regs {
         pub fn set_lsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[doc = "Internal low-speed oscillator predivided by 128. Note - This bit is available only on STM32L4P5xx and STM32L4Q5xx devices."]
+        #[inline(always)]
+        pub const fn lsiprediv(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Internal low-speed oscillator predivided by 128. Note - This bit is available only on STM32L4P5xx and STM32L4Q5xx devices."]
+        #[inline(always)]
+        pub fn set_lsiprediv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
         #[doc = "SI range after Standby mode"]
         #[inline(always)]
         pub const fn msisrange(&self) -> u8 {
@@ -3788,11 +4030,56 @@ pub mod regs {
         pub fn set_lpwrrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
+        #[doc = "Low-power reset flag"]
+        #[inline(always)]
+        pub const fn lpwrstf(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Low-power reset flag"]
+        #[inline(always)]
+        pub fn set_lpwrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
     }
     impl Default for Csr {
         #[inline(always)]
         fn default() -> Csr {
             Csr(0)
+        }
+    }
+    #[doc = "Delay configuration register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dlycfgr(pub u32);
+    impl Dlycfgr {
+        #[doc = "Delay sampling configuration on OCTOSPI1 to be used for internal sampling clock (called feedback clock) or for DQS data strobe"]
+        #[inline(always)]
+        pub const fn octospi1_dly(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Delay sampling configuration on OCTOSPI1 to be used for internal sampling clock (called feedback clock) or for DQS data strobe"]
+        #[inline(always)]
+        pub fn set_octospi1_dly(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Delay sampling configuration on OCTOSPI2 to be used for internal sampling clock (called feedback clock) or for DQS data strobe"]
+        #[inline(always)]
+        pub const fn octospi2_dly(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Delay sampling configuration on OCTOSPI2 to be used for internal sampling clock (called feedback clock) or for DQS data strobe"]
+        #[inline(always)]
+        pub fn set_octospi2_dly(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        }
+    }
+    impl Default for Dlycfgr {
+        #[inline(always)]
+        fn default() -> Dlycfgr {
+            Dlycfgr(0)
         }
     }
     #[doc = "Internal clock sources calibration register"]
@@ -3870,13 +4157,13 @@ pub mod regs {
         #[doc = "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock"]
         #[inline(always)]
         pub const fn pllm(&self) -> super::vals::Pllm {
-            let val = (self.0 >> 4usize) & 0x07;
+            let val = (self.0 >> 4usize) & 0x0f;
             super::vals::Pllm::from_bits(val as u8)
         }
         #[doc = "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock"]
         #[inline(always)]
         pub fn set_pllm(&mut self, val: super::vals::Pllm) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "Main PLL multiplication factor for VCO"]
         #[inline(always)]
@@ -3978,6 +4265,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Pllsaicfgr(pub u32);
     impl Pllsaicfgr {
+        #[doc = "Division factor for PLLSAI input clock"]
+        #[inline(always)]
+        pub const fn pllm(&self) -> super::vals::Pllm {
+            let val = (self.0 >> 4usize) & 0x0f;
+            super::vals::Pllm::from_bits(val as u8)
+        }
+        #[doc = "Division factor for PLLSAI input clock"]
+        #[inline(always)]
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
+        }
         #[doc = "SAI1PLL multiplication factor for VCO"]
         #[inline(always)]
         pub const fn plln(&self) -> super::vals::Plln {
@@ -4110,8 +4408,41 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Adfsdmsel {
+        #[doc = "SAI1clock selected as DFSDM audio clock"]
+        SAI1 = 0,
+        #[doc = "HSI clock selected as DFSDM audio clock"]
+        HSI = 0x01,
+        #[doc = "MSI clock selected as DFSDM audio clock"]
+        MSI = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Adfsdmsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Adfsdmsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Adfsdmsel {
+        #[inline(always)]
+        fn from(val: u8) -> Adfsdmsel {
+            Adfsdmsel::from_bits(val)
+        }
+    }
+    impl From<Adfsdmsel> for u8 {
+        #[inline(always)]
+        fn from(val: Adfsdmsel) -> u8 {
+            Adfsdmsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Clk48sel {
-        #[doc = "HSI48 clock selected (only for STM32L41x/L42x/L43x/L44x/L45x/L46x/L49x/L4Ax devices, otherwise no clock selected)"]
+        #[doc = "HSI48 clock selected"]
         HSI48 = 0,
         #[doc = "PLL_Q aka PLL48M2CLK clock selected"]
         PLL_Q = 0x01,
@@ -4170,6 +4501,36 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dfsdmsel) -> u8 {
             Dfsdmsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Dsisel {
+        #[doc = "DSI-PHY is selected as DSI byte lane clock source (usual case)"]
+        DSIPHY = 0,
+        #[doc = "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)"]
+        PLLDSICLK = 0x01,
+    }
+    impl Dsisel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dsisel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dsisel {
+        #[inline(always)]
+        fn from(val: u8) -> Dsisel {
+            Dsisel::from_bits(val)
+        }
+    }
+    impl From<Dsisel> for u8 {
+        #[inline(always)]
+        fn from(val: Dsisel) -> u8 {
+            Dsisel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4320,6 +4681,39 @@ pub mod vals {
         #[inline(always)]
         fn from(val: I2c3sel) -> u8 {
             I2c3sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum I2c4sel {
+        #[doc = "PCLK clock selected"]
+        PCLK = 0,
+        #[doc = "SYSCLK clock selected"]
+        SYSCLK = 0x01,
+        #[doc = "HSI16 clock selected"]
+        HSI16 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl I2c4sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> I2c4sel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for I2c4sel {
+        #[inline(always)]
+        fn from(val: u8) -> I2c4sel {
+            I2c4sel::from_bits(val)
+        }
+    }
+    impl From<I2c4sel> for u8 {
+        #[inline(always)]
+        fn from(val: I2c4sel) -> u8 {
+            I2c4sel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4666,6 +5060,39 @@ in the RCC_CR register"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Ospisel {
+        #[doc = "System clock selected as OctoSPI kernel clock"]
+        SYSCLK = 0,
+        #[doc = "MSI clock selected as OctoSPI kernel clock"]
+        MSI = 0x01,
+        #[doc = "PLL48M1CLK clock selected as OctoSPI kernel clock"]
+        PLL48M1CLK = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Ospisel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ospisel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ospisel {
+        #[inline(always)]
+        fn from(val: u8) -> Ospisel {
+            Ospisel::from_bits(val)
+        }
+    }
+    impl From<Ospisel> for u8 {
+        #[inline(always)]
+        fn from(val: Ospisel) -> u8 {
+            Ospisel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllm {
         DIV1 = 0,
         DIV2 = 0x01,
@@ -4675,11 +5102,19 @@ in the RCC_CR register"]
         DIV6 = 0x05,
         DIV7 = 0x06,
         DIV8 = 0x07,
+        DIV9 = 0x08,
+        DIV10 = 0x09,
+        DIV11 = 0x0a,
+        DIV12 = 0x0b,
+        DIV13 = 0x0c,
+        DIV14 = 0x0d,
+        DIV15 = 0x0e,
+        DIV16 = 0x0f,
     }
     impl Pllm {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Pllm {
-            unsafe { core::mem::transmute(val & 0x07) }
+            unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -5116,11 +5551,16 @@ in the RCC_CR register"]
         PLL_P = 0x02,
         #[doc = "External clock SAIx_EXTCLK clock selected as SAIx clock"]
         SAI1_EXTCLK = 0x03,
+        #[doc = "HSI clock selected as SAIx clock"]
+        HSI = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
     }
     impl Sai1sel {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Sai1sel {
-            unsafe { core::mem::transmute(val & 0x03) }
+            unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -5150,11 +5590,16 @@ in the RCC_CR register"]
         PLL_P = 0x02,
         #[doc = "External clock SAIx_EXTCLK clock selected as SAIx clock"]
         SAI2_EXTCLK = 0x03,
+        #[doc = "HSI clock selected as SAIx clock"]
+        HSI = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
     }
     impl Sai2sel {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Sai2sel {
-            unsafe { core::mem::transmute(val & 0x03) }
+            unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -5171,6 +5616,36 @@ in the RCC_CR register"]
         #[inline(always)]
         fn from(val: Sai2sel) -> u8 {
             Sai2sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Sdmmcsel {
+        #[doc = "48 MHz clock is selected as SDMMC kernel clock"]
+        HSI48 = 0,
+        #[doc = "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)"]
+        PLLSAI3CLK = 0x01,
+    }
+    impl Sdmmcsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sdmmcsel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sdmmcsel {
+        #[inline(always)]
+        fn from(val: u8) -> Sdmmcsel {
+            Sdmmcsel::from_bits(val)
+        }
+    }
+    impl From<Sdmmcsel> for u8 {
+        #[inline(always)]
+        fn from(val: Sdmmcsel) -> u8 {
+            Sdmmcsel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5235,34 +5710,6 @@ in the RCC_CR register"]
         #[inline(always)]
         fn from(val: Sw) -> u8 {
             Sw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Swpmi1sel {
-        PCLK1 = 0,
-        HSI16 = 0x01,
-    }
-    impl Swpmi1sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Swpmi1sel {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Swpmi1sel {
-        #[inline(always)]
-        fn from(val: u8) -> Swpmi1sel {
-            Swpmi1sel::from_bits(val)
-        }
-    }
-    impl From<Swpmi1sel> for u8 {
-        #[inline(always)]
-        fn from(val: Swpmi1sel) -> u8 {
-            Swpmi1sel::to_bits(val)
         }
     }
     #[repr(u8)]

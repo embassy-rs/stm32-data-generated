@@ -3412,7 +3412,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "l4",
+                        "version": "l4plus",
                         "block": "RCC"
                     },
                     "pins": [
@@ -3577,7 +3577,7 @@
                             "field": "sai1rst"
                         },
                         "mux": {
-                            "register": "ccipr",
+                            "register": "ccipr2",
                             "field": "sai1sel"
                         }
                     },
@@ -3856,7 +3856,7 @@
                             "field": "sai2rst"
                         },
                         "mux": {
-                            "register": "ccipr",
+                            "register": "ccipr2",
                             "field": "sai2sel"
                         }
                     },

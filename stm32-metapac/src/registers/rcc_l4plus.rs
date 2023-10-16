@@ -536,6 +536,40 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "ccipr2",
+                    description: Some(
+                        "Peripherals independent clock configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 156,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ccipr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "dlycfgr",
+                    description: Some(
+                        "delay configuration register",
+                    ),
+                    array: None,
+                    byte_offset: 164,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Dlycfgr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
@@ -564,6 +598,16 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMA2 clock enable",
                     ),
                     bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmamux1en",
+                    description: Some(
+                        "DMAMUX clock enable",
+                    ),
+                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -608,6 +652,16 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "gfxmmuen",
+                    description: Some(
+                        "Graphic MMU clock enable",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -634,6 +688,16 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMA2 reset",
                     ),
                     bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmamux1rst",
+                    description: Some(
+                        "DMAMUX1RST",
+                    ),
+                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -678,6 +742,16 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "gfxmmurst",
+                    description: Some(
+                        "GFXMMU reset",
+                    ),
+                    bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -704,6 +778,16 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMA2 clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 1,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dmamux1smen",
+                    description: Some(
+                        "DMAMUX clock enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -754,6 +838,16 @@ pub(crate) static REGISTERS: IR = IR {
                         "DMA2D clock enable during Sleep and Stop modes",
                     ),
                     bit_offset: 17,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gfxmmusmen",
+                    description: Some(
+                        "GFXMMU clock enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 18,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -889,6 +983,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "pkaen",
+                    description: Some(
+                        "PKA clock enable",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "aesen",
                     description: Some(
                         "AES accelerator clock enable",
@@ -914,6 +1018,36 @@ pub(crate) static REGISTERS: IR = IR {
                         "Random Number Generator clock enable",
                     ),
                     bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ospimen",
+                    description: Some(
+                        "OctoSPI IO manager clock enable",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdmmc1en",
+                    description: Some(
+                        "SDMMC1 clock enable",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdmmc2en",
+                    description: Some(
+                        "SDMMC2 clock enable",
+                    ),
+                    bit_offset: 23,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1049,6 +1183,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "pkarst",
+                    description: Some(
+                        "PKA reset",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "aesrst",
                     description: Some(
                         "AES hardware accelerator reset",
@@ -1074,6 +1218,36 @@ pub(crate) static REGISTERS: IR = IR {
                         "Random number generator reset",
                     ),
                     bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ospimrst",
+                    description: Some(
+                        "OCTOSPI IO manager reset",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdmmc1rst",
+                    description: Some(
+                        "SDMMC1 reset",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdmmc2rst",
+                    description: Some(
+                        "SDMMC2 reset",
+                    ),
+                    bit_offset: 23,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1189,6 +1363,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "sram3smen",
+                    description: Some(
+                        "SRAM2 interface clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 10,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "usb_otg_fssmen",
                     description: Some(
                         "OTG full speed clocks enable during Sleep and Stop modes",
@@ -1209,6 +1393,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "adcsmen",
+                    description: Some(
+                        "ADC clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "dcmismen",
                     description: Some(
                         "DCMI clock enable during Sleep and Stop modes",
@@ -1219,11 +1413,31 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "pkasmen",
+                    description: Some(
+                        "PKA clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 15,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "aessmen",
                     description: Some(
                         "AES accelerator clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 16,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hash1smen",
+                    description: Some(
+                        "HASH clock enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1244,6 +1458,36 @@ pub(crate) static REGISTERS: IR = IR {
                         "Random Number Generator clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 18,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ospimsmen",
+                    description: Some(
+                        "OctoSPI IO manager clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdmmc1smen",
+                    description: Some(
+                        "SDMMC1 clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sdmmc2smen",
+                    description: Some(
+                        "SDMMC2 clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 23,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1269,11 +1513,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspien",
+                    name: "ospi1en",
                     description: Some(
-                        "QSPIEN",
+                        "OctoSPI1 memory interface clock enable",
                     ),
                     bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ospi2en",
+                    description: Some(
+                        "OSPI2EN memory interface clock enable",
+                    ),
+                    bit_offset: 9,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1299,11 +1553,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspirst",
+                    name: "ospi1rst",
                     description: Some(
-                        "Quad SPI memory interface reset",
+                        "OctoSPI1 memory interface reset",
                     ),
                     bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ospi2rst",
+                    description: Some(
+                        "OctOSPI2 memory interface reset",
+                    ),
+                    bit_offset: 9,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1329,11 +1593,21 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspismen",
+                    name: "ospi1smen",
                     description: Some(
-                        "QSPISMEN",
+                        "OctoSPI1 memory interface clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 8,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "octospi2",
+                    description: Some(
+                        "OctoSPI2 memory interface clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 9,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1404,16 +1678,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "TIM7 timer clock enable",
                     ),
                     bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcden",
-                    description: Some(
-                        "LCD clock enable",
-                    ),
-                    bit_offset: 9,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1549,26 +1813,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "can2en",
-                    description: Some(
-                        "CAN2 clock enable",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usben",
-                    description: Some(
-                        "USB FS clock enable",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "pwren",
                     description: Some(
                         "Power interface clock enable",
@@ -1639,31 +1883,11 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "swpmi1en",
-                    description: Some(
-                        "Single wire protocol clock enable",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "lptim2en",
                     description: Some(
                         "LPTIM2EN",
                     ),
                     bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dfsdmen",
-                    description: Some(
-                        "DFSDMEN enable",
-                    ),
-                    bit_offset: 24,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1739,16 +1963,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lcdrst",
-                    description: Some(
-                        "LCD interface reset",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "spi2rst",
                     description: Some(
                         "SPI2 reset",
@@ -1792,16 +2006,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "uart4rst",
                     description: Some(
                         "UART4 reset",
-                    ),
-                    bit_offset: 19,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart4rst",
-                    description: Some(
-                        "USART4 reset.",
                     ),
                     bit_offset: 19,
                     bit_size: 1,
@@ -1864,26 +2068,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "CAN1 reset",
                     ),
                     bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "can2rst",
-                    description: Some(
-                        "CAN2 reset",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usbrst",
-                    description: Some(
-                        "USB FS reset",
-                    ),
-                    bit_offset: 26,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1954,16 +2138,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "I2C4 reset",
                     ),
                     bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "swpmi1rst",
-                    description: Some(
-                        "Single wire protocol reset",
-                    ),
-                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2044,16 +2218,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "TIM7 timer clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcdsmen",
-                    description: Some(
-                        "LCD clocks enable during Sleep and Stop modes",
-                    ),
-                    bit_offset: 9,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2189,26 +2353,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "can2smen",
-                    description: Some(
-                        "CAN2 clocks enable during Sleep and Stop modes",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usbsmen",
-                    description: Some(
-                        "USB FS clock enable during Sleep and Stop modes",
-                    ),
-                    bit_offset: 26,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "pwrsmen",
                     description: Some(
                         "Power interface clocks enable during Sleep and Stop modes",
@@ -2279,16 +2423,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "swpmi1smen",
-                    description: Some(
-                        "Single wire protocol clocks enable during Sleep and Stop modes",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "lptim2smen",
                     description: Some(
                         "LPTIM2SMEN",
@@ -2324,16 +2458,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Firewall clock enable",
                     ),
                     bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdmmcen",
-                    description: Some(
-                        "SDMMC clock enable",
-                    ),
-                    bit_offset: 10,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2429,11 +2553,31 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dfsdmen",
+                    name: "dfsdm1en",
                     description: Some(
                         "DFSDM timer clock enable",
                     ),
                     bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ltdcen",
+                    description: Some(
+                        "LCD-TFT clock enable",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dsien",
+                    description: Some(
+                        "DSI clock enable",
+                    ),
+                    bit_offset: 27,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2454,16 +2598,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "System configuration (SYSCFG) reset",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdmmcrst",
-                    description: Some(
-                        "SDMMC reset",
-                    ),
-                    bit_offset: 10,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2559,11 +2693,31 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dfsdmrst",
+                    name: "dfsdm1rst",
                     description: Some(
-                        "DFSDM filter reset",
+                        "Digital filters for sigma-delata modulators (DFSDM) reset",
                     ),
                     bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ltdcrst",
+                    description: Some(
+                        "LCD-TFT reset",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dsirst",
+                    description: Some(
+                        "DSI reset",
+                    ),
+                    bit_offset: 27,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2584,16 +2738,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "SYSCFG clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdmmcsmen",
-                    description: Some(
-                        "SDMMC clocks enable during Sleep and Stop modes",
-                    ),
-                    bit_offset: 10,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2689,11 +2833,31 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dfsdmsmen",
+                    name: "dfsdm1smen",
                     description: Some(
                         "DFSDM timer clocks enable during Sleep and Stop modes",
                     ),
                     bit_offset: 24,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ltdcsmen",
+                    description: Some(
+                        "LCD-TFT timer clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 26,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dsismen",
+                    description: Some(
+                        "DSI clocks enable during Sleep and Stop modes",
+                    ),
+                    bit_offset: 27,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2766,6 +2930,16 @@ pub(crate) static REGISTERS: IR = IR {
                         "LSECSSD",
                     ),
                     bit_offset: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lsesysdis",
+                    description: Some(
+                        "Disable the Clock LSE propagation to the system",
+                    ),
+                    bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2967,30 +3141,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "sai1sel",
-                    description: Some(
-                        "SAI1 clock source selection",
-                    ),
-                    bit_offset: 22,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Sai1sel",
-                    ),
-                },
-                Field {
-                    name: "sai2sel",
-                    description: Some(
-                        "SAI2 clock source selection",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Sai2sel",
-                    ),
-                },
-                Field {
                     name: "clk48sel",
                     description: Some(
                         "48 MHz clock source selection",
@@ -3014,28 +3164,120 @@ pub(crate) static REGISTERS: IR = IR {
                         "Adcsel",
                     ),
                 },
+            ],
+        },
+        FieldSet {
+            name: "Ccipr2",
+            extends: None,
+            description: Some(
+                "Peripherals independent clock configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "swpmi1sel",
+                    name: "i2c4sel",
                     description: Some(
-                        "SWPMI1 clock source selection",
+                        "I2C4 clock source selection",
                     ),
-                    bit_offset: 30,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Swpmi1sel",
+                        "I2c4sel",
                     ),
                 },
                 Field {
                     name: "dfsdmsel",
                     description: Some(
-                        "DFSDM clock source selection",
+                        "Digital filter for sigma delta modulator kernel clock source selection",
                     ),
-                    bit_offset: 31,
+                    bit_offset: 2,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
                         "Dfsdmsel",
+                    ),
+                },
+                Field {
+                    name: "adfsdmsel",
+                    description: Some(
+                        "Digital filter for sigma delta modulator audio clock source selection",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Adfsdmsel",
+                    ),
+                },
+                Field {
+                    name: "sai1sel",
+                    description: Some(
+                        "SAI1 clock source selection",
+                    ),
+                    bit_offset: 5,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Sai1sel",
+                    ),
+                },
+                Field {
+                    name: "sai2sel",
+                    description: Some(
+                        "SAI2 clock source selection",
+                    ),
+                    bit_offset: 8,
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Sai2sel",
+                    ),
+                },
+                Field {
+                    name: "dsisel",
+                    description: Some(
+                        "clock selection",
+                    ),
+                    bit_offset: 12,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Dsisel",
+                    ),
+                },
+                Field {
+                    name: "sdmmcsel",
+                    description: Some(
+                        "SDMMC clock selection",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Sdmmcsel",
+                    ),
+                },
+                Field {
+                    name: "ltdcdiv",
+                    description: Some(
+                        "division factor for LTDC clock",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ospisel",
+                    description: Some(
+                        "Octospi clock source selection",
+                    ),
+                    bit_offset: 20,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Ospisel",
                     ),
                 },
             ],
@@ -3769,6 +4011,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "lsiprediv",
+                    description: Some(
+                        "Internal low-speed oscillator predivided by 128. Note - This bit is available only on STM32L4P5xx and STM32L4Q5xx devices.",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "msisrange",
                     description: Some(
                         "SI range after Standby mode",
@@ -3868,6 +4120,46 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "lpwrstf",
+                    description: Some(
+                        "Low-power reset flag",
+                    ),
+                    bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dlycfgr",
+            extends: None,
+            description: Some(
+                "Delay configuration register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "octospi1_dly",
+                    description: Some(
+                        "Delay sampling configuration on OCTOSPI1 to be used for internal sampling clock (called feedback clock) or for DQS data strobe",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "octospi2_dly",
+                    description: Some(
+                        "Delay sampling configuration on OCTOSPI2 to be used for internal sampling clock (called feedback clock) or for DQS data strobe",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -3946,7 +4238,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock",
                     ),
                     bit_offset: 4,
-                    bit_size: 3,
+                    bit_size: 4,
                     array: None,
                     enumm: Some(
                         "Pllm",
@@ -4052,6 +4344,18 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             bit_size: 32,
             fields: &[
+                Field {
+                    name: "pllm",
+                    description: Some(
+                        "Division factor for PLLSAI input clock",
+                    ),
+                    bit_offset: 4,
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Pllm",
+                    ),
+                },
                 Field {
                     name: "plln",
                     description: Some(
@@ -4175,6 +4479,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Adfsdmsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SAI1",
+                    description: Some(
+                        "SAI1clock selected as DFSDM audio clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock selected as DFSDM audio clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: Some(
+                        "MSI clock selected as DFSDM audio clock",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Clk48sel",
             description: None,
             bit_size: 2,
@@ -4182,7 +4514,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI48",
                     description: Some(
-                        "HSI48 clock selected (only for STM32L41x/L42x/L43x/L44x/L45x/L46x/L49x/L4Ax devices, otherwise no clock selected)",
+                        "HSI48 clock selected",
                     ),
                     value: 0,
                 },
@@ -4225,6 +4557,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SYSCLK",
                     description: Some(
                         "System clock selected as DFSDM kernel clock",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Dsisel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DSIPHY",
+                    description: Some(
+                        "DSI-PHY is selected as DSI byte lane clock source (usual case)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLDSICLK",
+                    description: Some(
+                        "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)",
                     ),
                     value: 1,
                 },
@@ -4358,6 +4711,34 @@ pub(crate) static REGISTERS: IR = IR {
         },
         Enum {
             name: "I2c3sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK",
+                    description: Some(
+                        "PCLK clock selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYSCLK",
+                    description: Some(
+                        "SYSCLK clock selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI16",
+                    description: Some(
+                        "HSI16 clock selected",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "I2c4sel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -4770,9 +5151,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Ospisel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "SYSCLK",
+                    description: Some(
+                        "System clock selected as OctoSPI kernel clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: Some(
+                        "MSI clock selected as OctoSPI kernel clock",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PLL48M1CLK",
+                    description: Some(
+                        "PLL48M1CLK clock selected as OctoSPI kernel clock",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Pllm",
             description: None,
-            bit_size: 3,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
                     name: "DIV1",
@@ -4813,6 +5222,46 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV8",
                     description: None,
                     value: 7,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: None,
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: None,
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: None,
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: None,
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: None,
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: None,
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: None,
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: None,
+                    value: 15,
                 },
             ],
         },
@@ -5766,7 +6215,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Sai1sel",
             description: None,
-            bit_size: 2,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "PLLSAI1_P",
@@ -5796,12 +6245,19 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock selected as SAIx clock",
+                    ),
+                    value: 4,
+                },
             ],
         },
         Enum {
             name: "Sai2sel",
             description: None,
-            bit_size: 2,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "PLLSAI1_P",
@@ -5830,6 +6286,34 @@ pub(crate) static REGISTERS: IR = IR {
                         "External clock SAIx_EXTCLK clock selected as SAIx clock",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI clock selected as SAIx clock",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Sdmmcsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "HSI48",
+                    description: Some(
+                        "48 MHz clock is selected as SDMMC kernel clock",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLSAI3CLK",
+                    description: Some(
+                        "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -5886,23 +6370,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "PLL selected as system clock",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Swpmi1sel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HSI16",
-                    description: None,
-                    value: 1,
                 },
             ],
         },

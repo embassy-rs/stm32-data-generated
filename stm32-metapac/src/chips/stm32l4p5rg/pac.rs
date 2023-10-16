@@ -530,7 +530,7 @@ pub mod octospim;
 pub mod otg;
 #[path = "../../peripherals/pwr_l4.rs"]
 pub mod pwr;
-#[path = "../../peripherals/rcc_l4.rs"]
+#[path = "../../peripherals/rcc_l4plus.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v2.rs"]
 pub mod rng;

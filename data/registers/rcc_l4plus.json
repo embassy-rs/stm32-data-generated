@@ -189,6 +189,18 @@
         "description": "Clock recovery RC register",
         "byte_offset": 152,
         "fieldset": "CRRCR"
+      },
+      {
+        "name": "CCIPR2",
+        "description": "Peripherals independent clock configuration register",
+        "byte_offset": 156,
+        "fieldset": "CCIPR2"
+      },
+      {
+        "name": "DLYCFGR",
+        "description": "delay configuration register",
+        "byte_offset": 164,
+        "fieldset": "DLYCFGR"
       }
     ]
   },
@@ -205,6 +217,12 @@
         "name": "DMA2EN",
         "description": "DMA2 clock enable",
         "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "DMAMUX1EN",
+        "description": "DMAMUX clock enable",
+        "bit_offset": 2,
         "bit_size": 1
       },
       {
@@ -230,6 +248,12 @@
         "description": "DMA2D clock enable",
         "bit_offset": 17,
         "bit_size": 1
+      },
+      {
+        "name": "GFXMMUEN",
+        "description": "Graphic MMU clock enable",
+        "bit_offset": 18,
+        "bit_size": 1
       }
     ]
   },
@@ -246,6 +270,12 @@
         "name": "DMA2RST",
         "description": "DMA2 reset",
         "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "DMAMUX1RST",
+        "description": "DMAMUX1RST",
+        "bit_offset": 2,
         "bit_size": 1
       },
       {
@@ -271,6 +301,12 @@
         "description": "DMA2D reset",
         "bit_offset": 17,
         "bit_size": 1
+      },
+      {
+        "name": "GFXMMURST",
+        "description": "GFXMMU reset",
+        "bit_offset": 18,
+        "bit_size": 1
       }
     ]
   },
@@ -287,6 +323,12 @@
         "name": "DMA2SMEN",
         "description": "DMA2 clocks enable during Sleep and Stop modes",
         "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "DMAMUX1SMEN",
+        "description": "DMAMUX clock enable during Sleep and Stop modes",
+        "bit_offset": 2,
         "bit_size": 1
       },
       {
@@ -317,6 +359,12 @@
         "name": "DMA2DSMEN",
         "description": "DMA2D clock enable during Sleep and Stop modes",
         "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "GFXMMUSMEN",
+        "description": "GFXMMU clock enable during Sleep and Stop modes",
+        "bit_offset": 18,
         "bit_size": 1
       }
     ]
@@ -397,6 +445,12 @@
         "bit_size": 1
       },
       {
+        "name": "PKAEN",
+        "description": "PKA clock enable",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
         "name": "AESEN",
         "description": "AES accelerator clock enable",
         "bit_offset": 16,
@@ -412,6 +466,24 @@
         "name": "RNGEN",
         "description": "Random Number Generator clock enable",
         "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "OSPIMEN",
+        "description": "OctoSPI IO manager clock enable",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC1EN",
+        "description": "SDMMC1 clock enable",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC2EN",
+        "description": "SDMMC2 clock enable",
+        "bit_offset": 23,
         "bit_size": 1
       }
     ]
@@ -492,6 +564,12 @@
         "bit_size": 1
       },
       {
+        "name": "PKARST",
+        "description": "PKA reset",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
         "name": "AESRST",
         "description": "AES hardware accelerator reset",
         "bit_offset": 16,
@@ -507,6 +585,24 @@
         "name": "RNGRST",
         "description": "Random number generator reset",
         "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "OSPIMRST",
+        "description": "OCTOSPI IO manager reset",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC1RST",
+        "description": "SDMMC1 reset",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC2RST",
+        "description": "SDMMC2 reset",
+        "bit_offset": 23,
         "bit_size": 1
       }
     ]
@@ -575,6 +671,12 @@
         "bit_size": 1
       },
       {
+        "name": "SRAM3SMEN",
+        "description": "SRAM2 interface clocks enable during Sleep and Stop modes",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
         "name": "USB_OTG_FSSMEN",
         "description": "OTG full speed clocks enable during Sleep and Stop modes",
         "bit_offset": 12,
@@ -587,15 +689,33 @@
         "bit_size": 1
       },
       {
+        "name": "ADCSMEN",
+        "description": "ADC clocks enable during Sleep and Stop modes",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
         "name": "DCMISMEN",
         "description": "DCMI clock enable during Sleep and Stop modes",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
+        "name": "PKASMEN",
+        "description": "PKA clocks enable during Sleep and Stop modes",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
         "name": "AESSMEN",
         "description": "AES accelerator clocks enable during Sleep and Stop modes",
         "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "HASH1SMEN",
+        "description": "HASH clock enable during Sleep and Stop modes",
+        "bit_offset": 17,
         "bit_size": 1
       },
       {
@@ -608,6 +728,24 @@
         "name": "RNGSMEN",
         "description": "Random Number Generator clocks enable during Sleep and Stop modes",
         "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "OSPIMSMEN",
+        "description": "OctoSPI IO manager clocks enable during Sleep and Stop modes",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC1SMEN",
+        "description": "SDMMC1 clocks enable during Sleep and Stop modes",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC2SMEN",
+        "description": "SDMMC2 clocks enable during Sleep and Stop modes",
+        "bit_offset": 23,
         "bit_size": 1
       }
     ]
@@ -622,9 +760,15 @@
         "bit_size": 1
       },
       {
-        "name": "QSPIEN",
-        "description": "QSPIEN",
+        "name": "OSPI1EN",
+        "description": "OctoSPI1 memory interface clock enable",
         "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "OSPI2EN",
+        "description": "OSPI2EN memory interface clock enable",
+        "bit_offset": 9,
         "bit_size": 1
       }
     ]
@@ -639,9 +783,15 @@
         "bit_size": 1
       },
       {
-        "name": "QSPIRST",
-        "description": "Quad SPI memory interface reset",
+        "name": "OSPI1RST",
+        "description": "OctoSPI1 memory interface reset",
         "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "OSPI2RST",
+        "description": "OctOSPI2 memory interface reset",
+        "bit_offset": 9,
         "bit_size": 1
       }
     ]
@@ -656,9 +806,15 @@
         "bit_size": 1
       },
       {
-        "name": "QSPISMEN",
-        "description": "QSPISMEN",
+        "name": "OSPI1SMEN",
+        "description": "OctoSPI1 memory interface clocks enable during Sleep and Stop modes",
         "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "OCTOSPI2",
+        "description": "OctoSPI2 memory interface clocks enable during Sleep and Stop modes",
+        "bit_offset": 9,
         "bit_size": 1
       }
     ]
@@ -700,12 +856,6 @@
         "name": "TIM7EN",
         "description": "TIM7 timer clock enable",
         "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "LCDEN",
-        "description": "LCD clock enable",
-        "bit_offset": 9,
         "bit_size": 1
       },
       {
@@ -787,18 +937,6 @@
         "bit_size": 1
       },
       {
-        "name": "CAN2EN",
-        "description": "CAN2 clock enable",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "USBEN",
-        "description": "USB FS clock enable",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
         "name": "PWREN",
         "description": "Power interface clock enable",
         "bit_offset": 28,
@@ -840,21 +978,9 @@
         "bit_size": 1
       },
       {
-        "name": "SWPMI1EN",
-        "description": "Single wire protocol clock enable",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
         "name": "LPTIM2EN",
         "description": "LPTIM2EN",
         "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "DFSDMEN",
-        "description": "DFSDMEN enable",
-        "bit_offset": 24,
         "bit_size": 1
       }
     ]
@@ -899,12 +1025,6 @@
         "bit_size": 1
       },
       {
-        "name": "LCDRST",
-        "description": "LCD interface reset",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
         "name": "SPI2RST",
         "description": "SPI2 reset",
         "bit_offset": 14,
@@ -931,12 +1051,6 @@
       {
         "name": "UART4RST",
         "description": "UART4 reset",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "USART4RST",
-        "description": "USART4 reset.",
         "bit_offset": 19,
         "bit_size": 1
       },
@@ -974,18 +1088,6 @@
         "name": "CAN1RST",
         "description": "CAN1 reset",
         "bit_offset": 25,
-        "bit_size": 1
-      },
-      {
-        "name": "CAN2RST",
-        "description": "CAN2 reset",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "USBRST",
-        "description": "USB FS reset",
-        "bit_offset": 26,
         "bit_size": 1
       },
       {
@@ -1027,12 +1129,6 @@
         "name": "I2C4RST",
         "description": "I2C4 reset",
         "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "SWPMI1RST",
-        "description": "Single wire protocol reset",
-        "bit_offset": 2,
         "bit_size": 1
       },
       {
@@ -1080,12 +1176,6 @@
         "name": "TIM7SMEN",
         "description": "TIM7 timer clocks enable during Sleep and Stop modes",
         "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "LCDSMEN",
-        "description": "LCD clocks enable during Sleep and Stop modes",
-        "bit_offset": 9,
         "bit_size": 1
       },
       {
@@ -1167,18 +1257,6 @@
         "bit_size": 1
       },
       {
-        "name": "CAN2SMEN",
-        "description": "CAN2 clocks enable during Sleep and Stop modes",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "USBSMEN",
-        "description": "USB FS clock enable during Sleep and Stop modes",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
         "name": "PWRSMEN",
         "description": "Power interface clocks enable during Sleep and Stop modes",
         "bit_offset": 28,
@@ -1220,12 +1298,6 @@
         "bit_size": 1
       },
       {
-        "name": "SWPMI1SMEN",
-        "description": "Single wire protocol clocks enable during Sleep and Stop modes",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
         "name": "LPTIM2SMEN",
         "description": "LPTIM2SMEN",
         "bit_offset": 5,
@@ -1246,12 +1318,6 @@
         "name": "FWEN",
         "description": "Firewall clock enable",
         "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "SDMMCEN",
-        "description": "SDMMC clock enable",
-        "bit_offset": 10,
         "bit_size": 1
       },
       {
@@ -1309,9 +1375,21 @@
         "bit_size": 1
       },
       {
-        "name": "DFSDMEN",
+        "name": "DFSDM1EN",
         "description": "DFSDM timer clock enable",
         "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "LTDCEN",
+        "description": "LCD-TFT clock enable",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "DSIEN",
+        "description": "DSI clock enable",
+        "bit_offset": 27,
         "bit_size": 1
       }
     ]
@@ -1323,12 +1401,6 @@
         "name": "SYSCFGRST",
         "description": "System configuration (SYSCFG) reset",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "SDMMCRST",
-        "description": "SDMMC reset",
-        "bit_offset": 10,
         "bit_size": 1
       },
       {
@@ -1386,9 +1458,21 @@
         "bit_size": 1
       },
       {
-        "name": "DFSDMRST",
-        "description": "DFSDM filter reset",
+        "name": "DFSDM1RST",
+        "description": "Digital filters for sigma-delata modulators (DFSDM) reset",
         "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "LTDCRST",
+        "description": "LCD-TFT reset",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "DSIRST",
+        "description": "DSI reset",
+        "bit_offset": 27,
         "bit_size": 1
       }
     ]
@@ -1400,12 +1484,6 @@
         "name": "SYSCFGSMEN",
         "description": "SYSCFG clocks enable during Sleep and Stop modes",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "SDMMCSMEN",
-        "description": "SDMMC clocks enable during Sleep and Stop modes",
-        "bit_offset": 10,
         "bit_size": 1
       },
       {
@@ -1463,9 +1541,21 @@
         "bit_size": 1
       },
       {
-        "name": "DFSDMSMEN",
+        "name": "DFSDM1SMEN",
         "description": "DFSDM timer clocks enable during Sleep and Stop modes",
         "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "LTDCSMEN",
+        "description": "LCD-TFT timer clocks enable during Sleep and Stop modes",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "DSISMEN",
+        "description": "DSI clocks enable during Sleep and Stop modes",
+        "bit_offset": 27,
         "bit_size": 1
       }
     ]
@@ -1508,6 +1598,12 @@
         "name": "LSECSSD",
         "description": "LSECSSD",
         "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "LSESYSDIS",
+        "description": "Disable the Clock LSE propagation to the system",
+        "bit_offset": 7,
         "bit_size": 1
       },
       {
@@ -1625,20 +1721,6 @@
         "enum": "LPTIM2SEL"
       },
       {
-        "name": "SAI1SEL",
-        "description": "SAI1 clock source selection",
-        "bit_offset": 22,
-        "bit_size": 2,
-        "enum": "SAI1SEL"
-      },
-      {
-        "name": "SAI2SEL",
-        "description": "SAI2 clock source selection",
-        "bit_offset": 24,
-        "bit_size": 2,
-        "enum": "SAI2SEL"
-      },
-      {
         "name": "CLK48SEL",
         "description": "48 MHz clock source selection",
         "bit_offset": 26,
@@ -1651,20 +1733,73 @@
         "bit_offset": 28,
         "bit_size": 2,
         "enum": "ADCSEL"
-      },
+      }
+    ]
+  },
+  "fieldset/CCIPR2": {
+    "description": "Peripherals independent clock configuration register",
+    "fields": [
       {
-        "name": "SWPMI1SEL",
-        "description": "SWPMI1 clock source selection",
-        "bit_offset": 30,
-        "bit_size": 1,
-        "enum": "SWPMI1SEL"
+        "name": "I2C4SEL",
+        "description": "I2C4 clock source selection",
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "I2C4SEL"
       },
       {
         "name": "DFSDMSEL",
-        "description": "DFSDM clock source selection",
-        "bit_offset": 31,
+        "description": "Digital filter for sigma delta modulator kernel clock source selection",
+        "bit_offset": 2,
         "bit_size": 1,
         "enum": "DFSDMSEL"
+      },
+      {
+        "name": "ADFSDMSEL",
+        "description": "Digital filter for sigma delta modulator audio clock source selection",
+        "bit_offset": 3,
+        "bit_size": 2,
+        "enum": "ADFSDMSEL"
+      },
+      {
+        "name": "SAI1SEL",
+        "description": "SAI1 clock source selection",
+        "bit_offset": 5,
+        "bit_size": 3,
+        "enum": "SAI1SEL"
+      },
+      {
+        "name": "SAI2SEL",
+        "description": "SAI2 clock source selection",
+        "bit_offset": 8,
+        "bit_size": 3,
+        "enum": "SAI2SEL"
+      },
+      {
+        "name": "DSISEL",
+        "description": "clock selection",
+        "bit_offset": 12,
+        "bit_size": 1,
+        "enum": "DSISEL"
+      },
+      {
+        "name": "SDMMCSEL",
+        "description": "SDMMC clock selection",
+        "bit_offset": 14,
+        "bit_size": 1,
+        "enum": "SDMMCSEL"
+      },
+      {
+        "name": "LTDCDIV",
+        "description": "division factor for LTDC clock",
+        "bit_offset": 16,
+        "bit_size": 2
+      },
+      {
+        "name": "OSPISEL",
+        "description": "Octospi clock source selection",
+        "bit_offset": 20,
+        "bit_size": 2,
+        "enum": "OSPISEL"
       }
     ]
   },
@@ -2096,6 +2231,12 @@
         "bit_size": 1
       },
       {
+        "name": "LSIPREDIV",
+        "description": "Internal low-speed oscillator predivided by 128. Note - This bit is available only on STM32L4P5xx and STM32L4Q5xx devices.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
         "name": "MSISRANGE",
         "description": "SI range after Standby mode",
         "bit_offset": 8,
@@ -2154,6 +2295,29 @@
         "description": "Low-power reset flag",
         "bit_offset": 31,
         "bit_size": 1
+      },
+      {
+        "name": "LPWRSTF",
+        "description": "Low-power reset flag",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/DLYCFGR": {
+    "description": "Delay configuration register",
+    "fields": [
+      {
+        "name": "OCTOSPI1_DLY",
+        "description": "Delay sampling configuration on OCTOSPI1 to be used for internal sampling clock (called feedback clock) or for DQS data strobe",
+        "bit_offset": 0,
+        "bit_size": 4
+      },
+      {
+        "name": "OCTOSPI2_DLY",
+        "description": "Delay sampling configuration on OCTOSPI2 to be used for internal sampling clock (called feedback clock) or for DQS data strobe",
+        "bit_offset": 4,
+        "bit_size": 4
       }
     ]
   },
@@ -2200,7 +2364,7 @@
         "name": "PLLM",
         "description": "Division factor for the main PLL and audio PLL (PLLSAI1 and PLLSAI2) input clock",
         "bit_offset": 4,
-        "bit_size": 3,
+        "bit_size": 4,
         "enum": "PLLM"
       },
       {
@@ -2261,6 +2425,13 @@
   "fieldset/PLLSAICFGR": {
     "description": "PLLSAI configuration register",
     "fields": [
+      {
+        "name": "PLLM",
+        "description": "Division factor for PLLSAI input clock",
+        "bit_offset": 4,
+        "bit_size": 4,
+        "enum": "PLLM"
+      },
       {
         "name": "PLLN",
         "description": "SAI1PLL multiplication factor for VCO",
@@ -2336,12 +2507,32 @@
       }
     ]
   },
+  "enum/ADFSDMSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "SAI1",
+        "description": "SAI1clock selected as DFSDM audio clock",
+        "value": 0
+      },
+      {
+        "name": "HSI",
+        "description": "HSI clock selected as DFSDM audio clock",
+        "value": 1
+      },
+      {
+        "name": "MSI",
+        "description": "MSI clock selected as DFSDM audio clock",
+        "value": 2
+      }
+    ]
+  },
   "enum/CLK48SEL": {
     "bit_size": 2,
     "variants": [
       {
         "name": "HSI48",
-        "description": "HSI48 clock selected (only for STM32L41x/L42x/L43x/L44x/L45x/L46x/L49x/L4Ax devices, otherwise no clock selected)",
+        "description": "HSI48 clock selected",
         "value": 0
       },
       {
@@ -2372,6 +2563,21 @@
       {
         "name": "SYSCLK",
         "description": "System clock selected as DFSDM kernel clock",
+        "value": 1
+      }
+    ]
+  },
+  "enum/DSISEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "DSIPHY",
+        "description": "DSI-PHY is selected as DSI byte lane clock source (usual case)",
+        "value": 0
+      },
+      {
+        "name": "PLLDSICLK",
+        "description": "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)",
         "value": 1
       }
     ]
@@ -2467,6 +2673,26 @@
     ]
   },
   "enum/I2C3SEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK",
+        "description": "PCLK clock selected",
+        "value": 0
+      },
+      {
+        "name": "SYSCLK",
+        "description": "SYSCLK clock selected",
+        "value": 1
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 clock selected",
+        "value": 2
+      }
+    ]
+  },
+  "enum/I2C4SEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -2635,7 +2861,7 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "DISABLE",
+        "name": "Disable",
         "description": "No clock",
         "value": 0
       },
@@ -2761,8 +2987,28 @@
       }
     ]
   },
+  "enum/OSPISEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "SYSCLK",
+        "description": "System clock selected as OctoSPI kernel clock",
+        "value": 0
+      },
+      {
+        "name": "MSI",
+        "description": "MSI clock selected as OctoSPI kernel clock",
+        "value": 1
+      },
+      {
+        "name": "PLL48M1CLK",
+        "description": "PLL48M1CLK clock selected as OctoSPI kernel clock",
+        "value": 2
+      }
+    ]
+  },
   "enum/PLLM": {
-    "bit_size": 3,
+    "bit_size": 4,
     "variants": [
       {
         "name": "Div1",
@@ -2795,6 +3041,38 @@
       {
         "name": "Div8",
         "value": 7
+      },
+      {
+        "name": "Div9",
+        "value": 8
+      },
+      {
+        "name": "Div10",
+        "value": 9
+      },
+      {
+        "name": "Div11",
+        "value": 10
+      },
+      {
+        "name": "Div12",
+        "value": 11
+      },
+      {
+        "name": "Div13",
+        "value": 12
+      },
+      {
+        "name": "Div14",
+        "value": 13
+      },
+      {
+        "name": "Div15",
+        "value": 14
+      },
+      {
+        "name": "Div16",
+        "value": 15
       }
     ]
   },
@@ -3522,7 +3800,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "DISABLE",
+        "name": "Disable",
         "description": "No clock",
         "value": 0
       },
@@ -3544,7 +3822,7 @@
     ]
   },
   "enum/SAI1SEL": {
-    "bit_size": 2,
+    "bit_size": 3,
     "variants": [
       {
         "name": "PLLSAI1_P",
@@ -3565,11 +3843,16 @@
         "name": "SAI1_EXTCLK",
         "description": "External clock SAIx_EXTCLK clock selected as SAIx clock",
         "value": 3
+      },
+      {
+        "name": "HSI",
+        "description": "HSI clock selected as SAIx clock",
+        "value": 4
       }
     ]
   },
   "enum/SAI2SEL": {
-    "bit_size": 2,
+    "bit_size": 3,
     "variants": [
       {
         "name": "PLLSAI1_P",
@@ -3590,6 +3873,26 @@
         "name": "SAI2_EXTCLK",
         "description": "External clock SAIx_EXTCLK clock selected as SAIx clock",
         "value": 3
+      },
+      {
+        "name": "HSI",
+        "description": "HSI clock selected as SAIx clock",
+        "value": 4
+      }
+    ]
+  },
+  "enum/SDMMCSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "HSI48",
+        "description": "48 MHz clock is selected as SDMMC kernel clock",
+        "value": 0
+      },
+      {
+        "name": "PLLSAI3CLK",
+        "description": "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)",
+        "value": 1
       }
     ]
   },
@@ -3630,19 +3933,6 @@
         "name": "PLL",
         "description": "PLL selected as system clock",
         "value": 3
-      }
-    ]
-  },
-  "enum/SWPMI1SEL": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "value": 0
-      },
-      {
-        "name": "HSI16",
-        "value": 1
       }
     ]
   },

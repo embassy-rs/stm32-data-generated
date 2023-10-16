@@ -2904,7 +2904,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clk48msel",
+                    name: "clk48sel",
                     description: Some("48 MHz clock source selection"),
                     bit_offset: 26,
                     bit_size: 2,
@@ -3938,8 +3938,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clk48msec",
-                    description: Some("CLK48MSEC"),
+                    name: "clk48sec",
+                    description: Some("CLK48SEC"),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
@@ -4050,8 +4050,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "clk48msecf",
-                    description: Some("CLK48MSECF"),
+                    name: "clk48secf",
+                    description: Some("CLK48SECF"),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,

@@ -1944,13 +1944,6 @@
                 {
                     "name": "QUADSPI",
                     "address": 2684358656,
-                    "rcc": {
-                        "clock": "AHB3",
-                        "enable": {
-                            "register": "ahb3enr",
-                            "field": "quadspien"
-                        }
-                    },
                     "pins": [
                         {
                             "pin": "PA2",
@@ -2318,14 +2311,14 @@
                         "block": "SDMMC"
                     },
                     "rcc": {
-                        "clock": "AHB2",
+                        "clock": "APB2",
                         "enable": {
-                            "register": "ahb2enr",
-                            "field": "sdmmc1en"
+                            "register": "apb2enr",
+                            "field": "sdmmcen"
                         },
                         "reset": {
-                            "register": "ahb2rstr",
-                            "field": "sdmmc1rst"
+                            "register": "apb2rstr",
+                            "field": "sdmmcrst"
                         }
                     },
                     "pins": [

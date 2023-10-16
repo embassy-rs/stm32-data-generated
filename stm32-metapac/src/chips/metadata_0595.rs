@@ -1259,15 +1259,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "QUADSPI",
         address: 2684358656,
         registers: None,
-        rcc: Some(PeripheralRcc {
-            clock: "AHB3",
-            enable: Some(PeripheralRccRegister {
-                register: "ahb3enr",
-                field: "quadspien",
-            }),
-            reset: None,
-            mux: None,
-        }),
+        rcc: None,
         pins: &[
             PeripheralPin {
                 pin: "PA2",

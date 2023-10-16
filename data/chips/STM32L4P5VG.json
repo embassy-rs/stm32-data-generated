@@ -3330,7 +3330,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "l4",
+                        "version": "l4plus",
                         "block": "RCC"
                     },
                     "pins": [
@@ -3485,7 +3485,7 @@
                             "field": "sai1rst"
                         },
                         "mux": {
-                            "register": "ccipr",
+                            "register": "ccipr2",
                             "field": "sai1sel"
                         }
                     },
@@ -3729,7 +3729,7 @@
                             "field": "sai2rst"
                         },
                         "mux": {
-                            "register": "ccipr",
+                            "register": "ccipr2",
                             "field": "sai2sel"
                         }
                     },
@@ -3960,6 +3960,17 @@
                 {
                     "name": "SDMMC2",
                     "address": 1342580736,
+                    "rcc": {
+                        "clock": "AHB2",
+                        "enable": {
+                            "register": "ahb2enr",
+                            "field": "sdmmc2en"
+                        },
+                        "reset": {
+                            "register": "ahb2rstr",
+                            "field": "sdmmc2rst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA1",

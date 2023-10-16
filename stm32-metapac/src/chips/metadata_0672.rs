@@ -2561,7 +2561,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073876992,
         registers: Some(PeripheralRegisters {
             kind: "rcc",
-            version: "l4",
+            version: "l4plus",
             block: "RCC",
             ir: &rcc::REGISTERS,
         }),
@@ -2747,7 +2747,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "sai1rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr",
+                register: "ccipr2",
                 field: "sai1sel",
             }),
         }),
@@ -2994,7 +2994,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "sai2rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr",
+                register: "ccipr2",
                 field: "sai2sel",
             }),
         }),
@@ -6276,7 +6276,7 @@ pub mod octospim;
 pub mod otg;
 #[path = "../registers/pwr_l4.rs"]
 pub mod pwr;
-#[path = "../registers/rcc_l4.rs"]
+#[path = "../registers/rcc_l4plus.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v1.rs"]
 pub mod rng;

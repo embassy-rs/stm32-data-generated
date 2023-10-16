@@ -1408,13 +1408,6 @@
                 {
                     "name": "QUADSPI",
                     "address": 2684358656,
-                    "rcc": {
-                        "clock": "AHB3",
-                        "enable": {
-                            "register": "ahb3enr",
-                            "field": "quadspien"
-                        }
-                    },
                     "pins": [
                         {
                             "pin": "PA2",

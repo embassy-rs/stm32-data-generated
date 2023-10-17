@@ -5213,7 +5213,7 @@ in the RCC_CR register"]
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
         #[doc = "PLL selected as system clock"]
-        PLL = 0x03,
+        PLL1_P = 0x03,
     }
     impl Sw {
         #[inline(always)]

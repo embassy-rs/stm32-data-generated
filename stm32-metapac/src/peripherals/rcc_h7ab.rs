@@ -6832,7 +6832,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lpuartsel {
         #[doc = "rcc_pclk_d3 selected as peripheral clock"]
-        RCC_PCLK_D3 = 0,
+        PCLK3 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]

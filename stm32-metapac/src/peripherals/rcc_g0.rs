@@ -4228,7 +4228,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tim15sel {
         #[doc = "TIMPCLK used as TIM15 clock source"]
-        TIMPCLK = 0,
+        PCLK1_TIM = 0,
         #[doc = "PLLQCLK used as TIM15 clock source"]
         PLL1_Q = 0x01,
     }
@@ -4258,7 +4258,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Tim1sel {
         #[doc = "TIMPCLK used as TIM1 clock source"]
-        TIMPCLK = 0,
+        PCLK1_TIM = 0,
         #[doc = "PLLQCLK used as TIM1 clock source"]
         PLL1_Q = 0x01,
     }

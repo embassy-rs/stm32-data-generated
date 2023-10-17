@@ -2526,7 +2526,7 @@ pub mod vals {
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x01,
         #[doc = "PLL used as system clock"]
-        PLL = 0x02,
+        PLL1_P = 0x02,
         #[doc = "HSI48 used as system clock (when avaiable)"]
         HSI48 = 0x03,
     }
@@ -2592,7 +2592,7 @@ pub mod vals {
         #[doc = "NOT ALLOWED IN F0x0 - HSI48 selected as USB clock source"]
         HSI48 = 0,
         #[doc = "PLL clock selected as USB clock source"]
-        PLLCLK = 0x01,
+        PLL1_P = 0x01,
     }
     impl Usbsw {
         #[inline(always)]

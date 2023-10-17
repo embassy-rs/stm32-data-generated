@@ -2374,7 +2374,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PLL",
+                    name: "PLL1_P",
                     description: Some("PLL used as system clock"),
                     value: 2,
                 },
@@ -2386,12 +2386,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PCLK2",
+                    name: "PCLK2_TIM",
                     description: Some("PCLK2 clock (doubled frequency when prescaled)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL",
+                    name: "PLL1_P",
                     description: Some("PLL vco output (running up to 144 MHz)"),
                     value: 1,
                 },

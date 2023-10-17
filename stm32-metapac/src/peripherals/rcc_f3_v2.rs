@@ -2845,7 +2845,7 @@ pub mod vals {
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x01,
         #[doc = "PLL used as system clock"]
-        PLL = 0x02,
+        PLL1_P = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sw {
@@ -2874,9 +2874,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Timsw {
         #[doc = "PCLK2 clock (doubled frequency when prescaled)"]
-        PCLK2 = 0,
+        PCLK2_TIM = 0,
         #[doc = "PLL vco output (running up to 144 MHz)"]
-        PLL = 0x01,
+        PLL1_P = 0x01,
     }
     impl Timsw {
         #[inline(always)]

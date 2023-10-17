@@ -2706,7 +2706,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PLL",
+                    name: "PLL1_P",
                     description: Some(
                         "PLL used as system clock",
                     ),
@@ -2769,7 +2769,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLCLK",
+                    name: "PLL1_P",
                     description: Some(
                         "PLL clock selected as USB clock source",
                     ),

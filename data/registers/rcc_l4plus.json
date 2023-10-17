@@ -2496,7 +2496,7 @@
         "value": 0
       },
       {
-        "name": "PLLADC1CLK",
+        "name": "PLLSAI1_R",
         "description": "PLLADC1CLK clock selected",
         "value": 1
       },
@@ -2576,7 +2576,7 @@
         "value": 0
       },
       {
-        "name": "PLLDSICLK",
+        "name": "PLLSAI2_Q",
         "description": "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)",
         "value": 1
       }
@@ -3001,7 +3001,7 @@
         "value": 1
       },
       {
-        "name": "PLL48M1CLK",
+        "name": "PLL1_Q",
         "description": "PLL48M1CLK clock selected as OctoSPI kernel clock",
         "value": 2
       }
@@ -3890,7 +3890,7 @@
         "value": 0
       },
       {
-        "name": "PLLSAI3CLK",
+        "name": "PLL1_P",
         "description": "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)",
         "value": 1
       }
@@ -3930,7 +3930,7 @@
         "value": 2
       },
       {
-        "name": "PLL",
+        "name": "PLL1_R",
         "description": "PLL selected as system clock",
         "value": 3
       }

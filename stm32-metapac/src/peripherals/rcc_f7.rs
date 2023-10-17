@@ -5998,7 +5998,7 @@ pub mod vals {
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x01,
         #[doc = "PLL used as system clock"]
-        PLL = 0x02,
+        PLL1_P = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sw {

@@ -1620,7 +1620,7 @@
         "value": 1
       },
       {
-        "name": "PLL",
+        "name": "PLL1_P",
         "description": "PLL used as system clock",
         "value": 2
       },
@@ -1665,7 +1665,7 @@
         "value": 0
       },
       {
-        "name": "PLLCLK",
+        "name": "PLL1_P",
         "description": "PLL clock selected as USB clock source",
         "value": 1
       }

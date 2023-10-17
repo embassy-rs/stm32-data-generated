@@ -3131,7 +3131,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x02,
         #[doc = "PLL used as system clock"]
-        PLL = 0x03,
+        PLL1_P = 0x03,
     }
     impl Sw {
         #[inline(always)]

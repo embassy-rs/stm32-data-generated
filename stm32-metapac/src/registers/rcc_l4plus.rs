@@ -4463,7 +4463,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLADC1CLK",
+                    name: "PLLSAI1_R",
                     description: Some(
                         "PLLADC1CLK clock selected",
                     ),
@@ -4575,7 +4575,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLDSICLK",
+                    name: "PLLSAI2_Q",
                     description: Some(
                         "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)",
                     ),
@@ -5170,7 +5170,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PLL48M1CLK",
+                    name: "PLL1_Q",
                     description: Some(
                         "PLL48M1CLK clock selected as OctoSPI kernel clock",
                     ),
@@ -6309,7 +6309,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLSAI3CLK",
+                    name: "PLL1_P",
                     description: Some(
                         "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)",
                     ),
@@ -6365,7 +6365,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLL",
+                    name: "PLL1_R",
                     description: Some(
                         "PLL selected as system clock",
                     ),

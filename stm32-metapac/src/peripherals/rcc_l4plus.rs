@@ -4379,7 +4379,7 @@ pub mod vals {
         #[doc = "No clock selected"]
         DISABLE = 0,
         #[doc = "PLLADC1CLK clock selected"]
-        PLLADC1CLK = 0x01,
+        PLLSAI1_R = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x03,
@@ -4509,7 +4509,7 @@ pub mod vals {
         #[doc = "DSI-PHY is selected as DSI byte lane clock source (usual case)"]
         DSIPHY = 0,
         #[doc = "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)"]
-        PLLDSICLK = 0x01,
+        PLLSAI2_Q = 0x01,
     }
     impl Dsisel {
         #[inline(always)]
@@ -5066,7 +5066,7 @@ in the RCC_CR register"]
         #[doc = "MSI clock selected as OctoSPI kernel clock"]
         MSI = 0x01,
         #[doc = "PLL48M1CLK clock selected as OctoSPI kernel clock"]
-        PLL48M1CLK = 0x02,
+        PLL1_Q = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Ospisel {
@@ -5624,7 +5624,7 @@ in the RCC_CR register"]
         #[doc = "48 MHz clock is selected as SDMMC kernel clock"]
         HSI48 = 0,
         #[doc = "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)"]
-        PLLSAI3CLK = 0x01,
+        PLL1_P = 0x01,
     }
     impl Sdmmcsel {
         #[inline(always)]
@@ -5688,7 +5688,7 @@ in the RCC_CR register"]
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
         #[doc = "PLL selected as system clock"]
-        PLL = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

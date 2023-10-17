@@ -3796,7 +3796,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIMPCLK",
+                    name: "PCLK1_TIM",
                     description: Some("TIMPCLK used as TIM15 clock source"),
                     value: 0,
                 },
@@ -3813,7 +3813,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIMPCLK",
+                    name: "PCLK1_TIM",
                     description: Some("TIMPCLK used as TIM1 clock source"),
                     value: 0,
                 },

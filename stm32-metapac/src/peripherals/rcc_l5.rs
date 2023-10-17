@@ -5137,7 +5137,7 @@ pub mod vals {
         #[doc = "PLLSAI1_Q aka PLL48M1CLK clock selected"]
         PLLSAI1_Q = 0x01,
         #[doc = "PLL_Q aka PLL48M2CLK clock selected"]
-        PLL_Q = 0x02,
+        PLL1_Q = 0x02,
         #[doc = "MSI clock selected"]
         MSI = 0x03,
     }
@@ -5900,7 +5900,7 @@ in the RCC_CR register"]
         #[doc = "MSI selected as PLL input clock"]
         MSI = 0x01,
         #[doc = "HSI selected as PLL input clock"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE selected as PLL input clock"]
         HSE = 0x03,
     }
@@ -6005,7 +6005,7 @@ in the RCC_CR register"]
         #[doc = "MSI oscillator selected as wake-up from Stop clock and CSS backup clock"]
         MSI = 0,
         #[doc = "HSI oscillator selected as wake-up from stop clock and CSS backup clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
     }
     impl Stopwuck {
         #[inline(always)]
@@ -6035,11 +6035,11 @@ in the RCC_CR register"]
         #[doc = "MSI selected as system clock"]
         MSI = 0,
         #[doc = "HSI selected as system clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
         #[doc = "PLL selected as system clock"]
-        PLL = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

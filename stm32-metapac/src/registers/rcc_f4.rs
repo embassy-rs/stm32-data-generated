@@ -4193,7 +4193,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "ck48msel",
+                    name: "clk48sel",
                     description: Some(
                         "48 MHz clock source selection",
                     ),
@@ -4201,7 +4201,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Ckmsel",
+                        "Clk48sel",
                     ),
                 },
                 Field {
@@ -4287,7 +4287,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "ck48msel",
+                    name: "clk48sel",
                     description: Some(
                         "SDIO/USB clock selection",
                     ),
@@ -4295,7 +4295,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Ckmsel",
+                        "Clk48sel",
                     ),
                 },
                 Field {
@@ -4427,35 +4427,39 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "plli2sm",
+                    name: "pllm",
                     description: Some(
-                        "Division factor for the audio PLL (PLLI2S) input clock",
+                        "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock",
                     ),
                     bit_offset: 0,
                     bit_size: 6,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pllm",
+                    ),
                 },
                 Field {
-                    name: "plli2sn",
+                    name: "plln",
                     description: Some(
-                        "PLLI2S multiplication factor for VCO",
+                        "Main PLL (PLL) multiplication factor for VCO",
                     ),
                     bit_offset: 6,
                     bit_size: 9,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Plln",
+                    ),
                 },
                 Field {
-                    name: "plli2sp",
+                    name: "pllp",
                     description: Some(
-                        "PLLI2S division factor for SPDIF-IN clock",
+                        "Main PLL (PLL) division factor for main system clock",
                     ),
                     bit_offset: 16,
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Plli2sp",
+                        "Pllp",
                     ),
                 },
                 Field {
@@ -4471,24 +4475,40 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "plli2sq",
+                    name: "pllsrc",
                     description: Some(
-                        "PLLI2S division factor for USB OTG FS/SDIO/RNG clock",
+                        "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pllsrc",
+                    ),
+                },
+                Field {
+                    name: "pllq",
+                    description: Some(
+                        "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks",
                     ),
                     bit_offset: 24,
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pllq",
+                    ),
                 },
                 Field {
-                    name: "plli2sr",
+                    name: "pllr",
                     description: Some(
-                        "PLLI2S division factor for I2S clocks",
+                        "PLL division factor for I2S and System clocks",
                     ),
                     bit_offset: 28,
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pllr",
+                    ),
                 },
             ],
         },
@@ -4501,56 +4521,76 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "pllsaim",
+                    name: "pllm",
                     description: Some(
-                        "Division factor for audio PLLSAI input clock",
+                        "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock",
                     ),
                     bit_offset: 0,
                     bit_size: 6,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pllm",
+                    ),
                 },
                 Field {
-                    name: "pllsain",
+                    name: "plln",
                     description: Some(
-                        "PLLSAI division factor for VCO",
+                        "Main PLL (PLL) multiplication factor for VCO",
                     ),
                     bit_offset: 6,
                     bit_size: 9,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Plln",
+                    ),
                 },
                 Field {
-                    name: "pllsaip",
+                    name: "pllp",
                     description: Some(
-                        "PLLSAI division factor for 48 MHz clock",
+                        "Main PLL (PLL) division factor for main system clock",
                     ),
                     bit_offset: 16,
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Pllsaip",
+                        "Pllp",
                     ),
                 },
                 Field {
-                    name: "pllsaiq",
+                    name: "pllsrc",
                     description: Some(
-                        "PLLSAI division factor for SAI1 clock",
+                        "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source",
+                    ),
+                    bit_offset: 22,
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pllsrc",
+                    ),
+                },
+                Field {
+                    name: "pllq",
+                    description: Some(
+                        "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks",
                     ),
                     bit_offset: 24,
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pllq",
+                    ),
                 },
                 Field {
-                    name: "pllsair",
+                    name: "pllr",
                     description: Some(
-                        "PLLSAI division factor for LCD clock",
+                        "PLL division factor for I2S and System clocks",
                     ),
                     bit_offset: 28,
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pllr",
+                    ),
                 },
             ],
         },
@@ -4672,7 +4712,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ckmsel",
+            name: "Clk48sel",
             description: None,
             bit_size: 1,
             variants: &[
@@ -8703,7 +8743,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CK48M",
+                    name: "CLK48",
                     description: Some(
                         "48 MHz clock is selected as SD clock",
                     ),

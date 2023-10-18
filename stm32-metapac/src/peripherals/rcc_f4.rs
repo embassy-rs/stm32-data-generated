@@ -4205,13 +4205,13 @@ pub mod regs {
         }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
-        pub const fn ck48msel(&self) -> super::vals::Ckmsel {
+        pub const fn clk48sel(&self) -> super::vals::Clk48sel {
             let val = (self.0 >> 27usize) & 0x01;
-            super::vals::Ckmsel::from_bits(val as u8)
+            super::vals::Clk48sel::from_bits(val as u8)
         }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
-        pub fn set_ck48msel(&mut self, val: super::vals::Ckmsel) {
+        pub fn set_clk48sel(&mut self, val: super::vals::Clk48sel) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
         }
         #[doc = "I2S APB2 clocks source selection (I2S1/4/5)"]
@@ -4294,13 +4294,13 @@ pub mod regs {
         }
         #[doc = "SDIO/USB clock selection"]
         #[inline(always)]
-        pub const fn ck48msel(&self) -> super::vals::Ckmsel {
+        pub const fn clk48sel(&self) -> super::vals::Clk48sel {
             let val = (self.0 >> 27usize) & 0x01;
-            super::vals::Ckmsel::from_bits(val as u8)
+            super::vals::Clk48sel::from_bits(val as u8)
         }
         #[doc = "SDIO/USB clock selection"]
         #[inline(always)]
-        pub fn set_ck48msel(&mut self, val: super::vals::Ckmsel) {
+        pub fn set_clk48sel(&mut self, val: super::vals::Clk48sel) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
         }
         #[doc = "SDIO clock selection"]
@@ -4426,37 +4426,37 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Plli2scfgr(pub u32);
     impl Plli2scfgr {
-        #[doc = "Division factor for the audio PLL (PLLI2S) input clock"]
+        #[doc = "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock"]
         #[inline(always)]
-        pub const fn plli2sm(&self) -> u8 {
+        pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 0usize) & 0x3f;
-            val as u8
+            super::vals::Pllm::from_bits(val as u8)
         }
-        #[doc = "Division factor for the audio PLL (PLLI2S) input clock"]
+        #[doc = "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock"]
         #[inline(always)]
-        pub fn set_plli2sm(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
         }
-        #[doc = "PLLI2S multiplication factor for VCO"]
+        #[doc = "Main PLL (PLL) multiplication factor for VCO"]
         #[inline(always)]
-        pub const fn plli2sn(&self) -> u16 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 6usize) & 0x01ff;
-            val as u16
+            super::vals::Plln::from_bits(val as u16)
         }
-        #[doc = "PLLI2S multiplication factor for VCO"]
+        #[doc = "Main PLL (PLL) multiplication factor for VCO"]
         #[inline(always)]
-        pub fn set_plli2sn(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val as u32) & 0x01ff) << 6usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val.to_bits() as u32) & 0x01ff) << 6usize);
         }
-        #[doc = "PLLI2S division factor for SPDIF-IN clock"]
+        #[doc = "Main PLL (PLL) division factor for main system clock"]
         #[inline(always)]
-        pub const fn plli2sp(&self) -> super::vals::Plli2sp {
+        pub const fn pllp(&self) -> super::vals::Pllp {
             let val = (self.0 >> 16usize) & 0x03;
-            super::vals::Plli2sp::from_bits(val as u8)
+            super::vals::Pllp::from_bits(val as u8)
         }
-        #[doc = "PLLI2S division factor for SPDIF-IN clock"]
+        #[doc = "Main PLL (PLL) division factor for main system clock"]
         #[inline(always)]
-        pub fn set_plli2sp(&mut self, val: super::vals::Plli2sp) {
+        pub fn set_pllp(&mut self, val: super::vals::Pllp) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "PLLI2S entry clock source"]
@@ -4470,27 +4470,38 @@ pub mod regs {
         pub fn set_plli2ssrc(&mut self, val: super::vals::Plli2ssrc) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
-        #[doc = "PLLI2S division factor for USB OTG FS/SDIO/RNG clock"]
+        #[doc = "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source"]
         #[inline(always)]
-        pub const fn plli2sq(&self) -> u8 {
+        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
+            let val = (self.0 >> 22usize) & 0x01;
+            super::vals::Pllsrc::from_bits(val as u8)
+        }
+        #[doc = "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source"]
+        #[inline(always)]
+        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        }
+        #[doc = "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks"]
+        #[inline(always)]
+        pub const fn pllq(&self) -> super::vals::Pllq {
             let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
+            super::vals::Pllq::from_bits(val as u8)
         }
-        #[doc = "PLLI2S division factor for USB OTG FS/SDIO/RNG clock"]
+        #[doc = "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks"]
         #[inline(always)]
-        pub fn set_plli2sq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
+        pub fn set_pllq(&mut self, val: super::vals::Pllq) {
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
-        #[doc = "PLLI2S division factor for I2S clocks"]
+        #[doc = "PLL division factor for I2S and System clocks"]
         #[inline(always)]
-        pub const fn plli2sr(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Pllr {
             let val = (self.0 >> 28usize) & 0x07;
-            val as u8
+            super::vals::Pllr::from_bits(val as u8)
         }
-        #[doc = "PLLI2S division factor for I2S clocks"]
+        #[doc = "PLL division factor for I2S and System clocks"]
         #[inline(always)]
-        pub fn set_plli2sr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val as u32) & 0x07) << 28usize);
+        pub fn set_pllr(&mut self, val: super::vals::Pllr) {
+            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }
     impl Default for Plli2scfgr {
@@ -4504,60 +4515,71 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Pllsaicfgr(pub u32);
     impl Pllsaicfgr {
-        #[doc = "Division factor for audio PLLSAI input clock"]
+        #[doc = "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock"]
         #[inline(always)]
-        pub const fn pllsaim(&self) -> u8 {
+        pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 0usize) & 0x3f;
-            val as u8
+            super::vals::Pllm::from_bits(val as u8)
         }
-        #[doc = "Division factor for audio PLLSAI input clock"]
+        #[doc = "Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock"]
         #[inline(always)]
-        pub fn set_pllsaim(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val.to_bits() as u32) & 0x3f) << 0usize);
         }
-        #[doc = "PLLSAI division factor for VCO"]
+        #[doc = "Main PLL (PLL) multiplication factor for VCO"]
         #[inline(always)]
-        pub const fn pllsain(&self) -> u16 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 6usize) & 0x01ff;
-            val as u16
+            super::vals::Plln::from_bits(val as u16)
         }
-        #[doc = "PLLSAI division factor for VCO"]
+        #[doc = "Main PLL (PLL) multiplication factor for VCO"]
         #[inline(always)]
-        pub fn set_pllsain(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val as u32) & 0x01ff) << 6usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val.to_bits() as u32) & 0x01ff) << 6usize);
         }
-        #[doc = "PLLSAI division factor for 48 MHz clock"]
+        #[doc = "Main PLL (PLL) division factor for main system clock"]
         #[inline(always)]
-        pub const fn pllsaip(&self) -> super::vals::Pllsaip {
+        pub const fn pllp(&self) -> super::vals::Pllp {
             let val = (self.0 >> 16usize) & 0x03;
-            super::vals::Pllsaip::from_bits(val as u8)
+            super::vals::Pllp::from_bits(val as u8)
         }
-        #[doc = "PLLSAI division factor for 48 MHz clock"]
+        #[doc = "Main PLL (PLL) division factor for main system clock"]
         #[inline(always)]
-        pub fn set_pllsaip(&mut self, val: super::vals::Pllsaip) {
+        pub fn set_pllp(&mut self, val: super::vals::Pllp) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
-        #[doc = "PLLSAI division factor for SAI1 clock"]
+        #[doc = "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source"]
         #[inline(always)]
-        pub const fn pllsaiq(&self) -> u8 {
+        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
+            let val = (self.0 >> 22usize) & 0x01;
+            super::vals::Pllsrc::from_bits(val as u8)
+        }
+        #[doc = "Main PLL(PLL) and audio PLL (PLLI2S) entry clock source"]
+        #[inline(always)]
+        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        }
+        #[doc = "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks"]
+        #[inline(always)]
+        pub const fn pllq(&self) -> super::vals::Pllq {
             let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
+            super::vals::Pllq::from_bits(val as u8)
         }
-        #[doc = "PLLSAI division factor for SAI1 clock"]
+        #[doc = "Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks"]
         #[inline(always)]
-        pub fn set_pllsaiq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
+        pub fn set_pllq(&mut self, val: super::vals::Pllq) {
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
-        #[doc = "PLLSAI division factor for LCD clock"]
+        #[doc = "PLL division factor for I2S and System clocks"]
         #[inline(always)]
-        pub const fn pllsair(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Pllr {
             let val = (self.0 >> 28usize) & 0x07;
-            val as u8
+            super::vals::Pllr::from_bits(val as u8)
         }
-        #[doc = "PLLSAI division factor for LCD clock"]
+        #[doc = "PLL division factor for I2S and System clocks"]
         #[inline(always)]
-        pub fn set_pllsair(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val as u32) & 0x07) << 28usize);
+        pub fn set_pllr(&mut self, val: super::vals::Pllr) {
+            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }
     impl Default for Pllsaicfgr {
@@ -4716,15 +4738,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ckmsel {
+    pub enum Clk48sel {
         #[doc = "48MHz clock from PLL is selected"]
         PLL = 0,
         #[doc = "48MHz clock from PLLSAI is selected"]
         PLLSAI = 0x01,
     }
-    impl Ckmsel {
+    impl Clk48sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ckmsel {
+        pub const fn from_bits(val: u8) -> Clk48sel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -4732,16 +4754,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ckmsel {
+    impl From<u8> for Clk48sel {
         #[inline(always)]
-        fn from(val: u8) -> Ckmsel {
-            Ckmsel::from_bits(val)
+        fn from(val: u8) -> Clk48sel {
+            Clk48sel::from_bits(val)
         }
     }
-    impl From<Ckmsel> for u8 {
+    impl From<Clk48sel> for u8 {
         #[inline(always)]
-        fn from(val: Ckmsel) -> u8 {
-            Ckmsel::to_bits(val)
+        fn from(val: Clk48sel) -> u8 {
+            Clk48sel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -6434,7 +6456,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sdiosel {
         #[doc = "48 MHz clock is selected as SD clock"]
-        CK48M = 0,
+        CLK48 = 0,
         #[doc = "System clock is selected as SD clock"]
         SYSCLK = 0x01,
     }

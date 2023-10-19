@@ -1092,7 +1092,7 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock (SYSCLK) selected as I2S clock entry",
         "value": 0
       },
@@ -1112,7 +1112,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected",
         "value": 4
       },
@@ -1442,7 +1442,7 @@
         "value": 1
       },
       {
-        "name": "PLL",
+        "name": "PLL1_P",
         "description": "PLL used as system clock",
         "value": 2
       }

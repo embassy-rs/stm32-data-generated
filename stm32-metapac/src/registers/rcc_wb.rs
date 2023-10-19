@@ -3679,7 +3679,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("SYSCLK clock selected"),
                     value: 1,
                 },
@@ -3689,7 +3689,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some("HSI oscillator clock selected"),
                     value: 3,
                 },
@@ -4641,7 +4641,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some("HSI16 selected as PLL entry clock source"),
                     value: 2,
                 },
@@ -4722,7 +4722,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: None,
                     value: 1,
                 },
@@ -4732,7 +4732,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLL",
+                    name: "PLL1_R",
                     description: None,
                     value: 3,
                 },

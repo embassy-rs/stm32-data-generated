@@ -5323,7 +5323,7 @@ pub mod vals {
         #[doc = "MCO output disabled, no clock on MCO"]
         NONE = 0,
         #[doc = "SYSCLK system clock selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "MSI clock selected"]
         MSI = 0x02,
         #[doc = "HSI clock selected"]

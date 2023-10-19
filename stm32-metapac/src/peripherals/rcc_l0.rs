@@ -2678,7 +2678,7 @@ pub mod vals {
         #[doc = "No clock"]
         DISABLE = 0,
         #[doc = "SYSCLK clock selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI oscillator clock selected"]
         HSI = 0x02,
         #[doc = "MSI oscillator clock selected"]

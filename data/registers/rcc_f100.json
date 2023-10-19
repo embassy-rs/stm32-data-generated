@@ -1019,7 +1019,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected",
         "value": 4
       },

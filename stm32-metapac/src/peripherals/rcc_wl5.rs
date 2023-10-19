@@ -3821,11 +3821,11 @@ pub mod vals {
     pub enum Adcsel {
         _RESERVED_0 = 0,
         #[doc = "HSI16 used as ADC clock source"]
-        HSI16 = 0x01,
+        HSI = 0x01,
         #[doc = "PLLPCLK used as ADC clock source"]
-        PLLPCLK = 0x02,
+        PLL1_P = 0x02,
         #[doc = "SYSCLK used as ADC clock source"]
-        SYSCLK = 0x03,
+        SYS = 0x03,
     }
     impl Adcsel {
         #[inline(always)]
@@ -3984,11 +3984,11 @@ pub mod vals {
         #[doc = "No clock"]
         DISABLE = 0,
         #[doc = "SYSCLK clock selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "MSI oscillator clock selected"]
         MSI = 0x02,
         #[doc = "HSI oscillator clock selected"]
-        HSI16 = 0x03,
+        HSI = 0x03,
         #[doc = "HSE oscillator clock selected"]
         HSE = 0x04,
         #[doc = "Main PLLRCLK clock selected"]
@@ -4003,7 +4003,7 @@ pub mod vals {
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
         #[doc = "Main PLLCLK oscillator clock selected"]
-        PLLPCLK = 0x0d,
+        PLL1_P = 0x0d,
         #[doc = "Main PLLQCLK oscillator clock selected"]
         PLLQCLK = 0x0e,
         _RESERVED_f = 0x0f,
@@ -4406,7 +4406,7 @@ pub mod vals {
         #[doc = "MSI selected as PLL entry clock source"]
         MSI = 0x01,
         #[doc = "HSI16 selected as PLL entry clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,
     }
@@ -4509,9 +4509,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
         MSI = 0,
-        HSI16 = 0x01,
+        HSI = 0x01,
         HSE = 0x02,
-        PLLR = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

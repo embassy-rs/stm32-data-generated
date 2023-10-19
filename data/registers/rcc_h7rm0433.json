@@ -5671,7 +5671,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected for micro-controller clock output",
         "value": 0
       },

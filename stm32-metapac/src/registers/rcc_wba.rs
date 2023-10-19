@@ -3431,7 +3431,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK selected",
                     ),
@@ -3452,7 +3452,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 clock selected",
                     ),
@@ -3599,14 +3599,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK selected",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected",
                     ),
@@ -3634,7 +3634,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected",
                     ),
@@ -3662,14 +3662,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK selected",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected",
                     ),
@@ -3858,7 +3858,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 clock selected",
                     ),
@@ -3984,14 +3984,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "DISABLE",
                     description: Some(
                         "no clock sent to PLL1",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 clock selected as PLL1 clock entry",
                     ),
@@ -4096,7 +4096,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected",
                     ),
@@ -4159,14 +4159,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK selected",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected",
                     ),
@@ -4180,7 +4180,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected as system clock",
                     ),
@@ -4208,7 +4208,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HCLK1_DIV8",
+                    name: "HCLK1_DIV_8",
                     description: Some(
                         "hclk1 divided by 8 selected",
                     ),
@@ -4236,14 +4236,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "HSI",
                     description: Some(
                         "HSI16 divider disabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI16_DIV_256",
+                    name: "HSI_DIV_256",
                     description: Some(
                         "HSI16/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
                     ),
@@ -4264,14 +4264,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some(
                         "SYSCLK selected",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI16",
+                    name: "HSI",
                     description: Some(
                         "HSI16 selected",
                     ),

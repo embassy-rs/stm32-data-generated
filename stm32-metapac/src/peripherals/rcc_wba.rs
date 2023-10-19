@@ -3129,13 +3129,13 @@ pub mod vals {
         #[doc = "hclk1 clock selected"]
         HCLK1 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "pll1pclk selected"]
         PLL1_P = 0x02,
         #[doc = "HSE clock selected"]
         HSE = 0x03,
         #[doc = "HSI16 clock selected"]
-        HSI16 = 0x04,
+        HSI = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -3306,9 +3306,9 @@ pub mod vals {
         #[doc = "pclk1 selected"]
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Icsel {
@@ -3341,7 +3341,7 @@ pub mod vals {
         #[doc = "LSI selected"]
         LSI = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
     }
@@ -3373,9 +3373,9 @@ pub mod vals {
         #[doc = "pclk7 selected"]
         PCLK7 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
     }
@@ -3577,7 +3577,7 @@ pub mod vals {
         SYSCLKPRE = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "HSI16 clock selected"]
-        HSI16 = 0x03,
+        HSI = 0x03,
         #[doc = "HSE clock selected"]
         HSE = 0x04,
         #[doc = "pll1rclk clock selected"]
@@ -3716,10 +3716,10 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "no clock sent to PLL1"]
-        NONE = 0,
+        DISABLE = 0,
         _RESERVED_1 = 0x01,
         #[doc = "HSI16 clock selected as PLL1 clock entry"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE clock after HSEPRE divider selected as PLL1 clock entry"]
         HSE = 0x03,
     }
@@ -3825,7 +3825,7 @@ pub mod vals {
         #[doc = "LSI selected"]
         LSI = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "pll1qclk divide by 2 selected"]
         PLL1_Q = 0x03,
     }
@@ -3891,9 +3891,9 @@ pub mod vals {
         #[doc = "pclk2 selected"]
         PCLK2 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Spisel {
@@ -3922,7 +3922,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
         #[doc = "HSI16 selected as system clock"]
-        HSI16 = 0,
+        HSI = 0,
         _RESERVED_1 = 0x01,
         #[doc = "HSE or HSE/2, as defined by HSEPRE, selected as system clock"]
         HSE = 0x02,
@@ -3955,7 +3955,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Systicksel {
         #[doc = "hclk1 divided by 8 selected"]
-        HCLK1_DIV8 = 0,
+        HCLK1_DIV_8 = 0,
         #[doc = "LSI selected"]
         LSI = 0x01,
         #[doc = "LSE selected"]
@@ -3988,9 +3988,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Timicsel {
         #[doc = "HSI16 divider disabled"]
-        DIV1 = 0,
+        HSI = 0,
         #[doc = "HSI16/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture"]
-        HSI16_DIV_256 = 0x01,
+        HSI_DIV_256 = 0x01,
     }
     impl Timicsel {
         #[inline(always)]
@@ -4020,9 +4020,9 @@ pub mod vals {
         #[doc = "pclk1 selected"]
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
     }

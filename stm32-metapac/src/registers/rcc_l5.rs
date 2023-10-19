@@ -4161,7 +4161,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("SYSCLK system clock selected"),
                     value: 1,
                 },

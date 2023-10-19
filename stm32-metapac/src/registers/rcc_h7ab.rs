@@ -5382,7 +5382,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "SYSCLK",
+                    name: "SYS",
                     description: Some("System clock selected for micro-controller clock output"),
                     value: 0,
                 },

@@ -1884,7 +1884,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2s2src {
         #[doc = "System clock (SYSCLK) selected as I2S clock entry"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "PLL3 VCO clock selected as I2S clock entry"]
         PLL3 = 0x01,
     }
@@ -1919,7 +1919,7 @@ pub mod vals {
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "System clock selected"]
-        SYSCLK = 0x04,
+        SYS = 0x04,
         #[doc = "HSI oscillator clock selected"]
         HSI = 0x05,
         #[doc = "HSE oscillator clock selected"]
@@ -2290,7 +2290,7 @@ pub mod vals {
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x01,
         #[doc = "PLL used as system clock"]
-        PLL = 0x02,
+        PLL1_P = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sw {

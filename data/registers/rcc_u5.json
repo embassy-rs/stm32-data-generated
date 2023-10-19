@@ -3628,12 +3628,12 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "HCLK",
+        "name": "HCLK1",
         "description": "HCLK clock selected",
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
@@ -3648,12 +3648,12 @@
         "value": 3
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 4
       },
       {
-        "name": "MSI_K",
+        "name": "MSIK",
         "description": "MSIK clock selected",
         "value": 5
       }
@@ -3663,7 +3663,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "HCLK",
+        "name": "HCLK1",
         "description": "HCLK selected",
         "value": 0
       },
@@ -3838,7 +3838,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 0
       },
@@ -3893,12 +3893,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -3923,7 +3923,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -3943,12 +3943,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -4073,7 +4073,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK system clock selected",
         "value": 1
       },
@@ -4083,7 +4083,7 @@
         "value": 2
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 3
       },
@@ -4123,7 +4123,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "HCLK",
+        "name": "HCLK1",
         "description": "HCLK selected",
         "value": 0
       },
@@ -4328,7 +4328,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 0
       },
@@ -4363,12 +4363,12 @@
         "value": 1
       },
       {
-        "name": "HSE_DIV2",
+        "name": "HSE_DIV_2",
         "description": "HSE/2 selected",
         "value": 2
       },
       {
-        "name": "PLL1_P_DIV2",
+        "name": "PLL1_P_DIV_2",
         "description": "PLL1 “P” divided by 2 (pll1_p_ck/2) selected",
         "value": 3
       }
@@ -7070,7 +7070,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NONE",
+        "name": "DISABLE",
         "description": "No clock sent to PLL3",
         "value": 0
       },
@@ -7080,7 +7080,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected as PLL3 clock entry",
         "value": 2
       },
@@ -7145,12 +7145,12 @@
         "value": 0
       },
       {
-        "name": "HSI48_DIV2",
+        "name": "HSI48_DIV_2",
         "description": "HSI48 / 2 selected, can be used in Range 4",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       }
@@ -7190,7 +7190,7 @@
         "value": 0
       },
       {
-        "name": "SHSI_DIV2",
+        "name": "SHSI_DIV_2",
         "description": "SHSI / 2 selected, can be used in Range 4",
         "value": 1
       }
@@ -7220,7 +7220,7 @@
         "value": 3
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 4
       }
@@ -7265,12 +7265,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -7290,7 +7290,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 oscillator automatically enabled when exiting Stop mode",
         "value": 1
       }
@@ -7305,7 +7305,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 oscillator selected as wakeup from stop clock and CSS backup clock",
         "value": 1
       }
@@ -7320,7 +7320,7 @@
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as system clock",
         "value": 1
       },
@@ -7340,7 +7340,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HCLK_DIV8",
+        "name": "HCLK1_DIV_8",
         "description": "HCLK/8 selected",
         "value": 0
       },
@@ -7360,7 +7360,7 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "NONE",
+        "name": "DISABLE",
         "description": "No sources can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
         "value": 0
       },
@@ -7395,12 +7395,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -7420,12 +7420,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },

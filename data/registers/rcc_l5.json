@@ -3047,7 +3047,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK system clock selected",
         "value": 1
       },

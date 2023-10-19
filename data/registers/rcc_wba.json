@@ -1814,7 +1814,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
@@ -1829,7 +1829,7 @@
         "value": 3
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 4
       }
@@ -1934,12 +1934,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       }
@@ -1959,7 +1959,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -1979,12 +1979,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -2119,7 +2119,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected",
         "value": 3
       },
@@ -2209,12 +2209,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "NONE",
+        "name": "DISABLE",
         "description": "no clock sent to PLL1",
         "value": 0
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 clock selected as PLL1 clock entry",
         "value": 2
       },
@@ -2289,7 +2289,7 @@
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },
@@ -2334,12 +2334,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       }
@@ -2349,7 +2349,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected as system clock",
         "value": 0
       },
@@ -2369,7 +2369,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HCLK1_DIV8",
+        "name": "HCLK1_DIV_8",
         "description": "hclk1 divided by 8 selected",
         "value": 0
       },
@@ -2389,12 +2389,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "Div1",
+        "name": "HSI",
         "description": "HSI16 divider disabled",
         "value": 0
       },
       {
-        "name": "HSI16_DIV_256",
+        "name": "HSI_DIV_256",
         "description": "HSI16/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
         "value": 1
       }
@@ -2409,12 +2409,12 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "SYSCLK selected",
         "value": 1
       },
       {
-        "name": "HSI16",
+        "name": "HSI",
         "description": "HSI16 selected",
         "value": 2
       },

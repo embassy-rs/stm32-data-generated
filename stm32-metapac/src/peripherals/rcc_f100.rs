@@ -1762,7 +1762,7 @@ pub mod vals {
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "System clock selected"]
-        SYSCLK = 0x04,
+        SYS = 0x04,
         #[doc = "HSI oscillator clock selected"]
         HSI = 0x05,
         #[doc = "HSE oscillator clock selected"]

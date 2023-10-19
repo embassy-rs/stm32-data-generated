@@ -6945,7 +6945,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mco2sel {
         #[doc = "System clock selected for micro-controller clock output"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "pll2_p selected for micro-controller clock output"]
         PLL2_P = 0x01,
         #[doc = "HSE selected for micro-controller clock output"]

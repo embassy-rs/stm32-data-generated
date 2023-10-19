@@ -4561,11 +4561,11 @@ pub mod vals {
         #[doc = "No clock"]
         DISABLE = 0,
         #[doc = "SYSCLK clock selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "MSI oscillator clock selected"]
         MSI = 0x02,
         #[doc = "HSI oscillator clock selected"]
-        HSI16 = 0x03,
+        HSI = 0x03,
         #[doc = "HSE clock selected (after stabilization, after HSERDY = 1)"]
         HSE = 0x04,
         #[doc = "PLL clock selected"]
@@ -4930,7 +4930,7 @@ pub mod vals {
         #[doc = "MSI selected as PLL entry clock source"]
         MSI = 0x01,
         #[doc = "HSI16 selected as PLL entry clock source"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,
     }
@@ -5033,9 +5033,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
         MSI = 0,
-        HSI16 = 0x01,
+        HSI = 0x01,
         HSE = 0x02,
-        PLL = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

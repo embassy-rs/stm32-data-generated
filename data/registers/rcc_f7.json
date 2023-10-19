@@ -2581,7 +2581,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock (SYSCLK) clock selected as DFSDM1 Kernel clock source",
         "value": 1
       }
@@ -2661,7 +2661,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected as I2C clock",
         "value": 1
       },
@@ -2766,7 +2766,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock (SYSCLK) selected",
         "value": 0
       },
@@ -5231,7 +5231,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock is selected as SD clock",
         "value": 1
       }
@@ -5296,7 +5296,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock is selected as USART clock",
         "value": 1
       },
@@ -5321,7 +5321,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock is selected as USART clock",
         "value": 1
       },

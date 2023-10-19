@@ -6330,17 +6330,17 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcdacsel {
         #[doc = "HCLK clock selected"]
-        HCLK = 0,
+        HCLK1 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "PLL2 R (pll2_r_ck) selected"]
         PLL2_R = 0x02,
         #[doc = "HSE clock selected"]
         HSE = 0x03,
         #[doc = "HSI16 clock selected"]
-        HSI16 = 0x04,
+        HSI = 0x04,
         #[doc = "MSIK clock selected"]
-        MSI_K = 0x05,
+        MSIK = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -6370,7 +6370,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adfsel {
         #[doc = "HCLK selected"]
-        HCLK = 0,
+        HCLK1 = 0,
         #[doc = "PLL1 P (pll1_p_ck) selected"]
         PLL1_P = 0x01,
         #[doc = "PLL3 Q (pll3_q_ck) selected"]
@@ -6622,7 +6622,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hspisel {
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "PLL1 “Q” (pll1_q_ck) selected, can be up to 200 MHz"]
         PLL1_Q = 0x01,
         #[doc = "PLL2 “Q” (pll2_q_ck) selected, can be up to 200 MHz"]
@@ -6692,9 +6692,9 @@ pub mod vals {
         #[doc = "PCLK1 selected"]
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "MSIK selected"]
         MSIK = 0x03,
     }
@@ -6728,7 +6728,7 @@ pub mod vals {
         #[doc = "LSI selected"]
         LSI = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
     }
@@ -6760,9 +6760,9 @@ pub mod vals {
         #[doc = "PCLK3 selected"]
         PCLK3 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
         #[doc = "MSIK selected"]
@@ -6962,11 +6962,11 @@ pub mod vals {
         #[doc = "MCO output disabled, no clock on MCO"]
         DISABLE = 0,
         #[doc = "SYSCLK system clock selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "MSIS clock selected"]
         MSIS = 0x02,
         #[doc = "HSI16 clock selected"]
-        HSI16 = 0x03,
+        HSI = 0x03,
         #[doc = "HSE clock selected"]
         HSE = 0x04,
         #[doc = "Main PLL clock pll1_r_ck selected"]
@@ -7012,7 +7012,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mdfsel {
         #[doc = "HCLK selected"]
-        HCLK = 0,
+        HCLK1 = 0,
         #[doc = "PLL1 P (pll1_p_ck) selected"]
         PLL1_P = 0x01,
         #[doc = "PLL3 Q (pll3_q_ck) selected"]
@@ -7280,7 +7280,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Octospisel {
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "MSIK selected"]
         MSIK = 0x01,
         #[doc = "PLL1 Q (pll1_q_ck) selected, can be up to 200 MHz"]
@@ -7318,9 +7318,9 @@ in RCC_ICSCR1"]
         #[doc = "PLL1 “P” (pll1_q_ck) selected,"]
         PLL1_P = 0x01,
         #[doc = "HSE/2 selected"]
-        HSE_DIV2 = 0x02,
+        HSE_DIV_2 = 0x02,
         #[doc = "PLL1 “P” divided by 2 (pll1_p_ck/2) selected"]
-        PLL1_P_DIV2 = 0x03,
+        PLL1_P_DIV_2 = 0x03,
     }
     impl Otghssel {
         #[inline(always)]
@@ -8161,11 +8161,11 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock sent to PLL3"]
-        NONE = 0,
+        DISABLE = 0,
         #[doc = "MSIS clock selected as PLL3 clock entry"]
         MSIS = 0x01,
         #[doc = "HSI16 clock selected as PLL3 clock entry"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "HSE clock selected as PLL3 clock entry"]
         HSE = 0x03,
     }
@@ -8266,9 +8266,9 @@ in RCC_ICSCR1"]
         #[doc = "HSI48 selected"]
         HSI48 = 0,
         #[doc = "HSI48 / 2 selected, can be used in Range 4"]
-        HSI48_DIV2 = 0x01,
+        HSI48_DIV_2 = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Rngsel {
@@ -8333,7 +8333,7 @@ in RCC_ICSCR1"]
         #[doc = "SHSI selected"]
         SHSI = 0,
         #[doc = "SHSI / 2 selected, can be used in Range 4"]
-        SHSI_DIV2 = 0x01,
+        SHSI_DIV_2 = 0x01,
     }
     impl Saessel {
         #[inline(always)]
@@ -8369,7 +8369,7 @@ in RCC_ICSCR1"]
         #[doc = "input pin AUDIOCLK selected"]
         AUDIOCLK = 0x03,
         #[doc = "HSI16 clock selected"]
-        HSI16 = 0x04,
+        HSI = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -8462,9 +8462,9 @@ in RCC_ICSCR1"]
         #[doc = "PCLK2 selected"]
         PCLK2 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "MSIK selected"]
         MSIK = 0x03,
     }
@@ -8496,7 +8496,7 @@ in RCC_ICSCR1"]
         #[doc = "MSIK oscillator automatically enabled when exiting Stop mode"]
         MSIK = 0,
         #[doc = "HSI16 oscillator automatically enabled when exiting Stop mode"]
-        HSI16 = 0x01,
+        HSI = 0x01,
     }
     impl Stopkerwuck {
         #[inline(always)]
@@ -8526,7 +8526,7 @@ in RCC_ICSCR1"]
         #[doc = "MSIS oscillator selected as wakeup from stop clock and CSS backup clock"]
         MSIS = 0,
         #[doc = "HSI16 oscillator selected as wakeup from stop clock and CSS backup clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
     }
     impl Stopwuck {
         #[inline(always)]
@@ -8556,7 +8556,7 @@ in RCC_ICSCR1"]
         #[doc = "MSIS selected as system clock"]
         MSIS = 0,
         #[doc = "HSI16 selected as system clock"]
-        HSI16 = 0x01,
+        HSI = 0x01,
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
         #[doc = "PLL pll1_r_ck selected as system clock"]
@@ -8588,7 +8588,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Systicksel {
         #[doc = "HCLK/8 selected"]
-        HCLK_DIV8 = 0,
+        HCLK1_DIV_8 = 0,
         #[doc = "LSI selected"]
         LSI = 0x01,
         #[doc = "LSE selected"]
@@ -8621,7 +8621,7 @@ in RCC_ICSCR1"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Timicsel {
         #[doc = "No sources can be selected by TIM16, TIM17 and LPTIM2 as internal input capture"]
-        NONE = 0,
+        DISABLE = 0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -8662,9 +8662,9 @@ in RCC_ICSCR1"]
         #[doc = "PCLK1 selected"]
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
     }
@@ -8696,9 +8696,9 @@ in RCC_ICSCR1"]
         #[doc = "PCLK2 selected"]
         PCLK2 = 0,
         #[doc = "SYSCLK selected"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI16 selected"]
-        HSI16 = 0x02,
+        HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
     }

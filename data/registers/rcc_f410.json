@@ -1198,7 +1198,7 @@
         "value": 0
       },
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock selected as I2C clock",
         "value": 1
       },
@@ -1333,7 +1333,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "SYSCLK",
+        "name": "SYS",
         "description": "System clock (SYSCLK) selected",
         "value": 0
       },

@@ -4560,7 +4560,7 @@ pub mod vals {
         #[doc = "APB2 clock (PCLK2) selected as DFSDM1 Kernel clock source"]
         PCLK2 = 0,
         #[doc = "System clock (SYSCLK) clock selected as DFSDM1 Kernel clock source"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
     }
     impl Dfsdmsel {
         #[inline(always)]
@@ -4671,7 +4671,7 @@ pub mod vals {
         #[doc = "APB clock selected as I2C clock"]
         APB = 0,
         #[doc = "System clock selected as I2C clock"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI clock selected as I2C clock"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
@@ -4834,7 +4834,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mco2sel {
         #[doc = "System clock (SYSCLK) selected"]
-        SYSCLK = 0,
+        SYS = 0,
         #[doc = "PLLI2S clock selected"]
         PLLI2S = 0x01,
         #[doc = "HSE oscillator clock selected"]
@@ -5936,7 +5936,7 @@ pub mod vals {
         #[doc = "48 MHz clock is selected as SD clock"]
         CLK48 = 0,
         #[doc = "System clock is selected as SD clock"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
     }
     impl Sdmmcsel {
         #[inline(always)]
@@ -6059,7 +6059,7 @@ pub mod vals {
         #[doc = "APB2 clock (PCLK2) is selected as USART clock"]
         PCLK2 = 0,
         #[doc = "System clock is selected as USART clock"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI clock is selected as USART clock"]
         HSI = 0x02,
         #[doc = "LSE clock is selected as USART clock"]
@@ -6093,7 +6093,7 @@ pub mod vals {
         #[doc = "APB1 clock (PCLK1) is selected as USART clock"]
         PCLK1 = 0,
         #[doc = "System clock is selected as USART clock"]
-        SYSCLK = 0x01,
+        SYS = 0x01,
         #[doc = "HSI clock is selected as USART clock"]
         HSI = 0x02,
         #[doc = "LSE clock is selected as USART clock"]

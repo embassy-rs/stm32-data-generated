@@ -3627,7 +3627,7 @@
         "value": 2
       },
       {
-        "name": "PLL1_P",
+        "name": "PLL1_R",
         "description": "PLL selected as system clock",
         "value": 3
       }

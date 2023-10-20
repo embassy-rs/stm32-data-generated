@@ -5881,7 +5881,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "PLL1_R",
                     description: Some(
                         "PLL selected as system clock",
                     ),

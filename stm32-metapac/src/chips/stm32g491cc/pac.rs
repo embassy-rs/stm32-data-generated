@@ -422,7 +422,7 @@ pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_2000 as usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_2400 as usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
-pub const WWDG: *mut () = 0x4000_2c00 as usize as _;
+pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00 as usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800 as usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00 as usize as _) };
@@ -549,6 +549,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_16x2_1024.rs"]
 pub mod usbram;
+#[path = "../../peripherals/wwdg_v2.rs"]
+pub mod wwdg;
 pub const CORE_INDEX: usize = 0;
 pub const FLASH_BASE: usize = 134217728;
 pub const FLASH_SIZE: usize = 262144;

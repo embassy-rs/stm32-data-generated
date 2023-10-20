@@ -310,7 +310,7 @@ pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000 as usize as _) };
 pub const LCD: lcd::Lcd = unsafe { lcd::Lcd::from_ptr(0x4000_2400 as usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
-pub const WWDG: *mut () = 0x4000_2c00 as usize as _;
+pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00 as usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00 as usize as _) };
@@ -417,6 +417,8 @@ pub mod usb;
 pub mod usbram;
 #[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;
+#[path = "../../peripherals/wwdg_v2.rs"]
+pub mod wwdg;
 pub const CORE_INDEX: usize = 0;
 pub const FLASH_BASE: usize = 134217728;
 pub const FLASH_SIZE: usize = 1048576;

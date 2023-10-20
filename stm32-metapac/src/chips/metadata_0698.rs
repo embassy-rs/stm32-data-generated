@@ -4723,7 +4723,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "WWDG",
         address: 1073753088,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "wwdg",
+            version: "v2",
+            block: "WWDG",
+            ir: &wwdg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -5359,3 +5364,5 @@ pub mod usart;
 pub mod usb;
 #[path = "../registers/usbram_32_2048.rs"]
 pub mod usbram;
+#[path = "../registers/wwdg_v2.rs"]
+pub mod wwdg;

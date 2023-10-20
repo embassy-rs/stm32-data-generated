@@ -2383,6 +2383,11 @@
                 {
                     "name": "WWDG",
                     "address": 1073753088,
+                    "registers": {
+                        "kind": "wwdg",
+                        "version": "v2",
+                        "block": "WWDG"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -4868,6 +4873,11 @@
                 {
                     "name": "WWDG",
                     "address": 1073753088,
+                    "registers": {
+                        "kind": "wwdg",
+                        "version": "v2",
+                        "block": "WWDG"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

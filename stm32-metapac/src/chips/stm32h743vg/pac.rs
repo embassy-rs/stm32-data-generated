@@ -656,7 +656,7 @@ pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000 as usize 
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800 as usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400 as usize as _) };
 pub const LTDC: *mut () = 0x5000_1000 as usize as _;
-pub const WWDG1: *mut () = 0x5000_3000 as usize as _;
+pub const WWDG1: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x5000_3000 as usize as _) };
 pub const MDMA: *mut () = 0x5200_0000 as usize as _;
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x5200_1000 as usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000 as usize as _) };
@@ -776,6 +776,8 @@ pub mod timer;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/wwdg_v2.rs"]
+pub mod wwdg;
 pub const CORE_INDEX: usize = 0;
 pub const FLASH_BASE: usize = 134217728;
 pub const FLASH_SIZE: usize = 1048576;

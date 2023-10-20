@@ -8950,6 +8950,11 @@
                 {
                     "name": "WWDG1",
                     "address": 1342189568,
+                    "registers": {
+                        "kind": "wwdg",
+                        "version": "v2",
+                        "block": "WWDG"
+                    },
                     "rcc": {
                         "clock": "pclk3",
                         "enable": {
@@ -8971,6 +8976,11 @@
                 {
                     "name": "WWDG2",
                     "address": 1073753088,
+                    "registers": {
+                        "kind": "wwdg",
+                        "version": "v2",
+                        "block": "WWDG"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -18274,6 +18284,11 @@
                 {
                     "name": "WWDG1",
                     "address": 1342189568,
+                    "registers": {
+                        "kind": "wwdg",
+                        "version": "v2",
+                        "block": "WWDG"
+                    },
                     "rcc": {
                         "clock": "pclk3",
                         "enable": {
@@ -18286,6 +18301,11 @@
                 {
                     "name": "WWDG2",
                     "address": 1073753088,
+                    "registers": {
+                        "kind": "wwdg",
+                        "version": "v2",
+                        "block": "WWDG"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

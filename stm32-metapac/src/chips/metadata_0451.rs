@@ -9734,7 +9734,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "WWDG1",
         address: 1342189568,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "wwdg",
+            version: "v2",
+            block: "WWDG",
+            ir: &wwdg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk3",
             enable: Some(PeripheralRccRegister {
@@ -9760,7 +9765,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "WWDG2",
         address: 1073753088,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "wwdg",
+            version: "v2",
+            block: "WWDG",
+            ir: &wwdg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -10564,3 +10574,5 @@ pub mod timer;
 pub mod uid;
 #[path = "../registers/usart_v4.rs"]
 pub mod usart;
+#[path = "../registers/wwdg_v2.rs"]
+pub mod wwdg;

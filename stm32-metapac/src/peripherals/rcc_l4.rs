@@ -2261,13 +2261,13 @@ pub mod regs {
         }
         #[doc = "DFSDM timer clock enable"]
         #[inline(always)]
-        pub const fn dfsdmen(&self) -> bool {
+        pub const fn dfsdm_timen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[doc = "DFSDM timer clock enable"]
         #[inline(always)]
-        pub fn set_dfsdmen(&mut self, val: bool) {
+        pub fn set_dfsdm_timen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }

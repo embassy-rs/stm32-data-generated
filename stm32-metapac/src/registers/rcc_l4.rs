@@ -2429,7 +2429,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dfsdmen",
+                    name: "dfsdm_timen",
                     description: Some(
                         "DFSDM timer clock enable",
                     ),

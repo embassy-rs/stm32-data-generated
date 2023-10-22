@@ -3558,14 +3558,14 @@ pub mod regs {
         }
         #[doc = "MSI clock ranges"]
         #[inline(always)]
-        pub const fn msirange(&self) -> u8 {
+        pub const fn msirange(&self) -> super::vals::Msirange {
             let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
+            super::vals::Msirange::from_bits(val as u8)
         }
         #[doc = "MSI clock ranges"]
         #[inline(always)]
-        pub fn set_msirange(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        pub fn set_msirange(&mut self, val: super::vals::Msirange) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "HSI clock enabled"]
         #[inline(always)]
@@ -4839,6 +4839,60 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcosel) -> u8 {
             Mcosel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Msirange {
+        #[doc = "range 0 around 100 kHz"]
+        RANGE100K = 0,
+        #[doc = "range 1 around 200 kHz"]
+        RANGE200K = 0x01,
+        #[doc = "range 2 around 400 kHz"]
+        RANGE400K = 0x02,
+        #[doc = "range 3 around 800 kHz"]
+        RANGE800K = 0x03,
+        #[doc = "range 4 around 1 MHz"]
+        RANGE1M = 0x04,
+        #[doc = "range 5 around 2 MHz"]
+        RANGE2M = 0x05,
+        #[doc = "range 6 around 4 MHz"]
+        RANGE4M = 0x06,
+        #[doc = "range 7 around 8 MHz"]
+        RANGE8M = 0x07,
+        #[doc = "range 8 around 16 MHz"]
+        RANGE16M = 0x08,
+        #[doc = "range 9 around 24 MHz"]
+        RANGE24M = 0x09,
+        #[doc = "range 10 around 32 MHz"]
+        RANGE32M = 0x0a,
+        #[doc = "range 11 around 48 MHz"]
+        RANGE48M = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Msirange {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Msirange {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Msirange {
+        #[inline(always)]
+        fn from(val: u8) -> Msirange {
+            Msirange::from_bits(val)
+        }
+    }
+    impl From<Msirange> for u8 {
+        #[inline(always)]
+        fn from(val: Msirange) -> u8 {
+            Msirange::to_bits(val)
         }
     }
     #[repr(u8)]

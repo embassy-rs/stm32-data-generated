@@ -2915,7 +2915,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Msirange"),
                 },
                 Field {
                     name: "hsion",
@@ -3906,6 +3906,73 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "HSE_UNSTABLE",
                     description: Some("HSE clock selected (before stabilization, after HSEON = 1)"),
                     value: 12,
+                },
+            ],
+        },
+        Enum {
+            name: "Msirange",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "RANGE100K",
+                    description: Some("range 0 around 100 kHz"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RANGE200K",
+                    description: Some("range 1 around 200 kHz"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RANGE400K",
+                    description: Some("range 2 around 400 kHz"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RANGE800K",
+                    description: Some("range 3 around 800 kHz"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "RANGE1M",
+                    description: Some("range 4 around 1 MHz"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "RANGE2M",
+                    description: Some("range 5 around 2 MHz"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "RANGE4M",
+                    description: Some("range 6 around 4 MHz"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "RANGE8M",
+                    description: Some("range 7 around 8 MHz"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "RANGE16M",
+                    description: Some("range 8 around 16 MHz"),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "RANGE24M",
+                    description: Some("range 9 around 24 MHz"),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "RANGE32M",
+                    description: Some("range 10 around 32 MHz"),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "RANGE48M",
+                    description: Some("range 11 around 48 MHz"),
+                    value: 11,
                 },
             ],
         },

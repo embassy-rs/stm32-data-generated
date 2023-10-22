@@ -11286,7 +11286,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NONE",
+                    name: "DISABLE",
                     description: Some("No clock sent to DIVMx dividers and PLLs"),
                     value: 3,
                 },

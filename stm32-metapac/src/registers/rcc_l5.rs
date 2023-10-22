@@ -4156,7 +4156,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "DISABLE",
                     description: Some("MCO output disabled, no clock on MCO"),
                     value: 0,
                 },
@@ -5214,7 +5214,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "DISABLE",
                     description: Some("No clock sent to PLL"),
                     value: 0,
                 },

@@ -10747,7 +10747,7 @@ pub mod vals {
         #[doc = "HSE selected as PLL clock"]
         HSE = 0x02,
         #[doc = "No clock sent to DIVMx dividers and PLLs"]
-        NONE = 0x03,
+        DISABLE = 0x03,
     }
     impl Pllsrc {
         #[inline(always)]

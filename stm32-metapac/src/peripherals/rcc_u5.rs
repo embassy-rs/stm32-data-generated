@@ -7201,11 +7201,11 @@ pub mod vals {
         #[doc = "MSIS/MSIK ranges provided by MSISSRANGE\\[3:0\\]
 and MSIKSRANGE\\[3:0\\]
 in RCC_CSR"]
-        RCC_CSR = 0,
+        CSR = 0,
         #[doc = "MSIS/MSIK ranges provided by MSISRANGE\\[3:0\\]
 and MSIKRANGE\\[3:0\\]
 in RCC_ICSCR1"]
-        RCC_ICSCR1 = 0x01,
+        ICSCR1 = 0x01,
     }
     impl Msirgsel {
         #[inline(always)]

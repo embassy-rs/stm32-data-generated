@@ -7444,14 +7444,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RCC_CSR",
+                    name: "CSR",
                     description: Some(
                         "MSIS/MSIK ranges provided by MSISSRANGE[3:0] and MSIKSRANGE[3:0] in RCC_CSR",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RCC_ICSCR1",
+                    name: "ICSCR1",
                     description: Some(
                         "MSIS/MSIK ranges provided by MSISRANGE[3:0] and MSIKRANGE[3:0] in RCC_ICSCR1",
                     ),

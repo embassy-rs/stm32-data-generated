@@ -3788,7 +3788,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Radiostsel {
         #[doc = "no clock selected, 2.4 GHz RADIO sleep timer kernel clock disabled"]
-        NONE = 0,
+        DISABLE = 0,
         #[doc = "LSE oscillator clock selected"]
         LSE = 0x01,
         _RESERVED_2 = 0x02,

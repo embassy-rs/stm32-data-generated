@@ -6986,7 +6986,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "no clock send to DIVMx divider and PLLs (default after reset)"]
-        NONE = 0,
+        DISABLE = 0,
         #[doc = "HSI selected as PLL clock (hsi_ck)"]
         HSI = 0x01,
         #[doc = "CSI selected as PLL clock (csi_ck)"]

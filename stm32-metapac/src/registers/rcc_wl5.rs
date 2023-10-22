@@ -2329,7 +2329,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 30,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Rngsel"),
                 },
             ],
         },
@@ -2675,7 +2675,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Msirgsel"),
                 },
                 Field {
                     name: "msirange",
@@ -2757,7 +2757,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Hsepre"),
                 },
                 Field {
                     name: "hsebyppwr",
@@ -3175,6 +3175,23 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Hsepre",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Lsedrv",
             description: None,
             bit_size: 2,
@@ -3264,7 +3281,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "PLLRCLK",
+                    name: "PLL1_R",
                     description: Some("Main PLLRCLK clock selected"),
                     value: 5,
                 },
@@ -3284,7 +3301,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 13,
                 },
                 EnumVariant {
-                    name: "PLLQCLK",
+                    name: "PLL1_Q",
                     description: Some("Main PLLQCLK oscillator clock selected"),
                     value: 14,
                 },
@@ -3354,6 +3371,23 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "RANGE48M",
                     description: Some("range 11 around 48 MHz"),
                     value: 11,
+                },
+            ],
+        },
+        Enum {
+            name: "Msirgsel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CSR",
+                    description: Some("MSI Range is provided by MSISRANGE[3:0] in RCC_CSR register"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "CR",
+                    description: Some("MSI Range is provided by MSIRANGE[3:0] in the RCC_CR register"),
+                    value: 1,
                 },
             ],
         },
@@ -4308,6 +4342,33 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV16",
                     description: Some("HCLK divided by 16"),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Rngsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: None,
+                    value: 3,
                 },
             ],
         },

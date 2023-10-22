@@ -5002,7 +5002,7 @@ in the RCC_CR register"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock sent to PLL"]
-        NONE = 0,
+        DISABLE = 0,
         #[doc = "MSI selected as PLL input clock"]
         MSI = 0x01,
         #[doc = "HSI selected as PLL input clock"]

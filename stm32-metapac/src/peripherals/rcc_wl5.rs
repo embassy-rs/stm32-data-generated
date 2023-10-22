@@ -2775,14 +2775,14 @@ pub mod regs {
         }
         #[doc = "RNG clock source selection"]
         #[inline(always)]
-        pub const fn rngsel(&self) -> u8 {
+        pub const fn rngsel(&self) -> super::vals::Rngsel {
             let val = (self.0 >> 30usize) & 0x03;
-            val as u8
+            super::vals::Rngsel::from_bits(val as u8)
         }
         #[doc = "RNG clock source selection"]
         #[inline(always)]
-        pub fn set_rngsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        pub fn set_rngsel(&mut self, val: super::vals::Rngsel) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
     impl Default for Ccipr {
@@ -3253,14 +3253,14 @@ pub mod regs {
         }
         #[doc = "MSI range control selection"]
         #[inline(always)]
-        pub const fn msirgsel(&self) -> bool {
+        pub const fn msirgsel(&self) -> super::vals::Msirgsel {
             let val = (self.0 >> 3usize) & 0x01;
-            val != 0
+            super::vals::Msirgsel::from_bits(val as u8)
         }
         #[doc = "MSI range control selection"]
         #[inline(always)]
-        pub fn set_msirgsel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        pub fn set_msirgsel(&mut self, val: super::vals::Msirgsel) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "MSI clock ranges"]
         #[inline(always)]
@@ -3363,14 +3363,14 @@ pub mod regs {
         }
         #[doc = "HSE sysclk prescaler"]
         #[inline(always)]
-        pub const fn hsepre(&self) -> bool {
+        pub const fn hsepre(&self) -> super::vals::Hsepre {
             let val = (self.0 >> 20usize) & 0x01;
-            val != 0
+            super::vals::Hsepre::from_bits(val as u8)
         }
         #[doc = "HSE sysclk prescaler"]
         #[inline(always)]
-        pub fn set_hsepre(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        pub fn set_hsepre(&mut self, val: super::vals::Hsepre) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "Enable HSE VDDTCXO output on package pin PB0-VDDTCXO."]
         #[inline(always)]
@@ -3907,6 +3907,34 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Hsepre {
+        DIV1 = 0,
+        DIV2 = 0x01,
+    }
+    impl Hsepre {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Hsepre {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Hsepre {
+        #[inline(always)]
+        fn from(val: u8) -> Hsepre {
+            Hsepre::from_bits(val)
+        }
+    }
+    impl From<Hsepre> for u8 {
+        #[inline(always)]
+        fn from(val: Hsepre) -> u8 {
+            Hsepre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsedrv {
         #[doc = "Low driving capability"]
         LOW = 0,
@@ -3992,7 +4020,7 @@ pub mod vals {
         #[doc = "HSE oscillator clock selected"]
         HSE = 0x04,
         #[doc = "Main PLLRCLK clock selected"]
-        PLLRCLK = 0x05,
+        PLL1_R = 0x05,
         #[doc = "LSI oscillator clock selected"]
         LSI = 0x06,
         _RESERVED_7 = 0x07,
@@ -4005,7 +4033,7 @@ pub mod vals {
         #[doc = "Main PLLCLK oscillator clock selected"]
         PLL1_P = 0x0d,
         #[doc = "Main PLLQCLK oscillator clock selected"]
-        PLLQCLK = 0x0e,
+        PLL1_Q = 0x0e,
         _RESERVED_f = 0x0f,
     }
     impl Mcosel {
@@ -4082,6 +4110,38 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Msirange) -> u8 {
             Msirange::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Msirgsel {
+        #[doc = "MSI Range is provided by MSISRANGE\\[3:0\\]
+in RCC_CSR register"]
+        CSR = 0,
+        #[doc = "MSI Range is provided by MSIRANGE\\[3:0\\]
+in the RCC_CR register"]
+        CR = 0x01,
+    }
+    impl Msirgsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Msirgsel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Msirgsel {
+        #[inline(always)]
+        fn from(val: u8) -> Msirgsel {
+            Msirgsel::from_bits(val)
+        }
+    }
+    impl From<Msirgsel> for u8 {
+        #[inline(always)]
+        fn from(val: Msirgsel) -> u8 {
+            Msirgsel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4469,6 +4529,36 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Ppre) -> u8 {
             Ppre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Rngsel {
+        PLL1_Q = 0,
+        LSI = 0x01,
+        LSE = 0x02,
+        MSI = 0x03,
+    }
+    impl Rngsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Rngsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Rngsel {
+        #[inline(always)]
+        fn from(val: u8) -> Rngsel {
+            Rngsel::from_bits(val)
+        }
+    }
+    impl From<Rngsel> for u8 {
+        #[inline(always)]
+        fn from(val: Rngsel) -> u8 {
+            Rngsel::to_bits(val)
         }
     }
     #[repr(u8)]

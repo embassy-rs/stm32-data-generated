@@ -6106,7 +6106,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "DISABLE",
                     description: Some(
                         "No clock sent to PLL",
                     ),

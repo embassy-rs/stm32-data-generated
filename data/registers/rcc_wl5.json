@@ -1612,7 +1612,8 @@
         "name": "RNGSEL",
         "description": "RNG clock source selection",
         "bit_offset": 30,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "RNGSEL"
       }
     ]
   },
@@ -1872,7 +1873,8 @@
         "name": "MSIRGSEL",
         "description": "MSI range control selection",
         "bit_offset": 3,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "MSIRGSEL"
       },
       {
         "name": "MSIRANGE",
@@ -1933,7 +1935,8 @@
         "name": "HSEPRE",
         "description": "HSE sysclk prescaler",
         "bit_offset": 20,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "HSEPRE"
       },
       {
         "name": "HSEBYPPWR",
@@ -2270,6 +2273,19 @@
       }
     ]
   },
+  "enum/HSEPRE": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Div1",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "value": 1
+      }
+    ]
+  },
   "enum/LSEDRV": {
     "bit_size": 2,
     "variants": [
@@ -2354,7 +2370,7 @@
         "value": 4
       },
       {
-        "name": "PLLRCLK",
+        "name": "PLL1_R",
         "description": "Main PLLRCLK clock selected",
         "value": 5
       },
@@ -2374,7 +2390,7 @@
         "value": 13
       },
       {
-        "name": "PLLQCLK",
+        "name": "PLL1_Q",
         "description": "Main PLLQCLK oscillator clock selected",
         "value": 14
       }
@@ -2442,6 +2458,21 @@
         "name": "Range48M",
         "description": "range 11 around 48 MHz",
         "value": 11
+      }
+    ]
+  },
+  "enum/MSIRGSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "CSR",
+        "description": "MSI Range is provided by MSISRANGE[3:0] in RCC_CSR register",
+        "value": 0
+      },
+      {
+        "name": "CR",
+        "description": "MSI Range is provided by MSIRANGE[3:0] in the RCC_CR register",
+        "value": 1
       }
     ]
   },
@@ -3210,6 +3241,27 @@
         "name": "Div16",
         "description": "HCLK divided by 16",
         "value": 7
+      }
+    ]
+  },
+  "enum/RNGSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PLL1_Q",
+        "value": 0
+      },
+      {
+        "name": "LSI",
+        "value": 1
+      },
+      {
+        "name": "LSE",
+        "value": 2
+      },
+      {
+        "name": "MSI",
+        "value": 3
       }
     ]
   },

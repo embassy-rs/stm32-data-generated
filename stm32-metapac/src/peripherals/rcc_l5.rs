@@ -5321,7 +5321,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
-        NONE = 0,
+        DISABLE = 0,
         #[doc = "SYSCLK system clock selected"]
         SYS = 0x01,
         #[doc = "MSI clock selected"]
@@ -5896,7 +5896,7 @@ in the RCC_CR register"]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllsrc {
         #[doc = "No clock sent to PLL"]
-        NONE = 0,
+        DISABLE = 0,
         #[doc = "MSI selected as PLL input clock"]
         MSI = 0x01,
         #[doc = "HSI selected as PLL input clock"]

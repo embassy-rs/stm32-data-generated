@@ -4306,7 +4306,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart1sel",
                     description: Some(
-                        "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 0,
                     bit_size: 2,
@@ -4318,7 +4318,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart2sel",
                     description: Some(
-                        "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 2,
                     bit_size: 2,
@@ -4330,7 +4330,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart3sel",
                     description: Some(
-                        "USART3 kernel clock source selection\r This bits are used to select the USART3 kernel clock source.\r Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "USART3 kernel clock source selection\r This bits are used to select the USART3 kernel clock source.\r Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 4,
                     bit_size: 2,
@@ -4342,7 +4342,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "uart4sel",
                     description: Some(
-                        "UART4 kernel clock source selection\r This bits are used to select the UART4 kernel clock source.\r Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "UART4 kernel clock source selection\r This bits are used to select the UART4 kernel clock source.\r Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 6,
                     bit_size: 2,
@@ -4354,7 +4354,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "uart5sel",
                     description: Some(
-                        "UART5 kernel clock source selection\r These bits are used to select the UART5 kernel clock source.\r Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "UART5 kernel clock source selection\r These bits are used to select the UART5 kernel clock source.\r Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 8,
                     bit_size: 2,
@@ -4366,7 +4366,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1sel",
                     description: Some(
-                        "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+                        "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 10,
                     bit_size: 2,
@@ -4378,7 +4378,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c2sel",
                     description: Some(
-                        "I2C2 kernel clock source selection\r These bits are used to select the I2C2 kernel clock source.\r Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+                        "I2C2 kernel clock source selection\r These bits are used to select the I2C2 kernel clock source.\r Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 12,
                     bit_size: 2,
@@ -4390,7 +4390,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c4sel",
                     description: Some(
-                        "I2C4 kernel clock source selection\r These bits are used to select the I2C4 kernel clock source.\r Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+                        "I2C4 kernel clock source selection\r These bits are used to select the I2C4 kernel clock source.\r Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 14,
                     bit_size: 2,
@@ -4402,7 +4402,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spi2sel",
                     description: Some(
-                        "SPI2 kernel clock source selection\r These bits are used to select the SPI2 kernel clock source.\r Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+                        "SPI2 kernel clock source selection\r These bits are used to select the SPI2 kernel clock source.\r Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 16,
                     bit_size: 2,
@@ -4414,7 +4414,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lptim2sel",
                     description: Some(
-                        "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1.",
+                        "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1.",
                     ),
                     bit_offset: 18,
                     bit_size: 2,
@@ -4426,7 +4426,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spi1sel",
                     description: Some(
-                        "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+                        "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 20,
                     bit_size: 2,
@@ -4580,7 +4580,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart6sel",
                     description: Some(
-                        "USART6 kernel clock source selection\r These bits are used to select the USART6 kernel clock source.\r The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16 or LSE.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
+                        "USART6 kernel clock source selection\r These bits are used to select the USART6 kernel clock source.\r The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI or LSE.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
                     ),
                     bit_offset: 16,
                     bit_size: 2,
@@ -4628,7 +4628,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c5sel",
                     description: Some(
-                        "I2C5 kernel clock source selection\r These bits are used to select the I2C5 kernel clock source.\r The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
+                        "I2C5 kernel clock source selection\r These bits are used to select the I2C5 kernel clock source.\r The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
                     ),
                     bit_offset: 24,
                     bit_size: 2,
@@ -4640,7 +4640,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c6sel",
                     description: Some(
-                        "I2C6 kernel clock source selection\r These bits are used to select the I2C6 kernel clock source.\r The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
+                        "I2C6 kernel clock source selection\r These bits are used to select the I2C6 kernel clock source.\r The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
                     ),
                     bit_offset: 26,
                     bit_size: 2,
@@ -4674,7 +4674,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lpuart1sel",
                     description: Some(
-                        "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r others: reserved\r Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16, LSE or MSIK.",
+                        "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r others: reserved\r Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI, LSE or MSIK.",
                     ),
                     bit_offset: 0,
                     bit_size: 3,
@@ -4686,7 +4686,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spi3sel",
                     description: Some(
-                        "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK.",
+                        "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 3,
                     bit_size: 2,
@@ -4698,7 +4698,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c3sel",
                     description: Some(
-                        "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK.",
+                        "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
                     ),
                     bit_offset: 6,
                     bit_size: 2,
@@ -4710,7 +4710,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lptim34sel",
                     description: Some(
-                        "LPTIM3 and LPTIM4 kernel clock source selection\r These bits are used to select the LPTIM3 and LPTIM4 kernel clock source.\r Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON\u{a0}=\u{a0}1.",
+                        "LPTIM3 and LPTIM4 kernel clock source selection\r These bits are used to select the LPTIM3 and LPTIM4 kernel clock source.\r Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON\u{a0}=\u{a0}1.",
                     ),
                     bit_offset: 8,
                     bit_size: 2,
@@ -4722,7 +4722,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lptim1sel",
                     description: Some(
-                        "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1.",
+                        "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1.",
                     ),
                     bit_offset: 10,
                     bit_size: 2,
@@ -4734,7 +4734,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adcdacsel",
                     description: Some(
-                        "ADC1, ADC4 and DAC1 kernel clock source selection\r These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source.\r others: reserved\r Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode).",
+                        "ADC1, ADC4 and DAC1 kernel clock source selection\r These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source.\r others: reserved\r Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode).",
                     ),
                     bit_offset: 12,
                     bit_size: 3,
@@ -4780,7 +4780,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "sw",
                     description: Some(
-                        "system clock switch\r Set and cleared by software to select system clock source (SYSCLK).\r Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI16 oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value.",
+                        "system clock switch\r Set and cleared by software to select system clock source (SYSCLK).\r Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value.",
                     ),
                     bit_offset: 0,
                     bit_size: 2,
@@ -5042,7 +5042,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyc",
                     description: Some(
-                        "HSI16 ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.",
+                        "HSI ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -5159,7 +5159,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyie",
                     description: Some(
-                        "HSI16 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization.",
+                        "HSI ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -5266,7 +5266,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyf",
                     description: Some(
-                        "HSI16 ready interrupt flag\r Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Cleared by software setting the HSIRDYC bit.",
+                        "HSI ready interrupt flag\r Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Cleared by software setting the HSIRDYC bit.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -5437,7 +5437,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsion",
                     description: Some(
-                        "HSI16 clock enable\r Set and cleared by software.\r Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode.\r Set by hardware to force the HSI16 oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator.\r This bit is set by hardware if the HSI16 is used directly or indirectly as system clock.",
+                        "HSI clock enable\r Set and cleared by software.\r Cleared by hardware to stop the HSI oscillator when entering Stop, Standby or Shutdown mode.\r Set by hardware to force the HSI oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator.\r This bit is set by hardware if the HSI is used directly or indirectly as system clock.",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -5447,7 +5447,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsikeron",
                     description: Some(
-                        "HSI16 enable for some peripheral kernels\r Set and cleared by software to force HSI16 ON even in Stop modes. Keeping the HSI16 ON in Stop mode allows the communication speed not to be reduced by the HSI16 startup time. This bit has no effect on HSION value.\r Refer to for more details.\r The HSIKERON must be configured at 0 before entering Stop 3 mode.",
+                        "HSI enable for some peripheral kernels\r Set and cleared by software to force HSI ON even in Stop modes. Keeping the HSI ON in Stop mode allows the communication speed not to be reduced by the HSI startup time. This bit has no effect on HSION value.\r Refer to for more details.\r The HSIKERON must be configured at 0 before entering Stop 3 mode.",
                     ),
                     bit_offset: 9,
                     bit_size: 1,
@@ -5457,7 +5457,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdy",
                     description: Some(
-                        "HSI16 clock ready flag\r Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles.",
+                        "HSI clock ready flag\r Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI clock cycles.",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -6557,7 +6557,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 4,
                 },
@@ -6907,7 +6907,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -6942,7 +6942,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -6977,7 +6977,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -7166,7 +7166,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 3,
                 },
@@ -10970,7 +10970,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected as PLL3 clock entry",
+                        "HSI clock selected as PLL3 clock entry",
                     ),
                     value: 2,
                 },
@@ -11068,7 +11068,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -11166,7 +11166,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 4,
                 },
@@ -11236,7 +11236,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -11264,7 +11264,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 oscillator automatically enabled when exiting Stop mode",
+                        "HSI oscillator automatically enabled when exiting Stop mode",
                     ),
                     value: 1,
                 },
@@ -11285,7 +11285,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 oscillator selected as wakeup from stop clock and CSS backup clock",
+                        "HSI oscillator selected as wakeup from stop clock and CSS backup clock",
                     ),
                     value: 1,
                 },
@@ -11306,7 +11306,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected as system clock",
+                        "HSI selected as system clock",
                     ),
                     value: 1,
                 },
@@ -11418,7 +11418,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -11453,7 +11453,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },

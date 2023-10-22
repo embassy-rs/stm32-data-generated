@@ -2334,77 +2334,77 @@
     "fields": [
       {
         "name": "USART1SEL",
-        "description": "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+        "description": "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 0,
         "bit_size": 2,
         "enum": "USARTSEL"
       },
       {
         "name": "USART2SEL",
-        "description": "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+        "description": "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 2,
         "bit_size": 2,
         "enum": "USARTSEL"
       },
       {
         "name": "USART3SEL",
-        "description": "USART3 kernel clock source selection\r This bits are used to select the USART3 kernel clock source.\r Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+        "description": "USART3 kernel clock source selection\r This bits are used to select the USART3 kernel clock source.\r Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 4,
         "bit_size": 2,
         "enum": "USARTSEL"
       },
       {
         "name": "UART4SEL",
-        "description": "UART4 kernel clock source selection\r This bits are used to select the UART4 kernel clock source.\r Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+        "description": "UART4 kernel clock source selection\r This bits are used to select the UART4 kernel clock source.\r Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 6,
         "bit_size": 2,
         "enum": "UARTSEL"
       },
       {
         "name": "UART5SEL",
-        "description": "UART5 kernel clock source selection\r These bits are used to select the UART5 kernel clock source.\r Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+        "description": "UART5 kernel clock source selection\r These bits are used to select the UART5 kernel clock source.\r Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
         "bit_offset": 8,
         "bit_size": 2,
         "enum": "UARTSEL"
       },
       {
         "name": "I2C1SEL",
-        "description": "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+        "description": "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 10,
         "bit_size": 2,
         "enum": "ICSEL"
       },
       {
         "name": "I2C2SEL",
-        "description": "I2C2 kernel clock source selection\r These bits are used to select the I2C2 kernel clock source.\r Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+        "description": "I2C2 kernel clock source selection\r These bits are used to select the I2C2 kernel clock source.\r Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 12,
         "bit_size": 2,
         "enum": "ICSEL"
       },
       {
         "name": "I2C4SEL",
-        "description": "I2C4 kernel clock source selection\r These bits are used to select the I2C4 kernel clock source.\r Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+        "description": "I2C4 kernel clock source selection\r These bits are used to select the I2C4 kernel clock source.\r Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 14,
         "bit_size": 2,
         "enum": "ICSEL"
       },
       {
         "name": "SPI2SEL",
-        "description": "SPI2 kernel clock source selection\r These bits are used to select the SPI2 kernel clock source.\r Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+        "description": "SPI2 kernel clock source selection\r These bits are used to select the SPI2 kernel clock source.\r Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 16,
         "bit_size": 2,
         "enum": "SPISEL"
       },
       {
         "name": "LPTIM2SEL",
-        "description": "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1.",
+        "description": "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1.",
         "bit_offset": 18,
         "bit_size": 2,
         "enum": "LPTIMSEL"
       },
       {
         "name": "SPI1SEL",
-        "description": "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK.",
+        "description": "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 20,
         "bit_size": 2,
         "enum": "SPISEL"
@@ -2493,7 +2493,7 @@
       },
       {
         "name": "USART6SEL",
-        "description": "USART6 kernel clock source selection\r These bits are used to select the USART6 kernel clock source.\r The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16 or LSE.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
+        "description": "USART6 kernel clock source selection\r These bits are used to select the USART6 kernel clock source.\r The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI or LSE.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
         "bit_offset": 16,
         "bit_size": 2,
         "enum": "USARTSEL"
@@ -2521,14 +2521,14 @@
       },
       {
         "name": "I2C5SEL",
-        "description": "I2C5 kernel clock source selection\r These bits are used to select the I2C5 kernel clock source.\r The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
+        "description": "I2C5 kernel clock source selection\r These bits are used to select the I2C5 kernel clock source.\r The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
         "bit_offset": 24,
         "bit_size": 2,
         "enum": "ICSEL"
       },
       {
         "name": "I2C6SEL",
-        "description": "I2C6 kernel clock source selection\r These bits are used to select the I2C6 kernel clock source.\r The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
+        "description": "I2C6 kernel clock source selection\r These bits are used to select the I2C6 kernel clock source.\r The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
         "bit_offset": 26,
         "bit_size": 2,
         "enum": "ICSEL"
@@ -2547,42 +2547,42 @@
     "fields": [
       {
         "name": "LPUART1SEL",
-        "description": "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r others: reserved\r Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16, LSE or MSIK.",
+        "description": "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r others: reserved\r Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI, LSE or MSIK.",
         "bit_offset": 0,
         "bit_size": 3,
         "enum": "LPUARTSEL"
       },
       {
         "name": "SPI3SEL",
-        "description": "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK.",
+        "description": "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
         "bit_offset": 3,
         "bit_size": 2,
         "enum": "SPISEL"
       },
       {
         "name": "I2C3SEL",
-        "description": "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK.",
+        "description": "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
         "bit_offset": 6,
         "bit_size": 2,
         "enum": "ICSEL"
       },
       {
         "name": "LPTIM34SEL",
-        "description": "LPTIM3 and LPTIM4 kernel clock source selection\r These bits are used to select the LPTIM3 and LPTIM4 kernel clock source.\r Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1.",
+        "description": "LPTIM3 and LPTIM4 kernel clock source selection\r These bits are used to select the LPTIM3 and LPTIM4 kernel clock source.\r Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1.",
         "bit_offset": 8,
         "bit_size": 2,
         "enum": "LPTIMSEL"
       },
       {
         "name": "LPTIM1SEL",
-        "description": "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1.",
+        "description": "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1.",
         "bit_offset": 10,
         "bit_size": 2,
         "enum": "LPTIMSEL"
       },
       {
         "name": "ADCDACSEL",
-        "description": "ADC1, ADC4 and DAC1 kernel clock source selection\r These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source.\r others: reserved\r Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode).",
+        "description": "ADC1, ADC4 and DAC1 kernel clock source selection\r These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source.\r others: reserved\r Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode).",
         "bit_offset": 12,
         "bit_size": 3,
         "enum": "ADCDACSEL"
@@ -2608,7 +2608,7 @@
     "fields": [
       {
         "name": "SW",
-        "description": "system clock switch\r Set and cleared by software to select system clock source (SYSCLK).\r Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI16 oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value.",
+        "description": "system clock switch\r Set and cleared by software to select system clock source (SYSCLK).\r Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value.",
         "bit_offset": 0,
         "bit_size": 2,
         "enum": "SW"
@@ -2760,7 +2760,7 @@
       },
       {
         "name": "HSIRDYC",
-        "description": "HSI16 ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.",
+        "description": "HSI ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.",
         "bit_offset": 3,
         "bit_size": 1
       },
@@ -2829,7 +2829,7 @@
       },
       {
         "name": "HSIRDYIE",
-        "description": "HSI16 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization.",
+        "description": "HSI ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization.",
         "bit_offset": 3,
         "bit_size": 1
       },
@@ -2892,7 +2892,7 @@
       },
       {
         "name": "HSIRDYF",
-        "description": "HSI16 ready interrupt flag\r Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Cleared by software setting the HSIRDYC bit.",
+        "description": "HSI ready interrupt flag\r Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Cleared by software setting the HSIRDYC bit.",
         "bit_offset": 3,
         "bit_size": 1
       },
@@ -2993,19 +2993,19 @@
       },
       {
         "name": "HSION",
-        "description": "HSI16 clock enable\r Set and cleared by software.\r Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode.\r Set by hardware to force the HSI16 oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator.\r This bit is set by hardware if the HSI16 is used directly or indirectly as system clock.",
+        "description": "HSI clock enable\r Set and cleared by software.\r Cleared by hardware to stop the HSI oscillator when entering Stop, Standby or Shutdown mode.\r Set by hardware to force the HSI oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator.\r This bit is set by hardware if the HSI is used directly or indirectly as system clock.",
         "bit_offset": 8,
         "bit_size": 1
       },
       {
         "name": "HSIKERON",
-        "description": "HSI16 enable for some peripheral kernels\r Set and cleared by software to force HSI16 ON even in Stop modes. Keeping the HSI16 ON in Stop mode allows the communication speed not to be reduced by the HSI16 startup time. This bit has no effect on HSION value.\r Refer to for more details.\r The HSIKERON must be configured at 0 before entering Stop 3 mode.",
+        "description": "HSI enable for some peripheral kernels\r Set and cleared by software to force HSI ON even in Stop modes. Keeping the HSI ON in Stop mode allows the communication speed not to be reduced by the HSI startup time. This bit has no effect on HSION value.\r Refer to for more details.\r The HSIKERON must be configured at 0 before entering Stop 3 mode.",
         "bit_offset": 9,
         "bit_size": 1
       },
       {
         "name": "HSIRDY",
-        "description": "HSI16 clock ready flag\r Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles.",
+        "description": "HSI clock ready flag\r Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI clock cycles.",
         "bit_offset": 10,
         "bit_size": 1
       },
@@ -3649,7 +3649,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected",
+        "description": "HSI clock selected",
         "value": 4
       },
       {
@@ -3899,7 +3899,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       },
       {
@@ -3924,7 +3924,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       },
       {
@@ -3949,7 +3949,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       },
       {
@@ -4084,7 +4084,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected",
+        "description": "HSI clock selected",
         "value": 3
       },
       {
@@ -7081,7 +7081,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected as PLL3 clock entry",
+        "description": "HSI clock selected as PLL3 clock entry",
         "value": 2
       },
       {
@@ -7151,7 +7151,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       }
     ]
@@ -7221,7 +7221,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected",
+        "description": "HSI clock selected",
         "value": 4
       }
     ]
@@ -7271,7 +7271,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       },
       {
@@ -7291,7 +7291,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 oscillator automatically enabled when exiting Stop mode",
+        "description": "HSI oscillator automatically enabled when exiting Stop mode",
         "value": 1
       }
     ]
@@ -7306,7 +7306,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 oscillator selected as wakeup from stop clock and CSS backup clock",
+        "description": "HSI oscillator selected as wakeup from stop clock and CSS backup clock",
         "value": 1
       }
     ]
@@ -7321,7 +7321,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected as system clock",
+        "description": "HSI selected as system clock",
         "value": 1
       },
       {
@@ -7401,7 +7401,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       },
       {
@@ -7426,7 +7426,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected",
+        "description": "HSI selected",
         "value": 2
       },
       {

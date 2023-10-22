@@ -2456,46 +2456,46 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "HSI16 clock enable"]
+        #[doc = "HSI clock enable"]
         #[inline(always)]
         pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 clock enable"]
+        #[doc = "HSI clock enable"]
         #[inline(always)]
         pub fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "HSI16 always enable for peripheral kernels"]
+        #[doc = "HSI always enable for peripheral kernels"]
         #[inline(always)]
         pub const fn hsikeron(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 always enable for peripheral kernels"]
+        #[doc = "HSI always enable for peripheral kernels"]
         #[inline(always)]
         pub fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "HSI16 clock ready flag"]
+        #[doc = "HSI clock ready flag"]
         #[inline(always)]
         pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 clock ready flag"]
+        #[doc = "HSI clock ready flag"]
         #[inline(always)]
         pub fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
-        #[doc = "HSI16 clock division factor"]
+        #[doc = "HSI clock division factor"]
         #[inline(always)]
         pub const fn hsidiv(&self) -> super::vals::Hsidiv {
             let val = (self.0 >> 11usize) & 0x07;
             super::vals::Hsidiv::from_bits(val as u8)
         }
-        #[doc = "HSI16 clock division factor"]
+        #[doc = "HSI clock division factor"]
         #[inline(always)]
         pub fn set_hsidiv(&mut self, val: super::vals::Hsidiv) {
             self.0 = (self.0 & !(0x07 << 11usize)) | (((val.to_bits() as u32) & 0x07) << 11usize);
@@ -2946,24 +2946,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icscr(pub u32);
     impl Icscr {
-        #[doc = "HSI16 clock calibration"]
+        #[doc = "HSI clock calibration"]
         #[inline(always)]
         pub const fn hsical(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
-        #[doc = "HSI16 clock calibration"]
+        #[doc = "HSI clock calibration"]
         #[inline(always)]
         pub fn set_hsical(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
-        #[doc = "HSI16 clock trimming"]
+        #[doc = "HSI clock trimming"]
         #[inline(always)]
         pub const fn hsitrim(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x7f;
             val as u8
         }
-        #[doc = "HSI16 clock trimming"]
+        #[doc = "HSI clock trimming"]
         #[inline(always)]
         pub fn set_hsitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
@@ -3095,7 +3095,7 @@ pub mod vals {
         SYS = 0,
         #[doc = "PLLPCLK used as ADC clock source"]
         PLL1_P = 0x01,
-        #[doc = "HSI16 used as ADC clock source"]
+        #[doc = "HSI used as ADC clock source"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -3124,7 +3124,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cecsel {
-        #[doc = "HSI16 divided by 488 used as CEC clock"]
+        #[doc = "HSI divided by 488 used as CEC clock"]
         HSI_DIV_488 = 0,
         #[doc = "LSE used as CEC clock"]
         LSE = 0x01,
@@ -3284,7 +3284,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as I2C1 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as I2C1 clock source"]
+        #[doc = "HSI used as I2C1 clock source"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -3317,7 +3317,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as I2C2/I2S2 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as I2C2/I2S2 clock source"]
+        #[doc = "HSI used as I2C2/I2S2 clock source"]
         HSI = 0x02,
         #[doc = "External clock used as I2C2/I2S2 clock source"]
         I2S_CKIN = 0x03,
@@ -3419,7 +3419,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "LSI used as LPTIM1 clock source"]
         LSI = 0x01,
-        #[doc = "HSI16 used as LPTIM1 clock source"]
+        #[doc = "HSI used as LPTIM1 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as LPTIM1 clock source"]
         LSE = 0x03,
@@ -3453,7 +3453,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "LSI used as LPTIM2 clock source"]
         LSI = 0x01,
-        #[doc = "HSI16 used as LPTIM2 clock source"]
+        #[doc = "HSI used as LPTIM2 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as LPTIM2 clock source"]
         LSE = 0x03,
@@ -3487,7 +3487,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as LPUART1 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as LPUART1 clock source"]
+        #[doc = "HSI used as LPUART1 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as LPUART1 clock source"]
         LSE = 0x03,
@@ -3521,7 +3521,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as LPUART2 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as LPUART2 clock source"]
+        #[doc = "HSI used as LPUART2 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as LPUART2 clock source"]
         LSE = 0x03,
@@ -3644,7 +3644,7 @@ pub mod vals {
         SYS = 0x01,
         #[doc = "HSI48 selected as MCO source"]
         HSI48 = 0x02,
-        #[doc = "HSI16 selected as MCO source"]
+        #[doc = "HSI selected as MCO source"]
         HSI = 0x03,
         #[doc = "HSE selected as MCO source"]
         HSE = 0x04,
@@ -4009,7 +4009,7 @@ pub mod vals {
         #[doc = "No clock selected as PLL entry clock source"]
         DISABLE = 0,
         _RESERVED_1 = 0x01,
-        #[doc = "HSI16 selected as PLL entry clock source"]
+        #[doc = "HSI selected as PLL entry clock source"]
         HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,
@@ -4291,7 +4291,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as USART1 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as USART1 clock source"]
+        #[doc = "HSI used as USART1 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as USART1 clock source"]
         LSE = 0x03,
@@ -4325,7 +4325,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as USART2 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as USART2 clock source"]
+        #[doc = "HSI used as USART2 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as USART2 clock source"]
         LSE = 0x03,
@@ -4359,7 +4359,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK used as USART3 clock source"]
         SYS = 0x01,
-        #[doc = "HSI16 used as USART3 clock source"]
+        #[doc = "HSI used as USART3 clock source"]
         HSI = 0x02,
         #[doc = "LSE used as USART3 clock source"]
         LSE = 0x03,

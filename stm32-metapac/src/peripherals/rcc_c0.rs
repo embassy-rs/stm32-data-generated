@@ -995,13 +995,13 @@ pub mod regs {
         pub fn set_lserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI16 ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
+        #[doc = "HSI ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
         #[inline(always)]
         pub const fn hsirdyc(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
+        #[doc = "HSI ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
         #[inline(always)]
         pub fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -1073,13 +1073,13 @@ pub mod regs {
         pub fn set_lserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization:"]
+        #[doc = "HSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization:"]
         #[inline(always)]
         pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization:"]
+        #[doc = "HSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization:"]
         #[inline(always)]
         pub fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -1129,13 +1129,13 @@ pub mod regs {
         pub fn set_lserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI16 ready interrupt flag This flag indicates a pending interrupt upon HSI16 clock getting ready. Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in response to setting the HSION (refer to ). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
+        #[doc = "HSI ready interrupt flag This flag indicates a pending interrupt upon HSI clock getting ready. Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in response to setting the HSION (refer to ). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
         #[inline(always)]
         pub const fn hsirdyf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt flag This flag indicates a pending interrupt upon HSI16 clock getting ready. Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in response to setting the HSION (refer to ). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
+        #[doc = "HSI ready interrupt flag This flag indicates a pending interrupt upon HSI clock getting ready. Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in response to setting the HSION (refer to ). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
         #[inline(always)]
         pub fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);

@@ -4035,123 +4035,123 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccipr1(pub u32);
     impl Ccipr1 {
-        #[doc = "USART1 kernel clock source selection This bits are used to select the USART1 kernel clock source. Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "USART1 kernel clock source selection This bits are used to select the USART1 kernel clock source. Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub const fn usart1sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 0usize) & 0x03;
             super::vals::Usartsel::from_bits(val as u8)
         }
-        #[doc = "USART1 kernel clock source selection This bits are used to select the USART1 kernel clock source. Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "USART1 kernel clock source selection This bits are used to select the USART1 kernel clock source. Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub fn set_usart1sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
-        #[doc = "USART2 kernel clock source selection This bits are used to select the USART2 kernel clock source. Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "USART2 kernel clock source selection This bits are used to select the USART2 kernel clock source. Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub const fn usart2sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 2usize) & 0x03;
             super::vals::Usartsel::from_bits(val as u8)
         }
-        #[doc = "USART2 kernel clock source selection This bits are used to select the USART2 kernel clock source. Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "USART2 kernel clock source selection This bits are used to select the USART2 kernel clock source. Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub fn set_usart2sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
-        #[doc = "USART3 kernel clock source selection This bits are used to select the USART3 kernel clock source. Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "USART3 kernel clock source selection This bits are used to select the USART3 kernel clock source. Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub const fn usart3sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 4usize) & 0x03;
             super::vals::Usartsel::from_bits(val as u8)
         }
-        #[doc = "USART3 kernel clock source selection This bits are used to select the USART3 kernel clock source. Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "USART3 kernel clock source selection This bits are used to select the USART3 kernel clock source. Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub fn set_usart3sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
-        #[doc = "UART4 kernel clock source selection This bits are used to select the UART4 kernel clock source. Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "UART4 kernel clock source selection This bits are used to select the UART4 kernel clock source. Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub const fn uart4sel(&self) -> super::vals::Uartsel {
             let val = (self.0 >> 6usize) & 0x03;
             super::vals::Uartsel::from_bits(val as u8)
         }
-        #[doc = "UART4 kernel clock source selection This bits are used to select the UART4 kernel clock source. Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "UART4 kernel clock source selection This bits are used to select the UART4 kernel clock source. Note: The UART4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub fn set_uart4sel(&mut self, val: super::vals::Uartsel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
-        #[doc = "UART5 kernel clock source selection These bits are used to select the UART5 kernel clock source. Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "UART5 kernel clock source selection These bits are used to select the UART5 kernel clock source. Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub const fn uart5sel(&self) -> super::vals::Uartsel {
             let val = (self.0 >> 8usize) & 0x03;
             super::vals::Uartsel::from_bits(val as u8)
         }
-        #[doc = "UART5 kernel clock source selection These bits are used to select the UART5 kernel clock source. Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE."]
+        #[doc = "UART5 kernel clock source selection These bits are used to select the UART5 kernel clock source. Note: The UART5 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
         #[inline(always)]
         pub fn set_uart5sel(&mut self, val: super::vals::Uartsel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
-        #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn i2c1sel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 10usize) & 0x03;
             super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_i2c1sel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
-        #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn i2c2sel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 12usize) & 0x03;
             super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_i2c2sel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
-        #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn i2c4sel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 14usize) & 0x03;
             super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_i2c4sel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
-        #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn spi2sel(&self) -> super::vals::Spisel {
             let val = (self.0 >> 16usize) & 0x03;
             super::vals::Spisel::from_bits(val as u8)
         }
-        #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_spi2sel(&mut self, val: super::vals::Spisel) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
-        #[doc = "Low-power timer 2 kernel clock source selection These bits are used to select the LPTIM2 kernel clock source. Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1."]
+        #[doc = "Low-power timer 2 kernel clock source selection These bits are used to select the LPTIM2 kernel clock source. Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1."]
         #[inline(always)]
         pub const fn lptim2sel(&self) -> super::vals::Lptimsel {
             let val = (self.0 >> 18usize) & 0x03;
             super::vals::Lptimsel::from_bits(val as u8)
         }
-        #[doc = "Low-power timer 2 kernel clock source selection These bits are used to select the LPTIM2 kernel clock source. Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1."]
+        #[doc = "Low-power timer 2 kernel clock source selection These bits are used to select the LPTIM2 kernel clock source. Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1."]
         #[inline(always)]
         pub fn set_lptim2sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
-        #[doc = "SPI1 kernel clock source selection These bits are used to select the SPI1 kernel clock source. Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "SPI1 kernel clock source selection These bits are used to select the SPI1 kernel clock source. Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn spi1sel(&self) -> super::vals::Spisel {
             let val = (self.0 >> 20usize) & 0x03;
             super::vals::Spisel::from_bits(val as u8)
         }
-        #[doc = "SPI1 kernel clock source selection These bits are used to select the SPI1 kernel clock source. Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "SPI1 kernel clock source selection These bits are used to select the SPI1 kernel clock source. Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_spi1sel(&mut self, val: super::vals::Spisel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
@@ -4291,13 +4291,13 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         pub fn set_dsisel(&mut self, val: super::vals::Dsisel) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
-        #[doc = "USART6 kernel clock source selection These bits are used to select the USART6 kernel clock source. The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16 or LSE. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
+        #[doc = "USART6 kernel clock source selection These bits are used to select the USART6 kernel clock source. The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI or LSE. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
         pub const fn usart6sel(&self) -> super::vals::Usartsel {
             let val = (self.0 >> 16usize) & 0x03;
             super::vals::Usartsel::from_bits(val as u8)
         }
-        #[doc = "USART6 kernel clock source selection These bits are used to select the USART6 kernel clock source. The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16 or LSE. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
+        #[doc = "USART6 kernel clock source selection These bits are used to select the USART6 kernel clock source. The USART6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI or LSE. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
         pub fn set_usart6sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
@@ -4335,24 +4335,24 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         pub fn set_hspi1sel(&mut self, val: super::vals::Hspisel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
-        #[doc = "I2C5 kernel clock source selection These bits are used to select the I2C5 kernel clock source. The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
+        #[doc = "I2C5 kernel clock source selection These bits are used to select the I2C5 kernel clock source. The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
         pub const fn i2c5sel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 24usize) & 0x03;
             super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "I2C5 kernel clock source selection These bits are used to select the I2C5 kernel clock source. The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
+        #[doc = "I2C5 kernel clock source selection These bits are used to select the I2C5 kernel clock source. The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
         pub fn set_i2c5sel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
-        #[doc = "I2C6 kernel clock source selection These bits are used to select the I2C6 kernel clock source. The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
+        #[doc = "I2C6 kernel clock source selection These bits are used to select the I2C6 kernel clock source. The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
         pub const fn i2c6sel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 26usize) & 0x03;
             super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "I2C6 kernel clock source selection These bits are used to select the I2C6 kernel clock source. The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI16�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
+        #[doc = "I2C6 kernel clock source selection These bits are used to select the I2C6 kernel clock source. The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
         pub fn set_i2c6sel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
@@ -4380,68 +4380,68 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccipr3(pub u32);
     impl Ccipr3 {
-        #[doc = "LPUART1 kernel clock source selection These bits are used to select the LPUART1 kernel clock source. others: reserved Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16, LSE or MSIK."]
+        #[doc = "LPUART1 kernel clock source selection These bits are used to select the LPUART1 kernel clock source. others: reserved Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI, LSE or MSIK."]
         #[inline(always)]
         pub const fn lpuart1sel(&self) -> super::vals::Lpuartsel {
             let val = (self.0 >> 0usize) & 0x07;
             super::vals::Lpuartsel::from_bits(val as u8)
         }
-        #[doc = "LPUART1 kernel clock source selection These bits are used to select the LPUART1 kernel clock source. others: reserved Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16, LSE or MSIK."]
+        #[doc = "LPUART1 kernel clock source selection These bits are used to select the LPUART1 kernel clock source. others: reserved Note: The LPUART1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI, LSE or MSIK."]
         #[inline(always)]
         pub fn set_lpuart1sel(&mut self, val: super::vals::Lpuartsel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
-        #[doc = "SPI3 kernel clock source selection These bits are used to select the SPI3 kernel clock source. Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "SPI3 kernel clock source selection These bits are used to select the SPI3 kernel clock source. Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn spi3sel(&self) -> super::vals::Spisel {
             let val = (self.0 >> 3usize) & 0x03;
             super::vals::Spisel::from_bits(val as u8)
         }
-        #[doc = "SPI3 kernel clock source selection These bits are used to select the SPI3 kernel clock source. Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "SPI3 kernel clock source selection These bits are used to select the SPI3 kernel clock source. Note: The SPI3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_spi3sel(&mut self, val: super::vals::Spisel) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
-        #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub const fn i2c3sel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 6usize) & 0x03;
             super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK."]
+        #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
         pub fn set_i2c3sel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
-        #[doc = "LPTIM3 and LPTIM4 kernel clock source selection These bits are used to select the LPTIM3 and LPTIM4 kernel clock source. Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1."]
+        #[doc = "LPTIM3 and LPTIM4 kernel clock source selection These bits are used to select the LPTIM3 and LPTIM4 kernel clock source. Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1."]
         #[inline(always)]
         pub const fn lptim34sel(&self) -> super::vals::Lptimsel {
             let val = (self.0 >> 8usize) & 0x03;
             super::vals::Lptimsel::from_bits(val as u8)
         }
-        #[doc = "LPTIM3 and LPTIM4 kernel clock source selection These bits are used to select the LPTIM3 and LPTIM4 kernel clock source. Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1."]
+        #[doc = "LPTIM3 and LPTIM4 kernel clock source selection These bits are used to select the LPTIM3 and LPTIM4 kernel clock source. Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1."]
         #[inline(always)]
         pub fn set_lptim34sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
-        #[doc = "LPTIM1 kernel clock source selection These bits are used to select the LPTIM1 kernel clock source. Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1."]
+        #[doc = "LPTIM1 kernel clock source selection These bits are used to select the LPTIM1 kernel clock source. Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1."]
         #[inline(always)]
         pub const fn lptim1sel(&self) -> super::vals::Lptimsel {
             let val = (self.0 >> 10usize) & 0x03;
             super::vals::Lptimsel::from_bits(val as u8)
         }
-        #[doc = "LPTIM1 kernel clock source selection These bits are used to select the LPTIM1 kernel clock source. Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1 or MSIK with MSIKERON = 1."]
+        #[doc = "LPTIM1 kernel clock source selection These bits are used to select the LPTIM1 kernel clock source. Note: The LPTIM1 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1."]
         #[inline(always)]
         pub fn set_lptim1sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
-        #[doc = "ADC1, ADC4 and DAC1 kernel clock source selection These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source. others: reserved Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode)."]
+        #[doc = "ADC1, ADC4 and DAC1 kernel clock source selection These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source. others: reserved Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode)."]
         #[inline(always)]
         pub const fn adcdacsel(&self) -> super::vals::Adcdacsel {
             let val = (self.0 >> 12usize) & 0x07;
             super::vals::Adcdacsel::from_bits(val as u8)
         }
-        #[doc = "ADC1, ADC4 and DAC1 kernel clock source selection These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source. others: reserved Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI16 or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode)."]
+        #[doc = "ADC1, ADC4 and DAC1 kernel clock source selection These bits are used to select the ADC1, ADC4 and DAC1 kernel clock source. others: reserved Note: The ADC1, ADC4 and DAC1 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK (only ADC4 and DAC1 are functional in Stop 2 mode)."]
         #[inline(always)]
         pub fn set_adcdacsel(&mut self, val: super::vals::Adcdacsel) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
@@ -4480,13 +4480,13 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
-        #[doc = "system clock switch Set and cleared by software to select system clock source (SYSCLK). Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI16 oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value."]
+        #[doc = "system clock switch Set and cleared by software to select system clock source (SYSCLK). Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value."]
         #[inline(always)]
         pub const fn sw(&self) -> super::vals::Sw {
             let val = (self.0 >> 0usize) & 0x03;
             super::vals::Sw::from_bits(val as u8)
         }
-        #[doc = "system clock switch Set and cleared by software to select system clock source (SYSCLK). Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI16 oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value."]
+        #[doc = "system clock switch Set and cleared by software to select system clock source (SYSCLK). Configured by hardware to force MSIS oscillator selection when exiting Standby or Shutdown mode. Configured by hardware to force MSIS or HSI oscillator selection when exiting Stop mode or in case of HSE oscillator failure, depending on STOPWUCK value."]
         #[inline(always)]
         pub fn set_sw(&mut self, val: super::vals::Sw) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
@@ -4747,13 +4747,13 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         pub fn set_msisrdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16 ready interrupt clear Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect."]
+        #[doc = "HSI ready interrupt clear Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect."]
         #[inline(always)]
         pub const fn hsirdyc(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt clear Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect."]
+        #[doc = "HSI ready interrupt clear Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect."]
         #[inline(always)]
         pub fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -4873,13 +4873,13 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         pub fn set_msisrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization."]
+        #[doc = "HSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization."]
         #[inline(always)]
         pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization."]
+        #[doc = "HSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization."]
         #[inline(always)]
         pub fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -4988,13 +4988,13 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         pub fn set_msisrdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16 ready interrupt flag Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
+        #[doc = "HSI ready interrupt flag Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
         #[inline(always)]
         pub const fn hsirdyf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt flag Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
+        #[doc = "HSI ready interrupt flag Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see RCC_CR). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
         #[inline(always)]
         pub fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -5169,35 +5169,35 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         pub fn set_msipllfast(&mut self, val: super::vals::Msipllfast) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
-        #[doc = "HSI16 clock enable Set and cleared by software. Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI16 oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI16 is used directly or indirectly as system clock."]
+        #[doc = "HSI clock enable Set and cleared by software. Cleared by hardware to stop the HSI oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI is used directly or indirectly as system clock."]
         #[inline(always)]
         pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 clock enable Set and cleared by software. Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI16 oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI16 is used directly or indirectly as system clock."]
+        #[doc = "HSI clock enable Set and cleared by software. Cleared by hardware to stop the HSI oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI oscillator ON when STOPWUCK = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI is used directly or indirectly as system clock."]
         #[inline(always)]
         pub fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "HSI16 enable for some peripheral kernels Set and cleared by software to force HSI16 ON even in Stop modes. Keeping the HSI16 ON in Stop mode allows the communication speed not to be reduced by the HSI16 startup time. This bit has no effect on HSION value. Refer to for more details. The HSIKERON must be configured at 0 before entering Stop 3 mode."]
+        #[doc = "HSI enable for some peripheral kernels Set and cleared by software to force HSI ON even in Stop modes. Keeping the HSI ON in Stop mode allows the communication speed not to be reduced by the HSI startup time. This bit has no effect on HSION value. Refer to for more details. The HSIKERON must be configured at 0 before entering Stop 3 mode."]
         #[inline(always)]
         pub const fn hsikeron(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 enable for some peripheral kernels Set and cleared by software to force HSI16 ON even in Stop modes. Keeping the HSI16 ON in Stop mode allows the communication speed not to be reduced by the HSI16 startup time. This bit has no effect on HSION value. Refer to for more details. The HSIKERON must be configured at 0 before entering Stop 3 mode."]
+        #[doc = "HSI enable for some peripheral kernels Set and cleared by software to force HSI ON even in Stop modes. Keeping the HSI ON in Stop mode allows the communication speed not to be reduced by the HSI startup time. This bit has no effect on HSION value. Refer to for more details. The HSIKERON must be configured at 0 before entering Stop 3 mode."]
         #[inline(always)]
         pub fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "HSI16 clock ready flag Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles."]
+        #[doc = "HSI clock ready flag Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI clock cycles."]
         #[inline(always)]
         pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 clock ready flag Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles."]
+        #[doc = "HSI clock ready flag Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI clock cycles."]
         #[inline(always)]
         pub fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
@@ -6337,7 +6337,7 @@ pub mod vals {
         PLL2_R = 0x02,
         #[doc = "HSE clock selected"]
         HSE = 0x03,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x04,
         #[doc = "MSIK clock selected"]
         MSIK = 0x05,
@@ -6693,7 +6693,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
         SYS = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         #[doc = "MSIK selected"]
         MSIK = 0x03,
@@ -6727,7 +6727,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "LSI selected"]
         LSI = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
@@ -6761,7 +6761,7 @@ pub mod vals {
         PCLK3 = 0,
         #[doc = "SYSCLK selected"]
         SYS = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
@@ -6965,7 +6965,7 @@ pub mod vals {
         SYS = 0x01,
         #[doc = "MSIS clock selected"]
         MSIS = 0x02,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x03,
         #[doc = "HSE clock selected"]
         HSE = 0x04,
@@ -8164,7 +8164,7 @@ in RCC_ICSCR1"]
         DISABLE = 0,
         #[doc = "MSIS clock selected as PLL3 clock entry"]
         MSIS = 0x01,
-        #[doc = "HSI16 clock selected as PLL3 clock entry"]
+        #[doc = "HSI clock selected as PLL3 clock entry"]
         HSI = 0x02,
         #[doc = "HSE clock selected as PLL3 clock entry"]
         HSE = 0x03,
@@ -8267,7 +8267,7 @@ in RCC_ICSCR1"]
         HSI48 = 0,
         #[doc = "HSI48 / 2 selected, can be used in Range 4"]
         HSI48_DIV_2 = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -8368,7 +8368,7 @@ in RCC_ICSCR1"]
         PLL1_P = 0x02,
         #[doc = "input pin AUDIOCLK selected"]
         AUDIOCLK = 0x03,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -8463,7 +8463,7 @@ in RCC_ICSCR1"]
         PCLK2 = 0,
         #[doc = "SYSCLK selected"]
         SYS = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         #[doc = "MSIK selected"]
         MSIK = 0x03,
@@ -8495,7 +8495,7 @@ in RCC_ICSCR1"]
     pub enum Stopkerwuck {
         #[doc = "MSIK oscillator automatically enabled when exiting Stop mode"]
         MSIK = 0,
-        #[doc = "HSI16 oscillator automatically enabled when exiting Stop mode"]
+        #[doc = "HSI oscillator automatically enabled when exiting Stop mode"]
         HSI = 0x01,
     }
     impl Stopkerwuck {
@@ -8525,7 +8525,7 @@ in RCC_ICSCR1"]
     pub enum Stopwuck {
         #[doc = "MSIS oscillator selected as wakeup from stop clock and CSS backup clock"]
         MSIS = 0,
-        #[doc = "HSI16 oscillator selected as wakeup from stop clock and CSS backup clock"]
+        #[doc = "HSI oscillator selected as wakeup from stop clock and CSS backup clock"]
         HSI = 0x01,
     }
     impl Stopwuck {
@@ -8555,7 +8555,7 @@ in RCC_ICSCR1"]
     pub enum Sw {
         #[doc = "MSIS selected as system clock"]
         MSIS = 0,
-        #[doc = "HSI16 selected as system clock"]
+        #[doc = "HSI selected as system clock"]
         HSI = 0x01,
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,
@@ -8663,7 +8663,7 @@ in RCC_ICSCR1"]
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
         SYS = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,
@@ -8697,7 +8697,7 @@ in RCC_ICSCR1"]
         PCLK2 = 0,
         #[doc = "SYSCLK selected"]
         SYS = 0x01,
-        #[doc = "HSI16 selected"]
+        #[doc = "HSI selected"]
         HSI = 0x02,
         #[doc = "LSE selected"]
         LSE = 0x03,

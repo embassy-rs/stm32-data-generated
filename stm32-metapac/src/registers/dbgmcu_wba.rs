@@ -704,7 +704,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbg_stop",
                     description: Some(
-                        "Allows debug in Stop mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI16 oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state.",
+                        "Allows debug in Stop mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state.",
                     ),
                     bit_offset: 1,
                     bit_size: 1,
@@ -714,7 +714,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dbg_standby",
                     description: Some(
-                        "Allows debug in Standby mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI16 oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed.",
+                        "Allows debug in Standby mode\r Write access can be protected by PWR_SECCFGR.LPMSEC.\r The CPU debug and clocks remain active and the HSI oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed.",
                     ),
                     bit_offset: 2,
                     bit_size: 1,

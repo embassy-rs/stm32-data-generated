@@ -4591,7 +4591,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -4624,7 +4624,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -4657,7 +4657,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -4690,7 +4690,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -4723,7 +4723,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "LSI clock selected"]
         LSI = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -4757,7 +4757,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "LSI clock selected"]
         LSI = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -4791,7 +4791,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -5719,7 +5719,7 @@ in the RCC_CR register"]
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -5753,7 +5753,7 @@ in the RCC_CR register"]
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -5787,7 +5787,7 @@ in the RCC_CR register"]
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -5821,7 +5821,7 @@ in the RCC_CR register"]
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,
@@ -5855,7 +5855,7 @@ in the RCC_CR register"]
         PCLK1 = 0,
         #[doc = "SYSCLK clock selected"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected"]
+        #[doc = "HSI clock selected"]
         HSI = 0x02,
         #[doc = "LSE clock selected"]
         LSE = 0x03,

@@ -1185,7 +1185,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyc",
                     description: Some(
-                        "HSI16 ready interrupt clear\r This bit is set software to clear the HSIRDYF flag.",
+                        "HSI ready interrupt clear\r This bit is set software to clear the HSIRDYF flag.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -1255,7 +1255,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyie",
                     description: Some(
-                        "HSI16 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization:",
+                        "HSI ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization:",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -1305,7 +1305,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyf",
                     description: Some(
-                        "HSI16 ready interrupt flag\r This flag indicates a pending interrupt upon HSI16 clock getting ready.\r Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in response to setting the HSION (refer to ). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Cleared by software setting the HSIRDYC bit.",
+                        "HSI ready interrupt flag\r This flag indicates a pending interrupt upon HSI clock getting ready.\r Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in response to setting the HSION (refer to ). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Cleared by software setting the HSIRDYC bit.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,

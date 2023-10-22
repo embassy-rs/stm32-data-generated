@@ -1423,25 +1423,25 @@
     "fields": [
       {
         "name": "HSION",
-        "description": "HSI16 clock enable",
+        "description": "HSI clock enable",
         "bit_offset": 8,
         "bit_size": 1
       },
       {
         "name": "HSIKERON",
-        "description": "HSI16 always enable for peripheral kernels",
+        "description": "HSI always enable for peripheral kernels",
         "bit_offset": 9,
         "bit_size": 1
       },
       {
         "name": "HSIRDY",
-        "description": "HSI16 clock ready flag",
+        "description": "HSI clock ready flag",
         "bit_offset": 10,
         "bit_size": 1
       },
       {
         "name": "HSIDIV",
-        "description": "HSI16 clock division factor",
+        "description": "HSI clock division factor",
         "bit_offset": 11,
         "bit_size": 3,
         "enum": "HSIDIV"
@@ -1682,13 +1682,13 @@
     "fields": [
       {
         "name": "HSICAL",
-        "description": "HSI16 clock calibration",
+        "description": "HSI clock calibration",
         "bit_offset": 0,
         "bit_size": 8
       },
       {
         "name": "HSITRIM",
-        "description": "HSI16 clock trimming",
+        "description": "HSI clock trimming",
         "bit_offset": 8,
         "bit_size": 7
       }
@@ -1774,7 +1774,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as ADC clock source",
+        "description": "HSI used as ADC clock source",
         "value": 2
       }
     ]
@@ -1784,7 +1784,7 @@
     "variants": [
       {
         "name": "HSI_DIV_488",
-        "description": "HSI16 divided by 488 used as CEC clock",
+        "description": "HSI divided by 488 used as CEC clock",
         "value": 0
       },
       {
@@ -1924,7 +1924,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as I2C1 clock source",
+        "description": "HSI used as I2C1 clock source",
         "value": 2
       }
     ]
@@ -1944,7 +1944,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as I2C2/I2S2 clock source",
+        "description": "HSI used as I2C2/I2S2 clock source",
         "value": 2
       },
       {
@@ -2019,7 +2019,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as LPTIM1 clock source",
+        "description": "HSI used as LPTIM1 clock source",
         "value": 2
       },
       {
@@ -2044,7 +2044,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as LPTIM2 clock source",
+        "description": "HSI used as LPTIM2 clock source",
         "value": 2
       },
       {
@@ -2069,7 +2069,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as LPUART1 clock source",
+        "description": "HSI used as LPUART1 clock source",
         "value": 2
       },
       {
@@ -2094,7 +2094,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as LPUART2 clock source",
+        "description": "HSI used as LPUART2 clock source",
         "value": 2
       },
       {
@@ -2209,7 +2209,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected as MCO source",
+        "description": "HSI selected as MCO source",
         "value": 3
       },
       {
@@ -2817,7 +2817,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected as PLL entry clock source",
+        "description": "HSI selected as PLL entry clock source",
         "value": 2
       },
       {
@@ -3007,7 +3007,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as USART1 clock source",
+        "description": "HSI used as USART1 clock source",
         "value": 2
       },
       {
@@ -3032,7 +3032,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as USART2 clock source",
+        "description": "HSI used as USART2 clock source",
         "value": 2
       },
       {
@@ -3057,7 +3057,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 used as USART3 clock source",
+        "description": "HSI used as USART3 clock source",
         "value": 2
       },
       {

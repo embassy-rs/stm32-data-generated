@@ -4675,7 +4675,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -4703,7 +4703,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -4731,7 +4731,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -4759,7 +4759,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -4787,7 +4787,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -4822,7 +4822,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -4857,7 +4857,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -6395,7 +6395,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -6430,7 +6430,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -6465,7 +6465,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -6500,7 +6500,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },
@@ -6535,7 +6535,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 2,
                 },

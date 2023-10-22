@@ -1173,6 +1173,11 @@
                 {
                     "name": "SPI1",
                     "address": 1073819648,
+                    "registers": {
+                        "kind": "spi",
+                        "version": "v5",
+                        "block": "SPI"
+                    },
                     "rcc": {
                         "clock": "pclk2",
                         "enable": {
@@ -1242,6 +1247,11 @@
                 {
                     "name": "SPI3",
                     "address": 1174413312,
+                    "registers": {
+                        "kind": "spi",
+                        "version": "v5",
+                        "block": "SPI"
+                    },
                     "rcc": {
                         "clock": "pclk7",
                         "enable": {

@@ -938,8 +938,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYF",
-        "description": "HSI16 ready interrupt flag",
+        "name": "HSIRDYF",
+        "description": "HSI ready interrupt flag",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -980,8 +980,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYIE",
-        "description": "HSI16 ready interrupt enable",
+        "name": "HSIRDYIE",
+        "description": "HSI ready interrupt enable",
         "bit_offset": 10,
         "bit_size": 1
       },
@@ -1016,8 +1016,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYC",
-        "description": "HSI16 ready interrupt clear",
+        "name": "HSIRDYC",
+        "description": "HSI ready interrupt clear",
         "bit_offset": 18,
         "bit_size": 1
       },
@@ -1051,13 +1051,13 @@
     "description": "Clock control register",
     "fields": [
       {
-        "name": "HSI16ON",
+        "name": "HSION",
         "description": "Internal high-speed clock enable",
         "bit_offset": 0,
         "bit_size": 1
       },
       {
-        "name": "HSI16RDY",
+        "name": "HSIRDY",
         "description": "Internal high-speed clock ready flag",
         "bit_offset": 1,
         "bit_size": 1
@@ -1219,13 +1219,13 @@
     "description": "Internal clock sources calibration register",
     "fields": [
       {
-        "name": "HSI16CAL",
+        "name": "HSICAL",
         "description": "nternal high speed clock calibration",
         "bit_offset": 0,
         "bit_size": 8
       },
       {
-        "name": "HSI16TRIM",
+        "name": "HSITRIM",
         "description": "High speed internal clock trimming",
         "bit_offset": 8,
         "bit_size": 5
@@ -1346,7 +1346,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 oscillator clock selected",
+        "description": "HSI oscillator clock selected",
         "value": 2
       },
       {
@@ -1496,7 +1496,7 @@
     "variants": [
       {
         "name": "HSI",
-        "description": "HSI16 selected as PLL input clock",
+        "description": "HSI selected as PLL input clock",
         "value": 0
       },
       {
@@ -1596,7 +1596,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 oscillator used as system clock",
+        "description": "HSI oscillator used as system clock",
         "value": 1
       },
       {

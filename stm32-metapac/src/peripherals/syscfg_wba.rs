@@ -132,13 +132,13 @@ pub mod regs {
         pub fn set_cs1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION)."]
+        #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION)."]
         #[inline(always)]
         pub const fn rdy1(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION)."]
+        #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION)."]
         #[inline(always)]
         pub fn set_rdy1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);

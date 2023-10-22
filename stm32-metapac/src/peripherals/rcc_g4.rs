@@ -3772,7 +3772,7 @@ pub mod vals {
         #[doc = "SYSCLK selected as MCO source"]
         SYS = 0x01,
         _RESERVED_2 = 0x02,
-        #[doc = "HSI16 selected as MCO source"]
+        #[doc = "HSI selected as MCO source"]
         HSI = 0x03,
         #[doc = "HSE selected as MCO source"]
         HSE = 0x04,
@@ -4258,7 +4258,7 @@ pub mod vals {
         #[doc = "No clock selected as PLL entry clock source"]
         DISABLE = 0,
         _RESERVED_1 = 0x01,
-        #[doc = "HSI16 selected as PLL entry clock source"]
+        #[doc = "HSI selected as PLL entry clock source"]
         HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,
@@ -4370,7 +4370,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Sw {
         _RESERVED_0 = 0,
-        #[doc = "HSI16 selected as system clock"]
+        #[doc = "HSI selected as system clock"]
         HSI = 0x01,
         #[doc = "HSE selected as system clock"]
         HSE = 0x02,

@@ -4642,7 +4642,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 selected as PLL entry clock source"),
+                    description: Some("HSI selected as PLL entry clock source"),
                     value: 2,
                 },
                 EnumVariant {

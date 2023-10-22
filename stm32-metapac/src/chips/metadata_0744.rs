@@ -1122,7 +1122,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI1",
         address: 1073819648,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v5",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk2",
             enable: Some(PeripheralRccRegister {
@@ -1194,7 +1199,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "SPI3",
         address: 1174413312,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v5",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk7",
             enable: Some(PeripheralRccRegister {
@@ -2551,6 +2561,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v3u5.rs"]
 pub mod rtc;
+#[path = "../registers/spi_v5.rs"]
+pub mod spi;
 #[path = "../registers/syscfg_wba.rs"]
 pub mod syscfg;
 #[path = "../registers/timer_v1.rs"]

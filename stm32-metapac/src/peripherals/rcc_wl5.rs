@@ -2962,13 +2962,13 @@ pub mod regs {
         pub fn set_msirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16 ready interrupt clear"]
+        #[doc = "HSI ready interrupt clear"]
         #[inline(always)]
         pub const fn hsirdyc(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt clear"]
+        #[doc = "HSI ready interrupt clear"]
         #[inline(always)]
         pub fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -3062,13 +3062,13 @@ pub mod regs {
         pub fn set_msirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16 ready interrupt enable"]
+        #[doc = "HSI ready interrupt enable"]
         #[inline(always)]
         pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt enable"]
+        #[doc = "HSI ready interrupt enable"]
         #[inline(always)]
         pub fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -3151,13 +3151,13 @@ pub mod regs {
         pub fn set_msirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16 ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
         pub const fn hsirdyf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
         pub fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
@@ -3273,57 +3273,57 @@ pub mod regs {
         pub fn set_msirange(&mut self, val: super::vals::Msirange) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
-        #[doc = "HSI16 clock enable"]
+        #[doc = "HSI clock enable"]
         #[inline(always)]
         pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 clock enable"]
+        #[doc = "HSI clock enable"]
         #[inline(always)]
         pub fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "HSI16 always enable for peripheral kernel clocks."]
+        #[doc = "HSI always enable for peripheral kernel clocks."]
         #[inline(always)]
         pub const fn hsikeron(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 always enable for peripheral kernel clocks."]
+        #[doc = "HSI always enable for peripheral kernel clocks."]
         #[inline(always)]
         pub fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "HSI16 clock ready flag. (After wakeup from Stop this bit will be read 1 once the HSI16 is ready)"]
+        #[doc = "HSI clock ready flag. (After wakeup from Stop this bit will be read 1 once the HSI is ready)"]
         #[inline(always)]
         pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 clock ready flag. (After wakeup from Stop this bit will be read 1 once the HSI16 is ready)"]
+        #[doc = "HSI clock ready flag. (After wakeup from Stop this bit will be read 1 once the HSI is ready)"]
         #[inline(always)]
         pub fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
-        #[doc = "HSI16 automatic start from Stop"]
+        #[doc = "HSI automatic start from Stop"]
         #[inline(always)]
         pub const fn hsiasfs(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 automatic start from Stop"]
+        #[doc = "HSI automatic start from Stop"]
         #[inline(always)]
         pub fn set_hsiasfs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
-        #[doc = "HSI16 kernel clock ready flag for peripherals requests."]
+        #[doc = "HSI kernel clock ready flag for peripherals requests."]
         #[inline(always)]
         pub const fn hsikerdy(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 kernel clock ready flag for peripherals requests."]
+        #[doc = "HSI kernel clock ready flag for peripherals requests."]
         #[inline(always)]
         pub fn set_hsikerdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
@@ -3674,24 +3674,24 @@ HCLK2 prescaler (CPU2)"]
         pub fn set_msitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
-        #[doc = "HSI16 clock calibration"]
+        #[doc = "HSI clock calibration"]
         #[inline(always)]
         pub const fn hsical(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
             val as u8
         }
-        #[doc = "HSI16 clock calibration"]
+        #[doc = "HSI clock calibration"]
         #[inline(always)]
         pub fn set_hsical(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
-        #[doc = "HSI16 clock trimming"]
+        #[doc = "HSI clock trimming"]
         #[inline(always)]
         pub const fn hsitrim(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x7f;
             val as u8
         }
-        #[doc = "HSI16 clock trimming"]
+        #[doc = "HSI clock trimming"]
         #[inline(always)]
         pub fn set_hsitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
@@ -3820,7 +3820,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adcsel {
         _RESERVED_0 = 0,
-        #[doc = "HSI16 used as ADC clock source"]
+        #[doc = "HSI used as ADC clock source"]
         HSI = 0x01,
         #[doc = "PLLPCLK used as ADC clock source"]
         PLL1_P = 0x02,
@@ -4405,7 +4405,7 @@ pub mod vals {
         DISABLE = 0,
         #[doc = "MSI selected as PLL entry clock source"]
         MSI = 0x01,
-        #[doc = "HSI16 selected as PLL entry clock source"]
+        #[doc = "HSI selected as PLL entry clock source"]
         HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,

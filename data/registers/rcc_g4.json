@@ -2172,7 +2172,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected as MCO source",
+        "description": "HSI selected as MCO source",
         "value": 3
       },
       {
@@ -2946,7 +2946,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 selected as PLL entry clock source",
+        "description": "HSI selected as PLL entry clock source",
         "value": 2
       },
       {
@@ -3016,7 +3016,7 @@
     "variants": [
       {
         "name": "HSI",
-        "description": "HSI16 selected as system clock",
+        "description": "HSI selected as system clock",
         "value": 1
       },
       {

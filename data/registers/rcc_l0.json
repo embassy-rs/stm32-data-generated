@@ -887,8 +887,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYC",
-        "description": "HSI16 ready Interrupt clear",
+        "name": "HSIRDYC",
+        "description": "HSI ready Interrupt clear",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -940,8 +940,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYIE",
-        "description": "HSI16 ready interrupt flag",
+        "name": "HSIRDYIE",
+        "description": "HSI ready interrupt flag",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -987,8 +987,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSI16RDYF",
-        "description": "HSI16 ready interrupt flag",
+        "name": "HSIRDYF",
+        "description": "HSI ready interrupt flag",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -1028,37 +1028,37 @@
     "description": "Clock control register",
     "fields": [
       {
-        "name": "HSI16ON",
+        "name": "HSION",
         "description": "16 MHz high-speed internal clock enable",
         "bit_offset": 0,
         "bit_size": 1
       },
       {
-        "name": "HSI16KERON",
+        "name": "HSIKERON",
         "description": "High-speed internal clock enable bit for some IP kernels",
         "bit_offset": 1,
         "bit_size": 1
       },
       {
-        "name": "HSI16RDY",
+        "name": "HSIRDY",
         "description": "Internal high-speed clock ready flag",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
-        "name": "HSI16DIVEN",
-        "description": "HSI16DIVEN",
+        "name": "HSIDIVEN",
+        "description": "HSIDIVEN",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
-        "name": "HSI16DIVF",
-        "description": "HSI16DIVF",
+        "name": "HSIDIVF",
+        "description": "HSIDIVF",
         "bit_offset": 4,
         "bit_size": 1
       },
       {
-        "name": "HSI16OUTEN",
+        "name": "HSIOUTEN",
         "description": "16 MHz high-speed internal clock output enable",
         "bit_offset": 5,
         "bit_size": 1
@@ -1374,13 +1374,13 @@
     "description": "Internal clock sources calibration register",
     "fields": [
       {
-        "name": "HSI16CAL",
+        "name": "HSICAL",
         "description": "nternal high speed clock calibration",
         "bit_offset": 0,
         "bit_size": 8
       },
       {
-        "name": "HSI16TRIM",
+        "name": "HSITRIM",
         "description": "High speed internal clock trimming",
         "bit_offset": 8,
         "bit_size": 5
@@ -1471,7 +1471,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected as peripheral clock",
+        "description": "HSI clock selected as peripheral clock",
         "value": 2
       }
     ]
@@ -1491,7 +1491,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected as Timer clock",
+        "description": "HSI clock selected as Timer clock",
         "value": 2
       },
       {
@@ -1821,7 +1821,7 @@
       },
       {
         "name": "HSI",
-        "description": "Internal 16 MHz (HSI) oscillator selected as wake-up from Stop clock (or HSI16/4 if HSI16DIVEN=1)",
+        "description": "Internal 16 MHz (HSI) oscillator selected as wake-up from Stop clock (or HSI/4 if HSIDIVEN=1)",
         "value": 1
       }
     ]
@@ -1866,7 +1866,7 @@
       },
       {
         "name": "HSI",
-        "description": "HSI16 clock selected as peripheral clock",
+        "description": "HSI clock selected as peripheral clock",
         "value": 2
       },
       {

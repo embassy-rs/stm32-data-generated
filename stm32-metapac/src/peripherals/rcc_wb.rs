@@ -4929,7 +4929,7 @@ pub mod vals {
         DISABLE = 0,
         #[doc = "MSI selected as PLL entry clock source"]
         MSI = 0x01,
-        #[doc = "HSI16 selected as PLL entry clock source"]
+        #[doc = "HSI selected as PLL entry clock source"]
         HSI = 0x02,
         #[doc = "HSE selected as PLL entry clock source"]
         HSE = 0x03,

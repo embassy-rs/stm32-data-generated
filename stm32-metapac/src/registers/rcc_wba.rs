@@ -2291,7 +2291,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart1sel",
                     description: Some(
-                        "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "USART1 kernel clock source selection\r This bits are used to select the USART1 kernel clock source.\r Access can be secured by GTZC_TZSC USART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 0,
                     bit_size: 2,
@@ -2303,7 +2303,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart2sel",
                     description: Some(
-                        "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16 or LSE.",
+                        "USART2 kernel clock source selection\r This bits are used to select the USART2 kernel clock source.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 2,
                     bit_size: 2,
@@ -2315,7 +2315,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1sel",
                     description: Some(
-                        "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16.",
+                        "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI.",
                     ),
                     bit_offset: 10,
                     bit_size: 2,
@@ -2327,7 +2327,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lptim2sel",
                     description: Some(
-                        "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI16 if HSIKERON = 1.",
+                        "Low-power timer 2 kernel clock source selection\r These bits are used to select the LPTIM2 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1.",
                     ),
                     bit_offset: 18,
                     bit_size: 2,
@@ -2339,7 +2339,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spi1sel",
                     description: Some(
-                        "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI16.",
+                        "SPI1 kernel clock source selection\r These bits are used to select the SPI1 kernel clock source.\r Access can be secured by GTZC_TZSC SPI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI.",
                     ),
                     bit_offset: 20,
                     bit_size: 2,
@@ -2363,7 +2363,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "timicsel",
                     description: Some(
-                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture \r When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI16/256. \r When TIMICSEL is cleared, the HSI16, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division.",
+                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture \r When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. \r When TIMICSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division.",
                     ),
                     bit_offset: 31,
                     bit_size: 1,
@@ -2407,7 +2407,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lpuart1sel",
                     description: Some(
-                        "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPUART1 is functional in Stop modes only when the kernel clock is HSI16 or LSE.",
+                        "LPUART1 kernel clock source selection\r These bits are used to select the LPUART1 kernel clock source.\r Access can be secured by GTZC_TZSC LPUART1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPUART1 is functional in Stop modes only when the kernel clock is HSI or LSE.",
                     ),
                     bit_offset: 0,
                     bit_size: 2,
@@ -2419,7 +2419,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spi3sel",
                     description: Some(
-                        "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI3 is functional in Stop modes only when the kernel clock is HSI16.",
+                        "SPI3 kernel clock source selection\r These bits are used to select the SPI3 kernel clock source.\r Access can be secured by GTZC_TZSC SPI3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI3 is functional in Stop modes only when the kernel clock is HSI.",
                     ),
                     bit_offset: 3,
                     bit_size: 2,
@@ -2431,7 +2431,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c3sel",
                     description: Some(
-                        "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C3 is functional in Stop modes only when the kernel clock is HSI16",
+                        "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C3 is functional in Stop modes only when the kernel clock is HSI",
                     ),
                     bit_offset: 6,
                     bit_size: 2,
@@ -2443,7 +2443,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lptim1sel",
                     description: Some(
-                        "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM1 is functional in Stop modes only when the kernel clock is LSI, LSE, HSI16 with HSIKERON = 1.",
+                        "LPTIM1 kernel clock source selection\r These bits are used to select the LPTIM1 kernel clock source.\r Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The LPTIM1 is functional in Stop modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1.",
                     ),
                     bit_offset: 10,
                     bit_size: 2,
@@ -2455,7 +2455,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adcsel",
                     description: Some(
-                        "ADC4 kernel clock source selection\r These bits are used to select the ADC4 kernel clock source.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r others: reserved\r Note: The ADC4 is functional in Stop modes only when the kernel clock is HSI16.",
+                        "ADC4 kernel clock source selection\r These bits are used to select the ADC4 kernel clock source.\r Access can be secured by GTZC_TZSC ADC4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r others: reserved\r Note: The ADC4 is functional in Stop modes only when the kernel clock is HSI.",
                     ),
                     bit_offset: 12,
                     bit_size: 3,
@@ -2615,7 +2615,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hdiv5",
                     description: Some(
-                        "AHB5 divider when SWS select HSI16 or HSE\r Set and reset by software.\r Set to 1 by hardware when entering Stop 1 mode.\r When SYSCLK source indicated by SWS is HSI16 or HSE: HDIV5 is taken into account\r When SYSCLK source indicated by SWS is PLL1: HDIV5 is taken not taken into account\r Depending on the device voltage range, the software must set this bit correctly to ensure that the AHB5 frequency does not exceed the maximum allowed frequency (for more details, refer to Table�99). After a write operation to this bit and before decreasing the voltage range, this register must be read to be sure that the new value is taken into account.",
+                        "AHB5 divider when SWS select HSI or HSE\r Set and reset by software.\r Set to 1 by hardware when entering Stop 1 mode.\r When SYSCLK source indicated by SWS is HSI or HSE: HDIV5 is taken into account\r When SYSCLK source indicated by SWS is PLL1: HDIV5 is taken not taken into account\r Depending on the device voltage range, the software must set this bit correctly to ensure that the AHB5 frequency does not exceed the maximum allowed frequency (for more details, refer to Table�99). After a write operation to this bit and before decreasing the voltage range, this register must be read to be sure that the new value is taken into account.",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -2657,7 +2657,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyc",
                     description: Some(
-                        "HSI16 ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.\\\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "HSI ready interrupt clear\r Writing this bit to 1 clears the HSIRDYF flag. Writing 0 has no effect.\\\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -2727,7 +2727,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyie",
                     description: Some(
-                        "HSI16 ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "HSI ready interrupt enable\r Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -2787,7 +2787,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdyf",
                     description: Some(
-                        "HSI16 ready interrupt flag\r Set by hardware when the HSI16 clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see CR). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Cleared by software setting the HSIRDYC bit.",
+                        "HSI ready interrupt flag\r Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (see CR). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Cleared by software setting the HSIRDYC bit.",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
@@ -2837,7 +2837,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsion",
                     description: Some(
-                        "HSI16 clock enable\r Set and cleared by software.\r Cleared by hardware when entering Stop and Standby modes. \r Set by hardware to force the HSI16 oscillator on when exiting Stop and Standby modes.\r Set by hardware to force the HSI16 oscillator on in case of clock security failure of the HSE crystal oscillator.\r This bit is set by hardware if the HSI16 is used directly or indirectly as system clock.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "HSI clock enable\r Set and cleared by software.\r Cleared by hardware when entering Stop and Standby modes. \r Set by hardware to force the HSI oscillator on when exiting Stop and Standby modes.\r Set by hardware to force the HSI oscillator on in case of clock security failure of the HSE crystal oscillator.\r This bit is set by hardware if the HSI is used directly or indirectly as system clock.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -2847,7 +2847,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsikeron",
                     description: Some(
-                        "HSI16 enable for some peripheral kernels\r Set and cleared by software to force HSI16 oscillator on even in Stop modes. \r Keeping the HSI16 oscillator on in Stop modes allows the communication speed not to be reduced by the HSI16 oscillator startup time. This bit has no effect on register bit HSION value.\r Cleared by hardware when entering Standby modes. \r Refer to Peripherals clock gating and autonomous mode for more details.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                        "HSI enable for some peripheral kernels\r Set and cleared by software to force HSI oscillator on even in Stop modes. \r Keeping the HSI oscillator on in Stop modes allows the communication speed not to be reduced by the HSI oscillator startup time. This bit has no effect on register bit HSION value.\r Cleared by hardware when entering Standby modes. \r Refer to Peripherals clock gating and autonomous mode for more details.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
                     bit_offset: 9,
                     bit_size: 1,
@@ -2857,7 +2857,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsirdy",
                     description: Some(
-                        "HSI16 clock ready flag\r Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI16 clock cycles.",
+                        "HSI clock ready flag\r Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION.\r Access to the bit can be secured by RCC HSISEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: Once the HSION bit is cleared, HSIRDY goes low after six HSI clock cycles.",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -3049,7 +3049,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsical",
                     description: Some(
-                        "HSI16 clock calibration\r These bits are initialized at startup with the factory-programmed HSI16 calibration value. When HSITRIM[4:0] is written, HSICAL[11:0] is updated with the sum of HSITRIM[4:0] and the initial factory trim value.",
+                        "HSI clock calibration\r These bits are initialized at startup with the factory-programmed HSI calibration value. When HSITRIM[4:0] is written, HSICAL[11:0] is updated with the sum of HSITRIM[4:0] and the initial factory trim value.",
                     ),
                     bit_offset: 0,
                     bit_size: 12,
@@ -3059,7 +3059,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsitrim",
                     description: Some(
-                        "HSI16 clock trimming \r These bits provide an additional user-programmable trimming value that is added to the HSICAL[11:0] bits. It can be programmed to adjust to voltage and temperature variations that influence the frequency of the HSI16.",
+                        "HSI clock trimming \r These bits provide an additional user-programmable trimming value that is added to the HSICAL[11:0] bits. It can be programmed to adjust to voltage and temperature variations that influence the frequency of the HSI.",
                     ),
                     bit_offset: 16,
                     bit_size: 5,
@@ -3337,7 +3337,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "hsisec",
                     description: Some(
-                        "HSI16 clock configuration and status bits security\r Set and reset by software.",
+                        "HSI clock configuration and status bits security\r Set and reset by software.",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -3454,7 +3454,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 4,
                 },
@@ -3608,7 +3608,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -3636,7 +3636,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -3671,7 +3671,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -3860,7 +3860,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected",
+                        "HSI clock selected",
                     ),
                     value: 3,
                 },
@@ -3993,7 +3993,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 clock selected as PLL1 clock entry",
+                        "HSI clock selected as PLL1 clock entry",
                     ),
                     value: 2,
                 },
@@ -4098,7 +4098,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -4168,7 +4168,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },
@@ -4182,7 +4182,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected as system clock",
+                        "HSI selected as system clock",
                     ),
                     value: 0,
                 },
@@ -4238,14 +4238,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 divider disabled",
+                        "HSI divider disabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "HSI_DIV_256",
                     description: Some(
-                        "HSI16/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
+                        "HSI/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture",
                     ),
                     value: 1,
                 },
@@ -4273,7 +4273,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected",
+                        "HSI selected",
                     ),
                     value: 2,
                 },

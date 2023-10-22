@@ -1953,7 +1953,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[
                 Field {
                     name: "hsion",
-                    description: Some("HSI16 clock enable"),
+                    description: Some("HSI clock enable"),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
@@ -1961,7 +1961,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsikeron",
-                    description: Some("HSI16 always enable for peripheral kernels"),
+                    description: Some("HSI always enable for peripheral kernels"),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
@@ -1969,7 +1969,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsirdy",
-                    description: Some("HSI16 clock ready flag"),
+                    description: Some("HSI clock ready flag"),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
@@ -1977,7 +1977,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsidiv",
-                    description: Some("HSI16 clock division factor"),
+                    description: Some("HSI clock division factor"),
                     bit_offset: 11,
                     bit_size: 3,
                     array: None,
@@ -2303,7 +2303,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[
                 Field {
                     name: "hsical",
-                    description: Some("HSI16 clock calibration"),
+                    description: Some("HSI clock calibration"),
                     bit_offset: 0,
                     bit_size: 8,
                     array: None,
@@ -2311,7 +2311,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsitrim",
-                    description: Some("HSI16 clock trimming"),
+                    description: Some("HSI clock trimming"),
                     bit_offset: 8,
                     bit_size: 7,
                     array: None,
@@ -2418,7 +2418,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as ADC clock source"),
+                    description: Some("HSI used as ADC clock source"),
                     value: 2,
                 },
             ],
@@ -2430,7 +2430,7 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI_DIV_488",
-                    description: Some("HSI16 divided by 488 used as CEC clock"),
+                    description: Some("HSI divided by 488 used as CEC clock"),
                     value: 0,
                 },
                 EnumVariant {
@@ -2578,7 +2578,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as I2C1 clock source"),
+                    description: Some("HSI used as I2C1 clock source"),
                     value: 2,
                 },
             ],
@@ -2600,7 +2600,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as I2C2/I2S2 clock source"),
+                    description: Some("HSI used as I2C2/I2S2 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -2681,7 +2681,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as LPTIM1 clock source"),
+                    description: Some("HSI used as LPTIM1 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -2708,7 +2708,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as LPTIM2 clock source"),
+                    description: Some("HSI used as LPTIM2 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -2735,7 +2735,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as LPUART1 clock source"),
+                    description: Some("HSI used as LPUART1 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -2762,7 +2762,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as LPUART2 clock source"),
+                    description: Some("HSI used as LPUART2 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -2883,7 +2883,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 selected as MCO source"),
+                    description: Some("HSI selected as MCO source"),
                     value: 3,
                 },
                 EnumVariant {
@@ -3635,7 +3635,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 selected as PLL entry clock source"),
+                    description: Some("HSI selected as PLL entry clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -3841,7 +3841,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as USART1 clock source"),
+                    description: Some("HSI used as USART1 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -3868,7 +3868,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as USART2 clock source"),
+                    description: Some("HSI used as USART2 clock source"),
                     value: 2,
                 },
                 EnumVariant {
@@ -3895,7 +3895,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI16 used as USART3 clock source"),
+                    description: Some("HSI used as USART3 clock source"),
                     value: 2,
                 },
                 EnumVariant {

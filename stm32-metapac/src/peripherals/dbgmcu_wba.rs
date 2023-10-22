@@ -506,24 +506,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "Allows debug in Stop mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI16 oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state."]
+        #[doc = "Allows debug in Stop mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state."]
         #[inline(always)]
         pub const fn dbg_stop(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
-        #[doc = "Allows debug in Stop mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI16 oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state."]
+        #[doc = "Allows debug in Stop mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI oscillators is used as system clock during Stop debug mode, allowing CPU debug capability. On exit from Stop mode, the clock settings are set to the Stop mode exit state."]
         #[inline(always)]
         pub fn set_dbg_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "Allows debug in Standby mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI16 oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed."]
+        #[doc = "Allows debug in Standby mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed."]
         #[inline(always)]
         pub const fn dbg_standby(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "Allows debug in Standby mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI16 oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed."]
+        #[doc = "Allows debug in Standby mode Write access can be protected by PWR_SECCFGR.LPMSEC. The CPU debug and clocks remain active and the HSI oscillator is used as system clock, the supply and SRAM memory content is maintained during Standby debug mode, allowing CPU debug capability. On exit from Standby mode, a standby reset is performed."]
         #[inline(always)]
         pub fn set_dbg_standby(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);

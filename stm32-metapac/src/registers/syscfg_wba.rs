@@ -261,7 +261,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "rdy1",
                     description: Some(
-                        "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI16 clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI16 clock is not enabled (HSION).",
+                        "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION).",
                     ),
                     bit_offset: 8,
                     bit_size: 1,

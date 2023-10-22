@@ -1523,15 +1523,15 @@ pub mod regs {
         pub fn set_lserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI16 ready Interrupt clear"]
+        #[doc = "HSI ready Interrupt clear"]
         #[inline(always)]
-        pub const fn hsi16rdyc(&self) -> bool {
+        pub const fn hsirdyc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready Interrupt clear"]
+        #[doc = "HSI ready Interrupt clear"]
         #[inline(always)]
-        pub fn set_hsi16rdyc(&mut self, val: bool) {
+        pub fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSE ready Interrupt clear"]
@@ -1634,15 +1634,15 @@ pub mod regs {
         pub fn set_lserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI16 ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
-        pub const fn hsi16rdyie(&self) -> bool {
+        pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
-        pub fn set_hsi16rdyie(&mut self, val: bool) {
+        pub fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSE ready interrupt flag"]
@@ -1734,15 +1734,15 @@ pub mod regs {
         pub fn set_lserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSI16 ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
-        pub const fn hsi16rdyf(&self) -> bool {
+        pub const fn hsirdyf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16 ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
-        pub fn set_hsi16rdyf(&mut self, val: bool) {
+        pub fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSE ready interrupt flag"]
@@ -1825,68 +1825,68 @@ pub mod regs {
     impl Cr {
         #[doc = "16 MHz high-speed internal clock enable"]
         #[inline(always)]
-        pub const fn hsi16on(&self) -> bool {
+        pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[doc = "16 MHz high-speed internal clock enable"]
         #[inline(always)]
-        pub fn set_hsi16on(&mut self, val: bool) {
+        pub fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "High-speed internal clock enable bit for some IP kernels"]
         #[inline(always)]
-        pub const fn hsi16keron(&self) -> bool {
+        pub const fn hsikeron(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[doc = "High-speed internal clock enable bit for some IP kernels"]
         #[inline(always)]
-        pub fn set_hsi16keron(&mut self, val: bool) {
+        pub fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Internal high-speed clock ready flag"]
         #[inline(always)]
-        pub const fn hsi16rdy(&self) -> bool {
+        pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "Internal high-speed clock ready flag"]
         #[inline(always)]
-        pub fn set_hsi16rdy(&mut self, val: bool) {
+        pub fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "HSI16DIVEN"]
+        #[doc = "HSIDIVEN"]
         #[inline(always)]
-        pub const fn hsi16diven(&self) -> bool {
+        pub const fn hsidiven(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16DIVEN"]
+        #[doc = "HSIDIVEN"]
         #[inline(always)]
-        pub fn set_hsi16diven(&mut self, val: bool) {
+        pub fn set_hsidiven(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "HSI16DIVF"]
+        #[doc = "HSIDIVF"]
         #[inline(always)]
-        pub const fn hsi16divf(&self) -> bool {
+        pub const fn hsidivf(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "HSI16DIVF"]
+        #[doc = "HSIDIVF"]
         #[inline(always)]
-        pub fn set_hsi16divf(&mut self, val: bool) {
+        pub fn set_hsidivf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "16 MHz high-speed internal clock output enable"]
         #[inline(always)]
-        pub const fn hsi16outen(&self) -> bool {
+        pub const fn hsiouten(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[doc = "16 MHz high-speed internal clock output enable"]
         #[inline(always)]
-        pub fn set_hsi16outen(&mut self, val: bool) {
+        pub fn set_hsiouten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "MSI clock enable"]
@@ -2524,24 +2524,24 @@ pub mod regs {
     impl Icscr {
         #[doc = "nternal high speed clock calibration"]
         #[inline(always)]
-        pub const fn hsi16cal(&self) -> u8 {
+        pub const fn hsical(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[doc = "nternal high speed clock calibration"]
         #[inline(always)]
-        pub fn set_hsi16cal(&mut self, val: u8) {
+        pub fn set_hsical(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "High speed internal clock trimming"]
         #[inline(always)]
-        pub const fn hsi16trim(&self) -> u8 {
+        pub const fn hsitrim(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
             val as u8
         }
         #[doc = "High speed internal clock trimming"]
         #[inline(always)]
-        pub fn set_hsi16trim(&mut self, val: u8) {
+        pub fn set_hsitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
         #[doc = "MSI clock ranges"]
@@ -2644,7 +2644,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "System clock selected as peripheral clock"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected as peripheral clock"]
+        #[doc = "HSI clock selected as peripheral clock"]
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2677,7 +2677,7 @@ pub mod vals {
         PCLK1 = 0,
         #[doc = "LSI clock selected as Timer clock"]
         LSI = 0x01,
-        #[doc = "HSI16 clock selected as Timer clock"]
+        #[doc = "HSI clock selected as Timer clock"]
         HSI = 0x02,
         #[doc = "LSE clock selected as Timer clock"]
         LSE = 0x03,
@@ -3096,7 +3096,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
     pub enum Stopwuck {
         #[doc = "Internal 64 KHz to 4 MHz (MSI) oscillator selected as wake-up from Stop clock"]
         MSI = 0,
-        #[doc = "Internal 16 MHz (HSI) oscillator selected as wake-up from Stop clock (or HSI16/4 if HSI16DIVEN=1)"]
+        #[doc = "Internal 16 MHz (HSI) oscillator selected as wake-up from Stop clock (or HSI/4 if HSIDIVEN=1)"]
         HSI = 0x01,
     }
     impl Stopwuck {
@@ -3162,7 +3162,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         PCLK1 = 0,
         #[doc = "System clock selected as peripheral clock"]
         SYS = 0x01,
-        #[doc = "HSI16 clock selected as peripheral clock"]
+        #[doc = "HSI clock selected as peripheral clock"]
         HSI = 0x02,
         #[doc = "LSE clock selected as peripheral clock"]
         LSE = 0x03,

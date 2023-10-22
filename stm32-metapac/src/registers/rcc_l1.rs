@@ -1690,9 +1690,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi16rdyf",
+                    name: "hsirdyf",
                     description: Some(
-                        "HSI16 ready interrupt flag",
+                        "HSI ready interrupt flag",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -1760,9 +1760,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi16rdyie",
+                    name: "hsirdyie",
                     description: Some(
-                        "HSI16 ready interrupt enable",
+                        "HSI ready interrupt enable",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -1820,9 +1820,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi16rdyc",
+                    name: "hsirdyc",
                     description: Some(
-                        "HSI16 ready interrupt clear",
+                        "HSI ready interrupt clear",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
@@ -1880,7 +1880,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hsi16on",
+                    name: "hsion",
                     description: Some(
                         "Internal high-speed clock enable",
                     ),
@@ -1890,7 +1890,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi16rdy",
+                    name: "hsirdy",
                     description: Some(
                         "Internal high-speed clock ready flag",
                     ),
@@ -2164,7 +2164,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hsi16cal",
+                    name: "hsical",
                     description: Some(
                         "nternal high speed clock calibration",
                     ),
@@ -2174,7 +2174,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi16trim",
+                    name: "hsitrim",
                     description: Some(
                         "High speed internal clock trimming",
                     ),
@@ -2353,7 +2353,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 oscillator clock selected",
+                        "HSI oscillator clock selected",
                     ),
                     value: 2,
                 },
@@ -2563,7 +2563,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 selected as PLL input clock",
+                        "HSI selected as PLL input clock",
                     ),
                     value: 0,
                 },
@@ -2703,7 +2703,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "HSI",
                     description: Some(
-                        "HSI16 oscillator used as system clock",
+                        "HSI oscillator used as system clock",
                     ),
                     value: 1,
                 },

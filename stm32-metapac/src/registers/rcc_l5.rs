@@ -2917,7 +2917,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 28,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Adcsel"),
                 },
             ],
         },
@@ -3995,6 +3995,28 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Adcsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLE",
+                    description: Some("No clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLLSAI1_R",
+                    description: Some("PLLADC1CLK clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("SYSCLK clock selected"),
+                    value: 3,
+                },
+            ],
+        },
         Enum {
             name: "Clk48sel",
             description: None,

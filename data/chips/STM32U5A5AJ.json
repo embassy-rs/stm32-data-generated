@@ -2549,7 +2549,8 @@
                         "reset": {
                             "register": "ahb3rstr",
                             "field": "lpdma1rst"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "interrupts": [
                         {
@@ -2586,7 +2587,8 @@
                         "mux": {
                             "register": "ccipr3",
                             "field": "lptim1sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2715,7 +2717,8 @@
                         "mux": {
                             "register": "ccipr1",
                             "field": "lptim2sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2830,7 +2833,8 @@
                         "reset": {
                             "register": "apb3rstr",
                             "field": "lptim3rst"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2960,7 +2964,8 @@
                         "reset": {
                             "register": "apb3rstr",
                             "field": "lptim4rst"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -3022,7 +3027,8 @@
                         "mux": {
                             "register": "ccipr3",
                             "field": "lpuart1sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -4472,7 +4478,8 @@
                         "enable": {
                             "register": "apb3enr",
                             "field": "rtcapben"
-                        }
+                        },
+                        "stop_mode": "Standby"
                     },
                     "pins": [
                         {

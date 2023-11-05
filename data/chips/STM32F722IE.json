@@ -2047,7 +2047,8 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "lptim1rst"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2345,7 +2346,8 @@
                         "enable": {
                             "register": "apb1enr",
                             "field": "rtcen"
-                        }
+                        },
+                        "stop_mode": "Standby"
                     },
                     "pins": [
                         {

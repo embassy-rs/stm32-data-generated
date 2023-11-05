@@ -2743,7 +2743,8 @@
                         "enable": {
                             "register": "apb1enr",
                             "field": "rtcapben"
-                        }
+                        },
+                        "stop_mode": "Standby"
                     },
                     "pins": [
                         {

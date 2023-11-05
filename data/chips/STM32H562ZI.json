@@ -2349,7 +2349,8 @@
                         "mux": {
                             "register": "ccipr2",
                             "field": "lptim1sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2473,7 +2474,8 @@
                         "mux": {
                             "register": "ccipr2",
                             "field": "lptim2sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2587,7 +2589,8 @@
                         "mux": {
                             "register": "ccipr2",
                             "field": "lptim3sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2721,7 +2724,8 @@
                         "mux": {
                             "register": "ccipr2",
                             "field": "lptim4sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2773,7 +2777,8 @@
                         "mux": {
                             "register": "ccipr2",
                             "field": "lptim5sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2897,7 +2902,8 @@
                         "mux": {
                             "register": "ccipr2",
                             "field": "lptim6sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -2991,7 +2997,8 @@
                         "mux": {
                             "register": "ccipr3",
                             "field": "lpuart1sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -3716,7 +3723,8 @@
                         "enable": {
                             "register": "apb3enr",
                             "field": "rtcapben"
-                        }
+                        },
+                        "stop_mode": "Standby"
                     },
                     "pins": [
                         {

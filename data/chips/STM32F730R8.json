@@ -1509,7 +1509,8 @@
                         "enable": {
                             "register": "apb1enr",
                             "field": "rtcen"
-                        }
+                        },
+                        "stop_mode": "Standby"
                     },
                     "pins": [
                         {

@@ -17,6 +17,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             }),
             reset: None,
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -125,6 +126,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "crcrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -164,6 +166,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "dma1rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -222,6 +225,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "dma2rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -376,6 +380,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "gpioarst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -401,6 +406,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "gpiobrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -426,6 +432,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "gpiocrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -451,6 +458,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "gpiodrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -476,6 +484,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "gpioerst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -501,6 +510,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "gpiohrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -526,6 +536,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "i2c1rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -622,6 +633,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "i2c2rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -699,6 +711,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "i2c3rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -797,6 +810,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "pwrrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -862,6 +876,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             }),
             reset: None,
             mux: None,
+            stop_mode: StopMode::Standby,
         }),
         pins: &[
             PeripheralPin {
@@ -915,6 +930,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "sdiorst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1042,6 +1058,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "spi1rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1177,6 +1194,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "spi2rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1291,6 +1309,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "spi3rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1414,6 +1433,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "spi4rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1514,6 +1534,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "spi5rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1624,6 +1645,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "syscfgrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],
@@ -1649,6 +1671,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim1rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -1846,6 +1869,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim10rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[PeripheralPin {
             pin: "PB8",
@@ -1896,6 +1920,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim11rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[PeripheralPin {
             pin: "PB9",
@@ -1946,6 +1971,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim2rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2098,6 +2124,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim3rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2218,6 +2245,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim4rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2314,6 +2342,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim5rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2445,6 +2474,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "tim9rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2516,6 +2546,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usart1rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2612,6 +2643,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usart2rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2688,6 +2720,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usart6rst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2756,6 +2789,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usb_otg_fsrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[
             PeripheralPin {
@@ -2828,6 +2862,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "wwdgrst",
             }),
             mux: None,
+            stop_mode: StopMode::Stop1,
         }),
         pins: &[],
         dma_channels: &[],

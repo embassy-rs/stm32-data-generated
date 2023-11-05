@@ -632,7 +632,8 @@
                         "mux": {
                             "register": "ccipr3",
                             "field": "lptim1sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -706,7 +707,8 @@
                         "mux": {
                             "register": "ccipr1",
                             "field": "lptim2sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -775,7 +777,8 @@
                         "mux": {
                             "register": "ccipr3",
                             "field": "lpuart1sel"
-                        }
+                        },
+                        "stop_mode": "Stop2"
                     },
                     "pins": [
                         {
@@ -996,7 +999,8 @@
                         "enable": {
                             "register": "apb7enr",
                             "field": "rtcapben"
-                        }
+                        },
+                        "stop_mode": "Standby"
                     },
                     "interrupts": [
                         {

@@ -316,7 +316,7 @@ pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800 as usize as _
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00 as usize as _) };
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_5c00 as usize as _) };
-pub const CRS: *mut () = 0x4000_6000 as usize as _;
+pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6000 as usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_7c00 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000 as usize as _) };
@@ -373,6 +373,8 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
+#[path = "../../peripherals/crs_v1.rs"]
+pub mod crs;
 #[path = "../../peripherals/dbgmcu_wb.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dmamux_v1.rs"]

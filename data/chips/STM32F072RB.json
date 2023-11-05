@@ -601,6 +601,11 @@
                 {
                     "name": "CRS",
                     "address": 1073769472,
+                    "registers": {
+                        "kind": "crs",
+                        "version": "v1",
+                        "block": "CRS"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

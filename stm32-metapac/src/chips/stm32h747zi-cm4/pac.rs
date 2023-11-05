@@ -638,7 +638,7 @@ pub const CEC: *mut () = 0x4000_6c00 as usize as _;
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _) };
 pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800 as usize as _) };
 pub const UART8: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7c00 as usize as _) };
-pub const CRS: *mut () = 0x4000_8400 as usize as _;
+pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_8400 as usize as _) };
 pub const SWPMI1: *mut () = 0x4000_8800 as usize as _;
 pub const OPAMP1: *mut () = 0x4000_9000 as usize as _;
 pub const OPAMP2: *mut () = 0x4000_9010 as usize as _;
@@ -735,6 +735,8 @@ pub mod bdma;
 pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
+#[path = "../../peripherals/crs_v1.rs"]
+pub mod crs;
 #[path = "../../peripherals/dac_v3.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_h7.rs"]

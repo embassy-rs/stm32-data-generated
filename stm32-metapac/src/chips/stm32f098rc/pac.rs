@@ -167,7 +167,7 @@ pub const USART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000 as 
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
 pub const CAN: can::Can = unsafe { can::Can::from_ptr(0x4000_6400 as usize as _) };
-pub const CRS: *mut () = 0x4000_6c00 as usize as _;
+pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6c00 as usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
 pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _) };
 pub const CEC: *mut () = 0x4000_7800 as usize as _;
@@ -217,6 +217,8 @@ pub mod bdma;
 pub mod can;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
+#[path = "../../peripherals/crs_v1.rs"]
+pub mod crs;
 #[path = "../../peripherals/dac_v1.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_f0.rs"]

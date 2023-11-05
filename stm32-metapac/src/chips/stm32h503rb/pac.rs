@@ -433,7 +433,7 @@ pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800 as 
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
 pub const I3C1: *mut () = 0x4000_5c00 as usize as _;
-pub const CRS: *mut () = 0x4000_6000 as usize as _;
+pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000 as usize as _) };
 pub const DTS: *mut () = 0x4000_8c00 as usize as _;
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
 pub const FDCAN1: *mut () = 0x4000_a400 as usize as _;
@@ -479,6 +479,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 }
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
+#[path = "../../peripherals/crs_v1.rs"]
+pub mod crs;
 #[path = "../../peripherals/exti_h50.rs"]
 pub mod exti;
 #[path = "../../peripherals/flash_h50.rs"]

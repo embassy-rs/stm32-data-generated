@@ -929,6 +929,11 @@
                 {
                     "name": "CRS",
                     "address": 1073775616,
+                    "registers": {
+                        "kind": "crs",
+                        "version": "v1",
+                        "block": "CRS"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -10263,6 +10268,11 @@
                 {
                     "name": "CRS",
                     "address": 1073775616,
+                    "registers": {
+                        "kind": "crs",
+                        "version": "v1",
+                        "block": "CRS"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

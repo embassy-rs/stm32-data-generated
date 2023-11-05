@@ -416,7 +416,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "CRS",
         address: 1073766400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "crs",
+            version: "v1",
+            block: "CRS",
+            ir: &crs::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -6826,6 +6831,8 @@ pub mod bdma;
 pub mod can;
 #[path = "../registers/crc_v2.rs"]
 pub mod crc;
+#[path = "../registers/crs_v1.rs"]
+pub mod crs;
 #[path = "../registers/dac_v2.rs"]
 pub mod dac;
 #[path = "../registers/dmamux_v1.rs"]

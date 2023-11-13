@@ -149,9 +149,9 @@ impl Rcc {
     pub const fn apb2smenr(self) -> crate::common::Reg<regs::Apb2smenr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(128usize) as _) }
     }
-    #[doc = "CCIPR1"]
+    #[doc = "CCIPR"]
     #[inline(always)]
-    pub const fn ccipr1(self) -> crate::common::Reg<regs::Ccipr1, crate::common::RW> {
+    pub const fn ccipr(self) -> crate::common::Reg<regs::Ccipr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(136usize) as _) }
     }
     #[doc = "BDCR"]
@@ -3464,11 +3464,11 @@ pub mod regs {
             Bdcr(0)
         }
     }
-    #[doc = "CCIPR1"]
+    #[doc = "CCIPR"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ccipr1(pub u32);
-    impl Ccipr1 {
+    pub struct Ccipr(pub u32);
+    impl Ccipr {
         #[doc = "USART1 clock source selection"]
         #[inline(always)]
         pub const fn usart1sel(&self) -> u8 {
@@ -3635,10 +3635,10 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
     }
-    impl Default for Ccipr1 {
+    impl Default for Ccipr {
         #[inline(always)]
-        fn default() -> Ccipr1 {
-            Ccipr1(0)
+        fn default() -> Ccipr {
+            Ccipr(0)
         }
     }
     #[doc = "Peripherals independent clock configuration register"]

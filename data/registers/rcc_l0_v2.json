@@ -794,10 +794,11 @@
         "enum": "LPTIMSEL"
       },
       {
-        "name": "HSI48MSEL",
-        "description": "48 MHz HSI48 clock source selection",
+        "name": "CLK48SEL",
+        "description": "48 MHz clock source selection",
         "bit_offset": 26,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "CLK48SEL"
       }
     ]
   },
@@ -1465,6 +1466,21 @@
       }
     ]
   },
+  "enum/CLK48SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PLL1_VCO_DIV_2",
+        "description": "PLL VCO divided by 2 selected",
+        "value": 0
+      },
+      {
+        "name": "HSI48",
+        "description": "HSI48 clock selected",
+        "value": 1
+      }
+    ]
+  },
   "enum/HPRE": {
     "bit_size": 4,
     "variants": [
@@ -1664,44 +1680,39 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "Range0",
+        "name": "Range66K",
         "description": "range 0 around 65.536 kHz",
         "value": 0
       },
       {
-        "name": "Range1",
+        "name": "Range131K",
         "description": "range 1 around 131.072 kHz",
         "value": 1
       },
       {
-        "name": "Range2",
+        "name": "Range262K",
         "description": "range 2 around 262.144 kHz",
         "value": 2
       },
       {
-        "name": "Range3",
+        "name": "Range524K",
         "description": "range 3 around 524.288 kHz",
         "value": 3
       },
       {
-        "name": "Range4",
+        "name": "Range1M",
         "description": "range 4 around 1.048 MHz",
         "value": 4
       },
       {
-        "name": "Range5",
+        "name": "Range2M",
         "description": "range 5 around 2.097 MHz (reset value)",
         "value": 5
       },
       {
-        "name": "Range6",
+        "name": "Range4M",
         "description": "range 6 around 4.194 MHz",
         "value": 6
-      },
-      {
-        "name": "Range7",
-        "description": "not allowed",
-        "value": 7
       }
     ]
   },
@@ -1904,7 +1915,7 @@
         "value": 2
       },
       {
-        "name": "PLL1_P",
+        "name": "PLL1_R",
         "description": "PLL used as system clock",
         "value": 3
       }

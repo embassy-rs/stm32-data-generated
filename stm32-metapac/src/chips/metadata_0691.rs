@@ -20,7 +20,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "adcrst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "adcsel",
             }),
             stop_mode: StopMode::Stop1,
@@ -139,7 +139,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "adcrst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "adcsel",
             }),
             stop_mode: StopMode::Stop1,
@@ -1488,7 +1488,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "i2c1rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "i2c1sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -1592,7 +1592,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "i2c2rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "i2c2sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -1686,7 +1686,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "i2c3rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "i2c3sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -1910,7 +1910,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "lptim1rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "lptim1sel",
             }),
             stop_mode: StopMode::Stop2,
@@ -2003,7 +2003,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "lptim2rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "lptim2sel",
             }),
             stop_mode: StopMode::Stop2,
@@ -2076,7 +2076,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "lptim3rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "lptim3sel",
             }),
             stop_mode: StopMode::Stop2,
@@ -2154,7 +2154,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "lpuart1rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "lpuart1sel",
             }),
             stop_mode: StopMode::Stop2,
@@ -5456,7 +5456,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "uart4rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "uart4sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -5539,7 +5539,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "uart5rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "uart5sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -5721,7 +5721,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usart1rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "usart1sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -5874,7 +5874,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usart2rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "usart2sel",
             }),
             stop_mode: StopMode::Stop1,
@@ -5997,7 +5997,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 field: "usart3rst",
             }),
             mux: Some(PeripheralRccRegister {
-                register: "ccipr1",
+                register: "ccipr",
                 field: "usart3sel",
             }),
             stop_mode: StopMode::Stop1,

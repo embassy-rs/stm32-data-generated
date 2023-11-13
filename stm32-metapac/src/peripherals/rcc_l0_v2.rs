@@ -1345,16 +1345,16 @@ pub mod regs {
         pub fn set_lptim1sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
-        #[doc = "48 MHz HSI48 clock source selection"]
+        #[doc = "48 MHz clock source selection"]
         #[inline(always)]
-        pub const fn hsi48msel(&self) -> bool {
+        pub const fn clk48sel(&self) -> super::vals::Clk48sel {
             let val = (self.0 >> 26usize) & 0x01;
-            val != 0
+            super::vals::Clk48sel::from_bits(val as u8)
         }
-        #[doc = "48 MHz HSI48 clock source selection"]
+        #[doc = "48 MHz clock source selection"]
         #[inline(always)]
-        pub fn set_hsi48msel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        pub fn set_clk48sel(&mut self, val: super::vals::Clk48sel) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
         }
     }
     impl Default for Ccipr {
@@ -2588,6 +2588,36 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Clk48sel {
+        #[doc = "PLL VCO divided by 2 selected"]
+        PLL1_VCO_DIV_2 = 0,
+        #[doc = "HSI48 clock selected"]
+        HSI48 = 0x01,
+    }
+    impl Clk48sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Clk48sel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Clk48sel {
+        #[inline(always)]
+        fn from(val: u8) -> Clk48sel {
+            Clk48sel::from_bits(val)
+        }
+    }
+    impl From<Clk48sel> for u8 {
+        #[inline(always)]
+        fn from(val: Clk48sel) -> u8 {
+            Clk48sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hpre {
         #[doc = "system clock not divided"]
         DIV1 = 0,
@@ -2831,21 +2861,20 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Msirange {
         #[doc = "range 0 around 65.536 kHz"]
-        RANGE0 = 0,
+        RANGE66K = 0,
         #[doc = "range 1 around 131.072 kHz"]
-        RANGE1 = 0x01,
+        RANGE131K = 0x01,
         #[doc = "range 2 around 262.144 kHz"]
-        RANGE2 = 0x02,
+        RANGE262K = 0x02,
         #[doc = "range 3 around 524.288 kHz"]
-        RANGE3 = 0x03,
+        RANGE524K = 0x03,
         #[doc = "range 4 around 1.048 MHz"]
-        RANGE4 = 0x04,
+        RANGE1M = 0x04,
         #[doc = "range 5 around 2.097 MHz (reset value)"]
-        RANGE5 = 0x05,
+        RANGE2M = 0x05,
         #[doc = "range 6 around 4.194 MHz"]
-        RANGE6 = 0x06,
-        #[doc = "not allowed"]
-        RANGE7 = 0x07,
+        RANGE4M = 0x06,
+        _RESERVED_7 = 0x07,
     }
     impl Msirange {
         #[inline(always)]
@@ -3131,7 +3160,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x02,
         #[doc = "PLL used as system clock"]
-        PLL1_P = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

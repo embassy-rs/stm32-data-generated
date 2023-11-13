@@ -167,10 +167,10 @@
         "fieldset": "APB2SMENR"
       },
       {
-        "name": "CCIPR1",
-        "description": "CCIPR1",
+        "name": "CCIPR",
+        "description": "CCIPR",
         "byte_offset": 136,
-        "fieldset": "CCIPR1"
+        "fieldset": "CCIPR"
       },
       {
         "name": "BDCR",
@@ -1988,8 +1988,8 @@
       }
     ]
   },
-  "fieldset/CCIPR1": {
-    "description": "CCIPR1",
+  "fieldset/CCIPR": {
+    "description": "CCIPR",
     "fields": [
       {
         "name": "USART1SEL",

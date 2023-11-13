@@ -2726,21 +2726,20 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Msirange {
         #[doc = "range 0 around 65.536 kHz"]
-        RANGE0 = 0,
+        RANGE66K = 0,
         #[doc = "range 1 around 131.072 kHz"]
-        RANGE1 = 0x01,
+        RANGE131K = 0x01,
         #[doc = "range 2 around 262.144 kHz"]
-        RANGE2 = 0x02,
+        RANGE262K = 0x02,
         #[doc = "range 3 around 524.288 kHz"]
-        RANGE3 = 0x03,
+        RANGE524K = 0x03,
         #[doc = "range 4 around 1.048 MHz"]
-        RANGE4 = 0x04,
+        RANGE1M = 0x04,
         #[doc = "range 5 around 2.097 MHz (reset value)"]
-        RANGE5 = 0x05,
+        RANGE2M = 0x05,
         #[doc = "range 6 around 4.194 MHz"]
-        RANGE6 = 0x06,
-        #[doc = "not allowed"]
-        RANGE7 = 0x07,
+        RANGE4M = 0x06,
+        _RESERVED_7 = 0x07,
     }
     impl Msirange {
         #[inline(always)]
@@ -3026,7 +3025,7 @@ bits in the RCC clock control register (RCC_CR)) used as the RTC clock"]
         #[doc = "HSE oscillator used as system clock"]
         HSE = 0x02,
         #[doc = "PLL used as system clock"]
-        PLL1_P = 0x03,
+        PLL1_R = 0x03,
     }
     impl Sw {
         #[inline(always)]

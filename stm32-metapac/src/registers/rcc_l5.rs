@@ -304,14 +304,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "ccipr1",
-                description: Some("CCIPR1"),
+                name: "ccipr",
+                description: Some("CCIPR"),
                 array: None,
                 byte_offset: 136,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Ccipr1"),
+                    fieldset: Some("Ccipr"),
                 }),
             },
             BlockItem {
@@ -2794,9 +2794,9 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccipr1",
+            name: "Ccipr",
             extends: None,
-            description: Some("CCIPR1"),
+            description: Some("CCIPR"),
             bit_size: 32,
             fields: &[
                 Field {

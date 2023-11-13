@@ -302,7 +302,7 @@
                             "field": "adcrst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "adcsel"
                         }
                     },
@@ -405,7 +405,7 @@
                             "field": "adcrst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "adcsel"
                         }
                     },
@@ -1176,7 +1176,7 @@
                             "field": "i2c1rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "i2c1sel"
                         }
                     },
@@ -1259,7 +1259,7 @@
                             "field": "i2c2rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "i2c2sel"
                         }
                     },
@@ -1332,7 +1332,7 @@
                             "field": "i2c3rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "i2c3sel"
                         }
                     },
@@ -1492,7 +1492,7 @@
                             "field": "lptim1rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "lptim1sel"
                         },
                         "stop_mode": "Stop2"
@@ -1565,7 +1565,7 @@
                             "field": "lptim2rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "lptim2sel"
                         },
                         "stop_mode": "Stop2"
@@ -1623,7 +1623,7 @@
                             "field": "lptim3rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "lptim3sel"
                         },
                         "stop_mode": "Stop2"
@@ -1686,7 +1686,7 @@
                             "field": "lpuart1rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "lpuart1sel"
                         },
                         "stop_mode": "Stop2"
@@ -4059,7 +4059,7 @@
                             "field": "uart4rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "uart4sel"
                         }
                     },
@@ -4138,7 +4138,7 @@
                             "field": "uart5rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "uart5sel"
                         }
                     },
@@ -4292,7 +4292,7 @@
                             "field": "usart1rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "usart1sel"
                         }
                     },
@@ -4406,7 +4406,7 @@
                             "field": "usart2rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "usart2sel"
                         }
                     },
@@ -4490,7 +4490,7 @@
                             "field": "usart3rst"
                         },
                         "mux": {
-                            "register": "ccipr1",
+                            "register": "ccipr",
                             "field": "usart3sel"
                         }
                     },

@@ -2806,60 +2806,53 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "RANGE0",
+                    name: "RANGE66K",
                     description: Some(
                         "range 0 around 65.536 kHz",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "RANGE131K",
                     description: Some(
                         "range 1 around 131.072 kHz",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RANGE2",
+                    name: "RANGE262K",
                     description: Some(
                         "range 2 around 262.144 kHz",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RANGE3",
+                    name: "RANGE524K",
                     description: Some(
                         "range 3 around 524.288 kHz",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "RANGE4",
+                    name: "RANGE1M",
                     description: Some(
                         "range 4 around 1.048 MHz",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "RANGE5",
+                    name: "RANGE2M",
                     description: Some(
                         "range 5 around 2.097 MHz (reset value)",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "RANGE6",
+                    name: "RANGE4M",
                     description: Some(
                         "range 6 around 4.194 MHz",
                     ),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "RANGE7",
-                    description: Some(
-                        "not allowed",
-                    ),
-                    value: 7,
                 },
             ],
         },
@@ -3142,7 +3135,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "PLL1_R",
                     description: Some(
                         "PLL used as system clock",
                     ),

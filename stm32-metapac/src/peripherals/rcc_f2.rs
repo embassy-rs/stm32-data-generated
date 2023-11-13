@@ -3063,25 +3063,25 @@ pub mod regs {
     impl Plli2scfgr {
         #[doc = "PLLI2S multiplication factor for VCO"]
         #[inline(always)]
-        pub const fn plli2sn(&self) -> u16 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 6usize) & 0x01ff;
-            val as u16
+            super::vals::Plln::from_bits(val as u16)
         }
         #[doc = "PLLI2S multiplication factor for VCO"]
         #[inline(always)]
-        pub fn set_plli2sn(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val as u32) & 0x01ff) << 6usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 6usize)) | (((val.to_bits() as u32) & 0x01ff) << 6usize);
         }
         #[doc = "PLLI2S division factor for I2S clocks"]
         #[inline(always)]
-        pub const fn plli2sr(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Pllr {
             let val = (self.0 >> 28usize) & 0x07;
-            val as u8
+            super::vals::Pllr::from_bits(val as u8)
         }
         #[doc = "PLLI2S division factor for I2S clocks"]
         #[inline(always)]
-        pub fn set_plli2sr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val as u32) & 0x07) << 28usize);
+        pub fn set_pllr(&mut self, val: super::vals::Pllr) {
+            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }
     impl Default for Plli2scfgr {
@@ -3766,6 +3766,40 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllq) -> u8 {
             Pllq::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Pllr {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        DIV2 = 0x02,
+        DIV3 = 0x03,
+        DIV4 = 0x04,
+        DIV5 = 0x05,
+        DIV6 = 0x06,
+        DIV7 = 0x07,
+    }
+    impl Pllr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllr {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllr {
+        #[inline(always)]
+        fn from(val: u8) -> Pllr {
+            Pllr::from_bits(val)
+        }
+    }
+    impl From<Pllr> for u8 {
+        #[inline(always)]
+        fn from(val: Pllr) -> u8 {
+            Pllr::to_bits(val)
         }
     }
     #[repr(u8)]

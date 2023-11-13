@@ -1725,16 +1725,18 @@
     "description": "PLLI2S configuration register",
     "fields": [
       {
-        "name": "PLLI2SN",
+        "name": "PLLN",
         "description": "PLLI2S multiplication factor for VCO",
         "bit_offset": 6,
-        "bit_size": 9
+        "bit_size": 9,
+        "enum": "PLLN"
       },
       {
-        "name": "PLLI2SR",
+        "name": "PLLR",
         "description": "PLLI2S division factor for I2S clocks",
         "bit_offset": 28,
-        "bit_size": 3
+        "bit_size": 3,
+        "enum": "PLLR"
       }
     ]
   },
@@ -3218,6 +3220,35 @@
       {
         "name": "Div15",
         "value": 15
+      }
+    ]
+  },
+  "enum/PLLR": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Div2",
+        "value": 2
+      },
+      {
+        "name": "Div3",
+        "value": 3
+      },
+      {
+        "name": "Div4",
+        "value": 4
+      },
+      {
+        "name": "Div5",
+        "value": 5
+      },
+      {
+        "name": "Div6",
+        "value": 6
+      },
+      {
+        "name": "Div7",
+        "value": 7
       }
     ]
   },

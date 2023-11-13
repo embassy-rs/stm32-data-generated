@@ -2377,20 +2377,20 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "plli2sn",
+                    name: "plln",
                     description: Some("PLLI2S multiplication factor for VCO"),
                     bit_offset: 6,
                     bit_size: 9,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Plln"),
                 },
                 Field {
-                    name: "plli2sr",
+                    name: "pllr",
                     description: Some("PLLI2S division factor for I2S clocks"),
                     bit_offset: 28,
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Pllr"),
                 },
             ],
         },
@@ -4221,6 +4221,43 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV15",
                     description: None,
                     value: 15,
+                },
+            ],
+        },
+        Enum {
+            name: "Pllr",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: None,
+                    value: 7,
                 },
             ],
         },

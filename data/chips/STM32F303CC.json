@@ -645,8 +645,7 @@
                             "signal": "OUT",
                             "af": 8
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP2",
@@ -692,8 +691,7 @@
                             "signal": "OUT",
                             "af": 8
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP3",
@@ -720,8 +718,7 @@
                             "pin": "PB14",
                             "signal": "INP"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP4",
@@ -748,8 +745,7 @@
                             "pin": "PB2",
                             "signal": "INM"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP5",
@@ -776,8 +772,7 @@
                             "pin": "PB13",
                             "signal": "INP"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP6",
@@ -804,8 +799,7 @@
                             "pin": "PB15",
                             "signal": "INM"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP7",

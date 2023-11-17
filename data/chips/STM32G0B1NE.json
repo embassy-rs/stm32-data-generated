@@ -1548,8 +1548,7 @@
                             "signal": "MCO_1",
                             "af": 0
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "RTC",
@@ -4090,20 +4089,6 @@
                             "pin": "PA4",
                             "signal": "NOE",
                             "af": 2
-                        }
-                    ],
-                    "interrupts": [
-                        {
-                            "signal": "HP",
-                            "interrupt": "USB_UCPD1_2"
-                        },
-                        {
-                            "signal": "LP",
-                            "interrupt": "USB_UCPD1_2"
-                        },
-                        {
-                            "signal": "WKUP",
-                            "interrupt": "USB_UCPD1_2"
                         }
                     ]
                 },

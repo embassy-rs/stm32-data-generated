@@ -1617,10 +1617,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ALARM",
-                interrupt: "RTC",
-            },
-            PeripheralInterrupt {
-                signal: "ALARM",
                 interrupt: "RTC_ALARM",
             },
             PeripheralInterrupt {
@@ -1629,10 +1625,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "STAMP",
-                interrupt: "RTC",
-            },
-            PeripheralInterrupt {
-                signal: "TAMP",
                 interrupt: "RTC",
             },
             PeripheralInterrupt {

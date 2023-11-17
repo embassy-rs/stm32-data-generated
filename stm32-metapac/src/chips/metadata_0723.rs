@@ -1759,16 +1759,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "ER",
-                interrupt: "GPU2D",
-            },
-            PeripheralInterrupt {
-                signal: "ER",
-                interrupt: "GPU2D_ER",
-            },
-        ],
+        interrupts: &[PeripheralInterrupt {
+            signal: "ER",
+            interrupt: "GPU2D_ER",
+        }],
     },
     Peripheral {
         name: "HASH",
@@ -3018,10 +3012,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         ],
         dma_channels: &[],
         interrupts: &[
-            PeripheralInterrupt {
-                signal: "ER",
-                interrupt: "LTDC",
-            },
             PeripheralInterrupt {
                 signal: "ER",
                 interrupt: "LTDC_ER",

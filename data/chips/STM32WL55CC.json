@@ -3913,8 +3913,7 @@
                             "pin": "PC15",
                             "signal": "OSC32_OUT"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "RNG",
@@ -3992,8 +3991,7 @@
                             "pin": "PC13",
                             "signal": "TS"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "SPI1",

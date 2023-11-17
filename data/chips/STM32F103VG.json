@@ -1459,10 +1459,6 @@
                     "interrupts": [
                         {
                             "signal": "ALARM",
-                            "interrupt": "RTC"
-                        },
-                        {
-                            "signal": "ALARM",
                             "interrupt": "RTC_Alarm"
                         },
                         {
@@ -1471,10 +1467,6 @@
                         },
                         {
                             "signal": "STAMP",
-                            "interrupt": "RTC"
-                        },
-                        {
-                            "signal": "TAMP",
                             "interrupt": "RTC"
                         },
                         {

@@ -5571,10 +5571,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "WKUP",
-                interrupt: "OTG_FS",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
                 interrupt: "OTG_FS_WKUP",
             },
         ],
@@ -5692,15 +5688,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "EP1_IN",
-                interrupt: "OTG_HS",
-            },
-            PeripheralInterrupt {
-                signal: "EP1_IN",
                 interrupt: "OTG_HS_EP1_IN",
-            },
-            PeripheralInterrupt {
-                signal: "EP1_OUT",
-                interrupt: "OTG_HS",
             },
             PeripheralInterrupt {
                 signal: "EP1_OUT",
@@ -5708,10 +5696,6 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "GLOBAL",
-                interrupt: "OTG_HS",
-            },
-            PeripheralInterrupt {
-                signal: "WKUP",
                 interrupt: "OTG_HS",
             },
             PeripheralInterrupt {

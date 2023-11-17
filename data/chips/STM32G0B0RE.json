@@ -3631,20 +3631,6 @@
                             "signal": "NOE",
                             "af": 6
                         }
-                    ],
-                    "interrupts": [
-                        {
-                            "signal": "HP",
-                            "interrupt": "USB"
-                        },
-                        {
-                            "signal": "LP",
-                            "interrupt": "USB"
-                        },
-                        {
-                            "signal": "WKUP",
-                            "interrupt": "USB"
-                        }
                     ]
                 },
                 {

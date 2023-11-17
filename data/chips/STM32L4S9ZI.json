@@ -3040,10 +3040,6 @@
                     "interrupts": [
                         {
                             "signal": "ER",
-                            "interrupt": "LTDC"
-                        },
-                        {
-                            "signal": "ER",
                             "interrupt": "LTDC_ER"
                         },
                         {

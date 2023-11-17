@@ -4205,10 +4205,6 @@
                         },
                         {
                             "signal": "WKUP",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_FS_WKUP"
                         }
                     ]

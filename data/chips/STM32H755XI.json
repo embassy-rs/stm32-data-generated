@@ -945,8 +945,7 @@
                             "signal": "OUT",
                             "af": 13
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP2",
@@ -978,8 +977,7 @@
                             "pin": "PE9",
                             "signal": "INP"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "CRC",
@@ -1642,7 +1640,6 @@
                             "af": 3
                         }
                     ],
-                    "interrupts": [],
                     "dma_channels": [
                         {
                             "signal": "FLT0",
@@ -1807,8 +1804,7 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    },
-                    "interrupts": []
+                    }
                 },
                 {
                     "name": "DMAMUX2",
@@ -1817,8 +1813,7 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    },
-                    "interrupts": []
+                    }
                 },
                 {
                     "name": "ETH",
@@ -2013,10 +2008,6 @@
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "ETH"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "ETH"
                         },
                         {
@@ -4559,10 +4550,6 @@
                     "interrupts": [
                         {
                             "signal": "ER",
-                            "interrupt": "LTDC"
-                        },
-                        {
-                            "signal": "ER",
                             "interrupt": "LTDC_ER"
                         },
                         {
@@ -4615,10 +4602,6 @@
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "MDIOS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "MDIOS"
                         },
                         {
@@ -9357,15 +9340,7 @@
                     "interrupts": [
                         {
                             "signal": "EP1_IN",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "EP1_IN",
                             "interrupt": "OTG_FS_EP1_IN"
-                        },
-                        {
-                            "signal": "EP1_OUT",
-                            "interrupt": "OTG_FS"
                         },
                         {
                             "signal": "EP1_OUT",
@@ -9373,10 +9348,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_FS"
                         },
                         {
@@ -9513,15 +9484,7 @@
                     "interrupts": [
                         {
                             "signal": "EP1_IN",
-                            "interrupt": "OTG_HS"
-                        },
-                        {
-                            "signal": "EP1_IN",
                             "interrupt": "OTG_HS_EP1_IN"
-                        },
-                        {
-                            "signal": "EP1_OUT",
-                            "interrupt": "OTG_HS"
                         },
                         {
                             "signal": "EP1_OUT",
@@ -9529,10 +9492,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_HS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_HS"
                         },
                         {
@@ -9585,8 +9544,7 @@
                             "register": "apb1lenr",
                             "field": "wwdg2en"
                         }
-                    },
-                    "interrupts": []
+                    }
                 }
             ],
             "nvic_priority_bits": 4,
@@ -10877,8 +10835,7 @@
                             "signal": "OUT",
                             "af": 13
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "COMP2",
@@ -10910,8 +10867,7 @@
                             "pin": "PE9",
                             "signal": "INP"
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "CRC",
@@ -11574,7 +11530,6 @@
                             "af": 3
                         }
                     ],
-                    "interrupts": [],
                     "dma_channels": [
                         {
                             "signal": "FLT0",
@@ -11739,8 +11694,7 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    },
-                    "interrupts": []
+                    }
                 },
                 {
                     "name": "DMAMUX2",
@@ -11749,8 +11703,7 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    },
-                    "interrupts": []
+                    }
                 },
                 {
                     "name": "ETH",
@@ -11945,10 +11898,6 @@
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "ETH"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "ETH"
                         },
                         {
@@ -14491,10 +14440,6 @@
                     "interrupts": [
                         {
                             "signal": "ER",
-                            "interrupt": "LTDC"
-                        },
-                        {
-                            "signal": "ER",
                             "interrupt": "LTDC_ER"
                         },
                         {
@@ -14547,10 +14492,6 @@
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "MDIOS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "MDIOS"
                         },
                         {
@@ -19289,15 +19230,7 @@
                     "interrupts": [
                         {
                             "signal": "EP1_IN",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "EP1_IN",
                             "interrupt": "OTG_FS_EP1_IN"
-                        },
-                        {
-                            "signal": "EP1_OUT",
-                            "interrupt": "OTG_FS"
                         },
                         {
                             "signal": "EP1_OUT",
@@ -19305,10 +19238,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_FS"
                         },
                         {
@@ -19445,15 +19374,7 @@
                     "interrupts": [
                         {
                             "signal": "EP1_IN",
-                            "interrupt": "OTG_HS"
-                        },
-                        {
-                            "signal": "EP1_IN",
                             "interrupt": "OTG_HS_EP1_IN"
-                        },
-                        {
-                            "signal": "EP1_OUT",
-                            "interrupt": "OTG_HS"
                         },
                         {
                             "signal": "EP1_OUT",
@@ -19461,10 +19382,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_HS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_HS"
                         },
                         {
@@ -19491,8 +19408,7 @@
                             "register": "apb3enr",
                             "field": "wwdg1en"
                         }
-                    },
-                    "interrupts": []
+                    }
                 },
                 {
                     "name": "WWDG2",

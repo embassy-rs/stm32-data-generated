@@ -613,7 +613,6 @@
                             "signal": "OUT2"
                         }
                     ],
-                    "interrupts": [],
                     "dma_channels": [
                         {
                             "signal": "CH1",
@@ -3398,7 +3397,6 @@
                             "field": "tim6rst"
                         }
                     },
-                    "interrupts": [],
                     "dma_channels": [
                         {
                             "signal": "UP",

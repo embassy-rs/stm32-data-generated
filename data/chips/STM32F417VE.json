@@ -1264,10 +1264,6 @@
                         },
                         {
                             "signal": "WKUP",
-                            "interrupt": "ETH"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "ETH_WKUP"
                         }
                     ]
@@ -4487,10 +4483,6 @@
                         },
                         {
                             "signal": "WKUP",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_FS_WKUP"
                         }
                     ]
@@ -4603,15 +4595,7 @@
                     "interrupts": [
                         {
                             "signal": "EP1_IN",
-                            "interrupt": "OTG_HS"
-                        },
-                        {
-                            "signal": "EP1_IN",
                             "interrupt": "OTG_HS_EP1_IN"
-                        },
-                        {
-                            "signal": "EP1_OUT",
-                            "interrupt": "OTG_HS"
                         },
                         {
                             "signal": "EP1_OUT",
@@ -4619,10 +4603,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_HS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_HS"
                         },
                         {

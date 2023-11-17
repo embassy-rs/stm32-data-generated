@@ -1174,10 +1174,6 @@
                     "interrupts": [
                         {
                             "signal": "ALARM",
-                            "interrupt": "RTC"
-                        },
-                        {
-                            "signal": "ALARM",
                             "interrupt": "RTC_Alarm"
                         },
                         {
@@ -1186,10 +1182,6 @@
                         },
                         {
                             "signal": "STAMP",
-                            "interrupt": "RTC"
-                        },
-                        {
-                            "signal": "TAMP",
                             "interrupt": "RTC"
                         },
                         {
@@ -2465,10 +2457,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_FS"
                         },
                         {

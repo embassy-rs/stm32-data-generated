@@ -1440,8 +1440,7 @@
                             "signal": "DA6",
                             "af": 12
                         }
-                    ],
-                    "interrupts": []
+                    ]
                 },
                 {
                     "name": "GPIOA",
@@ -4754,10 +4753,6 @@
                         },
                         {
                             "signal": "GLOBAL",
-                            "interrupt": "OTG_FS"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "OTG_FS"
                         },
                         {

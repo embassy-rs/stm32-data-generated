@@ -1875,10 +1875,6 @@
                     "interrupts": [
                         {
                             "signal": "ER",
-                            "interrupt": "GPU2D"
-                        },
-                        {
-                            "signal": "ER",
                             "interrupt": "GPU2D_ER"
                         }
                     ]
@@ -3280,10 +3276,6 @@
                         }
                     ],
                     "interrupts": [
-                        {
-                            "signal": "ER",
-                            "interrupt": "LTDC"
-                        },
                         {
                             "signal": "ER",
                             "interrupt": "LTDC_ER"

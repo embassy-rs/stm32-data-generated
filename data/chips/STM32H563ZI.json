@@ -957,10 +957,6 @@
                         },
                         {
                             "signal": "WKUP",
-                            "interrupt": "ETH"
-                        },
-                        {
-                            "signal": "WKUP",
                             "interrupt": "ETH_WKUP"
                         }
                     ]

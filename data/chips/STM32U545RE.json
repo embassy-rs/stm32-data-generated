@@ -4707,20 +4707,6 @@
                             "signal": "NOE",
                             "af": 10
                         }
-                    ],
-                    "interrupts": [
-                        {
-                            "signal": "HP",
-                            "interrupt": "USB"
-                        },
-                        {
-                            "signal": "LP",
-                            "interrupt": "USB"
-                        },
-                        {
-                            "signal": "WKUP",
-                            "interrupt": "USB"
-                        }
                     ]
                 },
                 {

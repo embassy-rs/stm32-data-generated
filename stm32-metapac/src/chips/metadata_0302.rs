@@ -3228,7 +3228,20 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "HP",
+                interrupt: "USB",
+            },
+            PeripheralInterrupt {
+                signal: "LP",
+                interrupt: "USB",
+            },
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "USB",
+            },
+        ],
     },
     Peripheral {
         name: "USBRAM",

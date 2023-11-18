@@ -3348,6 +3348,20 @@
                             "signal": "NOE",
                             "af": 2
                         }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "HP",
+                            "interrupt": "USB"
+                        },
+                        {
+                            "signal": "LP",
+                            "interrupt": "USB"
+                        },
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "USB"
+                        }
                     ]
                 },
                 {

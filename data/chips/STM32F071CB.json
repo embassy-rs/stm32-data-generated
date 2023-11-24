@@ -539,7 +539,7 @@
                     "address": 1073771520,
                     "registers": {
                         "kind": "dac",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "DAC"
                     },
                     "rcc": {

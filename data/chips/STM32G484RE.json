@@ -991,6 +991,11 @@
                 {
                     "name": "DAC1",
                     "address": 1342179328,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v7",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {
@@ -1034,6 +1039,11 @@
                 {
                     "name": "DAC2",
                     "address": 1342180352,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v7",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {
@@ -1068,6 +1078,11 @@
                 {
                     "name": "DAC3",
                     "address": 1342181376,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v7",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {
@@ -1101,6 +1116,11 @@
                 {
                     "name": "DAC4",
                     "address": 1342182400,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v7",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {

@@ -514,7 +514,7 @@ pub mod can;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
-#[path = "../../peripherals/dac_v2.rs"]
+#[path = "../../peripherals/dac_v5.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_l4.rs"]
 pub mod dbgmcu;

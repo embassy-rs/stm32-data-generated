@@ -533,7 +533,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "DAC1",
         address: 1342179328,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dac",
+            version: "v7",
+            block: "DAC",
+            ir: &dac::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk2",
             enable: Some(PeripheralRccRegister {
@@ -583,7 +588,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "DAC3",
         address: 1342181376,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dac",
+            version: "v7",
+            block: "DAC",
+            ir: &dac::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk2",
             enable: Some(PeripheralRccRegister {
@@ -4990,6 +5000,8 @@ pub mod can;
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]
 pub mod crs;
+#[path = "../registers/dac_v7.rs"]
+pub mod dac;
 #[path = "../registers/dbgmcu_g4.rs"]
 pub mod dbgmcu;
 #[path = "../registers/dmamux_v1.rs"]

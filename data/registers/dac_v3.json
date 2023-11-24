@@ -47,19 +47,19 @@
       },
       {
         "name": "DHR12RD",
-        "description": "Dual DAC 12-bit right-aligned data holding register",
+        "description": "dual 12-bit right-aligned data holding register",
         "byte_offset": 32,
         "fieldset": "DHR12RD"
       },
       {
         "name": "DHR12LD",
-        "description": "DUAL DAC 12-bit left aligned data holding register",
+        "description": "dual 12-bit left aligned data holding register",
         "byte_offset": 36,
         "fieldset": "DHR12LD"
       },
       {
         "name": "DHR8RD",
-        "description": "DUAL DAC 8-bit right aligned data holding register",
+        "description": "dual 8-bit right aligned data holding register",
         "byte_offset": 40,
         "fieldset": "DHR8RD"
       },
@@ -93,8 +93,8 @@
         "fieldset": "MCR"
       },
       {
-        "name": "SHSR1",
-        "description": "Sample and Hold sample time register",
+        "name": "SHSR",
+        "description": "sample and hold sample time register",
         "array": {
           "len": 2,
           "stride": 4
@@ -104,13 +104,13 @@
       },
       {
         "name": "SHHR",
-        "description": "Sample and Hold hold time register",
+        "description": "sample and hold hold time register",
         "byte_offset": 72,
         "fieldset": "SHHR"
       },
       {
         "name": "SHRR",
-        "description": "Sample and Hold refresh time register",
+        "description": "sample and hold refresh time register",
         "byte_offset": 76,
         "fieldset": "SHRR"
       }
@@ -120,16 +120,14 @@
     "description": "calibration control register",
     "fields": [
       {
-        "name": "OTRIM1",
-        "description": "DAC Channel 1 offset trimming value",
+        "name": "OTRIM",
+        "description": "channel offset trimming value",
         "bit_offset": 0,
-        "bit_size": 5
-      },
-      {
-        "name": "OTRIM2",
-        "description": "DAC Channel 2 offset trimming value",
-        "bit_offset": 16,
-        "bit_size": 5
+        "bit_size": 5,
+        "array": {
+          "len": 2,
+          "stride": 16
+        }
       }
     ]
   },
@@ -138,7 +136,7 @@
     "fields": [
       {
         "name": "EN",
-        "description": "DAC channel enable",
+        "description": "channel enable",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -148,8 +146,8 @@
       },
       {
         "name": "TEN",
-        "description": "DAC channel trigger enable",
-        "bit_offset": 1,
+        "description": "channel trigger enable",
+        "bit_offset": 2,
         "bit_size": 1,
         "array": {
           "len": 2,
@@ -157,15 +155,18 @@
         }
       },
       {
-        "name": "TSEL1",
-        "description": "DAC channel 1 trigger selection",
-        "bit_offset": 2,
-        "bit_size": 4,
-        "enum": "TSEL1"
+        "name": "TSEL",
+        "description": "channel trigger selection",
+        "bit_offset": 3,
+        "bit_size": 3,
+        "array": {
+          "len": 2,
+          "stride": 16
+        }
       },
       {
         "name": "WAVE",
-        "description": "DAC channel noise/triangle wave generation enable",
+        "description": "channel noise/triangle wave generation enable",
         "bit_offset": 6,
         "bit_size": 2,
         "array": {
@@ -176,7 +177,7 @@
       },
       {
         "name": "MAMP",
-        "description": "DAC channel mask/amplitude selector",
+        "description": "channel mask/amplitude selector",
         "bit_offset": 8,
         "bit_size": 4,
         "array": {
@@ -186,7 +187,7 @@
       },
       {
         "name": "DMAEN",
-        "description": "DAC channel DMA enable",
+        "description": "channel DMA enable",
         "bit_offset": 12,
         "bit_size": 1,
         "array": {
@@ -196,7 +197,7 @@
       },
       {
         "name": "DMAUDRIE",
-        "description": "DAC channel DMA Underrun Interrupt enable",
+        "description": "channel DMA Underrun Interrupt enable",
         "bit_offset": 13,
         "bit_size": 1,
         "array": {
@@ -213,13 +214,6 @@
           "len": 2,
           "stride": 16
         }
-      },
-      {
-        "name": "TSEL2",
-        "description": "DAC channel 2 trigger selection",
-        "bit_offset": 18,
-        "bit_size": 4,
-        "enum": "TSEL2"
       }
     ]
   },
@@ -228,18 +222,18 @@
     "fields": [
       {
         "name": "DHR",
-        "description": "DAC channel 12-bit left-aligned data",
+        "description": "channel 12-bit left-aligned data",
         "bit_offset": 4,
         "bit_size": 12
       }
     ]
   },
   "fieldset/DHR12LD": {
-    "description": "DUAL DAC 12-bit left aligned data holding register",
+    "description": "dual 12-bit left aligned data holding register",
     "fields": [
       {
         "name": "DHR",
-        "description": "DAC channel 12-bit left-aligned data",
+        "description": "channel 12-bit left-aligned data",
         "bit_offset": 4,
         "bit_size": 12,
         "array": {
@@ -254,18 +248,18 @@
     "fields": [
       {
         "name": "DHR",
-        "description": "DAC channel 12-bit right-aligned data",
+        "description": "channel 12-bit right-aligned data",
         "bit_offset": 0,
         "bit_size": 12
       }
     ]
   },
   "fieldset/DHR12RD": {
-    "description": "Dual DAC 12-bit right-aligned data holding register",
+    "description": "dual 12-bit right-aligned data holding register",
     "fields": [
       {
         "name": "DHR",
-        "description": "DAC channel 12-bit right-aligned data",
+        "description": "channel 12-bit right-aligned data",
         "bit_offset": 0,
         "bit_size": 12,
         "array": {
@@ -280,18 +274,18 @@
     "fields": [
       {
         "name": "DHR",
-        "description": "DAC channel 8-bit right-aligned data",
+        "description": "channel 8-bit right-aligned data",
         "bit_offset": 0,
         "bit_size": 8
       }
     ]
   },
   "fieldset/DHR8RD": {
-    "description": "DUAL DAC 8-bit right aligned data holding register",
+    "description": "dual 8-bit right aligned data holding register",
     "fields": [
       {
         "name": "DHR",
-        "description": "DAC channel 8-bit right-aligned data",
+        "description": "channel 8-bit right-aligned data",
         "bit_offset": 0,
         "bit_size": 8,
         "array": {
@@ -306,7 +300,7 @@
     "fields": [
       {
         "name": "DOR",
-        "description": "DAC channel data output",
+        "description": "channel data output",
         "bit_offset": 0,
         "bit_size": 12
       }
@@ -323,16 +317,17 @@
         "array": {
           "len": 2,
           "stride": 16
-        }
+        },
+        "enum": "MODE"
       }
     ]
   },
   "fieldset/SHHR": {
-    "description": "Sample and Hold hold time register",
+    "description": "sample and hold hold time register",
     "fields": [
       {
         "name": "THOLD",
-        "description": "DAC channel hold Time",
+        "description": "channel hold time",
         "bit_offset": 0,
         "bit_size": 10,
         "array": {
@@ -343,11 +338,11 @@
     ]
   },
   "fieldset/SHRR": {
-    "description": "Sample and Hold refresh time register",
+    "description": "sample and hold refresh time register",
     "fields": [
       {
         "name": "TREFRESH",
-        "description": "DAC channel refresh Time",
+        "description": "channel refresh time",
         "bit_offset": 0,
         "bit_size": 8,
         "array": {
@@ -358,11 +353,11 @@
     ]
   },
   "fieldset/SHSR": {
-    "description": "Sample and Hold sample time register",
+    "description": "sample and hold sample time register",
     "fields": [
       {
         "name": "TSAMPLE",
-        "description": "DAC channel sample Time",
+        "description": "channel sample time",
         "bit_offset": 0,
         "bit_size": 10
       }
@@ -373,7 +368,7 @@
     "fields": [
       {
         "name": "DMAUDR",
-        "description": "DAC channel DMA underrun flag",
+        "description": "channel DMA underrun flag",
         "bit_offset": 13,
         "bit_size": 1,
         "array": {
@@ -383,7 +378,7 @@
       },
       {
         "name": "CAL_FLAG",
-        "description": "DAC channel calibration offset status",
+        "description": "channel calibration offset status",
         "bit_offset": 14,
         "bit_size": 1,
         "array": {
@@ -393,7 +388,7 @@
       },
       {
         "name": "BWST",
-        "description": "DAC channel busy writing sample time flag",
+        "description": "channel busy writing sample time flag",
         "bit_offset": 15,
         "bit_size": 1,
         "array": {
@@ -408,7 +403,7 @@
     "fields": [
       {
         "name": "SWTRIG",
-        "description": "DAC channel software trigger",
+        "description": "channel software trigger",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -418,163 +413,48 @@
       }
     ]
   },
-  "enum/TSEL1": {
-    "bit_size": 4,
+  "enum/MODE": {
+    "bit_size": 3,
     "variants": [
       {
-        "name": "SOFTWARE",
-        "description": "Software trigger",
+        "name": "NORMAL_EXT_BUFEN",
+        "description": "Normal mode, external pin only, buffer enabled",
         "value": 0
       },
       {
-        "name": "TIM1_TRGO",
-        "description": "Timer 1 TRGO event",
+        "name": "NORMAL_EXT_INT_BUFEN",
+        "description": "Normal mode, external pin and internal peripherals, buffer enabled",
         "value": 1
       },
       {
-        "name": "TIM2_TRGO",
-        "description": "Timer 2 TRGO event",
+        "name": "NORMAL_EXT_BUFDIS",
+        "description": "Normal mode, external pin only, buffer disabled",
         "value": 2
       },
       {
-        "name": "TIM4_TRGO",
-        "description": "Timer 4 TRGO event",
+        "name": "NORMAL_INT_BUFDIS",
+        "description": "Normal mode, internal peripherals only, buffer disabled",
         "value": 3
       },
       {
-        "name": "TIM5_TRGO",
-        "description": "Timer 5 TRGO event",
+        "name": "SAMPHOLD_EXT_BUFEN",
+        "description": "Sample and hold mode, external pin only, buffer enabled",
         "value": 4
       },
       {
-        "name": "TIM6_TRGO",
-        "description": "Timer 6 TRGO event",
+        "name": "SAMPHOLD_EXT_INT_BUFEN",
+        "description": "Sample and hold mode, external pin and internal peripherals, buffer enabled",
         "value": 5
       },
       {
-        "name": "TIM7_TRGO",
-        "description": "Timer 7 TRGO event",
+        "name": "SAMPHOLD_EXT_INT_BUFDIS",
+        "description": "Sample and hold mode, external pin and internal peripherals, buffer disabled",
         "value": 6
       },
       {
-        "name": "TIM8_TRGO",
-        "description": "Timer 8 TRGO event",
+        "name": "SAMPHOLD_INT_BUFDIS",
+        "description": "Sample and hold mode, internal peripherals only, buffer disabled",
         "value": 7
-      },
-      {
-        "name": "TIM15_TRGO",
-        "description": "Timer 15 TRGO event",
-        "value": 8
-      },
-      {
-        "name": "HRTIM1_DACTRG1",
-        "description": "High resolution timer 1 DACTRG1 event",
-        "value": 9
-      },
-      {
-        "name": "HRTIM1_DACTRG2",
-        "description": "High resolution timer 1 DACTRG2 event",
-        "value": 10
-      },
-      {
-        "name": "LPTIM1_OUT",
-        "description": "Low-power timer 1 OUT event",
-        "value": 11
-      },
-      {
-        "name": "LPTIM2_OUT",
-        "description": "Low-power timer 2 OUT event",
-        "value": 12
-      },
-      {
-        "name": "EXTI9",
-        "description": "EXTI line9",
-        "value": 13
-      },
-      {
-        "name": "LPTIM3_OUT",
-        "description": "Low-power timer 3 OUT event",
-        "value": 14
-      }
-    ]
-  },
-  "enum/TSEL2": {
-    "bit_size": 4,
-    "variants": [
-      {
-        "name": "SOFTWARE",
-        "description": "Software trigger",
-        "value": 0
-      },
-      {
-        "name": "TIM1_TRGO",
-        "description": "Timer 1 TRGO event",
-        "value": 1
-      },
-      {
-        "name": "TIM2_TRGO",
-        "description": "Timer 2 TRGO event",
-        "value": 2
-      },
-      {
-        "name": "TIM4_TRGO",
-        "description": "Timer 4 TRGO event",
-        "value": 3
-      },
-      {
-        "name": "TIM5_TRGO",
-        "description": "Timer 5 TRGO event",
-        "value": 4
-      },
-      {
-        "name": "TIM6_TRGO",
-        "description": "Timer 6 TRGO event",
-        "value": 5
-      },
-      {
-        "name": "TIM7_TRGO",
-        "description": "Timer 7 TRGO event",
-        "value": 6
-      },
-      {
-        "name": "TIM8_TRGO",
-        "description": "Timer 8 TRGO event",
-        "value": 7
-      },
-      {
-        "name": "TIM15_TRGO",
-        "description": "Timer 15 TRGO event",
-        "value": 8
-      },
-      {
-        "name": "HRTIM1_DACTRG1",
-        "description": "High resolution timer 1 DACTRG1 event",
-        "value": 9
-      },
-      {
-        "name": "HRTIM1_DACTRG2",
-        "description": "High resolution timer 1 DACTRG2 event",
-        "value": 10
-      },
-      {
-        "name": "LPTIM1_OUT",
-        "description": "Low-power timer 1 OUT event",
-        "value": 11
-      },
-      {
-        "name": "LPTIM2_OUT",
-        "description": "Low-power timer 2 OUT event",
-        "value": 12
-      },
-      {
-        "name": "EXTI9",
-        "description": "EXTI line9",
-        "value": 13
-      },
-      {
-        "name": "LPTIM3_OUT",
-        "description": "Low-power timer 3 OUT event",
-        "value": 14
       }
     ]
   },

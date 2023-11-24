@@ -998,8 +998,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac1en",
-                    description: Some("CPU1 DAC1 clock enable"),
+                    name: "dacen",
+                    description: Some("CPU1 DAC clock enable"),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -1103,7 +1103,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dacrst",
-                    description: Some("DAC1 reset"),
+                    description: Some("DAC reset"),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -1223,7 +1223,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dacsmen",
-                    description: Some("DAC1 clock enable during CPU1 CSleep mode."),
+                    description: Some("DAC clock enable during CPU1 CSleep mode."),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -1928,8 +1928,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac1en",
-                    description: Some("CPU2 DAC1 clock enable"),
+                    name: "dacen",
+                    description: Some("CPU2 DAC clock enable"),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -2040,8 +2040,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac1smen",
-                    description: Some("DAC1 clock enable during CPU2 CSleep mode."),
+                    name: "dacsmen",
+                    description: Some("DAC clock enable during CPU2 CSleep mode."),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,

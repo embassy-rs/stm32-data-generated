@@ -673,7 +673,7 @@
                     "address": 1073771520,
                     "registers": {
                         "kind": "dac",
-                        "version": "v2",
+                        "version": "v5",
                         "block": "DAC"
                     },
                     "rcc": {

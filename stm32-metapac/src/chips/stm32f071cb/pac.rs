@@ -213,7 +213,7 @@ pub mod bdma;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
-#[path = "../../peripherals/dac_v1.rs"]
+#[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_f0.rs"]
 pub mod dbgmcu;

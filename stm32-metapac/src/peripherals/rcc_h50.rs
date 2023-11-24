@@ -522,13 +522,13 @@ pub mod regs {
         }
         #[doc = "DAC clock enable Set and reset by software."]
         #[inline(always)]
-        pub const fn dac12en(&self) -> bool {
+        pub const fn dac1en(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[doc = "DAC clock enable Set and reset by software."]
         #[inline(always)]
-        pub fn set_dac12en(&mut self, val: bool) {
+        pub fn set_dac1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "HASH clock enable Set and reset by software."]
@@ -644,13 +644,13 @@ pub mod regs {
         }
         #[doc = "DAC clock enable during sleep mode Set and reset by software."]
         #[inline(always)]
-        pub const fn dac12lpen(&self) -> bool {
+        pub const fn dac1lpen(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[doc = "DAC clock enable during sleep mode Set and reset by software."]
         #[inline(always)]
-        pub fn set_dac12lpen(&mut self, val: bool) {
+        pub fn set_dac1lpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "HASH clock enable during sleep mode Set and reset by software."]
@@ -766,13 +766,13 @@ pub mod regs {
         }
         #[doc = "DAC block reset Set and reset by software."]
         #[inline(always)]
-        pub const fn dac12rst(&self) -> bool {
+        pub const fn dac1rst(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[doc = "DAC block reset Set and reset by software."]
         #[inline(always)]
-        pub fn set_dac12rst(&mut self, val: bool) {
+        pub fn set_dac1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "HASH block reset Set and reset by software."]

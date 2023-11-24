@@ -341,7 +341,7 @@ pub mod aes;
 pub mod bdma;
 #[path = "../../peripherals/crc_v1.rs"]
 pub mod crc;
-#[path = "../../peripherals/dac_v1.rs"]
+#[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_l1.rs"]
 pub mod dbgmcu;

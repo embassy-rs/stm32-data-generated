@@ -477,8 +477,8 @@ pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0000 as usize as _
 pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0100 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5000_0300 as usize as _) };
 pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0400 as usize as _) };
-pub const DAC1: *mut () = 0x5000_0800 as usize as _;
-pub const DAC3: *mut () = 0x5000_1000 as usize as _;
+pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x5000_0800 as usize as _) };
+pub const DAC3: dac::Dac = unsafe { dac::Dac::from_ptr(0x5000_1000 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -503,6 +503,8 @@ pub mod can;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v7.rs"]
+pub mod dac;
 #[path = "../../peripherals/dbgmcu_g4.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dmamux_v1.rs"]

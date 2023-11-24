@@ -42,17 +42,17 @@ impl Dac {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize + n * 12usize) as _) }
     }
-    #[doc = "Dual DAC 12-bit right-aligned data holding register"]
+    #[doc = "dual 12-bit right-aligned data holding register"]
     #[inline(always)]
     pub const fn dhr12rd(self) -> crate::common::Reg<regs::Dhr12rd, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
     }
-    #[doc = "DUAL DAC 12-bit left aligned data holding register"]
+    #[doc = "dual 12-bit left aligned data holding register"]
     #[inline(always)]
     pub const fn dhr12ld(self) -> crate::common::Reg<regs::Dhr12ld, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(36usize) as _) }
     }
-    #[doc = "DUAL DAC 8-bit right aligned data holding register"]
+    #[doc = "dual 8-bit right aligned data holding register"]
     #[inline(always)]
     pub const fn dhr8rd(self) -> crate::common::Reg<regs::Dhr8rd, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(40usize) as _) }
@@ -78,18 +78,18 @@ impl Dac {
     pub const fn mcr(self) -> crate::common::Reg<regs::Mcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(60usize) as _) }
     }
-    #[doc = "Sample and Hold sample time register"]
+    #[doc = "sample and hold sample time register"]
     #[inline(always)]
-    pub const fn shsr1(self, n: usize) -> crate::common::Reg<regs::Shsr, crate::common::RW> {
+    pub const fn shsr(self, n: usize) -> crate::common::Reg<regs::Shsr, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(64usize + n * 4usize) as _) }
     }
-    #[doc = "Sample and Hold hold time register"]
+    #[doc = "sample and hold hold time register"]
     #[inline(always)]
     pub const fn shhr(self) -> crate::common::Reg<regs::Shhr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
     }
-    #[doc = "Sample and Hold refresh time register"]
+    #[doc = "sample and hold refresh time register"]
     #[inline(always)]
     pub const fn shrr(self) -> crate::common::Reg<regs::Shrr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
@@ -101,27 +101,20 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccr(pub u32);
     impl Ccr {
-        #[doc = "DAC Channel 1 offset trimming value"]
+        #[doc = "channel offset trimming value"]
         #[inline(always)]
-        pub const fn otrim1(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
+        pub const fn otrim(&self, n: usize) -> u8 {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x1f;
             val as u8
         }
-        #[doc = "DAC Channel 1 offset trimming value"]
+        #[doc = "channel offset trimming value"]
         #[inline(always)]
-        pub fn set_otrim1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "DAC Channel 2 offset trimming value"]
-        #[inline(always)]
-        pub const fn otrim2(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "DAC Channel 2 offset trimming value"]
-        #[inline(always)]
-        pub fn set_otrim2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
+        pub fn set_otrim(&mut self, n: usize, val: u8) {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 16usize;
+            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
         }
     }
     impl Default for Ccr {
@@ -135,7 +128,7 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "DAC channel enable"]
+        #[doc = "channel enable"]
         #[inline(always)]
         pub const fn en(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -143,40 +136,44 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel enable"]
+        #[doc = "channel enable"]
         #[inline(always)]
         pub fn set_en(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + n * 16usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "DAC channel trigger enable"]
+        #[doc = "channel trigger enable"]
         #[inline(always)]
         pub const fn ten(&self, n: usize) -> bool {
             assert!(n < 2usize);
-            let offs = 1usize + n * 16usize;
+            let offs = 2usize + n * 16usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel trigger enable"]
+        #[doc = "channel trigger enable"]
         #[inline(always)]
         pub fn set_ten(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
-            let offs = 1usize + n * 16usize;
+            let offs = 2usize + n * 16usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "DAC channel 1 trigger selection"]
+        #[doc = "channel trigger selection"]
         #[inline(always)]
-        pub const fn tsel1(&self) -> super::vals::Tsel1 {
-            let val = (self.0 >> 2usize) & 0x0f;
-            super::vals::Tsel1::from_bits(val as u8)
+        pub const fn tsel(&self, n: usize) -> u8 {
+            assert!(n < 2usize);
+            let offs = 3usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x07;
+            val as u8
         }
-        #[doc = "DAC channel 1 trigger selection"]
+        #[doc = "channel trigger selection"]
         #[inline(always)]
-        pub fn set_tsel1(&mut self, val: super::vals::Tsel1) {
-            self.0 = (self.0 & !(0x0f << 2usize)) | (((val.to_bits() as u32) & 0x0f) << 2usize);
+        pub fn set_tsel(&mut self, n: usize, val: u8) {
+            assert!(n < 2usize);
+            let offs = 3usize + n * 16usize;
+            self.0 = (self.0 & !(0x07 << offs)) | (((val as u32) & 0x07) << offs);
         }
-        #[doc = "DAC channel noise/triangle wave generation enable"]
+        #[doc = "channel noise/triangle wave generation enable"]
         #[inline(always)]
         pub const fn wave(&self, n: usize) -> super::vals::Wave {
             assert!(n < 2usize);
@@ -184,14 +181,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x03;
             super::vals::Wave::from_bits(val as u8)
         }
-        #[doc = "DAC channel noise/triangle wave generation enable"]
+        #[doc = "channel noise/triangle wave generation enable"]
         #[inline(always)]
         pub fn set_wave(&mut self, n: usize, val: super::vals::Wave) {
             assert!(n < 2usize);
             let offs = 6usize + n * 16usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
         }
-        #[doc = "DAC channel mask/amplitude selector"]
+        #[doc = "channel mask/amplitude selector"]
         #[inline(always)]
         pub const fn mamp(&self, n: usize) -> u8 {
             assert!(n < 2usize);
@@ -199,14 +196,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x0f;
             val as u8
         }
-        #[doc = "DAC channel mask/amplitude selector"]
+        #[doc = "channel mask/amplitude selector"]
         #[inline(always)]
         pub fn set_mamp(&mut self, n: usize, val: u8) {
             assert!(n < 2usize);
             let offs = 8usize + n * 16usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
         }
-        #[doc = "DAC channel DMA enable"]
+        #[doc = "channel DMA enable"]
         #[inline(always)]
         pub const fn dmaen(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -214,14 +211,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel DMA enable"]
+        #[doc = "channel DMA enable"]
         #[inline(always)]
         pub fn set_dmaen(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 12usize + n * 16usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "DAC channel DMA Underrun Interrupt enable"]
+        #[doc = "channel DMA Underrun Interrupt enable"]
         #[inline(always)]
         pub const fn dmaudrie(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -229,7 +226,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel DMA Underrun Interrupt enable"]
+        #[doc = "channel DMA Underrun Interrupt enable"]
         #[inline(always)]
         pub fn set_dmaudrie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
@@ -251,17 +248,6 @@ pub mod regs {
             let offs = 14usize + n * 16usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "DAC channel 2 trigger selection"]
-        #[inline(always)]
-        pub const fn tsel2(&self) -> super::vals::Tsel2 {
-            let val = (self.0 >> 18usize) & 0x0f;
-            super::vals::Tsel2::from_bits(val as u8)
-        }
-        #[doc = "DAC channel 2 trigger selection"]
-        #[inline(always)]
-        pub fn set_tsel2(&mut self, val: super::vals::Tsel2) {
-            self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
-        }
     }
     impl Default for Cr {
         #[inline(always)]
@@ -274,13 +260,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dhr12l(pub u32);
     impl Dhr12l {
-        #[doc = "DAC channel 12-bit left-aligned data"]
+        #[doc = "channel 12-bit left-aligned data"]
         #[inline(always)]
         pub const fn dhr(&self) -> u16 {
             let val = (self.0 >> 4usize) & 0x0fff;
             val as u16
         }
-        #[doc = "DAC channel 12-bit left-aligned data"]
+        #[doc = "channel 12-bit left-aligned data"]
         #[inline(always)]
         pub fn set_dhr(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 4usize)) | (((val as u32) & 0x0fff) << 4usize);
@@ -292,12 +278,12 @@ pub mod regs {
             Dhr12l(0)
         }
     }
-    #[doc = "DUAL DAC 12-bit left aligned data holding register"]
+    #[doc = "dual 12-bit left aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dhr12ld(pub u32);
     impl Dhr12ld {
-        #[doc = "DAC channel 12-bit left-aligned data"]
+        #[doc = "channel 12-bit left-aligned data"]
         #[inline(always)]
         pub const fn dhr(&self, n: usize) -> u16 {
             assert!(n < 2usize);
@@ -305,7 +291,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x0fff;
             val as u16
         }
-        #[doc = "DAC channel 12-bit left-aligned data"]
+        #[doc = "channel 12-bit left-aligned data"]
         #[inline(always)]
         pub fn set_dhr(&mut self, n: usize, val: u16) {
             assert!(n < 2usize);
@@ -324,13 +310,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dhr12r(pub u32);
     impl Dhr12r {
-        #[doc = "DAC channel 12-bit right-aligned data"]
+        #[doc = "channel 12-bit right-aligned data"]
         #[inline(always)]
         pub const fn dhr(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
             val as u16
         }
-        #[doc = "DAC channel 12-bit right-aligned data"]
+        #[doc = "channel 12-bit right-aligned data"]
         #[inline(always)]
         pub fn set_dhr(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
@@ -342,12 +328,12 @@ pub mod regs {
             Dhr12r(0)
         }
     }
-    #[doc = "Dual DAC 12-bit right-aligned data holding register"]
+    #[doc = "dual 12-bit right-aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dhr12rd(pub u32);
     impl Dhr12rd {
-        #[doc = "DAC channel 12-bit right-aligned data"]
+        #[doc = "channel 12-bit right-aligned data"]
         #[inline(always)]
         pub const fn dhr(&self, n: usize) -> u16 {
             assert!(n < 2usize);
@@ -355,7 +341,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x0fff;
             val as u16
         }
-        #[doc = "DAC channel 12-bit right-aligned data"]
+        #[doc = "channel 12-bit right-aligned data"]
         #[inline(always)]
         pub fn set_dhr(&mut self, n: usize, val: u16) {
             assert!(n < 2usize);
@@ -374,13 +360,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dhr8r(pub u32);
     impl Dhr8r {
-        #[doc = "DAC channel 8-bit right-aligned data"]
+        #[doc = "channel 8-bit right-aligned data"]
         #[inline(always)]
         pub const fn dhr(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
-        #[doc = "DAC channel 8-bit right-aligned data"]
+        #[doc = "channel 8-bit right-aligned data"]
         #[inline(always)]
         pub fn set_dhr(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
@@ -392,12 +378,12 @@ pub mod regs {
             Dhr8r(0)
         }
     }
-    #[doc = "DUAL DAC 8-bit right aligned data holding register"]
+    #[doc = "dual 8-bit right aligned data holding register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dhr8rd(pub u32);
     impl Dhr8rd {
-        #[doc = "DAC channel 8-bit right-aligned data"]
+        #[doc = "channel 8-bit right-aligned data"]
         #[inline(always)]
         pub const fn dhr(&self, n: usize) -> u8 {
             assert!(n < 2usize);
@@ -405,7 +391,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0xff;
             val as u8
         }
-        #[doc = "DAC channel 8-bit right-aligned data"]
+        #[doc = "channel 8-bit right-aligned data"]
         #[inline(always)]
         pub fn set_dhr(&mut self, n: usize, val: u8) {
             assert!(n < 2usize);
@@ -424,13 +410,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dor(pub u32);
     impl Dor {
-        #[doc = "DAC channel data output"]
+        #[doc = "channel data output"]
         #[inline(always)]
         pub const fn dor(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
             val as u16
         }
-        #[doc = "DAC channel data output"]
+        #[doc = "channel data output"]
         #[inline(always)]
         pub fn set_dor(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
@@ -449,18 +435,18 @@ pub mod regs {
     impl Mcr {
         #[doc = "DAC channel mode"]
         #[inline(always)]
-        pub const fn mode(&self, n: usize) -> u8 {
+        pub const fn mode(&self, n: usize) -> super::vals::Mode {
             assert!(n < 2usize);
             let offs = 0usize + n * 16usize;
             let val = (self.0 >> offs) & 0x07;
-            val as u8
+            super::vals::Mode::from_bits(val as u8)
         }
         #[doc = "DAC channel mode"]
         #[inline(always)]
-        pub fn set_mode(&mut self, n: usize, val: u8) {
+        pub fn set_mode(&mut self, n: usize, val: super::vals::Mode) {
             assert!(n < 2usize);
             let offs = 0usize + n * 16usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val as u32) & 0x07) << offs);
+            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
         }
     }
     impl Default for Mcr {
@@ -469,12 +455,12 @@ pub mod regs {
             Mcr(0)
         }
     }
-    #[doc = "Sample and Hold hold time register"]
+    #[doc = "sample and hold hold time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Shhr(pub u32);
     impl Shhr {
-        #[doc = "DAC channel hold Time"]
+        #[doc = "channel hold time"]
         #[inline(always)]
         pub const fn thold(&self, n: usize) -> u16 {
             assert!(n < 2usize);
@@ -482,7 +468,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x03ff;
             val as u16
         }
-        #[doc = "DAC channel hold Time"]
+        #[doc = "channel hold time"]
         #[inline(always)]
         pub fn set_thold(&mut self, n: usize, val: u16) {
             assert!(n < 2usize);
@@ -496,12 +482,12 @@ pub mod regs {
             Shhr(0)
         }
     }
-    #[doc = "Sample and Hold refresh time register"]
+    #[doc = "sample and hold refresh time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Shrr(pub u32);
     impl Shrr {
-        #[doc = "DAC channel refresh Time"]
+        #[doc = "channel refresh time"]
         #[inline(always)]
         pub const fn trefresh(&self, n: usize) -> u8 {
             assert!(n < 2usize);
@@ -509,7 +495,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0xff;
             val as u8
         }
-        #[doc = "DAC channel refresh Time"]
+        #[doc = "channel refresh time"]
         #[inline(always)]
         pub fn set_trefresh(&mut self, n: usize, val: u8) {
             assert!(n < 2usize);
@@ -523,18 +509,18 @@ pub mod regs {
             Shrr(0)
         }
     }
-    #[doc = "Sample and Hold sample time register"]
+    #[doc = "sample and hold sample time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Shsr(pub u32);
     impl Shsr {
-        #[doc = "DAC channel sample Time"]
+        #[doc = "channel sample time"]
         #[inline(always)]
         pub const fn tsample(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
-        #[doc = "DAC channel sample Time"]
+        #[doc = "channel sample time"]
         #[inline(always)]
         pub fn set_tsample(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
@@ -551,7 +537,7 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sr(pub u32);
     impl Sr {
-        #[doc = "DAC channel DMA underrun flag"]
+        #[doc = "channel DMA underrun flag"]
         #[inline(always)]
         pub const fn dmaudr(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -559,14 +545,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel DMA underrun flag"]
+        #[doc = "channel DMA underrun flag"]
         #[inline(always)]
         pub fn set_dmaudr(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 13usize + n * 16usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "DAC channel calibration offset status"]
+        #[doc = "channel calibration offset status"]
         #[inline(always)]
         pub const fn cal_flag(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -574,14 +560,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel calibration offset status"]
+        #[doc = "channel calibration offset status"]
         #[inline(always)]
         pub fn set_cal_flag(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 14usize + n * 16usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "DAC channel busy writing sample time flag"]
+        #[doc = "channel busy writing sample time flag"]
         #[inline(always)]
         pub const fn bwst(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -589,7 +575,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel busy writing sample time flag"]
+        #[doc = "channel busy writing sample time flag"]
         #[inline(always)]
         pub fn set_bwst(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
@@ -608,7 +594,7 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Swtrigr(pub u32);
     impl Swtrigr {
-        #[doc = "DAC channel software trigger"]
+        #[doc = "channel software trigger"]
         #[inline(always)]
         pub const fn swtrig(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -616,7 +602,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "DAC channel software trigger"]
+        #[doc = "channel software trigger"]
         #[inline(always)]
         pub fn set_swtrig(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
@@ -634,116 +620,44 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tsel1 {
-        #[doc = "Software trigger"]
-        SOFTWARE = 0,
-        #[doc = "Timer 1 TRGO event"]
-        TIM1_TRGO = 0x01,
-        #[doc = "Timer 2 TRGO event"]
-        TIM2_TRGO = 0x02,
-        #[doc = "Timer 4 TRGO event"]
-        TIM4_TRGO = 0x03,
-        #[doc = "Timer 5 TRGO event"]
-        TIM5_TRGO = 0x04,
-        #[doc = "Timer 6 TRGO event"]
-        TIM6_TRGO = 0x05,
-        #[doc = "Timer 7 TRGO event"]
-        TIM7_TRGO = 0x06,
-        #[doc = "Timer 8 TRGO event"]
-        TIM8_TRGO = 0x07,
-        #[doc = "Timer 15 TRGO event"]
-        TIM15_TRGO = 0x08,
-        #[doc = "High resolution timer 1 DACTRG1 event"]
-        HRTIM1_DACTRG1 = 0x09,
-        #[doc = "High resolution timer 1 DACTRG2 event"]
-        HRTIM1_DACTRG2 = 0x0a,
-        #[doc = "Low-power timer 1 OUT event"]
-        LPTIM1_OUT = 0x0b,
-        #[doc = "Low-power timer 2 OUT event"]
-        LPTIM2_OUT = 0x0c,
-        #[doc = "EXTI line9"]
-        EXTI9 = 0x0d,
-        #[doc = "Low-power timer 3 OUT event"]
-        LPTIM3_OUT = 0x0e,
-        _RESERVED_f = 0x0f,
+    pub enum Mode {
+        #[doc = "Normal mode, external pin only, buffer enabled"]
+        NORMAL_EXT_BUFEN = 0,
+        #[doc = "Normal mode, external pin and internal peripherals, buffer enabled"]
+        NORMAL_EXT_INT_BUFEN = 0x01,
+        #[doc = "Normal mode, external pin only, buffer disabled"]
+        NORMAL_EXT_BUFDIS = 0x02,
+        #[doc = "Normal mode, internal peripherals only, buffer disabled"]
+        NORMAL_INT_BUFDIS = 0x03,
+        #[doc = "Sample and hold mode, external pin only, buffer enabled"]
+        SAMPHOLD_EXT_BUFEN = 0x04,
+        #[doc = "Sample and hold mode, external pin and internal peripherals, buffer enabled"]
+        SAMPHOLD_EXT_INT_BUFEN = 0x05,
+        #[doc = "Sample and hold mode, external pin and internal peripherals, buffer disabled"]
+        SAMPHOLD_EXT_INT_BUFDIS = 0x06,
+        #[doc = "Sample and hold mode, internal peripherals only, buffer disabled"]
+        SAMPHOLD_INT_BUFDIS = 0x07,
     }
-    impl Tsel1 {
+    impl Mode {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tsel1 {
-            unsafe { core::mem::transmute(val & 0x0f) }
+        pub const fn from_bits(val: u8) -> Mode {
+            unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Tsel1 {
+    impl From<u8> for Mode {
         #[inline(always)]
-        fn from(val: u8) -> Tsel1 {
-            Tsel1::from_bits(val)
+        fn from(val: u8) -> Mode {
+            Mode::from_bits(val)
         }
     }
-    impl From<Tsel1> for u8 {
+    impl From<Mode> for u8 {
         #[inline(always)]
-        fn from(val: Tsel1) -> u8 {
-            Tsel1::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tsel2 {
-        #[doc = "Software trigger"]
-        SOFTWARE = 0,
-        #[doc = "Timer 1 TRGO event"]
-        TIM1_TRGO = 0x01,
-        #[doc = "Timer 2 TRGO event"]
-        TIM2_TRGO = 0x02,
-        #[doc = "Timer 4 TRGO event"]
-        TIM4_TRGO = 0x03,
-        #[doc = "Timer 5 TRGO event"]
-        TIM5_TRGO = 0x04,
-        #[doc = "Timer 6 TRGO event"]
-        TIM6_TRGO = 0x05,
-        #[doc = "Timer 7 TRGO event"]
-        TIM7_TRGO = 0x06,
-        #[doc = "Timer 8 TRGO event"]
-        TIM8_TRGO = 0x07,
-        #[doc = "Timer 15 TRGO event"]
-        TIM15_TRGO = 0x08,
-        #[doc = "High resolution timer 1 DACTRG1 event"]
-        HRTIM1_DACTRG1 = 0x09,
-        #[doc = "High resolution timer 1 DACTRG2 event"]
-        HRTIM1_DACTRG2 = 0x0a,
-        #[doc = "Low-power timer 1 OUT event"]
-        LPTIM1_OUT = 0x0b,
-        #[doc = "Low-power timer 2 OUT event"]
-        LPTIM2_OUT = 0x0c,
-        #[doc = "EXTI line9"]
-        EXTI9 = 0x0d,
-        #[doc = "Low-power timer 3 OUT event"]
-        LPTIM3_OUT = 0x0e,
-        _RESERVED_f = 0x0f,
-    }
-    impl Tsel2 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tsel2 {
-            unsafe { core::mem::transmute(val & 0x0f) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tsel2 {
-        #[inline(always)]
-        fn from(val: u8) -> Tsel2 {
-            Tsel2::from_bits(val)
-        }
-    }
-    impl From<Tsel2> for u8 {
-        #[inline(always)]
-        fn from(val: Tsel2) -> u8 {
-            Tsel2::to_bits(val)
+        fn from(val: Mode) -> u8 {
+            Mode::to_bits(val)
         }
     }
     #[repr(u8)]

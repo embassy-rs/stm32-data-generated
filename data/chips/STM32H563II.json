@@ -476,6 +476,22 @@
                 {
                     "name": "DAC1",
                     "address": 1107461120,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v6",
+                        "block": "DAC"
+                    },
+                    "rcc": {
+                        "clock": "hclk2",
+                        "enable": {
+                            "register": "ahb2enr",
+                            "field": "dac1en"
+                        },
+                        "reset": {
+                            "register": "ahb2rstr",
+                            "field": "dac1rst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA4",

@@ -609,6 +609,11 @@
                 {
                     "name": "DAC1",
                     "address": 1342179328,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v7",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {
@@ -652,6 +657,11 @@
                 {
                     "name": "DAC3",
                     "address": 1342181376,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v7",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {

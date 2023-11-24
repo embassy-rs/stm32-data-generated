@@ -645,7 +645,7 @@ pub const GPIOI: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_2000 as usize
 pub const ADC1: *mut () = 0x4202_8000 as usize as _;
 pub const ADC2: *mut () = 0x4202_8100 as usize as _;
 pub const ADC_COMMON: *mut () = 0x4202_8300 as usize as _;
-pub const DAC1: *mut () = 0x4202_8400 as usize as _;
+pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400 as usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000 as usize as _) };
 pub const PSSI: *mut () = 0x4202_c400 as usize as _;
 pub const AES: *mut () = 0x420c_0000 as usize as _;
@@ -687,6 +687,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v6.rs"]
+pub mod dac;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../../peripherals/eth_v2.rs"]

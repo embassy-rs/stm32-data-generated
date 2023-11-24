@@ -535,8 +535,8 @@
         "bit_size": 1
       },
       {
-        "name": "DAC1EN",
-        "description": "CPU1 DAC1 clock enable",
+        "name": "DACEN",
+        "description": "CPU1 DAC clock enable",
         "bit_offset": 29,
         "bit_size": 1
       },

@@ -151,7 +151,7 @@ pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_5c00 as usize as _)
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_6000 as usize as _) };
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6c00 as usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000 as usize as _) };
-pub const DAC: *mut () = 0x4000_7400 as usize as _;
+pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _) };
 pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const COMP1: *mut () = 0x4001_0018 as usize as _;
@@ -191,6 +191,8 @@ pub mod bdma;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v2.rs"]
+pub mod dac;
 #[path = "../../peripherals/dbgmcu_l0.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/exti_v1.rs"]

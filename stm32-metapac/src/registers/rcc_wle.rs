@@ -824,8 +824,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac1en",
-                    description: Some("CPU1 DAC1 clock enable"),
+                    name: "dacen",
+                    description: Some("CPU1 DAC clock enable"),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,

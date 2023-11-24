@@ -380,6 +380,11 @@
                 {
                     "name": "DAC1",
                     "address": 1174542336,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v6",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "hclk3",
                         "enable": {

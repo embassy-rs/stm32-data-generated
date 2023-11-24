@@ -615,7 +615,7 @@ pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4600_7c00 as usize 
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_0800 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_0c00 as usize as _) };
 pub const ADC4: *mut () = 0x4602_1000 as usize as _;
-pub const DAC1: *mut () = 0x4602_1800 as usize as _;
+pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4602_1800 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000 as usize as _) };
 pub const ADF1: *mut () = 0x4602_4000 as usize as _;
 pub const LPDMA1: *mut () = 0x4602_5000 as usize as _;
@@ -636,6 +636,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v6.rs"]
+pub mod dac;
 #[path = "../../peripherals/dbgmcu_u5.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dma2d_v1.rs"]

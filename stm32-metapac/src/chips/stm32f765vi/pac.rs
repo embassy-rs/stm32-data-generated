@@ -547,7 +547,7 @@ pub mod adccommon;
 pub mod can;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
-#[path = "../../peripherals/dac_v1.rs"]
+#[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_f7.rs"]
 pub mod dbgmcu;

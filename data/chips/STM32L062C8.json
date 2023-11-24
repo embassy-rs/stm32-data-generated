@@ -594,6 +594,11 @@
                 {
                     "name": "DAC",
                     "address": 1073771520,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v2",
+                        "block": "DAC"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

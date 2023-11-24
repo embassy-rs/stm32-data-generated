@@ -63,7 +63,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "dhr12rd",
-                description: Some("Dual DAC 12-bit right-aligned data holding register"),
+                description: Some("dual 12-bit right-aligned data holding register"),
                 array: None,
                 byte_offset: 32,
                 inner: BlockItemInner::Register(Register {
@@ -74,7 +74,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "dhr12ld",
-                description: Some("DUAL DAC 12-bit left aligned data holding register"),
+                description: Some("dual 12-bit left aligned data holding register"),
                 array: None,
                 byte_offset: 36,
                 inner: BlockItemInner::Register(Register {
@@ -85,7 +85,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "dhr8rd",
-                description: Some("DUAL DAC 8-bit right aligned data holding register"),
+                description: Some("dual 8-bit right aligned data holding register"),
                 array: None,
                 byte_offset: 40,
                 inner: BlockItemInner::Register(Register {
@@ -116,88 +116,9 @@ pub(crate) static REGISTERS: IR = IR {
                     fieldset: Some("Sr"),
                 }),
             },
-            BlockItem {
-                name: "ccr",
-                description: Some("calibration control register"),
-                array: None,
-                byte_offset: 56,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ccr"),
-                }),
-            },
-            BlockItem {
-                name: "mcr",
-                description: Some("mode control register"),
-                array: None,
-                byte_offset: 60,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Mcr"),
-                }),
-            },
-            BlockItem {
-                name: "shsr1",
-                description: Some("Sample and Hold sample time register"),
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
-                byte_offset: 64,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Shsr"),
-                }),
-            },
-            BlockItem {
-                name: "shhr",
-                description: Some("Sample and Hold hold time register"),
-                array: None,
-                byte_offset: 72,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Shhr"),
-                }),
-            },
-            BlockItem {
-                name: "shrr",
-                description: Some("Sample and Hold refresh time register"),
-                array: None,
-                byte_offset: 76,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Shrr"),
-                }),
-            },
         ],
     }],
     fieldsets: &[
-        FieldSet {
-            name: "Ccr",
-            extends: None,
-            description: Some("calibration control register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "otrim1",
-                    description: Some("DAC Channel 1 offset trimming value"),
-                    bit_offset: 0,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "otrim2",
-                    description: Some("DAC Channel 2 offset trimming value"),
-                    bit_offset: 16,
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
         FieldSet {
             name: "Cr",
             extends: None,
@@ -206,31 +127,39 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[
                 Field {
                     name: "en",
-                    description: Some("DAC channel enable"),
+                    description: Some("channel enable"),
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
                 },
                 Field {
+                    name: "boff",
+                    description: Some("channel output buffer disable"),
+                    bit_offset: 1,
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                    enumm: None,
+                },
+                Field {
                     name: "ten",
-                    description: Some("DAC channel trigger enable"),
+                    description: Some("channel trigger enable"),
                     bit_offset: 2,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
                 },
                 Field {
-                    name: "tsel1",
-                    description: Some("DAC channel 1 trigger selection"),
+                    name: "tsel",
+                    description: Some("channel trigger selection"),
                     bit_offset: 3,
                     bit_size: 3,
-                    array: None,
-                    enumm: Some("Tsel1"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                    enumm: None,
                 },
                 Field {
                     name: "wave",
-                    description: Some("DAC channel noise/triangle wave generation enable"),
+                    description: Some("channel noise/triangle wave generation enable"),
                     bit_offset: 6,
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
@@ -238,7 +167,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "mamp",
-                    description: Some("DAC channel mask/amplitude selector"),
+                    description: Some("channel mask/amplitude selector"),
                     bit_offset: 8,
                     bit_size: 4,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
@@ -246,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dmaen",
-                    description: Some("DAC channel DMA enable"),
+                    description: Some("channel DMA enable"),
                     bit_offset: 12,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
@@ -254,27 +183,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dmaudrie",
-                    description: Some("DAC channel DMA Underrun Interrupt enable"),
+                    description: Some("channel DMA Underrun Interrupt enable"),
                     bit_offset: 13,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
                     enumm: None,
-                },
-                Field {
-                    name: "cen",
-                    description: Some("DAC channel calibration enable"),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "tsel2",
-                    description: Some("DAC channel 2 trigger selection"),
-                    bit_offset: 19,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some("Tsel2"),
                 },
             ],
         },
@@ -285,7 +198,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[Field {
                 name: "dhr",
-                description: Some("DAC channel 12-bit left-aligned data"),
+                description: Some("channel 12-bit left-aligned data"),
                 bit_offset: 4,
                 bit_size: 12,
                 array: None,
@@ -295,11 +208,11 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Dhr12ld",
             extends: None,
-            description: Some("DUAL DAC 12-bit left aligned data holding register"),
+            description: Some("dual 12-bit left aligned data holding register"),
             bit_size: 32,
             fields: &[Field {
                 name: "dhr",
-                description: Some("DAC channel 12-bit left-aligned data"),
+                description: Some("channel 12-bit left-aligned data"),
                 bit_offset: 4,
                 bit_size: 12,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
@@ -313,7 +226,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[Field {
                 name: "dhr",
-                description: Some("DAC channel 12-bit right-aligned data"),
+                description: Some("channel 12-bit right-aligned data"),
                 bit_offset: 0,
                 bit_size: 12,
                 array: None,
@@ -323,11 +236,11 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Dhr12rd",
             extends: None,
-            description: Some("Dual DAC 12-bit right-aligned data holding register"),
+            description: Some("dual 12-bit right-aligned data holding register"),
             bit_size: 32,
             fields: &[Field {
                 name: "dhr",
-                description: Some("DAC channel 12-bit right-aligned data"),
+                description: Some("channel 12-bit right-aligned data"),
                 bit_offset: 0,
                 bit_size: 12,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
@@ -341,7 +254,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[Field {
                 name: "dhr",
-                description: Some("DAC channel 8-bit right-aligned data"),
+                description: Some("channel 8-bit right-aligned data"),
                 bit_offset: 0,
                 bit_size: 8,
                 array: None,
@@ -351,11 +264,11 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Dhr8rd",
             extends: None,
-            description: Some("DUAL DAC 8-bit right aligned data holding register"),
+            description: Some("dual 8-bit right aligned data holding register"),
             bit_size: 32,
             fields: &[Field {
                 name: "dhr",
-                description: Some("DAC channel 8-bit right-aligned data"),
+                description: Some("channel 8-bit right-aligned data"),
                 bit_offset: 0,
                 bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 8 })),
@@ -369,65 +282,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[Field {
                 name: "dor",
-                description: Some("DAC channel data output"),
+                description: Some("channel data output"),
                 bit_offset: 0,
                 bit_size: 12,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Mcr",
-            extends: None,
-            description: Some("mode control register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "mode",
-                description: Some("DAC channel mode"),
-                bit_offset: 0,
-                bit_size: 3,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Shhr",
-            extends: None,
-            description: Some("Sample and Hold hold time register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "thold",
-                description: Some("DAC channel hold Time"),
-                bit_offset: 0,
-                bit_size: 10,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Shrr",
-            extends: None,
-            description: Some("Sample and Hold refresh time register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "trefresh",
-                description: Some("DAC channel refresh Time"),
-                bit_offset: 0,
-                bit_size: 8,
-                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Shsr",
-            extends: None,
-            description: Some("Sample and Hold sample time register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "tsample",
-                description: Some("DAC channel sample Time"),
-                bit_offset: 0,
-                bit_size: 10,
                 array: None,
                 enumm: None,
             }],
@@ -437,32 +294,14 @@ pub(crate) static REGISTERS: IR = IR {
             extends: None,
             description: Some("status register"),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dmaudr",
-                    description: Some("DAC channel DMA underrun flag"),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "cal_flag",
-                    description: Some("DAC channel calibration offset status"),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    enumm: None,
-                },
-                Field {
-                    name: "bwst",
-                    description: Some("DAC channel busy writing sample time flag"),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "dmaudr",
+                description: Some("channel DMA underrun flag"),
+                bit_offset: 13,
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Swtrigr",
@@ -471,7 +310,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[Field {
                 name: "swtrig",
-                description: Some("DAC channel software trigger"),
+                description: Some("channel software trigger"),
                 bit_offset: 0,
                 bit_size: 1,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
@@ -479,117 +318,26 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
     ],
-    enums: &[
-        Enum {
-            name: "Tsel1",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM6_TRGO",
-                    description: Some("Timer 6 TRGO event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM3_TRGO",
-                    description: Some("Timer 3 TRGO event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM7_TRGO",
-                    description: Some("Timer 7 TRGO event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM15_TRGO",
-                    description: Some("Timer 15 TRGO event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM2_TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "EXTI9",
-                    description: Some("EXTI line9"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some("Software trigger"),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Tsel2",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM6_TRGO",
-                    description: Some("Timer 6 TRGO event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM8_TRGO",
-                    description: Some("Timer 8 TRGO event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM7_TRGO",
-                    description: Some("Timer 7 TRGO event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM5_TRGO",
-                    description: Some("Timer 5 TRGO event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM2_TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "TIM4_TRGO",
-                    description: Some("Timer 4 TRGO event"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "EXTI9",
-                    description: Some("EXTI line9"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some("Software trigger"),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Wave",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Wave generation disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOISE",
-                    description: Some("Noise wave generation enabled"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TRIANGLE",
-                    description: Some("Triangle wave generation enabled"),
-                    value: 2,
-                },
-            ],
-        },
-    ],
+    enums: &[Enum {
+        name: "Wave",
+        description: None,
+        bit_size: 2,
+        variants: &[
+            EnumVariant {
+                name: "DISABLED",
+                description: Some("Wave generation disabled"),
+                value: 0,
+            },
+            EnumVariant {
+                name: "NOISE",
+                description: Some("Noise wave generation enabled"),
+                value: 1,
+            },
+            EnumVariant {
+                name: "TRIANGLE",
+                description: Some("Triangle wave generation enabled"),
+                value: 2,
+            },
+        ],
+    }],
 };

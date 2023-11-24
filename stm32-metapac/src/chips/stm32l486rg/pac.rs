@@ -472,7 +472,7 @@ pub mod bdma;
 pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
-#[path = "../../peripherals/dac_v2.rs"]
+#[path = "../../peripherals/dac_v3.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_l4.rs"]
 pub mod dbgmcu;

@@ -909,15 +909,15 @@ pub mod regs {
         pub fn set_i2c3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "CPU1 DAC1 clock enable"]
+        #[doc = "CPU1 DAC clock enable"]
         #[inline(always)]
-        pub const fn dac1en(&self) -> bool {
+        pub const fn dacen(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "CPU1 DAC1 clock enable"]
+        #[doc = "CPU1 DAC clock enable"]
         #[inline(always)]
-        pub fn set_dac1en(&mut self, val: bool) {
+        pub fn set_dacen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "CPU1 Low power timer 1 clocks enable"]
@@ -1054,13 +1054,13 @@ pub mod regs {
         pub fn set_i2c3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "DAC1 reset"]
+        #[doc = "DAC reset"]
         #[inline(always)]
         pub const fn dacrst(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "DAC1 reset"]
+        #[doc = "DAC reset"]
         #[inline(always)]
         pub fn set_dacrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
@@ -1221,13 +1221,13 @@ pub mod regs {
         pub fn set_i2c3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "DAC1 clock enable during CPU1 CSleep mode."]
+        #[doc = "DAC clock enable during CPU1 CSleep mode."]
         #[inline(always)]
         pub const fn dacsmen(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "DAC1 clock enable during CPU1 CSleep mode."]
+        #[doc = "DAC clock enable during CPU1 CSleep mode."]
         #[inline(always)]
         pub fn set_dacsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
@@ -2215,15 +2215,15 @@ pub mod regs {
         pub fn set_i2c3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "CPU2 DAC1 clock enable"]
+        #[doc = "CPU2 DAC clock enable"]
         #[inline(always)]
-        pub const fn dac1en(&self) -> bool {
+        pub const fn dacen(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "CPU2 DAC1 clock enable"]
+        #[doc = "CPU2 DAC clock enable"]
         #[inline(always)]
-        pub fn set_dac1en(&mut self, val: bool) {
+        pub fn set_dacen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "CPU2 Low power timer 1 clocks enable"]
@@ -2371,15 +2371,15 @@ pub mod regs {
         pub fn set_i2c3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "DAC1 clock enable during CPU2 CSleep mode."]
+        #[doc = "DAC clock enable during CPU2 CSleep mode."]
         #[inline(always)]
-        pub const fn dac1smen(&self) -> bool {
+        pub const fn dacsmen(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "DAC1 clock enable during CPU2 CSleep mode."]
+        #[doc = "DAC clock enable during CPU2 CSleep mode."]
         #[inline(always)]
-        pub fn set_dac1smen(&mut self, val: bool) {
+        pub fn set_dacsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Low power timer 1 clock enable during CPU2 CSleep and CStop mode"]

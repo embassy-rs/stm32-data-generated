@@ -952,7 +952,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac12en",
+                    name: "dac1en",
                     description: Some(
                         "DAC clock enable\r Set and reset by software.",
                     ),
@@ -1062,7 +1062,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac12lpen",
+                    name: "dac1lpen",
                     description: Some(
                         "DAC clock enable during sleep mode\r Set and reset by software.",
                     ),
@@ -1172,7 +1172,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dac12rst",
+                    name: "dac1rst",
                     description: Some(
                         "DAC block reset\r Set and reset by software.",
                     ),

@@ -304,7 +304,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073771520,
         registers: Some(PeripheralRegisters {
             kind: "dac",
-            version: "v3",
+            version: "v4",
             block: "DAC",
             ir: &dac::REGISTERS,
         }),
@@ -3544,7 +3544,7 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../registers/crc_v2.rs"]
 pub mod crc;
-#[path = "../registers/dac_v3.rs"]
+#[path = "../registers/dac_v4.rs"]
 pub mod dac;
 #[path = "../registers/dbgmcu_g0.rs"]
 pub mod dbgmcu;

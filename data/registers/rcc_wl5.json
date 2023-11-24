@@ -631,8 +631,8 @@
         "bit_size": 1
       },
       {
-        "name": "DAC1EN",
-        "description": "CPU1 DAC1 clock enable",
+        "name": "DACEN",
+        "description": "CPU1 DAC clock enable",
         "bit_offset": 29,
         "bit_size": 1
       },
@@ -708,7 +708,7 @@
       },
       {
         "name": "DACRST",
-        "description": "DAC1 reset",
+        "description": "DAC reset",
         "bit_offset": 29,
         "bit_size": 1
       },
@@ -796,7 +796,7 @@
       },
       {
         "name": "DACSMEN",
-        "description": "DAC1 clock enable during CPU1 CSleep mode.",
+        "description": "DAC clock enable during CPU1 CSleep mode.",
         "bit_offset": 29,
         "bit_size": 1
       },
@@ -1316,8 +1316,8 @@
         "bit_size": 1
       },
       {
-        "name": "DAC1EN",
-        "description": "CPU2 DAC1 clock enable",
+        "name": "DACEN",
+        "description": "CPU2 DAC clock enable",
         "bit_offset": 29,
         "bit_size": 1
       },
@@ -1398,8 +1398,8 @@
         "bit_size": 1
       },
       {
-        "name": "DAC1SMEN",
-        "description": "DAC1 clock enable during CPU2 CSleep mode.",
+        "name": "DACSMEN",
+        "description": "DAC clock enable during CPU2 CSleep mode.",
         "bit_offset": 29,
         "bit_size": 1
       },

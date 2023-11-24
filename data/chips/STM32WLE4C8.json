@@ -282,6 +282,22 @@
                 {
                     "name": "DAC",
                     "address": 1073771520,
+                    "registers": {
+                        "kind": "dac",
+                        "version": "v4",
+                        "block": "DAC"
+                    },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1enr1",
+                            "field": "dacen"
+                        },
+                        "reset": {
+                            "register": "apb1rstr1",
+                            "field": "dacrst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA10",

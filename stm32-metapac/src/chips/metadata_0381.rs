@@ -465,8 +465,25 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "DAC1",
         address: 1107461120,
-        registers: None,
-        rcc: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dac",
+            version: "v6",
+            block: "DAC",
+            ir: &dac::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            clock: "hclk2",
+            enable: Some(PeripheralRccRegister {
+                register: "ahb2enr",
+                field: "dac1en",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "ahb2rstr",
+                field: "dac1rst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA4",
@@ -8938,6 +8955,8 @@ pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]
 pub mod crs;
+#[path = "../registers/dac_v6.rs"]
+pub mod dac;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../registers/eth_v2.rs"]

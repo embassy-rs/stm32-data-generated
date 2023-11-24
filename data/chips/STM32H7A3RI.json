@@ -762,7 +762,7 @@
                     "address": 1073771520,
                     "registers": {
                         "kind": "dac",
-                        "version": "v3",
+                        "version": "v4",
                         "block": "DAC"
                     },
                     "rcc": {
@@ -810,7 +810,7 @@
                     "address": 1476408320,
                     "registers": {
                         "kind": "dac",
-                        "version": "v3",
+                        "version": "v4",
                         "block": "DAC"
                     },
                     "rcc": {

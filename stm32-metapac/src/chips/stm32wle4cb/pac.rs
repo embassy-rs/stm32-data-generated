@@ -299,7 +299,7 @@ pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400 as 
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00 as usize as _) };
-pub const DAC: *mut () = 0x4000_7400 as usize as _;
+pub const DAC: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400 as usize as _) };
 pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4000_8000 as usize as _) };
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
@@ -354,6 +354,8 @@ pub mod aes;
 pub mod bdma;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
+#[path = "../../peripherals/dac_v4.rs"]
+pub mod dac;
 #[path = "../../peripherals/dbgmcu_wl.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dmamux_v1.rs"]

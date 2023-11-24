@@ -567,7 +567,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "DAC1",
         address: 1174542336,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dac",
+            version: "v6",
+            block: "DAC",
+            ir: &dac::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk3",
             enable: Some(PeripheralRccRegister {
@@ -8346,6 +8351,8 @@ pub mod aes;
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]
 pub mod crs;
+#[path = "../registers/dac_v6.rs"]
+pub mod dac;
 #[path = "../registers/dbgmcu_u5.rs"]
 pub mod dbgmcu;
 #[path = "../registers/dcmi_v1.rs"]

@@ -454,7 +454,7 @@ pub const GPIOD: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0c00 as usize
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00 as usize as _) };
 pub const ADC1: *mut () = 0x4202_8000 as usize as _;
 pub const ADC_COMMON: *mut () = 0x4202_8300 as usize as _;
-pub const DAC1: *mut () = 0x4202_8400 as usize as _;
+pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400 as usize as _) };
 pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400 as usize as _) };
@@ -481,6 +481,8 @@ pub fn GPIO(n: usize) -> gpio::Gpio {
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v6.rs"]
+pub mod dac;
 #[path = "../../peripherals/exti_h50.rs"]
 pub mod exti;
 #[path = "../../peripherals/flash_h50.rs"]

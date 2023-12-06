@@ -173,14 +173,14 @@ pub mod regs {
         }
         #[doc = "External trigger selection"]
         #[inline(always)]
-        pub const fn extsel(&self) -> super::vals::Extsel {
+        pub const fn extsel(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x07;
-            super::vals::Extsel::from_bits(val as u8)
+            val as u8
         }
         #[doc = "External trigger selection"]
         #[inline(always)]
-        pub fn set_extsel(&mut self, val: super::vals::Extsel) {
-            self.0 = (self.0 & !(0x07 << 6usize)) | (((val.to_bits() as u32) & 0x07) << 6usize);
+        pub fn set_extsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 6usize)) | (((val as u32) & 0x07) << 6usize);
         }
         #[doc = "External trigger enable and polarity selection"]
         #[inline(always)]
@@ -798,45 +798,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Exten) -> u8 {
             Exten::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Extsel {
-        #[doc = "Timer 1 TRGO Event"]
-        TIM1_TRGO = 0,
-        #[doc = "Timer 1 CC4 event"]
-        TIM1_CC4 = 0x01,
-        #[doc = "Timer 2 TRGO event"]
-        TIM2_TRGO = 0x02,
-        #[doc = "Timer 3 TRGO event"]
-        TIM3_TRGO = 0x03,
-        #[doc = "Timer 15 TRGO event"]
-        TIM15_TRGO = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Extsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Extsel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Extsel {
-        #[inline(always)]
-        fn from(val: u8) -> Extsel {
-            Extsel::from_bits(val)
-        }
-    }
-    impl From<Extsel> for u8 {
-        #[inline(always)]
-        fn from(val: Extsel) -> u8 {
-            Extsel::to_bits(val)
         }
     }
     #[repr(u8)]

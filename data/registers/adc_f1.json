@@ -225,8 +225,7 @@
         "name": "JEXTSEL",
         "description": "External event select for injected group",
         "bit_offset": 12,
-        "bit_size": 3,
-        "enum": "EXTSEL"
+        "bit_size": 3
       },
       {
         "name": "JEXTTRIG",
@@ -238,8 +237,7 @@
         "name": "EXTSEL",
         "description": "External event select for regular group",
         "bit_offset": 17,
-        "bit_size": 3,
-        "enum": "EXTSEL"
+        "bit_size": 3
       },
       {
         "name": "EXTTRIG",
@@ -519,51 +517,6 @@
         "name": "AlternateTrigger",
         "description": "Alternate trigger mode only",
         "value": 9
-      }
-    ]
-  },
-  "enum/EXTSEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "TIM1TRGO",
-        "description": "Timer 1 TRGO event",
-        "value": 0
-      },
-      {
-        "name": "TIM1CC4",
-        "description": "Timer 1 CC4 event",
-        "value": 1
-      },
-      {
-        "name": "TIM2TRGO",
-        "description": "Timer 2 TRGO event",
-        "value": 2
-      },
-      {
-        "name": "TIM2CC1",
-        "description": "Timer 2 CC1 event",
-        "value": 3
-      },
-      {
-        "name": "TIM3CC4",
-        "description": "Timer 3 CC4 event",
-        "value": 4
-      },
-      {
-        "name": "TIM4TRGO",
-        "description": "Timer 4 TRGO event",
-        "value": 5
-      },
-      {
-        "name": "TIM8CC4",
-        "description": "EXTI line 15/Timer 8 CC4 event",
-        "value": 6
-      },
-      {
-        "name": "SWSTART",
-        "description": "SWSTART",
-        "value": 7
       }
     ]
   },

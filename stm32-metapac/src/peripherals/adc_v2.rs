@@ -327,14 +327,14 @@ pub mod regs {
         }
         #[doc = "External event select for injected group"]
         #[inline(always)]
-        pub const fn jextsel(&self) -> super::vals::Jextsel {
+        pub const fn jextsel(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
-            super::vals::Jextsel::from_bits(val as u8)
+            val as u8
         }
         #[doc = "External event select for injected group"]
         #[inline(always)]
-        pub fn set_jextsel(&mut self, val: super::vals::Jextsel) {
-            self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
+        pub fn set_jextsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
         #[doc = "External trigger enable for injected channels"]
         #[inline(always)]
@@ -360,14 +360,14 @@ pub mod regs {
         }
         #[doc = "External event select for regular group"]
         #[inline(always)]
-        pub const fn extsel(&self) -> super::vals::Extsel {
+        pub const fn extsel(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x0f;
-            super::vals::Extsel::from_bits(val as u8)
+            val as u8
         }
         #[doc = "External event select for regular group"]
         #[inline(always)]
-        pub fn set_extsel(&mut self, val: super::vals::Extsel) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
+        pub fn set_extsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
         #[doc = "External trigger enable for regular channels"]
         #[inline(always)]
@@ -1045,55 +1045,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Extsel {
-        #[doc = "Timer 1 CC1 event"]
-        TIM1CC1 = 0,
-        #[doc = "Timer 1 CC2 event"]
-        TIM1CC2 = 0x01,
-        #[doc = "Timer 1 CC3 event"]
-        TIM1CC3 = 0x02,
-        #[doc = "Timer 2 CC2 event"]
-        TIM2CC2 = 0x03,
-        #[doc = "Timer 2 CC3 event"]
-        TIM2CC3 = 0x04,
-        #[doc = "Timer 2 CC4 event"]
-        TIM2CC4 = 0x05,
-        #[doc = "Timer 2 TRGO event"]
-        TIM2TRGO = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
-    }
-    impl Extsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Extsel {
-            unsafe { core::mem::transmute(val & 0x0f) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Extsel {
-        #[inline(always)]
-        fn from(val: u8) -> Extsel {
-            Extsel::from_bits(val)
-        }
-    }
-    impl From<Extsel> for u8 {
-        #[inline(always)]
-        fn from(val: Extsel) -> u8 {
-            Extsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Jeoc {
         #[doc = "Conversion is not complete"]
         NOTCOMPLETE = 0,
@@ -1154,62 +1105,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Jexten) -> u8 {
             Jexten::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jextsel {
-        #[doc = "Timer 1 TRGO event"]
-        TIM1TRGO = 0,
-        #[doc = "Timer 1 CC4 event"]
-        TIM1CC4 = 0x01,
-        #[doc = "Timer 2 TRGO event"]
-        TIM2TRGO = 0x02,
-        #[doc = "Timer 2 CC1 event"]
-        TIM2CC1 = 0x03,
-        #[doc = "Timer 3 CC4 event"]
-        TIM3CC4 = 0x04,
-        #[doc = "Timer 4 TRGO event"]
-        TIM4TRGO = 0x05,
-        _RESERVED_6 = 0x06,
-        #[doc = "Timer 8 CC4 event"]
-        TIM8CC4 = 0x07,
-        #[doc = "Timer 1 TRGO(2) event"]
-        TIM1TRGO2 = 0x08,
-        #[doc = "Timer 8 TRGO event"]
-        TIM8TRGO = 0x09,
-        #[doc = "Timer 8 TRGO(2) event"]
-        TIM8TRGO2 = 0x0a,
-        #[doc = "Timer 3 CC3 event"]
-        TIM3CC3 = 0x0b,
-        #[doc = "Timer 5 TRGO event"]
-        TIM5TRGO = 0x0c,
-        #[doc = "Timer 3 CC1 event"]
-        TIM3CC1 = 0x0d,
-        #[doc = "Timer 6 TRGO event"]
-        TIM6TRGO = 0x0e,
-        _RESERVED_f = 0x0f,
-    }
-    impl Jextsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jextsel {
-            unsafe { core::mem::transmute(val & 0x0f) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jextsel {
-        #[inline(always)]
-        fn from(val: u8) -> Jextsel {
-            Jextsel::from_bits(val)
-        }
-    }
-    impl From<Jextsel> for u8 {
-        #[inline(always)]
-        fn from(val: Jextsel) -> u8 {
-            Jextsel::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -316,14 +316,14 @@ pub mod regs {
         }
         #[doc = "External event select for injected group"]
         #[inline(always)]
-        pub const fn jextsel(&self) -> super::vals::Extsel {
+        pub const fn jextsel(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x07;
-            super::vals::Extsel::from_bits(val as u8)
+            val as u8
         }
         #[doc = "External event select for injected group"]
         #[inline(always)]
-        pub fn set_jextsel(&mut self, val: super::vals::Extsel) {
-            self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
+        pub fn set_jextsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 12usize)) | (((val as u32) & 0x07) << 12usize);
         }
         #[doc = "External trigger conversion mode for injected channels"]
         #[inline(always)]
@@ -338,14 +338,14 @@ pub mod regs {
         }
         #[doc = "External event select for regular group"]
         #[inline(always)]
-        pub const fn extsel(&self) -> super::vals::Extsel {
+        pub const fn extsel(&self) -> u8 {
             let val = (self.0 >> 17usize) & 0x07;
-            super::vals::Extsel::from_bits(val as u8)
+            val as u8
         }
         #[doc = "External event select for regular group"]
         #[inline(always)]
-        pub fn set_extsel(&mut self, val: super::vals::Extsel) {
-            self.0 = (self.0 & !(0x07 << 17usize)) | (((val.to_bits() as u32) & 0x07) << 17usize);
+        pub fn set_extsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 17usize)) | (((val as u32) & 0x07) << 17usize);
         }
         #[doc = "External trigger conversion mode for regular channels"]
         #[inline(always)]
@@ -827,48 +827,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dualmod) -> u8 {
             Dualmod::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Extsel {
-        #[doc = "Timer 1 TRGO event"]
-        TIM1TRGO = 0,
-        #[doc = "Timer 1 CC4 event"]
-        TIM1CC4 = 0x01,
-        #[doc = "Timer 2 TRGO event"]
-        TIM2TRGO = 0x02,
-        #[doc = "Timer 2 CC1 event"]
-        TIM2CC1 = 0x03,
-        #[doc = "Timer 3 CC4 event"]
-        TIM3CC4 = 0x04,
-        #[doc = "Timer 4 TRGO event"]
-        TIM4TRGO = 0x05,
-        #[doc = "EXTI line 15/Timer 8 CC4 event"]
-        TIM8CC4 = 0x06,
-        #[doc = "SWSTART"]
-        SWSTART = 0x07,
-    }
-    impl Extsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Extsel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Extsel {
-        #[inline(always)]
-        fn from(val: u8) -> Extsel {
-            Extsel::from_bits(val)
-        }
-    }
-    impl From<Extsel> for u8 {
-        #[inline(always)]
-        fn from(val: Extsel) -> u8 {
-            Extsel::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -335,7 +335,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Extsel"),
+                    enumm: None,
                 },
                 Field {
                     name: "jexttrig",
@@ -351,7 +351,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 17,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Extsel"),
+                    enumm: None,
                 },
                 Field {
                     name: "exttrig",
@@ -675,53 +675,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ALTERNATETRIGGER",
                     description: Some("Alternate trigger mode only"),
                     value: 9,
-                },
-            ],
-        },
-        Enum {
-            name: "Extsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM1TRGO",
-                    description: Some("Timer 1 TRGO event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM1CC4",
-                    description: Some("Timer 1 CC4 event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM2TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM2CC1",
-                    description: Some("Timer 2 CC1 event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM3CC4",
-                    description: Some("Timer 3 CC4 event"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "TIM4TRGO",
-                    description: Some("Timer 4 TRGO event"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "TIM8CC4",
-                    description: Some("EXTI line 15/Timer 8 CC4 event"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "SWSTART",
-                    description: Some("SWSTART"),
-                    value: 7,
                 },
             ],
         },

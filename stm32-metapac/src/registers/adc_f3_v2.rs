@@ -393,7 +393,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Jextsel"),
+                    enumm: None,
                 },
                 Field {
                     name: "jexttrig",
@@ -409,7 +409,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 17,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Extsel"),
+                    enumm: None,
                 },
                 Field {
                     name: "exttrig",
@@ -1090,100 +1090,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "8 conversions are discontinued and the conversions are carried out on 8 channels",
                     ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Extsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM19_TRGO",
-                    description: Some("Timer 19 TRGO event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM19_CC3",
-                    description: Some("Timer 19 CC3 event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM19_CC4",
-                    description: Some("Timer 19 CC4 event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM2_CC2",
-                    description: Some("Timer 2 CC2 event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM3_TRGO",
-                    description: Some("Timer 3 TRGO event"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "TIM4_CC4",
-                    description: Some("Timer 4 CC4 event"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "EXTI_LINE11",
-                    description: Some("External interrupt line 11"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "SWSTART",
-                    description: Some("SWSTART bit"),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Jextsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM19_CC1",
-                    description: Some("Timer 19 CC1 event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM19_CC2",
-                    description: Some("Timer 19 CC2 event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM2_TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM2_CC1",
-                    description: Some("Timer 2 CC1 event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM3_CC4",
-                    description: Some("Timer 3 CC4 event"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "TIM4_TRGO",
-                    description: Some("Timer 4 TRGO event"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "EXTI_LINE15",
-                    description: Some("External interrupt line 15"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "JSWSTART",
-                    description: Some("JSWSTART bit"),
                     value: 7,
                 },
             ],

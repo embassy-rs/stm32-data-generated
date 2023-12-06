@@ -203,7 +203,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Extsel"),
+                    enumm: None,
                 },
                 Field {
                     name: "exten",
@@ -618,38 +618,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BOTHEDGES",
                     description: Some("Trigger detection on both the rising and falling edges"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Extsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "TIM1_TRGO",
-                    description: Some("Timer 1 TRGO Event"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TIM1_CC4",
-                    description: Some("Timer 1 CC4 event"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "TIM2_TRGO",
-                    description: Some("Timer 2 TRGO event"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "TIM3_TRGO",
-                    description: Some("Timer 3 TRGO event"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "TIM15_TRGO",
-                    description: Some("Timer 15 TRGO event"),
-                    value: 4,
                 },
             ],
         },

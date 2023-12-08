@@ -1741,7 +1741,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "QUADSPI",
         address: 2415919104,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "quadspi",
+            version: "v1",
+            block: "QUADSPI",
+            ir: &quadspi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk3",
             enable: Some(PeripheralRccRegister {
@@ -3805,6 +3810,8 @@ pub mod lcd;
 pub mod lptim;
 #[path = "../registers/pwr_wb55.rs"]
 pub mod pwr;
+#[path = "../registers/quadspi_v1.rs"]
+pub mod quadspi;
 #[path = "../registers/rcc_wb.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v1.rs"]

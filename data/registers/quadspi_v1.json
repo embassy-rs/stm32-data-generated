@@ -237,7 +237,7 @@
         "name": "FTHRES",
         "description": "IFO threshold level",
         "bit_offset": 8,
-        "bit_size": 5
+        "bit_size": 4
       },
       {
         "name": "TEIE",

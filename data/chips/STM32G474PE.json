@@ -3575,6 +3575,175 @@
                     }
                 },
                 {
+                    "name": "QUADSPI1",
+                    "address": 2684358656,
+                    "registers": {
+                        "kind": "quadspi",
+                        "version": "v1",
+                        "block": "QUADSPI"
+                    },
+                    "rcc": {
+                        "clock": "hclk3",
+                        "enable": {
+                            "register": "ahb3enr",
+                            "field": "quadspien"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PA2",
+                            "signal": "BK1_NCS",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PA3",
+                            "signal": "CLK",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PA6",
+                            "signal": "BK1_IO3",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PA7",
+                            "signal": "BK1_IO2",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PB0",
+                            "signal": "BK1_IO1",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PB1",
+                            "signal": "BK1_IO0",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PB10",
+                            "signal": "CLK",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PB11",
+                            "signal": "BK1_NCS",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PB2",
+                            "signal": "BK2_IO1",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PC1",
+                            "signal": "BK2_IO0",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PC2",
+                            "signal": "BK2_IO1",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PC3",
+                            "signal": "BK2_IO2",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PC4",
+                            "signal": "BK2_IO3",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PD3",
+                            "signal": "BK2_NCS",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PD4",
+                            "signal": "BK2_IO0",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PD5",
+                            "signal": "BK2_IO1",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PD6",
+                            "signal": "BK2_IO2",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PD7",
+                            "signal": "BK2_IO3",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PE10",
+                            "signal": "CLK",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PE11",
+                            "signal": "BK1_NCS",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PE12",
+                            "signal": "BK1_IO0",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PE13",
+                            "signal": "BK1_IO1",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PE14",
+                            "signal": "BK1_IO2",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PE15",
+                            "signal": "BK1_IO3",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PF10",
+                            "signal": "CLK",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PF6",
+                            "signal": "BK1_IO3",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PF7",
+                            "signal": "BK1_IO2",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PF8",
+                            "signal": "BK1_IO0",
+                            "af": 10
+                        },
+                        {
+                            "pin": "PF9",
+                            "signal": "BK1_IO1",
+                            "af": 10
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "QUADSPI"
+                        }
+                    ]
+                },
+                {
                     "name": "RCC",
                     "address": 1073876992,
                     "registers": {

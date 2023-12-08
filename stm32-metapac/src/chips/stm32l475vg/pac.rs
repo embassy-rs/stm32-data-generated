@@ -441,7 +441,7 @@ pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x5004_0200 as usize as _
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5004_0300 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const FMC: *mut () = 0x6000_0000 as usize as _;
-pub const QUADSPI: *mut () = 0xa000_1000 as usize as _;
+pub const QUADSPI: quadspi::Quadspi = unsafe { quadspi::Quadspi::from_ptr(0xa000_1000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -481,6 +481,8 @@ pub mod iwdg;
 pub mod otg;
 #[path = "../../peripherals/pwr_l4.rs"]
 pub mod pwr;
+#[path = "../../peripherals/quadspi_v1.rs"]
+pub mod quadspi;
 #[path = "../../peripherals/rcc_l4.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]

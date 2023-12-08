@@ -353,7 +353,7 @@ pub const HSEM: *mut () = 0x5800_1400 as usize as _;
 pub const AES2: *mut () = 0x5800_1800 as usize as _;
 pub const PKA: *mut () = 0x5800_2000 as usize as _;
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5800_4000 as usize as _) };
-pub const QUADSPI: *mut () = 0x9000_0000 as usize as _;
+pub const QUADSPI: quadspi::Quadspi = unsafe { quadspi::Quadspi::from_ptr(0x9000_0000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -397,6 +397,8 @@ pub mod lcd;
 pub mod lptim;
 #[path = "../../peripherals/pwr_wb55.rs"]
 pub mod pwr;
+#[path = "../../peripherals/quadspi_v1.rs"]
+pub mod quadspi;
 #[path = "../../peripherals/rcc_wb.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]

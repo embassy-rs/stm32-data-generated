@@ -2708,6 +2708,11 @@
                 {
                     "name": "QUADSPI",
                     "address": 2684358656,
+                    "registers": {
+                        "kind": "quadspi",
+                        "version": "v1",
+                        "block": "QUADSPI"
+                    },
                     "pins": [
                         {
                             "pin": "PA6",

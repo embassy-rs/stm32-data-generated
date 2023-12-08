@@ -367,13 +367,13 @@ pub mod regs {
         #[doc = "IFO threshold level"]
         #[inline(always)]
         pub const fn fthres(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
+            let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
         #[doc = "IFO threshold level"]
         #[inline(always)]
         pub fn set_fthres(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Transfer error interrupt enable"]
         #[inline(always)]

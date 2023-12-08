@@ -358,7 +358,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "fthres",
                     description: Some("IFO threshold level"),
                     bit_offset: 8,
-                    bit_size: 5,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },

@@ -136,6 +136,8 @@ pub enum Interrupt {
     HSEM = 68,
     #[doc = "69 - HSEM_S"]
     HSEM_S = 69,
+    #[doc = "70 - WKUP_S"]
+    WKUP_S = 70,
 }
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
@@ -214,6 +216,7 @@ mod _vectors {
         fn WKUP();
         fn HSEM();
         fn HSEM_S();
+        fn WKUP_S();
     }
     pub union Vector {
         _handler: unsafe extern "C" fn(),
@@ -221,7 +224,7 @@ mod _vectors {
     }
     #[link_section = ".vector_table.interrupts"]
     #[no_mangle]
-    pub static __INTERRUPTS: [Vector; 70] = [
+    pub static __INTERRUPTS: [Vector; 71] = [
         Vector { _handler: WWDG },
         Vector { _handler: PVD },
         Vector { _handler: RTC },
@@ -308,6 +311,7 @@ mod _vectors {
         Vector { _handler: WKUP },
         Vector { _handler: HSEM },
         Vector { _handler: HSEM_S },
+        Vector { _handler: WKUP_S },
     ];
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x0bf9_0700 as usize as _) };

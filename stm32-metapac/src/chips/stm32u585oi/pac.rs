@@ -2,8 +2,8 @@
 pub enum Interrupt {
     #[doc = "0 - WWDG"]
     WWDG = 0,
-    #[doc = "1 - PVD_AVD"]
-    PVD_AVD = 1,
+    #[doc = "1 - PVD_PVM"]
+    PVD_PVM = 1,
     #[doc = "2 - RTC"]
     RTC = 2,
     #[doc = "3 - RTC_S"]
@@ -250,6 +250,8 @@ pub enum Interrupt {
     CORDIC = 123,
     #[doc = "124 - FMAC"]
     FMAC = 124,
+    #[doc = "125 - LSECSSD"]
+    LSECSSD = 125,
 }
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
@@ -261,7 +263,7 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
 mod _vectors {
     extern "C" {
         fn WWDG();
-        fn PVD_AVD();
+        fn PVD_PVM();
         fn RTC();
         fn RTC_S();
         fn TAMP();
@@ -385,6 +387,7 @@ mod _vectors {
         fn MDF1_FLT5();
         fn CORDIC();
         fn FMAC();
+        fn LSECSSD();
     }
     pub union Vector {
         _handler: unsafe extern "C" fn(),
@@ -392,9 +395,9 @@ mod _vectors {
     }
     #[link_section = ".vector_table.interrupts"]
     #[no_mangle]
-    pub static __INTERRUPTS: [Vector; 125] = [
+    pub static __INTERRUPTS: [Vector; 126] = [
         Vector { _handler: WWDG },
-        Vector { _handler: PVD_AVD },
+        Vector { _handler: PVD_PVM },
         Vector { _handler: RTC },
         Vector { _handler: RTC_S },
         Vector { _handler: TAMP },
@@ -558,6 +561,7 @@ mod _vectors {
         Vector { _handler: MDF1_FLT5 },
         Vector { _handler: CORDIC },
         Vector { _handler: FMAC },
+        Vector { _handler: LSECSSD },
     ];
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x0bfa_0700 as usize as _) };

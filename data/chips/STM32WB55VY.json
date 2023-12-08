@@ -3417,7 +3417,7 @@
                 },
                 {
                     "name": "USB",
-                    "address": 1073765376,
+                    "address": 1073768448,
                     "registers": {
                         "kind": "usb",
                         "version": "v3",
@@ -3469,7 +3469,7 @@
                 },
                 {
                     "name": "USBRAM",
-                    "address": 1073766400,
+                    "address": 1073769472,
                     "registers": {
                         "kind": "usbram",
                         "version": "16x2_1024",

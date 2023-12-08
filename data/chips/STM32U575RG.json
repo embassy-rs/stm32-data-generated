@@ -5729,7 +5729,7 @@
                     "number": 0
                 },
                 {
-                    "name": "PVD_AVD",
+                    "name": "PVD_PVM",
                     "number": 1
                 },
                 {
@@ -6203,6 +6203,10 @@
                 {
                     "name": "FMAC",
                     "number": 124
+                },
+                {
+                    "name": "LSECSSD",
+                    "number": 125
                 }
             ],
             "dma_channels": [

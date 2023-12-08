@@ -2817,6 +2817,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         name: "HSEM_S",
         number: 69,
     },
+    Interrupt {
+        name: "WKUP_S",
+        number: 70,
+    },
 ];
 pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[
     DmaChannel {

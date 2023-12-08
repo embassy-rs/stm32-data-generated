@@ -2629,6 +2629,10 @@
                 {
                     "name": "HSEM_S",
                     "number": 69
+                },
+                {
+                    "name": "WKUP_S",
+                    "number": 70
                 }
             ],
             "dma_channels": [

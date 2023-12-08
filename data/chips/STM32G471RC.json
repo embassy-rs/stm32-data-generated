@@ -3351,6 +3351,102 @@
                     ]
                 },
                 {
+                    "name": "TIM20",
+                    "address": 1073827840,
+                    "registers": {
+                        "kind": "timer",
+                        "version": "v1",
+                        "block": "TIM_ADV"
+                    },
+                    "rcc": {
+                        "clock": "pclk2_tim",
+                        "enable": {
+                            "register": "apb2enr",
+                            "field": "tim20en"
+                        },
+                        "reset": {
+                            "register": "apb2rstr",
+                            "field": "tim20rst"
+                        }
+                    },
+                    "pins": [
+                        {
+                            "pin": "PB2",
+                            "signal": "CH1",
+                            "af": 3
+                        },
+                        {
+                            "pin": "PC2",
+                            "signal": "CH2",
+                            "af": 6
+                        },
+                        {
+                            "pin": "PC8",
+                            "signal": "CH3",
+                            "af": 6
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "BRK",
+                            "interrupt": "TIM20_BRK"
+                        },
+                        {
+                            "signal": "CC",
+                            "interrupt": "TIM20_CC"
+                        },
+                        {
+                            "signal": "COM",
+                            "interrupt": "TIM20_TRG_COM"
+                        },
+                        {
+                            "signal": "TRG",
+                            "interrupt": "TIM20_TRG_COM"
+                        },
+                        {
+                            "signal": "UP",
+                            "interrupt": "TIM20_UP"
+                        }
+                    ],
+                    "dma_channels": [
+                        {
+                            "signal": "CH1",
+                            "dmamux": "DMAMUX1",
+                            "request": 86
+                        },
+                        {
+                            "signal": "CH2",
+                            "dmamux": "DMAMUX1",
+                            "request": 87
+                        },
+                        {
+                            "signal": "CH3",
+                            "dmamux": "DMAMUX1",
+                            "request": 88
+                        },
+                        {
+                            "signal": "CH4",
+                            "dmamux": "DMAMUX1",
+                            "request": 89
+                        },
+                        {
+                            "signal": "UP",
+                            "dmamux": "DMAMUX1",
+                            "request": 90
+                        },
+                        {
+                            "signal": "TRIG",
+                            "dmamux": "DMAMUX1",
+                            "request": 93
+                        },
+                        {
+                            "signal": "COM",
+                            "dmamux": "DMAMUX1",
+                            "request": 94
+                        }
+                    ]
+                },
+                {
                     "name": "TIM3",
                     "address": 1073742848,
                     "registers": {
@@ -4780,10 +4876,6 @@
                     "number": 49
                 },
                 {
-                    "name": "TIM5",
-                    "number": 50
-                },
-                {
                     "name": "SPI3",
                     "number": 51
                 },
@@ -4842,6 +4934,22 @@
                 {
                     "name": "SAI1",
                     "number": 76
+                },
+                {
+                    "name": "TIM20_BRK",
+                    "number": 77
+                },
+                {
+                    "name": "TIM20_UP",
+                    "number": 78
+                },
+                {
+                    "name": "TIM20_TRG_COM",
+                    "number": 79
+                },
+                {
+                    "name": "TIM20_CC",
+                    "number": 80
                 },
                 {
                     "name": "FPU",

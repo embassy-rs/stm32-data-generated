@@ -66,3 +66,4 @@ PROVIDE(RADIO = DefaultHandler);
 PROVIDE(WKUP = DefaultHandler);
 PROVIDE(HSEM = DefaultHandler);
 PROVIDE(HSEM_S = DefaultHandler);
+PROVIDE(WKUP_S = DefaultHandler);

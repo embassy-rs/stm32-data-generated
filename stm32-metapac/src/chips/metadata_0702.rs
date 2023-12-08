@@ -8147,7 +8147,7 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 0,
     },
     Interrupt {
-        name: "PVD_AVD",
+        name: "PVD_PVM",
         number: 1,
     },
     Interrupt { name: "RTC", number: 2 },
@@ -8615,6 +8615,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "FMAC",
         number: 124,
+    },
+    Interrupt {
+        name: "LSECSSD",
+        number: 125,
     },
 ];
 pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[

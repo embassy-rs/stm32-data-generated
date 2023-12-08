@@ -98,8 +98,6 @@ pub enum Interrupt {
     ADC3 = 47,
     #[doc = "49 - LPTIM1"]
     LPTIM1 = 49,
-    #[doc = "50 - TIM5"]
-    TIM5 = 50,
     #[doc = "51 - SPI3"]
     SPI3 = 51,
     #[doc = "52 - UART4"]
@@ -130,6 +128,14 @@ pub enum Interrupt {
     CRS = 75,
     #[doc = "76 - SAI1"]
     SAI1 = 76,
+    #[doc = "77 - TIM20_BRK"]
+    TIM20_BRK = 77,
+    #[doc = "78 - TIM20_UP"]
+    TIM20_UP = 78,
+    #[doc = "79 - TIM20_TRG_COM"]
+    TIM20_TRG_COM = 79,
+    #[doc = "80 - TIM20_CC"]
+    TIM20_CC = 80,
     #[doc = "81 - FPU"]
     FPU = 81,
     #[doc = "82 - I2C4_EV"]
@@ -225,7 +231,6 @@ mod _vectors {
         fn TIM8_CC();
         fn ADC3();
         fn LPTIM1();
-        fn TIM5();
         fn SPI3();
         fn UART4();
         fn UART5();
@@ -241,6 +246,10 @@ mod _vectors {
         fn COMP4();
         fn CRS();
         fn SAI1();
+        fn TIM20_BRK();
+        fn TIM20_UP();
+        fn TIM20_TRG_COM();
+        fn TIM20_CC();
         fn FPU();
         fn I2C4_EV();
         fn I2C4_ER();
@@ -339,7 +348,7 @@ mod _vectors {
         Vector { _handler: ADC3 },
         Vector { _reserved: 0 },
         Vector { _handler: LPTIM1 },
-        Vector { _handler: TIM5 },
+        Vector { _reserved: 0 },
         Vector { _handler: SPI3 },
         Vector { _handler: UART4 },
         Vector { _handler: UART5 },
@@ -376,10 +385,12 @@ mod _vectors {
         Vector { _reserved: 0 },
         Vector { _handler: CRS },
         Vector { _handler: SAI1 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: TIM20_BRK },
+        Vector { _handler: TIM20_UP },
+        Vector {
+            _handler: TIM20_TRG_COM,
+        },
+        Vector { _handler: TIM20_CC },
         Vector { _handler: FPU },
         Vector { _handler: I2C4_EV },
         Vector { _handler: I2C4_ER },
@@ -458,6 +469,7 @@ pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800 as 
 pub const TIM15: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4000 as usize as _) };
 pub const TIM16: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4400 as usize as _) };
 pub const TIM17: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4800 as usize as _) };
+pub const TIM20: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_5000 as usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5400 as usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000 as usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0400 as usize as _) };

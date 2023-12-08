@@ -3021,7 +3021,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     },
     Peripheral {
         name: "USB",
-        address: 1073765376,
+        address: 1073768448,
         registers: Some(PeripheralRegisters {
             kind: "usb",
             version: "v3",
@@ -3072,7 +3072,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     },
     Peripheral {
         name: "USBRAM",
-        address: 1073766400,
+        address: 1073769472,
         registers: Some(PeripheralRegisters {
             kind: "usbram",
             version: "16x2_1024",

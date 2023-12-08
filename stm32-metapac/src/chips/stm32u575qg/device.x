@@ -1,5 +1,5 @@
 PROVIDE(WWDG = DefaultHandler);
-PROVIDE(PVD_AVD = DefaultHandler);
+PROVIDE(PVD_PVM = DefaultHandler);
 PROVIDE(RTC = DefaultHandler);
 PROVIDE(RTC_S = DefaultHandler);
 PROVIDE(TAMP = DefaultHandler);
@@ -118,3 +118,4 @@ PROVIDE(MDF1_FLT4 = DefaultHandler);
 PROVIDE(MDF1_FLT5 = DefaultHandler);
 PROVIDE(CORDIC = DefaultHandler);
 PROVIDE(FMAC = DefaultHandler);
+PROVIDE(LSECSSD = DefaultHandler);

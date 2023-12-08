@@ -305,7 +305,23 @@
             "peripherals": [
                 {
                     "name": "ADC",
-                    "address": 1073817344,
+                    "address": 1073816576,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "f3_v1_1",
+                        "block": "ADC"
+                    },
+                    "rcc": {
+                        "clock": "pclk2",
+                        "enable": {
+                            "register": "apb2enr",
+                            "field": "adc1en"
+                        },
+                        "reset": {
+                            "register": "apb2rstr",
+                            "field": "adc1rst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -2500,6 +2516,15 @@
                         "kind": "usbram",
                         "version": "16x1_512",
                         "block": "USBRAM"
+                    }
+                },
+                {
+                    "name": "VREFINTCAL",
+                    "address": 536346872,
+                    "registers": {
+                        "kind": "vrefintcal",
+                        "version": "v1",
+                        "block": "VREFINTCAL"
                     }
                 },
                 {

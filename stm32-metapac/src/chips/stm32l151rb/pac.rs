@@ -212,6 +212,7 @@ mod _vectors {
     ];
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1ff8_0050 as usize as _) };
+pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x1ff8_0078 as usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000 as usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400 as usize as _) };
 pub const TIM4: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0800 as usize as _) };
@@ -236,7 +237,7 @@ pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400 as usize 
 pub const TIM9: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_0800 as usize as _) };
 pub const TIM10: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_0c00 as usize as _) };
 pub const TIM11: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_1000 as usize as _) };
-pub const ADC: *mut () = 0x4001_2700 as usize as _;
+pub const ADC: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400 as usize as _) };
 pub const ADC_COMMON: *mut () = 0x4001_2700 as usize as _;
 pub const SPI1: *mut () = 0x4001_3000 as usize as _;
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800 as usize as _) };
@@ -261,6 +262,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1073872896 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_f3_v1_1.rs"]
+pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/crc_v1.rs"]
@@ -297,6 +300,8 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_16x1_512.rs"]
 pub mod usbram;
+#[path = "../../peripherals/vrefintcal_v1.rs"]
+pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v1.rs"]
 pub mod wwdg;
 pub const CORE_INDEX: usize = 0;

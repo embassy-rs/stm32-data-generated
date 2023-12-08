@@ -634,7 +634,7 @@
         "bit_size": 1
       },
       {
-        "name": "QSPILPEN",
+        "name": "QUADSPILPEN",
         "description": "QUADSPI memory controller module clock enable during Sleep mode",
         "bit_offset": 1,
         "bit_size": 1
@@ -739,7 +739,7 @@
         "bit_size": 1
       },
       {
-        "name": "QSPILPEN",
+        "name": "QUADSPILPEN",
         "description": "QUADSPI memory controller module clock enable during Sleep mode",
         "bit_offset": 1,
         "bit_size": 1
@@ -762,7 +762,7 @@
         "bit_size": 1
       },
       {
-        "name": "QSPIRST",
+        "name": "QUADSPIRST",
         "description": "QUADSPI module reset",
         "bit_offset": 1,
         "bit_size": 1

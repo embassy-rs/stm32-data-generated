@@ -978,7 +978,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspirst",
+                    name: "quadspirst",
                     description: Some("Quad SPI 1 module reset"),
                     bit_offset: 8,
                     bit_size: 1,
@@ -1002,7 +1002,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspismen",
+                    name: "quadspismen",
                     description: Some("QUADSPI memory interface clock enable during Sleep and Stop modes"),
                     bit_offset: 8,
                     bit_size: 1,
@@ -2202,7 +2202,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspisel",
+                    name: "quadspisel",
                     description: Some("Octospi clock source selection"),
                     bit_offset: 20,
                     bit_size: 2,

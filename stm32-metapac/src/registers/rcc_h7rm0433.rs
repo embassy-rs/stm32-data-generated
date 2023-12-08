@@ -1442,7 +1442,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspilpen",
+                    name: "quadspilpen",
                     description: Some("QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"),
                     bit_offset: 14,
                     bit_size: 1,
@@ -1562,7 +1562,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspirst",
+                    name: "quadspirst",
                     description: Some("QUADSPI and QUADSPI delay block reset"),
                     bit_offset: 14,
                     bit_size: 1,
@@ -4242,7 +4242,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspilpen",
+                    name: "quadspilpen",
                     description: Some("QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"),
                     bit_offset: 14,
                     bit_size: 1,
@@ -6344,7 +6344,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Fmcsel"),
                 },
                 Field {
-                    name: "qspisel",
+                    name: "quadspisel",
                     description: Some("QUADSPI kernel clock source selection"),
                     bit_offset: 4,
                     bit_size: 2,

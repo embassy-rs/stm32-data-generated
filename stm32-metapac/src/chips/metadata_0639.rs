@@ -2422,7 +2422,19 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             block: "QUADSPI",
             ir: &quadspi::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "hclk3",
+            enable: Some(PeripheralRccRegister {
+                register: "ahb3enr",
+                field: "quadspien",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "ahb3rstr",
+                field: "quadspirst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA2",

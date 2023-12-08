@@ -2247,8 +2247,14 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "ahb3enr",
                 field: "quadspien",
             }),
-            reset: None,
-            mux: None,
+            reset: Some(PeripheralRccRegister {
+                register: "ahb3rstr",
+                field: "quadspirst",
+            }),
+            mux: Some(PeripheralRccRegister {
+                register: "ccipr2",
+                field: "quadspisel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[

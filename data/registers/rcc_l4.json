@@ -622,8 +622,8 @@
         "bit_size": 1
       },
       {
-        "name": "QSPIEN",
-        "description": "QSPIEN",
+        "name": "QUADSPIEN",
+        "description": "QUADSPIEN",
         "bit_offset": 8,
         "bit_size": 1
       }
@@ -639,7 +639,7 @@
         "bit_size": 1
       },
       {
-        "name": "QSPIRST",
+        "name": "QUADSPIRST",
         "description": "Quad SPI memory interface reset",
         "bit_offset": 8,
         "bit_size": 1
@@ -656,8 +656,8 @@
         "bit_size": 1
       },
       {
-        "name": "QSPISMEN",
-        "description": "QSPISMEN",
+        "name": "QUADSPISMEN",
+        "description": "QUADSPISMEN",
         "bit_offset": 8,
         "bit_size": 1
       }

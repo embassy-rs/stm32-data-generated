@@ -974,15 +974,15 @@ pub mod regs {
         pub fn set_fmcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "QSPIEN"]
+        #[doc = "QUADSPIEN"]
         #[inline(always)]
-        pub const fn qspien(&self) -> bool {
+        pub const fn quadspien(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "QSPIEN"]
+        #[doc = "QUADSPIEN"]
         #[inline(always)]
-        pub fn set_qspien(&mut self, val: bool) {
+        pub fn set_quadspien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1010,13 +1010,13 @@ pub mod regs {
         }
         #[doc = "Quad SPI memory interface reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn quadspirst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "Quad SPI memory interface reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_quadspirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1042,15 +1042,15 @@ pub mod regs {
         pub fn set_fmcsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "QSPISMEN"]
+        #[doc = "QUADSPISMEN"]
         #[inline(always)]
-        pub const fn qspismen(&self) -> bool {
+        pub const fn quadspismen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "QSPISMEN"]
+        #[doc = "QUADSPISMEN"]
         #[inline(always)]
-        pub fn set_qspismen(&mut self, val: bool) {
+        pub fn set_quadspismen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }

@@ -1222,13 +1222,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub const fn qspilpen(&self) -> bool {
+        pub const fn quadspilpen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub fn set_qspilpen(&mut self, val: bool) {
+        pub fn set_quadspilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode"]
@@ -1388,13 +1388,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI and QUADSPI delay block reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn quadspirst(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI and QUADSPI delay block reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_quadspirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 delay block reset"]

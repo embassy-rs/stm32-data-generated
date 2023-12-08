@@ -1049,13 +1049,13 @@ pub mod regs {
         }
         #[doc = "Quad SPI 1 module reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn quadspirst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "Quad SPI 1 module reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_quadspirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1083,13 +1083,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI memory interface clock enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub const fn qspismen(&self) -> bool {
+        pub const fn quadspismen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI memory interface clock enable during Sleep and Stop modes"]
         #[inline(always)]
-        pub fn set_qspismen(&mut self, val: bool) {
+        pub fn set_quadspismen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -2745,13 +2745,13 @@ pub mod regs {
         }
         #[doc = "Octospi clock source selection"]
         #[inline(always)]
-        pub const fn qspisel(&self) -> u8 {
+        pub const fn quadspisel(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x03;
             val as u8
         }
         #[doc = "Octospi clock source selection"]
         #[inline(always)]
-        pub fn set_qspisel(&mut self, val: u8) {
+        pub fn set_quadspisel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
         }
     }

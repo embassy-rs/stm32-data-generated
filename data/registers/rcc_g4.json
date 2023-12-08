@@ -657,7 +657,7 @@
         "bit_size": 1
       },
       {
-        "name": "QSPIRST",
+        "name": "QUADSPIRST",
         "description": "Quad SPI 1 module reset",
         "bit_offset": 8,
         "bit_size": 1
@@ -674,7 +674,7 @@
         "bit_size": 1
       },
       {
-        "name": "QSPISMEN",
+        "name": "QUADSPISMEN",
         "description": "QUADSPI memory interface clock enable during Sleep and Stop modes",
         "bit_offset": 8,
         "bit_size": 1
@@ -1568,7 +1568,7 @@
         "bit_size": 2
       },
       {
-        "name": "QSPISEL",
+        "name": "QUADSPISEL",
         "description": "Octospi clock source selection",
         "bit_offset": 20,
         "bit_size": 2

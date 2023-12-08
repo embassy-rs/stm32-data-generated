@@ -1020,13 +1020,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI memory controller module clock enable during Sleep mode"]
         #[inline(always)]
-        pub const fn qspilpen(&self) -> bool {
+        pub const fn quadspilpen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI memory controller module clock enable during Sleep mode"]
         #[inline(always)]
-        pub fn set_qspilpen(&mut self, val: bool) {
+        pub fn set_quadspilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Cryptography modules clock enable during Sleep mode"]
@@ -1221,13 +1221,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI memory controller module clock enable during Sleep mode"]
         #[inline(always)]
-        pub const fn qspilpen(&self) -> bool {
+        pub const fn quadspilpen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI memory controller module clock enable during Sleep mode"]
         #[inline(always)]
-        pub fn set_qspilpen(&mut self, val: bool) {
+        pub fn set_quadspilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1266,13 +1266,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI module reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn quadspirst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI module reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_quadspirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }

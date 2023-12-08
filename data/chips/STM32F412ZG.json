@@ -2036,6 +2036,10 @@
                         "enable": {
                             "register": "ahb3enr",
                             "field": "quadspien"
+                        },
+                        "reset": {
+                            "register": "ahb3rstr",
+                            "field": "quadspirst"
                         }
                     },
                     "pins": [

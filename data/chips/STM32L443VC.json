@@ -2086,6 +2086,17 @@
                         "version": "v1",
                         "block": "QUADSPI"
                     },
+                    "rcc": {
+                        "clock": "hclk3",
+                        "enable": {
+                            "register": "ahb3enr",
+                            "field": "quadspien"
+                        },
+                        "reset": {
+                            "register": "ahb3rstr",
+                            "field": "quadspirst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA2",

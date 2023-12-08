@@ -864,13 +864,13 @@ pub mod regs {
     impl Ahb3rstr {
         #[doc = "Quad SPI memory interface reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn quadspirst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "Quad SPI memory interface reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_quadspirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PKA interface reset"]
@@ -951,15 +951,15 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ahb3smenr(pub u32);
     impl Ahb3smenr {
-        #[doc = "QSPISMEN"]
+        #[doc = "QUADSPISMEN"]
         #[inline(always)]
-        pub const fn qspismen(&self) -> bool {
+        pub const fn quadspismen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "QSPISMEN"]
+        #[doc = "QUADSPISMEN"]
         #[inline(always)]
-        pub fn set_qspismen(&mut self, val: bool) {
+        pub fn set_quadspismen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PKA accelerator clocks enable during CPU1 sleep mode"]

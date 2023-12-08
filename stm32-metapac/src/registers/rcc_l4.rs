@@ -1269,9 +1269,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspien",
+                    name: "quadspien",
                     description: Some(
-                        "QSPIEN",
+                        "QUADSPIEN",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -1299,7 +1299,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspirst",
+                    name: "quadspirst",
                     description: Some(
                         "Quad SPI memory interface reset",
                     ),
@@ -1329,9 +1329,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspismen",
+                    name: "quadspismen",
                     description: Some(
-                        "QSPISMEN",
+                        "QUADSPISMEN",
                     ),
                     bit_offset: 8,
                     bit_size: 1,

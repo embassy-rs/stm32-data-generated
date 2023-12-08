@@ -1261,7 +1261,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspilpen",
+                    name: "quadspilpen",
                     description: Some(
                         "QUADSPI memory controller module clock enable during Sleep mode",
                     ),
@@ -1441,7 +1441,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspilpen",
+                    name: "quadspilpen",
                     description: Some(
                         "QUADSPI memory controller module clock enable during Sleep mode",
                     ),
@@ -1481,7 +1481,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "qspirst",
+                    name: "quadspirst",
                     description: Some(
                         "QUADSPI module reset",
                     ),

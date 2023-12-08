@@ -4737,6 +4737,14 @@
                         "enable": {
                             "register": "ahb3enr",
                             "field": "quadspien"
+                        },
+                        "reset": {
+                            "register": "ahb3rstr",
+                            "field": "quadspirst"
+                        },
+                        "mux": {
+                            "register": "d1ccipr",
+                            "field": "quadspisel"
                         }
                     },
                     "pins": [
@@ -14597,6 +14605,14 @@
                         "enable": {
                             "register": "ahb3enr",
                             "field": "quadspien"
+                        },
+                        "reset": {
+                            "register": "ahb3rstr",
+                            "field": "quadspirst"
+                        },
+                        "mux": {
+                            "register": "d1ccipr",
+                            "field": "quadspisel"
                         }
                     },
                     "pins": [

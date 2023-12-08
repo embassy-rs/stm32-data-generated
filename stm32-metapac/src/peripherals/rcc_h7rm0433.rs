@@ -1284,13 +1284,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub const fn qspilpen(&self) -> bool {
+        pub const fn quadspilpen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub fn set_qspilpen(&mut self, val: bool) {
+        pub fn set_quadspilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode"]
@@ -1450,13 +1450,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI and QUADSPI delay block reset"]
         #[inline(always)]
-        pub const fn qspirst(&self) -> bool {
+        pub const fn quadspirst(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI and QUADSPI delay block reset"]
         #[inline(always)]
-        pub fn set_qspirst(&mut self, val: bool) {
+        pub fn set_quadspirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 delay block reset"]
@@ -5160,13 +5160,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub const fn qspilpen(&self) -> bool {
+        pub const fn quadspilpen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode"]
         #[inline(always)]
-        pub fn set_qspilpen(&mut self, val: bool) {
+        pub fn set_quadspilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode"]
@@ -8095,13 +8095,13 @@ pub mod regs {
         }
         #[doc = "QUADSPI kernel clock source selection"]
         #[inline(always)]
-        pub const fn qspisel(&self) -> super::vals::Fmcsel {
+        pub const fn quadspisel(&self) -> super::vals::Fmcsel {
             let val = (self.0 >> 4usize) & 0x03;
             super::vals::Fmcsel::from_bits(val as u8)
         }
         #[doc = "QUADSPI kernel clock source selection"]
         #[inline(always)]
-        pub fn set_qspisel(&mut self, val: super::vals::Fmcsel) {
+        pub fn set_quadspisel(&mut self, val: super::vals::Fmcsel) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "kernel clock source selection"]

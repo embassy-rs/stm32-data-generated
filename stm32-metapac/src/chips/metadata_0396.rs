@@ -1511,7 +1511,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073782784,
         registers: Some(PeripheralRegisters {
             kind: "can",
-            version: "fdcan",
+            version: "fdcan_h7",
             block: "FDCAN",
             ir: &can::REGISTERS,
         }),
@@ -1581,11 +1581,23 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073783808,
         registers: Some(PeripheralRegisters {
             kind: "can",
-            version: "fdcan",
+            version: "fdcan_h7",
             block: "FDCAN",
             ir: &can::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "pclk1",
+            enable: Some(PeripheralRccRegister {
+                register: "apb1henr",
+                field: "fdcanen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "apb1hrstr",
+                field: "fdcanrst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PB12",
@@ -1629,11 +1641,23 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073796096,
         registers: Some(PeripheralRegisters {
             kind: "can",
-            version: "fdcan",
+            version: "fdcan_h7",
             block: "FDCAN",
             ir: &can::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "pclk1",
+            enable: Some(PeripheralRccRegister {
+                register: "apb1henr",
+                field: "fdcanen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "apb1hrstr",
+                field: "fdcanrst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PD12",
@@ -1657,6 +1681,20 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 interrupt: "FDCAN3_IT1",
             },
         ],
+    },
+    Peripheral {
+        name: "FDCANRAM",
+        address: 1073785856,
+        registers: Some(PeripheralRegisters {
+            kind: "fdcanram",
+            version: "h7",
+            block: "FDCANRAM",
+            ir: &fdcanram::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
     },
     Peripheral {
         name: "FLASH",
@@ -8813,7 +8851,7 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../registers/can_fdcan.rs"]
+#[path = "../registers/can_fdcan_h7.rs"]
 pub mod can;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
@@ -8835,6 +8873,8 @@ pub mod dmamux;
 pub mod eth;
 #[path = "../registers/exti_h7.rs"]
 pub mod exti;
+#[path = "../registers/fdcanram_h7.rs"]
+pub mod fdcanram;
 #[path = "../registers/flash_h7.rs"]
 pub mod flash;
 #[path = "../registers/fmac_v1.rs"]

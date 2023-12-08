@@ -197,6 +197,8 @@ pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_9800
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a000 as usize as _) };
 pub const UCPD2: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_a400 as usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_b000 as usize as _) };
+pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_b400 as usize as _) };
+pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_b750 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const COMP1: *mut () = 0x4001_0200 as usize as _;
 pub const COMP2: *mut () = 0x4001_0204 as usize as _;
@@ -244,7 +246,7 @@ pub mod adccommon;
 pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../../peripherals/can_fdcan.rs"]
+#[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
@@ -258,6 +260,8 @@ pub mod dbgmcu;
 pub mod dmamux;
 #[path = "../../peripherals/exti_g0.rs"]
 pub mod exti;
+#[path = "../../peripherals/fdcanram_v1.rs"]
+pub mod fdcanram;
 #[path = "../../peripherals/flash_g0.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]

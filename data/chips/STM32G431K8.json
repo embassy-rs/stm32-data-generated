@@ -899,7 +899,7 @@
                     "address": 1073767424,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_v1",
                         "block": "FDCAN"
                     },
                     "rcc": {
@@ -944,6 +944,15 @@
                             "interrupt": "FDCAN1_IT1"
                         }
                     ]
+                },
+                {
+                    "name": "FDCANRAM1",
+                    "address": 1073783808,
+                    "registers": {
+                        "kind": "fdcanram",
+                        "version": "v1",
+                        "block": "FDCANRAM"
+                    }
                 },
                 {
                     "name": "FLASH",

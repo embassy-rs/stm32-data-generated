@@ -3603,14 +3603,14 @@ pub mod regs {
         }
         #[doc = "FDCAN clock source selection"]
         #[inline(always)]
-        pub const fn fdcansel(&self) -> u8 {
+        pub const fn fdcansel(&self) -> super::vals::Fdcansel {
             let val = (self.0 >> 24usize) & 0x03;
-            val as u8
+            super::vals::Fdcansel::from_bits(val as u8)
         }
         #[doc = "FDCAN clock source selection"]
         #[inline(always)]
-        pub fn set_fdcansel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
+        pub fn set_fdcansel(&mut self, val: super::vals::Fdcansel) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
@@ -5194,6 +5194,39 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Clk48sel) -> u8 {
             Clk48sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Fdcansel {
+        #[doc = "HSE clock selected"]
+        HSE = 0,
+        #[doc = "PLL \"Q\" clock selected"]
+        PLL1_Q = 0x01,
+        #[doc = "PLLSAI \"P\" clock selected"]
+        PLLSAI1_P = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Fdcansel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Fdcansel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Fdcansel {
+        #[inline(always)]
+        fn from(val: u8) -> Fdcansel {
+            Fdcansel::from_bits(val)
+        }
+    }
+    impl From<Fdcansel> for u8 {
+        #[inline(always)]
+        fn from(val: Fdcansel) -> u8 {
+            Fdcansel::to_bits(val)
         }
     }
     #[repr(u8)]

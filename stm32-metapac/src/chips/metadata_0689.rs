@@ -745,7 +745,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073783808,
         registers: Some(PeripheralRegisters {
             kind: "can",
-            version: "fdcan",
+            version: "fdcan_v1",
             block: "FDCAN",
             ir: &can::REGISTERS,
         }),
@@ -795,6 +795,20 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 interrupt: "FDCAN1_IT1",
             },
         ],
+    },
+    Peripheral {
+        name: "FDCANRAM1",
+        address: 1073785856,
+        registers: Some(PeripheralRegisters {
+            kind: "fdcanram",
+            version: "v1",
+            block: "FDCANRAM",
+            ir: &fdcanram::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
     },
     Peripheral {
         name: "FLASH",
@@ -5512,7 +5526,7 @@ pub mod adccommon;
 pub mod aes;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../registers/can_fdcan.rs"]
+#[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../registers/crc_v2.rs"]
 pub mod crc;
@@ -5524,6 +5538,8 @@ pub mod dac;
 pub mod dmamux;
 #[path = "../registers/exti_l5.rs"]
 pub mod exti;
+#[path = "../registers/fdcanram_v1.rs"]
+pub mod fdcanram;
 #[path = "../registers/flash_l5.rs"]
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]

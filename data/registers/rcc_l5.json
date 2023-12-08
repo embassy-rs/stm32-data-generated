@@ -2067,7 +2067,8 @@
         "name": "FDCANSEL",
         "description": "FDCAN clock source selection",
         "bit_offset": 24,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "FDCANSEL"
       },
       {
         "name": "CLK48SEL",
@@ -2936,6 +2937,26 @@
         "name": "MSI",
         "description": "MSI clock selected",
         "value": 3
+      }
+    ]
+  },
+  "enum/FDCANSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HSE",
+        "description": "HSE clock selected",
+        "value": 0
+      },
+      {
+        "name": "PLL1_Q",
+        "description": "PLL \"Q\" clock selected",
+        "value": 1
+      },
+      {
+        "name": "PLLSAI1_P",
+        "description": "PLLSAI \"P\" clock selected",
+        "value": 2
       }
     ]
   },

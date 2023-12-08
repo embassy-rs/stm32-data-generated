@@ -2901,7 +2901,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 24,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Fdcansel"),
                 },
                 Field {
                     name: "clk48sel",
@@ -4041,6 +4041,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "MSI",
                     description: Some("MSI clock selected"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Fdcansel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSE",
+                    description: Some("HSE clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: Some("PLL \"Q\" clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PLLSAI1_P",
+                    description: Some("PLLSAI \"P\" clock selected"),
+                    value: 2,
                 },
             ],
         },

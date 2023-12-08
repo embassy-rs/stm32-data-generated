@@ -1518,21 +1518,22 @@
       },
       {
         "name": "SAI1SEL",
-        "description": "Low power timer 2 clock source selection",
+        "description": "SAI1 clock source selection",
         "bit_offset": 20,
         "bit_size": 2
       },
       {
         "name": "I2S23SEL",
-        "description": "SAI1 clock source selection",
+        "description": "I2S23 clock source selection",
         "bit_offset": 22,
         "bit_size": 2
       },
       {
         "name": "FDCANSEL",
-        "description": "SAI2 clock source selection",
+        "description": "FDCAN clock source selection",
         "bit_offset": 24,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "FDCANSEL"
       },
       {
         "name": "CLK48SEL",
@@ -2048,6 +2049,26 @@
       {
         "name": "PLL1_Q",
         "description": "PLLQCLK selected as 48 MHz clock",
+        "value": 2
+      }
+    ]
+  },
+  "enum/FDCANSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HSE",
+        "description": "HSE used as FDCAN clock source",
+        "value": 0
+      },
+      {
+        "name": "PLL1_Q",
+        "description": "PLLQCLK used as FDCAN clock source",
+        "value": 1
+      },
+      {
+        "name": "PCLK1",
+        "description": "PCLK used as FDCAN clock source",
         "value": 2
       }
     ]

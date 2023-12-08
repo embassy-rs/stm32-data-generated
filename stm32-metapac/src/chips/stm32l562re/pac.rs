@@ -513,6 +513,7 @@ pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_8400 as usize as _
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
 pub const LPTIM3: *mut () = 0x4000_9800 as usize as _;
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
+pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00 as usize as _) };
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4000_d400 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4000_d800 as usize as _) };
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_dc00 as usize as _) };
@@ -575,7 +576,7 @@ pub mod adccommon;
 pub mod aes;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../../peripherals/can_fdcan.rs"]
+#[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
@@ -587,6 +588,8 @@ pub mod dac;
 pub mod dmamux;
 #[path = "../../peripherals/exti_l5.rs"]
 pub mod exti;
+#[path = "../../peripherals/fdcanram_v1.rs"]
+pub mod fdcanram;
 #[path = "../../peripherals/flash_l5.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]

@@ -2055,7 +2055,7 @@
                     "address": 1073782784,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_h7",
                         "block": "FDCAN"
                     },
                     "rcc": {
@@ -2131,8 +2131,19 @@
                     "address": 1073783808,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_h7",
                         "block": "FDCAN"
+                    },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1henr",
+                            "field": "fdcanen"
+                        },
+                        "reset": {
+                            "register": "apb1hrstr",
+                            "field": "fdcanrst"
+                        }
                     },
                     "pins": [
                         {
@@ -2170,6 +2181,15 @@
                             "interrupt": "FDCAN2_IT1"
                         }
                     ]
+                },
+                {
+                    "name": "FDCANRAM",
+                    "address": 1073785856,
+                    "registers": {
+                        "kind": "fdcanram",
+                        "version": "h7",
+                        "block": "FDCANRAM"
+                    }
                 },
                 {
                     "name": "FLASH",
@@ -11518,7 +11538,7 @@
                     "address": 1073782784,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_h7",
                         "block": "FDCAN"
                     },
                     "rcc": {
@@ -11594,8 +11614,19 @@
                     "address": 1073783808,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_h7",
                         "block": "FDCAN"
+                    },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1henr",
+                            "field": "fdcanen"
+                        },
+                        "reset": {
+                            "register": "apb1hrstr",
+                            "field": "fdcanrst"
+                        }
                     },
                     "pins": [
                         {
@@ -11633,6 +11664,15 @@
                             "interrupt": "FDCAN2_IT1"
                         }
                     ]
+                },
+                {
+                    "name": "FDCANRAM",
+                    "address": 1073785856,
+                    "registers": {
+                        "kind": "fdcanram",
+                        "version": "h7",
+                        "block": "FDCANRAM"
+                    }
                 },
                 {
                     "name": "FLASH",

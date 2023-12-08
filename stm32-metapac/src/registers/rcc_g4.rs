@@ -2139,7 +2139,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sai1sel",
-                    description: Some("Low power timer 2 clock source selection"),
+                    description: Some("SAI1 clock source selection"),
                     bit_offset: 20,
                     bit_size: 2,
                     array: None,
@@ -2147,7 +2147,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "i2s23sel",
-                    description: Some("SAI1 clock source selection"),
+                    description: Some("I2S23 clock source selection"),
                     bit_offset: 22,
                     bit_size: 2,
                     array: None,
@@ -2155,11 +2155,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "fdcansel",
-                    description: Some("SAI2 clock source selection"),
+                    description: Some("FDCAN clock source selection"),
                     bit_offset: 24,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Fdcansel"),
                 },
                 Field {
                     name: "clk48sel",
@@ -2834,6 +2834,28 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PLL1_Q",
                     description: Some("PLLQCLK selected as 48 MHz clock"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Fdcansel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSE",
+                    description: Some("HSE used as FDCAN clock source"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: Some("PLLQCLK used as FDCAN clock source"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("PCLK used as FDCAN clock source"),
                     value: 2,
                 },
             ],

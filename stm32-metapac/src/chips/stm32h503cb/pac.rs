@@ -436,7 +436,8 @@ pub const I3C1: *mut () = 0x4000_5c00 as usize as _;
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000 as usize as _) };
 pub const DTS: *mut () = 0x4000_8c00 as usize as _;
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
-pub const FDCAN1: *mut () = 0x4000_a400 as usize as _;
+pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
+pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00 as usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800 as usize as _) };
@@ -477,6 +478,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/can_fdcan_v1.rs"]
+pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
@@ -485,6 +488,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../../peripherals/exti_h50.rs"]
 pub mod exti;
+#[path = "../../peripherals/fdcanram_v1.rs"]
+pub mod fdcanram;
 #[path = "../../peripherals/flash_h50.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpdma_v1.rs"]

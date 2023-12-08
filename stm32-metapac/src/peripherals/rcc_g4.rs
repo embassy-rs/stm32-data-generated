@@ -2654,38 +2654,38 @@ pub mod regs {
         pub fn set_lptim1sel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
         }
-        #[doc = "Low power timer 2 clock source selection"]
+        #[doc = "SAI1 clock source selection"]
         #[inline(always)]
         pub const fn sai1sel(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x03;
             val as u8
         }
-        #[doc = "Low power timer 2 clock source selection"]
+        #[doc = "SAI1 clock source selection"]
         #[inline(always)]
         pub fn set_sai1sel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
         }
-        #[doc = "SAI1 clock source selection"]
+        #[doc = "I2S23 clock source selection"]
         #[inline(always)]
         pub const fn i2s23sel(&self) -> u8 {
             let val = (self.0 >> 22usize) & 0x03;
             val as u8
         }
-        #[doc = "SAI1 clock source selection"]
+        #[doc = "I2S23 clock source selection"]
         #[inline(always)]
         pub fn set_i2s23sel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val as u32) & 0x03) << 22usize);
         }
-        #[doc = "SAI2 clock source selection"]
+        #[doc = "FDCAN clock source selection"]
         #[inline(always)]
-        pub const fn fdcansel(&self) -> u8 {
+        pub const fn fdcansel(&self) -> super::vals::Fdcansel {
             let val = (self.0 >> 24usize) & 0x03;
-            val as u8
+            super::vals::Fdcansel::from_bits(val as u8)
         }
-        #[doc = "SAI2 clock source selection"]
+        #[doc = "FDCAN clock source selection"]
         #[inline(always)]
-        pub fn set_fdcansel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
+        pub fn set_fdcansel(&mut self, val: super::vals::Fdcansel) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
         #[doc = "48 MHz clock source selection"]
         #[inline(always)]
@@ -3638,6 +3638,39 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Clk48sel) -> u8 {
             Clk48sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Fdcansel {
+        #[doc = "HSE used as FDCAN clock source"]
+        HSE = 0,
+        #[doc = "PLLQCLK used as FDCAN clock source"]
+        PLL1_Q = 0x01,
+        #[doc = "PCLK used as FDCAN clock source"]
+        PCLK1 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Fdcansel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Fdcansel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Fdcansel {
+        #[inline(always)]
+        fn from(val: u8) -> Fdcansel {
+            Fdcansel::from_bits(val)
+        }
+    }
+    impl From<Fdcansel> for u8 {
+        #[inline(always)]
+        fn from(val: Fdcansel) -> u8 {
+            Fdcansel::to_bits(val)
         }
     }
     #[repr(u8)]

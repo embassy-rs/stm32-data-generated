@@ -1052,7 +1052,7 @@
                     "address": 1073767424,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_v1",
                         "block": "FDCAN"
                     },
                     "rcc": {
@@ -1108,8 +1108,23 @@
                     "address": 1073768448,
                     "registers": {
                         "kind": "can",
-                        "version": "fdcan",
+                        "version": "fdcan_v1",
                         "block": "FDCAN"
+                    },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1enr1",
+                            "field": "fdcanen"
+                        },
+                        "reset": {
+                            "register": "apb1rstr1",
+                            "field": "fdcanrst"
+                        },
+                        "mux": {
+                            "register": "ccipr",
+                            "field": "fdcansel"
+                        }
                     },
                     "pins": [
                         {
@@ -1143,6 +1158,24 @@
                             "interrupt": "FDCAN2_IT1"
                         }
                     ]
+                },
+                {
+                    "name": "FDCANRAM1",
+                    "address": 1073783808,
+                    "registers": {
+                        "kind": "fdcanram",
+                        "version": "v1",
+                        "block": "FDCANRAM"
+                    }
+                },
+                {
+                    "name": "FDCANRAM2",
+                    "address": 1073784656,
+                    "registers": {
+                        "kind": "fdcanram",
+                        "version": "v1",
+                        "block": "FDCANRAM"
+                    }
                 },
                 {
                     "name": "FLASH",

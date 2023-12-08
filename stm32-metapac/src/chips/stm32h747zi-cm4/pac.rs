@@ -645,6 +645,7 @@ pub const OPAMP2: *mut () = 0x4000_9010 as usize as _;
 pub const MDIOS: mdios::Mdios = unsafe { mdios::Mdios::from_ptr(0x4000_9400 as usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a000 as usize as _) };
 pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
+pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_0000 as usize as _) };
 pub const TIM8: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_0400 as usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_1000 as usize as _) };
@@ -731,7 +732,7 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../../peripherals/can_fdcan.rs"]
+#[path = "../../peripherals/can_fdcan_h7.rs"]
 pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
@@ -753,6 +754,8 @@ pub mod dmamux;
 pub mod eth;
 #[path = "../../peripherals/exti_h7.rs"]
 pub mod exti;
+#[path = "../../peripherals/fdcanram_h7.rs"]
+pub mod fdcanram;
 #[path = "../../peripherals/flash_h7.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmc_v3x1.rs"]

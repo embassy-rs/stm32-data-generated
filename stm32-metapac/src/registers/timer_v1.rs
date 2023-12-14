@@ -1625,9 +1625,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Arpe",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1717,9 +1715,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Arpe",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ckd",
@@ -2688,27 +2684,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Arpe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "TIMx_APRR register is not buffered",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "TIMx_APRR register is buffered",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Ccds",
             description: None,

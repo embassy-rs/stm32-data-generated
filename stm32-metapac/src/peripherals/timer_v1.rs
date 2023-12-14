@@ -913,14 +913,14 @@ pub mod regs {
         }
         #[doc = "Auto-reload preload enable"]
         #[inline(always)]
-        pub const fn arpe(&self) -> super::vals::Arpe {
+        pub const fn arpe(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Arpe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Auto-reload preload enable"]
         #[inline(always)]
-        pub fn set_arpe(&mut self, val: super::vals::Arpe) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_arpe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
     impl Default for Cr1Basic {
@@ -1002,14 +1002,14 @@ pub mod regs {
         }
         #[doc = "Auto-reload preload enable"]
         #[inline(always)]
-        pub const fn arpe(&self) -> super::vals::Arpe {
+        pub const fn arpe(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Arpe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Auto-reload preload enable"]
         #[inline(always)]
-        pub fn set_arpe(&mut self, val: super::vals::Arpe) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_arpe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Clock division"]
         #[inline(always)]
@@ -2005,36 +2005,6 @@ pub mod regs {
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Arpe {
-        #[doc = "TIMx_APRR register is not buffered"]
-        DISABLED = 0,
-        #[doc = "TIMx_APRR register is buffered"]
-        ENABLED = 0x01,
-    }
-    impl Arpe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Arpe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Arpe {
-        #[inline(always)]
-        fn from(val: u8) -> Arpe {
-            Arpe::from_bits(val)
-        }
-    }
-    impl From<Arpe> for u8 {
-        #[inline(always)]
-        fn from(val: Arpe) -> u8 {
-            Arpe::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ccds {

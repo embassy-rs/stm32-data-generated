@@ -527,8 +527,7 @@
         "name": "ARPE",
         "description": "Auto-reload preload enable",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "ARPE"
+        "bit_size": 1
       }
     ]
   },
@@ -953,21 +952,6 @@
           "len": 4,
           "stride": 1
         }
-      }
-    ]
-  },
-  "enum/ARPE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "TIMx_APRR register is not buffered",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "TIMx_APRR register is buffered",
-        "value": 1
       }
     ]
   },

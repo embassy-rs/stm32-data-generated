@@ -369,9 +369,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "En",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dt",
@@ -615,9 +613,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Susp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "abort",
@@ -639,9 +635,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Teie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tcie",
@@ -651,9 +645,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tcie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "twie",
@@ -663,9 +655,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Twie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "caeie",
@@ -675,9 +665,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Caeie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ctcie",
@@ -687,9 +675,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ctcie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ceie",
@@ -699,9 +685,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ceie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mode",
@@ -1499,27 +1483,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Caeie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "CAE interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "CAE interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Cceif",
             description: None,
             bit_size: 1,
@@ -1548,27 +1511,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ceie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "CE interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "CE interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "CrStart",
             description: None,
             bit_size: 1,
@@ -1577,27 +1519,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "START",
                     description: Some(
                         "Launch the DMA2D",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ctcie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "CTC interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "CTC interrupt enabled",
                     ),
                     value: 1,
                 },
@@ -1640,27 +1561,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CLEAR",
                     description: Some(
                         "Clear the TWIF flag in the ISR register",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "En",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Disabled AHB/AXI dead-time functionality",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Enabled AHB/AXI dead-time functionality",
                     ),
                     value: 1,
                 },
@@ -1997,90 +1897,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SWAPBYTES",
                     description: Some(
                         "Bytes are swapped two by two",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Susp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSUSPENDED",
-                    description: Some(
-                        "Transfer not suspended",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SUSPENDED",
-                    description: Some(
-                        "Transfer suspended",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tcie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "TC interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "TC interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Teie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "TE interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "TE interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Twie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "TW interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "TW interrupt enabled",
                     ),
                     value: 1,
                 },

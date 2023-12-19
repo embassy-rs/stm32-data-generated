@@ -133,14 +133,14 @@ pub mod regs {
     impl Amtcr {
         #[doc = "Enable"]
         #[inline(always)]
-        pub const fn en(&self) -> super::vals::En {
+        pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::En::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable"]
         #[inline(always)]
-        pub fn set_en(&mut self, val: super::vals::En) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Dead Time"]
         #[inline(always)]
@@ -426,14 +426,14 @@ pub mod regs {
         }
         #[doc = "Suspend"]
         #[inline(always)]
-        pub const fn susp(&self) -> super::vals::Susp {
+        pub const fn susp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Susp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Suspend"]
         #[inline(always)]
-        pub fn set_susp(&mut self, val: super::vals::Susp) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_susp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Abort"]
         #[inline(always)]
@@ -448,69 +448,69 @@ pub mod regs {
         }
         #[doc = "Transfer error interrupt enable"]
         #[inline(always)]
-        pub const fn teie(&self) -> super::vals::Teie {
+        pub const fn teie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Teie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Transfer error interrupt enable"]
         #[inline(always)]
-        pub fn set_teie(&mut self, val: super::vals::Teie) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_teie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Transfer complete interrupt enable"]
         #[inline(always)]
-        pub const fn tcie(&self) -> super::vals::Tcie {
+        pub const fn tcie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Tcie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Transfer complete interrupt enable"]
         #[inline(always)]
-        pub fn set_tcie(&mut self, val: super::vals::Tcie) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_tcie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Transfer watermark interrupt enable"]
         #[inline(always)]
-        pub const fn twie(&self) -> super::vals::Twie {
+        pub const fn twie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Twie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Transfer watermark interrupt enable"]
         #[inline(always)]
-        pub fn set_twie(&mut self, val: super::vals::Twie) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_twie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "CLUT access error interrupt enable"]
         #[inline(always)]
-        pub const fn caeie(&self) -> super::vals::Caeie {
+        pub const fn caeie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Caeie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "CLUT access error interrupt enable"]
         #[inline(always)]
-        pub fn set_caeie(&mut self, val: super::vals::Caeie) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_caeie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "CLUT transfer complete interrupt enable"]
         #[inline(always)]
-        pub const fn ctcie(&self) -> super::vals::Ctcie {
+        pub const fn ctcie(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Ctcie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "CLUT transfer complete interrupt enable"]
         #[inline(always)]
-        pub fn set_ctcie(&mut self, val: super::vals::Ctcie) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_ctcie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Configuration Error Interrupt Enable"]
         #[inline(always)]
-        pub const fn ceie(&self) -> super::vals::Ceie {
+        pub const fn ceie(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Ceie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Configuration Error Interrupt Enable"]
         #[inline(always)]
-        pub fn set_ceie(&mut self, val: super::vals::Ceie) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_ceie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "DMA2D mode"]
         #[inline(always)]
@@ -1323,36 +1323,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Caeie {
-        #[doc = "CAE interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "CAE interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Caeie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Caeie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Caeie {
-        #[inline(always)]
-        fn from(val: u8) -> Caeie {
-            Caeie::from_bits(val)
-        }
-    }
-    impl From<Caeie> for u8 {
-        #[inline(always)]
-        fn from(val: Caeie) -> u8 {
-            Caeie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Cceif {
         _RESERVED_0 = 0,
         #[doc = "Clear the CEIF flag in the ISR register"]
@@ -1411,36 +1381,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ceie {
-        #[doc = "CE interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "CE interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Ceie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ceie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ceie {
-        #[inline(always)]
-        fn from(val: u8) -> Ceie {
-            Ceie::from_bits(val)
-        }
-    }
-    impl From<Ceie> for u8 {
-        #[inline(always)]
-        fn from(val: Ceie) -> u8 {
-            Ceie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum CrStart {
         _RESERVED_0 = 0,
         #[doc = "Launch the DMA2D"]
@@ -1466,36 +1406,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: CrStart) -> u8 {
             CrStart::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ctcie {
-        #[doc = "CTC interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "CTC interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Ctcie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ctcie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ctcie {
-        #[inline(always)]
-        fn from(val: u8) -> Ctcie {
-            Ctcie::from_bits(val)
-        }
-    }
-    impl From<Ctcie> for u8 {
-        #[inline(always)]
-        fn from(val: Ctcie) -> u8 {
-            Ctcie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1583,36 +1493,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Ctwif) -> u8 {
             Ctwif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum En {
-        #[doc = "Disabled AHB/AXI dead-time functionality"]
-        DISABLED = 0,
-        #[doc = "Enabled AHB/AXI dead-time functionality"]
-        ENABLED = 0x01,
-    }
-    impl En {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> En {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for En {
-        #[inline(always)]
-        fn from(val: u8) -> En {
-            En::from_bits(val)
-        }
-    }
-    impl From<En> for u8 {
-        #[inline(always)]
-        fn from(val: En) -> u8 {
-            En::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1831,126 +1711,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: OpfccrCm) -> u8 {
             OpfccrCm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Susp {
-        #[doc = "Transfer not suspended"]
-        NOTSUSPENDED = 0,
-        #[doc = "Transfer suspended"]
-        SUSPENDED = 0x01,
-    }
-    impl Susp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Susp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Susp {
-        #[inline(always)]
-        fn from(val: u8) -> Susp {
-            Susp::from_bits(val)
-        }
-    }
-    impl From<Susp> for u8 {
-        #[inline(always)]
-        fn from(val: Susp) -> u8 {
-            Susp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tcie {
-        #[doc = "TC interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "TC interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Tcie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tcie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tcie {
-        #[inline(always)]
-        fn from(val: u8) -> Tcie {
-            Tcie::from_bits(val)
-        }
-    }
-    impl From<Tcie> for u8 {
-        #[inline(always)]
-        fn from(val: Tcie) -> u8 {
-            Tcie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Teie {
-        #[doc = "TE interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "TE interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Teie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Teie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Teie {
-        #[inline(always)]
-        fn from(val: u8) -> Teie {
-            Teie::from_bits(val)
-        }
-    }
-    impl From<Teie> for u8 {
-        #[inline(always)]
-        fn from(val: Teie) -> u8 {
-            Teie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Twie {
-        #[doc = "TW interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "TW interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Twie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Twie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Twie {
-        #[inline(always)]
-        fn from(val: u8) -> Twie {
-            Twie::from_bits(val)
-        }
-    }
-    impl From<Twie> for u8 {
-        #[inline(always)]
-        fn from(val: Twie) -> u8 {
-            Twie::to_bits(val)
         }
     }
 }

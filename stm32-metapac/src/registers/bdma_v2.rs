@@ -150,27 +150,27 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "circ",
-                    description: Some("Circular mode"),
+                    description: Some("Circular mode enabled"),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Circ"),
+                    enumm: None,
                 },
                 Field {
                     name: "pinc",
-                    description: Some("Peripheral increment mode"),
+                    description: Some("Peripheral increment mode enabled"),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inc"),
+                    enumm: None,
                 },
                 Field {
                     name: "minc",
-                    description: Some("Memory increment mode"),
+                    description: Some("Memory increment mode enabled"),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inc"),
+                    enumm: None,
                 },
                 Field {
                     name: "psize",
@@ -198,11 +198,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "mem2mem",
-                    description: Some("Memory to memory mode"),
+                    description: Some("Memory to memory mode enabled"),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Memmem"),
+                    enumm: None,
                 },
             ],
         },
@@ -277,23 +277,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Circ",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Circular buffer disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Circular buffer enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Dir",
             description: None,
             bit_size: 1,
@@ -306,40 +289,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "FROMMEMORY",
                     description: Some("Read from memory"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Increment mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Increment mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Memmem",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Memory to memory mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Memory to memory mode enabled"),
                     value: 1,
                 },
             ],

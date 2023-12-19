@@ -97,24 +97,21 @@
       },
       {
         "name": "CIRC",
-        "description": "Circular mode",
+        "description": "Circular mode enabled",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "CIRC"
+        "bit_size": 1
       },
       {
         "name": "PINC",
-        "description": "Peripheral increment mode",
+        "description": "Peripheral increment mode enabled",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "INC"
+        "bit_size": 1
       },
       {
         "name": "MINC",
-        "description": "Memory increment mode",
+        "description": "Memory increment mode enabled",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "INC"
+        "bit_size": 1
       },
       {
         "name": "PSIZE",
@@ -139,10 +136,9 @@
       },
       {
         "name": "MEM2MEM",
-        "description": "Memory to memory mode",
+        "description": "Memory to memory mode enabled",
         "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "MEMMEM"
+        "bit_size": 1
       }
     ]
   },
@@ -217,21 +213,6 @@
       }
     ]
   },
-  "enum/CIRC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Circular buffer disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Circular buffer enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/DIR": {
     "bit_size": 1,
     "variants": [
@@ -243,36 +224,6 @@
       {
         "name": "FromMemory",
         "description": "Read from memory",
-        "value": 1
-      }
-    ]
-  },
-  "enum/INC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Increment mode disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Increment mode enabled",
-        "value": 1
-      }
-    ]
-  },
-  "enum/MEMMEM": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Memory to memory mode disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Memory to memory mode enabled",
         "value": 1
       }
     ]

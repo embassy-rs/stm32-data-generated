@@ -129,38 +129,38 @@ pub mod regs {
         pub fn set_dir(&mut self, val: super::vals::Dir) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
-        #[doc = "Circular mode"]
+        #[doc = "Circular mode enabled"]
         #[inline(always)]
-        pub const fn circ(&self) -> super::vals::Circ {
+        pub const fn circ(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Circ::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Circular mode"]
+        #[doc = "Circular mode enabled"]
         #[inline(always)]
-        pub fn set_circ(&mut self, val: super::vals::Circ) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_circ(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "Peripheral increment mode"]
+        #[doc = "Peripheral increment mode enabled"]
         #[inline(always)]
-        pub const fn pinc(&self) -> super::vals::Inc {
+        pub const fn pinc(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Inc::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Peripheral increment mode"]
+        #[doc = "Peripheral increment mode enabled"]
         #[inline(always)]
-        pub fn set_pinc(&mut self, val: super::vals::Inc) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_pinc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Memory increment mode"]
+        #[doc = "Memory increment mode enabled"]
         #[inline(always)]
-        pub const fn minc(&self) -> super::vals::Inc {
+        pub const fn minc(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Inc::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Memory increment mode"]
+        #[doc = "Memory increment mode enabled"]
         #[inline(always)]
-        pub fn set_minc(&mut self, val: super::vals::Inc) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_minc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Peripheral size"]
         #[inline(always)]
@@ -195,16 +195,16 @@ pub mod regs {
         pub fn set_pl(&mut self, val: super::vals::Pl) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
-        #[doc = "Memory to memory mode"]
+        #[doc = "Memory to memory mode enabled"]
         #[inline(always)]
-        pub const fn mem2mem(&self) -> super::vals::Memmem {
+        pub const fn mem2mem(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Memmem::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Memory to memory mode"]
+        #[doc = "Memory to memory mode enabled"]
         #[inline(always)]
-        pub fn set_mem2mem(&mut self, val: super::vals::Memmem) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_mem2mem(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Cr {
@@ -312,36 +312,6 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Circ {
-        #[doc = "Circular buffer disabled"]
-        DISABLED = 0,
-        #[doc = "Circular buffer enabled"]
-        ENABLED = 0x01,
-    }
-    impl Circ {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Circ {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Circ {
-        #[inline(always)]
-        fn from(val: u8) -> Circ {
-            Circ::from_bits(val)
-        }
-    }
-    impl From<Circ> for u8 {
-        #[inline(always)]
-        fn from(val: Circ) -> u8 {
-            Circ::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dir {
         #[doc = "Read from peripheral"]
         FROMPERIPHERAL = 0,
@@ -368,66 +338,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dir) -> u8 {
             Dir::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Inc {
-        #[doc = "Increment mode disabled"]
-        DISABLED = 0,
-        #[doc = "Increment mode enabled"]
-        ENABLED = 0x01,
-    }
-    impl Inc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Inc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Inc {
-        #[inline(always)]
-        fn from(val: u8) -> Inc {
-            Inc::from_bits(val)
-        }
-    }
-    impl From<Inc> for u8 {
-        #[inline(always)]
-        fn from(val: Inc) -> u8 {
-            Inc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Memmem {
-        #[doc = "Memory to memory mode disabled"]
-        DISABLED = 0,
-        #[doc = "Memory to memory mode enabled"]
-        ENABLED = 0x01,
-    }
-    impl Memmem {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Memmem {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Memmem {
-        #[inline(always)]
-        fn from(val: u8) -> Memmem {
-            Memmem::from_bits(val)
-        }
-    }
-    impl From<Memmem> for u8 {
-        #[inline(always)]
-        fn from(val: Memmem) -> u8 {
-            Memmem::to_bits(val)
         }
     }
     #[repr(u8)]

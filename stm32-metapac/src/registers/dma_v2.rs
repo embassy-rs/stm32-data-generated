@@ -177,27 +177,27 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "circ",
-                    description: Some("Circular mode"),
+                    description: Some("Circular mode enabled"),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Circ"),
+                    enumm: None,
                 },
                 Field {
                     name: "pinc",
-                    description: Some("Peripheral increment mode"),
+                    description: Some("Peripheral increment mode enabled"),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inc"),
+                    enumm: None,
                 },
                 Field {
                     name: "minc",
-                    description: Some("Memory increment mode"),
+                    description: Some("Memory increment mode enabled"),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Inc"),
+                    enumm: None,
                 },
                 Field {
                     name: "psize",
@@ -233,11 +233,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dbm",
-                    description: Some("Double buffer mode"),
+                    description: Some("Double buffer mode enabled"),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Dbm"),
+                    enumm: None,
                 },
                 Field {
                     name: "ct",
@@ -415,23 +415,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Circ",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Circular mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Circular mode enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ct",
             description: None,
             bit_size: 1,
@@ -444,23 +427,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "MEMORY1",
                     description: Some("The current target memory is Memory 1"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dbm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("No buffer switching at the end of transfer"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Memory target switched at the end of the DMA transfer"),
                     value: 1,
                 },
             ],
@@ -565,23 +531,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "FULL",
                     description: Some("Full FIFO"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Inc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FIXED",
-                    description: Some("Address pointer is fixed"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INCREMENTED",
-                    description: Some("Address pointer is incremented after each data transfer"),
-                    value: 1,
                 },
             ],
         },

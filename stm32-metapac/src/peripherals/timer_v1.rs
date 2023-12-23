@@ -720,18 +720,18 @@ pub mod regs {
         }
         #[doc = "Output compare 3 preload enable"]
         #[inline(always)]
-        pub const fn ocpe(&self, n: usize) -> super::vals::Ocpe {
+        pub const fn ocpe(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 3usize + n * 8usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Ocpe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Output compare 3 preload enable"]
         #[inline(always)]
-        pub fn set_ocpe(&mut self, n: usize, val: super::vals::Ocpe) {
+        pub fn set_ocpe(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 3usize + n * 8usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Output compare 3 mode"]
         #[inline(always)]
@@ -900,16 +900,16 @@ pub mod regs {
         pub fn set_urs(&mut self, val: super::vals::Urs) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
-        #[doc = "One-pulse mode"]
+        #[doc = "One-pulse mode enbaled"]
         #[inline(always)]
-        pub const fn opm(&self) -> super::vals::Opm {
+        pub const fn opm(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Opm::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "One-pulse mode"]
+        #[doc = "One-pulse mode enbaled"]
         #[inline(always)]
-        pub fn set_opm(&mut self, val: super::vals::Opm) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_opm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Auto-reload preload enable"]
         #[inline(always)]
@@ -967,16 +967,16 @@ pub mod regs {
         pub fn set_urs(&mut self, val: super::vals::Urs) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
-        #[doc = "One-pulse mode"]
+        #[doc = "One-pulse mode enbaled"]
         #[inline(always)]
-        pub const fn opm(&self) -> super::vals::Opm {
+        pub const fn opm(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Opm::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "One-pulse mode"]
+        #[doc = "One-pulse mode enbaled"]
         #[inline(always)]
-        pub fn set_opm(&mut self, val: super::vals::Opm) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_opm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Direction"]
         #[inline(always)]
@@ -1779,16 +1779,16 @@ pub mod regs {
         pub fn set_etps(&mut self, val: super::vals::Etps) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
-        #[doc = "External clock enable"]
+        #[doc = "External clock mode 2 enable"]
         #[inline(always)]
-        pub const fn ece(&self) -> super::vals::Ece {
+        pub const fn ece(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Ece::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "External clock enable"]
+        #[doc = "External clock mode 2 enable"]
         #[inline(always)]
-        pub fn set_ece(&mut self, val: super::vals::Ece) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_ece(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "External trigger polarity"]
         #[inline(always)]
@@ -2198,36 +2198,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ece {
-        #[doc = "External clock mode 2 disabled"]
-        DISABLED = 0,
-        #[doc = "External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal."]
-        ENABLED = 0x01,
-    }
-    impl Ece {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ece {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ece {
-        #[inline(always)]
-        fn from(val: u8) -> Ece {
-            Ece::from_bits(val)
-        }
-    }
-    impl From<Ece> for u8 {
-        #[inline(always)]
-        fn from(val: Ece) -> u8 {
-            Ece::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Etf {
         #[doc = "No filter, sampling is done at fDTS"]
         NOFILTER = 0,
@@ -2518,66 +2488,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Ocm) -> u8 {
             Ocm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ocpe {
-        #[doc = "Preload register on CCR2 disabled. New values written to CCR2 are taken into account immediately"]
-        DISABLED = 0,
-        #[doc = "Preload register on CCR2 enabled. Preload value is loaded into active register on each update event"]
-        ENABLED = 0x01,
-    }
-    impl Ocpe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ocpe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ocpe {
-        #[inline(always)]
-        fn from(val: u8) -> Ocpe {
-            Ocpe::from_bits(val)
-        }
-    }
-    impl From<Ocpe> for u8 {
-        #[inline(always)]
-        fn from(val: Ocpe) -> u8 {
-            Ocpe::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Opm {
-        #[doc = "Counter is not stopped at update event"]
-        DISABLED = 0,
-        #[doc = "Counter stops counting at the next update event (clearing the CEN bit)"]
-        ENABLED = 0x01,
-    }
-    impl Opm {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Opm {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Opm {
-        #[inline(always)]
-        fn from(val: u8) -> Opm {
-            Opm::from_bits(val)
-        }
-    }
-    impl From<Opm> for u8 {
-        #[inline(always)]
-        fn from(val: Opm) -> u8 {
-            Opm::to_bits(val)
         }
     }
     #[repr(u8)]

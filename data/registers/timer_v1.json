@@ -424,8 +424,7 @@
         "array": {
           "len": 2,
           "stride": 8
-        },
-        "enum": "OCPE"
+        }
       },
       {
         "name": "OCM",
@@ -518,10 +517,9 @@
       },
       {
         "name": "OPM",
-        "description": "One-pulse mode",
+        "description": "One-pulse mode enbaled",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "OPM"
+        "bit_size": 1
       },
       {
         "name": "ARPE",
@@ -868,10 +866,9 @@
       },
       {
         "name": "ECE",
-        "description": "External clock enable",
+        "description": "External clock mode 2 enable",
         "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "ECE"
+        "bit_size": 1
       },
       {
         "name": "ETP",
@@ -1056,21 +1053,6 @@
       {
         "name": "Down",
         "description": "Counter used as downcounter",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ECE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "External clock mode 2 disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal.",
         "value": 1
       }
     ]
@@ -1387,36 +1369,6 @@
         "name": "PwmMode2",
         "description": "Inversely to PwmMode1",
         "value": 7
-      }
-    ]
-  },
-  "enum/OCPE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Preload register on CCR2 disabled. New values written to CCR2 are taken into account immediately",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Preload register on CCR2 enabled. Preload value is loaded into active register on each update event",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPM": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Counter is not stopped at update event",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Counter stops counting at the next update event (clearing the CEN bit)",
-        "value": 1
       }
     ]
   },

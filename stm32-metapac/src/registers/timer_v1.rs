@@ -1443,9 +1443,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Ocpe",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ocm",
@@ -1608,14 +1606,12 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "opm",
                     description: Some(
-                        "One-pulse mode",
+                        "One-pulse mode enbaled",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Opm",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "arpe",
@@ -1674,14 +1670,12 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "opm",
                     description: Some(
-                        "One-pulse mode",
+                        "One-pulse mode enbaled",
                     ),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Opm",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dir",
@@ -2467,14 +2461,12 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "ece",
                     description: Some(
-                        "External clock enable",
+                        "External clock mode 2 enable",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ece",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "etp",
@@ -2826,27 +2818,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DOWN",
                     description: Some(
                         "Counter used as downcounter",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ece",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "External clock mode 2 disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal.",
                     ),
                     value: 1,
                 },
@@ -3290,48 +3261,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Inversely to PwmMode1",
                     ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Ocpe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Preload register on CCR2 disabled. New values written to CCR2 are taken into account immediately",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Preload register on CCR2 enabled. Preload value is loaded into active register on each update event",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Opm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Counter is not stopped at update event",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Counter stops counting at the next update event (clearing the CEN bit)",
-                    ),
-                    value: 1,
                 },
             ],
         },

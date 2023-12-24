@@ -90,11 +90,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "wdga",
-                    description: Some("Activation bit"),
+                    description: Some("Watchdog activated"),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wdga"),
+                    enumm: None,
                 },
             ],
         },
@@ -113,50 +113,31 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
     ],
-    enums: &[
-        Enum {
-            name: "Wdga",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Watchdog disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Watchdog enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wdgtb",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some("Counter clock (PCLK1 div 4096) div 1"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some("Counter clock (PCLK1 div 4096) div 2"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some("Counter clock (PCLK1 div 4096) div 4"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some("Counter clock (PCLK1 div 4096) div 8"),
-                    value: 3,
-                },
-            ],
-        },
-    ],
+    enums: &[Enum {
+        name: "Wdgtb",
+        description: None,
+        bit_size: 2,
+        variants: &[
+            EnumVariant {
+                name: "DIV1",
+                description: Some("Counter clock (PCLK1 div 4096) div 1"),
+                value: 0,
+            },
+            EnumVariant {
+                name: "DIV2",
+                description: Some("Counter clock (PCLK1 div 4096) div 2"),
+                value: 1,
+            },
+            EnumVariant {
+                name: "DIV4",
+                description: Some("Counter clock (PCLK1 div 4096) div 4"),
+                value: 2,
+            },
+            EnumVariant {
+                name: "DIV8",
+                description: Some("Counter clock (PCLK1 div 4096) div 8"),
+                value: 3,
+            },
+        ],
+    }],
 };

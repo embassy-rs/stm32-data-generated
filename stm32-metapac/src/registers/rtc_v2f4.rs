@@ -678,9 +678,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Refckon",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "bypshad",
@@ -957,7 +955,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alrwf",
                     description: Some(
-                        "Alarm write flag",
+                        "Alarm write allowed",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -969,14 +967,12 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Alrwf",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "wutwf",
                     description: Some(
-                        "Wakeup timer write flag",
+                        "Wakeup timer write allowed",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -1026,14 +1022,12 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "init",
                     description: Some(
-                        "Initialization mode",
+                        "Enter Initialization mode",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Init",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "alrf",
@@ -1633,14 +1627,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MASK",
+                    name: "TOMATCH",
                     description: Some(
                         "Alarm set if the date/day match",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTMASK",
+                    name: "NOTMATCH",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
@@ -1685,27 +1679,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "WEEKDAY",
                     description: Some(
                         "DU[3:0] represents the week day. DT[1:0] is don’t care",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Alrwf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UPDATENOTALLOWED",
-                    description: Some(
-                        "Alarm update not allowed",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "UPDATEALLOWED",
-                    description: Some(
-                        "Alarm update allowed",
                     ),
                     value: 1,
                 },
@@ -1824,27 +1797,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Init",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FREERUNNINGMODE",
-                    description: Some(
-                        "Free running mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INITMODE",
-                    description: Some(
-                        "Initialization mode used to program time and date register (RTC_TR and RTC_DR), and prescaler register (RTC_PRER). Counters are stopped and start counting from the new value when INIT is reset.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Osel",
             description: None,
             bit_size: 2,
@@ -1909,27 +1861,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PENDING",
                     description: Some(
                         "The RECALPF status flag is automatically set to 1 when software writes to the RTC_CALR register, indicating that the RTC_CALR register is blocked. When the new calibration settings are taken into account, this bit returns to 0",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Refckon",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "RTC_REFIN detection disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "RTC_REFIN detection enabled",
                     ),
                     value: 1,
                 },

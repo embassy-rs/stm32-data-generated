@@ -459,14 +459,14 @@ pub mod regs {
         }
         #[doc = "RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
         #[inline(always)]
-        pub const fn refckon(&self) -> super::vals::Refckon {
+        pub const fn refckon(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Refckon::from_bits(val as u8)
+            val != 0
         }
         #[doc = "RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
         #[inline(always)]
-        pub fn set_refckon(&mut self, val: super::vals::Refckon) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_refckon(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Bypass the shadow registers"]
         #[inline(always)]
@@ -702,14 +702,14 @@ pub mod regs {
         }
         #[doc = "TAMPALRM pull-up enable"]
         #[inline(always)]
-        pub const fn tampalrm_pu(&self) -> super::vals::TampalrmPu {
+        pub const fn tampalrm_pu(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
-            super::vals::TampalrmPu::from_bits(val as u8)
+            val != 0
         }
         #[doc = "TAMPALRM pull-up enable"]
         #[inline(always)]
-        pub fn set_tampalrm_pu(&mut self, val: super::vals::TampalrmPu) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        pub fn set_tampalrm_pu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "TAMPALRM output type"]
         #[inline(always)]
@@ -834,13 +834,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icsr(pub u32);
     impl Icsr {
-        #[doc = "Wakeup timer write flag"]
+        #[doc = "Wakeup timer write enabled"]
         #[inline(always)]
         pub const fn wutwf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "Wakeup timer write flag"]
+        #[doc = "Wakeup timer write enabled"]
         #[inline(always)]
         pub fn set_wutwf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
@@ -889,16 +889,16 @@ pub mod regs {
         pub fn set_initf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Initialization mode"]
+        #[doc = "Enter Initialization mode"]
         #[inline(always)]
-        pub const fn init(&self) -> super::vals::Init {
+        pub const fn init(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Init::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Initialization mode"]
+        #[doc = "Enter Initialization mode"]
         #[inline(always)]
-        pub fn set_init(&mut self, val: super::vals::Init) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_init(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Binary mode"]
         #[inline(always)]
@@ -1933,9 +1933,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        MASK = 0,
+        TOMATCH = 0,
         #[doc = "Date/day don’t care in Alarm comparison"]
-        NOTMASK = 0x01,
+        NOTMATCH = 0x01,
     }
     impl AlrmrMsk {
         #[inline(always)]
@@ -2340,36 +2340,6 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Init {
-        #[doc = "Free running mode"]
-        FREERUNNINGMODE = 0,
-        #[doc = "Initialization mode used to program time and date register (RTC_TR and RTC_DR), and prescaler register (RTC_PRER). Counters are stopped and start counting from the new value when INIT is reset."]
-        INITMODE = 0x01,
-    }
-    impl Init {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Init {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Init {
-        #[inline(always)]
-        fn from(val: u8) -> Init {
-            Init::from_bits(val)
-        }
-    }
-    impl From<Init> for u8 {
-        #[inline(always)]
-        fn from(val: Init) -> u8 {
-            Init::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Itsf {
         _RESERVED_0 = 0,
         #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
@@ -2582,36 +2552,6 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Refckon {
-        #[doc = "RTC_REFIN detection disabled"]
-        DISABLED = 0,
-        #[doc = "RTC_REFIN detection enabled"]
-        ENABLED = 0x01,
-    }
-    impl Refckon {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Refckon {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Refckon {
-        #[inline(always)]
-        fn from(val: u8) -> Refckon {
-            Refckon::from_bits(val)
-        }
-    }
-    impl From<Refckon> for u8 {
-        #[inline(always)]
-        fn from(val: Refckon) -> u8 {
-            Refckon::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ssruf {
         _RESERVED_0 = 0,
         #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
@@ -2666,36 +2606,6 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
         #[inline(always)]
         fn from(val: Ssrumf) -> u8 {
             Ssrumf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum TampalrmPu {
-        #[doc = "No pull-up is applied on TAMPALRM output"]
-        NOPULLUP = 0,
-        #[doc = "A pull-up is applied on TAMPALRM output"]
-        PULLUP = 0x01,
-    }
-    impl TampalrmPu {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> TampalrmPu {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for TampalrmPu {
-        #[inline(always)]
-        fn from(val: u8) -> TampalrmPu {
-            TampalrmPu::from_bits(val)
-        }
-    }
-    impl From<TampalrmPu> for u8 {
-        #[inline(always)]
-        fn from(val: TampalrmPu) -> u8 {
-            TampalrmPu::to_bits(val)
         }
     }
     #[repr(u8)]

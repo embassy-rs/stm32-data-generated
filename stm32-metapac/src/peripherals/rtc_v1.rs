@@ -252,16 +252,16 @@ pub mod regs {
         pub fn set_rsf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "Configuration flag"]
+        #[doc = "Enter configuration mode"]
         #[inline(always)]
-        pub const fn cnf(&self) -> super::vals::Cnf {
+        pub const fn cnf(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Cnf::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Configuration flag"]
+        #[doc = "Enter configuration mode"]
         #[inline(always)]
-        pub fn set_cnf(&mut self, val: super::vals::Cnf) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_cnf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "RTC operation OFF"]
         #[inline(always)]
@@ -377,41 +377,11 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Cnf {
-        #[doc = "Exit configuration mode (start update of RTC registers)"]
-        EXIT = 0,
-        #[doc = "Enter configuration mode"]
-        ENTER = 0x01,
-    }
-    impl Cnf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cnf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Cnf {
-        #[inline(always)]
-        fn from(val: u8) -> Cnf {
-            Cnf::from_bits(val)
-        }
-    }
-    impl From<Cnf> for u8 {
-        #[inline(always)]
-        fn from(val: Cnf) -> u8 {
-            Cnf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rtoff {
         #[doc = "Last write operation on RTC registers is still ongoing"]
-        ENABLED = 0,
+        ONGOING = 0,
         #[doc = "Last write operation on RTC registers terminated"]
-        DISABLED = 0x01,
+        TERMINATED = 0x01,
     }
     impl Rtoff {
         #[inline(always)]

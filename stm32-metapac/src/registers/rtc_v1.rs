@@ -247,11 +247,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "cnf",
-                    description: Some("Configuration flag"),
+                    description: Some("Enter configuration mode"),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Cnf"),
+                    enumm: None,
                 },
                 Field {
                     name: "rtoff",
@@ -320,40 +320,21 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
     ],
-    enums: &[
-        Enum {
-            name: "Cnf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EXIT",
-                    description: Some("Exit configuration mode (start update of RTC registers)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENTER",
-                    description: Some("Enter configuration mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rtoff",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Last write operation on RTC registers is still ongoing"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Last write operation on RTC registers terminated"),
-                    value: 1,
-                },
-            ],
-        },
-    ],
+    enums: &[Enum {
+        name: "Rtoff",
+        description: None,
+        bit_size: 1,
+        variants: &[
+            EnumVariant {
+                name: "ONGOING",
+                description: Some("Last write operation on RTC registers is still ongoing"),
+                value: 0,
+            },
+            EnumVariant {
+                name: "TERMINATED",
+                description: Some("Last write operation on RTC registers terminated"),
+                value: 1,
+            },
+        ],
+    }],
 };

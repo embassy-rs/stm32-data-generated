@@ -92,16 +92,16 @@ pub mod regs {
         pub fn set_t(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
-        #[doc = "Activation bit"]
+        #[doc = "Watchdog activated"]
         #[inline(always)]
-        pub const fn wdga(&self) -> super::vals::Wdga {
+        pub const fn wdga(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Wdga::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Activation bit"]
+        #[doc = "Watchdog activated"]
         #[inline(always)]
-        pub fn set_wdga(&mut self, val: super::vals::Wdga) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_wdga(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
     impl Default for Cr {
@@ -135,36 +135,6 @@ pub mod regs {
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wdga {
-        #[doc = "Watchdog disabled"]
-        DISABLED = 0,
-        #[doc = "Watchdog enabled"]
-        ENABLED = 0x01,
-    }
-    impl Wdga {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wdga {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wdga {
-        #[inline(always)]
-        fn from(val: u8) -> Wdga {
-            Wdga::from_bits(val)
-        }
-    }
-    impl From<Wdga> for u8 {
-        #[inline(always)]
-        fn from(val: Wdga) -> u8 {
-            Wdga::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Wdgtb {

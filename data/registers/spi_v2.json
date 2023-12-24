@@ -310,10 +310,9 @@
       },
       {
         "name": "I2SE",
-        "description": "I2S Enable",
+        "description": "I2S Enabled",
         "bit_offset": 10,
-        "bit_size": 1,
-        "enum": "ISE"
+        "bit_size": 1
       },
       {
         "name": "I2SMOD",
@@ -350,8 +349,7 @@
         "name": "MCKOE",
         "description": "Master clock output enable",
         "bit_offset": 9,
-        "bit_size": 1,
-        "enum": "MCKOE"
+        "bit_size": 1
       }
     ]
   },
@@ -826,21 +824,6 @@
       }
     ]
   },
-  "enum/ISE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "I2S peripheral is disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "I2S peripheral is enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/ISMOD": {
     "bit_size": 1,
     "variants": [
@@ -922,21 +905,6 @@
       {
         "name": "LSBFirst",
         "description": "Data is transmitted/received with the LSB first",
-        "value": 1
-      }
-    ]
-  },
-  "enum/MCKOE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Master clock output is disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Master clock output is enabled",
         "value": 1
       }
     ]

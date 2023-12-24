@@ -416,11 +416,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "i2se",
-                    description: Some("I2S Enable"),
+                    description: Some("I2S Enabled"),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ise"),
+                    enumm: None,
                 },
                 Field {
                     name: "i2smod",
@@ -468,7 +468,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Mckoe"),
+                    enumm: None,
                 },
             ],
         },
@@ -1012,23 +1012,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ise",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("I2S peripheral is disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("I2S peripheral is enabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ismod",
             description: None,
             bit_size: 1,
@@ -1119,23 +1102,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "LSBFIRST",
                     description: Some("Data is transmitted/received with the LSB first"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mckoe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Master clock output is disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Master clock output is enabled"),
                     value: 1,
                 },
             ],

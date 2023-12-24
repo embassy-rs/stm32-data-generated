@@ -344,11 +344,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "afcntr",
-                    description: Some("Alternate function GPIOs control"),
+                    description: Some("Alternate function always control GPIOs"),
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Afcntr"),
+                    enumm: None,
                 },
             ],
         },
@@ -408,11 +408,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "crc33_17",
-                    description: Some("32-bit CRC polynomial configuration"),
+                    description: Some("Full size (33-bit or 17-bit) CRC polynomial is used"),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Crc"),
+                    enumm: None,
                 },
                 Field {
                     name: "rcrcini",
@@ -863,23 +863,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Afcntr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCONTROLLED",
-                    description: Some("Peripheral takes no control of GPIOs while disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTROLLED",
-                    description: Some("Peripheral controls GPIOs while disabled"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Comm",
             description: None,
             bit_size: 2,
@@ -936,23 +919,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "IDLEHIGH",
                     description: Some("CK to 1 when idle"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Crc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Full size (33/17 bit) CRC polynomial is not used"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Full size (33/17 bit) CRC polynomial is used"),
                     value: 1,
                 },
             ],

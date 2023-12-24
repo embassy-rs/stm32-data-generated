@@ -281,10 +281,9 @@
       },
       {
         "name": "AFCNTR",
-        "description": "Alternate function GPIOs control",
+        "description": "Alternate function always control GPIOs",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "AFCNTR"
+        "bit_size": 1
       }
     ]
   },
@@ -330,10 +329,9 @@
       },
       {
         "name": "CRC33_17",
-        "description": "32-bit CRC polynomial configuration",
+        "description": "Full size (33-bit or 17-bit) CRC polynomial is used",
         "bit_offset": 13,
-        "bit_size": 1,
-        "enum": "CRC_"
+        "bit_size": 1
       },
       {
         "name": "RCRCINI",
@@ -649,21 +647,6 @@
       }
     ]
   },
-  "enum/AFCNTR": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NotControlled",
-        "description": "Peripheral takes no control of GPIOs while disabled",
-        "value": 0
-      },
-      {
-        "name": "Controlled",
-        "description": "Peripheral controls GPIOs while disabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/COMM": {
     "bit_size": 2,
     "variants": [
@@ -715,21 +698,6 @@
       {
         "name": "IdleHigh",
         "description": "CK to 1 when idle",
-        "value": 1
-      }
-    ]
-  },
-  "enum/CRC_": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Full size (33/17 bit) CRC polynomial is not used",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Full size (33/17 bit) CRC polynomial is used",
         "value": 1
       }
     ]

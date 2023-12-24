@@ -488,16 +488,16 @@ pub mod regs {
         pub fn set_i2scfg(&mut self, val: super::vals::Iscfg) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
-        #[doc = "I2S Enable"]
+        #[doc = "I2S Enabled"]
         #[inline(always)]
-        pub const fn i2se(&self) -> super::vals::Ise {
+        pub const fn i2se(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Ise::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "I2S Enable"]
+        #[doc = "I2S Enabled"]
         #[inline(always)]
-        pub fn set_i2se(&mut self, val: super::vals::Ise) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_i2se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "I2S mode selection"]
         #[inline(always)]
@@ -557,14 +557,14 @@ pub mod regs {
         }
         #[doc = "Master clock output enable"]
         #[inline(always)]
-        pub const fn mckoe(&self) -> super::vals::Mckoe {
+        pub const fn mckoe(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Mckoe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master clock output enable"]
         #[inline(always)]
-        pub fn set_mckoe(&mut self, val: super::vals::Mckoe) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_mckoe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
     impl Default for I2spr {
@@ -1318,36 +1318,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ise {
-        #[doc = "I2S peripheral is disabled"]
-        DISABLED = 0,
-        #[doc = "I2S peripheral is enabled"]
-        ENABLED = 0x01,
-    }
-    impl Ise {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ise {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ise {
-        #[inline(always)]
-        fn from(val: u8) -> Ise {
-            Ise::from_bits(val)
-        }
-    }
-    impl From<Ise> for u8 {
-        #[inline(always)]
-        fn from(val: Ise) -> u8 {
-            Ise::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ismod {
         #[doc = "SPI mode is selected"]
         SPIMODE = 0,
@@ -1498,36 +1468,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Lsbfirst) -> u8 {
             Lsbfirst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mckoe {
-        #[doc = "Master clock output is disabled"]
-        DISABLED = 0,
-        #[doc = "Master clock output is enabled"]
-        ENABLED = 0x01,
-    }
-    impl Mckoe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mckoe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mckoe {
-        #[inline(always)]
-        fn from(val: u8) -> Mckoe {
-            Mckoe::from_bits(val)
-        }
-    }
-    impl From<Mckoe> for u8 {
-        #[inline(always)]
-        fn from(val: Mckoe) -> u8 {
-            Mckoe::to_bits(val)
         }
     }
     #[repr(u8)]

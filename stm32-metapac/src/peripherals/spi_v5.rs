@@ -410,16 +410,16 @@ pub mod regs {
         pub fn set_ssom(&mut self, val: super::vals::Ssom) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
-        #[doc = "Alternate function GPIOs control"]
+        #[doc = "Alternate function always control GPIOs"]
         #[inline(always)]
-        pub const fn afcntr(&self) -> super::vals::Afcntr {
+        pub const fn afcntr(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Afcntr::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Alternate function GPIOs control"]
+        #[doc = "Alternate function always control GPIOs"]
         #[inline(always)]
-        pub fn set_afcntr(&mut self, val: super::vals::Afcntr) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_afcntr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Cfg2 {
@@ -499,16 +499,16 @@ pub mod regs {
         pub fn set_ssi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "32-bit CRC polynomial configuration"]
+        #[doc = "Full size (33-bit or 17-bit) CRC polynomial is used"]
         #[inline(always)]
-        pub const fn crc33_17(&self) -> super::vals::Crc {
+        pub const fn crc33_17(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Crc::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "32-bit CRC polynomial configuration"]
+        #[doc = "Full size (33-bit or 17-bit) CRC polynomial is used"]
         #[inline(always)]
-        pub fn set_crc33_17(&mut self, val: super::vals::Crc) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_crc33_17(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "CRC calculation initialization pattern control for receiver"]
         #[inline(always)]
@@ -1114,36 +1114,6 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Afcntr {
-        #[doc = "Peripheral takes no control of GPIOs while disabled"]
-        NOTCONTROLLED = 0,
-        #[doc = "Peripheral controls GPIOs while disabled"]
-        CONTROLLED = 0x01,
-    }
-    impl Afcntr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Afcntr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Afcntr {
-        #[inline(always)]
-        fn from(val: u8) -> Afcntr {
-            Afcntr::from_bits(val)
-        }
-    }
-    impl From<Afcntr> for u8 {
-        #[inline(always)]
-        fn from(val: Afcntr) -> u8 {
-            Afcntr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Comm {
         #[doc = "Full duplex"]
         FULLDUPLEX = 0,
@@ -1234,36 +1204,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cpol) -> u8 {
             Cpol::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Crc {
-        #[doc = "Full size (33/17 bit) CRC polynomial is not used"]
-        DISABLED = 0,
-        #[doc = "Full size (33/17 bit) CRC polynomial is used"]
-        ENABLED = 0x01,
-    }
-    impl Crc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Crc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Crc {
-        #[inline(always)]
-        fn from(val: u8) -> Crc {
-            Crc::from_bits(val)
-        }
-    }
-    impl From<Crc> for u8 {
-        #[inline(always)]
-        fn from(val: Crc) -> u8 {
-            Crc::to_bits(val)
         }
     }
     #[repr(u8)]

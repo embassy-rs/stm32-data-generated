@@ -198,13 +198,13 @@ pub mod regs {
         pub fn set_crcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
-        #[doc = "Output enable in bidirectional mode"]
+        #[doc = "Select the direction of transfer in bidirectional mode"]
         #[inline(always)]
         pub const fn bidioe(&self) -> super::vals::Bidioe {
             let val = (self.0 >> 14usize) & 0x01;
             super::vals::Bidioe::from_bits(val as u8)
         }
-        #[doc = "Output enable in bidirectional mode"]
+        #[doc = "Select the direction of transfer in bidirectional mode"]
         #[inline(always)]
         pub fn set_bidioe(&mut self, val: super::vals::Bidioe) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
@@ -700,9 +700,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bidioe {
         #[doc = "Output disabled (receive-only mode)"]
-        OUTPUTDISABLED = 0,
+        RECEIVE = 0,
         #[doc = "Output enabled (transmit-only mode)"]
-        OUTPUTENABLED = 0x01,
+        TRANSMIT = 0x01,
     }
     impl Bidioe {
         #[inline(always)]

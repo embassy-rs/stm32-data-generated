@@ -238,16 +238,16 @@ pub mod regs {
         pub fn set_sjw(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
-        #[doc = "LBKM"]
+        #[doc = "Loop Back Mode enabled"]
         #[inline(always)]
-        pub const fn lbkm(&self) -> super::vals::Lbkm {
+        pub const fn lbkm(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Lbkm::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "LBKM"]
+        #[doc = "Loop Back Mode enabled"]
         #[inline(always)]
-        pub fn set_lbkm(&mut self, val: super::vals::Lbkm) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub fn set_lbkm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "SILM"]
         #[inline(always)]
@@ -548,136 +548,136 @@ pub mod regs {
     impl Ier {
         #[doc = "TMEIE"]
         #[inline(always)]
-        pub const fn tmeie(&self) -> super::vals::Tmeie {
+        pub const fn tmeie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Tmeie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "TMEIE"]
         #[inline(always)]
-        pub fn set_tmeie(&mut self, val: super::vals::Tmeie) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_tmeie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "FMPIE0"]
         #[inline(always)]
-        pub const fn fmpie(&self, n: usize) -> super::vals::Fmpie {
+        pub const fn fmpie(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 1usize + n * 3usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Fmpie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "FMPIE0"]
         #[inline(always)]
-        pub fn set_fmpie(&mut self, n: usize, val: super::vals::Fmpie) {
+        pub fn set_fmpie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 1usize + n * 3usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "FFIE0"]
         #[inline(always)]
-        pub const fn ffie(&self, n: usize) -> super::vals::Ffie {
+        pub const fn ffie(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 2usize + n * 3usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Ffie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "FFIE0"]
         #[inline(always)]
-        pub fn set_ffie(&mut self, n: usize, val: super::vals::Ffie) {
+        pub fn set_ffie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 2usize + n * 3usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "FOVIE0"]
         #[inline(always)]
-        pub const fn fovie(&self, n: usize) -> super::vals::Fovie {
+        pub const fn fovie(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 3usize + n * 3usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Fovie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "FOVIE0"]
         #[inline(always)]
-        pub fn set_fovie(&mut self, n: usize, val: super::vals::Fovie) {
+        pub fn set_fovie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 3usize + n * 3usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "EWGIE"]
         #[inline(always)]
-        pub const fn ewgie(&self) -> super::vals::Ewgie {
+        pub const fn ewgie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Ewgie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "EWGIE"]
         #[inline(always)]
-        pub fn set_ewgie(&mut self, val: super::vals::Ewgie) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_ewgie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "EPVIE"]
         #[inline(always)]
-        pub const fn epvie(&self) -> super::vals::Epvie {
+        pub const fn epvie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Epvie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "EPVIE"]
         #[inline(always)]
-        pub fn set_epvie(&mut self, val: super::vals::Epvie) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_epvie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "BOFIE"]
         #[inline(always)]
-        pub const fn bofie(&self) -> super::vals::Bofie {
+        pub const fn bofie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Bofie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "BOFIE"]
         #[inline(always)]
-        pub fn set_bofie(&mut self, val: super::vals::Bofie) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_bofie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "LECIE"]
         #[inline(always)]
-        pub const fn lecie(&self) -> super::vals::Lecie {
+        pub const fn lecie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Lecie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LECIE"]
         #[inline(always)]
-        pub fn set_lecie(&mut self, val: super::vals::Lecie) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_lecie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "ERRIE"]
         #[inline(always)]
-        pub const fn errie(&self) -> super::vals::Errie {
+        pub const fn errie(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Errie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "ERRIE"]
         #[inline(always)]
-        pub fn set_errie(&mut self, val: super::vals::Errie) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_errie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "WKUIE"]
         #[inline(always)]
-        pub const fn wkuie(&self) -> super::vals::Wkuie {
+        pub const fn wkuie(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Wkuie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "WKUIE"]
         #[inline(always)]
-        pub fn set_wkuie(&mut self, val: super::vals::Wkuie) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub fn set_wkuie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "SLKIE"]
         #[inline(always)]
-        pub const fn slkie(&self) -> super::vals::Slkie {
+        pub const fn slkie(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::Slkie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SLKIE"]
         #[inline(always)]
-        pub fn set_slkie(&mut self, val: super::vals::Slkie) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub fn set_slkie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
     impl Default for Ier {
@@ -1081,24 +1081,24 @@ pub mod regs {
     impl Rir {
         #[doc = "RTR"]
         #[inline(always)]
-        pub const fn rtr(&self) -> super::vals::RirRtr {
+        pub const fn rtr(&self) -> super::vals::Rtr {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::RirRtr::from_bits(val as u8)
+            super::vals::Rtr::from_bits(val as u8)
         }
         #[doc = "RTR"]
         #[inline(always)]
-        pub fn set_rtr(&mut self, val: super::vals::RirRtr) {
+        pub fn set_rtr(&mut self, val: super::vals::Rtr) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "IDE"]
         #[inline(always)]
-        pub const fn ide(&self) -> super::vals::RirIde {
+        pub const fn ide(&self) -> super::vals::Ide {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::RirIde::from_bits(val as u8)
+            super::vals::Ide::from_bits(val as u8)
         }
         #[doc = "IDE"]
         #[inline(always)]
-        pub fn set_ide(&mut self, val: super::vals::RirIde) {
+        pub fn set_ide(&mut self, val: super::vals::Ide) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "EXID"]
@@ -1247,24 +1247,24 @@ pub mod regs {
         }
         #[doc = "RTR"]
         #[inline(always)]
-        pub const fn rtr(&self) -> super::vals::TirRtr {
+        pub const fn rtr(&self) -> super::vals::Rtr {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::TirRtr::from_bits(val as u8)
+            super::vals::Rtr::from_bits(val as u8)
         }
         #[doc = "RTR"]
         #[inline(always)]
-        pub fn set_rtr(&mut self, val: super::vals::TirRtr) {
+        pub fn set_rtr(&mut self, val: super::vals::Rtr) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "IDE"]
         #[inline(always)]
-        pub const fn ide(&self) -> super::vals::TirIde {
+        pub const fn ide(&self) -> super::vals::Ide {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::TirIde::from_bits(val as u8)
+            super::vals::Ide::from_bits(val as u8)
         }
         #[doc = "IDE"]
         #[inline(always)]
-        pub fn set_ide(&mut self, val: super::vals::TirIde) {
+        pub fn set_ide(&mut self, val: super::vals::Ide) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "EXID"]
@@ -1428,15 +1428,15 @@ pub mod regs {
 pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Bofie {
-        #[doc = "ERRI bit will not be set when BOFF is set"]
-        DISABLED = 0,
-        #[doc = "ERRI bit will be set when BOFF is set"]
-        ENABLED = 0x01,
+    pub enum Ide {
+        #[doc = "Standard identifier"]
+        STANDARD = 0,
+        #[doc = "Extended identifier"]
+        EXTENDED = 0x01,
     }
-    impl Bofie {
+    impl Ide {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Bofie {
+        pub const fn from_bits(val: u8) -> Ide {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1444,228 +1444,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Bofie {
+    impl From<u8> for Ide {
         #[inline(always)]
-        fn from(val: u8) -> Bofie {
-            Bofie::from_bits(val)
+        fn from(val: u8) -> Ide {
+            Ide::from_bits(val)
         }
     }
-    impl From<Bofie> for u8 {
+    impl From<Ide> for u8 {
         #[inline(always)]
-        fn from(val: Bofie) -> u8 {
-            Bofie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Epvie {
-        #[doc = "ERRI bit will not be set when EPVF is set"]
-        DISABLED = 0,
-        #[doc = "ERRI bit will be set when EPVF is set"]
-        ENABLED = 0x01,
-    }
-    impl Epvie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Epvie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Epvie {
-        #[inline(always)]
-        fn from(val: u8) -> Epvie {
-            Epvie::from_bits(val)
-        }
-    }
-    impl From<Epvie> for u8 {
-        #[inline(always)]
-        fn from(val: Epvie) -> u8 {
-            Epvie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Errie {
-        #[doc = "No interrupt will be generated when an error condition is pending in the CAN_ESR"]
-        DISABLED = 0,
-        #[doc = "An interrupt will be generation when an error condition is pending in the CAN_ESR"]
-        ENABLED = 0x01,
-    }
-    impl Errie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Errie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Errie {
-        #[inline(always)]
-        fn from(val: u8) -> Errie {
-            Errie::from_bits(val)
-        }
-    }
-    impl From<Errie> for u8 {
-        #[inline(always)]
-        fn from(val: Errie) -> u8 {
-            Errie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ewgie {
-        #[doc = "ERRI bit will not be set when EWGF is set"]
-        DISABLED = 0,
-        #[doc = "ERRI bit will be set when EWGF is set"]
-        ENABLED = 0x01,
-    }
-    impl Ewgie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ewgie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ewgie {
-        #[inline(always)]
-        fn from(val: u8) -> Ewgie {
-            Ewgie::from_bits(val)
-        }
-    }
-    impl From<Ewgie> for u8 {
-        #[inline(always)]
-        fn from(val: Ewgie) -> u8 {
-            Ewgie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ffie {
-        #[doc = "No interrupt when FULL bit is set"]
-        DISABLED = 0,
-        #[doc = "Interrupt generated when FULL bit is set"]
-        ENABLED = 0x01,
-    }
-    impl Ffie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ffie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ffie {
-        #[inline(always)]
-        fn from(val: u8) -> Ffie {
-            Ffie::from_bits(val)
-        }
-    }
-    impl From<Ffie> for u8 {
-        #[inline(always)]
-        fn from(val: Ffie) -> u8 {
-            Ffie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Fmpie {
-        #[doc = "No interrupt generated when state of FMP\\[1:0\\]
-bits are not 00b"]
-        DISABLED = 0,
-        #[doc = "Interrupt generated when state of FMP\\[1:0\\]
-bits are not 00b"]
-        ENABLED = 0x01,
-    }
-    impl Fmpie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fmpie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Fmpie {
-        #[inline(always)]
-        fn from(val: u8) -> Fmpie {
-            Fmpie::from_bits(val)
-        }
-    }
-    impl From<Fmpie> for u8 {
-        #[inline(always)]
-        fn from(val: Fmpie) -> u8 {
-            Fmpie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Fovie {
-        #[doc = "No interrupt when FOVR bit is set"]
-        DISABLED = 0,
-        #[doc = "Interrupt generated when FOVR bit is set"]
-        ENABLED = 0x01,
-    }
-    impl Fovie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fovie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Fovie {
-        #[inline(always)]
-        fn from(val: u8) -> Fovie {
-            Fovie::from_bits(val)
-        }
-    }
-    impl From<Fovie> for u8 {
-        #[inline(always)]
-        fn from(val: Fovie) -> u8 {
-            Fovie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lbkm {
-        #[doc = "Loop Back Mode disabled"]
-        DISABLED = 0,
-        #[doc = "Loop Back Mode enabled"]
-        ENABLED = 0x01,
-    }
-    impl Lbkm {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lbkm {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lbkm {
-        #[inline(always)]
-        fn from(val: u8) -> Lbkm {
-            Lbkm::from_bits(val)
-        }
-    }
-    impl From<Lbkm> for u8 {
-        #[inline(always)]
-        fn from(val: Lbkm) -> u8 {
-            Lbkm::to_bits(val)
+        fn from(val: Ide) -> u8 {
+            Ide::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1712,77 +1500,15 @@ bits are not 00b"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lecie {
-        #[doc = "ERRI bit will not be set when the error code in LEC\\[2:0\\]
-is set by hardware on error detection"]
-        DISABLED = 0,
-        #[doc = "ERRI bit will be set when the error code in LEC\\[2:0\\]
-is set by hardware on error detection"]
-        ENABLED = 0x01,
-    }
-    impl Lecie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lecie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lecie {
-        #[inline(always)]
-        fn from(val: u8) -> Lecie {
-            Lecie::from_bits(val)
-        }
-    }
-    impl From<Lecie> for u8 {
-        #[inline(always)]
-        fn from(val: Lecie) -> u8 {
-            Lecie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum RirIde {
-        #[doc = "Standard identifier"]
-        STANDARD = 0,
-        #[doc = "Extended identifier"]
-        EXTENDED = 0x01,
-    }
-    impl RirIde {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RirIde {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RirIde {
-        #[inline(always)]
-        fn from(val: u8) -> RirIde {
-            RirIde::from_bits(val)
-        }
-    }
-    impl From<RirIde> for u8 {
-        #[inline(always)]
-        fn from(val: RirIde) -> u8 {
-            RirIde::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum RirRtr {
+    pub enum Rtr {
         #[doc = "Data frame"]
         DATA = 0,
         #[doc = "Remote frame"]
         REMOTE = 0x01,
     }
-    impl RirRtr {
+    impl Rtr {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> RirRtr {
+        pub const fn from_bits(val: u8) -> Rtr {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1790,16 +1516,16 @@ is set by hardware on error detection"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for RirRtr {
+    impl From<u8> for Rtr {
         #[inline(always)]
-        fn from(val: u8) -> RirRtr {
-            RirRtr::from_bits(val)
+        fn from(val: u8) -> Rtr {
+            Rtr::from_bits(val)
         }
     }
-    impl From<RirRtr> for u8 {
+    impl From<Rtr> for u8 {
         #[inline(always)]
-        fn from(val: RirRtr) -> u8 {
-            RirRtr::to_bits(val)
+        fn from(val: Rtr) -> u8 {
+            Rtr::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1830,156 +1556,6 @@ is set by hardware on error detection"]
         #[inline(always)]
         fn from(val: Silm) -> u8 {
             Silm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Slkie {
-        #[doc = "No interrupt when SLAKI bit is set"]
-        DISABLED = 0,
-        #[doc = "Interrupt generated when SLAKI bit is set"]
-        ENABLED = 0x01,
-    }
-    impl Slkie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Slkie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Slkie {
-        #[inline(always)]
-        fn from(val: u8) -> Slkie {
-            Slkie::from_bits(val)
-        }
-    }
-    impl From<Slkie> for u8 {
-        #[inline(always)]
-        fn from(val: Slkie) -> u8 {
-            Slkie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum TirIde {
-        #[doc = "Standard identifier"]
-        STANDARD = 0,
-        #[doc = "Extended identifier"]
-        EXTENDED = 0x01,
-    }
-    impl TirIde {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> TirIde {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for TirIde {
-        #[inline(always)]
-        fn from(val: u8) -> TirIde {
-            TirIde::from_bits(val)
-        }
-    }
-    impl From<TirIde> for u8 {
-        #[inline(always)]
-        fn from(val: TirIde) -> u8 {
-            TirIde::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum TirRtr {
-        #[doc = "Data frame"]
-        DATA = 0,
-        #[doc = "Remote frame"]
-        REMOTE = 0x01,
-    }
-    impl TirRtr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> TirRtr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for TirRtr {
-        #[inline(always)]
-        fn from(val: u8) -> TirRtr {
-            TirRtr::from_bits(val)
-        }
-    }
-    impl From<TirRtr> for u8 {
-        #[inline(always)]
-        fn from(val: TirRtr) -> u8 {
-            TirRtr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tmeie {
-        #[doc = "No interrupt when RQCPx bit is set"]
-        DISABLED = 0,
-        #[doc = "Interrupt generated when RQCPx bit is set"]
-        ENABLED = 0x01,
-    }
-    impl Tmeie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tmeie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tmeie {
-        #[inline(always)]
-        fn from(val: u8) -> Tmeie {
-            Tmeie::from_bits(val)
-        }
-    }
-    impl From<Tmeie> for u8 {
-        #[inline(always)]
-        fn from(val: Tmeie) -> u8 {
-            Tmeie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wkuie {
-        #[doc = "No interrupt when WKUI is set"]
-        DISABLED = 0,
-        #[doc = "Interrupt generated when WKUI bit is set"]
-        ENABLED = 0x01,
-    }
-    impl Wkuie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkuie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkuie {
-        #[inline(always)]
-        fn from(val: u8) -> Wkuie {
-            Wkuie::from_bits(val)
-        }
-    }
-    impl From<Wkuie> for u8 {
-        #[inline(always)]
-        fn from(val: Wkuie) -> u8 {
-            Wkuie::to_bits(val)
         }
     }
 }

@@ -212,7 +212,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "bidioe",
-                    description: Some("Output enable in bidirectional mode"),
+                    description: Some("Select the direction of transfer in bidirectional mode"),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
@@ -557,12 +557,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "OUTPUTDISABLED",
+                    name: "RECEIVE",
                     description: Some("Output disabled (receive-only mode)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OUTPUTENABLED",
+                    name: "TRANSMIT",
                     description: Some("Output enabled (transmit-only mode)"),
                     value: 1,
                 },

@@ -664,7 +664,12 @@
                 },
                 {
                     "name": "DBGMCU",
-                    "address": 3758374912
+                    "address": 3758374912,
+                    "registers": {
+                        "kind": "dbgmcu",
+                        "version": "l5",
+                        "block": "DBGMCU"
+                    }
                 },
                 {
                     "name": "DMA1",

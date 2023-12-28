@@ -544,7 +544,7 @@ pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000 as usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
-pub const DBGMCU: *mut () = 0xe004_4000 as usize as _;
+pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 3;
@@ -569,6 +569,8 @@ pub mod crc;
 pub mod crs;
 #[path = "../../peripherals/dac_v5.rs"]
 pub mod dac;
+#[path = "../../peripherals/dbgmcu_l5.rs"]
+pub mod dbgmcu;
 #[path = "../../peripherals/dmamux_v1.rs"]
 pub mod dmamux;
 #[path = "../../peripherals/exti_l5.rs"]

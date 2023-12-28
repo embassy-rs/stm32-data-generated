@@ -464,7 +464,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "DBGMCU",
         address: 3758374912,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dbgmcu",
+            version: "l5",
+            block: "DBGMCU",
+            ir: &dbgmcu::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -6208,6 +6213,8 @@ pub mod crc;
 pub mod crs;
 #[path = "../registers/dac_v5.rs"]
 pub mod dac;
+#[path = "../registers/dbgmcu_l5.rs"]
+pub mod dbgmcu;
 #[path = "../registers/dmamux_v1.rs"]
 pub mod dmamux;
 #[path = "../registers/exti_l5.rs"]

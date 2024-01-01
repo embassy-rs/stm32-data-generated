@@ -52,10 +52,9 @@
         "fieldset": "PRIVCR"
       },
       {
-        "name": "SECCFGR",
-        "description": "Secure mode control register",
+        "name": "SMCR",
         "byte_offset": 32,
-        "fieldset": "SECCFGR"
+        "fieldset": "SMCR"
       },
       {
         "name": "WPR",
@@ -145,27 +144,6 @@
         "byte_offset": 92,
         "access": "Write",
         "fieldset": "SCR"
-      },
-      {
-        "name": "ALRBINR",
-        "description": "Alarm binary mode register",
-        "array": {
-          "len": 2,
-          "stride": 4
-        },
-        "byte_offset": 112,
-        "fieldset": "ALRBINR"
-      }
-    ]
-  },
-  "fieldset/ALRBINR": {
-    "description": "RTC alarm A binary mode register",
-    "fields": [
-      {
-        "name": "SS",
-        "description": "Synchronous counter alarm value in Binary mode",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },
@@ -277,14 +255,7 @@
         "name": "MASKSS",
         "description": "Mask the most-significant bits starting at this bit",
         "bit_offset": 24,
-        "bit_size": 6
-      },
-      {
-        "name": "SSCLR",
-        "description": "Clear synchronous counter on alarm (Binary mode only)",
-        "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "ALRMSSR_SSCLR"
+        "bit_size": 4
       }
     ]
   },
@@ -362,12 +333,6 @@
         "bit_offset": 6,
         "bit_size": 1,
         "enum": "FMT"
-      },
-      {
-        "name": "SSRUIE",
-        "description": "SSR underflow interrupt enable",
-        "bit_offset": 7,
-        "bit_size": 1
       },
       {
         "name": "ALRE",
@@ -477,16 +442,6 @@
         "bit_size": 1
       },
       {
-        "name": "ALRFCLR",
-        "description": "ALRFCLR",
-        "bit_offset": 27,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 1
-        }
-      },
-      {
         "name": "TAMPALRM_PU",
         "description": "TAMPALRM pull-up enable",
         "bit_offset": 29,
@@ -559,7 +514,7 @@
     "fields": [
       {
         "name": "WUTWF",
-        "description": "Wakeup timer write enabled",
+        "description": "Wakeup timer write flag",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -589,23 +544,9 @@
       },
       {
         "name": "INIT",
-        "description": "Enter Initialization mode",
+        "description": "Initialization mode",
         "bit_offset": 7,
         "bit_size": 1
-      },
-      {
-        "name": "BIN",
-        "description": "Binary mode",
-        "bit_offset": 8,
-        "bit_size": 2,
-        "enum": "BIN"
-      },
-      {
-        "name": "BCDU",
-        "description": "BCD update",
-        "bit_offset": 10,
-        "bit_size": 3,
-        "enum": "BCDU"
       },
       {
         "name": "RECALPF",
@@ -657,13 +598,6 @@
         "bit_offset": 5,
         "bit_size": 1,
         "enum": "ITSMF"
-      },
-      {
-        "name": "SSRUMF",
-        "description": "SSR underflow masked flag",
-        "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "SSRUMF"
       }
     ]
   },
@@ -689,7 +623,7 @@
     "fields": [
       {
         "name": "ALRPRIV",
-        "description": "ALRPRIV",
+        "description": "ALRAPRIV",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -770,60 +704,6 @@
         "bit_offset": 5,
         "bit_size": 1,
         "enum": "CALRF"
-      },
-      {
-        "name": "CSSRUF",
-        "description": "Clear SSR underflow flag",
-        "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "CALRF"
-      }
-    ]
-  },
-  "fieldset/SECCFGR": {
-    "description": "Secure mode control register",
-    "fields": [
-      {
-        "name": "ALRASEC",
-        "description": "ALRASEC",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "ALRBSEC",
-        "description": "ALRBSEC",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "WUTSEC",
-        "description": "WUTSEC",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "TSSEC",
-        "description": "TSSEC",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "CALSEC",
-        "description": "CALSEC",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "INITSEC",
-        "description": "INITSEC",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "SEC",
-        "description": "SEC",
-        "bit_offset": 15,
-        "bit_size": 1
       }
     ]
   },
@@ -840,6 +720,51 @@
         "name": "ADD1S",
         "description": "Add one second",
         "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/SMCR": {
+    "description": "RTC secure mode control register",
+    "fields": [
+      {
+        "name": "ALRDPROT",
+        "description": "Alarm x protection",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "array": {
+          "len": 2,
+          "stride": 1
+        }
+      },
+      {
+        "name": "WUTDPROT",
+        "description": "Wakeup timer protection",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TSDPROT",
+        "description": "Timestamp protection",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "CALDPROT",
+        "description": "Shift register, daylight saving, calibration and reference clock protection",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "INITDPROT",
+        "description": "Initialization protection",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "DECPROT",
+        "description": "RTC global protection",
+        "bit_offset": 15,
         "bit_size": 1
       }
     ]
@@ -879,12 +804,6 @@
         "name": "ITSMF",
         "description": "ITSMF",
         "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "SSRUMF",
-        "description": "SSRUMF",
-        "bit_offset": 6,
         "bit_size": 1
       }
     ]
@@ -930,13 +849,6 @@
         "bit_offset": 5,
         "bit_size": 1,
         "enum": "ITSF"
-      },
-      {
-        "name": "SSRUF",
-        "description": "SSR underflow flag",
-        "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "SSRUF"
       }
     ]
   },
@@ -947,7 +859,7 @@
         "name": "SS",
         "description": "Synchronous binary counter",
         "bit_offset": 0,
-        "bit_size": 32
+        "bit_size": 16
       }
     ]
   },
@@ -1041,7 +953,7 @@
         "name": "SS",
         "description": "Sub second value",
         "bit_offset": 0,
-        "bit_size": 32
+        "bit_size": 16
       }
     ]
   },
@@ -1145,12 +1057,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "ToMatch",
+        "name": "Mask",
         "description": "Alarm set if the date/day match",
         "value": 0
       },
       {
-        "name": "NotMatch",
+        "name": "NotMask",
         "description": "Date/day don’t care in Alarm comparison",
         "value": 1
       }
@@ -1186,21 +1098,6 @@
       }
     ]
   },
-  "enum/ALRMSSR_SSCLR": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "FreeRunning",
-        "description": "The synchronous binary counter (SS[31:0] in RTC_SSR) is free-running",
-        "value": 0
-      },
-      {
-        "name": "ALRMBINR",
-        "description": "The synchronous binary counter (SS[31:0] in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRMABINR → SS[31:0] value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR → SS[31:0]",
-        "value": 1
-      }
-    ]
-  },
   "enum/AMPM": {
     "bit_size": 1,
     "variants": [
@@ -1213,76 +1110,6 @@
         "name": "PM",
         "description": "PM",
         "value": 1
-      }
-    ]
-  },
-  "enum/BCDU": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "Bit7",
-        "description": "1s increment each time SS[7:0]=0",
-        "value": 0
-      },
-      {
-        "name": "Bit8",
-        "description": "1s increment each time SS[8:0]=0",
-        "value": 1
-      },
-      {
-        "name": "Bit9",
-        "description": "1s increment each time SS[9:0]=0",
-        "value": 2
-      },
-      {
-        "name": "Bit10",
-        "description": "1s increment each time SS[10:0]=0",
-        "value": 3
-      },
-      {
-        "name": "Bit11",
-        "description": "1s increment each time SS[11:0]=0",
-        "value": 4
-      },
-      {
-        "name": "Bit12",
-        "description": "1s increment each time SS[12:0]=0",
-        "value": 5
-      },
-      {
-        "name": "Bit13",
-        "description": "1s increment each time SS[13:0]=0",
-        "value": 6
-      },
-      {
-        "name": "Bit14",
-        "description": "1s increment each time SS[14:0]=0",
-        "value": 7
-      }
-    ]
-  },
-  "enum/BIN": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "BCD",
-        "description": "Free running BCD calendar mode (Binary mode disabled)",
-        "value": 0
-      },
-      {
-        "name": "Binary",
-        "description": "Free running Binary mode (BCD mode disabled)",
-        "value": 1
-      },
-      {
-        "name": "BinBCD",
-        "description": "Free running BCD calendar and Binary modes",
-        "value": 2
-      },
-      {
-        "name": "BinBCD2",
-        "description": "Free running BCD calendar and Binary modes",
-        "value": 3
       }
     ]
   },
@@ -1466,6 +1293,21 @@
       }
     ]
   },
+  "enum/REFCKON": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Disabled",
+        "description": "RTC_REFIN detection disabled",
+        "value": 0
+      },
+      {
+        "name": "Enabled",
+        "description": "RTC_REFIN detection enabled",
+        "value": 1
+      }
+    ]
+  },
   "enum/SSRUF": {
     "bit_size": 1,
     "variants": [
@@ -1482,6 +1324,21 @@
       {
         "name": "Underflow",
         "description": "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/TAMPALRM_PU": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "NoPullUp",
+        "description": "No pull-up is applied on TAMPALRM output",
+        "value": 0
+      },
+      {
+        "name": "PullUp",
+        "description": "A pull-up is applied on TAMPALRM output",
         "value": 1
       }
     ]

@@ -2691,6 +2691,11 @@
                 {
                     "name": "RTC",
                     "address": 1073752064,
+                    "registers": {
+                        "kind": "rtc",
+                        "version": "v3l5",
+                        "block": "RTC"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

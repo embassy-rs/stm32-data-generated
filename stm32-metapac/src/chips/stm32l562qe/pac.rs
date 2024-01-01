@@ -489,7 +489,7 @@ pub const TIM4: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0800 a
 pub const TIM5: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0c00 as usize as _) };
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000 as usize as _) };
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400 as usize as _) };
-pub const RTC: *mut () = 0x4000_2800 as usize as _;
+pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00 as usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4000_3400 as usize as _) };
@@ -609,6 +609,8 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v2.rs"]
 pub mod rng;
+#[path = "../../peripherals/rtc_v3l5.rs"]
+pub mod rtc;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v2.rs"]

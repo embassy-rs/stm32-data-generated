@@ -54,9 +54,8 @@ impl Rtc {
     pub const fn privcr(self) -> crate::common::Reg<regs::Privcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(28usize) as _) }
     }
-    #[doc = "Secure mode control register"]
     #[inline(always)]
-    pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
+    pub const fn smcr(self) -> crate::common::Reg<regs::Smcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(32usize) as _) }
     }
     #[doc = "Write protection register"]
@@ -121,37 +120,8 @@ impl Rtc {
     pub const fn scr(self) -> crate::common::Reg<regs::Scr, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
     }
-    #[doc = "Alarm binary mode register"]
-    #[inline(always)]
-    pub const fn alrbinr(self, n: usize) -> crate::common::Reg<regs::Alrbinr, crate::common::RW> {
-        assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(112usize + n * 4usize) as _) }
-    }
 }
 pub mod regs {
-    #[doc = "RTC alarm A binary mode register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Alrbinr(pub u32);
-    impl Alrbinr {
-        #[doc = "Synchronous counter alarm value in Binary mode"]
-        #[inline(always)]
-        pub const fn ss(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Synchronous counter alarm value in Binary mode"]
-        #[inline(always)]
-        pub fn set_ss(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Alrbinr {
-        #[inline(always)]
-        fn default() -> Alrbinr {
-            Alrbinr(0)
-        }
-    }
     #[doc = "Alarm register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -337,24 +307,13 @@ pub mod regs {
         #[doc = "Mask the most-significant bits starting at this bit"]
         #[inline(always)]
         pub const fn maskss(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
+            let val = (self.0 >> 24usize) & 0x0f;
             val as u8
         }
         #[doc = "Mask the most-significant bits starting at this bit"]
         #[inline(always)]
         pub fn set_maskss(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
-        }
-        #[doc = "Clear synchronous counter on alarm (Binary mode only)"]
-        #[inline(always)]
-        pub const fn ssclr(&self) -> super::vals::AlrmssrSsclr {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::AlrmssrSsclr::from_bits(val as u8)
-        }
-        #[doc = "Clear synchronous counter on alarm (Binary mode only)"]
-        #[inline(always)]
-        pub fn set_ssclr(&mut self, val: super::vals::AlrmssrSsclr) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
     }
     impl Default for Alrmssr {
@@ -489,17 +448,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_fmt(&mut self, val: super::vals::Fmt) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
-        #[doc = "SSR underflow interrupt enable"]
-        #[inline(always)]
-        pub const fn ssruie(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SSR underflow interrupt enable"]
-        #[inline(always)]
-        pub fn set_ssruie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Alarm enable"]
         #[inline(always)]
@@ -685,21 +633,6 @@ pub mod regs {
         pub fn set_tampoe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
-        #[doc = "ALRFCLR"]
-        #[inline(always)]
-        pub const fn alrfclr(&self, n: usize) -> bool {
-            assert!(n < 2usize);
-            let offs = 27usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "ALRFCLR"]
-        #[inline(always)]
-        pub fn set_alrfclr(&mut self, n: usize, val: bool) {
-            assert!(n < 2usize);
-            let offs = 27usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
         #[doc = "TAMPALRM pull-up enable"]
         #[inline(always)]
         pub const fn tampalrm_pu(&self) -> bool {
@@ -834,13 +767,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icsr(pub u32);
     impl Icsr {
-        #[doc = "Wakeup timer write enabled"]
+        #[doc = "Wakeup timer write flag"]
         #[inline(always)]
         pub const fn wutwf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "Wakeup timer write enabled"]
+        #[doc = "Wakeup timer write flag"]
         #[inline(always)]
         pub fn set_wutwf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
@@ -889,38 +822,16 @@ pub mod regs {
         pub fn set_initf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Enter Initialization mode"]
+        #[doc = "Initialization mode"]
         #[inline(always)]
         pub const fn init(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
-        #[doc = "Enter Initialization mode"]
+        #[doc = "Initialization mode"]
         #[inline(always)]
         pub fn set_init(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Binary mode"]
-        #[inline(always)]
-        pub const fn bin(&self) -> super::vals::Bin {
-            let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Bin::from_bits(val as u8)
-        }
-        #[doc = "Binary mode"]
-        #[inline(always)]
-        pub fn set_bin(&mut self, val: super::vals::Bin) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
-        }
-        #[doc = "BCD update"]
-        #[inline(always)]
-        pub const fn bcdu(&self) -> super::vals::Bcdu {
-            let val = (self.0 >> 10usize) & 0x07;
-            super::vals::Bcdu::from_bits(val as u8)
-        }
-        #[doc = "BCD update"]
-        #[inline(always)]
-        pub fn set_bcdu(&mut self, val: super::vals::Bcdu) {
-            self.0 = (self.0 & !(0x07 << 10usize)) | (((val.to_bits() as u32) & 0x07) << 10usize);
         }
         #[doc = "Recalibration pending Flag"]
         #[inline(always)]
@@ -1004,17 +915,6 @@ pub mod regs {
         pub fn set_itsmf(&mut self, val: super::vals::Itsmf) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
-        #[doc = "SSR underflow masked flag"]
-        #[inline(always)]
-        pub const fn ssrumf(&self) -> super::vals::Ssrumf {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Ssrumf::from_bits(val as u8)
-        }
-        #[doc = "SSR underflow masked flag"]
-        #[inline(always)]
-        pub fn set_ssrumf(&mut self, val: super::vals::Ssrumf) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
     }
     impl Default for Misr {
         #[inline(always)]
@@ -1061,7 +961,7 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Privcr(pub u32);
     impl Privcr {
-        #[doc = "ALRPRIV"]
+        #[doc = "ALRAPRIV"]
         #[inline(always)]
         pub const fn alrpriv(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1069,7 +969,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "ALRPRIV"]
+        #[doc = "ALRAPRIV"]
         #[inline(always)]
         pub fn set_alrpriv(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
@@ -1202,111 +1102,11 @@ pub mod regs {
         pub fn set_citsf(&mut self, val: super::vals::Calrf) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
-        #[doc = "Clear SSR underflow flag"]
-        #[inline(always)]
-        pub const fn cssruf(&self) -> super::vals::Calrf {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Calrf::from_bits(val as u8)
-        }
-        #[doc = "Clear SSR underflow flag"]
-        #[inline(always)]
-        pub fn set_cssruf(&mut self, val: super::vals::Calrf) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
     }
     impl Default for Scr {
         #[inline(always)]
         fn default() -> Scr {
             Scr(0)
-        }
-    }
-    #[doc = "Secure mode control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Seccfgr(pub u32);
-    impl Seccfgr {
-        #[doc = "ALRASEC"]
-        #[inline(always)]
-        pub const fn alrasec(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "ALRASEC"]
-        #[inline(always)]
-        pub fn set_alrasec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "ALRBSEC"]
-        #[inline(always)]
-        pub const fn alrbsec(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "ALRBSEC"]
-        #[inline(always)]
-        pub fn set_alrbsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "WUTSEC"]
-        #[inline(always)]
-        pub const fn wutsec(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "WUTSEC"]
-        #[inline(always)]
-        pub fn set_wutsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "TSSEC"]
-        #[inline(always)]
-        pub const fn tssec(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TSSEC"]
-        #[inline(always)]
-        pub fn set_tssec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "CALSEC"]
-        #[inline(always)]
-        pub const fn calsec(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "CALSEC"]
-        #[inline(always)]
-        pub fn set_calsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "INITSEC"]
-        #[inline(always)]
-        pub const fn initsec(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "INITSEC"]
-        #[inline(always)]
-        pub fn set_initsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "SEC"]
-        #[inline(always)]
-        pub const fn sec(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SEC"]
-        #[inline(always)]
-        pub fn set_sec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-    }
-    impl Default for Seccfgr {
-        #[inline(always)]
-        fn default() -> Seccfgr {
-            Seccfgr(0)
         }
     }
     #[doc = "Shift control register"]
@@ -1341,6 +1141,88 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Shiftr {
             Shiftr(0)
+        }
+    }
+    #[doc = "RTC secure mode control register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Smcr(pub u32);
+    impl Smcr {
+        #[doc = "Alarm x protection"]
+        #[inline(always)]
+        pub const fn alrdprot(&self, n: usize) -> bool {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
+        }
+        #[doc = "Alarm x protection"]
+        #[inline(always)]
+        pub fn set_alrdprot(&mut self, n: usize, val: bool) {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        }
+        #[doc = "Wakeup timer protection"]
+        #[inline(always)]
+        pub const fn wutdprot(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Wakeup timer protection"]
+        #[inline(always)]
+        pub fn set_wutdprot(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Timestamp protection"]
+        #[inline(always)]
+        pub const fn tsdprot(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Timestamp protection"]
+        #[inline(always)]
+        pub fn set_tsdprot(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Shift register, daylight saving, calibration and reference clock protection"]
+        #[inline(always)]
+        pub const fn caldprot(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Shift register, daylight saving, calibration and reference clock protection"]
+        #[inline(always)]
+        pub fn set_caldprot(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Initialization protection"]
+        #[inline(always)]
+        pub const fn initdprot(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Initialization protection"]
+        #[inline(always)]
+        pub fn set_initdprot(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "RTC global protection"]
+        #[inline(always)]
+        pub const fn decprot(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RTC global protection"]
+        #[inline(always)]
+        pub fn set_decprot(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Smcr {
+        #[inline(always)]
+        fn default() -> Smcr {
+            Smcr(0)
         }
     }
     #[doc = "Secure masked interrupt status register"]
@@ -1406,17 +1288,6 @@ pub mod regs {
         #[inline(always)]
         pub fn set_itsmf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "SSRUMF"]
-        #[inline(always)]
-        pub const fn ssrumf(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SSRUMF"]
-        #[inline(always)]
-        pub fn set_ssrumf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
     impl Default for Smisr {
@@ -1489,17 +1360,6 @@ pub mod regs {
         pub fn set_itsf(&mut self, val: super::vals::Itsf) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
-        #[doc = "SSR underflow flag"]
-        #[inline(always)]
-        pub const fn ssruf(&self) -> super::vals::Ssruf {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Ssruf::from_bits(val as u8)
-        }
-        #[doc = "SSR underflow flag"]
-        #[inline(always)]
-        pub fn set_ssruf(&mut self, val: super::vals::Ssruf) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
     }
     impl Default for Sr {
         #[inline(always)]
@@ -1514,14 +1374,14 @@ pub mod regs {
     impl Ssr {
         #[doc = "Synchronous binary counter"]
         #[inline(always)]
-        pub const fn ss(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+        pub const fn ss(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
         #[doc = "Synchronous binary counter"]
         #[inline(always)]
-        pub fn set_ss(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        pub fn set_ss(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
     impl Default for Ssr {
@@ -1693,14 +1553,14 @@ pub mod regs {
     impl Tsssr {
         #[doc = "Sub second value"]
         #[inline(always)]
-        pub const fn ss(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+        pub const fn ss(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
         #[doc = "Sub second value"]
         #[inline(always)]
-        pub fn set_ss(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        pub fn set_ss(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
     impl Default for Tsssr {
@@ -1919,9 +1779,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        TOMATCH = 0,
+        MASK = 0,
         #[doc = "Date/day don’t care in Alarm comparison"]
-        NOTMATCH = 0x01,
+        NOTMASK = 0x01,
     }
     impl AlrmrMsk {
         #[inline(always)]
@@ -2010,39 +1870,6 @@ is don’t care."]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum AlrmssrSsclr {
-        #[doc = "The synchronous binary counter (SS\\[31:0\\]
-in RTC_SSR) is free-running"]
-        FREERUNNING = 0,
-        #[doc = "The synchronous binary counter (SS\\[31:0\\]
-in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRMABINR → SS\\[31:0\\]
-value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR → SS\\[31:0\\]"]
-        ALRMBINR = 0x01,
-    }
-    impl AlrmssrSsclr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> AlrmssrSsclr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for AlrmssrSsclr {
-        #[inline(always)]
-        fn from(val: u8) -> AlrmssrSsclr {
-            AlrmssrSsclr::from_bits(val)
-        }
-    }
-    impl From<AlrmssrSsclr> for u8 {
-        #[inline(always)]
-        fn from(val: AlrmssrSsclr) -> u8 {
-            AlrmssrSsclr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
         AM = 0,
@@ -2069,82 +1896,6 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
         #[inline(always)]
         fn from(val: Ampm) -> u8 {
             Ampm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Bcdu {
-        #[doc = "1s increment each time SS\\[7:0\\]=0"]
-        BIT7 = 0,
-        #[doc = "1s increment each time SS\\[8:0\\]=0"]
-        BIT8 = 0x01,
-        #[doc = "1s increment each time SS\\[9:0\\]=0"]
-        BIT9 = 0x02,
-        #[doc = "1s increment each time SS\\[10:0\\]=0"]
-        BIT10 = 0x03,
-        #[doc = "1s increment each time SS\\[11:0\\]=0"]
-        BIT11 = 0x04,
-        #[doc = "1s increment each time SS\\[12:0\\]=0"]
-        BIT12 = 0x05,
-        #[doc = "1s increment each time SS\\[13:0\\]=0"]
-        BIT13 = 0x06,
-        #[doc = "1s increment each time SS\\[14:0\\]=0"]
-        BIT14 = 0x07,
-    }
-    impl Bcdu {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Bcdu {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Bcdu {
-        #[inline(always)]
-        fn from(val: u8) -> Bcdu {
-            Bcdu::from_bits(val)
-        }
-    }
-    impl From<Bcdu> for u8 {
-        #[inline(always)]
-        fn from(val: Bcdu) -> u8 {
-            Bcdu::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Bin {
-        #[doc = "Free running BCD calendar mode (Binary mode disabled)"]
-        BCD = 0,
-        #[doc = "Free running Binary mode (BCD mode disabled)"]
-        BINARY = 0x01,
-        #[doc = "Free running BCD calendar and Binary modes"]
-        BINBCD = 0x02,
-        #[doc = "Free running BCD calendar and Binary modes"]
-        BINBCD2 = 0x03,
-    }
-    impl Bin {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Bin {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Bin {
-        #[inline(always)]
-        fn from(val: u8) -> Bin {
-            Bin::from_bits(val)
-        }
-    }
-    impl From<Bin> for u8 {
-        #[inline(always)]
-        fn from(val: Bin) -> u8 {
-            Bin::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2538,6 +2289,36 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Refckon {
+        #[doc = "RTC_REFIN detection disabled"]
+        DISABLED = 0,
+        #[doc = "RTC_REFIN detection enabled"]
+        ENABLED = 0x01,
+    }
+    impl Refckon {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Refckon {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Refckon {
+        #[inline(always)]
+        fn from(val: u8) -> Refckon {
+            Refckon::from_bits(val)
+        }
+    }
+    impl From<Refckon> for u8 {
+        #[inline(always)]
+        fn from(val: Refckon) -> u8 {
+            Refckon::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ssruf {
         _RESERVED_0 = 0,
         #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
@@ -2592,6 +2373,36 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
         #[inline(always)]
         fn from(val: Ssrumf) -> u8 {
             Ssrumf::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum TampalrmPu {
+        #[doc = "No pull-up is applied on TAMPALRM output"]
+        NOPULLUP = 0,
+        #[doc = "A pull-up is applied on TAMPALRM output"]
+        PULLUP = 0x01,
+    }
+    impl TampalrmPu {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> TampalrmPu {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for TampalrmPu {
+        #[inline(always)]
+        fn from(val: u8) -> TampalrmPu {
+            TampalrmPu::from_bits(val)
+        }
+    }
+    impl From<TampalrmPu> for u8 {
+        #[inline(always)]
+        fn from(val: TampalrmPu) -> u8 {
+            TampalrmPu::to_bits(val)
         }
     }
     #[repr(u8)]

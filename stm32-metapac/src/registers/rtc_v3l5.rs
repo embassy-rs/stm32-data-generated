@@ -146,10 +146,8 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "seccfgr",
-                    description: Some(
-                        "Secure mode control register",
-                    ),
+                    name: "smcr",
+                    description: None,
                     array: None,
                     byte_offset: 32,
                     inner: BlockItemInner::Register(
@@ -157,7 +155,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seccfgr",
+                                "Smcr",
                             ),
                         },
                     ),
@@ -380,54 +378,10 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
-                BlockItem {
-                    name: "alrbinr",
-                    description: Some(
-                        "Alarm binary mode register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 112,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Alrbinr",
-                            ),
-                        },
-                    ),
-                },
             ],
         },
     ],
     fieldsets: &[
-        FieldSet {
-            name: "Alrbinr",
-            extends: None,
-            description: Some(
-                "RTC alarm A binary mode register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ss",
-                    description: Some(
-                        "Synchronous counter alarm value in Binary mode",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
         FieldSet {
             name: "Alrmr",
             extends: None,
@@ -614,21 +568,9 @@ pub(crate) static REGISTERS: IR = IR {
                         "Mask the most-significant bits starting at this bit",
                     ),
                     bit_offset: 24,
-                    bit_size: 6,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
-                },
-                Field {
-                    name: "ssclr",
-                    description: Some(
-                        "Clear synchronous counter on alarm (Binary mode only)",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "AlrmssrSsclr",
-                    ),
                 },
             ],
         },
@@ -763,16 +705,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "Fmt",
                     ),
-                },
-                Field {
-                    name: "ssruie",
-                    description: Some(
-                        "SSR underflow interrupt enable",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
                     name: "alre",
@@ -955,23 +887,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "alrfclr",
-                    description: Some(
-                        "ALRFCLR",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
                     name: "tampalrm_pu",
                     description: Some(
                         "TAMPALRM pull-up enable",
@@ -1096,7 +1011,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "wutwf",
                     description: Some(
-                        "Wakeup timer write enabled",
+                        "Wakeup timer write flag",
                     ),
                     bit_offset: 2,
                     bit_size: 1,
@@ -1146,36 +1061,12 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "init",
                     description: Some(
-                        "Enter Initialization mode",
+                        "Initialization mode",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
                     enumm: None,
-                },
-                Field {
-                    name: "bin",
-                    description: Some(
-                        "Binary mode",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Bin",
-                    ),
-                },
-                Field {
-                    name: "bcdu",
-                    description: Some(
-                        "BCD update",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Bcdu",
-                    ),
                 },
                 Field {
                     name: "recalpf",
@@ -1266,18 +1157,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Itsmf",
                     ),
                 },
-                Field {
-                    name: "ssrumf",
-                    description: Some(
-                        "SSR underflow masked flag",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ssrumf",
-                    ),
-                },
             ],
         },
         FieldSet {
@@ -1321,7 +1200,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "alrpriv",
                     description: Some(
-                        "ALRPRIV",
+                        "ALRAPRIV",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -1462,98 +1341,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Calrf",
                     ),
                 },
-                Field {
-                    name: "cssruf",
-                    description: Some(
-                        "Clear SSR underflow flag",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Calrf",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seccfgr",
-            extends: None,
-            description: Some(
-                "Secure mode control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "alrasec",
-                    description: Some(
-                        "ALRASEC",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "alrbsec",
-                    description: Some(
-                        "ALRBSEC",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wutsec",
-                    description: Some(
-                        "WUTSEC",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tssec",
-                    description: Some(
-                        "TSSEC",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "calsec",
-                    description: Some(
-                        "CALSEC",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "initsec",
-                    description: Some(
-                        "INITSEC",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sec",
-                    description: Some(
-                        "SEC",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
             ],
         },
         FieldSet {
@@ -1580,6 +1367,83 @@ pub(crate) static REGISTERS: IR = IR {
                         "Add one second",
                     ),
                     bit_offset: 31,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Smcr",
+            extends: None,
+            description: Some(
+                "RTC secure mode control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "alrdprot",
+                    description: Some(
+                        "Alarm x protection",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+                Field {
+                    name: "wutdprot",
+                    description: Some(
+                        "Wakeup timer protection",
+                    ),
+                    bit_offset: 2,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tsdprot",
+                    description: Some(
+                        "Timestamp protection",
+                    ),
+                    bit_offset: 3,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "caldprot",
+                    description: Some(
+                        "Shift register, daylight saving, calibration and reference clock protection",
+                    ),
+                    bit_offset: 13,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "initdprot",
+                    description: Some(
+                        "Initialization protection",
+                    ),
+                    bit_offset: 14,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "decprot",
+                    description: Some(
+                        "RTC global protection",
+                    ),
+                    bit_offset: 15,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1647,16 +1511,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "ITSMF",
                     ),
                     bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ssrumf",
-                    description: Some(
-                        "SSRUMF",
-                    ),
-                    bit_offset: 6,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1738,18 +1592,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Itsf",
                     ),
                 },
-                Field {
-                    name: "ssruf",
-                    description: Some(
-                        "SSR underflow flag",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Ssruf",
-                    ),
-                },
             ],
         },
         FieldSet {
@@ -1766,7 +1608,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Synchronous binary counter",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -1928,7 +1770,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "Sub second value",
                     ),
                     bit_offset: 0,
-                    bit_size: 32,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -2102,14 +1944,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TOMATCH",
+                    name: "MASK",
                     description: Some(
                         "Alarm set if the date/day match",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTMATCH",
+                    name: "NOTMASK",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
@@ -2160,27 +2002,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "AlrmssrSsclr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "FREERUNNING",
-                    description: Some(
-                        "The synchronous binary counter (SS[31:0] in RTC_SSR) is free-running",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ALRMBINR",
-                    description: Some(
-                        "The synchronous binary counter (SS[31:0] in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRMABINR → SS[31:0] value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR → SS[31:0]",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ampm",
             description: None,
             bit_size: 1,
@@ -2198,104 +2019,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "PM",
                     ),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Bcdu",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "BIT7",
-                    description: Some(
-                        "1s increment each time SS[7:0]=0",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT8",
-                    description: Some(
-                        "1s increment each time SS[8:0]=0",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BIT9",
-                    description: Some(
-                        "1s increment each time SS[9:0]=0",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BIT10",
-                    description: Some(
-                        "1s increment each time SS[10:0]=0",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BIT11",
-                    description: Some(
-                        "1s increment each time SS[11:0]=0",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "BIT12",
-                    description: Some(
-                        "1s increment each time SS[12:0]=0",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "BIT13",
-                    description: Some(
-                        "1s increment each time SS[13:0]=0",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "BIT14",
-                    description: Some(
-                        "1s increment each time SS[14:0]=0",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Bin",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BCD",
-                    description: Some(
-                        "Free running BCD calendar mode (Binary mode disabled)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BINARY",
-                    description: Some(
-                        "Free running Binary mode (BCD mode disabled)",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BINBCD",
-                    description: Some(
-                        "Free running BCD calendar and Binary modes",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BINBCD2",
-                    description: Some(
-                        "Free running BCD calendar and Binary modes",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -2552,6 +2275,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Refckon",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "RTC_REFIN detection disabled",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some(
+                        "RTC_REFIN detection enabled",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Ssruf",
             description: None,
             bit_size: 1,
@@ -2574,6 +2318,27 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "UNDERFLOW",
                     description: Some(
                         "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "TampalrmPu",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "NOPULLUP",
+                    description: Some(
+                        "No pull-up is applied on TAMPALRM output",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PULLUP",
+                    description: Some(
+                        "A pull-up is applied on TAMPALRM output",
                     ),
                     value: 1,
                 },

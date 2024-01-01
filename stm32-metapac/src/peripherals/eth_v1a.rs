@@ -203,35 +203,17 @@ impl EthernetMac {
     pub const fn maca0lr(self) -> crate::common::Reg<regs::Maca0lr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(68usize) as _) }
     }
-    #[doc = "Ethernet MAC address 1 high register"]
+    #[doc = "Ethernet MAC address 1/2/3 high register"]
     #[inline(always)]
-    pub const fn maca1hr(self) -> crate::common::Reg<regs::Maca1hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize) as _) }
+    pub const fn macahr(self, n: usize) -> crate::common::Reg<regs::Macahr, crate::common::RW> {
+        assert!(n < 3usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(72usize + n * 8usize) as _) }
     }
-    #[doc = "Ethernet MAC address1 low register"]
+    #[doc = "Ethernet MAC address 1/2/3 low register"]
     #[inline(always)]
-    pub const fn maca1lr(self) -> crate::common::Reg<regs::Maca1lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize) as _) }
-    }
-    #[doc = "Ethernet MAC address 2 high register"]
-    #[inline(always)]
-    pub const fn maca2hr(self) -> crate::common::Reg<regs::Maca2hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(80usize) as _) }
-    }
-    #[doc = "Ethernet MAC address 2 low register"]
-    #[inline(always)]
-    pub const fn maca2lr(self) -> crate::common::Reg<regs::Maca2lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(84usize) as _) }
-    }
-    #[doc = "Ethernet MAC address 3 high register"]
-    #[inline(always)]
-    pub const fn maca3hr(self) -> crate::common::Reg<regs::Maca3hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(88usize) as _) }
-    }
-    #[doc = "Ethernet MAC address 3 low register"]
-    #[inline(always)]
-    pub const fn maca3lr(self) -> crate::common::Reg<regs::Maca3lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(92usize) as _) }
+    pub const fn macalr(self, n: usize) -> crate::common::Reg<regs::Macalr, crate::common::RW> {
+        assert!(n < 3usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(76usize + n * 8usize) as _) }
     }
     #[doc = "Ethernet MMC control register"]
     #[inline(always)]
@@ -1293,13 +1275,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Maca0hr(pub u32);
     impl Maca0hr {
-        #[doc = "MAC address0 high"]
+        #[doc = "MAC address 0 high"]
         #[inline(always)]
         pub const fn maca0h(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
-        #[doc = "MAC address0 high"]
+        #[doc = "MAC address 0 high"]
         #[inline(always)]
         pub fn set_maca0h(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
@@ -1327,13 +1309,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Maca0lr(pub u32);
     impl Maca0lr {
-        #[doc = "0"]
+        #[doc = "Ethernet MAC address 0 low"]
         #[inline(always)]
         pub const fn maca0l(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
-        #[doc = "0"]
+        #[doc = "Ethernet MAC address 0 low"]
         #[inline(always)]
         pub fn set_maca0l(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
@@ -1345,20 +1327,20 @@ pub mod regs {
             Maca0lr(0)
         }
     }
-    #[doc = "Ethernet MAC address 1 high register"]
+    #[doc = "Ethernet MAC address 1/2/3 high register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca1hr(pub u32);
-    impl Maca1hr {
-        #[doc = "MACA1H"]
+    pub struct Macahr(pub u32);
+    impl Macahr {
+        #[doc = "Ethernet MAC address 1/2/3 high"]
         #[inline(always)]
-        pub const fn maca1h(&self) -> u16 {
+        pub const fn macah(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
-        #[doc = "MACA1H"]
+        #[doc = "Ethernet MAC address 1/2/3 high"]
         #[inline(always)]
-        pub fn set_maca1h(&mut self, val: u16) {
+        pub fn set_macah(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "MBC"]
@@ -1385,201 +1367,43 @@ pub mod regs {
         }
         #[doc = "AE"]
         #[inline(always)]
-        pub const fn ae(&self) -> super::vals::MacahrAe {
+        pub const fn ae(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::MacahrAe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "AE"]
         #[inline(always)]
-        pub fn set_ae(&mut self, val: super::vals::MacahrAe) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_ae(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for Maca1hr {
+    impl Default for Macahr {
         #[inline(always)]
-        fn default() -> Maca1hr {
-            Maca1hr(0)
+        fn default() -> Macahr {
+            Macahr(0)
         }
     }
-    #[doc = "Ethernet MAC address1 low register"]
+    #[doc = "Ethernet MAC address 1/2/3 low register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca1lr(pub u32);
-    impl Maca1lr {
-        #[doc = "MACA1LR"]
+    pub struct Macalr(pub u32);
+    impl Macalr {
+        #[doc = "Ethernet MAC address 1/2/3 low"]
         #[inline(always)]
-        pub const fn maca1l(&self) -> u32 {
+        pub const fn macal(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
-        #[doc = "MACA1LR"]
+        #[doc = "Ethernet MAC address 1/2/3 low"]
         #[inline(always)]
-        pub fn set_maca1l(&mut self, val: u32) {
+        pub fn set_macal(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
-    impl Default for Maca1lr {
+    impl Default for Macalr {
         #[inline(always)]
-        fn default() -> Maca1lr {
-            Maca1lr(0)
-        }
-    }
-    #[doc = "Ethernet MAC address 2 high register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca2hr(pub u32);
-    impl Maca2hr {
-        #[doc = "MAC2AH"]
-        #[inline(always)]
-        pub const fn maca2h(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "MAC2AH"]
-        #[inline(always)]
-        pub fn set_maca2h(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[doc = "MBC"]
-        #[inline(always)]
-        pub const fn mbc(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "MBC"]
-        #[inline(always)]
-        pub fn set_mbc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
-        }
-        #[doc = "SA"]
-        #[inline(always)]
-        pub const fn sa(&self) -> super::vals::MacahrSa {
-            let val = (self.0 >> 30usize) & 0x01;
-            super::vals::MacahrSa::from_bits(val as u8)
-        }
-        #[doc = "SA"]
-        #[inline(always)]
-        pub fn set_sa(&mut self, val: super::vals::MacahrSa) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
-        }
-        #[doc = "AE"]
-        #[inline(always)]
-        pub const fn ae(&self) -> super::vals::MacahrAe {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::MacahrAe::from_bits(val as u8)
-        }
-        #[doc = "AE"]
-        #[inline(always)]
-        pub fn set_ae(&mut self, val: super::vals::MacahrAe) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Maca2hr {
-        #[inline(always)]
-        fn default() -> Maca2hr {
-            Maca2hr(0)
-        }
-    }
-    #[doc = "Ethernet MAC address 2 low register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca2lr(pub u32);
-    impl Maca2lr {
-        #[doc = "MACA2L"]
-        #[inline(always)]
-        pub const fn maca2l(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "MACA2L"]
-        #[inline(always)]
-        pub fn set_maca2l(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Maca2lr {
-        #[inline(always)]
-        fn default() -> Maca2lr {
-            Maca2lr(0)
-        }
-    }
-    #[doc = "Ethernet MAC address 3 high register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca3hr(pub u32);
-    impl Maca3hr {
-        #[doc = "MACA3H"]
-        #[inline(always)]
-        pub const fn maca3h(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "MACA3H"]
-        #[inline(always)]
-        pub fn set_maca3h(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[doc = "MBC"]
-        #[inline(always)]
-        pub const fn mbc(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "MBC"]
-        #[inline(always)]
-        pub fn set_mbc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
-        }
-        #[doc = "SA"]
-        #[inline(always)]
-        pub const fn sa(&self) -> super::vals::MacahrSa {
-            let val = (self.0 >> 30usize) & 0x01;
-            super::vals::MacahrSa::from_bits(val as u8)
-        }
-        #[doc = "SA"]
-        #[inline(always)]
-        pub fn set_sa(&mut self, val: super::vals::MacahrSa) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
-        }
-        #[doc = "AE"]
-        #[inline(always)]
-        pub const fn ae(&self) -> super::vals::MacahrAe {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::MacahrAe::from_bits(val as u8)
-        }
-        #[doc = "AE"]
-        #[inline(always)]
-        pub fn set_ae(&mut self, val: super::vals::MacahrAe) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Maca3hr {
-        #[inline(always)]
-        fn default() -> Maca3hr {
-            Maca3hr(0)
-        }
-    }
-    #[doc = "Ethernet MAC address 3 low register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca3lr(pub u32);
-    impl Maca3lr {
-        #[doc = "MBCA3L"]
-        #[inline(always)]
-        pub const fn maca3l(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "MBCA3L"]
-        #[inline(always)]
-        pub fn set_maca3l(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Maca3lr {
-        #[inline(always)]
-        fn default() -> Maca3lr {
-            Maca3lr(0)
+        fn default() -> Macalr {
+            Macalr(0)
         }
     }
     #[doc = "Ethernet MAC configuration register"]
@@ -1611,14 +1435,14 @@ pub mod regs {
         }
         #[doc = "Deferral check"]
         #[inline(always)]
-        pub const fn dc(&self) -> super::vals::Dc {
+        pub const fn dc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Dc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Deferral check"]
         #[inline(always)]
-        pub fn set_dc(&mut self, val: super::vals::Dc) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_dc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Back-off limit"]
         #[inline(always)]
@@ -1921,36 +1745,36 @@ pub mod regs {
         }
         #[doc = "Transmit flow control enable"]
         #[inline(always)]
-        pub const fn tfce(&self) -> super::vals::Tfce {
+        pub const fn tfce(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Tfce::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Transmit flow control enable"]
         #[inline(always)]
-        pub fn set_tfce(&mut self, val: super::vals::Tfce) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_tfce(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Receive flow control enable"]
         #[inline(always)]
-        pub const fn rfce(&self) -> super::vals::Rfce {
+        pub const fn rfce(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Rfce::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Receive flow control enable"]
         #[inline(always)]
-        pub fn set_rfce(&mut self, val: super::vals::Rfce) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_rfce(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Unicast pause frame detect"]
         #[inline(always)]
-        pub const fn upfd(&self) -> super::vals::Upfd {
+        pub const fn upfd(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Upfd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Unicast pause frame detect"]
         #[inline(always)]
-        pub fn set_upfd(&mut self, val: super::vals::Upfd) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_upfd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Pause low threshold"]
         #[inline(always)]
@@ -1999,14 +1823,14 @@ pub mod regs {
     impl Macffr {
         #[doc = "Promiscuous mode"]
         #[inline(always)]
-        pub const fn pm(&self) -> super::vals::Pm {
+        pub const fn pm(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Pm::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Promiscuous mode"]
         #[inline(always)]
-        pub fn set_pm(&mut self, val: super::vals::Pm) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_pm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Hash unicast"]
         #[inline(always)]
@@ -2043,14 +1867,14 @@ pub mod regs {
         }
         #[doc = "Pass all multicast"]
         #[inline(always)]
-        pub const fn pam(&self) -> super::vals::Pam {
+        pub const fn pam(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Pam::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Pass all multicast"]
         #[inline(always)]
-        pub fn set_pam(&mut self, val: super::vals::Pam) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_pam(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Broadcast frames disable"]
         #[inline(always)]
@@ -2087,14 +1911,14 @@ pub mod regs {
         }
         #[doc = "Source address filter"]
         #[inline(always)]
-        pub const fn saf(&self) -> super::vals::Saf {
+        pub const fn saf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Saf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Source address filter"]
         #[inline(always)]
-        pub fn set_saf(&mut self, val: super::vals::Saf) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_saf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Hash or perfect filter"]
         #[inline(always)]
@@ -2109,14 +1933,14 @@ pub mod regs {
         }
         #[doc = "Receive all"]
         #[inline(always)]
-        pub const fn ra(&self) -> super::vals::Ra {
+        pub const fn ra(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Ra::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Receive all"]
         #[inline(always)]
-        pub fn set_ra(&mut self, val: super::vals::Ra) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_ra(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Macffr {
@@ -2313,25 +2137,25 @@ pub mod regs {
         }
         #[doc = "Magic packet enable"]
         #[inline(always)]
-        pub const fn mpe(&self) -> super::vals::Mpe {
+        pub const fn mpe(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Mpe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Magic packet enable"]
         #[inline(always)]
-        pub fn set_mpe(&mut self, val: super::vals::Mpe) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_mpe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Wakeup frame enable"]
         #[inline(always)]
-        pub const fn wfe(&self) -> super::vals::Wfe {
+        pub const fn wfe(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Wfe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Wakeup frame enable"]
         #[inline(always)]
-        pub fn set_wfe(&mut self, val: super::vals::Wfe) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_wfe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Magic packet received"]
         #[inline(always)]
@@ -2357,14 +2181,14 @@ pub mod regs {
         }
         #[doc = "Global unicast"]
         #[inline(always)]
-        pub const fn gu(&self) -> super::vals::Gu {
+        pub const fn gu(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Gu::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Global unicast"]
         #[inline(always)]
-        pub fn set_gu(&mut self, val: super::vals::Gu) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_gu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Wakeup frame filter register pointer reset"]
         #[inline(always)]
@@ -2514,14 +2338,14 @@ pub mod regs {
         }
         #[doc = "Reset on read"]
         #[inline(always)]
-        pub const fn ror(&self) -> super::vals::Ror {
+        pub const fn ror(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Ror::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Reset on read"]
         #[inline(always)]
-        pub fn set_ror(&mut self, val: super::vals::Ror) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_ror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "MMC counter freeze"]
         #[inline(always)]
@@ -3549,9 +3373,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Csr {
         #[doc = "Counters roll over to zero after reaching the maximum value"]
-        DISABLED = 0,
+        ROLLOVER = 0,
         #[doc = "Counters do not roll over to zero after reaching the maximum value"]
-        ENABLED = 0x01,
+        NOTROLLOVER = 0x01,
     }
     impl Csr {
         #[inline(always)]
@@ -3633,36 +3457,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Daif) -> u8 {
             Daif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dc {
-        #[doc = "MAC defers until CRS signal goes inactive"]
-        DISABLED = 0,
-        #[doc = "Deferral check function enabled"]
-        ENABLED = 0x01,
-    }
-    impl Dc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dc {
-        #[inline(always)]
-        fn from(val: u8) -> Dc {
-            Dc::from_bits(val)
-        }
-    }
-    impl From<Dc> for u8 {
-        #[inline(always)]
-        fn from(val: Dc) -> u8 {
-            Dc::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -3966,36 +3760,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Gu {
-        #[doc = "Normal operation"]
-        DISABLED = 0,
-        #[doc = "Any unicast packet filtered by the MAC address recognition may be a wakeup frame"]
-        ENABLED = 0x01,
-    }
-    impl Gu {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Gu {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Gu {
-        #[inline(always)]
-        fn from(val: u8) -> Gu {
-            Gu::from_bits(val)
-        }
-    }
-    impl From<Gu> for u8 {
-        #[inline(always)]
-        fn from(val: Gu) -> u8 {
-            Gu::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hm {
         #[doc = "MAC performs a perfect destination address filtering for multicast frames"]
         PERFECT = 0,
@@ -4218,36 +3982,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum MacahrAe {
-        #[doc = "Address filters ignore this address"]
-        DISABLED = 0,
-        #[doc = "Address filters use this address"]
-        ENABLED = 0x01,
-    }
-    impl MacahrAe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> MacahrAe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for MacahrAe {
-        #[inline(always)]
-        fn from(val: u8) -> MacahrAe {
-            MacahrAe::from_bits(val)
-        }
-    }
-    impl From<MacahrAe> for u8 {
-        #[inline(always)]
-        fn from(val: MacahrAe) -> u8 {
-            MacahrAe::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MacahrSa {
         #[doc = "This address is used for comparison with DA fields of the received frame"]
         DESTINATION = 0,
@@ -4337,36 +4071,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mpe {
-        #[doc = "No power management event generated due to Magic Packet reception"]
-        DISABLED = 0,
-        #[doc = "Enable generation of a power management event due to Magic Packet reception"]
-        ENABLED = 0x01,
-    }
-    impl Mpe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mpe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mpe {
-        #[inline(always)]
-        fn from(val: u8) -> Mpe {
-            Mpe::from_bits(val)
-        }
-    }
-    impl From<Mpe> for u8 {
-        #[inline(always)]
-        fn from(val: Mpe) -> u8 {
-            Mpe::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mw {
         #[doc = "Read operation"]
         READ = 0,
@@ -4393,36 +4097,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mw) -> u8 {
             Mw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pam {
-        #[doc = "Filtering of multicast frames depends on HM"]
-        DISABLED = 0,
-        #[doc = "All received frames with a multicast destination address are passed"]
-        ENABLED = 0x01,
-    }
-    impl Pam {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pam {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pam {
-        #[inline(always)]
-        fn from(val: u8) -> Pam {
-            Pam::from_bits(val)
-        }
-    }
-    impl From<Pam> for u8 {
-        #[inline(always)]
-        fn from(val: Pam) -> u8 {
-            Pam::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4620,36 +4294,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pm {
-        #[doc = "Normal address filtering"]
-        DISABLED = 0,
-        #[doc = "Address filters pass all incoming frames regardless of their destination or source address"]
-        ENABLED = 0x01,
-    }
-    impl Pm {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pm {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pm {
-        #[inline(always)]
-        fn from(val: u8) -> Pm {
-            Pm::from_bits(val)
-        }
-    }
-    impl From<Pm> for u8 {
-        #[inline(always)]
-        fn from(val: Pm) -> u8 {
-            Pm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pmtim {
         #[doc = "PMT Status interrupt generation enabled"]
         UNMASKED = 0,
@@ -4710,36 +4354,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: PriorityRxOverTx) -> u8 {
             PriorityRxOverTx::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ra {
-        #[doc = "MAC receiver passes on to the application only those frames that have passed the SA/DA address file"]
-        DISABLED = 0,
-        #[doc = "MAC receiver passes oll received frames on to the application"]
-        ENABLED = 0x01,
-    }
-    impl Ra {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ra {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ra {
-        #[inline(always)]
-        fn from(val: u8) -> Ra {
-            Ra::from_bits(val)
-        }
-    }
-    impl From<Ra> for u8 {
-        #[inline(always)]
-        fn from(val: Ra) -> u8 {
-            Ra::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4900,36 +4514,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rfce {
-        #[doc = "Pause frames are not decoded"]
-        DISABLED = 0,
-        #[doc = "MAC decodes received Pause frames and disables its transmitted for a specified time"]
-        ENABLED = 0x01,
-    }
-    impl Rfce {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rfce {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rfce {
-        #[inline(always)]
-        fn from(val: u8) -> Rfce {
-            Rfce::from_bits(val)
-        }
-    }
-    impl From<Rfce> for u8 {
-        #[inline(always)]
-        fn from(val: Rfce) -> u8 {
-            Rfce::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rfcem {
         #[doc = "Received-crc-error counter half-full interrupt enabled"]
         UNMASKED = 0,
@@ -5016,36 +4600,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rod) -> u8 {
             Rod::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ror {
-        #[doc = "MMC counters do not reset on read"]
-        DISABLED = 0,
-        #[doc = "MMC counters reset to zero after read"]
-        ENABLED = 0x01,
-    }
-    impl Ror {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ror {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ror {
-        #[inline(always)]
-        fn from(val: u8) -> Ror {
-            Ror::from_bits(val)
-        }
-    }
-    impl From<Ror> for u8 {
-        #[inline(always)]
-        fn from(val: Ror) -> u8 {
-            Ror::to_bits(val)
         }
     }
     #[repr(transparent)]
@@ -5180,36 +4734,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Saf {
-        #[doc = "Source address ignored"]
-        DISABLED = 0,
-        #[doc = "MAC drops frames that fail the source address filter"]
-        ENABLED = 0x01,
-    }
-    impl Saf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Saf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Saf {
-        #[inline(always)]
-        fn from(val: u8) -> Saf {
-            Saf::from_bits(val)
-        }
-    }
-    impl From<Saf> for u8 {
-        #[inline(always)]
-        fn from(val: Saf) -> u8 {
-            Saf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Saif {
         #[doc = "Source address filter operates normally"]
         NORMAL = 0,
@@ -5266,36 +4790,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: St) -> u8 {
             St::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tfce {
-        #[doc = "In full duplex, flow control is disabled. In half duplex, back pressure is disabled"]
-        DISABLED = 0,
-        #[doc = "In full duplex, flow control is enabled. In half duplex, back pressure is enabled"]
-        ENABLED = 0x01,
-    }
-    impl Tfce {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tfce {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tfce {
-        #[inline(always)]
-        fn from(val: u8) -> Tfce {
-            Tfce::from_bits(val)
-        }
-    }
-    impl From<Tfce> for u8 {
-        #[inline(always)]
-        fn from(val: Tfce) -> u8 {
-            Tfce::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5559,36 +5053,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Upfd {
-        #[doc = "MAC detects only a Pause frame with the multicast address specified in the 802.3x standard"]
-        DISABLED = 0,
-        #[doc = "MAC additionally detects Pause frames with the station's unicast address"]
-        ENABLED = 0x01,
-    }
-    impl Upfd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Upfd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Upfd {
-        #[inline(always)]
-        fn from(val: u8) -> Upfd {
-            Upfd::from_bits(val)
-        }
-    }
-    impl From<Upfd> for u8 {
-        #[inline(always)]
-        fn from(val: Upfd) -> u8 {
-            Upfd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usp {
         #[doc = "PBL value used for both Rx and Tx DMA"]
         COMBINED = 0,
@@ -5675,36 +5139,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Wd) -> u8 {
             Wd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Wfe {
-        #[doc = "No power management event generated due to wakeup frame reception"]
-        DISABLED = 0,
-        #[doc = "Enable generation of a power management event due to wakeup frame reception"]
-        ENABLED = 0x01,
-    }
-    impl Wfe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wfe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wfe {
-        #[inline(always)]
-        fn from(val: u8) -> Wfe {
-            Wfe::from_bits(val)
-        }
-    }
-    impl From<Wfe> for u8 {
-        #[inline(always)]
-        fn from(val: Wfe) -> u8 {
-            Wfe::to_bits(val)
         }
     }
     #[repr(u8)]

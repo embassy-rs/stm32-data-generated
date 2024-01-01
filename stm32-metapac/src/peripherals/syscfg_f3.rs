@@ -305,82 +305,31 @@ pub mod regs {
         pub fn set_i2c3_fmp(&mut self, val: super::vals::I2c3Fmp) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
-        #[doc = "VBAT monitoring enable"]
+        #[doc = "Enable the power switch to deliver VBAT voltage on ADC channel 18 input"]
         #[inline(always)]
-        pub const fn vbat_mon(&self) -> super::vals::VbatMon {
+        pub const fn vbat_mon(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::VbatMon::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "VBAT monitoring enable"]
+        #[doc = "Enable the power switch to deliver VBAT voltage on ADC channel 18 input"]
         #[inline(always)]
-        pub fn set_vbat_mon(&mut self, val: super::vals::VbatMon) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub fn set_vbat_mon(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
-        #[doc = "Invalid operation interrupt enable"]
+        #[doc = "Idx 0: Invalid operation interrupt enable; Idx 1: Devide-by-zero interrupt enable; Idx 2: Underflow interrupt enable; Idx 3: Overflow interrupt enable; Idx 4: Input denormal interrupt enable; Idx 5: Inexact interrupt enable"]
         #[inline(always)]
-        pub const fn fpu_ie0(&self) -> super::vals::FpuIe0 {
-            let val = (self.0 >> 26usize) & 0x01;
-            super::vals::FpuIe0::from_bits(val as u8)
+        pub const fn fpu_ie(&self, n: usize) -> bool {
+            assert!(n < 6usize);
+            let offs = 26usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
         }
-        #[doc = "Invalid operation interrupt enable"]
+        #[doc = "Idx 0: Invalid operation interrupt enable; Idx 1: Devide-by-zero interrupt enable; Idx 2: Underflow interrupt enable; Idx 3: Overflow interrupt enable; Idx 4: Input denormal interrupt enable; Idx 5: Inexact interrupt enable"]
         #[inline(always)]
-        pub fn set_fpu_ie0(&mut self, val: super::vals::FpuIe0) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
-        }
-        #[doc = "Devide-by-zero interrupt enable"]
-        #[inline(always)]
-        pub const fn fpu_ie1(&self) -> super::vals::FpuIe1 {
-            let val = (self.0 >> 27usize) & 0x01;
-            super::vals::FpuIe1::from_bits(val as u8)
-        }
-        #[doc = "Devide-by-zero interrupt enable"]
-        #[inline(always)]
-        pub fn set_fpu_ie1(&mut self, val: super::vals::FpuIe1) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
-        }
-        #[doc = "Underflow interrupt enable"]
-        #[inline(always)]
-        pub const fn fpu_ie2(&self) -> super::vals::FpuIe2 {
-            let val = (self.0 >> 28usize) & 0x01;
-            super::vals::FpuIe2::from_bits(val as u8)
-        }
-        #[doc = "Underflow interrupt enable"]
-        #[inline(always)]
-        pub fn set_fpu_ie2(&mut self, val: super::vals::FpuIe2) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
-        }
-        #[doc = "Overflow interrupt enable"]
-        #[inline(always)]
-        pub const fn fpu_ie3(&self) -> super::vals::FpuIe3 {
-            let val = (self.0 >> 29usize) & 0x01;
-            super::vals::FpuIe3::from_bits(val as u8)
-        }
-        #[doc = "Overflow interrupt enable"]
-        #[inline(always)]
-        pub fn set_fpu_ie3(&mut self, val: super::vals::FpuIe3) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
-        }
-        #[doc = "Input denormal interrupt enable"]
-        #[inline(always)]
-        pub const fn fpu_ie4(&self) -> super::vals::FpuIe4 {
-            let val = (self.0 >> 30usize) & 0x01;
-            super::vals::FpuIe4::from_bits(val as u8)
-        }
-        #[doc = "Input denormal interrupt enable"]
-        #[inline(always)]
-        pub fn set_fpu_ie4(&mut self, val: super::vals::FpuIe4) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
-        }
-        #[doc = "Inexact interrupt enable"]
-        #[inline(always)]
-        pub const fn fpu_ie5(&self) -> super::vals::FpuIe5 {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::FpuIe5::from_bits(val as u8)
-        }
-        #[doc = "Inexact interrupt enable"]
-        #[inline(always)]
-        pub fn set_fpu_ie5(&mut self, val: super::vals::FpuIe5) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_fpu_ie(&mut self, n: usize, val: bool) {
+            assert!(n < 6usize);
+            let offs = 26usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Cfgr1 {
@@ -743,181 +692,20 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Rcr(pub u32);
     impl Rcr {
-        #[doc = "CCM SRAM page write protection bit"]
+        #[doc = "CCM SRAM page x write protection enabled"]
         #[inline(always)]
-        pub const fn page0_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
+        pub const fn page_wp(&self, n: usize) -> bool {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
         }
-        #[doc = "CCM SRAM page write protection bit"]
+        #[doc = "CCM SRAM page x write protection enabled"]
         #[inline(always)]
-        pub fn set_page0_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page1_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page1_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page2_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page2_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page3_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page3_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page4_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page4_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page5_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page5_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page6_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page6_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page7_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page7_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page8_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page8_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page9_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page9_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page10_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page10_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page11_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page11_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page12_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page12_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page13_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page13_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page14_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page14_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub const fn page15_wp(&self) -> super::vals::Page0Wp {
-            let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Page0Wp::from_bits(val as u8)
-        }
-        #[doc = "CCM SRAM page write protection bit"]
-        #[inline(always)]
-        pub fn set_page15_wp(&mut self, val: super::vals::Page0Wp) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_page_wp(&mut self, n: usize, val: bool) {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Rcr {
@@ -1592,186 +1380,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum FpuIe0 {
-        #[doc = "Invalid operation interrupt disable"]
-        DISABLED = 0,
-        #[doc = "Invalid operation interrupt enable"]
-        ENABLED = 0x01,
-    }
-    impl FpuIe0 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> FpuIe0 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for FpuIe0 {
-        #[inline(always)]
-        fn from(val: u8) -> FpuIe0 {
-            FpuIe0::from_bits(val)
-        }
-    }
-    impl From<FpuIe0> for u8 {
-        #[inline(always)]
-        fn from(val: FpuIe0) -> u8 {
-            FpuIe0::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum FpuIe1 {
-        #[doc = "Devide-by-zero interrupt disable"]
-        DISABLED = 0,
-        #[doc = "Devide-by-zero interrupt enable"]
-        ENABLED = 0x01,
-    }
-    impl FpuIe1 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> FpuIe1 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for FpuIe1 {
-        #[inline(always)]
-        fn from(val: u8) -> FpuIe1 {
-            FpuIe1::from_bits(val)
-        }
-    }
-    impl From<FpuIe1> for u8 {
-        #[inline(always)]
-        fn from(val: FpuIe1) -> u8 {
-            FpuIe1::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum FpuIe2 {
-        #[doc = "Underflow interrupt disable"]
-        DISABLED = 0,
-        #[doc = "Underflow interrupt enable"]
-        ENABLED = 0x01,
-    }
-    impl FpuIe2 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> FpuIe2 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for FpuIe2 {
-        #[inline(always)]
-        fn from(val: u8) -> FpuIe2 {
-            FpuIe2::from_bits(val)
-        }
-    }
-    impl From<FpuIe2> for u8 {
-        #[inline(always)]
-        fn from(val: FpuIe2) -> u8 {
-            FpuIe2::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum FpuIe3 {
-        #[doc = "Overflow interrupt disable"]
-        DISABLED = 0,
-        #[doc = "Overflow interrupt enable"]
-        ENABLED = 0x01,
-    }
-    impl FpuIe3 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> FpuIe3 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for FpuIe3 {
-        #[inline(always)]
-        fn from(val: u8) -> FpuIe3 {
-            FpuIe3::from_bits(val)
-        }
-    }
-    impl From<FpuIe3> for u8 {
-        #[inline(always)]
-        fn from(val: FpuIe3) -> u8 {
-            FpuIe3::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum FpuIe4 {
-        #[doc = "Input denormal interrupt disable"]
-        DISABLED = 0,
-        #[doc = "Input denormal interrupt enable"]
-        ENABLED = 0x01,
-    }
-    impl FpuIe4 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> FpuIe4 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for FpuIe4 {
-        #[inline(always)]
-        fn from(val: u8) -> FpuIe4 {
-            FpuIe4::from_bits(val)
-        }
-    }
-    impl From<FpuIe4> for u8 {
-        #[inline(always)]
-        fn from(val: FpuIe4) -> u8 {
-            FpuIe4::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum FpuIe5 {
-        #[doc = "Inexact interrupt disable"]
-        DISABLED = 0,
-        #[doc = "Inexact interrupt enable"]
-        ENABLED = 0x01,
-    }
-    impl FpuIe5 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> FpuIe5 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for FpuIe5 {
-        #[inline(always)]
-        fn from(val: u8) -> FpuIe5 {
-            FpuIe5::from_bits(val)
-        }
-    }
-    impl From<FpuIe5> for u8 {
-        #[inline(always)]
-        fn from(val: FpuIe5) -> u8 {
-            FpuIe5::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum I2c1Fmp {
         #[doc = "FM+ mode is controlled by I2C_Pxx_FMP bits only"]
         STANDARD = 0,
@@ -2108,36 +1716,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: MemMode) -> u8 {
             MemMode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Page0Wp {
-        #[doc = "Write protection of pagex is disabled"]
-        DISABLED = 0,
-        #[doc = "Write protection of pagex is enabled"]
-        ENABLED = 0x01,
-    }
-    impl Page0Wp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Page0Wp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Page0Wp {
-        #[inline(always)]
-        fn from(val: u8) -> Page0Wp {
-            Page0Wp::from_bits(val)
-        }
-    }
-    impl From<Page0Wp> for u8 {
-        #[inline(always)]
-        fn from(val: Page0Wp) -> u8 {
-            Page0Wp::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2564,36 +2142,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: UsbItRmp) -> u8 {
             UsbItRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum VbatMon {
-        #[doc = "Disable the power switch to not deliver VBAT voltage on ADC channel 18 input"]
-        DISABLE = 0,
-        #[doc = "Enable the power switch to deliver VBAT voltage on ADC channel 18 input"]
-        ENABLE = 0x01,
-    }
-    impl VbatMon {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> VbatMon {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for VbatMon {
-        #[inline(always)]
-        fn from(val: u8) -> VbatMon {
-            VbatMon::from_bits(val)
-        }
-    }
-    impl From<VbatMon> for u8 {
-        #[inline(always)]
-        fn from(val: VbatMon) -> u8 {
-            VbatMon::to_bits(val)
         }
     }
 }

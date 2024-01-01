@@ -409,86 +409,29 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "vbat_mon",
                     description: Some(
-                        "VBAT monitoring enable",
+                        "Enable the power switch to deliver VBAT voltage on ADC channel 18 input",
                     ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "VbatMon",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "fpu_ie0",
+                    name: "fpu_ie",
                     description: Some(
-                        "Invalid operation interrupt enable",
+                        "Idx 0: Invalid operation interrupt enable;\nIdx 1: Devide-by-zero interrupt enable;\nIdx 2: Underflow interrupt enable;\nIdx 3: Overflow interrupt enable;\nIdx 4: Input denormal interrupt enable;\nIdx 5: Inexact interrupt enable",
                     ),
                     bit_offset: 26,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "FpuIe0",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 6,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                },
-                Field {
-                    name: "fpu_ie1",
-                    description: Some(
-                        "Devide-by-zero interrupt enable",
-                    ),
-                    bit_offset: 27,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "FpuIe1",
-                    ),
-                },
-                Field {
-                    name: "fpu_ie2",
-                    description: Some(
-                        "Underflow interrupt enable",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "FpuIe2",
-                    ),
-                },
-                Field {
-                    name: "fpu_ie3",
-                    description: Some(
-                        "Overflow interrupt enable",
-                    ),
-                    bit_offset: 29,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "FpuIe3",
-                    ),
-                },
-                Field {
-                    name: "fpu_ie4",
-                    description: Some(
-                        "Input denormal interrupt enable",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "FpuIe4",
-                    ),
-                },
-                Field {
-                    name: "fpu_ie5",
-                    description: Some(
-                        "Inexact interrupt enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "FpuIe5",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -868,196 +811,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "page0_wp",
+                    name: "page_wp",
                     description: Some(
-                        "CCM SRAM page write protection bit",
+                        "CCM SRAM page x write protection enabled",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 16,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                },
-                Field {
-                    name: "page1_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 1,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page2_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 2,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page3_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 3,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page4_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 4,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page5_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 5,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page6_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page7_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 7,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page8_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page9_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page10_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 10,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page11_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 11,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page12_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 12,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page13_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 13,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page14_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
-                },
-                Field {
-                    name: "page15_wp",
-                    description: Some(
-                        "CCM SRAM page write protection bit",
-                    ),
-                    bit_offset: 15,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Page0Wp",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1540,132 +1308,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "FpuIe0",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Invalid operation interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Invalid operation interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe1",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Devide-by-zero interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Devide-by-zero interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe2",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Underflow interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Underflow interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe3",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Overflow interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Overflow interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe4",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Input denormal interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Input denormal interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "FpuIe5",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Inexact interrupt disable",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Inexact interrupt enable",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "I2c1Fmp",
             description: None,
             bit_size: 1,
@@ -1921,27 +1563,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Embedded SRAM mapped at 0x0000_0000",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Page0Wp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Write protection of pagex is disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Write protection of pagex is enabled",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -2248,27 +1869,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "REMAPPED",
                     description: Some(
                         "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "VbatMon",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLE",
-                    description: Some(
-                        "Disable the power switch to not deliver VBAT voltage on ADC channel 18 input",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLE",
-                    description: Some(
-                        "Enable the power switch to deliver VBAT voltage on ADC channel 18 input",
                     ),
                     value: 1,
                 },

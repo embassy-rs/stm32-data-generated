@@ -541,103 +541,49 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "maca1hr",
+                    name: "macahr",
                     description: Some(
-                        "Ethernet MAC address 1 high register",
+                        "Ethernet MAC address 1/2/3 high register",
                     ),
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
                     byte_offset: 72,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maca1hr",
+                                "Macahr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "maca1lr",
+                    name: "macalr",
                     description: Some(
-                        "Ethernet MAC address1 low register",
+                        "Ethernet MAC address 1/2/3 low register",
                     ),
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
                     byte_offset: 76,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maca1lr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca2hr",
-                    description: Some(
-                        "Ethernet MAC address 2 high register",
-                    ),
-                    array: None,
-                    byte_offset: 80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca2hr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca2lr",
-                    description: Some(
-                        "Ethernet MAC address 2 low register",
-                    ),
-                    array: None,
-                    byte_offset: 84,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca2lr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca3hr",
-                    description: Some(
-                        "Ethernet MAC address 3 high register",
-                    ),
-                    array: None,
-                    byte_offset: 88,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca3hr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca3lr",
-                    description: Some(
-                        "Ethernet MAC address 3 low register",
-                    ),
-                    array: None,
-                    byte_offset: 92,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca3lr",
+                                "Macalr",
                             ),
                         },
                     ),
@@ -1914,7 +1860,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "maca0h",
                     description: Some(
-                        "MAC address0 high",
+                        "MAC address 0 high",
                     ),
                     bit_offset: 0,
                     bit_size: 16,
@@ -1944,7 +1890,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "maca0l",
                     description: Some(
-                        "0",
+                        "Ethernet MAC address 0 low",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -1954,17 +1900,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Maca1hr",
+            name: "Macahr",
             extends: None,
             description: Some(
-                "Ethernet MAC address 1 high register",
+                "Ethernet MAC address 1/2/3 high register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "maca1h",
+                    name: "macah",
                     description: Some(
-                        "MACA1H",
+                        "Ethernet MAC address 1/2/3 high",
                     ),
                     bit_offset: 0,
                     bit_size: 16,
@@ -2001,172 +1947,22 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "MacahrAe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca1lr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address1 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca1l",
-                    description: Some(
-                        "MACA1LR",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Maca2hr",
+            name: "Macalr",
             extends: None,
             description: Some(
-                "Ethernet MAC address 2 high register",
+                "Ethernet MAC address 1/2/3 low register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "maca2h",
+                    name: "macal",
                     description: Some(
-                        "MAC2AH",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "MBC",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "SA",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrSa",
-                    ),
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "AE",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrAe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca2lr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 2 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca2l",
-                    description: Some(
-                        "MACA2L",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca3hr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 3 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca3h",
-                    description: Some(
-                        "MACA3H",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "MBC",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "SA",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrSa",
-                    ),
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "AE",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "MacahrAe",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca3lr",
-            extends: None,
-            description: Some(
-                "Ethernet MAC address 3 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "maca3l",
-                    description: Some(
-                        "MBCA3L",
+                        "Ethernet MAC address 1/2/3 low",
                     ),
                     bit_offset: 0,
                     bit_size: 32,
@@ -2211,9 +2007,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Dc",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "bl",
@@ -2519,9 +2313,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tfce",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "rfce",
@@ -2531,9 +2323,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rfce",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "upfd",
@@ -2543,9 +2333,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Upfd",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "plt",
@@ -2599,9 +2387,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pm",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hu",
@@ -2647,9 +2433,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pam",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "bfd",
@@ -2695,9 +2479,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Saf",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hpf",
@@ -2719,9 +2501,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ra",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -2913,9 +2693,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mpe",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "wfe",
@@ -2925,9 +2703,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Wfe",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mpr",
@@ -2957,9 +2733,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Gu",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "wffrpr",
@@ -3107,9 +2881,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ror",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mcf",
@@ -4010,14 +3782,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "ROLLOVER",
                     description: Some(
                         "Counters roll over to zero after reaching the maximum value",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "NOTROLLOVER",
                     description: Some(
                         "Counters do not roll over to zero after reaching the maximum value",
                     ),
@@ -4062,27 +3834,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "INVERT",
                     description: Some(
                         "Address check block operates in inverse filtering mode for the DA address comparison",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC defers until CRS signal goes inactive",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Deferral check function enabled",
                     ),
                     value: 1,
                 },
@@ -4292,27 +4043,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Gu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Normal operation",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Any unicast packet filtered by the MAC address recognition may be a wakeup frame",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Hm",
             description: None,
             bit_size: 1,
@@ -4502,27 +4232,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "MacahrAe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Address filters ignore this address",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Address filters use this address",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "MacahrSa",
             description: None,
             bit_size: 1,
@@ -4579,27 +4288,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Mpe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No power management event generated due to Magic Packet reception",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Enable generation of a power management event due to Magic Packet reception",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Mw",
             description: None,
             bit_size: 1,
@@ -4615,27 +4303,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "WRITE",
                     description: Some(
                         "Write operation",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pam",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Filtering of multicast frames depends on HM",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "All received frames with a multicast destination address are passed",
                     ),
                     value: 1,
                 },
@@ -4775,27 +4442,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Normal address filtering",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Address filters pass all incoming frames regardless of their destination or source address",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Pmtim",
             description: None,
             bit_size: 1,
@@ -4848,27 +4494,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "RxDMA priority over TxDMA is 4:1",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ra",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC receiver passes on to the application only those frames that have passed the SA/DA address file",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC receiver passes oll received frames on to the application",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -4964,27 +4589,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rfce",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Pause frames are not decoded",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC decodes received Pause frames and disables its transmitted for a specified time",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Rfcem",
             description: None,
             bit_size: 1,
@@ -5042,27 +4646,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DISABLED",
                     description: Some(
                         "MAC disables reception of frames in half-duplex mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ror",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MMC counters do not reset on read",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MMC counters reset to zero after read",
                     ),
                     value: 1,
                 },
@@ -5181,27 +4764,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Saf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Source address ignored",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC drops frames that fail the source address filter",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Saif",
             description: None,
             bit_size: 1,
@@ -5238,27 +4800,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "STARTED",
                     description: Some(
                         "Transmission is placed in Running state",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tfce",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "In full duplex, flow control is disabled. In half duplex, back pressure is disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "In full duplex, flow control is enabled. In half duplex, back pressure is enabled",
                     ),
                     value: 1,
                 },
@@ -5496,27 +5037,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Upfd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "MAC detects only a Pause frame with the multicast address specified in the 802.3x standard",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "MAC additionally detects Pause frames with the station's unicast address",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Usp",
             description: None,
             bit_size: 1,
@@ -5574,27 +5094,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DISABLED",
                     description: Some(
                         "Watchdog disabled, receive frames may be up to to 16384 bytes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wfe",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "No power management event generated due to wakeup frame reception",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Enable generation of a power management event due to wakeup frame reception",
                     ),
                     value: 1,
                 },

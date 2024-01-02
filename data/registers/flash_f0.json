@@ -215,22 +215,19 @@
         "name": "nBOOT0",
         "description": "nBOOT0",
         "bit_offset": 11,
-        "bit_size": 1,
-        "enum": "nBOOT0"
+        "bit_size": 1
       },
       {
         "name": "nBOOT1",
         "description": "BOOT1",
         "bit_offset": 12,
-        "bit_size": 1,
-        "enum": "nBOOT1"
+        "bit_size": 1
       },
       {
         "name": "VDDA_MONITOR",
-        "description": "VDDA_MONITOR",
+        "description": "VDDA power supply supervisor enabled",
         "bit_offset": 13,
-        "bit_size": 1,
-        "enum": "VDDA_MONITOR"
+        "bit_size": 1
       },
       {
         "name": "RAM_PARITY_CHECK",
@@ -376,21 +373,6 @@
       }
     ]
   },
-  "enum/VDDA_MONITOR": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "VDDA power supply supervisor disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "VDDA power supply supervisor enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/WDG_SW": {
     "bit_size": 1,
     "variants": [
@@ -402,36 +384,6 @@
       {
         "name": "Software",
         "description": "Software watchdog",
-        "value": 1
-      }
-    ]
-  },
-  "enum/nBOOT0": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "When BOOT_SEL is cleared, select the device boot mode",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "When BOOT_SEL is cleared, select the device boot mode",
-        "value": 1
-      }
-    ]
-  },
-  "enum/nBOOT1": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Together with BOOT0, select the device boot mode",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Together with BOOT0, select the device boot mode",
         "value": 1
       }
     ]

@@ -406,22 +406,19 @@
         "name": "LEN",
         "description": "Layer Enable",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LEN"
+        "bit_size": 1
       },
       {
         "name": "COLKEN",
         "description": "Color Keying Enable",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "COLKEN"
+        "bit_size": 1
       },
       {
         "name": "CLUTEN",
         "description": "Color Look-Up Table Enable",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "CLUTEN"
+        "bit_size": 1
       }
     ]
   },
@@ -461,8 +458,7 @@
         "name": "LTDCEN",
         "description": "LCD-TFT controller enable bit",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LTDCEN"
+        "bit_size": 1
       },
       {
         "name": "DBW",
@@ -486,8 +482,7 @@
         "name": "DEN",
         "description": "Dither Enable",
         "bit_offset": 16,
-        "bit_size": 1,
-        "enum": "DEN"
+        "bit_size": 1
       },
       {
         "name": "PCPOL",
@@ -559,29 +554,25 @@
         "name": "LIE",
         "description": "Line Interrupt Enable",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LIE"
+        "bit_size": 1
       },
       {
         "name": "FUIE",
         "description": "FIFO Underrun Interrupt Enable",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "FUIE"
+        "bit_size": 1
       },
       {
         "name": "TERRIE",
         "description": "Transfer Error Interrupt Enable",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "TERRIE"
+        "bit_size": 1
       },
       {
         "name": "RRIE",
         "description": "Register Reload interrupt enable",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "RRIE"
+        "bit_size": 1
       }
     ]
   },
@@ -763,36 +754,6 @@
       }
     ]
   },
-  "enum/CLUTEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Color look-up table disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Color look-up table enabled",
-        "value": 1
-      }
-    ]
-  },
-  "enum/COLKEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Color keying disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Color keying enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/CRRIF": {
     "bit_size": 1,
     "variants": [
@@ -813,21 +774,6 @@
       }
     ]
   },
-  "enum/DEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Dither disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Dither enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/DEPOL": {
     "bit_size": 1,
     "variants": [
@@ -839,21 +785,6 @@
       {
         "name": "ActiveHigh",
         "description": "Data enable polarity is active high",
-        "value": 1
-      }
-    ]
-  },
-  "enum/FUIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "FIFO underrun interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "FIFO underrun interrupt enabled",
         "value": 1
       }
     ]
@@ -933,36 +864,6 @@
       }
     ]
   },
-  "enum/LEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Layer disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Layer enabled",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Line interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Line interrupt enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/LIF": {
     "bit_size": 1,
     "variants": [
@@ -974,21 +875,6 @@
       {
         "name": "Reached",
         "description": "Line interrupt generated when a programmed line is reached",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LTDCEN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "LCD-TFT controller disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "LCD-TFT controller enabled",
         "value": 1
       }
     ]
@@ -1053,21 +939,6 @@
       }
     ]
   },
-  "enum/RRIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Register reload interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Register reload interrupt enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/RRIF": {
     "bit_size": 1,
     "variants": [
@@ -1079,21 +950,6 @@
       {
         "name": "Reload",
         "description": "Register reload interrupt generated when a vertical blanking reload occurs (and the first line after the active area is reached)",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TERRIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "Transfer error interrupt disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "Transfer error interrupt enabled",
         "value": 1
       }
     ]

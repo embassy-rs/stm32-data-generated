@@ -605,36 +605,36 @@ pub mod regs {
     impl Cr {
         #[doc = "Layer Enable"]
         #[inline(always)]
-        pub const fn len(&self) -> super::vals::Len {
+        pub const fn len(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Len::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Layer Enable"]
         #[inline(always)]
-        pub fn set_len(&mut self, val: super::vals::Len) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_len(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Color Keying Enable"]
         #[inline(always)]
-        pub const fn colken(&self) -> super::vals::Colken {
+        pub const fn colken(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Colken::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Color Keying Enable"]
         #[inline(always)]
-        pub fn set_colken(&mut self, val: super::vals::Colken) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_colken(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Color Look-Up Table Enable"]
         #[inline(always)]
-        pub const fn cluten(&self) -> super::vals::Cluten {
+        pub const fn cluten(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Cluten::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Color Look-Up Table Enable"]
         #[inline(always)]
-        pub fn set_cluten(&mut self, val: super::vals::Cluten) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_cluten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
     impl Default for Cr {
@@ -706,14 +706,14 @@ pub mod regs {
     impl Gcr {
         #[doc = "LCD-TFT controller enable bit"]
         #[inline(always)]
-        pub const fn ltdcen(&self) -> super::vals::Ltdcen {
+        pub const fn ltdcen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Ltdcen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LCD-TFT controller enable bit"]
         #[inline(always)]
-        pub fn set_ltdcen(&mut self, val: super::vals::Ltdcen) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_ltdcen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Dither Blue Width"]
         #[inline(always)]
@@ -750,14 +750,14 @@ pub mod regs {
         }
         #[doc = "Dither Enable"]
         #[inline(always)]
-        pub const fn den(&self) -> super::vals::Den {
+        pub const fn den(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Den::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Dither Enable"]
         #[inline(always)]
-        pub fn set_den(&mut self, val: super::vals::Den) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub fn set_den(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Pixel Clock Polarity"]
         #[inline(always)]
@@ -873,47 +873,47 @@ pub mod regs {
     impl Ier {
         #[doc = "Line Interrupt Enable"]
         #[inline(always)]
-        pub const fn lie(&self) -> super::vals::Lie {
+        pub const fn lie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Line Interrupt Enable"]
         #[inline(always)]
-        pub fn set_lie(&mut self, val: super::vals::Lie) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "FIFO Underrun Interrupt Enable"]
         #[inline(always)]
-        pub const fn fuie(&self) -> super::vals::Fuie {
+        pub const fn fuie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Fuie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "FIFO Underrun Interrupt Enable"]
         #[inline(always)]
-        pub fn set_fuie(&mut self, val: super::vals::Fuie) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_fuie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Transfer Error Interrupt Enable"]
         #[inline(always)]
-        pub const fn terrie(&self) -> super::vals::Terrie {
+        pub const fn terrie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Terrie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Transfer Error Interrupt Enable"]
         #[inline(always)]
-        pub fn set_terrie(&mut self, val: super::vals::Terrie) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_terrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Register Reload interrupt enable"]
         #[inline(always)]
-        pub const fn rrie(&self) -> super::vals::Rrie {
+        pub const fn rrie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Rrie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Register Reload interrupt enable"]
         #[inline(always)]
-        pub fn set_rrie(&mut self, val: super::vals::Rrie) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_rrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
     impl Default for Ier {
@@ -1292,66 +1292,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Cluten {
-        #[doc = "Color look-up table disabled"]
-        DISABLED = 0,
-        #[doc = "Color look-up table enabled"]
-        ENABLED = 0x01,
-    }
-    impl Cluten {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cluten {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Cluten {
-        #[inline(always)]
-        fn from(val: u8) -> Cluten {
-            Cluten::from_bits(val)
-        }
-    }
-    impl From<Cluten> for u8 {
-        #[inline(always)]
-        fn from(val: Cluten) -> u8 {
-            Cluten::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Colken {
-        #[doc = "Color keying disabled"]
-        DISABLED = 0,
-        #[doc = "Color keying enabled"]
-        ENABLED = 0x01,
-    }
-    impl Colken {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Colken {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Colken {
-        #[inline(always)]
-        fn from(val: u8) -> Colken {
-            Colken::from_bits(val)
-        }
-    }
-    impl From<Colken> for u8 {
-        #[inline(always)]
-        fn from(val: Colken) -> u8 {
-            Colken::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Crrif {
         _RESERVED_0 = 0,
         #[doc = "Clears the RRIF flag in the ISR register"]
@@ -1410,36 +1350,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Den {
-        #[doc = "Dither disabled"]
-        DISABLED = 0,
-        #[doc = "Dither enabled"]
-        ENABLED = 0x01,
-    }
-    impl Den {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Den {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Den {
-        #[inline(always)]
-        fn from(val: u8) -> Den {
-            Den::from_bits(val)
-        }
-    }
-    impl From<Den> for u8 {
-        #[inline(always)]
-        fn from(val: Den) -> u8 {
-            Den::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Depol {
         #[doc = "Data enable polarity is active low"]
         ACTIVELOW = 0,
@@ -1466,36 +1376,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Depol) -> u8 {
             Depol::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Fuie {
-        #[doc = "FIFO underrun interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "FIFO underrun interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Fuie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fuie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Fuie {
-        #[inline(always)]
-        fn from(val: u8) -> Fuie {
-            Fuie::from_bits(val)
-        }
-    }
-    impl From<Fuie> for u8 {
-        #[inline(always)]
-        fn from(val: Fuie) -> u8 {
-            Fuie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1650,66 +1530,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Len {
-        #[doc = "Layer disabled"]
-        DISABLED = 0,
-        #[doc = "Layer enabled"]
-        ENABLED = 0x01,
-    }
-    impl Len {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Len {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Len {
-        #[inline(always)]
-        fn from(val: u8) -> Len {
-            Len::from_bits(val)
-        }
-    }
-    impl From<Len> for u8 {
-        #[inline(always)]
-        fn from(val: Len) -> u8 {
-            Len::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lie {
-        #[doc = "Line interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "Line interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Lie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lie {
-        #[inline(always)]
-        fn from(val: u8) -> Lie {
-            Lie::from_bits(val)
-        }
-    }
-    impl From<Lie> for u8 {
-        #[inline(always)]
-        fn from(val: Lie) -> u8 {
-            Lie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lif {
         #[doc = "Programmed line not reached"]
         NOTREACHED = 0,
@@ -1736,36 +1556,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Lif) -> u8 {
             Lif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ltdcen {
-        #[doc = "LCD-TFT controller disabled"]
-        DISABLED = 0,
-        #[doc = "LCD-TFT controller enabled"]
-        ENABLED = 0x01,
-    }
-    impl Ltdcen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ltdcen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ltdcen {
-        #[inline(always)]
-        fn from(val: u8) -> Ltdcen {
-            Ltdcen::from_bits(val)
-        }
-    }
-    impl From<Ltdcen> for u8 {
-        #[inline(always)]
-        fn from(val: Ltdcen) -> u8 {
-            Ltdcen::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1842,36 +1632,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rrie {
-        #[doc = "Register reload interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "Register reload interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Rrie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rrie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rrie {
-        #[inline(always)]
-        fn from(val: u8) -> Rrie {
-            Rrie::from_bits(val)
-        }
-    }
-    impl From<Rrie> for u8 {
-        #[inline(always)]
-        fn from(val: Rrie) -> u8 {
-            Rrie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Rrif {
         #[doc = "No register reload"]
         NORELOAD = 0,
@@ -1898,36 +1658,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rrif) -> u8 {
             Rrif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Terrie {
-        #[doc = "Transfer error interrupt disabled"]
-        DISABLED = 0,
-        #[doc = "Transfer error interrupt enabled"]
-        ENABLED = 0x01,
-    }
-    impl Terrie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Terrie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Terrie {
-        #[inline(always)]
-        fn from(val: u8) -> Terrie {
-            Terrie::from_bits(val)
-        }
-    }
-    impl From<Terrie> for u8 {
-        #[inline(always)]
-        fn from(val: Terrie) -> u8 {
-            Terrie::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -1944,14 +1944,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MASK",
+                    name: "TOMATCH",
                     description: Some(
                         "Alarm set if the date/day match",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOTMASK",
+                    name: "NOTMATCH",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
@@ -2275,27 +2275,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Refckon",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "RTC_REFIN detection disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "RTC_REFIN detection enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Ssruf",
             description: None,
             bit_size: 1,
@@ -2318,27 +2297,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "UNDERFLOW",
                     description: Some(
                         "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "TampalrmPu",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOPULLUP",
-                    description: Some(
-                        "No pull-up is applied on TAMPALRM output",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PULLUP",
-                    description: Some(
-                        "A pull-up is applied on TAMPALRM output",
                     ),
                     value: 1,
                 },

@@ -342,36 +342,36 @@ pub mod regs {
         }
         #[doc = "nBOOT0"]
         #[inline(always)]
-        pub const fn n_boot0(&self) -> super::vals::NBoot0 {
+        pub const fn n_boot0(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::NBoot0::from_bits(val as u8)
+            val != 0
         }
         #[doc = "nBOOT0"]
         #[inline(always)]
-        pub fn set_n_boot0(&mut self, val: super::vals::NBoot0) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_n_boot0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "BOOT1"]
         #[inline(always)]
-        pub const fn n_boot1(&self) -> super::vals::NBoot1 {
+        pub const fn n_boot1(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::NBoot1::from_bits(val as u8)
+            val != 0
         }
         #[doc = "BOOT1"]
         #[inline(always)]
-        pub fn set_n_boot1(&mut self, val: super::vals::NBoot1) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_n_boot1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "VDDA_MONITOR"]
+        #[doc = "VDDA power supply supervisor enabled"]
         #[inline(always)]
-        pub const fn vdda_monitor(&self) -> super::vals::VddaMonitor {
+        pub const fn vdda_monitor(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::VddaMonitor::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "VDDA_MONITOR"]
+        #[doc = "VDDA power supply supervisor enabled"]
         #[inline(always)]
-        pub fn set_vdda_monitor(&mut self, val: super::vals::VddaMonitor) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_vdda_monitor(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "RAM_PARITY_CHECK"]
         #[inline(always)]
@@ -596,66 +596,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum NBoot0 {
-        #[doc = "When BOOT_SEL is cleared, select the device boot mode"]
-        DISABLED = 0,
-        #[doc = "When BOOT_SEL is cleared, select the device boot mode"]
-        ENABLED = 0x01,
-    }
-    impl NBoot0 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NBoot0 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NBoot0 {
-        #[inline(always)]
-        fn from(val: u8) -> NBoot0 {
-            NBoot0::from_bits(val)
-        }
-    }
-    impl From<NBoot0> for u8 {
-        #[inline(always)]
-        fn from(val: NBoot0) -> u8 {
-            NBoot0::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum NBoot1 {
-        #[doc = "Together with BOOT0, select the device boot mode"]
-        DISABLED = 0,
-        #[doc = "Together with BOOT0, select the device boot mode"]
-        ENABLED = 0x01,
-    }
-    impl NBoot1 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NBoot1 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NBoot1 {
-        #[inline(always)]
-        fn from(val: u8) -> NBoot1 {
-            NBoot1::from_bits(val)
-        }
-    }
-    impl From<NBoot1> for u8 {
-        #[inline(always)]
-        fn from(val: NBoot1) -> u8 {
-            NBoot1::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering Standby mode"]
         RESET = 0,
@@ -775,36 +715,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rdprt) -> u8 {
             Rdprt::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum VddaMonitor {
-        #[doc = "VDDA power supply supervisor disabled"]
-        DISABLED = 0,
-        #[doc = "VDDA power supply supervisor enabled"]
-        ENABLED = 0x01,
-    }
-    impl VddaMonitor {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> VddaMonitor {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for VddaMonitor {
-        #[inline(always)]
-        fn from(val: u8) -> VddaMonitor {
-            VddaMonitor::from_bits(val)
-        }
-    }
-    impl From<VddaMonitor> for u8 {
-        #[inline(always)]
-        fn from(val: VddaMonitor) -> u8 {
-            VddaMonitor::to_bits(val)
         }
     }
     #[repr(u8)]

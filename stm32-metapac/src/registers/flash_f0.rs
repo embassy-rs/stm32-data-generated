@@ -305,7 +305,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("NBoot0"),
+                    enumm: None,
                 },
                 Field {
                     name: "n_boot1",
@@ -313,15 +313,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("NBoot1"),
+                    enumm: None,
                 },
                 Field {
                     name: "vdda_monitor",
-                    description: Some("VDDA_MONITOR"),
+                    description: Some("VDDA power supply supervisor enabled"),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("VddaMonitor"),
+                    enumm: None,
                 },
                 Field {
                     name: "ram_parity_check",
@@ -462,40 +462,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "NBoot0",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("When BOOT_SEL is cleared, select the device boot mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("When BOOT_SEL is cleared, select the device boot mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "NBoot1",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("Together with BOOT0, select the device boot mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("Together with BOOT0, select the device boot mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "NRstStdby",
             description: None,
             bit_size: 1,
@@ -565,23 +531,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LEVEL2",
                     description: Some("Level 2"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "VddaMonitor",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("VDDA power supply supervisor disabled"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some("VDDA power supply supervisor enabled"),
-                    value: 1,
                 },
             ],
         },

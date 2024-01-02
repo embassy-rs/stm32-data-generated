@@ -880,9 +880,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Len",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "colken",
@@ -892,9 +890,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Colken",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "cluten",
@@ -904,9 +900,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cluten",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -976,9 +970,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ltdcen",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dbw",
@@ -1018,9 +1010,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Den",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "pcpol",
@@ -1146,9 +1136,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "fuie",
@@ -1158,9 +1146,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Fuie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "terrie",
@@ -1170,9 +1156,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Terrie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "rrie",
@@ -1182,9 +1166,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rrie",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1494,48 +1476,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Cluten",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Color look-up table disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Color look-up table enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Colken",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Color keying disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Color keying enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Crrif",
             description: None,
             bit_size: 1,
@@ -1564,27 +1504,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Den",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Dither disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Dither enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Depol",
             description: None,
             bit_size: 1,
@@ -1600,27 +1519,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ACTIVEHIGH",
                     description: Some(
                         "Data enable polarity is active high",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fuie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "FIFO underrun interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "FIFO underrun interrupt enabled",
                     ),
                     value: 1,
                 },
@@ -1732,48 +1630,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Len",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Layer disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Layer enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Line interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Line interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lif",
             description: None,
             bit_size: 1,
@@ -1789,27 +1645,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "REACHED",
                     description: Some(
                         "Line interrupt generated when a programmed line is reached",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ltdcen",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "LCD-TFT controller disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "LCD-TFT controller enabled",
                     ),
                     value: 1,
                 },
@@ -1900,27 +1735,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Register reload interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Register reload interrupt enabled",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Rrif",
             description: None,
             bit_size: 1,
@@ -1936,27 +1750,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "RELOAD",
                     description: Some(
                         "Register reload interrupt generated when a vertical blanking reload occurs (and the first line after the active area is reached)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Terrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Transfer error interrupt disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "Transfer error interrupt enabled",
                     ),
                     value: 1,
                 },

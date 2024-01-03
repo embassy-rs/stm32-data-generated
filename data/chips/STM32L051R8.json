@@ -1842,6 +1842,28 @@
                             "field": "tim6rst"
                         }
                     },
+                    "interrupts": [
+                        {
+                            "signal": "BRK",
+                            "interrupt": "TIM6"
+                        },
+                        {
+                            "signal": "CC",
+                            "interrupt": "TIM6"
+                        },
+                        {
+                            "signal": "COM",
+                            "interrupt": "TIM6"
+                        },
+                        {
+                            "signal": "TRG",
+                            "interrupt": "TIM6"
+                        },
+                        {
+                            "signal": "UP",
+                            "interrupt": "TIM6"
+                        }
+                    ],
                     "dma_channels": [
                         {
                             "signal": "UP",

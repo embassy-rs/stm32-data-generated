@@ -1387,7 +1387,28 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             dma: None,
             request: Some(9),
         }],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "BRK",
+                interrupt: "TIM6",
+            },
+            PeripheralInterrupt {
+                signal: "CC",
+                interrupt: "TIM6",
+            },
+            PeripheralInterrupt {
+                signal: "COM",
+                interrupt: "TIM6",
+            },
+            PeripheralInterrupt {
+                signal: "TRG",
+                interrupt: "TIM6",
+            },
+            PeripheralInterrupt {
+                signal: "UP",
+                interrupt: "TIM6",
+            },
+        ],
     },
     Peripheral {
         name: "UID",

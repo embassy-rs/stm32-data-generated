@@ -281,25 +281,25 @@ pub mod regs {
         }
         #[doc = "SRAM2 page 1 retention in Stop 3 and Standby modes This bit is used to keep the SRAM2 page 1 content in Stop 3 and Standby modes. The SRAM2 page 1 corresponds to the first 8 Kbytes of the SRAM2 (from SRAM2 base address to SRAM2 base address + 0x1FFF). Note: This bit has no effect in Shutdown mode."]
         #[inline(always)]
-        pub const fn rrsb1(&self) -> super::vals::Rrsb {
+        pub const fn rrsb1(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Rrsb::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 page 1 retention in Stop 3 and Standby modes This bit is used to keep the SRAM2 page 1 content in Stop 3 and Standby modes. The SRAM2 page 1 corresponds to the first 8 Kbytes of the SRAM2 (from SRAM2 base address to SRAM2 base address + 0x1FFF). Note: This bit has no effect in Shutdown mode."]
         #[inline(always)]
-        pub fn set_rrsb1(&mut self, val: super::vals::Rrsb) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_rrsb1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "SRAM2 page 2 retention in Stop 3 and Standby modes This bit is used to keep the SRAM2 page 2 content in Stop 3 and Standby modes. The SRAM2 page 2 corresponds to the last 56 Kbytes of the SRAM2 (from SRAM2 base address + 0x2000 to SRAM2 base address + 0xFFFF). Note: This bit has no effect in Shutdown mode."]
         #[inline(always)]
-        pub const fn rrsb2(&self) -> super::vals::Rrsb {
+        pub const fn rrsb2(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Rrsb::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 page 2 retention in Stop 3 and Standby modes This bit is used to keep the SRAM2 page 2 content in Stop 3 and Standby modes. The SRAM2 page 2 corresponds to the last 56 Kbytes of the SRAM2 (from SRAM2 base address + 0x2000 to SRAM2 base address + 0xFFFF). Note: This bit has no effect in Shutdown mode."]
         #[inline(always)]
-        pub fn set_rrsb2(&mut self, val: super::vals::Rrsb) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_rrsb2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "BOR ultra-low power mode This bit is used to reduce the consumption by configuring the BOR in discontinuous mode. This bit must be set to reach the lowest power consumption in the low-power modes."]
         #[inline(always)]
@@ -708,25 +708,25 @@ pub mod regs {
     impl Privcfgr {
         #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
-        pub const fn spriv(&self) -> super::vals::Priv {
+        pub const fn spriv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
-        pub fn set_spriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_spriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub const fn nspriv(&self) -> super::vals::Priv {
+        pub const fn nspriv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub fn set_nspriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_nspriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Privcfgr {
@@ -742,62 +742,62 @@ pub mod regs {
     impl Seccfgr {
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub const fn wup1sec(&self, n: usize) -> super::vals::Sec {
+        pub const fn wup1sec(&self, n: usize) -> bool {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub fn set_wup1sec(&mut self, n: usize, val: super::vals::Sec) {
+        pub fn set_wup1sec(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub const fn lpmsec(&self) -> super::vals::Sec {
+        pub const fn lpmsec(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub fn set_lpmsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_lpmsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Voltage detection and monitoring secure protection"]
         #[inline(always)]
-        pub const fn vdmsec(&self) -> super::vals::Sec {
+        pub const fn vdmsec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Voltage detection and monitoring secure protection"]
         #[inline(always)]
-        pub fn set_vdmsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_vdmsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub const fn vbsec(&self) -> super::vals::Sec {
+        pub const fn vbsec(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub fn set_vbsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_vbsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Pull-up/pull-down secure protection"]
         #[inline(always)]
-        pub const fn apcsec(&self) -> super::vals::Sec {
+        pub const fn apcsec(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Pull-up/pull-down secure protection"]
         #[inline(always)]
-        pub fn set_apcsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_apcsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Seccfgr {
@@ -1641,36 +1641,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Priv {
-        #[doc = "Read and write to non-secure functions can be done by privileged or unprivileged access."]
-        UNPRIVILEGED = 0,
-        #[doc = "Read and write to non-secure functions can be done by privileged access only."]
-        PRIVILEGED = 0x01,
-    }
-    impl Priv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Priv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Priv {
-        #[inline(always)]
-        fn from(val: u8) -> Priv {
-            Priv::from_bits(val)
-        }
-    }
-    impl From<Priv> for u8 {
-        #[inline(always)]
-        fn from(val: Priv) -> u8 {
-            Priv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pvdls {
         #[doc = "VPVD0 around 2.0 V"]
         V20 = 0,
@@ -1769,66 +1739,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Regsel) -> u8 {
             Regsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rrsb {
-        #[doc = "SRAM2 page1 content not retained in Stop 3 and Standby modes"]
-        NOTRETAINED = 0,
-        #[doc = "SRAM2 page1 content retained in Stop 3 and Standby modes"]
-        RETAINED = 0x01,
-    }
-    impl Rrsb {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rrsb {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rrsb {
-        #[inline(always)]
-        fn from(val: u8) -> Rrsb {
-            Rrsb::from_bits(val)
-        }
-    }
-    impl From<Rrsb> for u8 {
-        #[inline(always)]
-        fn from(val: Rrsb) -> u8 {
-            Rrsb::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sec {
-        #[doc = "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access."]
-        NONSECURE = 0,
-        #[doc = "CR1, CR2, and CSSF in the SR can be read and written only with secure access."]
-        SECURE = 0x01,
-    }
-    impl Sec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sec {
-        #[inline(always)]
-        fn from(val: u8) -> Sec {
-            Sec::from_bits(val)
-        }
-    }
-    impl From<Sec> for u8 {
-        #[inline(always)]
-        fn from(val: Sec) -> u8 {
-            Sec::to_bits(val)
         }
     }
     #[repr(u8)]

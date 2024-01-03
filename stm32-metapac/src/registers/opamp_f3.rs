@@ -199,23 +199,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some("Comparator CSR bits are read-write"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some("Comparator CSR bits are read-only"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Outcal",
             description: None,
             bit_size: 1,

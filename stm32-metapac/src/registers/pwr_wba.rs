@@ -361,9 +361,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rrsb",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ulpmen",
@@ -383,9 +381,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Radiorsb",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "r1rsb1",
@@ -395,9 +391,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rrsb",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -569,9 +563,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "nspriv",
@@ -581,9 +573,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -645,9 +635,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Regpardyvddrfpa",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -674,9 +662,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lpmsec",
@@ -686,9 +672,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "vdmsec",
@@ -698,9 +682,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "vbsec",
@@ -710,9 +692,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1188,27 +1168,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged access only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Pvdls",
             description: None,
             bit_size: 3,
@@ -1287,90 +1246,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BELOW",
                     description: Some(
                         "VDD is below the PVD threshold selected by PVDLS[2:0].",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Radiorsb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTRETAINED",
-                    description: Some(
-                        "2.4 GHz RADIO SRAMs and sleep timer content not retained in Standby mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "2.4 GHz RADIO SRAMs and sleep timer content retained in Standby mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Regpardyvddrfpa",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREADY",
-                    description: Some(
-                        "Not ready, V<sub>DDHPA</sub> voltage level < REGPAVOS selected supply level",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "Ready, V<sub>DDHPA</sub> voltage level ≥ REGPAVOS selected supply level",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rrsb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "SRAM2 content not retained in Standby mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "SRAM2 content retained in Standby mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSECURE",
-                    description: Some(
-                        "SVMCR and CR3 can be read and written with secure or non-secure access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "SVMCR and CR3 can be read and written only with secure access.",
                     ),
                     value: 1,
                 },

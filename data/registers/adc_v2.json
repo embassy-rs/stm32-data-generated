@@ -450,45 +450,39 @@
     "fields": [
       {
         "name": "AWD",
-        "description": "Analog watchdog flag",
+        "description": "Analog watchdog event occurred",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "AWD"
+        "bit_size": 1
       },
       {
         "name": "EOC",
         "description": "Regular channel end of conversion",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "EOC"
+        "bit_size": 1
       },
       {
         "name": "JEOC",
         "description": "Injected channel end of conversion",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "JEOC"
+        "bit_size": 1
       },
       {
         "name": "JSTRT",
-        "description": "Injected channel start flag",
+        "description": "Injected channel conversion has started",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "JSTRT"
+        "bit_size": 1
       },
       {
         "name": "STRT",
-        "description": "Regular channel start flag",
+        "description": "Regular channel conversion has started",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "STRT"
+        "bit_size": 1
       },
       {
         "name": "OVR",
-        "description": "Overrun",
+        "description": "Overrun occurred",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "OVR"
+        "bit_size": 1
       }
     ]
   },
@@ -503,21 +497,6 @@
       {
         "name": "Left",
         "description": "Left alignment",
-        "value": 1
-      }
-    ]
-  },
-  "enum/AWD": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoEvent",
-        "description": "No analog watchdog event occurred",
-        "value": 0
-      },
-      {
-        "name": "Event",
-        "description": "Analog watchdog event occurred",
         "value": 1
       }
     ]
@@ -567,21 +546,6 @@
       }
     ]
   },
-  "enum/EOC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NotComplete",
-        "description": "Conversion is not complete",
-        "value": 0
-      },
-      {
-        "name": "Complete",
-        "description": "Conversion complete",
-        "value": 1
-      }
-    ]
-  },
   "enum/EOCS": {
     "bit_size": 1,
     "variants": [
@@ -622,21 +586,6 @@
       }
     ]
   },
-  "enum/JEOC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NotComplete",
-        "description": "Conversion is not complete",
-        "value": 0
-      },
-      {
-        "name": "Complete",
-        "description": "Conversion complete",
-        "value": 1
-      }
-    ]
-  },
   "enum/JEXTEN": {
     "bit_size": 2,
     "variants": [
@@ -659,36 +608,6 @@
         "name": "BothEdges",
         "description": "Trigger detection on both the rising and falling edges",
         "value": 3
-      }
-    ]
-  },
-  "enum/JSTRT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NotStarted",
-        "description": "No injected channel conversion started",
-        "value": 0
-      },
-      {
-        "name": "Started",
-        "description": "Injected channel conversion has started",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OVR": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoOverrun",
-        "description": "No overrun occurred",
-        "value": 0
-      },
-      {
-        "name": "Overrun",
-        "description": "Overrun occurred",
-        "value": 1
       }
     ]
   },
@@ -804,21 +723,6 @@
         "name": "Cycles480",
         "description": "480 cycles",
         "value": 7
-      }
-    ]
-  },
-  "enum/STRT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NotStarted",
-        "description": "No regular channel conversion started",
-        "value": 0
-      },
-      {
-        "name": "Started",
-        "description": "Regular channel conversion has started",
-        "value": 1
       }
     ]
   }

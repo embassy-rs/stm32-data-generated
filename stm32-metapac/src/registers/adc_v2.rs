@@ -589,11 +589,11 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[
                 Field {
                     name: "awd",
-                    description: Some("Analog watchdog flag"),
+                    description: Some("Analog watchdog event occurred"),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Awd"),
+                    enumm: None,
                 },
                 Field {
                     name: "eoc",
@@ -601,7 +601,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Eoc"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeoc",
@@ -609,31 +609,31 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Jeoc"),
+                    enumm: None,
                 },
                 Field {
                     name: "jstrt",
-                    description: Some("Injected channel start flag"),
+                    description: Some("Injected channel conversion has started"),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Jstrt"),
+                    enumm: None,
                 },
                 Field {
                     name: "strt",
-                    description: Some("Regular channel start flag"),
+                    description: Some("Regular channel conversion has started"),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Strt"),
+                    enumm: None,
                 },
                 Field {
                     name: "ovr",
-                    description: Some("Overrun"),
+                    description: Some("Overrun occurred"),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ovr"),
+                    enumm: None,
                 },
             ],
         },
@@ -652,23 +652,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "LEFT",
                     description: Some("Left alignment"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
                     value: 1,
                 },
             ],
@@ -725,23 +708,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Eoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Eocs",
             description: None,
             bit_size: 1,
@@ -786,23 +752,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Jeoc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Jexten",
             description: None,
             bit_size: 2,
@@ -826,40 +775,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BOTHEDGES",
                     description: Some("Trigger detection on both the rising and falling edges"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Jstrt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No injected channel conversion started"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some("Injected channel conversion has started"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
                 },
             ],
         },
@@ -981,23 +896,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CYCLES480",
                     description: Some("480 cycles"),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Strt",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTSTARTED",
-                    description: Some("No regular channel conversion started"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STARTED",
-                    description: Some("Regular channel conversion has started"),
-                    value: 1,
                 },
             ],
         },

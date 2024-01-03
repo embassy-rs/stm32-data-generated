@@ -277,36 +277,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lock {
-        #[doc = "Comparator CSR bits are read-write"]
-        UNLOCKED = 0,
-        #[doc = "Comparator CSR bits are read-only"]
-        LOCKED = 0x01,
-    }
-    impl Lock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lock {
-        #[inline(always)]
-        fn from(val: u8) -> Lock {
-            Lock::from_bits(val)
-        }
-    }
-    impl From<Lock> for u8 {
-        #[inline(always)]
-        fn from(val: Lock) -> u8 {
-            Lock::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Outcal {
         #[doc = "Non-inverting < inverting"]
         LOW = 0,

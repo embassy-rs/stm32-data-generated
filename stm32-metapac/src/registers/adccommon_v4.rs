@@ -175,7 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("AdrdyMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "eosmp_mst",
@@ -183,7 +183,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("EosmpMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "eoc_mst",
@@ -191,7 +191,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("EocMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "eos_mst",
@@ -199,7 +199,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("EosMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "ovr_mst",
@@ -207,7 +207,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OvrMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeoc_mst",
@@ -215,7 +215,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("JeocMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeos_mst",
@@ -223,31 +223,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("JeosMst"),
+                    enumm: None,
                 },
                 Field {
-                    name: "awd1_mst",
-                    description: Some("Analog watchdog 1 flag of the master ADC"),
+                    name: "awd_mst",
+                    description: Some("Analog watchdog flag of the master ADC"),
                     bit_offset: 7,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd1Mst"),
-                },
-                Field {
-                    name: "awd2_mst",
-                    description: Some("Analog watchdog 2 flag of the master ADC"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd1Mst"),
-                },
-                Field {
-                    name: "awd3_mst",
-                    description: Some("Analog watchdog 3 flag of the master ADC"),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd1Mst"),
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    enumm: None,
                 },
                 Field {
                     name: "jqovf_mst",
@@ -255,7 +239,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("JqovfMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "adrdy_slv",
@@ -263,7 +247,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("AdrdyMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "eosmp_slv",
@@ -271,7 +255,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("EosmpMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "eoc_slv",
@@ -279,7 +263,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("EocMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "eos_slv",
@@ -287,7 +271,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("EosMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "ovr_slv",
@@ -295,7 +279,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OvrMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeoc_slv",
@@ -303,7 +287,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("JeocMst"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeos_slv",
@@ -311,31 +295,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("JeosMst"),
+                    enumm: None,
                 },
                 Field {
-                    name: "awd1_slv",
-                    description: Some("Analog watchdog 1 flag of the slave ADC"),
+                    name: "awd_slv",
+                    description: Some("Analog watchdog flag of the slave ADC"),
                     bit_offset: 23,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd1Mst"),
-                },
-                Field {
-                    name: "awd2_slv",
-                    description: Some("Analog watchdog 2 flag of the slave ADC"),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd1Mst"),
-                },
-                Field {
-                    name: "awd3_slv",
-                    description: Some("Analog watchdog 3 flag of the slave ADC"),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd1Mst"),
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    enumm: None,
                 },
                 Field {
                     name: "jqovf_slv",
@@ -343,46 +311,12 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("JqovfMst"),
+                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
-        Enum {
-            name: "AdrdyMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREADY",
-                    description: Some("ADC is not ready to start conversion"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some("ADC is ready to start conversion"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Awd1Mst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Ckmode",
             description: None,
@@ -476,125 +410,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DUALA",
                     description: Some("Dual, alternate trigger mode only"),
                     value: 9,
-                },
-            ],
-        },
-        Enum {
-            name: "EocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Regular conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Regular conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EosMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Regular sequence is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Regular sequence complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "EosmpMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTENDED",
-                    description: Some("End of sampling phase no yet reached"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENDED",
-                    description: Some("End of sampling phase reached"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "JeocMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected conversion is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected conversion complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "JeosMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTCOMPLETE",
-                    description: Some("Injected sequence is not complete"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "COMPLETE",
-                    description: Some("Injected sequence complete"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "JqovfMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow has occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow has occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OvrMst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
                 },
             ],
         },

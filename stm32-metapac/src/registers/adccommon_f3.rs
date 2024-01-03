@@ -158,7 +158,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "eoc_mst",
@@ -166,7 +166,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "eos_mst",
@@ -174,7 +174,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "ovr_mst",
@@ -182,7 +182,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ovr"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeoc_mst",
@@ -190,7 +190,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeos",
@@ -198,31 +198,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
-                    name: "awd1_mst",
-                    description: Some("Analog watchdog 1 flag of the master ADC"),
+                    name: "awd_mst",
+                    description: Some("Analog watchdog flag of the master ADC"),
                     bit_offset: 7,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd"),
-                },
-                Field {
-                    name: "awd2_mst",
-                    description: Some("Analog watchdog 2 flag of the master ADC"),
-                    bit_offset: 8,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd"),
-                },
-                Field {
-                    name: "awd3_mst",
-                    description: Some("Analog watchdog 3 flag of the master ADC"),
-                    bit_offset: 9,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd"),
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    enumm: None,
                 },
                 Field {
                     name: "jqovf_mst",
@@ -230,7 +214,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Jqovf"),
+                    enumm: None,
                 },
                 Field {
                     name: "adrdy_slv",
@@ -246,7 +230,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "eoc_slv",
@@ -254,7 +238,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "eos_slv",
@@ -262,7 +246,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "ovr_slv",
@@ -270,7 +254,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ovr"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeoc_slv",
@@ -278,7 +262,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
                     name: "jeos_slv",
@@ -286,31 +270,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ended"),
+                    enumm: None,
                 },
                 Field {
-                    name: "awd1_slv",
-                    description: Some("Analog watchdog 1 flag of the slave ADC"),
+                    name: "awd_slv",
+                    description: Some("Analog watchdog flag of the slave ADC"),
                     bit_offset: 23,
                     bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd"),
-                },
-                Field {
-                    name: "awd2_slv",
-                    description: Some("Analog watchdog 2 flag of the slave ADC"),
-                    bit_offset: 24,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd"),
-                },
-                Field {
-                    name: "awd3_slv",
-                    description: Some("Analog watchdog 3 flag of the slave ADC"),
-                    bit_offset: 25,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Awd"),
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    enumm: None,
                 },
                 Field {
                     name: "jqovf_slv",
@@ -318,29 +286,12 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Jqovf"),
+                    enumm: None,
                 },
             ],
         },
     ],
     enums: &[
-        Enum {
-            name: "Awd",
-            description: Some("Analog watchdog flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No analog watchdog event occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Analog watchdog event occurred"),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Ckmode",
             description: Some("ADC clock mode"),
@@ -433,40 +384,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ended",
-            description: Some("End of operation"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTENDED",
-                    description: Some("Operation is not ended"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENDED",
-                    description: Some("Operation is ended"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Jqovf",
-            description: Some("Injected context queue overflow flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERFLOW",
-                    description: Some("No injected context queue overflow"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERFLOW",
-                    description: Some("Injected context queue overflow"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Mdma",
             description: Some("Direct memory access mode for multi ADC mode"),
             bit_size: 2,
@@ -485,23 +402,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BIT8_6",
                     description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovr",
-            description: Some("Overrun flag"),
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOOVERRUN",
-                    description: Some("No overrun occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some("Overrun occurred"),
-                    value: 1,
                 },
             ],
         },

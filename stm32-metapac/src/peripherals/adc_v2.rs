@@ -724,71 +724,71 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sr(pub u32);
     impl Sr {
-        #[doc = "Analog watchdog flag"]
+        #[doc = "Analog watchdog event occurred"]
         #[inline(always)]
-        pub const fn awd(&self) -> super::vals::Awd {
+        pub const fn awd(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Awd::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Analog watchdog flag"]
+        #[doc = "Analog watchdog event occurred"]
         #[inline(always)]
-        pub fn set_awd(&mut self, val: super::vals::Awd) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_awd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Regular channel end of conversion"]
         #[inline(always)]
-        pub const fn eoc(&self) -> super::vals::Eoc {
+        pub const fn eoc(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Eoc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Regular channel end of conversion"]
         #[inline(always)]
-        pub fn set_eoc(&mut self, val: super::vals::Eoc) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_eoc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Injected channel end of conversion"]
         #[inline(always)]
-        pub const fn jeoc(&self) -> super::vals::Jeoc {
+        pub const fn jeoc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Jeoc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Injected channel end of conversion"]
         #[inline(always)]
-        pub fn set_jeoc(&mut self, val: super::vals::Jeoc) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_jeoc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Injected channel start flag"]
+        #[doc = "Injected channel conversion has started"]
         #[inline(always)]
-        pub const fn jstrt(&self) -> super::vals::Jstrt {
+        pub const fn jstrt(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Jstrt::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Injected channel start flag"]
+        #[doc = "Injected channel conversion has started"]
         #[inline(always)]
-        pub fn set_jstrt(&mut self, val: super::vals::Jstrt) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_jstrt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "Regular channel start flag"]
+        #[doc = "Regular channel conversion has started"]
         #[inline(always)]
-        pub const fn strt(&self) -> super::vals::Strt {
+        pub const fn strt(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Strt::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Regular channel start flag"]
+        #[doc = "Regular channel conversion has started"]
         #[inline(always)]
-        pub fn set_strt(&mut self, val: super::vals::Strt) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_strt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "Overrun"]
+        #[doc = "Overrun occurred"]
         #[inline(always)]
-        pub const fn ovr(&self) -> super::vals::Ovr {
+        pub const fn ovr(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Ovr::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Overrun"]
+        #[doc = "Overrun occurred"]
         #[inline(always)]
-        pub fn set_ovr(&mut self, val: super::vals::Ovr) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_ovr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
     impl Default for Sr {
@@ -827,36 +827,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Align) -> u8 {
             Align::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Awd {
-        #[doc = "No analog watchdog event occurred"]
-        NOEVENT = 0,
-        #[doc = "Analog watchdog event occurred"]
-        EVENT = 0x01,
-    }
-    impl Awd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Awd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Awd {
-        #[inline(always)]
-        fn from(val: u8) -> Awd {
-            Awd::from_bits(val)
-        }
-    }
-    impl From<Awd> for u8 {
-        #[inline(always)]
-        fn from(val: Awd) -> u8 {
-            Awd::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -951,36 +921,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Eoc {
-        #[doc = "Conversion is not complete"]
-        NOTCOMPLETE = 0,
-        #[doc = "Conversion complete"]
-        COMPLETE = 0x01,
-    }
-    impl Eoc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Eoc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Eoc {
-        #[inline(always)]
-        fn from(val: u8) -> Eoc {
-            Eoc::from_bits(val)
-        }
-    }
-    impl From<Eoc> for u8 {
-        #[inline(always)]
-        fn from(val: Eoc) -> u8 {
-            Eoc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Eocs {
         #[doc = "The EOC bit is set at the end of each sequence of regular conversions"]
         EACHSEQUENCE = 0,
@@ -1045,36 +985,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jeoc {
-        #[doc = "Conversion is not complete"]
-        NOTCOMPLETE = 0,
-        #[doc = "Conversion complete"]
-        COMPLETE = 0x01,
-    }
-    impl Jeoc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jeoc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jeoc {
-        #[inline(always)]
-        fn from(val: u8) -> Jeoc {
-            Jeoc::from_bits(val)
-        }
-    }
-    impl From<Jeoc> for u8 {
-        #[inline(always)]
-        fn from(val: Jeoc) -> u8 {
-            Jeoc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Jexten {
         #[doc = "Trigger detection disabled"]
         DISABLED = 0,
@@ -1105,66 +1015,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Jexten) -> u8 {
             Jexten::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Jstrt {
-        #[doc = "No injected channel conversion started"]
-        NOTSTARTED = 0,
-        #[doc = "Injected channel conversion has started"]
-        STARTED = 0x01,
-    }
-    impl Jstrt {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jstrt {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jstrt {
-        #[inline(always)]
-        fn from(val: u8) -> Jstrt {
-            Jstrt::from_bits(val)
-        }
-    }
-    impl From<Jstrt> for u8 {
-        #[inline(always)]
-        fn from(val: Jstrt) -> u8 {
-            Jstrt::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ovr {
-        #[doc = "No overrun occurred"]
-        NOOVERRUN = 0,
-        #[doc = "Overrun occurred"]
-        OVERRUN = 0x01,
-    }
-    impl Ovr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ovr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ovr {
-        #[inline(always)]
-        fn from(val: u8) -> Ovr {
-            Ovr::from_bits(val)
-        }
-    }
-    impl From<Ovr> for u8 {
-        #[inline(always)]
-        fn from(val: Ovr) -> u8 {
-            Ovr::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1282,36 +1132,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: SmprSmpxX) -> u32 {
             SmprSmpxX::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Strt {
-        #[doc = "No regular channel conversion started"]
-        NOTSTARTED = 0,
-        #[doc = "Regular channel conversion has started"]
-        STARTED = 0x01,
-    }
-    impl Strt {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Strt {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Strt {
-        #[inline(always)]
-        fn from(val: u8) -> Strt {
-            Strt::from_bits(val)
-        }
-    }
-    impl From<Strt> for u8 {
-        #[inline(always)]
-        fn from(val: Strt) -> u8 {
-            Strt::to_bits(val)
         }
     }
 }

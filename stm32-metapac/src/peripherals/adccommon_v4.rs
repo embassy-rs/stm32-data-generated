@@ -200,245 +200,209 @@ pub mod regs {
     impl Csr {
         #[doc = "Master ADC ready"]
         #[inline(always)]
-        pub const fn adrdy_mst(&self) -> super::vals::AdrdyMst {
+        pub const fn adrdy_mst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::AdrdyMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master ADC ready"]
         #[inline(always)]
-        pub fn set_adrdy_mst(&mut self, val: super::vals::AdrdyMst) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_adrdy_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "End of Sampling phase flag of the master ADC"]
         #[inline(always)]
-        pub const fn eosmp_mst(&self) -> super::vals::EosmpMst {
+        pub const fn eosmp_mst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::EosmpMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of Sampling phase flag of the master ADC"]
         #[inline(always)]
-        pub fn set_eosmp_mst(&mut self, val: super::vals::EosmpMst) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_eosmp_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "End of regular conversion of the master ADC"]
         #[inline(always)]
-        pub const fn eoc_mst(&self) -> super::vals::EocMst {
+        pub const fn eoc_mst(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::EocMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of regular conversion of the master ADC"]
         #[inline(always)]
-        pub fn set_eoc_mst(&mut self, val: super::vals::EocMst) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_eoc_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "End of regular sequence flag of the master ADC"]
         #[inline(always)]
-        pub const fn eos_mst(&self) -> super::vals::EosMst {
+        pub const fn eos_mst(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::EosMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of regular sequence flag of the master ADC"]
         #[inline(always)]
-        pub fn set_eos_mst(&mut self, val: super::vals::EosMst) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_eos_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Overrun flag of the master ADC"]
         #[inline(always)]
-        pub const fn ovr_mst(&self) -> super::vals::OvrMst {
+        pub const fn ovr_mst(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::OvrMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Overrun flag of the master ADC"]
         #[inline(always)]
-        pub fn set_ovr_mst(&mut self, val: super::vals::OvrMst) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_ovr_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "End of injected conversion flag of the master ADC"]
         #[inline(always)]
-        pub const fn jeoc_mst(&self) -> super::vals::JeocMst {
+        pub const fn jeoc_mst(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::JeocMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of injected conversion flag of the master ADC"]
         #[inline(always)]
-        pub fn set_jeoc_mst(&mut self, val: super::vals::JeocMst) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_jeoc_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "End of injected sequence flag of the master ADC"]
         #[inline(always)]
-        pub const fn jeos_mst(&self) -> super::vals::JeosMst {
+        pub const fn jeos_mst(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::JeosMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of injected sequence flag of the master ADC"]
         #[inline(always)]
-        pub fn set_jeos_mst(&mut self, val: super::vals::JeosMst) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_jeos_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Analog watchdog 1 flag of the master ADC"]
+        #[doc = "Analog watchdog flag of the master ADC"]
         #[inline(always)]
-        pub const fn awd1_mst(&self) -> super::vals::Awd1Mst {
-            let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Awd1Mst::from_bits(val as u8)
+        pub const fn awd_mst(&self, n: usize) -> bool {
+            assert!(n < 3usize);
+            let offs = 7usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
         }
-        #[doc = "Analog watchdog 1 flag of the master ADC"]
+        #[doc = "Analog watchdog flag of the master ADC"]
         #[inline(always)]
-        pub fn set_awd1_mst(&mut self, val: super::vals::Awd1Mst) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Analog watchdog 2 flag of the master ADC"]
-        #[inline(always)]
-        pub const fn awd2_mst(&self) -> super::vals::Awd1Mst {
-            let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Awd1Mst::from_bits(val as u8)
-        }
-        #[doc = "Analog watchdog 2 flag of the master ADC"]
-        #[inline(always)]
-        pub fn set_awd2_mst(&mut self, val: super::vals::Awd1Mst) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Analog watchdog 3 flag of the master ADC"]
-        #[inline(always)]
-        pub const fn awd3_mst(&self) -> super::vals::Awd1Mst {
-            let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Awd1Mst::from_bits(val as u8)
-        }
-        #[doc = "Analog watchdog 3 flag of the master ADC"]
-        #[inline(always)]
-        pub fn set_awd3_mst(&mut self, val: super::vals::Awd1Mst) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_awd_mst(&mut self, n: usize, val: bool) {
+            assert!(n < 3usize);
+            let offs = 7usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Injected Context Queue Overflow flag of the master ADC"]
         #[inline(always)]
-        pub const fn jqovf_mst(&self) -> super::vals::JqovfMst {
+        pub const fn jqovf_mst(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::JqovfMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Injected Context Queue Overflow flag of the master ADC"]
         #[inline(always)]
-        pub fn set_jqovf_mst(&mut self, val: super::vals::JqovfMst) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub fn set_jqovf_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Slave ADC ready"]
         #[inline(always)]
-        pub const fn adrdy_slv(&self) -> super::vals::AdrdyMst {
+        pub const fn adrdy_slv(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::AdrdyMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Slave ADC ready"]
         #[inline(always)]
-        pub fn set_adrdy_slv(&mut self, val: super::vals::AdrdyMst) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub fn set_adrdy_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "End of Sampling phase flag of the slave ADC"]
         #[inline(always)]
-        pub const fn eosmp_slv(&self) -> super::vals::EosmpMst {
+        pub const fn eosmp_slv(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::EosmpMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of Sampling phase flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_eosmp_slv(&mut self, val: super::vals::EosmpMst) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub fn set_eosmp_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "End of regular conversion of the slave ADC"]
         #[inline(always)]
-        pub const fn eoc_slv(&self) -> super::vals::EocMst {
+        pub const fn eoc_slv(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
-            super::vals::EocMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of regular conversion of the slave ADC"]
         #[inline(always)]
-        pub fn set_eoc_slv(&mut self, val: super::vals::EocMst) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+        pub fn set_eoc_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "End of regular sequence flag of the slave ADC"]
         #[inline(always)]
-        pub const fn eos_slv(&self) -> super::vals::EosMst {
+        pub const fn eos_slv(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
-            super::vals::EosMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of regular sequence flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_eos_slv(&mut self, val: super::vals::EosMst) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        pub fn set_eos_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Overrun flag of the slave ADC"]
         #[inline(always)]
-        pub const fn ovr_slv(&self) -> super::vals::OvrMst {
+        pub const fn ovr_slv(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
-            super::vals::OvrMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Overrun flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_ovr_slv(&mut self, val: super::vals::OvrMst) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+        pub fn set_ovr_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "End of injected conversion flag of the slave ADC"]
         #[inline(always)]
-        pub const fn jeoc_slv(&self) -> super::vals::JeocMst {
+        pub const fn jeoc_slv(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::JeocMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of injected conversion flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_jeoc_slv(&mut self, val: super::vals::JeocMst) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub fn set_jeoc_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "End of injected sequence flag of the slave ADC"]
         #[inline(always)]
-        pub const fn jeos_slv(&self) -> super::vals::JeosMst {
+        pub const fn jeos_slv(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::JeosMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of injected sequence flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_jeos_slv(&mut self, val: super::vals::JeosMst) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub fn set_jeos_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
-        #[doc = "Analog watchdog 1 flag of the slave ADC"]
+        #[doc = "Analog watchdog flag of the slave ADC"]
         #[inline(always)]
-        pub const fn awd1_slv(&self) -> super::vals::Awd1Mst {
-            let val = (self.0 >> 23usize) & 0x01;
-            super::vals::Awd1Mst::from_bits(val as u8)
+        pub const fn awd_slv(&self, n: usize) -> bool {
+            assert!(n < 3usize);
+            let offs = 23usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
         }
-        #[doc = "Analog watchdog 1 flag of the slave ADC"]
+        #[doc = "Analog watchdog flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_awd1_slv(&mut self, val: super::vals::Awd1Mst) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
-        }
-        #[doc = "Analog watchdog 2 flag of the slave ADC"]
-        #[inline(always)]
-        pub const fn awd2_slv(&self) -> super::vals::Awd1Mst {
-            let val = (self.0 >> 24usize) & 0x01;
-            super::vals::Awd1Mst::from_bits(val as u8)
-        }
-        #[doc = "Analog watchdog 2 flag of the slave ADC"]
-        #[inline(always)]
-        pub fn set_awd2_slv(&mut self, val: super::vals::Awd1Mst) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
-        }
-        #[doc = "Analog watchdog 3 flag of the slave ADC"]
-        #[inline(always)]
-        pub const fn awd3_slv(&self) -> super::vals::Awd1Mst {
-            let val = (self.0 >> 25usize) & 0x01;
-            super::vals::Awd1Mst::from_bits(val as u8)
-        }
-        #[doc = "Analog watchdog 3 flag of the slave ADC"]
-        #[inline(always)]
-        pub fn set_awd3_slv(&mut self, val: super::vals::Awd1Mst) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        pub fn set_awd_slv(&mut self, n: usize, val: bool) {
+            assert!(n < 3usize);
+            let offs = 23usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Injected Context Queue Overflow flag of the slave ADC"]
         #[inline(always)]
-        pub const fn jqovf_slv(&self) -> super::vals::JqovfMst {
+        pub const fn jqovf_slv(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
-            super::vals::JqovfMst::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Injected Context Queue Overflow flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_jqovf_slv(&mut self, val: super::vals::JqovfMst) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        pub fn set_jqovf_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
     }
     impl Default for Csr {
@@ -449,66 +413,6 @@ pub mod regs {
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum AdrdyMst {
-        #[doc = "ADC is not ready to start conversion"]
-        NOTREADY = 0,
-        #[doc = "ADC is ready to start conversion"]
-        READY = 0x01,
-    }
-    impl AdrdyMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> AdrdyMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for AdrdyMst {
-        #[inline(always)]
-        fn from(val: u8) -> AdrdyMst {
-            AdrdyMst::from_bits(val)
-        }
-    }
-    impl From<AdrdyMst> for u8 {
-        #[inline(always)]
-        fn from(val: AdrdyMst) -> u8 {
-            AdrdyMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Awd1Mst {
-        #[doc = "No analog watchdog event occurred"]
-        NOEVENT = 0,
-        #[doc = "Analog watchdog event occurred"]
-        EVENT = 0x01,
-    }
-    impl Awd1Mst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Awd1Mst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Awd1Mst {
-        #[inline(always)]
-        fn from(val: u8) -> Awd1Mst {
-            Awd1Mst::from_bits(val)
-        }
-    }
-    impl From<Awd1Mst> for u8 {
-        #[inline(always)]
-        fn from(val: Awd1Mst) -> u8 {
-            Awd1Mst::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckmode {
@@ -640,216 +544,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dual) -> u8 {
             Dual::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum EocMst {
-        #[doc = "Regular conversion is not complete"]
-        NOTCOMPLETE = 0,
-        #[doc = "Regular conversion complete"]
-        COMPLETE = 0x01,
-    }
-    impl EocMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> EocMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for EocMst {
-        #[inline(always)]
-        fn from(val: u8) -> EocMst {
-            EocMst::from_bits(val)
-        }
-    }
-    impl From<EocMst> for u8 {
-        #[inline(always)]
-        fn from(val: EocMst) -> u8 {
-            EocMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum EosMst {
-        #[doc = "Regular sequence is not complete"]
-        NOTCOMPLETE = 0,
-        #[doc = "Regular sequence complete"]
-        COMPLETE = 0x01,
-    }
-    impl EosMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> EosMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for EosMst {
-        #[inline(always)]
-        fn from(val: u8) -> EosMst {
-            EosMst::from_bits(val)
-        }
-    }
-    impl From<EosMst> for u8 {
-        #[inline(always)]
-        fn from(val: EosMst) -> u8 {
-            EosMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum EosmpMst {
-        #[doc = "End of sampling phase no yet reached"]
-        NOTENDED = 0,
-        #[doc = "End of sampling phase reached"]
-        ENDED = 0x01,
-    }
-    impl EosmpMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> EosmpMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for EosmpMst {
-        #[inline(always)]
-        fn from(val: u8) -> EosmpMst {
-            EosmpMst::from_bits(val)
-        }
-    }
-    impl From<EosmpMst> for u8 {
-        #[inline(always)]
-        fn from(val: EosmpMst) -> u8 {
-            EosmpMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum JeocMst {
-        #[doc = "Injected conversion is not complete"]
-        NOTCOMPLETE = 0,
-        #[doc = "Injected conversion complete"]
-        COMPLETE = 0x01,
-    }
-    impl JeocMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> JeocMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for JeocMst {
-        #[inline(always)]
-        fn from(val: u8) -> JeocMst {
-            JeocMst::from_bits(val)
-        }
-    }
-    impl From<JeocMst> for u8 {
-        #[inline(always)]
-        fn from(val: JeocMst) -> u8 {
-            JeocMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum JeosMst {
-        #[doc = "Injected sequence is not complete"]
-        NOTCOMPLETE = 0,
-        #[doc = "Injected sequence complete"]
-        COMPLETE = 0x01,
-    }
-    impl JeosMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> JeosMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for JeosMst {
-        #[inline(always)]
-        fn from(val: u8) -> JeosMst {
-            JeosMst::from_bits(val)
-        }
-    }
-    impl From<JeosMst> for u8 {
-        #[inline(always)]
-        fn from(val: JeosMst) -> u8 {
-            JeosMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum JqovfMst {
-        #[doc = "No injected context queue overflow has occurred"]
-        NOOVERFLOW = 0,
-        #[doc = "Injected context queue overflow has occurred"]
-        OVERFLOW = 0x01,
-    }
-    impl JqovfMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> JqovfMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for JqovfMst {
-        #[inline(always)]
-        fn from(val: u8) -> JqovfMst {
-            JqovfMst::from_bits(val)
-        }
-    }
-    impl From<JqovfMst> for u8 {
-        #[inline(always)]
-        fn from(val: JqovfMst) -> u8 {
-            JqovfMst::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum OvrMst {
-        #[doc = "No overrun occurred"]
-        NOOVERRUN = 0,
-        #[doc = "Overrun occurred"]
-        OVERRUN = 0x01,
-    }
-    impl OvrMst {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OvrMst {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OvrMst {
-        #[inline(always)]
-        fn from(val: u8) -> OvrMst {
-            OvrMst::from_bits(val)
-        }
-    }
-    impl From<OvrMst> for u8 {
-        #[inline(always)]
-        fn from(val: OvrMst) -> u8 {
-            OvrMst::to_bits(val)
         }
     }
     #[repr(u8)]

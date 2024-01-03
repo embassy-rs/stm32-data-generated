@@ -557,9 +557,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rrsb",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "rrsb2",
@@ -569,9 +567,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rrsb",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ulpmen",
@@ -1000,9 +996,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "nspriv",
@@ -1012,9 +1006,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1041,9 +1033,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lpmsec",
@@ -1053,9 +1043,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "vdmsec",
@@ -1065,9 +1053,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "vbsec",
@@ -1077,9 +1063,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "apcsec",
@@ -1089,9 +1073,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1870,27 +1852,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Read and write to non-secure functions can be done by privileged access only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Pvdls",
             description: None,
             bit_size: 3,
@@ -1990,48 +1951,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SMPS",
                     description: Some(
                         "SMPS selected",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rrsb",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTRETAINED",
-                    description: Some(
-                        "SRAM2 page1 content not retained in Stop 3 and Standby modes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "SRAM2 page1 content retained in Stop 3 and Standby modes",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
-                    description: Some(
-                        "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "CR1, CR2, and CSSF in the SR can be read and written only with secure access.",
                     ),
                     value: 1,
                 },

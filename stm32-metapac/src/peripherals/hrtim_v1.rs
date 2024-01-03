@@ -2261,51 +2261,51 @@ pub mod regs {
     impl Misr {
         #[doc = "Master Compare X Interrupt Flag"]
         #[inline(always)]
-        pub const fn mcmp(&self, n: usize) -> super::vals::Event {
+        pub const fn mcmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Compare X Interrupt Flag"]
         #[inline(always)]
-        pub fn set_mcmp(&mut self, n: usize, val: super::vals::Event) {
+        pub fn set_mcmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Master Repetition Interrupt Flag"]
         #[inline(always)]
-        pub const fn mrep(&self) -> super::vals::Event {
+        pub const fn mrep(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Repetition Interrupt Flag"]
         #[inline(always)]
-        pub fn set_mrep(&mut self, val: super::vals::Event) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_mrep(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Sync Input Interrupt Flag"]
         #[inline(always)]
-        pub const fn sync(&self) -> super::vals::Event {
+        pub const fn sync(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Sync Input Interrupt Flag"]
         #[inline(always)]
-        pub fn set_sync(&mut self, val: super::vals::Event) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_sync(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Master Update Interrupt Flag"]
         #[inline(always)]
-        pub const fn mupd(&self) -> super::vals::Event {
+        pub const fn mupd(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Master Update Interrupt Flag"]
         #[inline(always)]
-        pub fn set_mupd(&mut self, val: super::vals::Event) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_mupd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
     impl Default for Misr {
@@ -3197,25 +3197,25 @@ pub mod regs {
         }
         #[doc = "Deadtime Rising Sign Lock"]
         #[inline(always)]
-        pub const fn dtrslk(&self) -> super::vals::Locked {
+        pub const fn dtrslk(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Locked::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Deadtime Rising Sign Lock"]
         #[inline(always)]
-        pub fn set_dtrslk(&mut self, val: super::vals::Locked) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_dtrslk(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Deadtime Rising Lock"]
         #[inline(always)]
-        pub const fn dtrlk(&self) -> super::vals::Locked {
+        pub const fn dtrlk(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Locked::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Deadtime Rising Lock"]
         #[inline(always)]
-        pub fn set_dtrlk(&mut self, val: super::vals::Locked) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_dtrlk(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Deadtime Falling value"]
         #[inline(always)]
@@ -3241,25 +3241,25 @@ pub mod regs {
         }
         #[doc = "Deadtime Falling Sign Lock"]
         #[inline(always)]
-        pub const fn dtfslk(&self) -> super::vals::Locked {
+        pub const fn dtfslk(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Locked::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Deadtime Falling Sign Lock"]
         #[inline(always)]
-        pub fn set_dtfslk(&mut self, val: super::vals::Locked) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub fn set_dtfslk(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Deadtime Falling Lock"]
         #[inline(always)]
-        pub const fn dtflk(&self) -> super::vals::Locked {
+        pub const fn dtflk(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Locked::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Deadtime Falling Lock"]
         #[inline(always)]
-        pub fn set_dtflk(&mut self, val: super::vals::Locked) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_dtflk(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Timxdt {
@@ -3332,14 +3332,14 @@ pub mod regs {
         }
         #[doc = "Fault sources Lock"]
         #[inline(always)]
-        pub const fn fltlck(&self) -> super::vals::Locked {
+        pub const fn fltlck(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Locked::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Fault sources Lock"]
         #[inline(always)]
-        pub fn set_fltlck(&mut self, val: super::vals::Locked) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_fltlck(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Timxflt {
@@ -3471,96 +3471,96 @@ pub mod regs {
     impl Timxisr {
         #[doc = "Compare X Interrupt Flag"]
         #[inline(always)]
-        pub const fn cmp(&self, n: usize) -> super::vals::Event {
+        pub const fn cmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Compare X Interrupt Flag"]
         #[inline(always)]
-        pub fn set_cmp(&mut self, n: usize, val: super::vals::Event) {
+        pub fn set_cmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Repetition Interrupt Flag"]
         #[inline(always)]
-        pub const fn rep(&self) -> super::vals::Event {
+        pub const fn rep(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Repetition Interrupt Flag"]
         #[inline(always)]
-        pub fn set_rep(&mut self, val: super::vals::Event) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_rep(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Update Interrupt Flag"]
         #[inline(always)]
-        pub const fn upd(&self) -> super::vals::Event {
+        pub const fn upd(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Update Interrupt Flag"]
         #[inline(always)]
-        pub fn set_upd(&mut self, val: super::vals::Event) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_upd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Capture X Interrupt Flag"]
         #[inline(always)]
-        pub const fn cpt(&self, n: usize) -> super::vals::Event {
+        pub const fn cpt(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 7usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Capture X Interrupt Flag"]
         #[inline(always)]
-        pub fn set_cpt(&mut self, n: usize, val: super::vals::Event) {
+        pub fn set_cpt(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 7usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Output X Set Interrupt Flag"]
         #[inline(always)]
-        pub const fn setr(&self, n: usize) -> super::vals::Event {
+        pub const fn setr(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 9usize + ([0usize, 2usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Output X Set Interrupt Flag"]
         #[inline(always)]
-        pub fn set_setr(&mut self, n: usize, val: super::vals::Event) {
+        pub fn set_setr(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 9usize + ([0usize, 2usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Output X Reset Interrupt Flag"]
         #[inline(always)]
-        pub const fn rstr(&self, n: usize) -> super::vals::Event {
+        pub const fn rstr(&self, n: usize) -> bool {
             assert!(n < 2usize);
             let offs = 10usize + ([0usize, 2usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Output X Reset Interrupt Flag"]
         #[inline(always)]
-        pub fn set_rstr(&mut self, n: usize, val: super::vals::Event) {
+        pub fn set_rstr(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 10usize + ([0usize, 2usize][n] as usize);
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Reset Interrupt Flag"]
         #[inline(always)]
-        pub const fn rst(&self) -> super::vals::Event {
+        pub const fn rst(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Event::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Reset Interrupt Flag"]
         #[inline(always)]
-        pub fn set_rst(&mut self, val: super::vals::Event) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Delayed Protection Flag"]
         #[inline(always)]
@@ -4486,36 +4486,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Event {
-        #[doc = "No compare interrupt occurred"]
-        NOEVENT = 0,
-        #[doc = "Compare interrupt occurred"]
-        EVENT = 0x01,
-    }
-    impl Event {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Event {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Event {
-        #[inline(always)]
-        fn from(val: u8) -> Event {
-            Event::from_bits(val)
-        }
-    }
-    impl From<Event> for u8 {
-        #[inline(always)]
-        fn from(val: Event) -> u8 {
-            Event::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fault {
         #[doc = "No action: the output is not affected by the fault input and stays in run mode"]
         DISABLED = 0,
@@ -4636,36 +4606,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Ippstat) -> u8 {
             Ippstat::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Locked {
-        #[doc = "Bits are writeable"]
-        UNLOCKED = 0,
-        #[doc = "Bits are read-only"]
-        LOCKED = 0x01,
-    }
-    impl Locked {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Locked {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Locked {
-        #[inline(always)]
-        fn from(val: u8) -> Locked {
-            Locked::from_bits(val)
-        }
-    }
-    impl From<Locked> for u8 {
-        #[inline(always)]
-        fn from(val: Locked) -> u8 {
-            Locked::to_bits(val)
         }
     }
     #[repr(u8)]

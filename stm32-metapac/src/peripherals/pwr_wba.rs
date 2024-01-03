@@ -126,14 +126,14 @@ pub mod regs {
         }
         #[doc = "SRAM2 retention in Standby mode This bit is used to keep the SRAM2 content in Standby retention mode."]
         #[inline(always)]
-        pub const fn r2rsb1(&self) -> super::vals::Rrsb {
+        pub const fn r2rsb1(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Rrsb::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 retention in Standby mode This bit is used to keep the SRAM2 content in Standby retention mode."]
         #[inline(always)]
-        pub fn set_r2rsb1(&mut self, val: super::vals::Rrsb) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_r2rsb1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "BOR0 ultra-low-power mode. This bit is used to reduce the consumption by configuring the BOR0 in discontinuous mode for Stop 1 and Standby modes. Discontinuous mode is only available when BOR levels 1 to 4 and PVD are disabled. Note: This bit must be set to reach the lowest power consumption in the low-power modes. Note: This bit must not be set together with autonomous peripherals using HSI as kernel clock. Note: When BOR level 1 to 4 or PVD is enabled continuous mode applies independent from ULPMEN."]
         #[inline(always)]
@@ -148,25 +148,25 @@ pub mod regs {
         }
         #[doc = "2.4 GHz RADIO SRAMs (RXTXRAM and Sequence RAM) and Sleep clock retention in Standby mode. This bit is used to keep the 2.4 GHz RADIO SRAMs content in Standby retention mode and the 2.4 GHz RADIO sleep timer counter operational."]
         #[inline(always)]
-        pub const fn radiorsb(&self) -> super::vals::Radiorsb {
+        pub const fn radiorsb(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Radiorsb::from_bits(val as u8)
+            val != 0
         }
         #[doc = "2.4 GHz RADIO SRAMs (RXTXRAM and Sequence RAM) and Sleep clock retention in Standby mode. This bit is used to keep the 2.4 GHz RADIO SRAMs content in Standby retention mode and the 2.4 GHz RADIO sleep timer counter operational."]
         #[inline(always)]
-        pub fn set_radiorsb(&mut self, val: super::vals::Radiorsb) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_radiorsb(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "SRAM1 retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
         #[inline(always)]
-        pub const fn r1rsb1(&self) -> super::vals::Rrsb {
+        pub const fn r1rsb1(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Rrsb::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM1 retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
         #[inline(always)]
-        pub fn set_r1rsb1(&mut self, val: super::vals::Rrsb) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_r1rsb1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
     }
     impl Default for Cr1 {
@@ -338,25 +338,25 @@ pub mod regs {
     impl Privcfgr {
         #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
-        pub const fn spriv(&self) -> super::vals::Priv {
+        pub const fn spriv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
-        pub fn set_spriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_spriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub const fn nspriv(&self) -> super::vals::Priv {
+        pub const fn nspriv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub fn set_nspriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_nspriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Privcfgr {
@@ -420,14 +420,14 @@ rf_event."]
         }
         #[doc = "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input. Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level."]
         #[inline(always)]
-        pub const fn regpardyvddrfpa(&self) -> super::vals::Regpardyvddrfpa {
+        pub const fn regpardyvddrfpa(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Regpardyvddrfpa::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input. Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level."]
         #[inline(always)]
-        pub fn set_regpardyvddrfpa(&mut self, val: super::vals::Regpardyvddrfpa) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_regpardyvddrfpa(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Radioscr {
@@ -443,51 +443,51 @@ rf_event."]
     impl Seccfgr {
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub const fn wup1sec(&self, n: usize) -> super::vals::Sec {
+        pub const fn wup1sec(&self, n: usize) -> bool {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub fn set_wup1sec(&mut self, n: usize, val: super::vals::Sec) {
+        pub fn set_wup1sec(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub const fn lpmsec(&self) -> super::vals::Sec {
+        pub const fn lpmsec(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub fn set_lpmsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_lpmsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Voltage detection secure protection"]
         #[inline(always)]
-        pub const fn vdmsec(&self) -> super::vals::Sec {
+        pub const fn vdmsec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Voltage detection secure protection"]
         #[inline(always)]
-        pub fn set_vdmsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_vdmsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub const fn vbsec(&self) -> super::vals::Sec {
+        pub const fn vbsec(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub fn set_vbsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_vbsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Seccfgr {
@@ -1024,36 +1024,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Priv {
-        #[doc = "Read and write to non-secure functions can be done by privileged or unprivileged access."]
-        UNPRIVILEGED = 0,
-        #[doc = "Read and write to non-secure functions can be done by privileged access only."]
-        PRIVILEGED = 0x01,
-    }
-    impl Priv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Priv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Priv {
-        #[inline(always)]
-        fn from(val: u8) -> Priv {
-            Priv::from_bits(val)
-        }
-    }
-    impl From<Priv> for u8 {
-        #[inline(always)]
-        fn from(val: Priv) -> u8 {
-            Priv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pvdls {
         #[doc = "VPVD0 around 2.0 V"]
         V20 = 0,
@@ -1122,126 +1092,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pvdo) -> u8 {
             Pvdo::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Radiorsb {
-        #[doc = "2.4 GHz RADIO SRAMs and sleep timer content not retained in Standby mode"]
-        NOTRETAINED = 0,
-        #[doc = "2.4 GHz RADIO SRAMs and sleep timer content retained in Standby mode"]
-        RETAINED = 0x01,
-    }
-    impl Radiorsb {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Radiorsb {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Radiorsb {
-        #[inline(always)]
-        fn from(val: u8) -> Radiorsb {
-            Radiorsb::from_bits(val)
-        }
-    }
-    impl From<Radiorsb> for u8 {
-        #[inline(always)]
-        fn from(val: Radiorsb) -> u8 {
-            Radiorsb::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Regpardyvddrfpa {
-        #[doc = "Not ready, V<sub>DDHPA</sub> voltage level < REGPAVOS selected supply level"]
-        NOTREADY = 0,
-        #[doc = "Ready, V<sub>DDHPA</sub> voltage level ≥ REGPAVOS selected supply level"]
-        READY = 0x01,
-    }
-    impl Regpardyvddrfpa {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Regpardyvddrfpa {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Regpardyvddrfpa {
-        #[inline(always)]
-        fn from(val: u8) -> Regpardyvddrfpa {
-            Regpardyvddrfpa::from_bits(val)
-        }
-    }
-    impl From<Regpardyvddrfpa> for u8 {
-        #[inline(always)]
-        fn from(val: Regpardyvddrfpa) -> u8 {
-            Regpardyvddrfpa::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rrsb {
-        #[doc = "SRAM2 content not retained in Standby mode"]
-        B_0X0 = 0,
-        #[doc = "SRAM2 content retained in Standby mode"]
-        B_0X1 = 0x01,
-    }
-    impl Rrsb {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rrsb {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rrsb {
-        #[inline(always)]
-        fn from(val: u8) -> Rrsb {
-            Rrsb::from_bits(val)
-        }
-    }
-    impl From<Rrsb> for u8 {
-        #[inline(always)]
-        fn from(val: Rrsb) -> u8 {
-            Rrsb::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sec {
-        #[doc = "SVMCR and CR3 can be read and written with secure or non-secure access."]
-        NOTSECURE = 0,
-        #[doc = "SVMCR and CR3 can be read and written only with secure access."]
-        SECURE = 0x01,
-    }
-    impl Sec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sec {
-        #[inline(always)]
-        fn from(val: u8) -> Sec {
-            Sec::from_bits(val)
-        }
-    }
-    impl From<Sec> for u8 {
-        #[inline(always)]
-        fn from(val: Sec) -> u8 {
-            Sec::to_bits(val)
         }
     }
     #[repr(u8)]

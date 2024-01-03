@@ -247,38 +247,20 @@ pub mod regs {
         pub fn set_jeos_mst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "AWD1_MST"]
+        #[doc = "Analog watchdog flag of the master ADC"]
         #[inline(always)]
-        pub const fn awd1_mst(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
+        pub const fn awd_mst(&self, n: usize) -> bool {
+            assert!(n < 3usize);
+            let offs = 7usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "AWD1_MST"]
+        #[doc = "Analog watchdog flag of the master ADC"]
         #[inline(always)]
-        pub fn set_awd1_mst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "AWD2_MST"]
-        #[inline(always)]
-        pub const fn awd2_mst(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "AWD2_MST"]
-        #[inline(always)]
-        pub fn set_awd2_mst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "AWD3_MST"]
-        #[inline(always)]
-        pub const fn awd3_mst(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "AWD3_MST"]
-        #[inline(always)]
-        pub fn set_awd3_mst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub fn set_awd_mst(&mut self, n: usize, val: bool) {
+            assert!(n < 3usize);
+            let offs = 7usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "JQOVF_MST"]
         #[inline(always)]
@@ -370,36 +352,18 @@ pub mod regs {
         }
         #[doc = "Analog watchdog 1 flag of the slave ADC"]
         #[inline(always)]
-        pub const fn awd1_slv(&self) -> bool {
-            let val = (self.0 >> 23usize) & 0x01;
+        pub const fn awd_slv(&self, n: usize) -> bool {
+            assert!(n < 3usize);
+            let offs = 23usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Analog watchdog 1 flag of the slave ADC"]
         #[inline(always)]
-        pub fn set_awd1_slv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-        }
-        #[doc = "Analog watchdog 2 flag of the slave ADC"]
-        #[inline(always)]
-        pub const fn awd2_slv(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Analog watchdog 2 flag of the slave ADC"]
-        #[inline(always)]
-        pub fn set_awd2_slv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
-        #[doc = "Analog watchdog 3 flag of the slave ADC"]
-        #[inline(always)]
-        pub const fn awd3_slv(&self) -> bool {
-            let val = (self.0 >> 25usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Analog watchdog 3 flag of the slave ADC"]
-        #[inline(always)]
-        pub fn set_awd3_slv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        pub fn set_awd_slv(&mut self, n: usize, val: bool) {
+            assert!(n < 3usize);
+            let offs = 23usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Injected Context Queue Overflow flag of the slave ADC"]
         #[inline(always)]

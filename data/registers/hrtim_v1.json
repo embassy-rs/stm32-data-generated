@@ -1690,29 +1690,25 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "EVENT"
+        }
       },
       {
         "name": "MREP",
         "description": "Master Repetition Interrupt Flag",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "EVENT"
+        "bit_size": 1
       },
       {
         "name": "SYNC",
         "description": "Sync Input Interrupt Flag",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "EVENT"
+        "bit_size": 1
       },
       {
         "name": "MUPD",
         "description": "Master Update Interrupt Flag",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "EVENT"
+        "bit_size": 1
       }
     ]
   },
@@ -2239,15 +2235,13 @@
         "name": "DTRSLK",
         "description": "Deadtime Rising Sign Lock",
         "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "LOCKED"
+        "bit_size": 1
       },
       {
         "name": "DTRLK",
         "description": "Deadtime Rising Lock",
         "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "LOCKED"
+        "bit_size": 1
       },
       {
         "name": "DTF",
@@ -2266,15 +2260,13 @@
         "name": "DTFSLK",
         "description": "Deadtime Falling Sign Lock",
         "bit_offset": 30,
-        "bit_size": 1,
-        "enum": "LOCKED"
+        "bit_size": 1
       },
       {
         "name": "DTFLK",
         "description": "Deadtime Falling Lock",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "LOCKED"
+        "bit_size": 1
       }
     ]
   },
@@ -2322,8 +2314,7 @@
         "name": "FLTLCK",
         "description": "Fault sources Lock",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "LOCKED"
+        "bit_size": 1
       }
     ]
   },
@@ -2411,22 +2402,19 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "EVENT"
+        }
       },
       {
         "name": "REP",
         "description": "Repetition Interrupt Flag",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "EVENT"
+        "bit_size": 1
       },
       {
         "name": "UPD",
         "description": "Update Interrupt Flag",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "EVENT"
+        "bit_size": 1
       },
       {
         "name": "CPT",
@@ -2436,8 +2424,7 @@
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "EVENT"
+        }
       },
       {
         "name": "SETR",
@@ -2449,8 +2436,7 @@
             0,
             2
           ]
-        },
-        "enum": "EVENT"
+        }
       },
       {
         "name": "RSTR",
@@ -2462,15 +2448,13 @@
             0,
             2
           ]
-        },
-        "enum": "EVENT"
+        }
       },
       {
         "name": "RST",
         "description": "Reset Interrupt Flag",
         "bit_offset": 13,
-        "bit_size": 1,
-        "enum": "EVENT"
+        "bit_size": 1
       },
       {
         "name": "DLYPRT",
@@ -3147,21 +3131,6 @@
       }
     ]
   },
-  "enum/EVENT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoEvent",
-        "description": "No compare interrupt occurred",
-        "value": 0
-      },
-      {
-        "name": "Event",
-        "description": "Compare interrupt occurred",
-        "value": 1
-      }
-    ]
-  },
   "enum/FAULT": {
     "bit_size": 2,
     "variants": [
@@ -3228,21 +3197,6 @@
       {
         "name": "Output2Active",
         "description": "Protection occurred when the output 2 was active and output 1 forced inactive",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LOCKED": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Unlocked",
-        "description": "Bits are writeable",
-        "value": 0
-      },
-      {
-        "name": "Locked",
-        "description": "Bits are read-only",
         "value": 1
       }
     ]

@@ -1871,7 +1871,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "mrep",
@@ -1879,7 +1879,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "sync",
@@ -1887,7 +1887,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "mupd",
@@ -1895,7 +1895,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
             ],
         },
@@ -2493,7 +2493,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Locked"),
+                    enumm: None,
                 },
                 Field {
                     name: "dtrlk",
@@ -2501,7 +2501,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Locked"),
+                    enumm: None,
                 },
                 Field {
                     name: "dtf",
@@ -2525,7 +2525,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Locked"),
+                    enumm: None,
                 },
                 Field {
                     name: "dtflk",
@@ -2533,7 +2533,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Locked"),
+                    enumm: None,
                 },
             ],
         },
@@ -2581,7 +2581,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Locked"),
+                    enumm: None,
                 },
             ],
         },
@@ -2669,7 +2669,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "rep",
@@ -2677,7 +2677,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "upd",
@@ -2685,7 +2685,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "cpt",
@@ -2693,7 +2693,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 7,
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "setr",
@@ -2701,7 +2701,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 9,
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 2] })),
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "rstr",
@@ -2709,7 +2709,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 10,
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray { offsets: &[0, 2] })),
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "rst",
@@ -2717,7 +2717,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Event"),
+                    enumm: None,
                 },
                 Field {
                     name: "dlyprt",
@@ -3375,23 +3375,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Event",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOEVENT",
-                    description: Some("No compare interrupt occurred"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EVENT",
-                    description: Some("Compare interrupt occurred"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Fault",
             description: None,
             bit_size: 2,
@@ -3465,23 +3448,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "OUTPUT2ACTIVE",
                     description: Some("Protection occurred when the output 2 was active and output 1 forced inactive"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Locked",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some("Bits are writeable"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some("Bits are read-only"),
                     value: 1,
                 },
             ],

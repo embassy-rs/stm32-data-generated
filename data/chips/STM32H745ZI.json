@@ -1378,6 +1378,24 @@
                             "af": 3
                         }
                     ],
+                    "interrupts": [
+                        {
+                            "signal": "FLT0",
+                            "interrupt": "DFSDM1_FLT0"
+                        },
+                        {
+                            "signal": "FLT1",
+                            "interrupt": "DFSDM1_FLT1"
+                        },
+                        {
+                            "signal": "FLT2",
+                            "interrupt": "DFSDM1_FLT2"
+                        },
+                        {
+                            "signal": "FLT3",
+                            "interrupt": "DFSDM1_FLT3"
+                        }
+                    ],
                     "dma_channels": [
                         {
                             "signal": "FLT0",
@@ -1542,7 +1560,13 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "OVR",
+                            "interrupt": "DMAMUX1_OVR"
+                        }
+                    ]
                 },
                 {
                     "name": "DMAMUX2",
@@ -1551,7 +1575,13 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "OVR",
+                            "interrupt": "DMAMUX2_OVR"
+                        }
+                    ]
                 },
                 {
                     "name": "ETH",
@@ -8090,7 +8120,13 @@
                             "register": "apb1lenr",
                             "field": "wwdg2en"
                         }
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "RST",
+                            "interrupt": "WWDG_RST"
+                        }
+                    ]
                 }
             ],
             "nvic_priority_bits": 4,
@@ -8488,6 +8524,10 @@
                     "number": 101
                 },
                 {
+                    "name": "DMAMUX1_OVR",
+                    "number": 102
+                },
+                {
                     "name": "HRTIM1_Master",
                     "number": 103
                 },
@@ -8514,6 +8554,22 @@
                 {
                     "name": "HRTIM1_FLT",
                     "number": 109
+                },
+                {
+                    "name": "DFSDM1_FLT0",
+                    "number": 110
+                },
+                {
+                    "name": "DFSDM1_FLT1",
+                    "number": 111
+                },
+                {
+                    "name": "DFSDM1_FLT2",
+                    "number": 112
+                },
+                {
+                    "name": "DFSDM1_FLT3",
+                    "number": 113
                 },
                 {
                     "name": "SAI3",
@@ -8568,6 +8624,10 @@
                     "number": 127
                 },
                 {
+                    "name": "DMAMUX2_OVR",
+                    "number": 128
+                },
+                {
                     "name": "BDMA_Channel0",
                     "number": 129
                 },
@@ -8618,6 +8678,10 @@
                 {
                     "name": "LPUART1",
                     "number": 142
+                },
+                {
+                    "name": "WWDG_RST",
+                    "number": 143
                 },
                 {
                     "name": "CRS",
@@ -9816,6 +9880,24 @@
                             "af": 3
                         }
                     ],
+                    "interrupts": [
+                        {
+                            "signal": "FLT0",
+                            "interrupt": "DFSDM1_FLT0"
+                        },
+                        {
+                            "signal": "FLT1",
+                            "interrupt": "DFSDM1_FLT1"
+                        },
+                        {
+                            "signal": "FLT2",
+                            "interrupt": "DFSDM1_FLT2"
+                        },
+                        {
+                            "signal": "FLT3",
+                            "interrupt": "DFSDM1_FLT3"
+                        }
+                    ],
                     "dma_channels": [
                         {
                             "signal": "FLT0",
@@ -9980,7 +10062,13 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "OVR",
+                            "interrupt": "DMAMUX1_OVR"
+                        }
+                    ]
                 },
                 {
                     "name": "DMAMUX2",
@@ -9989,7 +10077,13 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "OVR",
+                            "interrupt": "DMAMUX2_OVR"
+                        }
+                    ]
                 },
                 {
                     "name": "ETH",
@@ -16502,7 +16596,13 @@
                             "register": "apb3enr",
                             "field": "wwdg1en"
                         }
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "RST",
+                            "interrupt": "WWDG_RST"
+                        }
+                    ]
                 },
                 {
                     "name": "WWDG2",
@@ -16926,6 +17026,10 @@
                     "number": 101
                 },
                 {
+                    "name": "DMAMUX1_OVR",
+                    "number": 102
+                },
+                {
                     "name": "HRTIM1_Master",
                     "number": 103
                 },
@@ -16952,6 +17056,22 @@
                 {
                     "name": "HRTIM1_FLT",
                     "number": 109
+                },
+                {
+                    "name": "DFSDM1_FLT0",
+                    "number": 110
+                },
+                {
+                    "name": "DFSDM1_FLT1",
+                    "number": 111
+                },
+                {
+                    "name": "DFSDM1_FLT2",
+                    "number": 112
+                },
+                {
+                    "name": "DFSDM1_FLT3",
+                    "number": 113
                 },
                 {
                     "name": "SAI3",
@@ -17006,6 +17126,10 @@
                     "number": 127
                 },
                 {
+                    "name": "DMAMUX2_OVR",
+                    "number": 128
+                },
+                {
                     "name": "BDMA_Channel0",
                     "number": 129
                 },
@@ -17056,6 +17180,10 @@
                 {
                     "name": "LPUART1",
                     "number": 142
+                },
+                {
+                    "name": "WWDG_RST",
+                    "number": 143
                 },
                 {
                     "name": "CRS",

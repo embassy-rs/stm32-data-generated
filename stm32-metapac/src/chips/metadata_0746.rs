@@ -1297,7 +1297,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "LSECSS",
+            interrupt: "RTC_LSECSS",
+        }],
     },
     Peripheral {
         name: "RNG",
@@ -1388,7 +1391,28 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "ALARM",
+                interrupt: "RTC_LSECSS",
+            },
+            PeripheralInterrupt {
+                signal: "SSRU",
+                interrupt: "RTC_LSECSS",
+            },
+            PeripheralInterrupt {
+                signal: "STAMP",
+                interrupt: "RTC_LSECSS",
+            },
+            PeripheralInterrupt {
+                signal: "TAMP",
+                interrupt: "RTC_LSECSS",
+            },
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "RTC_LSECSS",
+            },
+        ],
     },
     Peripheral {
         name: "SPI1",
@@ -2402,6 +2426,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "PVD_PVM",
         number: 1,
+    },
+    Interrupt {
+        name: "RTC_LSECSS",
+        number: 2,
     },
     Interrupt {
         name: "RCC_FLASH_C1SEV",

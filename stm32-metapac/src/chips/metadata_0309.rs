@@ -4521,6 +4521,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 0,
     },
     Interrupt {
+        name: "PVD_VDDIO2",
+        number: 1,
+    },
+    Interrupt {
         name: "RTC_TAMP",
         number: 2,
     },

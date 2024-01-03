@@ -4545,6 +4545,10 @@
                     "number": 0
                 },
                 {
+                    "name": "PVD_VDDIO2",
+                    "number": 1
+                },
+                {
                     "name": "RTC_TAMP",
                     "number": 2
                 },

@@ -4,6 +4,8 @@ pub enum Interrupt {
     TZIC_ILA = 0,
     #[doc = "1 - PVD_PVM"]
     PVD_PVM = 1,
+    #[doc = "2 - RTC_LSECSS"]
+    RTC_LSECSS = 2,
     #[doc = "3 - RCC_FLASH_C1SEV"]
     RCC_FLASH_C1SEV = 3,
     #[doc = "4 - EXTI1_0"]
@@ -74,6 +76,7 @@ mod _vectors {
     extern "C" {
         fn TZIC_ILA();
         fn PVD_PVM();
+        fn RTC_LSECSS();
         fn RCC_FLASH_C1SEV();
         fn EXTI1_0();
         fn EXTI3_2();
@@ -113,7 +116,7 @@ mod _vectors {
     pub static __INTERRUPTS: [Vector; 32] = [
         Vector { _handler: TZIC_ILA },
         Vector { _handler: PVD_PVM },
-        Vector { _reserved: 0 },
+        Vector { _handler: RTC_LSECSS },
         Vector {
             _handler: RCC_FLASH_C1SEV,
         },

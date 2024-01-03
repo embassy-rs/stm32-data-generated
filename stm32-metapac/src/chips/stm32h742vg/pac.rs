@@ -188,6 +188,8 @@ pub enum Interrupt {
     OTG_FS_WKUP = 100,
     #[doc = "101 - OTG_FS"]
     OTG_FS = 101,
+    #[doc = "102 - DMAMUX1_OVR"]
+    DMAMUX1_OVR = 102,
     #[doc = "103 - HRTIM1_MASTER"]
     HRTIM1_MASTER = 103,
     #[doc = "104 - HRTIM1_TIMA"]
@@ -202,6 +204,14 @@ pub enum Interrupt {
     HRTIM1_TIME = 108,
     #[doc = "109 - HRTIM1_FLT"]
     HRTIM1_FLT = 109,
+    #[doc = "110 - DFSDM1_FLT0"]
+    DFSDM1_FLT0 = 110,
+    #[doc = "111 - DFSDM1_FLT1"]
+    DFSDM1_FLT1 = 111,
+    #[doc = "112 - DFSDM1_FLT2"]
+    DFSDM1_FLT2 = 112,
+    #[doc = "113 - DFSDM1_FLT3"]
+    DFSDM1_FLT3 = 113,
     #[doc = "114 - SAI3"]
     SAI3 = 114,
     #[doc = "115 - SWPMI1"]
@@ -224,6 +234,8 @@ pub enum Interrupt {
     HSEM1 = 125,
     #[doc = "127 - ADC3"]
     ADC3 = 127,
+    #[doc = "128 - DMAMUX2_OVR"]
+    DMAMUX2_OVR = 128,
     #[doc = "129 - BDMA_CHANNEL0"]
     BDMA_CHANNEL0 = 129,
     #[doc = "130 - BDMA_CHANNEL1"]
@@ -362,6 +374,7 @@ mod _vectors {
         fn OTG_FS_EP1_IN();
         fn OTG_FS_WKUP();
         fn OTG_FS();
+        fn DMAMUX1_OVR();
         fn HRTIM1_MASTER();
         fn HRTIM1_TIMA();
         fn HRTIM1_TIMB();
@@ -369,6 +382,10 @@ mod _vectors {
         fn HRTIM1_TIMD();
         fn HRTIM1_TIME();
         fn HRTIM1_FLT();
+        fn DFSDM1_FLT0();
+        fn DFSDM1_FLT1();
+        fn DFSDM1_FLT2();
+        fn DFSDM1_FLT3();
         fn SAI3();
         fn SWPMI1();
         fn TIM15();
@@ -380,6 +397,7 @@ mod _vectors {
         fn SDMMC2();
         fn HSEM1();
         fn ADC3();
+        fn DMAMUX2_OVR();
         fn BDMA_CHANNEL0();
         fn BDMA_CHANNEL1();
         fn BDMA_CHANNEL2();
@@ -521,7 +539,7 @@ mod _vectors {
         },
         Vector { _handler: OTG_FS_WKUP },
         Vector { _handler: OTG_FS },
-        Vector { _reserved: 0 },
+        Vector { _handler: DMAMUX1_OVR },
         Vector {
             _handler: HRTIM1_MASTER,
         },
@@ -531,10 +549,10 @@ mod _vectors {
         Vector { _handler: HRTIM1_TIMD },
         Vector { _handler: HRTIM1_TIME },
         Vector { _handler: HRTIM1_FLT },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: DFSDM1_FLT0 },
+        Vector { _handler: DFSDM1_FLT1 },
+        Vector { _handler: DFSDM1_FLT2 },
+        Vector { _handler: DFSDM1_FLT3 },
         Vector { _handler: SAI3 },
         Vector { _handler: SWPMI1 },
         Vector { _handler: TIM15 },
@@ -549,7 +567,7 @@ mod _vectors {
         Vector { _handler: HSEM1 },
         Vector { _reserved: 0 },
         Vector { _handler: ADC3 },
-        Vector { _reserved: 0 },
+        Vector { _handler: DMAMUX2_OVR },
         Vector {
             _handler: BDMA_CHANNEL0,
         },

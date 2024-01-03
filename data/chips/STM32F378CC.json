@@ -566,6 +566,12 @@
                             "signal": "OUT2"
                         }
                     ],
+                    "interrupts": [
+                        {
+                            "signal": "GLOBAL",
+                            "interrupt": "TIM6_DAC1"
+                        }
+                    ],
                     "dma_channels": [
                         {
                             "signal": "CH1",
@@ -2958,6 +2964,28 @@
                             "field": "tim6rst"
                         }
                     },
+                    "interrupts": [
+                        {
+                            "signal": "BRK",
+                            "interrupt": "TIM6_DAC1"
+                        },
+                        {
+                            "signal": "CC",
+                            "interrupt": "TIM6_DAC1"
+                        },
+                        {
+                            "signal": "COM",
+                            "interrupt": "TIM6_DAC1"
+                        },
+                        {
+                            "signal": "TRG",
+                            "interrupt": "TIM6_DAC1"
+                        },
+                        {
+                            "signal": "UP",
+                            "interrupt": "TIM6_DAC1"
+                        }
+                    ],
                     "dma_channels": [
                         {
                             "signal": "UP",
@@ -3648,6 +3676,10 @@
                 {
                     "name": "SPI3",
                     "number": 51
+                },
+                {
+                    "name": "TIM6_DAC1",
+                    "number": 54
                 },
                 {
                     "name": "TIM7",

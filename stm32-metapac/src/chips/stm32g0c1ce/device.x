@@ -1,4 +1,5 @@
 PROVIDE(WWDG = DefaultHandler);
+PROVIDE(PVD_VDDIO2 = DefaultHandler);
 PROVIDE(RTC_TAMP = DefaultHandler);
 PROVIDE(FLASH = DefaultHandler);
 PROVIDE(RCC_CRS = DefaultHandler);

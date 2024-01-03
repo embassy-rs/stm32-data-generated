@@ -687,6 +687,12 @@
                             "signal": "OUT",
                             "af": 8
                         }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "COMP1_2_3"
+                        }
                     ]
                 },
                 {
@@ -724,6 +730,12 @@
                             "signal": "OUT",
                             "af": 8
                         }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "COMP1_2_3"
+                        }
                     ]
                 },
                 {
@@ -756,6 +768,12 @@
                             "signal": "OUT",
                             "af": 7
                         }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "COMP1_2_3"
+                        }
                     ]
                 },
                 {
@@ -782,6 +800,12 @@
                         {
                             "pin": "PB2",
                             "signal": "INM"
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "COMP4_5_6"
                         }
                     ]
                 },
@@ -815,6 +839,12 @@
                             "signal": "OUT",
                             "af": 7
                         }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "COMP4_5_6"
+                        }
                     ]
                 },
                 {
@@ -846,6 +876,12 @@
                             "pin": "PC6",
                             "signal": "OUT",
                             "af": 7
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "COMP4_5_6"
                         }
                     ]
                 },
@@ -4411,6 +4447,14 @@
                 {
                     "name": "ADC4",
                     "number": 61
+                },
+                {
+                    "name": "COMP1_2_3",
+                    "number": 64
+                },
+                {
+                    "name": "COMP4_5_6",
+                    "number": 65
                 },
                 {
                     "name": "COMP7",

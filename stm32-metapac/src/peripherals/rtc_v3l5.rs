@@ -1779,9 +1779,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        MASK = 0,
+        TOMATCH = 0,
         #[doc = "Date/day don’t care in Alarm comparison"]
-        NOTMASK = 0x01,
+        NOTMATCH = 0x01,
     }
     impl AlrmrMsk {
         #[inline(always)]
@@ -2289,36 +2289,6 @@ is don’t care."]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Refckon {
-        #[doc = "RTC_REFIN detection disabled"]
-        DISABLED = 0,
-        #[doc = "RTC_REFIN detection enabled"]
-        ENABLED = 0x01,
-    }
-    impl Refckon {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Refckon {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Refckon {
-        #[inline(always)]
-        fn from(val: u8) -> Refckon {
-            Refckon::from_bits(val)
-        }
-    }
-    impl From<Refckon> for u8 {
-        #[inline(always)]
-        fn from(val: Refckon) -> u8 {
-            Refckon::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ssruf {
         _RESERVED_0 = 0,
         #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
@@ -2373,36 +2343,6 @@ is don’t care."]
         #[inline(always)]
         fn from(val: Ssrumf) -> u8 {
             Ssrumf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum TampalrmPu {
-        #[doc = "No pull-up is applied on TAMPALRM output"]
-        NOPULLUP = 0,
-        #[doc = "A pull-up is applied on TAMPALRM output"]
-        PULLUP = 0x01,
-    }
-    impl TampalrmPu {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> TampalrmPu {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for TampalrmPu {
-        #[inline(always)]
-        fn from(val: u8) -> TampalrmPu {
-            TampalrmPu::from_bits(val)
-        }
-    }
-    impl From<TampalrmPu> for u8 {
-        #[inline(always)]
-        fn from(val: TampalrmPu) -> u8 {
-            TampalrmPu::to_bits(val)
         }
     }
     #[repr(u8)]

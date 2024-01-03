@@ -1057,12 +1057,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "Mask",
+        "name": "ToMatch",
         "description": "Alarm set if the date/day match",
         "value": 0
       },
       {
-        "name": "NotMask",
+        "name": "NotMatch",
         "description": "Date/day don’t care in Alarm comparison",
         "value": 1
       }
@@ -1293,21 +1293,6 @@
       }
     ]
   },
-  "enum/REFCKON": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Disabled",
-        "description": "RTC_REFIN detection disabled",
-        "value": 0
-      },
-      {
-        "name": "Enabled",
-        "description": "RTC_REFIN detection enabled",
-        "value": 1
-      }
-    ]
-  },
   "enum/SSRUF": {
     "bit_size": 1,
     "variants": [
@@ -1324,21 +1309,6 @@
       {
         "name": "Underflow",
         "description": "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TAMPALRM_PU": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoPullUp",
-        "description": "No pull-up is applied on TAMPALRM output",
-        "value": 0
-      },
-      {
-        "name": "PullUp",
-        "description": "A pull-up is applied on TAMPALRM output",
         "value": 1
       }
     ]

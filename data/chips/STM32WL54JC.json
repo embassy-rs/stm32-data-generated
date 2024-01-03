@@ -4326,6 +4326,12 @@
                             "pin": "PC15",
                             "signal": "OSC32_OUT"
                         }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "LSECSS",
+                            "interrupt": "RTC_LSECSS"
+                        }
                     ]
                 },
                 {
@@ -4403,6 +4409,28 @@
                         {
                             "pin": "PC13",
                             "signal": "TS"
+                        }
+                    ],
+                    "interrupts": [
+                        {
+                            "signal": "ALARM",
+                            "interrupt": "RTC_LSECSS"
+                        },
+                        {
+                            "signal": "SSRU",
+                            "interrupt": "RTC_LSECSS"
+                        },
+                        {
+                            "signal": "STAMP",
+                            "interrupt": "RTC_LSECSS"
+                        },
+                        {
+                            "signal": "TAMP",
+                            "interrupt": "RTC_LSECSS"
+                        },
+                        {
+                            "signal": "WKUP",
+                            "interrupt": "RTC_LSECSS"
                         }
                     ]
                 },
@@ -5438,6 +5466,10 @@
                 {
                     "name": "PVD_PVM",
                     "number": 1
+                },
+                {
+                    "name": "RTC_LSECSS",
+                    "number": 2
                 },
                 {
                     "name": "RCC_FLASH_C1SEV",

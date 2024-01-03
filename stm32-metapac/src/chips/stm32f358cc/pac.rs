@@ -114,6 +114,10 @@ pub enum Interrupt {
     DMA2_CHANNEL5 = 60,
     #[doc = "61 - ADC4"]
     ADC4 = 61,
+    #[doc = "64 - COMP1_2_3"]
+    COMP1_2_3 = 64,
+    #[doc = "65 - COMP4_5_6"]
+    COMP4_5_6 = 65,
     #[doc = "66 - COMP7"]
     COMP7 = 66,
     #[doc = "81 - FPU"]
@@ -185,6 +189,8 @@ mod _vectors {
         fn DMA2_CHANNEL4();
         fn DMA2_CHANNEL5();
         fn ADC4();
+        fn COMP1_2_3();
+        fn COMP4_5_6();
         fn COMP7();
         fn FPU();
     }
@@ -289,8 +295,8 @@ mod _vectors {
         Vector { _handler: ADC4 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: COMP1_2_3 },
+        Vector { _handler: COMP4_5_6 },
         Vector { _handler: COMP7 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },

@@ -184,6 +184,16 @@ pub enum Interrupt {
     I2C4_ER = 96,
     #[doc = "97 - SPDIF_RX"]
     SPDIF_RX = 97,
+    #[doc = "102 - DMAMUX1_OVR"]
+    DMAMUX1_OVR = 102,
+    #[doc = "110 - DFSDM1_FLT0"]
+    DFSDM1_FLT0 = 110,
+    #[doc = "111 - DFSDM1_FLT1"]
+    DFSDM1_FLT1 = 111,
+    #[doc = "112 - DFSDM1_FLT2"]
+    DFSDM1_FLT2 = 112,
+    #[doc = "113 - DFSDM1_FLT3"]
+    DFSDM1_FLT3 = 113,
     #[doc = "115 - SWPMI1"]
     SWPMI1 = 115,
     #[doc = "116 - TIM15"]
@@ -204,6 +214,8 @@ pub enum Interrupt {
     HSEM1 = 125,
     #[doc = "127 - ADC3"]
     ADC3 = 127,
+    #[doc = "128 - DMAMUX2_OVR"]
+    DMAMUX2_OVR = 128,
     #[doc = "129 - BDMA_CHANNEL0"]
     BDMA_CHANNEL0 = 129,
     #[doc = "130 - BDMA_CHANNEL1"]
@@ -368,6 +380,11 @@ mod _vectors {
         fn I2C4_EV();
         fn I2C4_ER();
         fn SPDIF_RX();
+        fn DMAMUX1_OVR();
+        fn DFSDM1_FLT0();
+        fn DFSDM1_FLT1();
+        fn DFSDM1_FLT2();
+        fn DFSDM1_FLT3();
         fn SWPMI1();
         fn TIM15();
         fn TIM16();
@@ -378,6 +395,7 @@ mod _vectors {
         fn SDMMC2();
         fn HSEM1();
         fn ADC3();
+        fn DMAMUX2_OVR();
         fn BDMA_CHANNEL0();
         fn BDMA_CHANNEL1();
         fn BDMA_CHANNEL2();
@@ -529,6 +547,7 @@ mod _vectors {
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
+        Vector { _handler: DMAMUX1_OVR },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
@@ -536,11 +555,10 @@ mod _vectors {
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: DFSDM1_FLT0 },
+        Vector { _handler: DFSDM1_FLT1 },
+        Vector { _handler: DFSDM1_FLT2 },
+        Vector { _handler: DFSDM1_FLT3 },
         Vector { _reserved: 0 },
         Vector { _handler: SWPMI1 },
         Vector { _handler: TIM15 },
@@ -555,7 +573,7 @@ mod _vectors {
         Vector { _handler: HSEM1 },
         Vector { _reserved: 0 },
         Vector { _handler: ADC3 },
-        Vector { _reserved: 0 },
+        Vector { _handler: DMAMUX2_OVR },
         Vector {
             _handler: BDMA_CHANNEL0,
         },

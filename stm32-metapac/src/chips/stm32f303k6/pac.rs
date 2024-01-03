@@ -76,6 +76,8 @@ pub enum Interrupt {
     EXTI15_10 = 40,
     #[doc = "41 - RTC_ALARM"]
     RTC_ALARM = 41,
+    #[doc = "54 - TIM6_DAC1"]
+    TIM6_DAC1 = 54,
     #[doc = "55 - TIM7_DAC2"]
     TIM7_DAC2 = 55,
     #[doc = "64 - COMP2"]
@@ -132,6 +134,7 @@ mod _vectors {
         fn USART3();
         fn EXTI15_10();
         fn RTC_ALARM();
+        fn TIM6_DAC1();
         fn TIM7_DAC2();
         fn COMP2();
         fn COMP4_6();
@@ -218,7 +221,7 @@ mod _vectors {
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: TIM6_DAC1 },
         Vector { _handler: TIM7_DAC2 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },

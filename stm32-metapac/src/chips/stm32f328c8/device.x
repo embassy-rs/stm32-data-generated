@@ -35,6 +35,7 @@ PROVIDE(USART2 = DefaultHandler);
 PROVIDE(USART3 = DefaultHandler);
 PROVIDE(EXTI15_10 = DefaultHandler);
 PROVIDE(RTC_ALARM = DefaultHandler);
+PROVIDE(TIM6_DAC1 = DefaultHandler);
 PROVIDE(TIM7_DAC2 = DefaultHandler);
 PROVIDE(COMP2 = DefaultHandler);
 PROVIDE(COMP4_6 = DefaultHandler);

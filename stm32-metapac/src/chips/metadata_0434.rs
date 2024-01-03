@@ -1090,7 +1090,24 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 request: Some(104),
             },
         ],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "FLT0",
+                interrupt: "DFSDM1_FLT0",
+            },
+            PeripheralInterrupt {
+                signal: "FLT1",
+                interrupt: "DFSDM1_FLT1",
+            },
+            PeripheralInterrupt {
+                signal: "FLT2",
+                interrupt: "DFSDM1_FLT2",
+            },
+            PeripheralInterrupt {
+                signal: "FLT3",
+                interrupt: "DFSDM1_FLT3",
+            },
+        ],
     },
     Peripheral {
         name: "DMA1",
@@ -1251,7 +1268,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: None,
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "OVR",
+            interrupt: "DMAMUX1_OVR",
+        }],
     },
     Peripheral {
         name: "DMAMUX2",
@@ -1265,7 +1285,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         rcc: None,
         pins: &[],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "OVR",
+            interrupt: "DMAMUX2_OVR",
+        }],
     },
     Peripheral {
         name: "ETH",
@@ -8108,6 +8131,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
         number: 101,
     },
     Interrupt {
+        name: "DMAMUX1_OVR",
+        number: 102,
+    },
+    Interrupt {
         name: "HRTIM1_MASTER",
         number: 103,
     },
@@ -8134,6 +8161,22 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "HRTIM1_FLT",
         number: 109,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT0",
+        number: 110,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT1",
+        number: 111,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT2",
+        number: 112,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT3",
+        number: 113,
     },
     Interrupt {
         name: "SAI3",
@@ -8182,6 +8225,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "ADC3",
         number: 127,
+    },
+    Interrupt {
+        name: "DMAMUX2_OVR",
+        number: 128,
     },
     Interrupt {
         name: "BDMA_CHANNEL0",

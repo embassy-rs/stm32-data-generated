@@ -45,6 +45,7 @@ PROVIDE(TIM13 = DefaultHandler);
 PROVIDE(TIM14 = DefaultHandler);
 PROVIDE(TIM5 = DefaultHandler);
 PROVIDE(SPI3 = DefaultHandler);
+PROVIDE(TIM6_DAC1 = DefaultHandler);
 PROVIDE(TIM7 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL1 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL2 = DefaultHandler);

@@ -2,6 +2,8 @@
 pub enum Interrupt {
     #[doc = "0 - WWDG"]
     WWDG = 0,
+    #[doc = "1 - PVD_VDDIO2"]
+    PVD_VDDIO2 = 1,
     #[doc = "2 - RTC_TAMP"]
     RTC_TAMP = 2,
     #[doc = "3 - FLASH"]
@@ -71,6 +73,7 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
 mod _vectors {
     extern "C" {
         fn WWDG();
+        fn PVD_VDDIO2();
         fn RTC_TAMP();
         fn FLASH();
         fn RCC_CRS();
@@ -109,7 +112,7 @@ mod _vectors {
     #[no_mangle]
     pub static __INTERRUPTS: [Vector; 31] = [
         Vector { _handler: WWDG },
-        Vector { _reserved: 0 },
+        Vector { _handler: PVD_VDDIO2 },
         Vector { _handler: RTC_TAMP },
         Vector { _handler: FLASH },
         Vector { _handler: RCC_CRS },

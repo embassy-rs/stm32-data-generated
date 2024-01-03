@@ -1425,6 +1425,22 @@
                     ],
                     "interrupts": [
                         {
+                            "signal": "FLT0",
+                            "interrupt": "DFSDM1_FLT0"
+                        },
+                        {
+                            "signal": "FLT1",
+                            "interrupt": "DFSDM1_FLT1"
+                        },
+                        {
+                            "signal": "FLT2",
+                            "interrupt": "DFSDM1_FLT2"
+                        },
+                        {
+                            "signal": "FLT3",
+                            "interrupt": "DFSDM1_FLT3"
+                        },
+                        {
                             "signal": "FLT4",
                             "interrupt": "DFSDM1_FLT4"
                         },
@@ -1729,7 +1745,13 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "OVR",
+                            "interrupt": "DMAMUX1_OVR"
+                        }
+                    ]
                 },
                 {
                     "name": "DMAMUX2",
@@ -1738,7 +1760,13 @@
                         "kind": "dmamux",
                         "version": "v1",
                         "block": "DMAMUX"
-                    }
+                    },
+                    "interrupts": [
+                        {
+                            "signal": "OVR",
+                            "interrupt": "DMAMUX2_OVR"
+                        }
+                    ]
                 },
                 {
                     "name": "DTS",
@@ -8927,7 +8955,7 @@
                         },
                         {
                             "signal": "RST",
-                            "interrupt": "WWDG"
+                            "interrupt": "WWDG_RST"
                         }
                     ]
                 }
@@ -9315,6 +9343,26 @@
                     "number": 97
                 },
                 {
+                    "name": "DMAMUX1_OVR",
+                    "number": 102
+                },
+                {
+                    "name": "DFSDM1_FLT0",
+                    "number": 110
+                },
+                {
+                    "name": "DFSDM1_FLT1",
+                    "number": 111
+                },
+                {
+                    "name": "DFSDM1_FLT2",
+                    "number": 112
+                },
+                {
+                    "name": "DFSDM1_FLT3",
+                    "number": 113
+                },
+                {
                     "name": "SWPMI1",
                     "number": 115
                 },
@@ -9357,6 +9405,10 @@
                 {
                     "name": "DAC2",
                     "number": 127
+                },
+                {
+                    "name": "DMAMUX2_OVR",
+                    "number": 128
                 },
                 {
                     "name": "BDMA2_Channel0",
@@ -9409,6 +9461,10 @@
                 {
                     "name": "LPUART1",
                     "number": 142
+                },
+                {
+                    "name": "WWDG_RST",
+                    "number": 143
                 },
                 {
                     "name": "CRS",

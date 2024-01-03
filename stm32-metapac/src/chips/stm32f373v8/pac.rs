@@ -96,6 +96,8 @@ pub enum Interrupt {
     TIM5 = 50,
     #[doc = "51 - SPI3"]
     SPI3 = 51,
+    #[doc = "54 - TIM6_DAC1"]
+    TIM6_DAC1 = 54,
     #[doc = "55 - TIM7"]
     TIM7 = 55,
     #[doc = "56 - DMA2_CHANNEL1"]
@@ -184,6 +186,7 @@ mod _vectors {
         fn TIM14();
         fn TIM5();
         fn SPI3();
+        fn TIM6_DAC1();
         fn TIM7();
         fn DMA2_CHANNEL1();
         fn DMA2_CHANNEL2();
@@ -275,7 +278,7 @@ mod _vectors {
         Vector { _handler: SPI3 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: TIM6_DAC1 },
         Vector { _handler: TIM7 },
         Vector {
             _handler: DMA2_CHANNEL1,

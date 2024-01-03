@@ -1,5 +1,6 @@
 PROVIDE(TZIC_ILA = DefaultHandler);
 PROVIDE(PVD_PVM = DefaultHandler);
+PROVIDE(RTC_LSECSS = DefaultHandler);
 PROVIDE(RCC_FLASH_C1SEV = DefaultHandler);
 PROVIDE(EXTI1_0 = DefaultHandler);
 PROVIDE(EXTI3_2 = DefaultHandler);

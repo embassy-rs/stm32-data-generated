@@ -432,7 +432,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "WKUP",
+            interrupt: "COMP1_2_3",
+        }],
     },
     Peripheral {
         name: "COMP2",
@@ -487,7 +490,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "WKUP",
+            interrupt: "COMP1_2_3",
+        }],
     },
     Peripheral {
         name: "COMP3",
@@ -527,7 +533,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "WKUP",
+            interrupt: "COMP1_2_3",
+        }],
     },
     Peripheral {
         name: "COMP4",
@@ -557,7 +566,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "WKUP",
+            interrupt: "COMP4_5_6",
+        }],
     },
     Peripheral {
         name: "COMP5",
@@ -597,7 +609,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "WKUP",
+            interrupt: "COMP4_5_6",
+        }],
     },
     Peripheral {
         name: "COMP6",
@@ -637,7 +652,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "WKUP",
+            interrupt: "COMP4_5_6",
+        }],
     },
     Peripheral {
         name: "COMP7",
@@ -4360,6 +4378,14 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "ADC4",
         number: 61,
+    },
+    Interrupt {
+        name: "COMP1_2_3",
+        number: 64,
+    },
+    Interrupt {
+        name: "COMP4_5_6",
+        number: 65,
     },
     Interrupt {
         name: "COMP7",

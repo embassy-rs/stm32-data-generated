@@ -55,5 +55,7 @@ PROVIDE(DMA2_CHANNEL3 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL4 = DefaultHandler);
 PROVIDE(DMA2_CHANNEL5 = DefaultHandler);
 PROVIDE(ADC4 = DefaultHandler);
+PROVIDE(COMP1_2_3 = DefaultHandler);
+PROVIDE(COMP4_5_6 = DefaultHandler);
 PROVIDE(COMP7 = DefaultHandler);
 PROVIDE(FPU = DefaultHandler);

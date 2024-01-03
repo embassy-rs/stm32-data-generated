@@ -338,7 +338,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 request: None,
             },
         ],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "TIM6_DAC1",
+        }],
     },
     Peripheral {
         name: "DAC2",
@@ -1916,7 +1919,28 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             dma: None,
             request: None,
         }],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "BRK",
+                interrupt: "TIM6_DAC1",
+            },
+            PeripheralInterrupt {
+                signal: "CC",
+                interrupt: "TIM6_DAC1",
+            },
+            PeripheralInterrupt {
+                signal: "COM",
+                interrupt: "TIM6_DAC1",
+            },
+            PeripheralInterrupt {
+                signal: "TRG",
+                interrupt: "TIM6_DAC1",
+            },
+            PeripheralInterrupt {
+                signal: "UP",
+                interrupt: "TIM6_DAC1",
+            },
+        ],
     },
     Peripheral {
         name: "TIM7",
@@ -2497,6 +2521,10 @@ pub(crate) static INTERRUPTS: &'static [Interrupt] = &[
     Interrupt {
         name: "RTC_ALARM",
         number: 41,
+    },
+    Interrupt {
+        name: "TIM6_DAC1",
+        number: 54,
     },
     Interrupt {
         name: "TIM7_DAC2",

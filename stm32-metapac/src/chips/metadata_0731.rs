@@ -364,7 +364,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADF1",
         address: 1174552576,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adf",
+            version: "v1",
+            block: "ADF",
+            ir: &adf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk3",
             enable: Some(PeripheralRccRegister {
@@ -2940,7 +2945,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ICACHE",
         address: 1073939456,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "icache",
+            version: "v1",
+            block: "ICACHE",
+            ir: &icache::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -9868,6 +9878,8 @@ pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[
         dmamux_channel: None,
     },
 ];
+#[path = "../registers/adf_v1.rs"]
+pub mod adf;
 #[path = "../registers/aes_u5.rs"]
 pub mod aes;
 #[path = "../registers/can_fdcan_v1.rs"]
@@ -9900,6 +9912,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/icache_v1.rs"]
+pub mod icache;
 #[path = "../registers/ltdc_v1.rs"]
 pub mod ltdc;
 #[path = "../registers/octospi_v1.rs"]

@@ -602,7 +602,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _)
 pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000 as usize as _) };
 pub const MDF1: *mut () = 0x4002_5000 as usize as _;
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000 as usize as _) };
-pub const ICACHE: *mut () = 0x4003_0400 as usize as _;
+pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400 as usize as _) };
 pub const DCACHE1: *mut () = 0x4003_1400 as usize as _;
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000 as usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400 as usize as _) };
@@ -647,7 +647,7 @@ pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_0c00 as usize as _)
 pub const ADC4: *mut () = 0x4602_1000 as usize as _;
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4602_1800 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000 as usize as _) };
-pub const ADF1: *mut () = 0x4602_4000 as usize as _;
+pub const ADF1: adf::Adf = unsafe { adf::Adf::from_ptr(0x4602_4000 as usize as _) };
 pub const LPDMA1: *mut () = 0x4602_5000 as usize as _;
 pub const FMC: *mut () = 0x6000_0000 as usize as _;
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x7000_0000 as usize as _) };
@@ -663,6 +663,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adf_v1.rs"]
+pub mod adf;
 #[path = "../../peripherals/aes_u5.rs"]
 pub mod aes;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
@@ -693,6 +695,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/icache_v1.rs"]
+pub mod icache;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]

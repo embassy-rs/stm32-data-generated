@@ -246,6 +246,11 @@
                 {
                     "name": "ADF1",
                     "address": 1174552576,
+                    "registers": {
+                        "kind": "adf",
+                        "version": "v1",
+                        "block": "ADF"
+                    },
                     "rcc": {
                         "clock": "hclk3",
                         "enable": {
@@ -1299,6 +1304,11 @@
                 {
                     "name": "ICACHE",
                     "address": 1073939456,
+                    "registers": {
+                        "kind": "icache",
+                        "version": "v1",
+                        "block": "ICACHE"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

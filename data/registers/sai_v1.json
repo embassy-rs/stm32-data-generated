@@ -210,8 +210,7 @@
         "name": "FFLUSH",
         "description": "FIFO flush. This bit is set by software. It is always read as 0. This bit should be configured when the SAI is disabled.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "FFLUSH"
+        "bit_size": 1
       },
       {
         "name": "TRIS",
@@ -387,15 +386,13 @@
         "name": "OVRUDR",
         "description": "Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "OVRUDR"
+        "bit_size": 1
       },
       {
         "name": "MUTEDET",
         "description": "Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "MUTEDET"
+        "bit_size": 1
       },
       {
         "name": "WCKCFG",
@@ -408,8 +405,7 @@
         "name": "FREQ",
         "description": "FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "FREQ"
+        "bit_size": 1
       },
       {
         "name": "CNRDY",
@@ -422,15 +418,13 @@
         "name": "AFSDET",
         "description": "Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "AFSDET"
+        "bit_size": 1
       },
       {
         "name": "LFSDET",
         "description": "Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "LFSDET"
+        "bit_size": 1
       },
       {
         "name": "FLVL",
@@ -438,21 +432,6 @@
         "bit_offset": 16,
         "bit_size": 3,
         "enum": "FLVL"
-      }
-    ]
-  },
-  "enum/AFSDET": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoError",
-        "description": "No error",
-        "value": 0
-      },
-      {
-        "name": "EarlySync",
-        "description": "Frame synchronization signal is detected earlier than expected",
-        "value": 1
       }
     ]
   },
@@ -556,21 +535,6 @@
       }
     ]
   },
-  "enum/FFLUSH": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoFlush",
-        "description": "No FIFO flush",
-        "value": 0
-      },
-      {
-        "name": "Flush",
-        "description": "FIFO flush. Programming this bit to 1 triggers the FIFO Flush. All the internal FIFO pointers (read and write) are cleared",
-        "value": 1
-      }
-    ]
-  },
   "enum/FLVL": {
     "bit_size": 3,
     "variants": [
@@ -603,21 +567,6 @@
         "name": "Full",
         "description": "FIFO full",
         "value": 5
-      }
-    ]
-  },
-  "enum/FREQ": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoRequest",
-        "description": "No FIFO request",
-        "value": 0
-      },
-      {
-        "name": "Request",
-        "description": "FIFO request to read or to write the SAI_xDR",
-        "value": 1
       }
     ]
   },
@@ -681,21 +630,6 @@
       }
     ]
   },
-  "enum/LFSDET": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoError",
-        "description": "No error",
-        "value": 0
-      },
-      {
-        "name": "NoSync",
-        "description": "Frame synchronization signal is not present at the right time",
-        "value": 1
-      }
-    ]
-  },
   "enum/LSBFIRST": {
     "bit_size": 1,
     "variants": [
@@ -751,21 +685,6 @@
       }
     ]
   },
-  "enum/MUTEDET": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoMute",
-        "description": "No MUTE detection on the SD input line",
-        "value": 0
-      },
-      {
-        "name": "Mute",
-        "description": "MUTE value detected on the SD input line (0 value) for a specified number of consecutive audio frame",
-        "value": 1
-      }
-    ]
-  },
   "enum/MUTEVAL": {
     "bit_size": 1,
     "variants": [
@@ -807,21 +726,6 @@
       {
         "name": "Immediately",
         "description": "Audio block output driven immediately after the setting of this bit",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OVRUDR": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NoError",
-        "description": "No overrun/underrun error",
-        "value": 0
-      },
-      {
-        "name": "Overrun",
-        "description": "Overrun/underrun error detection",
         "value": 1
       }
     ]

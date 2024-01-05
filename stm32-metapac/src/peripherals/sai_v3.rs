@@ -901,25 +901,25 @@ bits and the audio block is operates as a receiver."]
     impl Sr {
         #[doc = "Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register."]
         #[inline(always)]
-        pub const fn ovrudr(&self) -> super::vals::Ovrudr {
+        pub const fn ovrudr(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Ovrudr::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register."]
         #[inline(always)]
-        pub fn set_ovrudr(&mut self, val: super::vals::Ovrudr) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_ovrudr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register."]
         #[inline(always)]
-        pub const fn mutedet(&self) -> super::vals::Mutedet {
+        pub const fn mutedet(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Mutedet::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register."]
         #[inline(always)]
-        pub fn set_mutedet(&mut self, val: super::vals::Mutedet) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_mutedet(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE\\[1\\]
 = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register."]
@@ -936,14 +936,14 @@ bits and the audio block is operates as a receiver."]
         }
         #[doc = "FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register."]
         #[inline(always)]
-        pub const fn freq(&self) -> super::vals::Freq {
+        pub const fn freq(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Freq::from_bits(val as u8)
+            val != 0
         }
         #[doc = "FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register."]
         #[inline(always)]
-        pub fn set_freq(&mut self, val: super::vals::Freq) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_freq(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register."]
         #[inline(always)]
@@ -958,25 +958,25 @@ bits and the audio block is operates as a receiver."]
         }
         #[doc = "Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register."]
         #[inline(always)]
-        pub const fn afsdet(&self) -> super::vals::Afsdet {
+        pub const fn afsdet(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Afsdet::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register."]
         #[inline(always)]
-        pub fn set_afsdet(&mut self, val: super::vals::Afsdet) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_afsdet(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register"]
         #[inline(always)]
-        pub const fn lfsdet(&self) -> super::vals::Lfsdet {
+        pub const fn lfsdet(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Lfsdet::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register"]
         #[inline(always)]
-        pub fn set_lfsdet(&mut self, val: super::vals::Lfsdet) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_lfsdet(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:"]
         #[inline(always)]
@@ -998,36 +998,6 @@ bits and the audio block is operates as a receiver."]
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Afsdet {
-        #[doc = "No error"]
-        NOERROR = 0,
-        #[doc = "Frame synchronization signal is detected earlier than expected"]
-        EARLYSYNC = 0x01,
-    }
-    impl Afsdet {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Afsdet {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Afsdet {
-        #[inline(always)]
-        fn from(val: u8) -> Afsdet {
-            Afsdet::from_bits(val)
-        }
-    }
-    impl From<Afsdet> for u8 {
-        #[inline(always)]
-        fn from(val: Afsdet) -> u8 {
-            Afsdet::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Ckstr {
@@ -1233,36 +1203,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Freq {
-        #[doc = "No FIFO request"]
-        NOREQUEST = 0,
-        #[doc = "FIFO request to read or to write the SAI_xDR"]
-        REQUEST = 0x01,
-    }
-    impl Freq {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Freq {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Freq {
-        #[inline(always)]
-        fn from(val: u8) -> Freq {
-            Freq::from_bits(val)
-        }
-    }
-    impl From<Freq> for u8 {
-        #[inline(always)]
-        fn from(val: Freq) -> u8 {
-            Freq::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fsoff {
         #[doc = "FS is asserted on the first bit of the slot 0"]
         ONFIRST = 0,
@@ -1362,36 +1302,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lfsdet {
-        #[doc = "No error"]
-        NOERROR = 0,
-        #[doc = "Frame synchronization signal is not present at the right time"]
-        NOSYNC = 0x01,
-    }
-    impl Lfsdet {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lfsdet {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lfsdet {
-        #[inline(always)]
-        fn from(val: u8) -> Lfsdet {
-            Lfsdet::from_bits(val)
-        }
-    }
-    impl From<Lfsdet> for u8 {
-        #[inline(always)]
-        fn from(val: Lfsdet) -> u8 {
-            Lfsdet::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Lsbfirst {
         #[doc = "Data are transferred with MSB first"]
         MSBFIRST = 0,
@@ -1486,36 +1396,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mutedet {
-        #[doc = "No MUTE detection on the SD input line"]
-        NOMUTE = 0,
-        #[doc = "MUTE value detected on the SD input line (0 value) for a specified number of consecutive audio frame"]
-        MUTE = 0x01,
-    }
-    impl Mutedet {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mutedet {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mutedet {
-        #[inline(always)]
-        fn from(val: u8) -> Mutedet {
-            Mutedet::from_bits(val)
-        }
-    }
-    impl From<Mutedet> for u8 {
-        #[inline(always)]
-        fn from(val: Mutedet) -> u8 {
-            Mutedet::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Muteval {
         #[doc = "Bit value 0 is sent during the mute mode"]
         SENDZERO = 0,
@@ -1602,36 +1482,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Outdriv) -> u8 {
             Outdriv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ovrudr {
-        #[doc = "No overrun/underrun error"]
-        NOERROR = 0,
-        #[doc = "Overrun/underrun error detection"]
-        OVERRUN = 0x01,
-    }
-    impl Ovrudr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ovrudr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ovrudr {
-        #[inline(always)]
-        fn from(val: u8) -> Ovrudr {
-            Ovrudr::from_bits(val)
-        }
-    }
-    impl From<Ovrudr> for u8 {
-        #[inline(always)]
-        fn from(val: Ovrudr) -> u8 {
-            Ovrudr::to_bits(val)
         }
     }
     #[repr(u8)]

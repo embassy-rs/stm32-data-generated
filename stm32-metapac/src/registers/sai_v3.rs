@@ -979,9 +979,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ovrudr",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mutedet",
@@ -991,9 +989,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mutedet",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "wckcfg",
@@ -1015,9 +1011,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Freq",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "cnrdy",
@@ -1039,9 +1033,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Afsdet",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lfsdet",
@@ -1051,9 +1043,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lfsdet",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "flvl",
@@ -1071,27 +1061,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "Afsdet",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOERROR",
-                    description: Some(
-                        "No error",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "EARLYSYNC",
-                    description: Some(
-                        "Frame synchronization signal is detected earlier than expected",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Ckstr",
             description: None,
@@ -1282,27 +1251,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Freq",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOREQUEST",
-                    description: Some(
-                        "No FIFO request",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REQUEST",
-                    description: Some(
-                        "FIFO request to read or to write the SAI_xDR",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Fsoff",
             description: None,
             bit_size: 1,
@@ -1387,27 +1335,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lfsdet",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOERROR",
-                    description: Some(
-                        "No error",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOSYNC",
-                    description: Some(
-                        "Frame synchronization signal is not present at the right time",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lsbfirst",
             description: None,
             bit_size: 1,
@@ -1485,27 +1412,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Mutedet",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOMUTE",
-                    description: Some(
-                        "No MUTE detection on the SD input line",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MUTE",
-                    description: Some(
-                        "MUTE value detected on the SD input line (0 value) for a specified number of consecutive audio frame",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Muteval",
             description: None,
             bit_size: 1,
@@ -1563,27 +1469,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "IMMEDIATELY",
                     description: Some(
                         "Audio block output driven immediately after the setting of this bit",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ovrudr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOERROR",
-                    description: Some(
-                        "No overrun/underrun error",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some(
-                        "Overrun/underrun error detection",
                     ),
                     value: 1,
                 },

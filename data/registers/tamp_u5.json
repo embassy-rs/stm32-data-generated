@@ -332,8 +332,7 @@
         "name": "ERCFG0",
         "description": "Configurable device secrets configuration",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "ERCFG"
+        "bit_size": 1
       }
     ]
   },
@@ -426,29 +425,25 @@
         "name": "CNT1PRIV",
         "description": "Monotonic counter 1 privilege protection",
         "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "PRIV"
+        "bit_size": 1
       },
       {
         "name": "BKPRWPRIV",
         "description": "Backup registers zone 1 privilege protection",
         "bit_offset": 29,
-        "bit_size": 1,
-        "enum": "PRIV"
+        "bit_size": 1
       },
       {
         "name": "BKPWPRIV",
         "description": "Backup registers zone 2 privilege protection",
         "bit_offset": 30,
-        "bit_size": 1,
-        "enum": "PRIV"
+        "bit_size": 1
       },
       {
         "name": "TAMPPRIV",
         "description": "Tamper privilege protection (excluding backup registers). Note: Refer to for details on the read protection.",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "PRIV"
+        "bit_size": 1
       }
     ]
   },
@@ -490,8 +485,7 @@
         "name": "CNT1SEC",
         "description": "Monotonic counter 1 secure protection",
         "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "SEC"
+        "bit_size": 1
       },
       {
         "name": "BKPWSEC",
@@ -503,15 +497,13 @@
         "name": "BHKLOCK",
         "description": "Boot hardware key lock. This bit can be read and can only be written to 1 by software. It is cleared by hardware together with the backup registers following a tamper detection event or when the readout protection (RDP) is disabled.",
         "bit_offset": 30,
-        "bit_size": 1,
-        "enum": "BHKLOCK"
+        "bit_size": 1
       },
       {
         "name": "TAMPSEC",
         "description": "Tamper protection (excluding monotonic counters and backup registers). Note: Refer to for details on the read protection.",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "SEC"
+        "bit_size": 1
       }
     ]
   },
@@ -587,66 +579,6 @@
         "name": "Div128",
         "description": "RTCCLK/128 is selected when (PREDIV_A+1) = 128 (actually selects 7th flip flop output)",
         "value": 7
-      }
-    ]
-  },
-  "enum/BHKLOCK": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Unlocked",
-        "description": "The Backup registers from BKP0R to BKP7R can be accessed according to the Protection zone they belong to.",
-        "value": 0
-      },
-      {
-        "name": "Locked",
-        "description": "The backup registers from BKP0R to BKP7R cannot be accessed neither in read nor in write (they are read as 0 and write ignore).",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ERCFG": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Unprotected",
-        "description": "Configurable device secrets are not included in the device secrets protected by TAMP peripheral",
-        "value": 0
-      },
-      {
-        "name": "Protected",
-        "description": "Configurable device secrets are is included in the device secrets protected by TAMP peripheral",
-        "value": 1
-      }
-    ]
-  },
-  "enum/PRIV": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Unprivileged",
-        "description": "Can be read/written with privileged or unprivileged access.",
-        "value": 0
-      },
-      {
-        "name": "Privileged",
-        "description": "Can be read/written only with privileged access.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SEC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NonSecure",
-        "description": "Can be written when the APB access is secure or non-secure.",
-        "value": 0
-      },
-      {
-        "name": "Secure",
-        "description": "Can be written only when the APB access is secure.",
-        "value": 1
       }
     ]
   },

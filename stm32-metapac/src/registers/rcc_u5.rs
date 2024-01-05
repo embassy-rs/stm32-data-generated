@@ -6182,9 +6182,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "nspriv",
@@ -6194,9 +6192,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -11022,27 +11018,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "HCLK divided by 16",
                     ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Read and write to secure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Read and write to secure functions can be done by privileged access only.",
-                    ),
-                    value: 1,
                 },
             ],
         },

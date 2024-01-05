@@ -5535,9 +5535,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hsesec",
@@ -5547,9 +5545,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "csisec",
@@ -5559,9 +5555,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lsisec",
@@ -5571,9 +5565,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lsesec",
@@ -5583,9 +5575,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "sysclksec",
@@ -5595,9 +5585,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "prescsec",
@@ -5607,9 +5595,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "pllsec",
@@ -5626,9 +5612,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hsi48sec",
@@ -5638,9 +5622,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "rmvfsec",
@@ -5650,9 +5632,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "ckperselsec",
@@ -5662,9 +5642,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -10196,27 +10174,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PLL2_R",
                     description: Some(
                         "pll2_r_ck selected as kernel clock",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
-                    description: Some(
-                        "non secure",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "secure",
                     ),
                     value: 1,
                 },

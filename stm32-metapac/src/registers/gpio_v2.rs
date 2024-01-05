@@ -284,7 +284,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lck",
                     description: Some(
-                        "Port x lock bit y (y= 0..15)",
+                        "Port configuration locked",
                     ),
                     bit_offset: 0,
                     bit_size: 1,
@@ -296,21 +296,17 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Lck",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lckk",
                     description: Some(
-                        "Port x lock bit y (y= 0..15)",
+                        "Port configuration lock key active",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lckk",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -477,48 +473,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "HIGH",
                     description: Some(
                         "Input is logic high",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lck",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some(
-                        "Port configuration not locked",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some(
-                        "Port configuration locked",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lckk",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Port configuration lock key not active",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Port configuration lock key active",
                     ),
                     value: 1,
                 },

@@ -367,9 +367,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -396,55 +394,10 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
             ],
         },
     ],
-    enums: &[
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Event privilege disabled (unprivileged)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Event privilege enabled (privileged)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
-                    description: Some(
-                        "Event security disabled (non-secure)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "Event security enabled (secure)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-    ],
+    enums: &[],
 };

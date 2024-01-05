@@ -205,31 +205,31 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Lckr(pub u32);
     impl Lckr {
-        #[doc = "Port A Lock bit"]
+        #[doc = "Port configuration locked"]
         #[inline(always)]
-        pub const fn lck(&self, n: usize) -> super::vals::Lck {
+        pub const fn lck(&self, n: usize) -> bool {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Lck::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Port A Lock bit"]
+        #[doc = "Port configuration locked"]
         #[inline(always)]
-        pub fn set_lck(&mut self, n: usize, val: super::vals::Lck) {
+        pub fn set_lck(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Lock key"]
+        #[doc = "Port configuration lock key active"]
         #[inline(always)]
-        pub const fn lckk(&self) -> super::vals::Lckk {
+        pub const fn lckk(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Lckk::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Lock key"]
+        #[doc = "Port configuration lock key active"]
         #[inline(always)]
-        pub fn set_lckk(&mut self, val: super::vals::Lckk) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub fn set_lckk(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
     impl Default for Lckr {
@@ -362,66 +362,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Idr) -> u8 {
             Idr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lck {
-        #[doc = "Port configuration not locked"]
-        UNLOCKED = 0,
-        #[doc = "Port configuration locked"]
-        LOCKED = 0x01,
-    }
-    impl Lck {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lck {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lck {
-        #[inline(always)]
-        fn from(val: u8) -> Lck {
-            Lck::from_bits(val)
-        }
-    }
-    impl From<Lck> for u8 {
-        #[inline(always)]
-        fn from(val: Lck) -> u8 {
-            Lck::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lckk {
-        #[doc = "Port configuration lock key not active"]
-        NOTACTIVE = 0,
-        #[doc = "Port configuration lock key active"]
-        ACTIVE = 0x01,
-    }
-    impl Lckk {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lckk {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lckk {
-        #[inline(always)]
-        fn from(val: u8) -> Lckk {
-            Lckk::from_bits(val)
-        }
-    }
-    impl From<Lckk> for u8 {
-        #[inline(always)]
-        fn from(val: Lckk) -> u8 {
-            Lckk::to_bits(val)
         }
     }
     #[repr(u8)]

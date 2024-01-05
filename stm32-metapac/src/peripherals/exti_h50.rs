@@ -131,56 +131,24 @@ pub mod regs {
     impl Priv {
         #[doc = "Security enable on event input x When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access. When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded."]
         #[inline(always)]
-        pub const fn priv_(&self, n: usize) -> super::vals::Priv {
+        pub const fn priv_(&self, n: usize) -> bool {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Security enable on event input x When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access. When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded."]
         #[inline(always)]
-        pub fn set_priv_(&mut self, n: usize, val: super::vals::Priv) {
+        pub fn set_priv_(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Priv {
         #[inline(always)]
         fn default() -> Priv {
             Priv(0)
-        }
-    }
-}
-pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Priv {
-        #[doc = "Event privilege disabled (unprivileged)"]
-        UNPRIVILEGED = 0,
-        #[doc = "Event privilege enabled (privileged)"]
-        PRIVILEGED = 0x01,
-    }
-    impl Priv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Priv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Priv {
-        #[inline(always)]
-        fn from(val: u8) -> Priv {
-            Priv::from_bits(val)
-        }
-    }
-    impl From<Priv> for u8 {
-        #[inline(always)]
-        fn from(val: Priv) -> u8 {
-            Priv::to_bits(val)
         }
     }
 }

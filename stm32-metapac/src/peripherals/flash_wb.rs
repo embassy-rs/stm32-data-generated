@@ -21,12 +21,12 @@ impl Flash {
     }
     #[doc = "Flash key register"]
     #[inline(always)]
-    pub const fn keyr(self) -> crate::common::Reg<regs::Keyr, crate::common::W> {
+    pub const fn keyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "Option byte key register"]
     #[inline(always)]
-    pub const fn optkeyr(self) -> crate::common::Reg<regs::Optkeyr, crate::common::W> {
+    pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
     #[doc = "Status register"]
@@ -787,52 +787,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ipccbr {
             Ipccbr(0)
-        }
-    }
-    #[doc = "Flash key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Keyr(pub u32);
-    impl Keyr {
-        #[doc = "KEYR"]
-        #[inline(always)]
-        pub const fn keyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "KEYR"]
-        #[inline(always)]
-        pub fn set_keyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Keyr {
-        #[inline(always)]
-        fn default() -> Keyr {
-            Keyr(0)
-        }
-    }
-    #[doc = "Option byte key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Optkeyr(pub u32);
-    impl Optkeyr {
-        #[doc = "Option byte key"]
-        #[inline(always)]
-        pub const fn optkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Option byte key"]
-        #[inline(always)]
-        pub fn set_optkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Optkeyr {
-        #[inline(always)]
-        fn default() -> Optkeyr {
-            Optkeyr(0)
         }
     }
     #[doc = "Flash option register"]

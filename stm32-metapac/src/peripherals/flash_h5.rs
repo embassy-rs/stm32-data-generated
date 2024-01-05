@@ -21,27 +21,27 @@ impl Flash {
     }
     #[doc = "FLASH non-secure key register"]
     #[inline(always)]
-    pub const fn nskeyr(self) -> crate::common::Reg<regs::Nskeyr, crate::common::RW> {
+    pub const fn nskeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
     }
     #[doc = "FLASH secure key register"]
     #[inline(always)]
-    pub const fn seckeyr(self) -> crate::common::Reg<regs::Seckeyr, crate::common::RW> {
+    pub const fn seckeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "FLASH option key register"]
     #[inline(always)]
-    pub const fn optkeyr(self) -> crate::common::Reg<regs::Optkeyr, crate::common::RW> {
+    pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
     #[doc = "FLASH non-secure OBK key register"]
     #[inline(always)]
-    pub const fn nsobkkeyr(self) -> crate::common::Reg<regs::Nsobkkeyr, crate::common::RW> {
+    pub const fn nsobkkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
     }
     #[doc = "FLASH secure OBK key register"]
     #[inline(always)]
-    pub const fn secobkkeyr(self) -> crate::common::Reg<regs::Secobkkeyr, crate::common::RW> {
+    pub const fn secobkkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
     }
     #[doc = "FLASH operation status register"]
@@ -1158,29 +1158,6 @@ pub mod regs {
             Nsepochr(0)
         }
     }
-    #[doc = "FLASH non-secure key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Nskeyr(pub u32);
-    impl Nskeyr {
-        #[doc = "Non-volatile memory non-secure configuration access unlock key"]
-        #[inline(always)]
-        pub const fn nskey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Non-volatile memory non-secure configuration access unlock key"]
-        #[inline(always)]
-        pub fn set_nskey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Nskeyr {
-        #[inline(always)]
-        fn default() -> Nskeyr {
-            Nskeyr(0)
-        }
-    }
     #[doc = "FLASH non-secure OBK configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1246,29 +1223,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Nsobkcfgr {
             Nsobkcfgr(0)
-        }
-    }
-    #[doc = "FLASH non-secure OBK key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Nsobkkeyr(pub u32);
-    impl Nsobkkeyr {
-        #[doc = "FLASH non-secure option bytes keys control access unlock key"]
-        #[inline(always)]
-        pub const fn nsobkkey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "FLASH non-secure option bytes keys control access unlock key"]
-        #[inline(always)]
-        pub fn set_nsobkkey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Nsobkkeyr {
-        #[inline(always)]
-        fn default() -> Nsobkkeyr {
-            Nsobkkeyr(0)
         }
     }
     #[doc = "FLASH non-secure status register"]
@@ -1525,29 +1479,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optcr {
             Optcr(0)
-        }
-    }
-    #[doc = "FLASH option key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Optkeyr(pub u32);
-    impl Optkeyr {
-        #[doc = "FLASH option bytes control access unlock key"]
-        #[inline(always)]
-        pub const fn optkey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "FLASH option bytes control access unlock key"]
-        #[inline(always)]
-        pub fn set_optkey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Optkeyr {
-        #[inline(always)]
-        fn default() -> Optkeyr {
-            Optkeyr(0)
         }
     }
     #[doc = "FLASH option status register"]
@@ -2246,29 +2177,6 @@ pub mod regs {
             Secepochr(0)
         }
     }
-    #[doc = "FLASH secure key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Seckeyr(pub u32);
-    impl Seckeyr {
-        #[doc = "Non-volatile memory secure configuration access unlock key"]
-        #[inline(always)]
-        pub const fn seckey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Non-volatile memory secure configuration access unlock key"]
-        #[inline(always)]
-        pub fn set_seckey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Seckeyr {
-        #[inline(always)]
-        fn default() -> Seckeyr {
-            Seckeyr(0)
-        }
-    }
     #[doc = "FLASH secure OBK configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2334,29 +2242,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Secobkcfgr {
             Secobkcfgr(0)
-        }
-    }
-    #[doc = "FLASH secure OBK key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Secobkkeyr(pub u32);
-    impl Secobkkeyr {
-        #[doc = "FLASH secure option bytes keys control access unlock key"]
-        #[inline(always)]
-        pub const fn secobkkey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "FLASH secure option bytes keys control access unlock key"]
-        #[inline(always)]
-        pub fn set_secobkkey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Secobkkeyr {
-        #[inline(always)]
-        fn default() -> Secobkkeyr {
-            Secobkkeyr(0)
         }
     }
     #[doc = "FLASH secure status register"]

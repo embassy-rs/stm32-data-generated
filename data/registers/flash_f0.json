@@ -12,15 +12,13 @@
         "name": "KEYR",
         "description": "Flash key register",
         "byte_offset": 4,
-        "access": "Write",
-        "fieldset": "KEYR"
+        "access": "Write"
       },
       {
         "name": "OPTKEYR",
         "description": "Flash option key register",
         "byte_offset": 8,
-        "access": "Write",
-        "fieldset": "OPTKEYR"
+        "access": "Write"
       },
       {
         "name": "SR",
@@ -163,17 +161,6 @@
       }
     ]
   },
-  "fieldset/KEYR": {
-    "description": "Flash key register",
-    "fields": [
-      {
-        "name": "FKEYR",
-        "description": "Flash Key",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
   "fieldset/OBR": {
     "description": "Option byte register",
     "fields": [
@@ -254,17 +241,6 @@
         "description": "Data1",
         "bit_offset": 24,
         "bit_size": 8
-      }
-    ]
-  },
-  "fieldset/OPTKEYR": {
-    "description": "Flash option key register",
-    "fields": [
-      {
-        "name": "OPTKEYR",
-        "description": "Option byte key",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },

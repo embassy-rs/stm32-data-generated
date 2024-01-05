@@ -25,7 +25,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Pdkeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -36,7 +36,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Nskeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Seckeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -58,7 +58,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Optkeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -69,7 +69,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Lvekeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -485,20 +485,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Lvekeyr",
-            extends: None,
-            description: Some("Flash low voltage key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "lvekeyr",
-                description: Some("LVEKEYR"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Nsbootadd0r",
             extends: None,
             description: Some("Flash non-secure boot address 0 register"),
@@ -639,20 +625,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nskeyr",
-            extends: None,
-            description: Some("Flash non-secure key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "nskeyr",
-                description: Some("NSKEYR"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Nssr",
             extends: None,
             description: Some("Flash status register"),
@@ -739,20 +711,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some("Flash option key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkeyr",
-                description: Some("OPTKEYR"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Optr",
@@ -905,20 +863,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Pdkeyr",
-            extends: None,
-            description: Some("Power down key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "pdkeyr",
-                description: Some("RUN_PD in FLASH_ACR key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Privcfgr",
@@ -1197,20 +1141,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Seckeyr",
-            extends: None,
-            description: Some("Flash secure key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "seckeyr",
-                description: Some("SECKEYR"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Secsr",

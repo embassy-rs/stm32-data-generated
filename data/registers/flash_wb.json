@@ -12,15 +12,13 @@
         "name": "KEYR",
         "description": "Flash key register",
         "byte_offset": 8,
-        "access": "Write",
-        "fieldset": "KEYR"
+        "access": "Write"
       },
       {
         "name": "OPTKEYR",
         "description": "Option byte key register",
         "byte_offset": 12,
-        "access": "Write",
-        "fieldset": "OPTKEYR"
+        "access": "Write"
       },
       {
         "name": "SR",
@@ -476,28 +474,6 @@
         "description": "PCC mailbox data buffer base address",
         "bit_offset": 0,
         "bit_size": 14
-      }
-    ]
-  },
-  "fieldset/KEYR": {
-    "description": "Flash key register",
-    "fields": [
-      {
-        "name": "KEYR",
-        "description": "KEYR",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
-  "fieldset/OPTKEYR": {
-    "description": "Option byte key register",
-    "fields": [
-      {
-        "name": "OPTKEYR",
-        "description": "Option byte key",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },

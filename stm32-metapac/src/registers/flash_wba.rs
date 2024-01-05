@@ -37,9 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Nskeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -54,9 +52,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Seckeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -71,9 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Optkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -88,9 +82,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Pdkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -858,26 +850,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nskeyr",
-            extends: None,
-            description: Some(
-                "key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nskey",
-                    description: Some(
-                        "memory non-secure key\r The following values must be written consecutively to unlock the NSCR1 register, allowing the memory non-secure programming/erasing operations:\r KEY1: 0x4567�0123\r KEY2: 0xCDEF�89AB",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Nssr",
             extends: None,
             description: Some(
@@ -1060,26 +1032,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some(
-                "option key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "optkey",
-                    description: Some(
-                        "Option byte key\r The LOCK bit in the NSCR1 must be cleared before doing the unlock sequence for OPTLOCK bit. The following values must be written consecutively to unlock the NSCR1.OPTSTRT and OBL_LAUNCH register bits concerning user option operations:\r KEY1: 0x0819�2A3B\r KEY2: 0x4C5D�6E7F",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Optr",
             extends: None,
             description: Some(
@@ -1228,26 +1180,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 31,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pdkeyr",
-            extends: None,
-            description: Some(
-                "power-down key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pdkey1",
-                    description: Some(
-                        "power-down key\r The following values must be written consecutively to unlock the PDREQ bit in ACR:\r PDKEY_1: 0x0415�2637\r PDKEY_2: 0xFAFB�FCFD",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -1468,26 +1400,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 0,
                     bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seckeyr",
-            extends: None,
-            description: Some(
-                "secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "seckey",
-                    description: Some(
-                        "memory secure key\r The following values must be written consecutively to unlock the SECCR1 register, allowing the memory secure programming/erasing operations:\r KEY1: 0x4567�0123\r KEY2: 0xCDEF�89AB",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

@@ -11,20 +11,17 @@
       {
         "name": "NSKEYR",
         "description": "FLASH non-secure key register",
-        "byte_offset": 8,
-        "fieldset": "NSKEYR"
+        "byte_offset": 8
       },
       {
         "name": "SECKEYR",
         "description": "FLASH secure key register",
-        "byte_offset": 12,
-        "fieldset": "SECKEYR"
+        "byte_offset": 12
       },
       {
         "name": "OPTKEYR",
         "description": "FLASH option key register",
-        "byte_offset": 16,
-        "fieldset": "OPTKEYR"
+        "byte_offset": 16
       },
       {
         "name": "PDKEY1R",
@@ -485,17 +482,6 @@
       }
     ]
   },
-  "fieldset/NSKEYR": {
-    "description": "FLASH non-secure key register",
-    "fields": [
-      {
-        "name": "NSKEY",
-        "description": "Flash memory non-secure key",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
   "fieldset/NSSR": {
     "description": "FLASH non-secure status register",
     "fields": [
@@ -657,17 +643,6 @@
         "bit_offset": 29,
         "bit_size": 3,
         "enum": "CODE_OP"
-      }
-    ]
-  },
-  "fieldset/OPTKEYR": {
-    "description": "FLASH option key register",
-    "fields": [
-      {
-        "name": "OPTKEY",
-        "description": "Option byte key",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },
@@ -4140,17 +4115,6 @@
         "bit_offset": 1,
         "bit_size": 1,
         "enum": "HDP_ACCDIS"
-      }
-    ]
-  },
-  "fieldset/SECKEYR": {
-    "description": "FLASH secure key register",
-    "fields": [
-      {
-        "name": "SECKEY",
-        "description": "Flash memory secure key",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },

@@ -25,7 +25,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Pdkeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -36,7 +36,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Keyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -47,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Optkeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -434,34 +434,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Flash key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "keyr",
-                description: Some("KEYR"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some("Option byte key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkeyr",
-                description: Some("Option byte key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Optr",
             extends: None,
             description: Some("Flash option register"),
@@ -651,20 +623,6 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some("Bank 2 PCROP area start offset"),
                 bit_offset: 0,
                 bit_size: 16,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Pdkeyr",
-            extends: None,
-            description: Some("Power down key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "pdkeyr",
-                description: Some("RUN_PD in FLASH_ACR key"),
-                bit_offset: 0,
-                bit_size: 32,
                 array: None,
                 enumm: None,
             }],

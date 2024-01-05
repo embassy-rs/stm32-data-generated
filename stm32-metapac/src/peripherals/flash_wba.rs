@@ -21,22 +21,22 @@ impl Flash {
     }
     #[doc = "key register"]
     #[inline(always)]
-    pub const fn nskeyr(self) -> crate::common::Reg<regs::Nskeyr, crate::common::RW> {
+    pub const fn nskeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "secure key register"]
     #[inline(always)]
-    pub const fn seckeyr(self) -> crate::common::Reg<regs::Seckeyr, crate::common::RW> {
+    pub const fn seckeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
     #[doc = "option key register"]
     #[inline(always)]
-    pub const fn optkeyr(self) -> crate::common::Reg<regs::Optkeyr, crate::common::RW> {
+    pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
     }
     #[doc = "power-down key register"]
     #[inline(always)]
-    pub const fn pdkeyr(self) -> crate::common::Reg<regs::Pdkeyr, crate::common::RW> {
+    pub const fn pdkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(24usize) as _) }
     }
     #[doc = "status register"]
@@ -558,29 +558,6 @@ pub mod regs {
             Nscr2(0)
         }
     }
-    #[doc = "key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Nskeyr(pub u32);
-    impl Nskeyr {
-        #[doc = "memory non-secure key The following values must be written consecutively to unlock the NSCR1 register, allowing the memory non-secure programming/erasing operations: KEY1: 0x4567�0123 KEY2: 0xCDEF�89AB"]
-        #[inline(always)]
-        pub const fn nskey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "memory non-secure key The following values must be written consecutively to unlock the NSCR1 register, allowing the memory non-secure programming/erasing operations: KEY1: 0x4567�0123 KEY2: 0xCDEF�89AB"]
-        #[inline(always)]
-        pub fn set_nskey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Nskeyr {
-        #[inline(always)]
-        fn default() -> Nskeyr {
-            Nskeyr(0)
-        }
-    }
     #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -781,29 +758,6 @@ pub mod regs {
             Opsr(0)
         }
     }
-    #[doc = "option key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Optkeyr(pub u32);
-    impl Optkeyr {
-        #[doc = "Option byte key The LOCK bit in the NSCR1 must be cleared before doing the unlock sequence for OPTLOCK bit. The following values must be written consecutively to unlock the NSCR1.OPTSTRT and OBL_LAUNCH register bits concerning user option operations: KEY1: 0x0819�2A3B KEY2: 0x4C5D�6E7F"]
-        #[inline(always)]
-        pub const fn optkey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Option byte key The LOCK bit in the NSCR1 must be cleared before doing the unlock sequence for OPTLOCK bit. The following values must be written consecutively to unlock the NSCR1.OPTSTRT and OBL_LAUNCH register bits concerning user option operations: KEY1: 0x0819�2A3B KEY2: 0x4C5D�6E7F"]
-        #[inline(always)]
-        pub fn set_optkey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Optkeyr {
-        #[inline(always)]
-        fn default() -> Optkeyr {
-            Optkeyr(0)
-        }
-    }
     #[doc = "option register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -968,29 +922,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optr {
             Optr(0)
-        }
-    }
-    #[doc = "power-down key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdkeyr(pub u32);
-    impl Pdkeyr {
-        #[doc = "power-down key The following values must be written consecutively to unlock the PDREQ bit in ACR: PDKEY_1: 0x0415�2637 PDKEY_2: 0xFAFB�FCFD"]
-        #[inline(always)]
-        pub const fn pdkey1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "power-down key The following values must be written consecutively to unlock the PDREQ bit in ACR: PDKEY_1: 0x0415�2637 PDKEY_2: 0xFAFB�FCFD"]
-        #[inline(always)]
-        pub fn set_pdkey1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Pdkeyr {
-        #[inline(always)]
-        fn default() -> Pdkeyr {
-            Pdkeyr(0)
         }
     }
     #[doc = "privilege configuration register"]
@@ -1248,29 +1179,6 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
         #[inline(always)]
         fn default() -> Sechdpcr {
             Sechdpcr(0)
-        }
-    }
-    #[doc = "secure key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Seckeyr(pub u32);
-    impl Seckeyr {
-        #[doc = "memory secure key The following values must be written consecutively to unlock the SECCR1 register, allowing the memory secure programming/erasing operations: KEY1: 0x4567�0123 KEY2: 0xCDEF�89AB"]
-        #[inline(always)]
-        pub const fn seckey(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "memory secure key The following values must be written consecutively to unlock the SECCR1 register, allowing the memory secure programming/erasing operations: KEY1: 0x4567�0123 KEY2: 0xCDEF�89AB"]
-        #[inline(always)]
-        pub fn set_seckey(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Seckeyr {
-        #[inline(always)]
-        fn default() -> Seckeyr {
-            Seckeyr(0)
         }
     }
     #[doc = "secure status register"]

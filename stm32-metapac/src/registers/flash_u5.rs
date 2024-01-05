@@ -37,9 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Nskeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -54,9 +52,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Seckeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -71,9 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Optkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1150,26 +1144,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nskeyr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nskey",
-                    description: Some(
-                        "Flash memory non-secure key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Nssr",
             extends: None,
             description: Some(
@@ -1450,26 +1424,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "CodeOp",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some(
-                "FLASH option key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "optkey",
-                    description: Some(
-                        "Option byte key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -7304,26 +7258,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "HdpAccdis",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Seckeyr",
-            extends: None,
-            description: Some(
-                "FLASH secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "seckey",
-                    description: Some(
-                        "Flash memory secure key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },

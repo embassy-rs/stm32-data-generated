@@ -21,27 +21,27 @@ impl Flash {
     }
     #[doc = "Power down key register"]
     #[inline(always)]
-    pub const fn pdkeyr(self) -> crate::common::Reg<regs::Pdkeyr, crate::common::W> {
+    pub const fn pdkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
     }
     #[doc = "Flash non-secure key register"]
     #[inline(always)]
-    pub const fn nskeyr(self) -> crate::common::Reg<regs::Nskeyr, crate::common::W> {
+    pub const fn nskeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "Flash secure key register"]
     #[inline(always)]
-    pub const fn seckeyr(self) -> crate::common::Reg<regs::Seckeyr, crate::common::W> {
+    pub const fn seckeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
     #[doc = "Flash option key register"]
     #[inline(always)]
-    pub const fn optkeyr(self) -> crate::common::Reg<regs::Optkeyr, crate::common::W> {
+    pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
     }
     #[doc = "Flash low voltage key register"]
     #[inline(always)]
-    pub const fn lvekeyr(self) -> crate::common::Reg<regs::Lvekeyr, crate::common::W> {
+    pub const fn lvekeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
     }
     #[doc = "Flash status register"]
@@ -337,29 +337,6 @@ pub mod regs {
             Eccr(0)
         }
     }
-    #[doc = "Flash low voltage key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Lvekeyr(pub u32);
-    impl Lvekeyr {
-        #[doc = "LVEKEYR"]
-        #[inline(always)]
-        pub const fn lvekeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "LVEKEYR"]
-        #[inline(always)]
-        pub fn set_lvekeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Lvekeyr {
-        #[inline(always)]
-        fn default() -> Lvekeyr {
-            Lvekeyr(0)
-        }
-    }
     #[doc = "Flash non-secure boot address 0 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -561,29 +538,6 @@ pub mod regs {
             Nscr(0)
         }
     }
-    #[doc = "Flash non-secure key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Nskeyr(pub u32);
-    impl Nskeyr {
-        #[doc = "NSKEYR"]
-        #[inline(always)]
-        pub const fn nskeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "NSKEYR"]
-        #[inline(always)]
-        pub fn set_nskeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Nskeyr {
-        #[inline(always)]
-        fn default() -> Nskeyr {
-            Nskeyr(0)
-        }
-    }
     #[doc = "Flash status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -704,29 +658,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Nssr {
             Nssr(0)
-        }
-    }
-    #[doc = "Flash option key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Optkeyr(pub u32);
-    impl Optkeyr {
-        #[doc = "OPTKEYR"]
-        #[inline(always)]
-        pub const fn optkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "OPTKEYR"]
-        #[inline(always)]
-        pub fn set_optkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Optkeyr {
-        #[inline(always)]
-        fn default() -> Optkeyr {
-            Optkeyr(0)
         }
     }
     #[doc = "Flash option register"]
@@ -937,29 +868,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optr {
             Optr(0)
-        }
-    }
-    #[doc = "Power down key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdkeyr(pub u32);
-    impl Pdkeyr {
-        #[doc = "RUN_PD in FLASH_ACR key"]
-        #[inline(always)]
-        pub const fn pdkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "RUN_PD in FLASH_ACR key"]
-        #[inline(always)]
-        pub fn set_pdkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Pdkeyr {
-        #[inline(always)]
-        fn default() -> Pdkeyr {
-            Pdkeyr(0)
         }
     }
     #[doc = "Power privilege configuration register"]
@@ -1379,29 +1287,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Sechdpcr {
             Sechdpcr(0)
-        }
-    }
-    #[doc = "Flash secure key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Seckeyr(pub u32);
-    impl Seckeyr {
-        #[doc = "SECKEYR"]
-        #[inline(always)]
-        pub const fn seckeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "SECKEYR"]
-        #[inline(always)]
-        pub fn set_seckeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Seckeyr {
-        #[inline(always)]
-        fn default() -> Seckeyr {
-            Seckeyr(0)
         }
     }
     #[doc = "Flash status register"]

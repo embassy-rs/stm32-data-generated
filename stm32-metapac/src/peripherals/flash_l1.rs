@@ -26,22 +26,22 @@ impl Flash {
     }
     #[doc = "Power down key register"]
     #[inline(always)]
-    pub const fn pdkeyr(self) -> crate::common::Reg<regs::Pdkeyr, crate::common::W> {
+    pub const fn pdkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "Program/erase key register"]
     #[inline(always)]
-    pub const fn pekeyr(self) -> crate::common::Reg<regs::Pekeyr, crate::common::W> {
+    pub const fn pekeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
     #[doc = "Program memory key register"]
     #[inline(always)]
-    pub const fn prgkeyr(self) -> crate::common::Reg<regs::Prgkeyr, crate::common::W> {
+    pub const fn prgkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
     }
     #[doc = "Option byte key register"]
     #[inline(always)]
-    pub const fn optkeyr(self) -> crate::common::Reg<regs::Optkeyr, crate::common::W> {
+    pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
     }
     #[doc = "Status register"]
@@ -216,52 +216,6 @@ pub mod regs {
             Obr(0)
         }
     }
-    #[doc = "Option byte key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Optkeyr(pub u32);
-    impl Optkeyr {
-        #[doc = "Option byte key"]
-        #[inline(always)]
-        pub const fn optkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Option byte key"]
-        #[inline(always)]
-        pub fn set_optkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Optkeyr {
-        #[inline(always)]
-        fn default() -> Optkeyr {
-            Optkeyr(0)
-        }
-    }
-    #[doc = "Power down key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pdkeyr(pub u32);
-    impl Pdkeyr {
-        #[doc = "RUN_PD in FLASH_ACR key"]
-        #[inline(always)]
-        pub const fn pdkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "RUN_PD in FLASH_ACR key"]
-        #[inline(always)]
-        pub fn set_pdkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Pdkeyr {
-        #[inline(always)]
-        fn default() -> Pdkeyr {
-            Pdkeyr(0)
-        }
-    }
     #[doc = "Program/erase control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -404,52 +358,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Pecr {
             Pecr(0)
-        }
-    }
-    #[doc = "Program/erase key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pekeyr(pub u32);
-    impl Pekeyr {
-        #[doc = "FLASH_PEC and data EEPROM key"]
-        #[inline(always)]
-        pub const fn pekeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "FLASH_PEC and data EEPROM key"]
-        #[inline(always)]
-        pub fn set_pekeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Pekeyr {
-        #[inline(always)]
-        fn default() -> Pekeyr {
-            Pekeyr(0)
-        }
-    }
-    #[doc = "Program memory key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Prgkeyr(pub u32);
-    impl Prgkeyr {
-        #[doc = "Program memory key"]
-        #[inline(always)]
-        pub const fn prgkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Program memory key"]
-        #[inline(always)]
-        pub fn set_prgkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Prgkeyr {
-        #[inline(always)]
-        fn default() -> Prgkeyr {
-            Prgkeyr(0)
         }
     }
     #[doc = "Status register"]

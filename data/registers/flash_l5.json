@@ -12,36 +12,31 @@
         "name": "PDKEYR",
         "description": "Power down key register",
         "byte_offset": 4,
-        "access": "Write",
-        "fieldset": "PDKEYR"
+        "access": "Write"
       },
       {
         "name": "NSKEYR",
         "description": "Flash non-secure key register",
         "byte_offset": 8,
-        "access": "Write",
-        "fieldset": "NSKEYR"
+        "access": "Write"
       },
       {
         "name": "SECKEYR",
         "description": "Flash secure key register",
         "byte_offset": 12,
-        "access": "Write",
-        "fieldset": "SECKEYR"
+        "access": "Write"
       },
       {
         "name": "OPTKEYR",
         "description": "Flash option key register",
         "byte_offset": 16,
-        "access": "Write",
-        "fieldset": "OPTKEYR"
+        "access": "Write"
       },
       {
         "name": "LVEKEYR",
         "description": "Flash low voltage key register",
         "byte_offset": 20,
-        "access": "Write",
-        "fieldset": "LVEKEYR"
+        "access": "Write"
       },
       {
         "name": "NSSR",
@@ -291,17 +286,6 @@
       }
     ]
   },
-  "fieldset/LVEKEYR": {
-    "description": "Flash low voltage key register",
-    "fields": [
-      {
-        "name": "LVEKEYR",
-        "description": "LVEKEYR",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
   "fieldset/NSBOOTADD0R": {
     "description": "Flash non-secure boot address 0 register",
     "fields": [
@@ -407,17 +391,6 @@
       }
     ]
   },
-  "fieldset/NSKEYR": {
-    "description": "Flash non-secure key register",
-    "fields": [
-      {
-        "name": "NSKEYR",
-        "description": "NSKEYR",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
   "fieldset/NSSR": {
     "description": "Flash status register",
     "fields": [
@@ -480,17 +453,6 @@
         "description": "NSBusy",
         "bit_offset": 16,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/OPTKEYR": {
-    "description": "Flash option key register",
-    "fields": [
-      {
-        "name": "OPTKEYR",
-        "description": "OPTKEYR",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },
@@ -604,17 +566,6 @@
         "description": "TZEN",
         "bit_offset": 31,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/PDKEYR": {
-    "description": "Power down key register",
-    "fields": [
-      {
-        "name": "PDKEYR",
-        "description": "RUN_PD in FLASH_ACR key",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },
@@ -825,17 +776,6 @@
         "description": "HDP2_ACCDIS",
         "bit_offset": 1,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/SECKEYR": {
-    "description": "Flash secure key register",
-    "fields": [
-      {
-        "name": "SECKEYR",
-        "description": "SECKEYR",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },

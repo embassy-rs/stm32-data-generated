@@ -37,9 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Nskeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -54,9 +52,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Optkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1095,26 +1091,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nskeyr",
-            extends: None,
-            description: Some(
-                "FLASH key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nskey",
-                    description: Some(
-                        "Non-volatile memory configuration access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Nssr",
             extends: None,
             description: Some(
@@ -1315,26 +1291,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "OptcrSwapBank",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some(
-                "FLASH option key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "optkey",
-                    description: Some(
-                        "FLASH option bytes control access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },

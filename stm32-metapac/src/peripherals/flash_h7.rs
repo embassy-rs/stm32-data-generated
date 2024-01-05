@@ -16,7 +16,7 @@ impl Bank {
     }
     #[doc = "FLASH key register for bank 1"]
     #[inline(always)]
-    pub const fn keyr(self) -> crate::common::Reg<regs::Keyr, crate::common::W> {
+    pub const fn keyr(self) -> crate::common::Reg<u32, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
     }
     #[doc = "FLASH control register for bank 1"]
@@ -114,7 +114,7 @@ impl Flash {
     }
     #[doc = "FLASH option key register"]
     #[inline(always)]
-    pub const fn optkeyr(self) -> crate::common::Reg<regs::Optkeyr, crate::common::RW> {
+    pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "FLASH option control register"]
@@ -835,29 +835,6 @@ pub mod regs {
             Far(0)
         }
     }
-    #[doc = "FLASH key register for bank 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Keyr(pub u32);
-    impl Keyr {
-        #[doc = "Bank 1 access configuration unlock key"]
-        #[inline(always)]
-        pub const fn keyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Bank 1 access configuration unlock key"]
-        #[inline(always)]
-        pub fn set_keyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Keyr {
-        #[inline(always)]
-        fn default() -> Keyr {
-            Keyr(0)
-        }
-    }
     #[doc = "FLASH option clear control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -946,29 +923,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Optcr {
             Optcr(0)
-        }
-    }
-    #[doc = "FLASH option key register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Optkeyr(pub u32);
-    impl Optkeyr {
-        #[doc = "Unlock key option bytes"]
-        #[inline(always)]
-        pub const fn optkeyr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Unlock key option bytes"]
-        #[inline(always)]
-        pub fn set_optkeyr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Optkeyr {
-        #[inline(always)]
-        fn default() -> Optkeyr {
-            Optkeyr(0)
         }
     }
     #[doc = "FLASH option status register"]

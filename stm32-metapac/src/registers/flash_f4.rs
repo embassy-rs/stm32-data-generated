@@ -25,7 +25,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Keyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -36,7 +36,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Optkeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -212,20 +212,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Flash key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("FPEC key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
             name: "Optcr",
             extends: None,
             description: Some("Flash option control register"),
@@ -312,20 +298,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some("Flash option key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkey",
-                description: Some("Option byte key"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Sr",

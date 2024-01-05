@@ -12,22 +12,19 @@
         "name": "PDKEYR",
         "description": "Power down key register",
         "byte_offset": 4,
-        "access": "Write",
-        "fieldset": "PDKEYR"
+        "access": "Write"
       },
       {
         "name": "KEYR",
         "description": "Flash key register",
         "byte_offset": 8,
-        "access": "Write",
-        "fieldset": "KEYR"
+        "access": "Write"
       },
       {
         "name": "OPTKEYR",
         "description": "Option byte key register",
         "byte_offset": 12,
-        "access": "Write",
-        "fieldset": "OPTKEYR"
+        "access": "Write"
       },
       {
         "name": "SR",
@@ -287,28 +284,6 @@
       }
     ]
   },
-  "fieldset/KEYR": {
-    "description": "Flash key register",
-    "fields": [
-      {
-        "name": "KEYR",
-        "description": "KEYR",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
-  "fieldset/OPTKEYR": {
-    "description": "Option byte key register",
-    "fields": [
-      {
-        "name": "OPTKEYR",
-        "description": "Option byte key",
-        "bit_offset": 0,
-        "bit_size": 32
-      }
-    ]
-  },
   "fieldset/OPTR": {
     "description": "Flash option register",
     "fields": [
@@ -437,17 +412,6 @@
         "description": "Bank 1 PCROP area start offset",
         "bit_offset": 0,
         "bit_size": 15
-      }
-    ]
-  },
-  "fieldset/PDKEYR": {
-    "description": "Power down key register",
-    "fields": [
-      {
-        "name": "PDKEYR",
-        "description": "RUN_PD in FLASH_ACR key",
-        "bit_offset": 0,
-        "bit_size": 32
       }
     ]
   },

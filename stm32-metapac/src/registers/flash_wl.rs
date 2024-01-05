@@ -25,7 +25,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Keyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -36,7 +36,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Optkeyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -700,34 +700,6 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some("PCC mailbox data buffer base address"),
                 bit_offset: 0,
                 bit_size: 14,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("Flash key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "keyr",
-                description: Some("KEYR"),
-                bit_offset: 0,
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some("Option byte key register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "optkeyr",
-                description: Some("Option byte key"),
-                bit_offset: 0,
-                bit_size: 32,
                 array: None,
                 enumm: None,
             }],

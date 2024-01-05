@@ -37,9 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Nskeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -54,9 +52,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Seckeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -71,9 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Optkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -88,9 +82,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Nsobkkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -105,9 +97,7 @@ pub(crate) static REGISTERS: IR = IR {
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
-                            fieldset: Some(
-                                "Secobkkeyr",
-                            ),
+                            fieldset: None,
                         },
                     ),
                 },
@@ -1855,26 +1845,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nskeyr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nskey",
-                    description: Some(
-                        "Non-volatile memory non-secure configuration access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Nsobkcfgr",
             extends: None,
             description: Some(
@@ -1929,26 +1899,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 16,
                     bit_size: 9,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Nsobkkeyr",
-            extends: None,
-            description: Some(
-                "FLASH non-secure OBK key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nsobkkey",
-                    description: Some(
-                        "FLASH non-secure option bytes keys control access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -2185,26 +2135,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some(
                         "OptcrSwapBank",
                     ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optkeyr",
-            extends: None,
-            description: Some(
-                "FLASH option key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "optkey",
-                    description: Some(
-                        "FLASH option bytes control access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
                 },
             ],
         },
@@ -2871,26 +2801,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Seckeyr",
-            extends: None,
-            description: Some(
-                "FLASH secure key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "seckey",
-                    description: Some(
-                        "Non-volatile memory secure configuration access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Secobkcfgr",
             extends: None,
             description: Some(
@@ -2945,26 +2855,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_offset: 16,
                     bit_size: 9,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secobkkeyr",
-            extends: None,
-            description: Some(
-                "FLASH secure OBK key register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "secobkkey",
-                    description: Some(
-                        "FLASH secure option bytes keys control access unlock key",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

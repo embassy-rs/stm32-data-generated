@@ -109,13 +109,13 @@ pub mod regs {
         }
         #[doc = "ADC24 DMA remapping bit"]
         #[inline(always)]
-        pub const fn adc2_dma_rmp(&self) -> super::vals::Adc2DmaRmp {
+        pub const fn adc2_dma_rmp(&self) -> super::vals::Adc2DmaRmpCfgr1 {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Adc2DmaRmp::from_bits(val as u8)
+            super::vals::Adc2DmaRmpCfgr1::from_bits(val as u8)
         }
         #[doc = "ADC24 DMA remapping bit"]
         #[inline(always)]
-        pub fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmp) {
+        pub fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmpCfgr1) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "TIM16 DMA request remapping bit"]
@@ -456,13 +456,13 @@ pub mod regs {
         }
         #[doc = "ADC2 DMA remapping bit"]
         #[inline(always)]
-        pub const fn adc2_dma_rmp(&self) -> super::vals::Adc2DmaRmp {
+        pub const fn adc2_dma_rmp(&self) -> super::vals::Adc2DmaRmpCfgr3 {
             let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Adc2DmaRmp::from_bits(val as u8)
+            super::vals::Adc2DmaRmpCfgr3::from_bits(val as u8)
         }
         #[doc = "ADC2 DMA remapping bit"]
         #[inline(always)]
-        pub fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmp) {
+        pub fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmpCfgr3) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap"]
@@ -958,14 +958,13 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Adc2DmaRmp {
-        #[doc = "ADC2 mapped on DMA2"]
-        MAPDMA2 = 0,
+    pub enum Adc2DmaRmpCfgr1 {
+        _RESERVED_0 = 0,
         _RESERVED_1 = 0x01,
     }
-    impl Adc2DmaRmp {
+    impl Adc2DmaRmpCfgr1 {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Adc2DmaRmp {
+        pub const fn from_bits(val: u8) -> Adc2DmaRmpCfgr1 {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -973,16 +972,48 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Adc2DmaRmp {
+    impl From<u8> for Adc2DmaRmpCfgr1 {
         #[inline(always)]
-        fn from(val: u8) -> Adc2DmaRmp {
-            Adc2DmaRmp::from_bits(val)
+        fn from(val: u8) -> Adc2DmaRmpCfgr1 {
+            Adc2DmaRmpCfgr1::from_bits(val)
         }
     }
-    impl From<Adc2DmaRmp> for u8 {
+    impl From<Adc2DmaRmpCfgr1> for u8 {
         #[inline(always)]
-        fn from(val: Adc2DmaRmp) -> u8 {
-            Adc2DmaRmp::to_bits(val)
+        fn from(val: Adc2DmaRmpCfgr1) -> u8 {
+            Adc2DmaRmpCfgr1::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Adc2DmaRmpCfgr3 {
+        _RESERVED_0 = 0,
+        _RESERVED_1 = 0x01,
+        #[doc = "ADC2 mapped on DMA1 channel 2"]
+        MAPDMA1CH2 = 0x02,
+        #[doc = "ADC2 mapped on DMA1 channel 4"]
+        MAPDMA1CH4 = 0x03,
+    }
+    impl Adc2DmaRmpCfgr3 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Adc2DmaRmpCfgr3 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Adc2DmaRmpCfgr3 {
+        #[inline(always)]
+        fn from(val: u8) -> Adc2DmaRmpCfgr3 {
+            Adc2DmaRmpCfgr3::from_bits(val)
+        }
+    }
+    impl From<Adc2DmaRmpCfgr3> for u8 {
+        #[inline(always)]
+        fn from(val: Adc2DmaRmpCfgr3) -> u8 {
+            Adc2DmaRmpCfgr3::to_bits(val)
         }
     }
     #[repr(u8)]

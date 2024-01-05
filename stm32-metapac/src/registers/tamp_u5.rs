@@ -709,9 +709,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ercfg",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -875,9 +873,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "bkprwpriv",
@@ -887,9 +883,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "bkpwpriv",
@@ -899,9 +893,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tamppriv",
@@ -911,9 +903,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Priv",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -987,9 +977,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "bkpwsec",
@@ -1009,9 +997,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Bhklock",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tampsec",
@@ -1021,9 +1007,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sec",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1149,90 +1133,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "RTCCLK/128 is selected when (PREDIV_A+1) = 128 (actually selects 7th flip flop output)",
                     ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Bhklock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some(
-                        "The Backup registers from BKP0R to BKP7R can be accessed according to the Protection zone they belong to.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some(
-                        "The backup registers from BKP0R to BKP7R cannot be accessed neither in read nor in write (they are read as 0 and write ignore).",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ercfg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPROTECTED",
-                    description: Some(
-                        "Configurable device secrets are not included in the device secrets protected by TAMP peripheral",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PROTECTED",
-                    description: Some(
-                        "Configurable device secrets are is included in the device secrets protected by TAMP peripheral",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Priv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNPRIVILEGED",
-                    description: Some(
-                        "Can be read/written with privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PRIVILEGED",
-                    description: Some(
-                        "Can be read/written only with privileged access.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONSECURE",
-                    description: Some(
-                        "Can be written when the APB access is secure or non-secure.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SECURE",
-                    description: Some(
-                        "Can be written only when the APB access is secure.",
-                    ),
-                    value: 1,
                 },
             ],
         },

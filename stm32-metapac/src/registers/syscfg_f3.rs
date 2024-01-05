@@ -199,7 +199,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Adc2DmaRmp",
+                        "Adc2DmaRmpCfgr1",
                     ),
                 },
                 Field {
@@ -568,7 +568,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Adc2DmaRmp",
+                        "Adc2DmaRmpCfgr3",
                     ),
                 },
                 Field {
@@ -1000,17 +1000,31 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Adc2DmaRmp",
+            name: "Adc2DmaRmpCfgr1",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MAPDMA2",
+                    name: "NOTREMAPPED",
                     description: Some(
-                        "ADC2 mapped on DMA2",
+                        "ADC24 DMA requests mapped on DMA2 channels 1 and 2",
                     ),
-                    value: 0,
+                    value: 2,
                 },
+                EnumVariant {
+                    name: "REMAPPED",
+                    description: Some(
+                        "ADC24 DMA requests mapped on DMA2 channels 3 and 4",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Adc2DmaRmpCfgr3",
+            description: None,
+            bit_size: 2,
+            variants: &[
                 EnumVariant {
                     name: "MAPDMA1CH2",
                     description: Some(

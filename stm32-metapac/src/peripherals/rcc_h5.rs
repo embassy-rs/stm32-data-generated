@@ -5346,128 +5346,128 @@ pub mod regs {
     impl Seccfgr {
         #[doc = "HSI clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn hsisec(&self) -> super::vals::Sec {
+        pub const fn hsisec(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSI clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_hsisec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_hsisec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "HSE clock configuration bits, status bits and HSE_CSS security Set and reset by software."]
         #[inline(always)]
-        pub const fn hsesec(&self) -> super::vals::Sec {
+        pub const fn hsesec(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSE clock configuration bits, status bits and HSE_CSS security Set and reset by software."]
         #[inline(always)]
-        pub fn set_hsesec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_hsesec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "CSI clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn csisec(&self) -> super::vals::Sec {
+        pub const fn csisec(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "CSI clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_csisec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_csisec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "LSI clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn lsisec(&self) -> super::vals::Sec {
+        pub const fn lsisec(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSI clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_lsisec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_lsisec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "LSE clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn lsesec(&self) -> super::vals::Sec {
+        pub const fn lsesec(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSE clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_lsesec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_lsesec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SYSCLK clock selection, STOPWUCK bit, clock output on MCO configuration security Set and reset by software."]
         #[inline(always)]
-        pub const fn sysclksec(&self) -> super::vals::Sec {
+        pub const fn sysclksec(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SYSCLK clock selection, STOPWUCK bit, clock output on MCO configuration security Set and reset by software."]
         #[inline(always)]
-        pub fn set_sysclksec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_sysclksec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "AHBx/APBx prescaler configuration bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn prescsec(&self) -> super::vals::Sec {
+        pub const fn prescsec(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "AHBx/APBx prescaler configuration bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_prescsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_prescsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "PLL1 clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn pllsec(&self, n: usize) -> super::vals::Sec {
+        pub const fn pllsec(&self, n: usize) -> bool {
             assert!(n < 3usize);
             let offs = 7usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "PLL1 clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_pllsec(&mut self, n: usize, val: super::vals::Sec) {
+        pub fn set_pllsec(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 7usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "HSI48 clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub const fn hsi48sec(&self) -> super::vals::Sec {
+        pub const fn hsi48sec(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSI48 clock configuration and status bits security Set and reset by software."]
         #[inline(always)]
-        pub fn set_hsi48sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_hsi48sec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Remove reset flag security Set and reset by software."]
         #[inline(always)]
-        pub const fn rmvfsec(&self) -> super::vals::Sec {
+        pub const fn rmvfsec(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Remove reset flag security Set and reset by software."]
         #[inline(always)]
-        pub fn set_rmvfsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_rmvfsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "per_ck selection security Set and reset by software."]
         #[inline(always)]
-        pub const fn ckperselsec(&self) -> super::vals::Sec {
+        pub const fn ckperselsec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "per_ck selection security Set and reset by software."]
         #[inline(always)]
-        pub fn set_ckperselsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_ckperselsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }
     impl Default for Seccfgr {
@@ -7220,36 +7220,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Sdmmcsel) -> u8 {
             Sdmmcsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sec {
-        #[doc = "non secure"]
-        NONSECURE = 0,
-        #[doc = "secure"]
-        SECURE = 0x01,
-    }
-    impl Sec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sec {
-        #[inline(always)]
-        fn from(val: u8) -> Sec {
-            Sec::from_bits(val)
-        }
-    }
-    impl From<Sec> for u8 {
-        #[inline(always)]
-        fn from(val: Sec) -> u8 {
-            Sec::to_bits(val)
         }
     }
     #[repr(u8)]

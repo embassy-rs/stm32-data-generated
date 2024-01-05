@@ -5972,25 +5972,25 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
     impl Privcfgr {
         #[doc = "RCC secure functions privilege configuration Set and reset by software. This bit can be written only by a secure privileged access."]
         #[inline(always)]
-        pub const fn spriv(&self) -> super::vals::Priv {
+        pub const fn spriv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "RCC secure functions privilege configuration Set and reset by software. This bit can be written only by a secure privileged access."]
         #[inline(always)]
-        pub fn set_spriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_spriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "RCC non-secure functions privilege configuration Set and reset by software. This bit can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub const fn nspriv(&self) -> super::vals::Priv {
+        pub const fn nspriv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "RCC non-secure functions privilege configuration Set and reset by software. This bit can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub fn set_nspriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_nspriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Privcfgr {
@@ -8228,36 +8228,6 @@ in RCC_ICSCR1"]
         #[inline(always)]
         fn from(val: Ppre) -> u8 {
             Ppre::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Priv {
-        #[doc = "Read and write to secure functions can be done by privileged or unprivileged access."]
-        UNPRIVILEGED = 0,
-        #[doc = "Read and write to secure functions can be done by privileged access only."]
-        PRIVILEGED = 0x01,
-    }
-    impl Priv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Priv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Priv {
-        #[inline(always)]
-        fn from(val: u8) -> Priv {
-            Priv::from_bits(val)
-        }
-    }
-    impl From<Priv> for u8 {
-        #[inline(always)]
-        fn from(val: Priv) -> u8 {
-            Priv::to_bits(val)
         }
     }
     #[repr(u8)]

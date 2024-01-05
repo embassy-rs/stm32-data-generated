@@ -491,14 +491,14 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl Ercfgr {
         #[doc = "Configurable device secrets configuration"]
         #[inline(always)]
-        pub const fn ercfg0(&self) -> super::vals::Ercfg {
+        pub const fn ercfg0(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Ercfg::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Configurable device secrets configuration"]
         #[inline(always)]
-        pub fn set_ercfg0(&mut self, val: super::vals::Ercfg) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_ercfg0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
     impl Default for Ercfgr {
@@ -654,47 +654,47 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
     impl Privcr {
         #[doc = "Monotonic counter 1 privilege protection"]
         #[inline(always)]
-        pub const fn cnt1priv(&self) -> super::vals::Priv {
+        pub const fn cnt1priv(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Monotonic counter 1 privilege protection"]
         #[inline(always)]
-        pub fn set_cnt1priv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_cnt1priv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Backup registers zone 1 privilege protection"]
         #[inline(always)]
-        pub const fn bkprwpriv(&self) -> super::vals::Priv {
+        pub const fn bkprwpriv(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup registers zone 1 privilege protection"]
         #[inline(always)]
-        pub fn set_bkprwpriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        pub fn set_bkprwpriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Backup registers zone 2 privilege protection"]
         #[inline(always)]
-        pub const fn bkpwpriv(&self) -> super::vals::Priv {
+        pub const fn bkpwpriv(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup registers zone 2 privilege protection"]
         #[inline(always)]
-        pub fn set_bkpwpriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub fn set_bkpwpriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Tamper privilege protection (excluding backup registers). Note: Refer to for details on the read protection."]
         #[inline(always)]
-        pub const fn tamppriv(&self) -> super::vals::Priv {
+        pub const fn tamppriv(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Priv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Tamper privilege protection (excluding backup registers). Note: Refer to for details on the read protection."]
         #[inline(always)]
-        pub fn set_tamppriv(&mut self, val: super::vals::Priv) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_tamppriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Privcr {
@@ -765,14 +765,14 @@ can be written only in privileged mode."]
         }
         #[doc = "Monotonic counter 1 secure protection"]
         #[inline(always)]
-        pub const fn cnt1sec(&self) -> super::vals::Sec {
+        pub const fn cnt1sec(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Monotonic counter 1 secure protection"]
         #[inline(always)]
-        pub fn set_cnt1sec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_cnt1sec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Backup registers write protection offset. Protection zone 2 is defined for backup registers from BKPyR (y = BKPRWSEC, from 0 to 128) to BKPzR (z = BKPWSEC-1, from 0 to 128, BKPWSECBKPRWSEC): if TZEN=1, these backup registers can be written only with secure access. They can be read with secure or non-secure access. Protection zone 3 defined for backup registers from BKPtR (t = BKPWSEC, from 0 to 127). They can be read or written with secure or non-secure access. If TZEN=0: the protection zone 2 can be read and written with non-secure access. If BKPWSEC = 0 or if BKPWSEC BKPRWSEC: there is no protection zone 2. If BKPWPRIV is set, BKPRWSEC\\[7:0\\]
 can be written only in privileged mode."]
@@ -789,25 +789,25 @@ can be written only in privileged mode."]
         }
         #[doc = "Boot hardware key lock. This bit can be read and can only be written to 1 by software. It is cleared by hardware together with the backup registers following a tamper detection event or when the readout protection (RDP) is disabled."]
         #[inline(always)]
-        pub const fn bhklock(&self) -> super::vals::Bhklock {
+        pub const fn bhklock(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Bhklock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Boot hardware key lock. This bit can be read and can only be written to 1 by software. It is cleared by hardware together with the backup registers following a tamper detection event or when the readout protection (RDP) is disabled."]
         #[inline(always)]
-        pub fn set_bhklock(&mut self, val: super::vals::Bhklock) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub fn set_bhklock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Tamper protection (excluding monotonic counters and backup registers). Note: Refer to for details on the read protection."]
         #[inline(always)]
-        pub const fn tampsec(&self) -> super::vals::Sec {
+        pub const fn tampsec(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Sec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Tamper protection (excluding monotonic counters and backup registers). Note: Refer to for details on the read protection."]
         #[inline(always)]
-        pub fn set_tampsec(&mut self, val: super::vals::Sec) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_tampsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Seccfgr {
@@ -938,126 +938,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Atcksel) -> u8 {
             Atcksel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Bhklock {
-        #[doc = "The Backup registers from BKP0R to BKP7R can be accessed according to the Protection zone they belong to."]
-        UNLOCKED = 0,
-        #[doc = "The backup registers from BKP0R to BKP7R cannot be accessed neither in read nor in write (they are read as 0 and write ignore)."]
-        LOCKED = 0x01,
-    }
-    impl Bhklock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Bhklock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Bhklock {
-        #[inline(always)]
-        fn from(val: u8) -> Bhklock {
-            Bhklock::from_bits(val)
-        }
-    }
-    impl From<Bhklock> for u8 {
-        #[inline(always)]
-        fn from(val: Bhklock) -> u8 {
-            Bhklock::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ercfg {
-        #[doc = "Configurable device secrets are not included in the device secrets protected by TAMP peripheral"]
-        UNPROTECTED = 0,
-        #[doc = "Configurable device secrets are is included in the device secrets protected by TAMP peripheral"]
-        PROTECTED = 0x01,
-    }
-    impl Ercfg {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ercfg {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ercfg {
-        #[inline(always)]
-        fn from(val: u8) -> Ercfg {
-            Ercfg::from_bits(val)
-        }
-    }
-    impl From<Ercfg> for u8 {
-        #[inline(always)]
-        fn from(val: Ercfg) -> u8 {
-            Ercfg::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Priv {
-        #[doc = "Can be read/written with privileged or unprivileged access."]
-        UNPRIVILEGED = 0,
-        #[doc = "Can be read/written only with privileged access."]
-        PRIVILEGED = 0x01,
-    }
-    impl Priv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Priv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Priv {
-        #[inline(always)]
-        fn from(val: u8) -> Priv {
-            Priv::from_bits(val)
-        }
-    }
-    impl From<Priv> for u8 {
-        #[inline(always)]
-        fn from(val: Priv) -> u8 {
-            Priv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sec {
-        #[doc = "Can be written when the APB access is secure or non-secure."]
-        NONSECURE = 0,
-        #[doc = "Can be written only when the APB access is secure."]
-        SECURE = 0x01,
-    }
-    impl Sec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sec {
-        #[inline(always)]
-        fn from(val: u8) -> Sec {
-            Sec::from_bits(val)
-        }
-    }
-    impl From<Sec> for u8 {
-        #[inline(always)]
-        fn from(val: Sec) -> u8 {
-            Sec::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -1109,12 +1109,12 @@
                     ],
                     "dma_channels": [
                         {
-                            "signal": "CHANNEL1",
+                            "signal": "CH1",
                             "dmamux": "DMAMUX1",
                             "request": 6
                         },
                         {
-                            "signal": "CHANNEL2",
+                            "signal": "CH2",
                             "dmamux": "DMAMUX1",
                             "request": 7
                         }
@@ -1153,7 +1153,7 @@
                     ],
                     "dma_channels": [
                         {
-                            "signal": "CHANNEL1",
+                            "signal": "CH1",
                             "dmamux": "DMAMUX1",
                             "request": 41
                         }
@@ -1186,12 +1186,12 @@
                     ],
                     "dma_channels": [
                         {
-                            "signal": "CHANNEL1",
+                            "signal": "CH1",
                             "dmamux": "DMAMUX1",
                             "request": 102
                         },
                         {
-                            "signal": "CHANNEL2",
+                            "signal": "CH2",
                             "dmamux": "DMAMUX1",
                             "request": 103
                         }
@@ -1224,12 +1224,12 @@
                     ],
                     "dma_channels": [
                         {
-                            "signal": "CHANNEL1",
+                            "signal": "CH1",
                             "dmamux": "DMAMUX1",
                             "request": 104
                         },
                         {
-                            "signal": "CHANNEL2",
+                            "signal": "CH2",
                             "dmamux": "DMAMUX1",
                             "request": 105
                         }

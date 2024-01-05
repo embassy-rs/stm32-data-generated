@@ -632,9 +632,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Vdes",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hdes",
@@ -644,9 +642,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hdes",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "vsyncs",
@@ -656,9 +652,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Vsyncs",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hsyncs",
@@ -668,9 +662,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hsyncs",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1186,9 +1178,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lif",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "fuif",
@@ -1198,9 +1188,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Fuif",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "terrif",
@@ -1210,9 +1198,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Terrif",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "rrif",
@@ -1222,9 +1208,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rrif",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1525,48 +1509,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Fuif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOUNDERRUN",
-                    description: Some(
-                        "No FIFO underrun",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "UNDERRUN",
-                    description: Some(
-                        "FIFO underrun interrupt generated, if one of the layer FIFOs is empty and pixel data is read from the FIFO",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hdes",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in horizontal Data Enable phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in horizontal Data Enable phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Hspol",
             description: None,
             bit_size: 1,
@@ -1588,27 +1530,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Hsyncs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in HSYNC phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in HSYNC phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Imr",
             description: None,
             bit_size: 1,
@@ -1624,27 +1545,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "RELOAD",
                     description: Some(
                         "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREACHED",
-                    description: Some(
-                        "Programmed line not reached",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REACHED",
-                    description: Some(
-                        "Line interrupt generated when a programmed line is reached",
                     ),
                     value: 1,
                 },
@@ -1735,48 +1635,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rrif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NORELOAD",
-                    description: Some(
-                        "No register reload",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RELOAD",
-                    description: Some(
-                        "Register reload interrupt generated when a vertical blanking reload occurs (and the first line after the active area is reached)",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Terrif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOERROR",
-                    description: Some(
-                        "No transfer error",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ERROR",
-                    description: Some(
-                        "Transfer error interrupt generated when a bus error occurs",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Vbr",
             description: None,
             bit_size: 1,
@@ -1798,27 +1656,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Vdes",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in vertical Data Enable phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in vertical Data Enable phase",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Vspol",
             description: None,
             bit_size: 1,
@@ -1834,27 +1671,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ACTIVEHIGH",
                     description: Some(
                         "Vertical synchronization polarity is active high",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vsyncs",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTACTIVE",
-                    description: Some(
-                        "Currently not in VSYNC phase",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ACTIVE",
-                    description: Some(
-                        "Currently in VSYNC phase",
                     ),
                     value: 1,
                 },

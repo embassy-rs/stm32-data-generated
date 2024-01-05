@@ -334,47 +334,47 @@ pub mod regs {
     impl Cdsr {
         #[doc = "Vertical Data Enable display Status"]
         #[inline(always)]
-        pub const fn vdes(&self) -> super::vals::Vdes {
+        pub const fn vdes(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Vdes::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Vertical Data Enable display Status"]
         #[inline(always)]
-        pub fn set_vdes(&mut self, val: super::vals::Vdes) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_vdes(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Horizontal Data Enable display Status"]
         #[inline(always)]
-        pub const fn hdes(&self) -> super::vals::Hdes {
+        pub const fn hdes(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Hdes::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Horizontal Data Enable display Status"]
         #[inline(always)]
-        pub fn set_hdes(&mut self, val: super::vals::Hdes) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_hdes(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Vertical Synchronization display Status"]
         #[inline(always)]
-        pub const fn vsyncs(&self) -> super::vals::Vsyncs {
+        pub const fn vsyncs(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Vsyncs::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Vertical Synchronization display Status"]
         #[inline(always)]
-        pub fn set_vsyncs(&mut self, val: super::vals::Vsyncs) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_vsyncs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Horizontal Synchronization display Status"]
         #[inline(always)]
-        pub const fn hsyncs(&self) -> super::vals::Hsyncs {
+        pub const fn hsyncs(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Hsyncs::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Horizontal Synchronization display Status"]
         #[inline(always)]
-        pub fn set_hsyncs(&mut self, val: super::vals::Hsyncs) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_hsyncs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
     impl Default for Cdsr {
@@ -929,47 +929,47 @@ pub mod regs {
     impl Isr {
         #[doc = "Line Interrupt flag"]
         #[inline(always)]
-        pub const fn lif(&self) -> super::vals::Lif {
+        pub const fn lif(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lif::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Line Interrupt flag"]
         #[inline(always)]
-        pub fn set_lif(&mut self, val: super::vals::Lif) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lif(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "FIFO Underrun Interrupt flag"]
         #[inline(always)]
-        pub const fn fuif(&self) -> super::vals::Fuif {
+        pub const fn fuif(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Fuif::from_bits(val as u8)
+            val != 0
         }
         #[doc = "FIFO Underrun Interrupt flag"]
         #[inline(always)]
-        pub fn set_fuif(&mut self, val: super::vals::Fuif) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_fuif(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Transfer Error interrupt flag"]
         #[inline(always)]
-        pub const fn terrif(&self) -> super::vals::Terrif {
+        pub const fn terrif(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Terrif::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Transfer Error interrupt flag"]
         #[inline(always)]
-        pub fn set_terrif(&mut self, val: super::vals::Terrif) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_terrif(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Register Reload Interrupt Flag"]
         #[inline(always)]
-        pub const fn rrif(&self) -> super::vals::Rrif {
+        pub const fn rrif(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Rrif::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Register Reload Interrupt Flag"]
         #[inline(always)]
-        pub fn set_rrif(&mut self, val: super::vals::Rrif) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_rrif(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
     impl Default for Isr {
@@ -1380,66 +1380,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Fuif {
-        #[doc = "No FIFO underrun"]
-        NOUNDERRUN = 0,
-        #[doc = "FIFO underrun interrupt generated, if one of the layer FIFOs is empty and pixel data is read from the FIFO"]
-        UNDERRUN = 0x01,
-    }
-    impl Fuif {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fuif {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Fuif {
-        #[inline(always)]
-        fn from(val: u8) -> Fuif {
-            Fuif::from_bits(val)
-        }
-    }
-    impl From<Fuif> for u8 {
-        #[inline(always)]
-        fn from(val: Fuif) -> u8 {
-            Fuif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Hdes {
-        #[doc = "Currently not in horizontal Data Enable phase"]
-        NOTACTIVE = 0,
-        #[doc = "Currently in horizontal Data Enable phase"]
-        ACTIVE = 0x01,
-    }
-    impl Hdes {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hdes {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hdes {
-        #[inline(always)]
-        fn from(val: u8) -> Hdes {
-            Hdes::from_bits(val)
-        }
-    }
-    impl From<Hdes> for u8 {
-        #[inline(always)]
-        fn from(val: Hdes) -> u8 {
-            Hdes::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Hspol {
         #[doc = "Horizontal synchronization polarity is active low"]
         ACTIVELOW = 0,
@@ -1470,36 +1410,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Hsyncs {
-        #[doc = "Currently not in HSYNC phase"]
-        NOTACTIVE = 0,
-        #[doc = "Currently in HSYNC phase"]
-        ACTIVE = 0x01,
-    }
-    impl Hsyncs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsyncs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hsyncs {
-        #[inline(always)]
-        fn from(val: u8) -> Hsyncs {
-            Hsyncs::from_bits(val)
-        }
-    }
-    impl From<Hsyncs> for u8 {
-        #[inline(always)]
-        fn from(val: Hsyncs) -> u8 {
-            Hsyncs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Imr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
         NOEFFECT = 0,
@@ -1526,36 +1436,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Imr) -> u8 {
             Imr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Lif {
-        #[doc = "Programmed line not reached"]
-        NOTREACHED = 0,
-        #[doc = "Line interrupt generated when a programmed line is reached"]
-        REACHED = 0x01,
-    }
-    impl Lif {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lif {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lif {
-        #[inline(always)]
-        fn from(val: u8) -> Lif {
-            Lif::from_bits(val)
-        }
-    }
-    impl From<Lif> for u8 {
-        #[inline(always)]
-        fn from(val: Lif) -> u8 {
-            Lif::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1632,66 +1512,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Rrif {
-        #[doc = "No register reload"]
-        NORELOAD = 0,
-        #[doc = "Register reload interrupt generated when a vertical blanking reload occurs (and the first line after the active area is reached)"]
-        RELOAD = 0x01,
-    }
-    impl Rrif {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rrif {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rrif {
-        #[inline(always)]
-        fn from(val: u8) -> Rrif {
-            Rrif::from_bits(val)
-        }
-    }
-    impl From<Rrif> for u8 {
-        #[inline(always)]
-        fn from(val: Rrif) -> u8 {
-            Rrif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Terrif {
-        #[doc = "No transfer error"]
-        NOERROR = 0,
-        #[doc = "Transfer error interrupt generated when a bus error occurs"]
-        ERROR = 0x01,
-    }
-    impl Terrif {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Terrif {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Terrif {
-        #[inline(always)]
-        fn from(val: u8) -> Terrif {
-            Terrif::from_bits(val)
-        }
-    }
-    impl From<Terrif> for u8 {
-        #[inline(always)]
-        fn from(val: Terrif) -> u8 {
-            Terrif::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vbr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
         NOEFFECT = 0,
@@ -1722,36 +1542,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vdes {
-        #[doc = "Currently not in vertical Data Enable phase"]
-        NOTACTIVE = 0,
-        #[doc = "Currently in vertical Data Enable phase"]
-        ACTIVE = 0x01,
-    }
-    impl Vdes {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vdes {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vdes {
-        #[inline(always)]
-        fn from(val: u8) -> Vdes {
-            Vdes::from_bits(val)
-        }
-    }
-    impl From<Vdes> for u8 {
-        #[inline(always)]
-        fn from(val: Vdes) -> u8 {
-            Vdes::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vspol {
         #[doc = "Vertical synchronization polarity is active low"]
         ACTIVELOW = 0,
@@ -1778,36 +1568,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Vspol) -> u8 {
             Vspol::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Vsyncs {
-        #[doc = "Currently not in VSYNC phase"]
-        NOTACTIVE = 0,
-        #[doc = "Currently in VSYNC phase"]
-        ACTIVE = 0x01,
-    }
-    impl Vsyncs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vsyncs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vsyncs {
-        #[inline(always)]
-        fn from(val: u8) -> Vsyncs {
-            Vsyncs::from_bits(val)
-        }
-    }
-    impl From<Vsyncs> for u8 {
-        #[inline(always)]
-        fn from(val: Vsyncs) -> u8 {
-            Vsyncs::to_bits(val)
         }
     }
 }

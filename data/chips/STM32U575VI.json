@@ -777,6 +777,11 @@
                 {
                     "name": "CORDIC",
                     "address": 1073876992,
+                    "registers": {
+                        "kind": "cordic",
+                        "version": "v1",
+                        "block": "CORDIC"
+                    },
                     "rcc": {
                         "clock": "hclk1",
                         "enable": {

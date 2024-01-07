@@ -1122,9 +1122,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Aab",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mb",
@@ -2960,9 +2958,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mcf",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mcp",
@@ -3695,27 +3691,6 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Aab",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNALIGNED",
-                    description: Some(
-                        "Bursts are not aligned",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ALIGNED",
-                    description: Some(
-                        "Align bursts to start address LS bits. First burst alignment depends on FB bit",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Apcs",
             description: None,
             bit_size: 1,
@@ -4375,27 +4350,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BUSY",
                     description: Some(
                         "This bit is set to 1 by the application to indicate that a read or write access is in progress",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mcf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNFROZEN",
-                    description: Some(
-                        "All MMC counters update normally",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FROZEN",
-                    description: Some(
-                        "All MMC counters frozen to their current value",
                     ),
                     value: 1,
                 },

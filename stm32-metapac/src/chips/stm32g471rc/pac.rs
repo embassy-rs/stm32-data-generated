@@ -474,7 +474,7 @@ pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5400 as usize as _
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000 as usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0400 as usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4002_0800 as usize as _) };
-pub const CORDIC: *mut () = 0x4002_0c00 as usize as _;
+pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_0c00 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_1000 as usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400 as usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
@@ -513,6 +513,8 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../../peripherals/cordic_v1.rs"]
+pub mod cordic;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

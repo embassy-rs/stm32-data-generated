@@ -466,14 +466,14 @@ pub mod regs {
         }
         #[doc = "Address-aligned beats"]
         #[inline(always)]
-        pub const fn aab(&self) -> super::vals::Aab {
+        pub const fn aab(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
-            super::vals::Aab::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Address-aligned beats"]
         #[inline(always)]
-        pub fn set_aab(&mut self, val: super::vals::Aab) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        pub fn set_aab(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Mixed burst"]
         #[inline(always)]
@@ -2410,14 +2410,14 @@ pub mod regs {
         }
         #[doc = "MMC counter freeze"]
         #[inline(always)]
-        pub const fn mcf(&self) -> super::vals::Mcf {
+        pub const fn mcf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Mcf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "MMC counter freeze"]
         #[inline(always)]
-        pub fn set_mcf(&mut self, val: super::vals::Mcf) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_mcf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "MMC counter preset"]
         #[inline(always)]
@@ -3230,36 +3230,6 @@ pub mod regs {
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Aab {
-        #[doc = "Bursts are not aligned"]
-        UNALIGNED = 0,
-        #[doc = "Align bursts to start address LS bits. First burst alignment depends on FB bit"]
-        ALIGNED = 0x01,
-    }
-    impl Aab {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Aab {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Aab {
-        #[inline(always)]
-        fn from(val: u8) -> Aab {
-            Aab::from_bits(val)
-        }
-    }
-    impl From<Aab> for u8 {
-        #[inline(always)]
-        fn from(val: Aab) -> u8 {
-            Aab::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Apcs {
@@ -4150,36 +4120,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: MbProgress) -> u8 {
             MbProgress::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mcf {
-        #[doc = "All MMC counters update normally"]
-        UNFROZEN = 0,
-        #[doc = "All MMC counters frozen to their current value"]
-        FROZEN = 0x01,
-    }
-    impl Mcf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mcf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mcf {
-        #[inline(always)]
-        fn from(val: u8) -> Mcf {
-            Mcf::from_bits(val)
-        }
-    }
-    impl From<Mcf> for u8 {
-        #[inline(always)]
-        fn from(val: Mcf) -> u8 {
-            Mcf::to_bits(val)
         }
     }
     #[repr(u8)]

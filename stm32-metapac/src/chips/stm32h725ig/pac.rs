@@ -680,7 +680,7 @@ pub const PSSI: *mut () = 0x4802_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800 as usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400 as usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4802_4000 as usize as _) };
-pub const CORDIC: *mut () = 0x4802_4400 as usize as _;
+pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4802_4400 as usize as _) };
 pub const LTDC: *mut () = 0x5000_1000 as usize as _;
 pub const WWDG1: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x5000_3000 as usize as _) };
 pub const MDMA: *mut () = 0x5200_0000 as usize as _;
@@ -743,6 +743,8 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan_h7.rs"]
 pub mod can;
+#[path = "../../peripherals/cordic_v1.rs"]
+pub mod cordic;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

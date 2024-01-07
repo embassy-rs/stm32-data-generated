@@ -523,7 +523,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "CORDIC",
         address: 1208108032,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "cordic",
+            version: "v1",
+            block: "CORDIC",
+            ir: &cordic::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk2",
             enable: Some(PeripheralRccRegister {
@@ -9090,6 +9095,8 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../registers/can_fdcan_h7.rs"]
 pub mod can;
+#[path = "../registers/cordic_v1.rs"]
+pub mod cordic;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]

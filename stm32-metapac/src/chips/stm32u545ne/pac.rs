@@ -559,7 +559,7 @@ pub const SAI1: *mut () = 0x4001_5400 as usize as _;
 pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4001_6000 as usize as _) };
 pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4001_6400 as usize as _) };
 pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_0000 as usize as _) };
-pub const CORDIC: *mut () = 0x4002_1000 as usize as _;
+pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_1000 as usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400 as usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000 as usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _) };
@@ -619,6 +619,8 @@ pub mod adf;
 pub mod aes;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../../peripherals/cordic_v1.rs"]
+pub mod cordic;
 #[path = "../../peripherals/crc_v2.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

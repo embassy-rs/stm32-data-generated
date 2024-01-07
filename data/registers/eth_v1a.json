@@ -440,8 +440,7 @@
         "name": "AAB",
         "description": "Address-aligned beats",
         "bit_offset": 25,
-        "bit_size": 1,
-        "enum": "AAB"
+        "bit_size": 1
       }
     ]
   },
@@ -1479,8 +1478,7 @@
         "name": "MCF",
         "description": "MMC counter freeze",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "MCF"
+        "bit_size": 1
       }
     ]
   },
@@ -1880,21 +1878,6 @@
         "description": "TTSL",
         "bit_offset": 0,
         "bit_size": 32
-      }
-    ]
-  },
-  "enum/AAB": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Unaligned",
-        "description": "Bursts are not aligned",
-        "value": 0
-      },
-      {
-        "name": "Aligned",
-        "description": "Align bursts to start address LS bits. First burst alignment depends on FB bit",
-        "value": 1
       }
     ]
   },
@@ -2354,21 +2337,6 @@
       {
         "name": "Busy",
         "description": "This bit is set to 1 by the application to indicate that a read or write access is in progress",
-        "value": 1
-      }
-    ]
-  },
-  "enum/MCF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Unfrozen",
-        "description": "All MMC counters update normally",
-        "value": 0
-      },
-      {
-        "name": "Frozen",
-        "description": "All MMC counters frozen to their current value",
         "value": 1
       }
     ]

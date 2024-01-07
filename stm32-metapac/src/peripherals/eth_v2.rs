@@ -188,15 +188,11 @@ impl EthernetMac {
     pub const fn macwtr(self) -> crate::common::Reg<regs::Macwtr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(12usize) as _) }
     }
-    #[doc = "Hash Table 0 register"]
+    #[doc = "Hash Table 0/1 register"]
     #[inline(always)]
-    pub const fn macht0r(self) -> crate::common::Reg<regs::Macht0r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize) as _) }
-    }
-    #[doc = "Hash Table 1 register"]
-    #[inline(always)]
-    pub const fn macht1r(self) -> crate::common::Reg<regs::Macht1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize) as _) }
+    pub const fn machtr(self, n: usize) -> crate::common::Reg<regs::Machtr, crate::common::RW> {
+        assert!(n < 2usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(16usize + n * 4usize) as _) }
     }
     #[doc = "VLAN tag register"]
     #[inline(always)]
@@ -313,35 +309,17 @@ impl EthernetMac {
     pub const fn maca0lr(self) -> crate::common::Reg<regs::Maca0lr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(772usize) as _) }
     }
-    #[doc = "Address 1 high register"]
+    #[doc = "Address 1/2/3 high register"]
     #[inline(always)]
-    pub const fn maca1hr(self) -> crate::common::Reg<regs::Maca1hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize) as _) }
+    pub const fn macahr(self, n: usize) -> crate::common::Reg<regs::Macahr, crate::common::RW> {
+        assert!(n < 3usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(776usize + n * 8usize) as _) }
     }
-    #[doc = "Address 1 low register"]
+    #[doc = "Address 1/2/3 low register"]
     #[inline(always)]
-    pub const fn maca1lr(self) -> crate::common::Reg<regs::Maca1lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(780usize) as _) }
-    }
-    #[doc = "Address 2 high register"]
-    #[inline(always)]
-    pub const fn maca2hr(self) -> crate::common::Reg<regs::Maca2hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(784usize) as _) }
-    }
-    #[doc = "Address 2 low register"]
-    #[inline(always)]
-    pub const fn maca2lr(self) -> crate::common::Reg<regs::Maca2lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(788usize) as _) }
-    }
-    #[doc = "Address 3 high register"]
-    #[inline(always)]
-    pub const fn maca3hr(self) -> crate::common::Reg<regs::Maca3hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(792usize) as _) }
-    }
-    #[doc = "Address 3 low register"]
-    #[inline(always)]
-    pub const fn maca3lr(self) -> crate::common::Reg<regs::Maca3lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(796usize) as _) }
+    pub const fn macalr(self, n: usize) -> crate::common::Reg<regs::Macalr, crate::common::RW> {
+        assert!(n < 3usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(780usize + n * 8usize) as _) }
     }
     #[doc = "MMC control register"]
     #[inline(always)]
@@ -1757,243 +1735,6 @@ pub mod regs {
             Maca0lr(0)
         }
     }
-    #[doc = "Address 1 high register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca1hr(pub u32);
-    impl Maca1hr {
-        #[doc = "MAC Address1 \\[47:32\\]"]
-        #[inline(always)]
-        pub const fn addrhi(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "MAC Address1 \\[47:32\\]"]
-        #[inline(always)]
-        pub fn set_addrhi(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[doc = "Mask Byte Control"]
-        #[inline(always)]
-        pub const fn mbc(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "Mask Byte Control"]
-        #[inline(always)]
-        pub fn set_mbc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
-        }
-        #[doc = "Source Address"]
-        #[inline(always)]
-        pub const fn sa(&self) -> bool {
-            let val = (self.0 >> 30usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Source Address"]
-        #[inline(always)]
-        pub fn set_sa(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-        }
-        #[doc = "Address Enable"]
-        #[inline(always)]
-        pub const fn ae(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Address Enable"]
-        #[inline(always)]
-        pub fn set_ae(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Maca1hr {
-        #[inline(always)]
-        fn default() -> Maca1hr {
-            Maca1hr(0)
-        }
-    }
-    #[doc = "Address 1 low register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca1lr(pub u32);
-    impl Maca1lr {
-        #[doc = "MAC Address 1 \\[31:0\\]"]
-        #[inline(always)]
-        pub const fn addrlo(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "MAC Address 1 \\[31:0\\]"]
-        #[inline(always)]
-        pub fn set_addrlo(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Maca1lr {
-        #[inline(always)]
-        fn default() -> Maca1lr {
-            Maca1lr(0)
-        }
-    }
-    #[doc = "Address 2 high register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca2hr(pub u32);
-    impl Maca2hr {
-        #[doc = "MAC Address2 \\[47:32\\]"]
-        #[inline(always)]
-        pub const fn addrhi(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "MAC Address2 \\[47:32\\]"]
-        #[inline(always)]
-        pub fn set_addrhi(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[doc = "Mask Byte Control"]
-        #[inline(always)]
-        pub const fn mbc(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "Mask Byte Control"]
-        #[inline(always)]
-        pub fn set_mbc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
-        }
-        #[doc = "Source Address"]
-        #[inline(always)]
-        pub const fn sa(&self) -> bool {
-            let val = (self.0 >> 30usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Source Address"]
-        #[inline(always)]
-        pub fn set_sa(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-        }
-        #[doc = "Address Enable"]
-        #[inline(always)]
-        pub const fn ae(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Address Enable"]
-        #[inline(always)]
-        pub fn set_ae(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Maca2hr {
-        #[inline(always)]
-        fn default() -> Maca2hr {
-            Maca2hr(0)
-        }
-    }
-    #[doc = "Address 2 low register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca2lr(pub u32);
-    impl Maca2lr {
-        #[doc = "MAC Address 2 \\[31:0\\]"]
-        #[inline(always)]
-        pub const fn addrlo(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "MAC Address 2 \\[31:0\\]"]
-        #[inline(always)]
-        pub fn set_addrlo(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Maca2lr {
-        #[inline(always)]
-        fn default() -> Maca2lr {
-            Maca2lr(0)
-        }
-    }
-    #[doc = "Address 3 high register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca3hr(pub u32);
-    impl Maca3hr {
-        #[doc = "MAC Address3 \\[47:32\\]"]
-        #[inline(always)]
-        pub const fn addrhi(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "MAC Address3 \\[47:32\\]"]
-        #[inline(always)]
-        pub fn set_addrhi(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[doc = "Mask Byte Control"]
-        #[inline(always)]
-        pub const fn mbc(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "Mask Byte Control"]
-        #[inline(always)]
-        pub fn set_mbc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
-        }
-        #[doc = "Source Address"]
-        #[inline(always)]
-        pub const fn sa(&self) -> bool {
-            let val = (self.0 >> 30usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Source Address"]
-        #[inline(always)]
-        pub fn set_sa(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
-        }
-        #[doc = "Address Enable"]
-        #[inline(always)]
-        pub const fn ae(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Address Enable"]
-        #[inline(always)]
-        pub fn set_ae(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Maca3hr {
-        #[inline(always)]
-        fn default() -> Maca3hr {
-            Maca3hr(0)
-        }
-    }
-    #[doc = "Address 3 low register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Maca3lr(pub u32);
-    impl Maca3lr {
-        #[doc = "MAC Address 3 \\[31:0\\]"]
-        #[inline(always)]
-        pub const fn addrlo(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "MAC Address 3 \\[31:0\\]"]
-        #[inline(always)]
-        pub fn set_addrlo(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Maca3lr {
-        #[inline(always)]
-        fn default() -> Maca3lr {
-            Maca3lr(0)
-        }
-    }
     #[doc = "Auxiliary control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2010,55 +1751,105 @@ pub mod regs {
         pub fn set_atsfc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Auxiliary Snapshot 0 Enable"]
+        #[doc = "Auxiliary Snapshot 0-3 Enable"]
         #[inline(always)]
-        pub const fn atsen0(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
+        pub const fn atsen(&self, n: usize) -> bool {
+            assert!(n < 4usize);
+            let offs = 4usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Auxiliary Snapshot 0 Enable"]
+        #[doc = "Auxiliary Snapshot 0-3 Enable"]
         #[inline(always)]
-        pub fn set_atsen0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Auxiliary Snapshot 1 Enable"]
-        #[inline(always)]
-        pub const fn atsen1(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Auxiliary Snapshot 1 Enable"]
-        #[inline(always)]
-        pub fn set_atsen1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Auxiliary Snapshot 2 Enable"]
-        #[inline(always)]
-        pub const fn atsen2(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Auxiliary Snapshot 2 Enable"]
-        #[inline(always)]
-        pub fn set_atsen2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Auxiliary Snapshot 3 Enable"]
-        #[inline(always)]
-        pub const fn atsen3(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Auxiliary Snapshot 3 Enable"]
-        #[inline(always)]
-        pub fn set_atsen3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        pub fn set_atsen(&mut self, n: usize, val: bool) {
+            assert!(n < 4usize);
+            let offs = 4usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Macacr {
         #[inline(always)]
         fn default() -> Macacr {
             Macacr(0)
+        }
+    }
+    #[doc = "Address 1/2/3 high register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Macahr(pub u32);
+    impl Macahr {
+        #[doc = "MAC Address 1/2/3 \\[47:32\\]"]
+        #[inline(always)]
+        pub const fn addrhi(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "MAC Address 1/2/3 \\[47:32\\]"]
+        #[inline(always)]
+        pub fn set_addrhi(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "Mask Byte Control"]
+        #[inline(always)]
+        pub const fn mbc(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Mask Byte Control"]
+        #[inline(always)]
+        pub fn set_mbc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
+        }
+        #[doc = "Source Address"]
+        #[inline(always)]
+        pub const fn sa(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Source Address"]
+        #[inline(always)]
+        pub fn set_sa(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "Address Enable"]
+        #[inline(always)]
+        pub const fn ae(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Address Enable"]
+        #[inline(always)]
+        pub fn set_ae(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Macahr {
+        #[inline(always)]
+        fn default() -> Macahr {
+            Macahr(0)
+        }
+    }
+    #[doc = "Address 1/2/3 low register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Macalr(pub u32);
+    impl Macalr {
+        #[doc = "MAC Address 1/2/3 \\[31:0\\]"]
+        #[inline(always)]
+        pub const fn addrlo(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "MAC Address 1/2/3 \\[31:0\\]"]
+        #[inline(always)]
+        pub fn set_addrlo(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Macalr {
+        #[inline(always)]
+        fn default() -> Macalr {
+            Macalr(0)
         }
     }
     #[doc = "ARP address register"]
@@ -2529,50 +2320,27 @@ pub mod regs {
             Macecr(0)
         }
     }
-    #[doc = "Hash Table 0 register"]
+    #[doc = "Hash Table 0/1 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Macht0r(pub u32);
-    impl Macht0r {
-        #[doc = "MAC Hash Table First 32 Bits"]
+    pub struct Machtr(pub u32);
+    impl Machtr {
+        #[doc = "MAC Hash Table 32 Bits"]
         #[inline(always)]
-        pub const fn ht31t0(&self) -> u32 {
+        pub const fn ht(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
-        #[doc = "MAC Hash Table First 32 Bits"]
+        #[doc = "MAC Hash Table 32 Bits"]
         #[inline(always)]
-        pub fn set_ht31t0(&mut self, val: u32) {
+        pub fn set_ht(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
-    impl Default for Macht0r {
+    impl Default for Machtr {
         #[inline(always)]
-        fn default() -> Macht0r {
-            Macht0r(0)
-        }
-    }
-    #[doc = "Hash Table 1 register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Macht1r(pub u32);
-    impl Macht1r {
-        #[doc = "MAC Hash Table Second 32 Bits"]
-        #[inline(always)]
-        pub const fn ht63t32(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "MAC Hash Table Second 32 Bits"]
-        #[inline(always)]
-        pub fn set_ht63t32(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Macht1r {
-        #[inline(always)]
-        fn default() -> Macht1r {
-            Macht1r(0)
+        fn default() -> Machtr {
+            Machtr(0)
         }
     }
     #[doc = "HW feature 1 register"]

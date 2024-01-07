@@ -492,35 +492,25 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macht0r",
+                    name: "machtr",
                     description: Some(
-                        "Hash Table 0 register",
+                        "Hash Table 0/1 register",
                     ),
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 2,
+                                stride: 4,
+                            },
+                        ),
+                    ),
                     byte_offset: 16,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Macht0r",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "macht1r",
-                    description: Some(
-                        "Hash Table 1 register",
-                    ),
-                    array: None,
-                    byte_offset: 20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Macht1r",
+                                "Machtr",
                             ),
                         },
                     ),
@@ -917,103 +907,49 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "maca1hr",
+                    name: "macahr",
                     description: Some(
-                        "Address 1 high register",
+                        "Address 1/2/3 high register",
                     ),
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
                     byte_offset: 776,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maca1hr",
+                                "Macahr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "maca1lr",
+                    name: "macalr",
                     description: Some(
-                        "Address 1 low register",
+                        "Address 1/2/3 low register",
                     ),
-                    array: None,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 3,
+                                stride: 8,
+                            },
+                        ),
+                    ),
                     byte_offset: 780,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Maca1lr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca2hr",
-                    description: Some(
-                        "Address 2 high register",
-                    ),
-                    array: None,
-                    byte_offset: 784,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca2hr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca2lr",
-                    description: Some(
-                        "Address 2 low register",
-                    ),
-                    array: None,
-                    byte_offset: 788,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca2lr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca3hr",
-                    description: Some(
-                        "Address 3 high register",
-                    ),
-                    array: None,
-                    byte_offset: 792,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca3hr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maca3lr",
-                    description: Some(
-                        "Address 3 low register",
-                    ),
-                    array: None,
-                    byte_offset: 796,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maca3lr",
+                                "Macalr",
                             ),
                         },
                     ),
@@ -3070,216 +3006,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Maca1hr",
-            extends: None,
-            description: Some(
-                "Address 1 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrhi",
-                    description: Some(
-                        "MAC Address1 [47:32]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "Mask Byte Control",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "Source Address",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "Address Enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca1lr",
-            extends: None,
-            description: Some(
-                "Address 1 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrlo",
-                    description: Some(
-                        "MAC Address 1 [31:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca2hr",
-            extends: None,
-            description: Some(
-                "Address 2 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrhi",
-                    description: Some(
-                        "MAC Address2 [47:32]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "Mask Byte Control",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "Source Address",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "Address Enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca2lr",
-            extends: None,
-            description: Some(
-                "Address 2 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrlo",
-                    description: Some(
-                        "MAC Address 2 [31:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca3hr",
-            extends: None,
-            description: Some(
-                "Address 3 high register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrhi",
-                    description: Some(
-                        "MAC Address3 [47:32]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mbc",
-                    description: Some(
-                        "Mask Byte Control",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sa",
-                    description: Some(
-                        "Source Address",
-                    ),
-                    bit_offset: 30,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ae",
-                    description: Some(
-                        "Address Enable",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Maca3lr",
-            extends: None,
-            description: Some(
-                "Address 3 low register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "addrlo",
-                    description: Some(
-                        "MAC Address 3 [31:0]",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Macacr",
             extends: None,
             description: Some(
@@ -3298,42 +3024,89 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "atsen0",
+                    name: "atsen",
                     description: Some(
-                        "Auxiliary Snapshot 0 Enable",
+                        "Auxiliary Snapshot 0-3 Enable",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Macahr",
+            extends: None,
+            description: Some(
+                "Address 1/2/3 high register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "addrhi",
+                    description: Some(
+                        "MAC Address 1/2/3 [47:32]",
+                    ),
+                    bit_offset: 0,
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "atsen1",
+                    name: "mbc",
                     description: Some(
-                        "Auxiliary Snapshot 1 Enable",
+                        "Mask Byte Control",
                     ),
-                    bit_offset: 5,
+                    bit_offset: 24,
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sa",
+                    description: Some(
+                        "Source Address",
+                    ),
+                    bit_offset: 30,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "atsen2",
+                    name: "ae",
                     description: Some(
-                        "Auxiliary Snapshot 2 Enable",
+                        "Address Enable",
                     ),
-                    bit_offset: 6,
+                    bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
+            ],
+        },
+        FieldSet {
+            name: "Macalr",
+            extends: None,
+            description: Some(
+                "Address 1/2/3 low register",
+            ),
+            bit_size: 32,
+            fields: &[
                 Field {
-                    name: "atsen3",
+                    name: "addrlo",
                     description: Some(
-                        "Auxiliary Snapshot 3 Enable",
+                        "MAC Address 1/2/3 [31:0]",
                     ),
-                    bit_offset: 7,
-                    bit_size: 1,
+                    bit_offset: 0,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -3760,37 +3533,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Macht0r",
+            name: "Machtr",
             extends: None,
             description: Some(
-                "Hash Table 0 register",
+                "Hash Table 0/1 register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ht31t0",
+                    name: "ht",
                     description: Some(
-                        "MAC Hash Table First 32 Bits",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Macht1r",
-            extends: None,
-            description: Some(
-                "Hash Table 1 register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ht63t32",
-                    description: Some(
-                        "MAC Hash Table Second 32 Bits",
+                        "MAC Hash Table 32 Bits",
                     ),
                     bit_offset: 0,
                     bit_size: 32,

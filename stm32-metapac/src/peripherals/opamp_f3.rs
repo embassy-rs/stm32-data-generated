@@ -14,18 +14,18 @@ impl Opamp {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "OPAMP control register"]
+    #[doc = "OPAMP control/status register"]
     #[inline(always)]
-    pub const fn opampcsr(self) -> crate::common::Reg<regs::OpampCsr, crate::common::RW> {
+    pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "OPAMP control register"]
+    #[doc = "OPAMP control/status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OpampCsr(pub u32);
-    impl OpampCsr {
+    pub struct Csr(pub u32);
+    impl Csr {
         #[doc = "OPAMP enable"]
         #[inline(always)]
         pub const fn opampen(&self) -> bool {
@@ -203,10 +203,10 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for OpampCsr {
+    impl Default for Csr {
         #[inline(always)]
-        fn default() -> OpampCsr {
-            OpampCsr(0)
+        fn default() -> Csr {
+            Csr(0)
         }
     }
 }

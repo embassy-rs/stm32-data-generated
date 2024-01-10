@@ -3,15 +3,15 @@
     "description": "Operational Amplifier",
     "items": [
       {
-        "name": "OPAMPCSR",
-        "description": "OPAMP control register",
+        "name": "CSR",
+        "description": "OPAMP control/status register",
         "byte_offset": 0,
-        "fieldset": "OPAMP_CSR"
+        "fieldset": "CSR"
       }
     ]
   },
-  "fieldset/OPAMP_CSR": {
-    "description": "OPAMP control register",
+  "fieldset/CSR": {
+    "description": "OPAMP control/status register",
     "fields": [
       {
         "name": "OPAMPEN",

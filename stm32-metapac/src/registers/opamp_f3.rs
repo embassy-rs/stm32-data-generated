@@ -6,21 +6,21 @@ pub(crate) static REGISTERS: IR = IR {
         extends: None,
         description: Some("Operational Amplifier"),
         items: &[BlockItem {
-            name: "opampcsr",
-            description: Some("OPAMP control register"),
+            name: "csr",
+            description: Some("OPAMP control/status register"),
             array: None,
             byte_offset: 0,
             inner: BlockItemInner::Register(Register {
                 access: Access::ReadWrite,
                 bit_size: 32,
-                fieldset: Some("OpampCsr"),
+                fieldset: Some("Csr"),
             }),
         }],
     }],
     fieldsets: &[FieldSet {
-        name: "OpampCsr",
+        name: "Csr",
         extends: None,
-        description: Some("OPAMP control register"),
+        description: Some("OPAMP control/status register"),
         bit_size: 32,
         fields: &[
             Field {

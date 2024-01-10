@@ -1,120 +1,120 @@
 {
   "block/OPAMP": {
-    "description": "Operational amplifiers",
+    "description": "Operational Amplifier",
     "items": [
       {
-        "name": "OPAMP_CSR",
+        "name": "CSR",
         "description": "OPAMP control/status register",
         "byte_offset": 0,
-        "fieldset": "OPAMP_CSR"
+        "fieldset": "CSR"
       },
       {
-        "name": "OPAMP_TCMR",
+        "name": "TCMR",
         "description": "OPAMP control/status register",
         "byte_offset": 24,
-        "fieldset": "OPAMP_TCMR"
+        "fieldset": "TCMR"
       }
     ]
   },
-  "fieldset/OPAMP_CSR": {
+  "fieldset/CSR": {
     "description": "OPAMP control/status register",
     "fields": [
       {
-        "name": "OPAEN",
-        "description": "Operational amplifier Enable",
+        "name": "OPAMPEN",
+        "description": "OPAMP enable",
         "bit_offset": 0,
         "bit_size": 1
       },
       {
         "name": "FORCE_VP",
-        "description": "FORCE_VP",
+        "description": "Forces a calibration reference voltage on non-inverting input and disables external connections.",
         "bit_offset": 1,
         "bit_size": 1,
-        "enum": "OPAMP_CSR_FORCE_VP"
+        "enum": "FORCE_VP"
       },
       {
         "name": "VP_SEL",
         "description": "VP_SEL",
         "bit_offset": 2,
         "bit_size": 2,
-        "enum": "OPAMP_CSR_VP_SEL"
+        "enum": "VP_SEL"
       },
       {
         "name": "USERTRIM",
         "description": "USERTRIM",
         "bit_offset": 4,
         "bit_size": 1,
-        "enum": "OPAMP_CSR_USERTRIM"
+        "enum": "USERTRIM"
       },
       {
         "name": "VM_SEL",
-        "description": "VM_SEL",
+        "description": "OPAMP inverting input selection",
         "bit_offset": 5,
         "bit_size": 2,
-        "enum": "OPAMP_CSR_VM_SEL"
+        "enum": "VM_SEL"
       },
       {
         "name": "OPAHSM",
         "description": "OPAHSM",
         "bit_offset": 7,
         "bit_size": 1,
-        "enum": "OPAMP_CSR_OPAHSM"
+        "enum": "OPAHSM"
       },
       {
         "name": "OPAINTOEN",
         "description": "OPAINTOEN",
         "bit_offset": 8,
         "bit_size": 1,
-        "enum": "OPAMP_CSR_OPAINTOEN"
+        "enum": "OPAINTOEN"
       },
       {
         "name": "CALON",
-        "description": "CALON",
+        "description": "Calibration mode enable",
         "bit_offset": 11,
         "bit_size": 1
       },
       {
         "name": "CALSEL",
-        "description": "CALSEL",
+        "description": "Calibration selection",
         "bit_offset": 12,
         "bit_size": 2,
-        "enum": "OPAMP_CSR_CALSEL"
+        "enum": "CALSEL"
       },
       {
         "name": "PGA_GAIN",
-        "description": "PGA_GAIN",
+        "description": "Gain in PGA mode",
         "bit_offset": 14,
         "bit_size": 5,
-        "enum": "OPAMP_CSR_PGA_GAIN"
+        "enum": "PGA_GAIN"
       },
       {
         "name": "TRIMOFFSETP",
-        "description": "TRIMOFFSETP",
+        "description": "Offset trimming value (PMOS)",
         "bit_offset": 19,
         "bit_size": 5
       },
       {
         "name": "TRIMOFFSETN",
-        "description": "TRIMOFFSETN",
+        "description": "Offset trimming value (NMOS)",
         "bit_offset": 24,
         "bit_size": 5
       },
       {
-        "name": "CALOUT",
-        "description": "CALOUT",
+        "name": "OUTCAL",
+        "description": "OPAMP ouput status flag",
         "bit_offset": 30,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "OUTCAL"
       },
       {
         "name": "LOCK",
         "description": "LOCK",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "OPAMP_CSR_LOCK"
+        "bit_size": 1
       }
     ]
   },
-  "fieldset/OPAMP_TCMR": {
+  "fieldset/TCMR": {
     "description": "OPAMP timer controlled mode register",
     "fields": [
       {
@@ -128,7 +128,7 @@
         "description": "VPS_SEL",
         "bit_offset": 1,
         "bit_size": 2,
-        "enum": "OPAMP_TCMR_VPS_SEL"
+        "enum": "VPS_SEL"
       },
       {
         "name": "T1CM_EN",
@@ -150,69 +150,53 @@
       },
       {
         "name": "LOCK",
-        "description": "LOCK",
+        "description": "TCMR LOCK",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "OPAMP_TCMR_LOCK"
+        "bit_size": 1
       }
     ]
   },
-  "enum/OPAMP_CSR_CALSEL": {
+  "enum/CALSEL": {
     "bit_size": 2,
     "variants": [
       {
         "name": "Percent3_3",
-        "description": "0.033*VDDA applied to OPAMP inputs during calibration",
+        "description": "VREFOPAMP=3.3% VDDA",
         "value": 0
       },
       {
         "name": "Percent10",
-        "description": "0.1*VDDA applied to OPAMP inputs during calibration",
+        "description": "VREFOPAMP=10% VDDA",
         "value": 1
       },
       {
         "name": "Percent50",
-        "description": "0.5*VDDA applied to OPAMP inputs during calibration",
+        "description": "VREFOPAMP=50% VDDA",
         "value": 2
       },
       {
         "name": "Percent90",
-        "description": "0.9*VDDA applied to OPAMP inputs during calibration",
+        "description": "VREFOPAMP=90% VDDA",
         "value": 3
       }
     ]
   },
-  "enum/OPAMP_CSR_FORCE_VP": {
+  "enum/FORCE_VP": {
     "bit_size": 1,
     "variants": [
       {
         "name": "Normal",
-        "description": "Non-inverting input connected configured inputs",
+        "description": "Normal operating mode",
         "value": 0
       },
       {
-        "name": "CalibrationVerification",
-        "description": "Non-inverting input connected to calibration reference voltage",
+        "name": "Calibration",
+        "description": "Calibration mode. Non-inverting input connected to calibration reference",
         "value": 1
       }
     ]
   },
-  "enum/OPAMP_CSR_LOCK": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "ReadWrite",
-        "description": "CSR is read-write",
-        "value": 0
-      },
-      {
-        "name": "ReadOnly",
-        "description": "CSR is read-only, can only be cleared by system reset",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPAMP_CSR_OPAHSM": {
+  "enum/OPAHSM": {
     "bit_size": 1,
     "variants": [
       {
@@ -227,7 +211,7 @@
       }
     ]
   },
-  "enum/OPAMP_CSR_OPAINTOEN": {
+  "enum/OPAINTOEN": {
     "bit_size": 1,
     "variants": [
       {
@@ -242,7 +226,22 @@
       }
     ]
   },
-  "enum/OPAMP_CSR_PGA_GAIN": {
+  "enum/OUTCAL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Low",
+        "description": "Non-inverting < inverting",
+        "value": 0
+      },
+      {
+        "name": "High",
+        "description": "Non-inverting > inverting",
+        "value": 1
+      }
+    ]
+  },
+  "enum/PGA_GAIN": {
     "bit_size": 5,
     "variants": [
       {
@@ -367,7 +366,7 @@
       }
     ]
   },
-  "enum/OPAMP_CSR_USERTRIM": {
+  "enum/USERTRIM": {
     "bit_size": 1,
     "variants": [
       {
@@ -382,7 +381,7 @@
       }
     ]
   },
-  "enum/OPAMP_CSR_VM_SEL": {
+  "enum/VM_SEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -407,7 +406,7 @@
       }
     ]
   },
-  "enum/OPAMP_CSR_VP_SEL": {
+  "enum/VPS_SEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -432,22 +431,7 @@
       }
     ]
   },
-  "enum/OPAMP_TCMR_LOCK": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "ReadWrite",
-        "description": "TCMR is read-write",
-        "value": 0
-      },
-      {
-        "name": "ReadOnly",
-        "description": "TCMR is read-only, can only be cleared by system reset",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPAMP_TCMR_VPS_SEL": {
+  "enum/VP_SEL": {
     "bit_size": 2,
     "variants": [
       {

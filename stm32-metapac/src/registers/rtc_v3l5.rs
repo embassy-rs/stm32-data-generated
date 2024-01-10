@@ -2275,34 +2275,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ssruf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNDERFLOW",
-                    description: Some(
-                        "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ssrumf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNDERFLOW",
-                    description: Some(
-                        "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "TampalrmType",
             description: None,
             bit_size: 1,

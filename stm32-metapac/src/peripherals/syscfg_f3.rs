@@ -63,224 +63,224 @@ pub mod regs {
         pub fn set_mem_mode(&mut self, val: super::vals::MemMode) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
-        #[doc = "USB interrupt remap"]
+        #[doc = "USB interrupt remap 0: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively 1: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively"]
         #[inline(always)]
-        pub const fn usb_it_rmp(&self) -> super::vals::UsbItRmp {
+        pub const fn usb_it_rmp(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::UsbItRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "USB interrupt remap"]
+        #[doc = "USB interrupt remap 0: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively 1: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively"]
         #[inline(always)]
-        pub fn set_usb_it_rmp(&mut self, val: super::vals::UsbItRmp) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_usb_it_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "Timer 1 ITR3 selection"]
+        #[doc = "Timer 1 ITR3 selection 0: Not remapped 1: TIM1_ITR3 = TIM17_OC"]
         #[inline(always)]
-        pub const fn tim1_itr3_rmp(&self) -> super::vals::Tim1Itr3Rmp {
+        pub const fn tim1_itr3_rmp(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Tim1Itr3Rmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "Timer 1 ITR3 selection"]
+        #[doc = "Timer 1 ITR3 selection 0: Not remapped 1: TIM1_ITR3 = TIM17_OC"]
         #[inline(always)]
-        pub fn set_tim1_itr3_rmp(&mut self, val: super::vals::Tim1Itr3Rmp) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_tim1_itr3_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "DAC trigger remap (when TSEL = 001)"]
+        #[doc = "DAC trigger remap (when TSEL = 001) 0: DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices 1: DAC trigger is TIM3_TRGO"]
         #[inline(always)]
-        pub const fn dac1_trig_rmp(&self) -> super::vals::Dac1TrigRmp {
+        pub const fn dac1_trig_rmp(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Dac1TrigRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "DAC trigger remap (when TSEL = 001)"]
+        #[doc = "DAC trigger remap (when TSEL = 001) 0: DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices 1: DAC trigger is TIM3_TRGO"]
         #[inline(always)]
-        pub fn set_dac1_trig_rmp(&mut self, val: super::vals::Dac1TrigRmp) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_dac1_trig_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
-        #[doc = "DAC trigger remap (when TSEL = 001)"]
+        #[doc = "DAC trigger remap (when TSEL = 001) 0: Not remapped 1: DAC trigger is TIM3_TRGO"]
         #[inline(always)]
-        pub const fn dac_trig_rmp(&self) -> super::vals::DacTrigRmp {
+        pub const fn dac_trig_rmp(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::DacTrigRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "DAC trigger remap (when TSEL = 001)"]
+        #[doc = "DAC trigger remap (when TSEL = 001) 0: Not remapped 1: DAC trigger is TIM3_TRGO"]
         #[inline(always)]
-        pub fn set_dac_trig_rmp(&mut self, val: super::vals::DacTrigRmp) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_dac_trig_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
-        #[doc = "ADC24 DMA remapping bit"]
+        #[doc = "ADC24 DMA remapping bit 0: ADC24 DMA requests mapped on DMA2 channels 1 and 2 1: ADC24 DMA requests mapped on DMA2 channels 3 and 4"]
         #[inline(always)]
-        pub const fn adc2_dma_rmp(&self) -> super::vals::Adc2DmaRmpCfgr1 {
+        pub const fn adc2_dma_rmp(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Adc2DmaRmpCfgr1::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "ADC24 DMA remapping bit"]
+        #[doc = "ADC24 DMA remapping bit 0: ADC24 DMA requests mapped on DMA2 channels 1 and 2 1: ADC24 DMA requests mapped on DMA2 channels 3 and 4"]
         #[inline(always)]
-        pub fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmpCfgr1) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_adc2_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "TIM16 DMA request remapping bit"]
+        #[doc = "TIM16 DMA request remapping bit 0: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3 1: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4"]
         #[inline(always)]
-        pub const fn tim16_dma_rmp(&self) -> super::vals::Tim16DmaRmp {
+        pub const fn tim16_dma_rmp(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Tim16DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM16 DMA request remapping bit"]
+        #[doc = "TIM16 DMA request remapping bit 0: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3 1: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4"]
         #[inline(always)]
-        pub fn set_tim16_dma_rmp(&mut self, val: super::vals::Tim16DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_tim16_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
-        #[doc = "TIM17 DMA request remapping bit"]
+        #[doc = "TIM17 DMA request remapping bit 0: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1 1: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2"]
         #[inline(always)]
-        pub const fn tim17_dma_rmp(&self) -> super::vals::Tim17DmaRmp {
+        pub const fn tim17_dma_rmp(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Tim17DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM17 DMA request remapping bit"]
+        #[doc = "TIM17 DMA request remapping bit 0: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1 1: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2"]
         #[inline(always)]
-        pub fn set_tim17_dma_rmp(&mut self, val: super::vals::Tim17DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_tim17_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
-        #[doc = "TIM6 and DAC1 DMA request remapping bit"]
+        #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub const fn tim6_dac1_ch1_dma_rmp(&self) -> super::vals::Tim6Dac1Ch1DmaRmp {
+        pub const fn tim6_dac1_ch1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Tim6Dac1Ch1DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM6 and DAC1 DMA request remapping bit"]
+        #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub fn set_tim6_dac1_ch1_dma_rmp(&mut self, val: super::vals::Tim6Dac1Ch1DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_tim6_dac1_ch1_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
-        #[doc = "TIM6 and DAC1 DMA request remapping bit"]
+        #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub const fn tim6_dac1_dma_rmp(&self) -> super::vals::Tim6Dac1DmaRmp {
+        pub const fn tim6_dac1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Tim6Dac1DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM6 and DAC1 DMA request remapping bit"]
+        #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub fn set_tim6_dac1_dma_rmp(&mut self, val: super::vals::Tim6Dac1DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_tim6_dac1_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
-        #[doc = "TIM6 and DAC1 DMA request remapping bit"]
+        #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3 1: TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub const fn tim6_dac1_out1_dma_rmp(&self) -> super::vals::Tim6Dac1Out1DmaRmp {
+        pub const fn tim6_dac1_out1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Tim6Dac1Out1DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM6 and DAC1 DMA request remapping bit"]
+        #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3 1: TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub fn set_tim6_dac1_out1_dma_rmp(&mut self, val: super::vals::Tim6Dac1Out1DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_tim6_dac1_out1_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
-        #[doc = "TIM7 and DAC2 DMA request remapping bit"]
+        #[doc = "TIM7 and DAC2 DMA request remapping bit 0: Not remapped 1: TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4"]
         #[inline(always)]
-        pub const fn tim7_dac1_ch2_dma_rmp(&self) -> super::vals::Tim7Dac1Ch2DmaRmp {
+        pub const fn tim7_dac1_ch2_dma_rmp(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Tim7Dac1Ch2DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM7 and DAC2 DMA request remapping bit"]
+        #[doc = "TIM7 and DAC2 DMA request remapping bit 0: Not remapped 1: TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4"]
         #[inline(always)]
-        pub fn set_tim7_dac1_ch2_dma_rmp(&mut self, val: super::vals::Tim7Dac1Ch2DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_tim7_dac1_ch2_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
-        #[doc = "TIM7 and DAC2 DMA request remapping bit"]
+        #[doc = "TIM7 and DAC2 DMA request remapping bit 0: TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4 1: TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4"]
         #[inline(always)]
-        pub const fn tim7_dac1_out2_dma_rmp(&self) -> super::vals::Tim7Dac1Out2DmaRmp {
+        pub const fn tim7_dac1_out2_dma_rmp(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Tim7Dac1Out2DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM7 and DAC2 DMA request remapping bit"]
+        #[doc = "TIM7 and DAC2 DMA request remapping bit 0: TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4 1: TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4"]
         #[inline(always)]
-        pub fn set_tim7_dac1_out2_dma_rmp(&mut self, val: super::vals::Tim7Dac1Out2DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_tim7_dac1_out2_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
-        #[doc = "DAC2 channel1 DMA remap"]
+        #[doc = "DAC2 channel1 DMA remap 0: Not remapped 1: DAC2_CH1 DMA requests mapped on DMA1 channel 5"]
         #[inline(always)]
-        pub const fn dac2_ch1_dma_rmp(&self) -> super::vals::Dac2Ch1DmaRmp {
+        pub const fn dac2_ch1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Dac2Ch1DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "DAC2 channel1 DMA remap"]
+        #[doc = "DAC2 channel1 DMA remap 0: Not remapped 1: DAC2_CH1 DMA requests mapped on DMA1 channel 5"]
         #[inline(always)]
-        pub fn set_dac2_ch1_dma_rmp(&mut self, val: super::vals::Dac2Ch1DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_dac2_ch1_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
-        #[doc = "TIM18 and DAC2_OUT1 DMA request remapping bit"]
+        #[doc = "TIM18 and DAC2_OUT1 DMA request remapping bit 0: TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5 1: TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5"]
         #[inline(always)]
-        pub const fn tim18_dac2_out1_dma_rmp(&self) -> super::vals::Tim18Dac2Out1DmaRmp {
+        pub const fn tim18_dac2_out1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Tim18Dac2Out1DmaRmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TIM18 and DAC2_OUT1 DMA request remapping bit"]
+        #[doc = "TIM18 and DAC2_OUT1 DMA request remapping bit 0: TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5 1: TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5"]
         #[inline(always)]
-        pub fn set_tim18_dac2_out1_dma_rmp(&mut self, val: super::vals::Tim18Dac2Out1DmaRmp) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_tim18_dac2_out1_dma_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB6 pin operate in standard mode 1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed"]
         #[inline(always)]
-        pub const fn i2c_pb6_fmp(&self) -> super::vals::I2cPb6Fmp {
+        pub const fn i2c_pb6_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::I2cPb6Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB6 pin operate in standard mode 1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb6_fmp(&mut self, val: super::vals::I2cPb6Fmp) {
+        pub fn set_i2c_pb6_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB7 pin operate in standard mode 1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed"]
         #[inline(always)]
-        pub const fn i2c_pb7_fmp(&self) -> super::vals::I2cPb7Fmp {
+        pub const fn i2c_pb7_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::I2cPb7Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB7 pin operate in standard mode 1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb7_fmp(&mut self, val: super::vals::I2cPb7Fmp) {
+        pub fn set_i2c_pb7_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB8 pin operate in standard mode 1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed"]
         #[inline(always)]
-        pub const fn i2c_pb8_fmp(&self) -> super::vals::I2cPb8Fmp {
+        pub const fn i2c_pb8_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 18usize) & 0x01;
-            super::vals::I2cPb8Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB8 pin operate in standard mode 1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb8_fmp(&mut self, val: super::vals::I2cPb8Fmp) {
+        pub fn set_i2c_pb8_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB9 pin operate in standard mode 1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed"]
         #[inline(always)]
-        pub const fn i2c_pb9_fmp(&self) -> super::vals::I2cPb9Fmp {
+        pub const fn i2c_pb9_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 19usize) & 0x01;
-            super::vals::I2cPb9Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "Fast Mode Plus (FM+) driving capability activation bits."]
+        #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB9 pin operate in standard mode 1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb9_fmp(&mut self, val: super::vals::I2cPb9Fmp) {
+        pub fn set_i2c_pb9_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
         }
-        #[doc = "I2C1 Fast Mode Plus"]
+        #[doc = "I2C1 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub const fn i2c1_fmp(&self) -> super::vals::I2c1Fmp {
+        pub const fn i2c1_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 20usize) & 0x01;
-            super::vals::I2c1Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "I2C1 Fast Mode Plus"]
+        #[doc = "I2C1 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub fn set_i2c1_fmp(&mut self, val: super::vals::I2c1Fmp) {
+        pub fn set_i2c1_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
-        #[doc = "I2C2 Fast Mode Plus"]
+        #[doc = "I2C2 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub const fn i2c2_fmp(&self) -> super::vals::I2c2Fmp {
+        pub const fn i2c2_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::I2c2Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "I2C2 Fast Mode Plus"]
+        #[doc = "I2C2 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub fn set_i2c2_fmp(&mut self, val: super::vals::I2c2Fmp) {
+        pub fn set_i2c2_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Encoder mode"]
@@ -294,15 +294,15 @@ pub mod regs {
         pub fn set_encoder_mode(&mut self, val: super::vals::EncoderMode) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
-        #[doc = "I2C3 Fast Mode Plus"]
+        #[doc = "I2C3 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub const fn i2c3_fmp(&self) -> super::vals::I2c3Fmp {
+        pub const fn i2c3_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::I2c3Fmp::from_bits(val as u8)
+            super::vals::Fmp::from_bits(val as u8)
         }
-        #[doc = "I2C3 Fast Mode Plus"]
+        #[doc = "I2C3 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub fn set_i2c3_fmp(&mut self, val: super::vals::I2c3Fmp) {
+        pub fn set_i2c3_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "Enable the power switch to deliver VBAT voltage on ADC channel 18 input"]
@@ -345,47 +345,47 @@ pub mod regs {
     impl Cfgr2 {
         #[doc = "Cortex-M0 LOCKUP bit enable bit"]
         #[inline(always)]
-        pub const fn lockup_lock(&self) -> super::vals::LockupLock {
+        pub const fn lockup_lock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::LockupLock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Cortex-M0 LOCKUP bit enable bit"]
         #[inline(always)]
-        pub fn set_lockup_lock(&mut self, val: super::vals::LockupLock) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lockup_lock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "SRAM parity lock bit"]
         #[inline(always)]
-        pub const fn sram_parity_lock(&self) -> super::vals::SramParityLock {
+        pub const fn sram_parity_lock(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::SramParityLock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM parity lock bit"]
         #[inline(always)]
-        pub fn set_sram_parity_lock(&mut self, val: super::vals::SramParityLock) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_sram_parity_lock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PVD lock enable bit"]
         #[inline(always)]
-        pub const fn pvd_lock(&self) -> super::vals::PvdLock {
+        pub const fn pvd_lock(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::PvdLock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "PVD lock enable bit"]
         #[inline(always)]
-        pub fn set_pvd_lock(&mut self, val: super::vals::PvdLock) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_pvd_lock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Bypass address bit 29 in parity calculation"]
         #[inline(always)]
-        pub const fn byp_addr_par(&self) -> super::vals::BypAddrPar {
+        pub const fn byp_addr_par(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::BypAddrPar::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bypass address bit 29 in parity calculation"]
         #[inline(always)]
-        pub fn set_byp_addr_par(&mut self, val: super::vals::BypAddrPar) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_byp_addr_par(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAM parity flag"]
         #[inline(always)]
@@ -476,16 +476,16 @@ pub mod regs {
         pub fn set_dac1_trig3_rmp(&mut self, val: super::vals::Dac1Trig3Rmp) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
-        #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap"]
+        #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap 0: Not remapped 1: DAC trigger is HRTIM1_DAC1_TRIG2"]
         #[inline(always)]
-        pub const fn dac1_trig5_rmp(&self) -> super::vals::Dac1Trig5Rmp {
+        pub const fn dac1_trig5_rmp(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::Dac1Trig5Rmp::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap"]
+        #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap 0: Not remapped 1: DAC trigger is HRTIM1_DAC1_TRIG2"]
         #[inline(always)]
-        pub fn set_dac1_trig5_rmp(&mut self, val: super::vals::Dac1Trig5Rmp) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub fn set_dac1_trig5_rmp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
     impl Default for Cfgr3 {
@@ -958,34 +958,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Adc2DmaRmpCfgr1 {
-        _RESERVED_0 = 0,
-        _RESERVED_1 = 0x01,
-    }
-    impl Adc2DmaRmpCfgr1 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Adc2DmaRmpCfgr1 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Adc2DmaRmpCfgr1 {
-        #[inline(always)]
-        fn from(val: u8) -> Adc2DmaRmpCfgr1 {
-            Adc2DmaRmpCfgr1::from_bits(val)
-        }
-    }
-    impl From<Adc2DmaRmpCfgr1> for u8 {
-        #[inline(always)]
-        fn from(val: Adc2DmaRmpCfgr1) -> u8 {
-            Adc2DmaRmpCfgr1::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Adc2DmaRmpCfgr3 {
         _RESERVED_0 = 0,
         _RESERVED_1 = 0x01,
@@ -1198,36 +1170,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum BypAddrPar {
-        #[doc = "The ramload operation is performed taking into consideration bit 29 of the address when the parity is calculated"]
-        NOBYPASS = 0,
-        #[doc = "The ramload operation is performed without taking into consideration bit 29 of the address when the parity is calculated"]
-        BYPASS = 0x01,
-    }
-    impl BypAddrPar {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> BypAddrPar {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for BypAddrPar {
-        #[inline(always)]
-        fn from(val: u8) -> BypAddrPar {
-            BypAddrPar::from_bits(val)
-        }
-    }
-    impl From<BypAddrPar> for u8 {
-        #[inline(always)]
-        fn from(val: BypAddrPar) -> u8 {
-            BypAddrPar::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Dac1Trig3Rmp {
         #[doc = "DAC trigger is TIM15_TRGO"]
         TIM15 = 0,
@@ -1254,126 +1196,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dac1Trig3Rmp) -> u8 {
             Dac1Trig3Rmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dac1Trig5Rmp {
-        #[doc = "Not remapped"]
-        NOTREMAPPED = 0,
-        #[doc = "DAC trigger is HRTIM1_DAC1_TRIG2"]
-        REMAPPED = 0x01,
-    }
-    impl Dac1Trig5Rmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dac1Trig5Rmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dac1Trig5Rmp {
-        #[inline(always)]
-        fn from(val: u8) -> Dac1Trig5Rmp {
-            Dac1Trig5Rmp::from_bits(val)
-        }
-    }
-    impl From<Dac1Trig5Rmp> for u8 {
-        #[inline(always)]
-        fn from(val: Dac1Trig5Rmp) -> u8 {
-            Dac1Trig5Rmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dac1TrigRmp {
-        #[doc = "DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices"]
-        NOTREMAPPED = 0,
-        #[doc = "DAC trigger is TIM3_TRGO"]
-        REMAPPED = 0x01,
-    }
-    impl Dac1TrigRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dac1TrigRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dac1TrigRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Dac1TrigRmp {
-            Dac1TrigRmp::from_bits(val)
-        }
-    }
-    impl From<Dac1TrigRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Dac1TrigRmp) -> u8 {
-            Dac1TrigRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dac2Ch1DmaRmp {
-        #[doc = "Not remapped"]
-        NOTREMAPPED = 0,
-        #[doc = "DAC2_CH1 DMA requests mapped on DMA1 channel 5"]
-        REMAPPED = 0x01,
-    }
-    impl Dac2Ch1DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dac2Ch1DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dac2Ch1DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Dac2Ch1DmaRmp {
-            Dac2Ch1DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Dac2Ch1DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Dac2Ch1DmaRmp) -> u8 {
-            Dac2Ch1DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum DacTrigRmp {
-        #[doc = "Not remapped"]
-        NOTREMAPPED = 0,
-        #[doc = "DAC trigger is TIM3_TRGO"]
-        REMAPPED = 0x01,
-    }
-    impl DacTrigRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> DacTrigRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for DacTrigRmp {
-        #[inline(always)]
-        fn from(val: u8) -> DacTrigRmp {
-            DacTrigRmp::from_bits(val)
-        }
-    }
-    impl From<DacTrigRmp> for u8 {
-        #[inline(always)]
-        fn from(val: DacTrigRmp) -> u8 {
-            DacTrigRmp::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1411,15 +1233,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2c1Fmp {
-        #[doc = "FM+ mode is controlled by I2C_Pxx_FMP bits only"]
+    pub enum Fmp {
+        #[doc = "Standard"]
         STANDARD = 0,
-        #[doc = "FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits"]
+        #[doc = "FM+"]
         FMP = 0x01,
     }
-    impl I2c1Fmp {
+    impl Fmp {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2c1Fmp {
+        pub const fn from_bits(val: u8) -> Fmp {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1427,16 +1249,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for I2c1Fmp {
+    impl From<u8> for Fmp {
         #[inline(always)]
-        fn from(val: u8) -> I2c1Fmp {
-            I2c1Fmp::from_bits(val)
+        fn from(val: u8) -> Fmp {
+            Fmp::from_bits(val)
         }
     }
-    impl From<I2c1Fmp> for u8 {
+    impl From<Fmp> for u8 {
         #[inline(always)]
-        fn from(val: I2c1Fmp) -> u8 {
-            I2c1Fmp::to_bits(val)
+        fn from(val: Fmp) -> u8 {
+            Fmp::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1507,216 +1329,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2c2Fmp {
-        #[doc = "FM+ mode is controlled by I2C_Pxx_FMP bits only"]
-        STANDARD = 0,
-        #[doc = "FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits"]
-        FMP = 0x01,
-    }
-    impl I2c2Fmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2c2Fmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2c2Fmp {
-        #[inline(always)]
-        fn from(val: u8) -> I2c2Fmp {
-            I2c2Fmp::from_bits(val)
-        }
-    }
-    impl From<I2c2Fmp> for u8 {
-        #[inline(always)]
-        fn from(val: I2c2Fmp) -> u8 {
-            I2c2Fmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2c3Fmp {
-        #[doc = "FM+ mode is controlled by I2C_Pxx_FMP bits only"]
-        STANDARD = 0,
-        #[doc = "FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits"]
-        FMP = 0x01,
-    }
-    impl I2c3Fmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2c3Fmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2c3Fmp {
-        #[inline(always)]
-        fn from(val: u8) -> I2c3Fmp {
-            I2c3Fmp::from_bits(val)
-        }
-    }
-    impl From<I2c3Fmp> for u8 {
-        #[inline(always)]
-        fn from(val: I2c3Fmp) -> u8 {
-            I2c3Fmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2cPb6Fmp {
-        #[doc = "PB6 pin operate in standard mode"]
-        STANDARD = 0,
-        #[doc = "I2C FM+ mode enabled on PB6 and the Speed control is bypassed"]
-        FMP = 0x01,
-    }
-    impl I2cPb6Fmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2cPb6Fmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2cPb6Fmp {
-        #[inline(always)]
-        fn from(val: u8) -> I2cPb6Fmp {
-            I2cPb6Fmp::from_bits(val)
-        }
-    }
-    impl From<I2cPb6Fmp> for u8 {
-        #[inline(always)]
-        fn from(val: I2cPb6Fmp) -> u8 {
-            I2cPb6Fmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2cPb7Fmp {
-        #[doc = "PB7 pin operate in standard mode"]
-        STANDARD = 0,
-        #[doc = "I2C FM+ mode enabled on PB7 and the Speed control is bypassed"]
-        FMP = 0x01,
-    }
-    impl I2cPb7Fmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2cPb7Fmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2cPb7Fmp {
-        #[inline(always)]
-        fn from(val: u8) -> I2cPb7Fmp {
-            I2cPb7Fmp::from_bits(val)
-        }
-    }
-    impl From<I2cPb7Fmp> for u8 {
-        #[inline(always)]
-        fn from(val: I2cPb7Fmp) -> u8 {
-            I2cPb7Fmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2cPb8Fmp {
-        #[doc = "PB8 pin operate in standard mode"]
-        STANDARD = 0,
-        #[doc = "I2C FM+ mode enabled on PB8 and the Speed control is bypassed"]
-        FMP = 0x01,
-    }
-    impl I2cPb8Fmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2cPb8Fmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2cPb8Fmp {
-        #[inline(always)]
-        fn from(val: u8) -> I2cPb8Fmp {
-            I2cPb8Fmp::from_bits(val)
-        }
-    }
-    impl From<I2cPb8Fmp> for u8 {
-        #[inline(always)]
-        fn from(val: I2cPb8Fmp) -> u8 {
-            I2cPb8Fmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum I2cPb9Fmp {
-        #[doc = "PB9 pin operate in standard mode"]
-        STANDARD = 0,
-        #[doc = "I2C FM+ mode enabled on PB9 and the Speed control is bypassed"]
-        FMP = 0x01,
-    }
-    impl I2cPb9Fmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2cPb9Fmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2cPb9Fmp {
-        #[inline(always)]
-        fn from(val: u8) -> I2cPb9Fmp {
-            I2cPb9Fmp::from_bits(val)
-        }
-    }
-    impl From<I2cPb9Fmp> for u8 {
-        #[inline(always)]
-        fn from(val: I2cPb9Fmp) -> u8 {
-            I2cPb9Fmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum LockupLock {
-        #[doc = "Cortex-M4 LOCKUP output disconnected from TIM1/15/16/17 Break inputs and HRTIM1 SYSFLT."]
-        DISCONNECTED = 0,
-        #[doc = "Cortex-M4 LOCKUP output connected to TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs"]
-        CONNECTED = 0x01,
-    }
-    impl LockupLock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> LockupLock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for LockupLock {
-        #[inline(always)]
-        fn from(val: u8) -> LockupLock {
-            LockupLock::from_bits(val)
-        }
-    }
-    impl From<LockupLock> for u8 {
-        #[inline(always)]
-        fn from(val: LockupLock) -> u8 {
-            LockupLock::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
         MAINFLASH = 0,
@@ -1747,36 +1359,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: MemMode) -> u8 {
             MemMode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum PvdLock {
-        #[doc = "PVD interrupt disconnected from TIM15/16/17 Break input"]
-        DISCONNECTED = 0,
-        #[doc = "PVD interrupt connected to TIM15/16/17 Break input"]
-        CONNECTED = 0x01,
-    }
-    impl PvdLock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> PvdLock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for PvdLock {
-        #[inline(always)]
-        fn from(val: u8) -> PvdLock {
-            PvdLock::from_bits(val)
-        }
-    }
-    impl From<PvdLock> for u8 {
-        #[inline(always)]
-        fn from(val: PvdLock) -> u8 {
-            PvdLock::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1843,336 +1425,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Spi1TxDmaRmp) -> u8 {
             Spi1TxDmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum SramParityLock {
-        #[doc = "SRAM parity error signal disconnected from TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs"]
-        DISCONNECTED = 0,
-        #[doc = "SRAM parity error signal connected to TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs"]
-        CONNECTED = 0x01,
-    }
-    impl SramParityLock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SramParityLock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SramParityLock {
-        #[inline(always)]
-        fn from(val: u8) -> SramParityLock {
-            SramParityLock::from_bits(val)
-        }
-    }
-    impl From<SramParityLock> for u8 {
-        #[inline(always)]
-        fn from(val: SramParityLock) -> u8 {
-            SramParityLock::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim16DmaRmp {
-        #[doc = "TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4"]
-        REMAPPED = 0x01,
-    }
-    impl Tim16DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim16DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim16DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim16DmaRmp {
-            Tim16DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim16DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim16DmaRmp) -> u8 {
-            Tim16DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim17DmaRmp {
-        #[doc = "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2"]
-        REMAPPED = 0x01,
-    }
-    impl Tim17DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim17DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim17DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim17DmaRmp {
-            Tim17DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim17DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim17DmaRmp) -> u8 {
-            Tim17DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim18Dac2Out1DmaRmp {
-        #[doc = "TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5"]
-        REMAPPED = 0x01,
-    }
-    impl Tim18Dac2Out1DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim18Dac2Out1DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim18Dac2Out1DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim18Dac2Out1DmaRmp {
-            Tim18Dac2Out1DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim18Dac2Out1DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim18Dac2Out1DmaRmp) -> u8 {
-            Tim18Dac2Out1DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim1Itr3Rmp {
-        #[doc = "Not remapped"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM1_ITR3 = TIM17_OC"]
-        REMAPPED = 0x01,
-    }
-    impl Tim1Itr3Rmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim1Itr3Rmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim1Itr3Rmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim1Itr3Rmp {
-            Tim1Itr3Rmp::from_bits(val)
-        }
-    }
-    impl From<Tim1Itr3Rmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim1Itr3Rmp) -> u8 {
-            Tim1Itr3Rmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim6Dac1Ch1DmaRmp {
-        #[doc = "TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
-        REMAPPED = 0x01,
-    }
-    impl Tim6Dac1Ch1DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim6Dac1Ch1DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim6Dac1Ch1DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim6Dac1Ch1DmaRmp {
-            Tim6Dac1Ch1DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim6Dac1Ch1DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim6Dac1Ch1DmaRmp) -> u8 {
-            Tim6Dac1Ch1DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim6Dac1DmaRmp {
-        #[doc = "TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
-        REMAPPED = 0x01,
-    }
-    impl Tim6Dac1DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim6Dac1DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim6Dac1DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim6Dac1DmaRmp {
-            Tim6Dac1DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim6Dac1DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim6Dac1DmaRmp) -> u8 {
-            Tim6Dac1DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim6Dac1Out1DmaRmp {
-        #[doc = "TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3"]
-        REMAPPED = 0x01,
-    }
-    impl Tim6Dac1Out1DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim6Dac1Out1DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim6Dac1Out1DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim6Dac1Out1DmaRmp {
-            Tim6Dac1Out1DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim6Dac1Out1DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim6Dac1Out1DmaRmp) -> u8 {
-            Tim6Dac1Out1DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim7Dac1Ch2DmaRmp {
-        #[doc = "Not remapped"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4"]
-        REMAPPED = 0x01,
-    }
-    impl Tim7Dac1Ch2DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim7Dac1Ch2DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim7Dac1Ch2DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim7Dac1Ch2DmaRmp {
-            Tim7Dac1Ch2DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim7Dac1Ch2DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim7Dac1Ch2DmaRmp) -> u8 {
-            Tim7Dac1Ch2DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tim7Dac1Out2DmaRmp {
-        #[doc = "TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4"]
-        NOTREMAPPED = 0,
-        #[doc = "TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4"]
-        REMAPPED = 0x01,
-    }
-    impl Tim7Dac1Out2DmaRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tim7Dac1Out2DmaRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tim7Dac1Out2DmaRmp {
-        #[inline(always)]
-        fn from(val: u8) -> Tim7Dac1Out2DmaRmp {
-            Tim7Dac1Out2DmaRmp::from_bits(val)
-        }
-    }
-    impl From<Tim7Dac1Out2DmaRmp> for u8 {
-        #[inline(always)]
-        fn from(val: Tim7Dac1Out2DmaRmp) -> u8 {
-            Tim7Dac1Out2DmaRmp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum UsbItRmp {
-        #[doc = "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively"]
-        NOTREMAPPED = 0,
-        #[doc = "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively"]
-        REMAPPED = 0x01,
-    }
-    impl UsbItRmp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> UsbItRmp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for UsbItRmp {
-        #[inline(always)]
-        fn from(val: u8) -> UsbItRmp {
-            UsbItRmp::from_bits(val)
-        }
-    }
-    impl From<UsbItRmp> for u8 {
-        #[inline(always)]
-        fn from(val: UsbItRmp) -> u8 {
-            UsbItRmp::to_bits(val)
         }
     }
 }

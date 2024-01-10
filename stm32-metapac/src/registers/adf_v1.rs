@@ -1193,21 +1193,231 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some(
                 "Bitstream selection. This bitfield is set and cleared by software. It is used to select the bitstream to be used by the DFLT0.",
             ),
-            bit_size: 1,
+            bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "BSR",
+                    name: "BS0_R",
                     description: Some(
-                        "bs0_r provided to DFLT0.",
+                        "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BSF",
+                    name: "BS0_F",
                     description: Some(
-                        "bs0_f provided to DFLT0.",
+                        "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BS1_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BS1_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BS2_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "BS2_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "BS3_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "BS3_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "BS4_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "BS4_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "BS5_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "BS5_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "BS6_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "BS6_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "BS7_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "BS7_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "BS8_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "BS8_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "BS9_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "BS9_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "BS10_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "BS10_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "BS11_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "BS11_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "BS12_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "BS12_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "BS13_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "BS13_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "BS14_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "BS14_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "BS15_R",
+                    description: Some(
+                        "bsx_r provided to DFLTy (and SCDy).",
+                    ),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "BS15_F",
+                    description: Some(
+                        "bsx_f provided to DFLTy (and SCDy).",
+                    ),
+                    value: 31,
                 },
             ],
         },
@@ -1822,7 +2032,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some(
                 "Serial clock source. This bitfield is set and cleared by software. It is used to select the clock source of the serial interface.",
             ),
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "CCK0",
@@ -1837,6 +2047,20 @@ pub(crate) static REGISTERS: IR = IR {
                         "Serial clock source is CCK1.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "CKI0",
+                    description: Some(
+                        "Serial clock source is CCI0.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "CKI1",
+                    description: Some(
+                        "Serial clock source is CCI1.",
+                    ),
+                    value: 3,
                 },
             ],
         },

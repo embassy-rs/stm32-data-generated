@@ -1219,30 +1219,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_1",
+                    name: "PB7",
                     description: Some(
                         "PB7",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_F2",
-                    description: Some(
-                        "PA1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_1",
+                    name: "PC14",
                     description: Some(
                         "PC14",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_F2",
-                    description: Some(
-                        "PA2",
                     ),
                     value: 1,
                 },
@@ -1254,42 +1240,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_4",
+                    name: "PF2",
                     description: Some(
                         "PF2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G3",
-                    description: Some(
-                        "PF2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_4",
+                    name: "PA0",
                     description: Some(
                         "PA0",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G3",
-                    description: Some(
-                        "PA0",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_4",
+                    name: "PA1",
                     description: Some(
                         "PA1",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_4",
+                    name: "PA2",
                     description: Some(
                         "PA2",
                     ),
@@ -1303,28 +1275,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_5",
+                    name: "PA8",
                     description: Some(
                         "PA8",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J1",
-                    description: Some(
-                        "PA8",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_5",
-                    description: Some(
-                        "PA11",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J1",
+                    name: "PA11",
                     description: Some(
                         "PA11",
                     ),
@@ -1338,35 +1296,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_8",
+                    name: "PA14",
                     description: Some(
                         "PA14",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_H2",
-                    description: Some(
-                        "PA5",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_8",
+                    name: "PB6",
                     description: Some(
                         "PB6",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_H2",
-                    description: Some(
-                        "PA6",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_8",
+                    name: "PC15",
                     description: Some(
                         "PC15",
                     ),
@@ -1380,28 +1324,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_E2",
+                    name: "PA7",
                     description: Some(
                         "PA7",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1",
-                    description: Some(
-                        "PA7",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_E2",
-                    description: Some(
-                        "PA12",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1",
+                    name: "PA12",
                     description: Some(
                         "PA12",
                     ),
@@ -1415,42 +1345,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    name: "PA3",
                     description: Some(
                         "PA3",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3",
-                    description: Some(
-                        "PA3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    name: "PA4",
                     description: Some(
                         "PA4",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3",
-                    description: Some(
-                        "PA4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    name: "PA5",
                     description: Some(
                         "PA5",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1",
+                    name: "PA6",
                     description: Some(
                         "PA6",
                     ),

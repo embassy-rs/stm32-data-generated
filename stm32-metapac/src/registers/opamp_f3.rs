@@ -33,11 +33,13 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "force_vp",
-                description: Some("FORCE_VP"),
+                description: Some(
+                    "Forces a calibration reference voltage on non-inverting input and disables external connections.",
+                ),
                 bit_offset: 1,
                 bit_size: 1,
                 array: None,
-                enumm: None,
+                enumm: Some("ForceVp"),
             },
             Field {
                 name: "vp_sel",
@@ -45,7 +47,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 2,
                 bit_size: 2,
                 array: None,
-                enumm: None,
+                enumm: Some("VpSel"),
             },
             Field {
                 name: "vm_sel",
@@ -53,7 +55,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 5,
                 bit_size: 2,
                 array: None,
-                enumm: None,
+                enumm: Some("VmSel"),
             },
             Field {
                 name: "tcm_en",
@@ -69,7 +71,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 8,
                 bit_size: 1,
                 array: None,
-                enumm: None,
+                enumm: Some("VmsSel"),
             },
             Field {
                 name: "vps_sel",
@@ -77,7 +79,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 9,
                 bit_size: 2,
                 array: None,
-                enumm: None,
+                enumm: Some("VpsSel"),
             },
             Field {
                 name: "calon",
@@ -93,7 +95,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 12,
                 bit_size: 2,
                 array: None,
-                enumm: None,
+                enumm: Some("Calsel"),
             },
             Field {
                 name: "pga_gain",
@@ -101,7 +103,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 14,
                 bit_size: 4,
                 array: None,
-                enumm: None,
+                enumm: Some("PgaGain"),
             },
             Field {
                 name: "user_trim",
@@ -129,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "tstref",
-                description: Some("TSTREF"),
+                description: Some("Output the internal reference voltage"),
                 bit_offset: 29,
                 bit_size: 1,
                 array: None,
@@ -141,7 +143,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: 30,
                 bit_size: 1,
                 array: None,
-                enumm: None,
+                enumm: Some("Outcal"),
             },
             Field {
                 name: "lock",
@@ -279,23 +281,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "GAIN16_VM1",
                     description: Some("Gain 16, feedback connected to VM1"),
                     value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Tstref",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "OUTPUT",
-                    description: Some("VREFOPAMP2 is output"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NOTOUTPUT",
-                    description: Some("VREFOPAMP2 is not output"),
-                    value: 1,
                 },
             ],
         },

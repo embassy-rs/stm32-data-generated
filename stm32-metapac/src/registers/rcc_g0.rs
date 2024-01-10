@@ -1739,7 +1739,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mco1sel",
                     description: Some("Microcontroller clock output"),
                     bit_offset: 24,
-                    bit_size: 3,
+                    bit_size: 4,
                     array: None,
                     enumm: Some("Mcosel"),
                 },
@@ -1747,7 +1747,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "mco1pre",
                     description: Some("Microcontroller clock output prescaler"),
                     bit_offset: 28,
-                    bit_size: 3,
+                    bit_size: 4,
                     array: None,
                     enumm: Some("Mcopre"),
                 },
@@ -3648,7 +3648,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Ppre",
             description: None,
-            bit_size: 4,
+            bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "DIV1",

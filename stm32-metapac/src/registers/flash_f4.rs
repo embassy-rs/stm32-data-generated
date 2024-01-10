@@ -85,7 +85,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "latency",
                     description: Some("Latency"),
                     bit_offset: 0,
-                    bit_size: 3,
+                    bit_size: 4,
                     array: None,
                     enumm: Some("Latency"),
                 },
@@ -368,7 +368,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Latency",
             description: None,
-            bit_size: 3,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
                     name: "WS0",

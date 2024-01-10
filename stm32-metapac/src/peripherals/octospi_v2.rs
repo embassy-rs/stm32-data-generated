@@ -418,14 +418,14 @@ is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 
         }
         #[doc = "Flash select. This bit selects the Flash memory to be addressed in Single-, Dual-, Quad-SPI mode in single-memory configuration (when DMM = 0). This bit is ignored when DMM = 1 or when Octal-SPI mode is selected."]
         #[inline(always)]
-        pub const fn fsel(&self) -> bool {
+        pub const fn fsel(&self) -> super::vals::FlashSelect {
             let val = (self.0 >> 7usize) & 0x01;
-            val != 0
+            super::vals::FlashSelect::from_bits(val as u8)
         }
         #[doc = "Flash select. This bit selects the Flash memory to be addressed in Single-, Dual-, Quad-SPI mode in single-memory configuration (when DMM = 0). This bit is ignored when DMM = 1 or when Octal-SPI mode is selected."]
         #[inline(always)]
-        pub fn set_fsel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        pub fn set_fsel(&mut self, val: super::vals::FlashSelect) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "FIFO threshold level. This field defines, in Indirect mode, the threshold number of bytes in the FIFO that causes the FIFO threshold flag FTF in SR, to be set. ... Note: If DMAEN = 1, the DMA controller for the corresponding channel must be disabled before changing the FTHRES\\[4:0\\]
 value."]
@@ -508,14 +508,14 @@ value."]
         }
         #[doc = "Polling match mode. This bit indicates which method must be used to determine a match during the Automatic status-polling mode."]
         #[inline(always)]
-        pub const fn pmm(&self) -> bool {
+        pub const fn pmm(&self) -> super::vals::MatchMode {
             let val = (self.0 >> 23usize) & 0x01;
-            val != 0
+            super::vals::MatchMode::from_bits(val as u8)
         }
         #[doc = "Polling match mode. This bit indicates which method must be used to determine a match during the Automatic status-polling mode."]
         #[inline(always)]
-        pub fn set_pmm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        pub fn set_pmm(&mut self, val: super::vals::MatchMode) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
         }
         #[doc = "Functional mode. This field defines the OCTOSPI functional mode of operation. If DMAEN = 1 already, then the DMA controller for the corresponding channel must be disabled before changing the FMODE\\[1:0\\]
 value. If FMODE\\[1:0\\]
@@ -816,14 +816,14 @@ and a half-word read must read DATA\\[15:0\\]."]
     impl Hlcr {
         #[doc = "Latency mode. This bit selects the Latency mode."]
         #[inline(always)]
-        pub const fn lm(&self) -> bool {
+        pub const fn lm(&self) -> super::vals::LatencyMode {
             let val = (self.0 >> 0usize) & 0x01;
-            val != 0
+            super::vals::LatencyMode::from_bits(val as u8)
         }
         #[doc = "Latency mode. This bit selects the Latency mode."]
         #[inline(always)]
-        pub fn set_lm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        pub fn set_lm(&mut self, val: super::vals::LatencyMode) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Write zero latency. This bit enables zero latency on write operations."]
         #[inline(always)]
@@ -1510,13 +1510,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         pub fn set_dcyc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
-        #[doc = "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement."]
+        #[doc = "Delay hold quarter cycle. Add a quarter cycle delay on the outputs in DTR communication to match hold requirement."]
         #[inline(always)]
         pub const fn dhqc(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
             val != 0
         }
-        #[doc = "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement."]
+        #[doc = "Delay hold quarter cycle. Add a quarter cycle delay on the outputs in DTR communication to match hold requirement."]
         #[inline(always)]
         pub fn set_dhqc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
@@ -1564,36 +1564,6 @@ and a half-word read must read DATA\\[15:0\\]."]
     }
 }
 pub mod vals {
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum CycleDelay {
-        #[doc = "No delay hold"]
-        NONE = 0,
-        #[doc = "1/4 cycle hold"]
-        QUARTERCYCLE = 0x01,
-    }
-    impl CycleDelay {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> CycleDelay {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for CycleDelay {
-        #[inline(always)]
-        fn from(val: u8) -> CycleDelay {
-            CycleDelay::from_bits(val)
-        }
-    }
-    impl From<CycleDelay> for u8 {
-        #[inline(always)]
-        fn from(val: CycleDelay) -> u8 {
-            CycleDelay::to_bits(val)
-        }
-    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum FlashSelect {
@@ -1660,15 +1630,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Latency {
+    pub enum LatencyMode {
         #[doc = "Variable initial latency"]
         VARIABLE = 0,
         #[doc = "Fixed latency"]
         FIXED = 0x01,
     }
-    impl Latency {
+    impl LatencyMode {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Latency {
+        pub const fn from_bits(val: u8) -> LatencyMode {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1676,16 +1646,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Latency {
+    impl From<u8> for LatencyMode {
         #[inline(always)]
-        fn from(val: u8) -> Latency {
-            Latency::from_bits(val)
+        fn from(val: u8) -> LatencyMode {
+            LatencyMode::from_bits(val)
         }
     }
-    impl From<Latency> for u8 {
+    impl From<LatencyMode> for u8 {
         #[inline(always)]
-        fn from(val: Latency) -> u8 {
-            Latency::to_bits(val)
+        fn from(val: LatencyMode) -> u8 {
+            LatencyMode::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1756,37 +1726,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: MemType) -> u8 {
             MemType::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct NcsCycleHold(pub u8);
-    impl NcsCycleHold {
-        #[doc = "NCS stays high for at least 1 cycle between external device commands."]
-        pub const ONECYCLE: Self = Self(0);
-        #[doc = "NCS stays high for at least 2 cycles between external device commands."]
-        pub const TWOCYCLES: Self = Self(0x01);
-        #[doc = "NCS stays high for at least 64 cycles between external device commands."]
-        pub const SIXTYFOURCYCLES: Self = Self(0x3f);
-    }
-    impl NcsCycleHold {
-        pub const fn from_bits(val: u8) -> NcsCycleHold {
-            Self(val & 0x3f)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl From<u8> for NcsCycleHold {
-        #[inline(always)]
-        fn from(val: u8) -> NcsCycleHold {
-            NcsCycleHold::from_bits(val)
-        }
-    }
-    impl From<NcsCycleHold> for u8 {
-        #[inline(always)]
-        fn from(val: NcsCycleHold) -> u8 {
-            NcsCycleHold::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -41,7 +41,7 @@ impl Sdmmc {
     }
     #[doc = "response 1..4 register"]
     #[inline(always)]
-    pub const fn respr(self, n: usize) -> crate::common::Reg<regs::Resp1r, crate::common::R> {
+    pub const fn respr(self, n: usize) -> crate::common::Reg<regs::RespxR, crate::common::R> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(20usize + n * 4usize) as _) }
     }
@@ -940,98 +940,6 @@ pub mod regs {
             Power(0)
         }
     }
-    #[doc = "response 1..4 register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Resp1r(pub u32);
-    impl Resp1r {
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub const fn cardstatus(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub fn set_cardstatus(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Resp1r {
-        #[inline(always)]
-        fn default() -> Resp1r {
-            Resp1r(0)
-        }
-    }
-    #[doc = "response 1..4 register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Resp2r(pub u32);
-    impl Resp2r {
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub const fn cardstatus(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub fn set_cardstatus(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Resp2r {
-        #[inline(always)]
-        fn default() -> Resp2r {
-            Resp2r(0)
-        }
-    }
-    #[doc = "response 1..4 register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Resp3r(pub u32);
-    impl Resp3r {
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub const fn cardstatus(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub fn set_cardstatus(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Resp3r {
-        #[inline(always)]
-        fn default() -> Resp3r {
-            Resp3r(0)
-        }
-    }
-    #[doc = "response 1..4 register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Resp4r(pub u32);
-    impl Resp4r {
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub const fn cardstatus(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub fn set_cardstatus(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Resp4r {
-        #[inline(always)]
-        fn default() -> Resp4r {
-            Resp4r(0)
-        }
-    }
     #[doc = "command response register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1053,6 +961,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Respcmdr {
             Respcmdr(0)
+        }
+    }
+    #[doc = "response 1..4 register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct RespxR(pub u32);
+    impl RespxR {
+        #[doc = "see Table 132"]
+        #[inline(always)]
+        pub const fn cardstatus(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "see Table 132"]
+        #[inline(always)]
+        pub fn set_cardstatus(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for RespxR {
+        #[inline(always)]
+        fn default() -> RespxR {
+            RespxR(0)
         }
     }
     #[doc = "status register"]

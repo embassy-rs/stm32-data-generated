@@ -3765,7 +3765,7 @@
     ]
   },
   "enum/PLLP": {
-    "bit_size": 7,
+    "bit_size": 5,
     "variants": [
       {
         "name": "Div2",

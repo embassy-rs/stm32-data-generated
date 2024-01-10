@@ -47,7 +47,7 @@
         "name": "LATENCY",
         "description": "Latency",
         "bit_offset": 0,
-        "bit_size": 3,
+        "bit_size": 4,
         "enum": "LATENCY"
       },
       {
@@ -255,7 +255,7 @@
     ]
   },
   "enum/LATENCY": {
-    "bit_size": 3,
+    "bit_size": 4,
     "variants": [
       {
         "name": "WS0",

@@ -145,241 +145,213 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usb_it_rmp",
                     description: Some(
-                        "USB interrupt remap",
+                        "USB interrupt remap\n0: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively\n1: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively\n",
                     ),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "UsbItRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim1_itr3_rmp",
                     description: Some(
-                        "Timer 1 ITR3 selection",
+                        "Timer 1 ITR3 selection\n0: Not remapped\n1: TIM1_ITR3 = TIM17_OC\n",
                     ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim1Itr3Rmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dac1_trig_rmp",
                     description: Some(
-                        "DAC trigger remap (when TSEL = 001)",
+                        "DAC trigger remap (when TSEL = 001)\n0: DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices\n1: DAC trigger is TIM3_TRGO\n",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Dac1TrigRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dac_trig_rmp",
                     description: Some(
-                        "DAC trigger remap (when TSEL = 001)",
+                        "DAC trigger remap (when TSEL = 001)\n0: Not remapped\n1: DAC trigger is TIM3_TRGO\n",
                     ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "DacTrigRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "adc2_dma_rmp",
                     description: Some(
-                        "ADC24 DMA remapping bit",
+                        "ADC24 DMA remapping bit\n0: ADC24 DMA requests mapped on DMA2 channels 1 and 2\n1: ADC24 DMA requests mapped on DMA2 channels 3 and 4\n",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Adc2DmaRmpCfgr1",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim16_dma_rmp",
                     description: Some(
-                        "TIM16 DMA request remapping bit",
+                        "TIM16 DMA request remapping bit\n0: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3\n1: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4\n",
                     ),
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim16DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim17_dma_rmp",
                     description: Some(
-                        "TIM17 DMA request remapping bit",
+                        "TIM17 DMA request remapping bit\n0: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1\n1: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2\n",
                     ),
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim17DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim6_dac1_ch1_dma_rmp",
                     description: Some(
-                        "TIM6 and DAC1 DMA request remapping bit",
+                        "TIM6 and DAC1 DMA request remapping bit\n0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3\n1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3\n",
                     ),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim6Dac1Ch1DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim6_dac1_dma_rmp",
                     description: Some(
-                        "TIM6 and DAC1 DMA request remapping bit",
+                        "TIM6 and DAC1 DMA request remapping bit\n0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3\n1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3\n",
                     ),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim6Dac1DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim6_dac1_out1_dma_rmp",
                     description: Some(
-                        "TIM6 and DAC1 DMA request remapping bit",
+                        "TIM6 and DAC1 DMA request remapping bit\n0: TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3\n1: TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3\n",
                     ),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim6Dac1Out1DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim7_dac1_ch2_dma_rmp",
                     description: Some(
-                        "TIM7 and DAC2 DMA request remapping bit",
+                        "TIM7 and DAC2 DMA request remapping bit\n0: Not remapped\n1: TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4\n",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim7Dac1Ch2DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim7_dac1_out2_dma_rmp",
                     description: Some(
-                        "TIM7 and DAC2 DMA request remapping bit",
+                        "TIM7 and DAC2 DMA request remapping bit\n0: TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4\n1: TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4\n",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim7Dac1Out2DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "dac2_ch1_dma_rmp",
                     description: Some(
-                        "DAC2 channel1 DMA remap",
+                        "DAC2 channel1 DMA remap\n0: Not remapped\n1: DAC2_CH1 DMA requests mapped on DMA1 channel 5\n",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Dac2Ch1DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "tim18_dac2_out1_dma_rmp",
                     description: Some(
-                        "TIM18 and DAC2_OUT1 DMA request remapping bit",
+                        "TIM18 and DAC2_OUT1 DMA request remapping bit\n0: TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5\n1: TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5\n",
                     ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Tim18Dac2Out1DmaRmp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "i2c_pb6_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB6 pin operate in standard mode\n1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed\n",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2cPb6Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
                     name: "i2c_pb7_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB7 pin operate in standard mode\n1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed\n",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2cPb7Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
                     name: "i2c_pb8_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB8 pin operate in standard mode\n1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed\n",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2cPb8Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
                     name: "i2c_pb9_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB9 pin operate in standard mode\n1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed\n",
                     ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2cPb9Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
                     name: "i2c1_fmp",
                     description: Some(
-                        "I2C1 Fast Mode Plus",
+                        "I2C1 Fast Mode Plus\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits\n",
                     ),
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2c1Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
                     name: "i2c2_fmp",
                     description: Some(
-                        "I2C2 Fast Mode Plus",
+                        "I2C2 Fast Mode Plus\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits\n",
                     ),
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2c2Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
@@ -397,13 +369,13 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c3_fmp",
                     description: Some(
-                        "I2C3 Fast Mode Plus",
+                        "I2C3 Fast Mode Plus\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits\n",
                     ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "I2c3Fmp",
+                        "Fmp",
                     ),
                 },
                 Field {
@@ -451,9 +423,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "LockupLock",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "sram_parity_lock",
@@ -463,9 +433,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "SramParityLock",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "pvd_lock",
@@ -475,9 +443,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "PvdLock",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "byp_addr_par",
@@ -487,9 +453,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "BypAddrPar",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "sram_pef",
@@ -586,14 +550,12 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dac1_trig5_rmp",
                     description: Some(
-                        "DAC1_CH1 / DAC1_CH2 Trigger remap",
+                        "DAC1_CH1 / DAC1_CH2 Trigger remap\n0: Not remapped\n1: DAC trigger is HRTIM1_DAC1_TRIG2\n",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Dac1Trig5Rmp",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -1000,27 +962,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Adc2DmaRmpCfgr1",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "ADC24 DMA requests mapped on DMA2 channels 1 and 2",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "ADC24 DMA requests mapped on DMA2 channels 3 and 4",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
             name: "Adc2DmaRmpCfgr3",
             description: None,
             bit_size: 2,
@@ -1168,27 +1109,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "BypAddrPar",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOBYPASS",
-                    description: Some(
-                        "The ramload operation is performed taking into consideration bit 29 of the address when the parity is calculated",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYPASS",
-                    description: Some(
-                        "The ramload operation is performed without taking into consideration bit 29 of the address when the parity is calculated",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Dac1Trig3Rmp",
             description: None,
             bit_size: 1,
@@ -1204,90 +1124,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "HRTIM1",
                     description: Some(
                         "DAC trigger is HRTIM1_DAC1_TRIG1",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dac1Trig5Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC trigger is HRTIM1_DAC1_TRIG2",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dac1TrigRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC trigger is TIM3_TRGO",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Dac2Ch1DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC2_CH1 DMA requests mapped on DMA1 channel 5",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "DacTrigRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "DAC trigger is TIM3_TRGO",
                     ),
                     value: 1,
                 },
@@ -1322,21 +1158,21 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "I2c1Fmp",
+            name: "Fmp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "STANDARD",
                     description: Some(
-                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
+                        "Standard",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "FMP",
                     description: Some(
-                        "FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits",
+                        "FM+",
                     ),
                     value: 1,
                 },
@@ -1399,153 +1235,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "I2c2Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c3Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "FM+ mode is controlled by I2C_Pxx_FMP bits only",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2cPb6Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "PB6 pin operate in standard mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "I2C FM+ mode enabled on PB6 and the Speed control is bypassed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2cPb7Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "PB7 pin operate in standard mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "I2C FM+ mode enabled on PB7 and the Speed control is bypassed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2cPb8Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "PB8 pin operate in standard mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "I2C FM+ mode enabled on PB8 and the Speed control is bypassed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2cPb9Fmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "PB9 pin operate in standard mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FMP",
-                    description: Some(
-                        "I2C FM+ mode enabled on PB9 and the Speed control is bypassed",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "LockupLock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISCONNECTED",
-                    description: Some(
-                        "Cortex-M4 LOCKUP output disconnected from TIM1/15/16/17 Break inputs and HRTIM1 SYSFLT.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONNECTED",
-                    description: Some(
-                        "Cortex-M4 LOCKUP output connected to TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "MemMode",
             description: None,
             bit_size: 2,
@@ -1577,27 +1266,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Embedded SRAM mapped at 0x0000_0000",
                     ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "PvdLock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISCONNECTED",
-                    description: Some(
-                        "PVD interrupt disconnected from TIM15/16/17 Break input",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONNECTED",
-                    description: Some(
-                        "PVD interrupt connected to TIM15/16/17 Break input",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -1654,237 +1322,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "SPI1_TX mapped on DMA1 CH7",
                     ),
                     value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "SramParityLock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISCONNECTED",
-                    description: Some(
-                        "SRAM parity error signal disconnected from TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONNECTED",
-                    description: Some(
-                        "SRAM parity error signal connected to TIM1/15/16/17 and HRTIM1 SYSFLT Break inputs",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim16DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim17DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim18Dac2Out1DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim1Itr3Rmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM1_ITR3 = TIM17_OC",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim6Dac1Ch1DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim6Dac1DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim6Dac1Out1DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim7Dac1Ch2DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "Not remapped",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Tim7Dac1Out2DmaRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "UsbItRmp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOTREMAPPED",
-                    description: Some(
-                        "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "REMAPPED",
-                    description: Some(
-                        "USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively",
-                    ),
-                    value: 1,
                 },
             ],
         },

@@ -37,38 +37,38 @@ pub mod regs {
         pub fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "FORCE_VP"]
+        #[doc = "Forces a calibration reference voltage on non-inverting input and disables external connections."]
         #[inline(always)]
-        pub const fn force_vp(&self) -> bool {
+        pub const fn force_vp(&self) -> super::vals::ForceVp {
             let val = (self.0 >> 1usize) & 0x01;
-            val != 0
+            super::vals::ForceVp::from_bits(val as u8)
         }
-        #[doc = "FORCE_VP"]
+        #[doc = "Forces a calibration reference voltage on non-inverting input and disables external connections."]
         #[inline(always)]
-        pub fn set_force_vp(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        pub fn set_force_vp(&mut self, val: super::vals::ForceVp) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "OPAMP Non inverting input selection"]
         #[inline(always)]
-        pub const fn vp_sel(&self) -> u8 {
+        pub const fn vp_sel(&self) -> super::vals::VpSel {
             let val = (self.0 >> 2usize) & 0x03;
-            val as u8
+            super::vals::VpSel::from_bits(val as u8)
         }
         #[doc = "OPAMP Non inverting input selection"]
         #[inline(always)]
-        pub fn set_vp_sel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        pub fn set_vp_sel(&mut self, val: super::vals::VpSel) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "OPAMP inverting input selection"]
         #[inline(always)]
-        pub const fn vm_sel(&self) -> u8 {
+        pub const fn vm_sel(&self) -> super::vals::VmSel {
             let val = (self.0 >> 5usize) & 0x03;
-            val as u8
+            super::vals::VmSel::from_bits(val as u8)
         }
         #[doc = "OPAMP inverting input selection"]
         #[inline(always)]
-        pub fn set_vm_sel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 5usize)) | (((val as u32) & 0x03) << 5usize);
+        pub fn set_vm_sel(&mut self, val: super::vals::VmSel) {
+            self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
         }
         #[doc = "Timer controlled Mux mode enable"]
         #[inline(always)]
@@ -83,25 +83,25 @@ pub mod regs {
         }
         #[doc = "OPAMP inverting input secondary selection"]
         #[inline(always)]
-        pub const fn vms_sel(&self) -> bool {
+        pub const fn vms_sel(&self) -> super::vals::VmsSel {
             let val = (self.0 >> 8usize) & 0x01;
-            val != 0
+            super::vals::VmsSel::from_bits(val as u8)
         }
         #[doc = "OPAMP inverting input secondary selection"]
         #[inline(always)]
-        pub fn set_vms_sel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        pub fn set_vms_sel(&mut self, val: super::vals::VmsSel) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "OPAMP Non inverting input secondary selection"]
         #[inline(always)]
-        pub const fn vps_sel(&self) -> u8 {
+        pub const fn vps_sel(&self) -> super::vals::VpsSel {
             let val = (self.0 >> 9usize) & 0x03;
-            val as u8
+            super::vals::VpsSel::from_bits(val as u8)
         }
         #[doc = "OPAMP Non inverting input secondary selection"]
         #[inline(always)]
-        pub fn set_vps_sel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 9usize)) | (((val as u32) & 0x03) << 9usize);
+        pub fn set_vps_sel(&mut self, val: super::vals::VpsSel) {
+            self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
         }
         #[doc = "Calibration mode enable"]
         #[inline(always)]
@@ -116,25 +116,25 @@ pub mod regs {
         }
         #[doc = "Calibration selection"]
         #[inline(always)]
-        pub const fn calsel(&self) -> u8 {
+        pub const fn calsel(&self) -> super::vals::Calsel {
             let val = (self.0 >> 12usize) & 0x03;
-            val as u8
+            super::vals::Calsel::from_bits(val as u8)
         }
         #[doc = "Calibration selection"]
         #[inline(always)]
-        pub fn set_calsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+        pub fn set_calsel(&mut self, val: super::vals::Calsel) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Gain in PGA mode"]
         #[inline(always)]
-        pub const fn pga_gain(&self) -> u8 {
+        pub const fn pga_gain(&self) -> super::vals::PgaGain {
             let val = (self.0 >> 14usize) & 0x0f;
-            val as u8
+            super::vals::PgaGain::from_bits(val as u8)
         }
         #[doc = "Gain in PGA mode"]
         #[inline(always)]
-        pub fn set_pga_gain(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 14usize)) | (((val as u32) & 0x0f) << 14usize);
+        pub fn set_pga_gain(&mut self, val: super::vals::PgaGain) {
+            self.0 = (self.0 & !(0x0f << 14usize)) | (((val.to_bits() as u32) & 0x0f) << 14usize);
         }
         #[doc = "User trimming enable"]
         #[inline(always)]
@@ -169,27 +169,27 @@ pub mod regs {
         pub fn set_trimoffsetn(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
         }
-        #[doc = "TSTREF"]
+        #[doc = "Output the internal reference voltage"]
         #[inline(always)]
         pub const fn tstref(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "TSTREF"]
+        #[doc = "Output the internal reference voltage"]
         #[inline(always)]
         pub fn set_tstref(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "OPAMP ouput status flag"]
         #[inline(always)]
-        pub const fn outcal(&self) -> bool {
+        pub const fn outcal(&self) -> super::vals::Outcal {
             let val = (self.0 >> 30usize) & 0x01;
-            val != 0
+            super::vals::Outcal::from_bits(val as u8)
         }
         #[doc = "OPAMP ouput status flag"]
         #[inline(always)]
-        pub fn set_outcal(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        pub fn set_outcal(&mut self, val: super::vals::Outcal) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
         #[doc = "OPAMP lock"]
         #[inline(always)]
@@ -357,36 +357,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: PgaGain) -> u8 {
             PgaGain::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Tstref {
-        #[doc = "VREFOPAMP2 is output"]
-        OUTPUT = 0,
-        #[doc = "VREFOPAMP2 is not output"]
-        NOTOUTPUT = 0x01,
-    }
-    impl Tstref {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tstref {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tstref {
-        #[inline(always)]
-        fn from(val: u8) -> Tstref {
-            Tstref::from_bits(val)
-        }
-    }
-    impl From<Tstref> for u8 {
-        #[inline(always)]
-        fn from(val: Tstref) -> u8 {
-            Tstref::to_bits(val)
         }
     }
     #[repr(u8)]

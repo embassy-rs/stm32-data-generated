@@ -343,13 +343,15 @@
         "name": "JEXTSEL",
         "description": "External event select for injected group",
         "bit_offset": 16,
-        "bit_size": 4
+        "bit_size": 4,
+        "enum": "JEXTSEL"
       },
       {
         "name": "JEXTEN",
         "description": "External trigger enable for injected channels",
         "bit_offset": 20,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "EXTEN"
       },
       {
         "name": "JSWSTART",
@@ -361,13 +363,15 @@
         "name": "EXTSEL",
         "description": "External event select for regular group",
         "bit_offset": 24,
-        "bit_size": 4
+        "bit_size": 4,
+        "enum": "EXTSEL"
       },
       {
         "name": "EXTEN",
         "description": "External trigger enable for regular channels",
         "bit_offset": 28,
-        "bit_size": 2
+        "bit_size": 2,
+        "enum": "EXTEN"
       },
       {
         "name": "SWSTART",
@@ -890,7 +894,7 @@
     ]
   },
   "enum/EXTEN": {
-    "bit_size": 3,
+    "bit_size": 2,
     "variants": [
       {
         "name": "DISABLED",
@@ -915,7 +919,7 @@
     ]
   },
   "enum/EXTSEL": {
-    "bit_size": 3,
+    "bit_size": 4,
     "variants": [
       {
         "name": "TIM9_CC2",
@@ -980,7 +984,7 @@
     ]
   },
   "enum/JEXTSEL": {
-    "bit_size": 3,
+    "bit_size": 4,
     "variants": [
       {
         "name": "TIM9_CC1",

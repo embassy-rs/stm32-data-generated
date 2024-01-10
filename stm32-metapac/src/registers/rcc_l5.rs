@@ -5027,7 +5027,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Pllp",
             description: None,
-            bit_size: 7,
+            bit_size: 5,
             variants: &[
                 EnumVariant {
                     name: "DIV2",

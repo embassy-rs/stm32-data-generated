@@ -307,7 +307,9 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 28,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Mstsel",
+                    ),
                 },
                 Field {
                     name: "hburst",
@@ -317,7 +319,9 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Hburst",
+                    ),
                 },
             ],
         },

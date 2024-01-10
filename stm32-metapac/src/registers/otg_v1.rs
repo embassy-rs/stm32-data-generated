@@ -3097,46 +3097,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Gnptxsts",
-            extends: None,
-            description: Some(
-                "Non-periodic transmit FIFO/queue status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nptxfsav",
-                    description: Some(
-                        "Non-periodic TxFIFO space available",
-                    ),
-                    bit_offset: 0,
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nptqxsav",
-                    description: Some(
-                        "Non-periodic transmit request queue space available",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "nptxqtop",
-                    description: Some(
-                        "Top of the non-periodic transmit request queue",
-                    ),
-                    bit_offset: 24,
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Gotgctl",
             extends: None,
             description: Some(

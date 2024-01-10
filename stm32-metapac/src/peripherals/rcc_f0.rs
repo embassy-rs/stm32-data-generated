@@ -1236,13 +1236,13 @@ from CFGR2 register. Refer to it for its meaning"]
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
         pub const fn mcosel(&self) -> super::vals::Mcosel {
-            let val = (self.0 >> 24usize) & 0x07;
+            let val = (self.0 >> 24usize) & 0x0f;
             super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
         pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
-            self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Microcontroller Clock Output Prescaler"]
         #[inline(always)]
@@ -2213,11 +2213,20 @@ pub mod vals {
         HSE = 0x06,
         #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLMCODIV)"]
         PLL = 0x07,
+        #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"]
+        HSI48 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
     }
     impl Mcosel {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Mcosel {
-            unsafe { core::mem::transmute(val & 0x07) }
+            unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {

@@ -1894,7 +1894,7 @@
         "description": "I2S clock selection",
         "bit_offset": 23,
         "bit_size": 1,
-        "enum": "ISSRC"
+        "enum": "I2SSRC_CFGR"
       },
       {
         "name": "MCO1PRE",
@@ -2311,7 +2311,7 @@
         "name": "CKDFSDM1ASEL",
         "description": "DFSDM1 audio clock selection",
         "bit_offset": 15,
-        "bit_size": 5,
+        "bit_size": 1,
         "enum": "CKDFSDMASEL"
       },
       {
@@ -2368,7 +2368,7 @@
         "description": "I2SSRC",
         "bit_offset": 25,
         "bit_size": 2,
-        "enum": "ISSRC"
+        "enum": "I2SSRC_DCKCFGR"
       },
       {
         "name": "CLK48SEL",
@@ -2802,7 +2802,7 @@
       }
     ]
   },
-  "enum/ISSRC": {
+  "enum/I2SSRC_CFGR": {
     "bit_size": 1,
     "variants": [
       {
@@ -2814,6 +2814,31 @@
         "name": "CKIN",
         "description": "External clock mapped on the I2S_CKIN pin used as I2S clock source",
         "value": 1
+      }
+    ]
+  },
+  "enum/I2SSRC_DCKCFGR": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PLLI2S_R",
+        "description": "clock frequency = f(PLLI2S_R)",
+        "value": 0
+      },
+      {
+        "name": "I2S_CKIN",
+        "description": "clock frequency = I2S_CKIN Alternate function input frequency",
+        "value": 1
+      },
+      {
+        "name": "PLL_R",
+        "description": "clock frequency = f(PLL_R)",
+        "value": 2
+      },
+      {
+        "name": "HSI_HSE",
+        "description": "clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])",
+        "value": 3
       }
     ]
   },
@@ -3429,31 +3454,6 @@
         "name": "Div32",
         "description": "PLLI2SDIVQ = /32",
         "value": 31
-      }
-    ]
-  },
-  "enum/PLLI2SP": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "Div2",
-        "description": "PLL*P=2",
-        "value": 0
-      },
-      {
-        "name": "Div4",
-        "description": "PLL*P=4",
-        "value": 1
-      },
-      {
-        "name": "Div6",
-        "description": "PLL*P=6",
-        "value": 2
-      },
-      {
-        "name": "Div8",
-        "description": "PLL*P=8",
-        "value": 3
       }
     ]
   },
@@ -5563,31 +5563,6 @@
       {
         "name": "Div16",
         "description": "PLLSAIDIVR = /16",
-        "value": 3
-      }
-    ]
-  },
-  "enum/PLLSAIP": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "Div2",
-        "description": "PLL*P=2",
-        "value": 0
-      },
-      {
-        "name": "Div4",
-        "description": "PLL*P=4",
-        "value": 1
-      },
-      {
-        "name": "Div6",
-        "description": "PLL*P=6",
-        "value": 2
-      },
-      {
-        "name": "Div8",
-        "description": "PLL*P=8",
         "value": 3
       }
     ]

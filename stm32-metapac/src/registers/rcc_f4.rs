@@ -3385,7 +3385,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Issrc",
+                        "I2ssrcCfgr",
                     ),
                 },
                 Field {
@@ -4090,7 +4090,7 @@ pub(crate) static REGISTERS: IR = IR {
                         "DFSDM1 audio clock selection",
                     ),
                     bit_offset: 15,
-                    bit_size: 5,
+                    bit_size: 1,
                     array: None,
                     enumm: Some(
                         "Ckdfsdmasel",
@@ -4189,7 +4189,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Issrc",
+                        "I2ssrcDckcfgr",
                     ),
                 },
                 Field {
@@ -4887,7 +4887,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Issrc",
+            name: "I2ssrcCfgr",
             description: None,
             bit_size: 1,
             variants: &[
@@ -4904,6 +4904,41 @@ pub(crate) static REGISTERS: IR = IR {
                         "External clock mapped on the I2S_CKIN pin used as I2S clock source",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "I2ssrcDckcfgr",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PLLI2S_R",
+                    description: Some(
+                        "clock frequency = f(PLLI2S_R)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "I2S_CKIN",
+                    description: Some(
+                        "clock frequency = I2S_CKIN Alternate function input frequency",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PLL_R",
+                    description: Some(
+                        "clock frequency = f(PLL_R)",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSI_HSE",
+                    description: Some(
+                        "clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -5765,41 +5800,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "PLLI2SDIVQ = /32",
                     ),
                     value: 31,
-                },
-            ],
-        },
-        Enum {
-            name: "Plli2sp",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLL*P=2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLL*P=4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLL*P=6",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLL*P=8",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -8473,41 +8473,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV16",
                     description: Some(
                         "PLLSAIDIVR = /16",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllsaip",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLL*P=2",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "PLL*P=4",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: Some(
-                        "PLL*P=6",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "PLL*P=8",
                     ),
                     value: 3,
                 },

@@ -1406,7 +1406,7 @@ pub mod regs {
             assert!(n < 20usize);
             let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Pcsel::from_bits(val as u32)
+            super::vals::Pcsel::from_bits(val as u8)
         }
         #[doc = "Channel x (VINP\\[i\\]) pre selection"]
         #[inline(always)]
@@ -1885,32 +1885,33 @@ pub mod vals {
             Ovrmod::to_bits(val)
         }
     }
-    #[repr(transparent)]
+    #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Pcsel(pub u32);
-    impl Pcsel {
+    pub enum Pcsel {
         #[doc = "Input channel x is not pre-selected"]
-        pub const NOTPRESELECTED: Self = Self(0);
+        NOTPRESELECTED = 0,
         #[doc = "Pre-select input channel x"]
-        pub const PRESELECTED: Self = Self(0x01);
+        PRESELECTED = 0x01,
     }
     impl Pcsel {
-        pub const fn from_bits(val: u32) -> Pcsel {
-            Self(val & 0x000f_ffff)
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pcsel {
+            unsafe { core::mem::transmute(val & 0x01) }
         }
-        pub const fn to_bits(self) -> u32 {
-            self.0
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u32> for Pcsel {
+    impl From<u8> for Pcsel {
         #[inline(always)]
-        fn from(val: u32) -> Pcsel {
+        fn from(val: u8) -> Pcsel {
             Pcsel::from_bits(val)
         }
     }
-    impl From<Pcsel> for u32 {
+    impl From<Pcsel> for u8 {
         #[inline(always)]
-        fn from(val: Pcsel) -> u32 {
+        fn from(val: Pcsel) -> u8 {
             Pcsel::to_bits(val)
         }
     }

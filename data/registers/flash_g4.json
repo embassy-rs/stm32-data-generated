@@ -544,7 +544,7 @@
     ]
   },
   "enum/LATENCY": {
-    "bit_size": 3,
+    "bit_size": 4,
     "variants": [
       {
         "name": "WS0",

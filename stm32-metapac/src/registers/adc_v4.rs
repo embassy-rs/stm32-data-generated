@@ -1455,7 +1455,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Pcsel",
             description: None,
-            bit_size: 20,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "NOTPRESELECTED",

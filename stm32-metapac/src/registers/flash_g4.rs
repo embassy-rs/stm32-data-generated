@@ -779,7 +779,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Latency",
             description: None,
-            bit_size: 3,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
                     name: "WS0",

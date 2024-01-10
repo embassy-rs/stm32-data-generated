@@ -531,7 +531,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 16,
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Jextsel"),
                 },
                 Field {
                     name: "jexten",
@@ -539,7 +539,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 20,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Exten"),
                 },
                 Field {
                     name: "jswstart",
@@ -555,7 +555,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 24,
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Extsel"),
                 },
                 Field {
                     name: "exten",
@@ -563,7 +563,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 28,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Exten"),
                 },
                 Field {
                     name: "swstart",
@@ -1187,7 +1187,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Exten",
             description: None,
-            bit_size: 3,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "DISABLED",
@@ -1214,7 +1214,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Extsel",
             description: None,
-            bit_size: 3,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
                     name: "TIM9_CC2",
@@ -1281,7 +1281,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Jextsel",
             description: None,
-            bit_size: 3,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
                     name: "TIM9_CC1",

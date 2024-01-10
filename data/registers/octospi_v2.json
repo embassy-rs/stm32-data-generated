@@ -317,7 +317,8 @@
         "name": "FSEL",
         "description": "Flash select. This bit selects the Flash memory to be addressed in Single-, Dual-, Quad-SPI mode in single-memory configuration (when DMM = 0). This bit is ignored when DMM = 1 or when Octal-SPI mode is selected.",
         "bit_offset": 7,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "FlashSelect"
       },
       {
         "name": "FTHRES",
@@ -366,7 +367,8 @@
         "name": "PMM",
         "description": "Polling match mode. This bit indicates which method must be used to determine a match during the Automatic status-polling mode.",
         "bit_offset": 23,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "MatchMode"
       },
       {
         "name": "FMODE",
@@ -516,7 +518,8 @@
         "name": "LM",
         "description": "Latency mode. This bit selects the Latency mode.",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "LatencyMode"
       },
       {
         "name": "WZL",
@@ -887,7 +890,7 @@
       },
       {
         "name": "DHQC",
-        "description": "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement.",
+        "description": "Delay hold quarter cycle. Add a quarter cycle delay on the outputs in DTR communication to match hold requirement.",
         "bit_offset": 28,
         "bit_size": 1
       },
@@ -908,21 +911,6 @@
         "description": "Number of dummy cycles. This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated.",
         "bit_offset": 0,
         "bit_size": 5
-      }
-    ]
-  },
-  "enum/CycleDelay": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "None",
-        "description": "No delay hold",
-        "value": 0
-      },
-      {
-        "name": "QuarterCycle",
-        "description": "1/4 cycle hold",
-        "value": 1
       }
     ]
   },
@@ -966,7 +954,7 @@
       }
     ]
   },
-  "enum/Latency": {
+  "enum/LatencyMode": {
     "bit_size": 1,
     "variants": [
       {
@@ -1028,26 +1016,6 @@
         "name": "HyperBusRegister",
         "description": "HyperBus register mode, addressing register space. The memory-mapped accesses in. this mode must be non-cacheable, or Indirect read/write modes must be used.",
         "value": 5
-      }
-    ]
-  },
-  "enum/NcsCycleHold": {
-    "bit_size": 6,
-    "variants": [
-      {
-        "name": "OneCycle",
-        "description": "NCS stays high for at least 1 cycle between external device commands.",
-        "value": 0
-      },
-      {
-        "name": "TwoCycles",
-        "description": "NCS stays high for at least 2 cycles between external device commands.",
-        "value": 1
-      },
-      {
-        "name": "SixtyFourCycles",
-        "description": "NCS stays high for at least 64 cycles between external device commands.",
-        "value": 63
       }
     ]
   },

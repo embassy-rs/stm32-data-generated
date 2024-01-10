@@ -29,6 +29,17 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
+                name: "icscr",
+                description: Some("RCC Internal Clock Source Calibration Register"),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Icscr"),
+                }),
+            },
+            BlockItem {
                 name: "crrcr",
                 description: Some("RCC Clock Recovery RC Register"),
                 array: None,

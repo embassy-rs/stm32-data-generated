@@ -4995,40 +4995,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Plli2sp {
-        #[doc = "PLL*P=2"]
-        DIV2 = 0,
-        #[doc = "PLL*P=4"]
-        DIV4 = 0x01,
-        #[doc = "PLL*P=6"]
-        DIV6 = 0x02,
-        #[doc = "PLL*P=8"]
-        DIV8 = 0x03,
-    }
-    impl Plli2sp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Plli2sp {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Plli2sp {
-        #[inline(always)]
-        fn from(val: u8) -> Plli2sp {
-            Plli2sp::from_bits(val)
-        }
-    }
-    impl From<Plli2sp> for u8 {
-        #[inline(always)]
-        fn from(val: Plli2sp) -> u8 {
-            Plli2sp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pllm {
         _RESERVED_0 = 0,
         _RESERVED_1 = 0x01,
@@ -5757,40 +5723,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllsaidivr) -> u8 {
             Pllsaidivr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pllsaip {
-        #[doc = "PLL*P=2"]
-        DIV2 = 0,
-        #[doc = "PLL*P=4"]
-        DIV4 = 0x01,
-        #[doc = "PLL*P=6"]
-        DIV6 = 0x02,
-        #[doc = "PLL*P=8"]
-        DIV8 = 0x03,
-    }
-    impl Pllsaip {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllsaip {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllsaip {
-        #[inline(always)]
-        fn from(val: u8) -> Pllsaip {
-            Pllsaip::from_bits(val)
-        }
-    }
-    impl From<Pllsaip> for u8 {
-        #[inline(always)]
-        fn from(val: Pllsaip) -> u8 {
-            Pllsaip::to_bits(val)
         }
     }
     #[repr(u8)]

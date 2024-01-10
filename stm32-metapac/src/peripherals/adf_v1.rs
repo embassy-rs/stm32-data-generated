@@ -1063,15 +1063,75 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Bssel {
-        #[doc = "bs0_r provided to DFLT0."]
-        BSR = 0,
-        #[doc = "bs0_f provided to DFLT0."]
-        BSF = 0x01,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS0_R = 0,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS0_F = 0x01,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS1_R = 0x02,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS1_F = 0x03,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS2_R = 0x04,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS2_F = 0x05,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS3_R = 0x06,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS3_F = 0x07,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS4_R = 0x08,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS4_F = 0x09,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS5_R = 0x0a,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS5_F = 0x0b,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS6_R = 0x0c,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS6_F = 0x0d,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS7_R = 0x0e,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS7_F = 0x0f,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS8_R = 0x10,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS8_F = 0x11,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS9_R = 0x12,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS9_F = 0x13,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS10_R = 0x14,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS10_F = 0x15,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS11_R = 0x16,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS11_F = 0x17,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS12_R = 0x18,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS12_F = 0x19,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS13_R = 0x1a,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS13_F = 0x1b,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS14_R = 0x1c,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS14_F = 0x1d,
+        #[doc = "bsx_r provided to DFLTy (and SCDy)."]
+        BS15_R = 0x1e,
+        #[doc = "bsx_f provided to DFLTy (and SCDy)."]
+        BS15_F = 0x1f,
     }
     impl Bssel {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Bssel {
-            unsafe { core::mem::transmute(val & 0x01) }
+            unsafe { core::mem::transmute(val & 0x1f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -1678,11 +1738,15 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
         CCK0 = 0,
         #[doc = "Serial clock source is CCK1."]
         CCK1 = 0x01,
+        #[doc = "Serial clock source is CCI0."]
+        CKI0 = 0x02,
+        #[doc = "Serial clock source is CCI1."]
+        CKI1 = 0x03,
     }
     impl Scksrc {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Scksrc {
-            unsafe { core::mem::transmute(val & 0x01) }
+            unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {

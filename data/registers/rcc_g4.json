@@ -2778,7 +2778,7 @@
     ]
   },
   "enum/PLLP": {
-    "bit_size": 7,
+    "bit_size": 5,
     "variants": [
       {
         "name": "Div2",
@@ -2978,7 +2978,7 @@
     ]
   },
   "enum/PPRE": {
-    "bit_size": 4,
+    "bit_size": 3,
     "variants": [
       {
         "name": "Div1",

@@ -859,117 +859,6 @@ pub mod regs {
         pub fn set_lbd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-    }
-    impl Default for Sr {
-        #[inline(always)]
-        fn default() -> Sr {
-            Sr(0)
-        }
-    }
-    #[doc = "Status register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SrUsart(pub u32);
-    impl SrUsart {
-        #[doc = "Parity error"]
-        #[inline(always)]
-        pub const fn pe(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Parity error"]
-        #[inline(always)]
-        pub fn set_pe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Framing error"]
-        #[inline(always)]
-        pub const fn fe(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Framing error"]
-        #[inline(always)]
-        pub fn set_fe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Noise error flag"]
-        #[inline(always)]
-        pub const fn ne(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Noise error flag"]
-        #[inline(always)]
-        pub fn set_ne(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Overrun error"]
-        #[inline(always)]
-        pub const fn ore(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Overrun error"]
-        #[inline(always)]
-        pub fn set_ore(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Idle line detected"]
-        #[inline(always)]
-        pub const fn idle(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Idle line detected"]
-        #[inline(always)]
-        pub fn set_idle(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Read data register not empty"]
-        #[inline(always)]
-        pub const fn rxne(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Read data register not empty"]
-        #[inline(always)]
-        pub fn set_rxne(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Transmission complete"]
-        #[inline(always)]
-        pub const fn tc(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmission complete"]
-        #[inline(always)]
-        pub fn set_tc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Transmit data register empty"]
-        #[inline(always)]
-        pub const fn txe(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmit data register empty"]
-        #[inline(always)]
-        pub fn set_txe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "LIN break detection flag"]
-        #[inline(always)]
-        pub const fn lbd(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "LIN break detection flag"]
-        #[inline(always)]
-        pub fn set_lbd(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
         #[doc = "CTS flag"]
         #[inline(always)]
         pub const fn cts(&self) -> bool {
@@ -982,10 +871,10 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
-    impl Default for SrUsart {
+    impl Default for Sr {
         #[inline(always)]
-        fn default() -> SrUsart {
-            SrUsart(0)
+        fn default() -> Sr {
+            Sr(0)
         }
     }
 }

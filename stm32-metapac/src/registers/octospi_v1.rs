@@ -732,7 +732,9 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "FlashSelect",
+                    ),
                 },
                 Field {
                     name: "fthres",
@@ -814,7 +816,9 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 23,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "MatchMode",
+                    ),
                 },
                 Field {
                     name: "fmode",
@@ -1088,7 +1092,9 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "LatencyMode",
+                    ),
                 },
                 Field {
                     name: "wzl",
@@ -1733,7 +1739,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "dhqc",
                     description: Some(
-                        "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement.",
+                        "Delay hold quarter cycle. Add a quarter cycle delay on the outputs in DTR communication to match hold requirement.",
                     ),
                     bit_offset: 28,
                     bit_size: 1,
@@ -1776,27 +1782,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
-        Enum {
-            name: "CycleDelay",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "No delay hold",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "QUARTERCYCLE",
-                    description: Some(
-                        "1/4 cycle hold",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "FlashSelect",
             description: None,
@@ -1854,7 +1839,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Latency",
+            name: "LatencyMode",
             description: None,
             bit_size: 1,
             variants: &[
@@ -1941,34 +1926,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "HyperBus register mode, addressing register space. The memory-mapped accesses in. this mode must be non-cacheable, or Indirect read/write modes must be used.",
                     ),
                     value: 5,
-                },
-            ],
-        },
-        Enum {
-            name: "NcsCycleHold",
-            description: None,
-            bit_size: 6,
-            variants: &[
-                EnumVariant {
-                    name: "ONECYCLE",
-                    description: Some(
-                        "NCS stays high for at least 1 cycle between external device commands.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TWOCYCLES",
-                    description: Some(
-                        "NCS stays high for at least 2 cycles between external device commands.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "SIXTYFOURCYCLES",
-                    description: Some(
-                        "NCS stays high for at least 64 cycles between external device commands.",
-                    ),
-                    value: 63,
                 },
             ],
         },

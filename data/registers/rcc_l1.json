@@ -1332,7 +1332,7 @@
     ]
   },
   "enum/MCOSEL": {
-    "bit_size": 4,
+    "bit_size": 3,
     "variants": [
       {
         "name": "DISABLE",

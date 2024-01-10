@@ -2633,51 +2633,6 @@ pub mod regs {
             Glpmcfg(0)
         }
     }
-    #[doc = "Non-periodic transmit FIFO/queue status register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Gnptxsts(pub u32);
-    impl Gnptxsts {
-        #[doc = "Non-periodic TxFIFO space available"]
-        #[inline(always)]
-        pub const fn nptxfsav(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "Non-periodic TxFIFO space available"]
-        #[inline(always)]
-        pub fn set_nptxfsav(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[doc = "Non-periodic transmit request queue space available"]
-        #[inline(always)]
-        pub const fn nptqxsav(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0xff;
-            val as u8
-        }
-        #[doc = "Non-periodic transmit request queue space available"]
-        #[inline(always)]
-        pub fn set_nptqxsav(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Top of the non-periodic transmit request queue"]
-        #[inline(always)]
-        pub const fn nptxqtop(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "Top of the non-periodic transmit request queue"]
-        #[inline(always)]
-        pub fn set_nptxqtop(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
-        }
-    }
-    impl Default for Gnptxsts {
-        #[inline(always)]
-        fn default() -> Gnptxsts {
-            Gnptxsts(0)
-        }
-    }
     #[doc = "Control and status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

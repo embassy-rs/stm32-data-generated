@@ -967,11 +967,19 @@ pub mod vals {
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
     }
     impl Latency {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Latency {
-            unsafe { core::mem::transmute(val & 0x07) }
+            unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {

@@ -2158,24 +2158,24 @@ pub mod regs {
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
         pub const fn mco1sel(&self) -> super::vals::Mcosel {
-            let val = (self.0 >> 24usize) & 0x07;
+            let val = (self.0 >> 24usize) & 0x0f;
             super::vals::Mcosel::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output"]
         #[inline(always)]
         pub fn set_mco1sel(&mut self, val: super::vals::Mcosel) {
-            self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
         pub const fn mco1pre(&self) -> super::vals::Mcopre {
-            let val = (self.0 >> 28usize) & 0x07;
+            let val = (self.0 >> 28usize) & 0x0f;
             super::vals::Mcopre::from_bits(val as u8)
         }
         #[doc = "Microcontroller clock output prescaler"]
         #[inline(always)]
         pub fn set_mco1pre(&mut self, val: super::vals::Mcopre) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
+            self.0 = (self.0 & !(0x0f << 28usize)) | (((val.to_bits() as u32) & 0x0f) << 28usize);
         }
     }
     impl Default for Cfgr {
@@ -4052,19 +4052,11 @@ pub mod vals {
         DIV8 = 0x06,
         #[doc = "HCLK is divided by 16"]
         DIV16 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
     }
     impl Ppre {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Ppre {
-            unsafe { core::mem::transmute(val & 0x0f) }
+            unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {

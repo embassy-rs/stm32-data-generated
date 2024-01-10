@@ -1293,26 +1293,6 @@
       }
     ]
   },
-  "enum/SSRUF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Underflow",
-        "description": "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SSRUMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Underflow",
-        "description": "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-        "value": 1
-      }
-    ]
-  },
   "enum/TAMPALRM_TYPE": {
     "bit_size": 1,
     "variants": [

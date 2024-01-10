@@ -1003,10 +1003,10 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux0 {
-        #[doc = "PA1"]
-        B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_F2 = 0,
-        #[doc = "PA2"]
-        B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_F2 = 0x01,
+        #[doc = "PB7"]
+        PB7 = 0,
+        #[doc = "PC14"]
+        PC14 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1036,13 +1036,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux1 {
         #[doc = "PF2"]
-        B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G3 = 0,
+        PF2 = 0,
         #[doc = "PA0"]
-        B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G3 = 0x01,
+        PA0 = 0x01,
         #[doc = "PA1"]
-        B_0X2_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_4 = 0x02,
+        PA1 = 0x02,
         #[doc = "PA2"]
-        B_0X3_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_4 = 0x03,
+        PA2 = 0x03,
     }
     impl Pinmux1 {
         #[inline(always)]
@@ -1070,9 +1070,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux2 {
         #[doc = "PA8"]
-        B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J1 = 0,
+        PA8 = 0,
         #[doc = "PA11"]
-        B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J1 = 0x01,
+        PA11 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1101,12 +1101,12 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux3 {
-        #[doc = "PA5"]
-        B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_H2 = 0,
-        #[doc = "PA6"]
-        B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_H2 = 0x01,
+        #[doc = "PA14"]
+        PA14 = 0,
+        #[doc = "PB6"]
+        PB6 = 0x01,
         #[doc = "PC15"]
-        B_0X2_STM32C011X___GPIO_ASSIGNED_TO_SO8_PIN_8 = 0x02,
+        PC15 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Pinmux3 {
@@ -1135,9 +1135,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux4 {
         #[doc = "PA7"]
-        B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1 = 0,
+        PA7 = 0,
         #[doc = "PA12"]
-        B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_G1 = 0x01,
+        PA12 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1167,13 +1167,13 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Pinmux5 {
         #[doc = "PA3"]
-        B_0X0_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3 = 0,
+        PA3 = 0,
         #[doc = "PA4"]
-        B_0X1_STM32C031X___GPIO_ASSIGNED_TO_WLCSP14_PIN_J3 = 0x01,
+        PA4 = 0x01,
         #[doc = "PA5"]
-        B_0X2_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1 = 0x02,
+        PA5 = 0x02,
         #[doc = "PA6"]
-        B_0X3_STM32C011X___GPIO_ASSIGNED_TO_WLCSP12_PIN_F1 = 0x03,
+        PA6 = 0x03,
     }
     impl Pinmux5 {
         #[inline(always)]

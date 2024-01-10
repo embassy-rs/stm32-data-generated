@@ -3342,13 +3342,13 @@ pub mod regs {
         }
         #[doc = "I2S clock selection"]
         #[inline(always)]
-        pub const fn i2ssrc(&self) -> super::vals::Issrc {
+        pub const fn i2ssrc(&self) -> super::vals::I2ssrcCfgr {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::Issrc::from_bits(val as u8)
+            super::vals::I2ssrcCfgr::from_bits(val as u8)
         }
         #[doc = "I2S clock selection"]
         #[inline(always)]
-        pub fn set_i2ssrc(&mut self, val: super::vals::Issrc) {
+        pub fn set_i2ssrc(&mut self, val: super::vals::I2ssrcCfgr) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
         }
         #[doc = "MCO1 prescaler"]
@@ -4107,13 +4107,13 @@ pub mod regs {
         #[doc = "DFSDM1 audio clock selection"]
         #[inline(always)]
         pub const fn ckdfsdm1asel(&self) -> super::vals::Ckdfsdmasel {
-            let val = (self.0 >> 15usize) & 0x1f;
+            let val = (self.0 >> 15usize) & 0x01;
             super::vals::Ckdfsdmasel::from_bits(val as u8)
         }
         #[doc = "DFSDM1 audio clock selection"]
         #[inline(always)]
         pub fn set_ckdfsdm1asel(&mut self, val: super::vals::Ckdfsdmasel) {
-            self.0 = (self.0 & !(0x1f << 15usize)) | (((val.to_bits() as u32) & 0x1f) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
         #[doc = "division factor for LCD_CLK"]
         #[inline(always)]
@@ -4194,13 +4194,13 @@ pub mod regs {
         }
         #[doc = "I2SSRC"]
         #[inline(always)]
-        pub const fn i2ssrc(&self) -> super::vals::Issrc {
+        pub const fn i2ssrc(&self) -> super::vals::I2ssrcDckcfgr {
             let val = (self.0 >> 25usize) & 0x03;
-            super::vals::Issrc::from_bits(val as u8)
+            super::vals::I2ssrcDckcfgr::from_bits(val as u8)
         }
         #[doc = "I2SSRC"]
         #[inline(always)]
-        pub fn set_i2ssrc(&mut self, val: super::vals::Issrc) {
+        pub fn set_i2ssrc(&mut self, val: super::vals::I2ssrcDckcfgr) {
             self.0 = (self.0 & !(0x03 << 25usize)) | (((val.to_bits() as u32) & 0x03) << 25usize);
         }
         #[doc = "48 MHz clock source selection"]
@@ -4916,15 +4916,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Issrc {
+    pub enum I2ssrcCfgr {
         #[doc = "PLLI2S clock used as I2S clock source"]
         PLLI2S = 0,
         #[doc = "External clock mapped on the I2S_CKIN pin used as I2S clock source"]
         CKIN = 0x01,
     }
-    impl Issrc {
+    impl I2ssrcCfgr {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Issrc {
+        pub const fn from_bits(val: u8) -> I2ssrcCfgr {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -4932,16 +4932,50 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Issrc {
+    impl From<u8> for I2ssrcCfgr {
         #[inline(always)]
-        fn from(val: u8) -> Issrc {
-            Issrc::from_bits(val)
+        fn from(val: u8) -> I2ssrcCfgr {
+            I2ssrcCfgr::from_bits(val)
         }
     }
-    impl From<Issrc> for u8 {
+    impl From<I2ssrcCfgr> for u8 {
         #[inline(always)]
-        fn from(val: Issrc) -> u8 {
-            Issrc::to_bits(val)
+        fn from(val: I2ssrcCfgr) -> u8 {
+            I2ssrcCfgr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum I2ssrcDckcfgr {
+        #[doc = "clock frequency = f(PLLI2S_R)"]
+        PLLI2S_R = 0,
+        #[doc = "clock frequency = I2S_CKIN Alternate function input frequency"]
+        I2S_CKIN = 0x01,
+        #[doc = "clock frequency = f(PLL_R)"]
+        PLL_R = 0x02,
+        #[doc = "clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR\\[22\\])"]
+        HSI_HSE = 0x03,
+    }
+    impl I2ssrcDckcfgr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> I2ssrcDckcfgr {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for I2ssrcDckcfgr {
+        #[inline(always)]
+        fn from(val: u8) -> I2ssrcDckcfgr {
+            I2ssrcDckcfgr::from_bits(val)
+        }
+    }
+    impl From<I2ssrcDckcfgr> for u8 {
+        #[inline(always)]
+        fn from(val: I2ssrcDckcfgr) -> u8 {
+            I2ssrcDckcfgr::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5383,40 +5417,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Plli2sdivr) -> u8 {
             Plli2sdivr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Plli2sp {
-        #[doc = "PLL*P=2"]
-        DIV2 = 0,
-        #[doc = "PLL*P=4"]
-        DIV4 = 0x01,
-        #[doc = "PLL*P=6"]
-        DIV6 = 0x02,
-        #[doc = "PLL*P=8"]
-        DIV8 = 0x03,
-    }
-    impl Plli2sp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Plli2sp {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Plli2sp {
-        #[inline(always)]
-        fn from(val: u8) -> Plli2sp {
-            Plli2sp::from_bits(val)
-        }
-    }
-    impl From<Plli2sp> for u8 {
-        #[inline(always)]
-        fn from(val: Plli2sp) -> u8 {
-            Plli2sp::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -6179,40 +6179,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllsaidivr) -> u8 {
             Pllsaidivr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pllsaip {
-        #[doc = "PLL*P=2"]
-        DIV2 = 0,
-        #[doc = "PLL*P=4"]
-        DIV4 = 0x01,
-        #[doc = "PLL*P=6"]
-        DIV6 = 0x02,
-        #[doc = "PLL*P=8"]
-        DIV8 = 0x03,
-    }
-    impl Pllsaip {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllsaip {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllsaip {
-        #[inline(always)]
-        fn from(val: u8) -> Pllsaip {
-            Pllsaip::from_bits(val)
-        }
-    }
-    impl From<Pllsaip> for u8 {
-        #[inline(always)]
-        fn from(val: Pllsaip) -> u8 {
-            Pllsaip::to_bits(val)
         }
     }
     #[repr(u8)]

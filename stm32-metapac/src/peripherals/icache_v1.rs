@@ -214,25 +214,25 @@ pub mod regs {
         }
         #[doc = "AHB cache master selection for region."]
         #[inline(always)]
-        pub const fn mstsel(&self) -> bool {
+        pub const fn mstsel(&self) -> super::vals::Mstsel {
             let val = (self.0 >> 28usize) & 0x01;
-            val != 0
+            super::vals::Mstsel::from_bits(val as u8)
         }
         #[doc = "AHB cache master selection for region."]
         #[inline(always)]
-        pub fn set_mstsel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        pub fn set_mstsel(&mut self, val: super::vals::Mstsel) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
         }
         #[doc = "output burst type for region."]
         #[inline(always)]
-        pub const fn hburst(&self) -> bool {
+        pub const fn hburst(&self) -> super::vals::Hburst {
             let val = (self.0 >> 31usize) & 0x01;
-            val != 0
+            super::vals::Hburst::from_bits(val as u8)
         }
         #[doc = "output burst type for region."]
         #[inline(always)]
-        pub fn set_hburst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        pub fn set_hburst(&mut self, val: super::vals::Hburst) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Crrx {

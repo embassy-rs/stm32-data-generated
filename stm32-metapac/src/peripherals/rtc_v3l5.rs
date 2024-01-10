@@ -2289,64 +2289,6 @@ is don’t care."]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ssruf {
-        _RESERVED_0 = 0,
-        #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
-        UNDERFLOW = 0x01,
-    }
-    impl Ssruf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ssruf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ssruf {
-        #[inline(always)]
-        fn from(val: u8) -> Ssruf {
-            Ssruf::from_bits(val)
-        }
-    }
-    impl From<Ssruf> for u8 {
-        #[inline(always)]
-        fn from(val: Ssruf) -> u8 {
-            Ssruf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ssrumf {
-        _RESERVED_0 = 0,
-        #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
-        UNDERFLOW = 0x01,
-    }
-    impl Ssrumf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ssrumf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ssrumf {
-        #[inline(always)]
-        fn from(val: u8) -> Ssrumf {
-            Ssrumf::from_bits(val)
-        }
-    }
-    impl From<Ssrumf> for u8 {
-        #[inline(always)]
-        fn from(val: Ssrumf) -> u8 {
-            Ssrumf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum TampalrmType {
         #[doc = "TAMPALRM is push-pull output"]
         PUSHPULL = 0,

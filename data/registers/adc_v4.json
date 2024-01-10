@@ -1128,7 +1128,7 @@
     ]
   },
   "enum/PCSEL": {
-    "bit_size": 20,
+    "bit_size": 1,
     "variants": [
       {
         "name": "NotPreselected",

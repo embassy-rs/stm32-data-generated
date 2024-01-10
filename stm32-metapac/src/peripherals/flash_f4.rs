@@ -54,13 +54,13 @@ pub mod regs {
         #[doc = "Latency"]
         #[inline(always)]
         pub const fn latency(&self) -> super::vals::Latency {
-            let val = (self.0 >> 0usize) & 0x07;
+            let val = (self.0 >> 0usize) & 0x0f;
             super::vals::Latency::from_bits(val as u8)
         }
         #[doc = "Latency"]
         #[inline(always)]
         pub fn set_latency(&mut self, val: super::vals::Latency) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "Prefetch enable"]
         #[inline(always)]
@@ -467,11 +467,27 @@ pub mod vals {
         WS6 = 0x06,
         #[doc = "7 wait states"]
         WS7 = 0x07,
+        #[doc = "8 wait states"]
+        WS8 = 0x08,
+        #[doc = "9 wait states"]
+        WS9 = 0x09,
+        #[doc = "10 wait states"]
+        WS10 = 0x0a,
+        #[doc = "11 wait states"]
+        WS11 = 0x0b,
+        #[doc = "12 wait states"]
+        WS12 = 0x0c,
+        #[doc = "13 wait states"]
+        WS13 = 0x0d,
+        #[doc = "14 wait states"]
+        WS14 = 0x0e,
+        #[doc = "15 wait states"]
+        WS15 = 0x0f,
     }
     impl Latency {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Latency {
-            unsafe { core::mem::transmute(val & 0x07) }
+            unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {

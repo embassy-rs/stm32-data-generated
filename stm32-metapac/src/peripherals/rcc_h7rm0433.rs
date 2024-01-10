@@ -24,6 +24,11 @@ impl Rcc {
     pub const fn hsicfgr(self) -> crate::common::Reg<regs::Hsicfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
     }
+    #[doc = "RCC Internal Clock Source Calibration Register"]
+    #[inline(always)]
+    pub const fn icscr(self) -> crate::common::Reg<regs::Icscr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(4usize) as _) }
+    }
     #[doc = "RCC Clock Recovery RC Register"]
     #[inline(always)]
     pub const fn crrcr(self) -> crate::common::Reg<regs::Crrcr, crate::common::R> {

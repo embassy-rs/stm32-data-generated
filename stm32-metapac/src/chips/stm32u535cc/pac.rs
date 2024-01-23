@@ -584,7 +584,7 @@ pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4602_1800 as usize as _
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000 as usize as _) };
 pub const ADF1: adf::Adf = unsafe { adf::Adf::from_ptr(0x4602_4000 as usize as _) };
 pub const LPDMA1: *mut () = 0x4602_5000 as usize as _;
-pub const OCTOSPI1: *mut () = 0x9000_0000 as usize as _;
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x9000_0000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -626,6 +626,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/icache_v1.rs"]
 pub mod icache;
+#[path = "../../peripherals/octospi_v1.rs"]
+pub mod octospi;
 #[path = "../../peripherals/pwr_u5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_u5.rs"]

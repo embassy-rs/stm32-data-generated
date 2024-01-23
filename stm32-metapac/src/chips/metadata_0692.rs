@@ -1870,7 +1870,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "OCTOSPI1",
         address: 2415919104,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v1",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk2",
             enable: Some(PeripheralRccRegister {
@@ -5058,6 +5063,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../registers/icache_v1.rs"]
 pub mod icache;
+#[path = "../registers/octospi_v1.rs"]
+pub mod octospi;
 #[path = "../registers/pwr_u5.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_u5.rs"]

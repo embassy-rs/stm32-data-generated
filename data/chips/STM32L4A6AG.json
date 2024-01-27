@@ -3870,6 +3870,11 @@
                 {
                     "name": "SAI1",
                     "address": 1073828864,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v2",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "clock": "pclk2",
                         "enable": {
@@ -4064,6 +4069,11 @@
                 {
                     "name": "SAI2",
                     "address": 1073829888,
+                    "registers": {
+                        "kind": "sai",
+                        "version": "v2",
+                        "block": "SAI"
+                    },
                     "rcc": {
                         "clock": "pclk2",
                         "enable": {

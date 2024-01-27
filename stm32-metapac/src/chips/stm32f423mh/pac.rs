@@ -464,7 +464,7 @@ pub const TIM9: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4000 a
 pub const TIM10: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4400 as usize as _) };
 pub const TIM11: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4800 as usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_5000 as usize as _) };
-pub const SAI1: *mut () = 0x4001_5800 as usize as _;
+pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800 as usize as _) };
 pub const DFSDM1: *mut () = 0x4001_6000 as usize as _;
 pub const DFSDM2: *mut () = 0x4001_6400 as usize as _;
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0000 as usize as _) };
@@ -536,6 +536,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v2f4.rs"]
 pub mod rtc;
+#[path = "../../peripherals/sai_v2.rs"]
+pub mod sai;
 #[path = "../../peripherals/sdmmc_v1.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v1.rs"]

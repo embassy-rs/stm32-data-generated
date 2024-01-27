@@ -350,7 +350,7 @@ pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800 as usize as _) };
 pub const TIM15: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4000 as usize as _) };
 pub const TIM16: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4400 as usize as _) };
-pub const SAI1: *mut () = 0x4001_5400 as usize as _;
+pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5400 as usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000 as usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0400 as usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_1000 as usize as _) };
@@ -415,6 +415,8 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v2l4.rs"]
 pub mod rtc;
+#[path = "../../peripherals/sai_v2.rs"]
+pub mod sai;
 #[path = "../../peripherals/spi_v2.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_l4.rs"]

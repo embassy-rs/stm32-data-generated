@@ -2590,7 +2590,7 @@
                 },
                 {
                     "name": "OCTOSPI1",
-                    "address": 2415919104,
+                    "address": 2684358656,
                     "registers": {
                         "kind": "octospi",
                         "version": "v1",

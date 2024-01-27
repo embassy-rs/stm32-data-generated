@@ -2016,7 +2016,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     },
     Peripheral {
         name: "OCTOSPI1",
-        address: 2415919104,
+        address: 2684358656,
         registers: Some(PeripheralRegisters {
             kind: "octospi",
             version: "v1",

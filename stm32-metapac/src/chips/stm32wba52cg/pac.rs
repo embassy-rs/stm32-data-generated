@@ -364,7 +364,7 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1107427328 + 1024 * n) as _) }
 }
-#[path = "../../peripherals/crc_v2.rs"]
+#[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dbgmcu_wba.rs"]
 pub mod dbgmcu;

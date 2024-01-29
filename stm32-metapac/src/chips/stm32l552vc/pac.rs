@@ -564,7 +564,7 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
-#[path = "../../peripherals/crc_v2.rs"]
+#[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;

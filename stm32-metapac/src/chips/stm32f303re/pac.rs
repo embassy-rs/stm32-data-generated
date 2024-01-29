@@ -448,7 +448,7 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/can_bxcan.rs"]
 pub mod can;
-#[path = "../../peripherals/crc_v2.rs"]
+#[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;

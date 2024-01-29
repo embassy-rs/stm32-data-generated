@@ -471,7 +471,7 @@
                     "address": 1073885184,
                     "registers": {
                         "kind": "crc",
-                        "version": "v2",
+                        "version": "v3",
                         "block": "CRC"
                     },
                     "rcc": {
@@ -3284,7 +3284,7 @@
                     "address": 1073885184,
                     "registers": {
                         "kind": "crc",
-                        "version": "v2",
+                        "version": "v3",
                         "block": "CRC"
                     },
                     "rcc": {

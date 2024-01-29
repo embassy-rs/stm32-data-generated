@@ -679,7 +679,7 @@ pub mod adf;
 pub mod can;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
-#[path = "../../peripherals/crc_v2.rs"]
+#[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;

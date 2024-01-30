@@ -2739,6 +2739,11 @@
                 {
                     "name": "HASH",
                     "address": 1208095744,
+                    "registers": {
+                        "kind": "hash",
+                        "version": "v2",
+                        "block": "HASH"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {
@@ -11514,6 +11519,11 @@
                 {
                     "name": "HASH",
                     "address": 1208095744,
+                    "registers": {
+                        "kind": "hash",
+                        "version": "v2",
+                        "block": "HASH"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {

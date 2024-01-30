@@ -409,7 +409,7 @@ pub const DMA2: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_6400 as usize as _
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000 as usize as _) };
 pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x5000_0000 as usize as _) };
 pub const CRYP: *mut () = 0x5006_0000 as usize as _;
-pub const HASH: *mut () = 0x5006_0400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -442,6 +442,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v1.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v1.rs"]
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v1.rs"]

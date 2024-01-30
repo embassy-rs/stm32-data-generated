@@ -550,7 +550,7 @@ pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000 as usize as _
 pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300 as usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000 as usize as _) };
-pub const HASH: *mut () = 0x420c_0400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const PKA: *mut () = 0x420c_2000 as usize as _;
 pub const OTFDEC1: *mut () = 0x420c_5000 as usize as _;
@@ -594,6 +594,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v2.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]

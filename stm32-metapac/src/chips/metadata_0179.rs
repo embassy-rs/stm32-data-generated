@@ -1053,7 +1053,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "HASH",
         address: 1342571520,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "hash",
+            version: "v1",
+            block: "HASH",
+            ir: &hash::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "hclk2",
             enable: Some(PeripheralRccRegister {
@@ -4478,6 +4483,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/hash_v1.rs"]
+pub mod hash;
 #[path = "../registers/i2c_v1.rs"]
 pub mod i2c;
 #[path = "../registers/iwdg_v1.rs"]

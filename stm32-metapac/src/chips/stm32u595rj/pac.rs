@@ -630,7 +630,7 @@ pub const ADC_COMMON: *mut () = 0x4202_8300 as usize as _;
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4202_c000 as usize as _) };
 pub const PSSI: *mut () = 0x4202_c400 as usize as _;
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4204_0000 as usize as _) };
-pub const HASH: *mut () = 0x420c_0400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x420c_4000 as usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000 as usize as _) };
@@ -699,6 +699,8 @@ pub mod fmac;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v2.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/icache_v1.rs"]

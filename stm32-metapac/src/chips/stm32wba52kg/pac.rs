@@ -337,7 +337,7 @@ pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400 as usize
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800 as usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00 as usize as _) };
 pub const AES: *mut () = 0x420c_0000 as usize as _;
-pub const HASH: *mut () = 0x420c_0400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SAES: *mut () = 0x420c_0c00 as usize as _;
 pub const HSEM: *mut () = 0x420c_1c00 as usize as _;
@@ -376,6 +376,8 @@ pub mod flash;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v3.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/lptim_v1.rs"]

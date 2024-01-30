@@ -540,7 +540,7 @@ pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00 as usize
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000 as usize as _) };
 pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100 as usize as _) };
 pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300 as usize as _) };
-pub const HASH: *mut () = 0x420c_0400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000 as usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4402_1000 as usize as _) };
@@ -582,6 +582,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v2.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]

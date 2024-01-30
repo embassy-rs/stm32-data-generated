@@ -2363,6 +2363,11 @@
                 {
                     "name": "HASH",
                     "address": 1342571520,
+                    "registers": {
+                        "kind": "hash",
+                        "version": "v2",
+                        "block": "HASH"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {

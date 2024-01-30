@@ -677,7 +677,7 @@ pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000 as usiz
 pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4008_0000 as usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000 as usize as _) };
 pub const CRYP: *mut () = 0x4802_1000 as usize as _;
-pub const HASH: *mut () = 0x4802_1400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4802_1400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800 as usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400 as usize as _) };
 pub const LTDC: *mut () = 0x5000_1000 as usize as _;
@@ -769,6 +769,8 @@ pub mod flash;
 pub mod fmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v2.rs"]
+pub mod hash;
 #[path = "../../peripherals/hrtim_v1.rs"]
 pub mod hrtim;
 #[path = "../../peripherals/i2c_v2.rs"]

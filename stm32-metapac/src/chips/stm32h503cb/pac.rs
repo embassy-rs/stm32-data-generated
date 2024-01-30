@@ -456,7 +456,7 @@ pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00 as usize
 pub const ADC1: *mut () = 0x4202_8000 as usize as _;
 pub const ADC_COMMON: *mut () = 0x4202_8300 as usize as _;
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400 as usize as _) };
-pub const HASH: *mut () = 0x420c_0400 as usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400 as usize as _) };
@@ -496,6 +496,8 @@ pub mod flash;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v3.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/pwr_h50.rs"]

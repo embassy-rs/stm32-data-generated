@@ -1996,6 +1996,11 @@
                 {
                     "name": "UART4",
                     "address": 1073761280,
+                    "registers": {
+                        "kind": "usart",
+                        "version": "v1",
+                        "block": "USART"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -2037,6 +2042,11 @@
                 {
                     "name": "UART5",
                     "address": 1073762304,
+                    "registers": {
+                        "kind": "usart",
+                        "version": "v1",
+                        "block": "USART"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {

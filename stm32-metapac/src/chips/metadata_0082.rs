@@ -2540,7 +2540,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "UART4",
         address: 1073761280,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v1",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -2590,7 +2595,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "UART5",
         address: 1073762304,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v1",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {

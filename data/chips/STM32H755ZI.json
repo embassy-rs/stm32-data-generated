@@ -905,6 +905,11 @@
                 {
                     "name": "CRYP",
                     "address": 1208094720,
+                    "registers": {
+                        "kind": "cryp",
+                        "version": "v2",
+                        "block": "CRYP"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -9466,6 +9471,11 @@
                 {
                     "name": "CRYP",
                     "address": 1208094720,
+                    "registers": {
+                        "kind": "cryp",
+                        "version": "v2",
+                        "block": "CRYP"
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",

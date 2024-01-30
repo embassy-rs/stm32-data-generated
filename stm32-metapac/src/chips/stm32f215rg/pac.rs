@@ -408,7 +408,7 @@ pub const DMA1: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_6000 as usize as _
 pub const DMA2: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_6400 as usize as _) };
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000 as usize as _) };
 pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x5000_0000 as usize as _) };
-pub const CRYP: *mut () = 0x5006_0000 as usize as _;
+pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x5006_0000 as usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000 as usize as _) };
@@ -430,6 +430,8 @@ pub mod adccommon;
 pub mod can;
 #[path = "../../peripherals/crc_v1.rs"]
 pub mod crc;
+#[path = "../../peripherals/cryp_v1.rs"]
+pub mod cryp;
 #[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_f2.rs"]

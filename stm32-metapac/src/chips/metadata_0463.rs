@@ -624,7 +624,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "CRYP",
         address: 1208094720,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "cryp",
+            version: "v2",
+            block: "CRYP",
+            ir: &cryp::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[
@@ -10153,6 +10158,8 @@ pub mod can;
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]
 pub mod crs;
+#[path = "../registers/cryp_v2.rs"]
+pub mod cryp;
 #[path = "../registers/dac_v4.rs"]
 pub mod dac;
 #[path = "../registers/dbgmcu_h7.rs"]

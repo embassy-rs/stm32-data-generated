@@ -661,7 +661,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000 as usize as _)
 pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000 as usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000 as usize as _) };
 pub const PSSI: *mut () = 0x4802_0400 as usize as _;
-pub const CRYP: *mut () = 0x4802_1000 as usize as _;
+pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x4802_1000 as usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4802_1400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800 as usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400 as usize as _) };
@@ -731,6 +731,8 @@ pub mod can;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/cryp_v2.rs"]
+pub mod cryp;
 #[path = "../../peripherals/dac_v4.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_h7.rs"]

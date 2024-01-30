@@ -541,7 +541,7 @@ pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4004_0000 as usiz
 pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x5000_0000 as usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x5005_0000 as usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x5005_1000 as usize as _) };
-pub const CRYP: *mut () = 0x5006_0000 as usize as _;
+pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x5006_0000 as usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400 as usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800 as usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0xa000_0000 as usize as _) };
@@ -565,6 +565,8 @@ pub mod adccommon;
 pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
+#[path = "../../peripherals/cryp_v2.rs"]
+pub mod cryp;
 #[path = "../../peripherals/dac_v2.rs"]
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_f7.rs"]

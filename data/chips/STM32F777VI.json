@@ -865,6 +865,11 @@
                 {
                     "name": "CRYP",
                     "address": 1342570496,
+                    "registers": {
+                        "kind": "cryp",
+                        "version": "v2",
+                        "block": "CRYP"
+                    },
                     "rcc": {
                         "clock": "hclk2",
                         "enable": {

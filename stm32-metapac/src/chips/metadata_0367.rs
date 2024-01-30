@@ -434,15 +434,15 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
                 register: "apb1henr",
-                field: "fdcan1en",
+                field: "fdcan12en",
             }),
             reset: Some(PeripheralRccRegister {
                 register: "apb1hrstr",
-                field: "fdcan1rst",
+                field: "fdcan12rst",
             }),
             mux: Some(PeripheralRccRegister {
                 register: "ccipr5",
-                field: "fdcan1sel",
+                field: "fdcan12sel",
             }),
             stop_mode: StopMode::Stop1,
         }),

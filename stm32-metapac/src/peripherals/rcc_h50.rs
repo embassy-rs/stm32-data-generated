@@ -833,13 +833,13 @@ pub mod regs {
         }
         #[doc = "FDCAN1 peripheral clock enable Set and reset by software."]
         #[inline(always)]
-        pub const fn fdcan1en(&self) -> bool {
+        pub const fn fdcan12en(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[doc = "FDCAN1 peripheral clock enable Set and reset by software."]
         #[inline(always)]
-        pub fn set_fdcan1en(&mut self, val: bool) {
+        pub fn set_fdcan12en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -878,13 +878,13 @@ pub mod regs {
         }
         #[doc = "FDCAN1 peripheral clock enable during sleep mode Set and reset by software."]
         #[inline(always)]
-        pub const fn fdcan1lpen(&self) -> bool {
+        pub const fn fdcan12lpen(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[doc = "FDCAN1 peripheral clock enable during sleep mode Set and reset by software."]
         #[inline(always)]
-        pub fn set_fdcan1lpen(&mut self, val: bool) {
+        pub fn set_fdcan12lpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -923,13 +923,13 @@ pub mod regs {
         }
         #[doc = "FDCAN1 block reset Set and reset by software."]
         #[inline(always)]
-        pub const fn fdcan1rst(&self) -> bool {
+        pub const fn fdcan12rst(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[doc = "FDCAN1 block reset Set and reset by software."]
         #[inline(always)]
-        pub fn set_fdcan1rst(&mut self, val: bool) {
+        pub fn set_fdcan12rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -2280,13 +2280,13 @@ pub mod regs {
         }
         #[doc = "FDCAN1 kernel clock source selection"]
         #[inline(always)]
-        pub const fn fdcan1sel(&self) -> super::vals::Fdcansel {
+        pub const fn fdcan12sel(&self) -> super::vals::Fdcansel {
             let val = (self.0 >> 8usize) & 0x03;
             super::vals::Fdcansel::from_bits(val as u8)
         }
         #[doc = "FDCAN1 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_fdcan1sel(&mut self, val: super::vals::Fdcansel) {
+        pub fn set_fdcan12sel(&mut self, val: super::vals::Fdcansel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "per_ck clock source selection"]

@@ -1232,7 +1232,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "fdcan1en",
+                    name: "fdcan12en",
                     description: Some(
                         "FDCAN1 peripheral clock enable\r Set and reset by software.",
                     ),
@@ -1272,7 +1272,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "fdcan1lpen",
+                    name: "fdcan12lpen",
                     description: Some(
                         "FDCAN1 peripheral clock enable during sleep mode\r Set and reset by software.",
                     ),
@@ -1312,7 +1312,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "fdcan1rst",
+                    name: "fdcan12rst",
                     description: Some(
                         "FDCAN1 block reset\r Set and reset by software.",
                     ),
@@ -2578,7 +2578,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "fdcan1sel",
+                    name: "fdcan12sel",
                     description: Some(
                         "FDCAN1 kernel clock source selection",
                     ),

@@ -1672,7 +1672,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PC2",
                 signal: "TXD2",
-                af: Some(11),
+                af: None,
             },
             PeripheralPin {
                 pin: "PC3",
@@ -9613,7 +9613,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             PeripheralPin {
                 pin: "PC2",
                 signal: "ULPI_DIR",
-                af: Some(10),
+                af: None,
             },
             PeripheralPin {
                 pin: "PC3",

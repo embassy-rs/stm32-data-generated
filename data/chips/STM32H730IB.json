@@ -1927,8 +1927,7 @@
                         },
                         {
                             "pin": "PC2",
-                            "signal": "TXD2",
-                            "af": 11
+                            "signal": "TXD2"
                         },
                         {
                             "pin": "PC3",
@@ -9887,8 +9886,7 @@
                         },
                         {
                             "pin": "PC2",
-                            "signal": "ULPI_DIR",
-                            "af": 10
+                            "signal": "ULPI_DIR"
                         },
                         {
                             "pin": "PC3",

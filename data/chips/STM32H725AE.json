@@ -1837,13 +1837,11 @@
                         },
                         {
                             "pin": "PC2",
-                            "signal": "TXD2",
-                            "af": 11
+                            "signal": "TXD2"
                         },
                         {
                             "pin": "PC3",
-                            "signal": "TX_CLK",
-                            "af": 11
+                            "signal": "TX_CLK"
                         },
                         {
                             "pin": "PC4",
@@ -9429,13 +9427,11 @@
                         },
                         {
                             "pin": "PC2",
-                            "signal": "ULPI_DIR",
-                            "af": 10
+                            "signal": "ULPI_DIR"
                         },
                         {
                             "pin": "PC3",
-                            "signal": "ULPI_NXT",
-                            "af": 10
+                            "signal": "ULPI_NXT"
                         }
                     ],
                     "interrupts": [

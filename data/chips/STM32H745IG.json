@@ -1021,6 +1021,17 @@
                         "version": "v4",
                         "block": "DAC"
                     },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1lenr",
+                            "field": "dac12en"
+                        },
+                        "reset": {
+                            "register": "apb1lrstr",
+                            "field": "dac12rst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA4",
@@ -10329,6 +10340,17 @@
                         "kind": "dac",
                         "version": "v4",
                         "block": "DAC"
+                    },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1lenr",
+                            "field": "dac12en"
+                        },
+                        "reset": {
+                            "register": "apb1lrstr",
+                            "field": "dac12rst"
+                        }
                     },
                     "pins": [
                         {

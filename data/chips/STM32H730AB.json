@@ -1036,6 +1036,17 @@
                         "version": "v4",
                         "block": "DAC"
                     },
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1lenr",
+                            "field": "dac12en"
+                        },
+                        "reset": {
+                            "register": "apb1lrstr",
+                            "field": "dac12rst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA4",
@@ -1887,7 +1898,8 @@
                         },
                         {
                             "pin": "PC3",
-                            "signal": "TX_CLK"
+                            "signal": "TX_CLK",
+                            "af": 11
                         },
                         {
                             "pin": "PC4",
@@ -9531,7 +9543,8 @@
                         },
                         {
                             "pin": "PC3",
-                            "signal": "ULPI_NXT"
+                            "signal": "ULPI_NXT",
+                            "af": 10
                         }
                     ],
                     "interrupts": [

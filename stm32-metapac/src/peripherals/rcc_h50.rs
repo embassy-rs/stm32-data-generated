@@ -4999,15 +4999,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spisel {
-        #[doc = "rcc_pclk4 selected as peripheral clock"]
-        PCLK4 = 0,
-        #[doc = "pll2_q selected as peripheral clock"]
-        PLL2_Q = 0x01,
+        #[doc = "pll1_q selected as peripheral clock"]
+        PLL1_Q = 0,
+        #[doc = "pll2_p selected as peripheral clock"]
+        PLL2_P = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "hsi_ker selected as peripheral clock"]
-        HSI = 0x03,
+        AUDIOCLK = 0x03,
         #[doc = "csi_ker selected as peripheral clock"]
-        CSI = 0x04,
+        PER = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,

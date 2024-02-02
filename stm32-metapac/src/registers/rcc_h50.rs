@@ -8042,28 +8042,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "PCLK4",
+                    name: "PLL1_Q",
                     description: Some(
-                        "rcc_pclk4 selected as peripheral clock",
+                        "pll1_q selected as peripheral clock",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL2_Q",
+                    name: "PLL2_P",
                     description: Some(
-                        "pll2_q selected as peripheral clock",
+                        "pll2_p selected as peripheral clock",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "AUDIOCLK",
                     description: Some(
                         "hsi_ker selected as peripheral clock",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CSI",
+                    name: "PER",
                     description: Some(
                         "csi_ker selected as peripheral clock",
                     ),

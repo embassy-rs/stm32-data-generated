@@ -2099,7 +2099,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fmpicsel {
         #[doc = "APB clock selected as I2C clock"]
-        APB = 0,
+        PCLK1 = 0,
         #[doc = "System clock selected as I2C clock"]
         SYS = 0x01,
         #[doc = "HSI clock selected as I2C clock"]

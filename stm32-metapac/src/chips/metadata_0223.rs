@@ -956,7 +956,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "i2c1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "i2c1sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -1046,7 +1049,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "i2c2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "i2c2sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -1119,7 +1125,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "i2c3rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "i2c3sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -1446,7 +1455,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "sai1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr1",
+                field: "sai1sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -1515,7 +1527,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "sai2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr1",
+                field: "sai2sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -1592,7 +1607,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "sdmmc1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "sdmmc1sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -3519,7 +3537,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "uart4rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "uart4sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -3599,7 +3620,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "uart5rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "uart5sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -3683,7 +3707,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "usart1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "usart1sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -3775,7 +3802,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "usart2rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "usart2sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -3850,7 +3880,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr",
                 field: "usart3rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "usart3sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -3947,7 +3980,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "usart6rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr2",
+                field: "usart6sel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[

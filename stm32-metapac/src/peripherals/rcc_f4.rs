@@ -4740,9 +4740,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Clk48sel {
         #[doc = "48MHz clock from PLL is selected"]
-        PLL = 0,
+        PLL1_Q = 0,
         #[doc = "48MHz clock from PLLSAI is selected"]
-        PLLSAI = 0x01,
+        PLLSAI1_Q = 0x01,
     }
     impl Clk48sel {
         #[inline(always)]
@@ -4772,7 +4772,7 @@ pub mod vals {
         #[doc = "DSI-PHY used as DSI byte lane clock source (usual case)"]
         DSI_PHY = 0,
         #[doc = "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)"]
-        PLLR = 0x01,
+        PLL1_R = 0x01,
     }
     impl Dsisel {
         #[inline(always)]
@@ -4800,7 +4800,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Fmpicsel {
         #[doc = "APB clock selected as I2C clock"]
-        APB = 0,
+        PCLK1 = 0,
         #[doc = "System clock selected as I2C clock"]
         SYS = 0x01,
         #[doc = "HSI clock selected as I2C clock"]
@@ -6452,9 +6452,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spdifrxsel {
         #[doc = "SPDIF-Rx clock from PLL is selected"]
-        PLL = 0,
+        PLL1_R = 0,
         #[doc = "SPDIF-Rx clock from PLLI2S is selected"]
-        PLLI2S = 0x01,
+        PLLI2S1_P = 0x01,
     }
     impl Spdifrxsel {
         #[inline(always)]

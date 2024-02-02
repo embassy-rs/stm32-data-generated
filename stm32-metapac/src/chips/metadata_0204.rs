@@ -3320,7 +3320,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb2rstr",
                 field: "sdiorst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "dckcfgr",
+                field: "sdiosel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[

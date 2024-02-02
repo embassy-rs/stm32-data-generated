@@ -1589,7 +1589,19 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             block: "ETH",
             ir: &eth::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "hclk1",
+            enable: Some(PeripheralRccRegister {
+                register: "ahb1enr",
+                field: "eth1macen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "ahb1rstr",
+                field: "eth1macrst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA0",

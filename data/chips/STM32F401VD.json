@@ -1149,6 +1149,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "sdiorst"
+                        },
+                        "mux": {
+                            "register": "dckcfgr",
+                            "field": "sdiosel"
                         }
                     },
                     "pins": [

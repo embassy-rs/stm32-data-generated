@@ -4170,7 +4170,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Ckmsel",
+                        "Clk48sel",
                     ),
                 },
                 Field {
@@ -4506,19 +4506,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ckmsel",
+            name: "Clk48sel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PLL",
+                    name: "PLL1_Q",
                     description: Some(
                         "48MHz clock from PLL is selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLSAI",
+                    name: "PLLSAI1_P",
                     description: Some(
                         "48MHz clock from PLLSAI is selected",
                     ),
@@ -4560,7 +4560,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLR",
+                    name: "PLL1_R",
                     description: Some(
                         "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)",
                     ),
@@ -4644,7 +4644,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB",
+                    name: "PCLK1",
                     description: Some(
                         "APB clock selected as I2C clock",
                     ),
@@ -7858,14 +7858,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PLLSAI",
+                    name: "PLLSAI1_Q",
                     description: Some(
                         "SAI2 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLLI2S",
+                    name: "PLLI2S1_Q",
                     description: Some(
                         "SAI2 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
                     ),

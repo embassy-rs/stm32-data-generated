@@ -1649,7 +1649,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "APB",
+                    name: "PCLK1",
                     description: Some("APB clock selected as I2C clock"),
                     value: 0,
                 },

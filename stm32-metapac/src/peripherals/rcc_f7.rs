@@ -4167,13 +4167,13 @@ pub mod regs {
         }
         #[doc = "48MHz clock source selection"]
         #[inline(always)]
-        pub const fn clk48sel(&self) -> super::vals::Ckmsel {
+        pub const fn clk48sel(&self) -> super::vals::Clk48sel {
             let val = (self.0 >> 27usize) & 0x01;
-            super::vals::Ckmsel::from_bits(val as u8)
+            super::vals::Clk48sel::from_bits(val as u8)
         }
         #[doc = "48MHz clock source selection"]
         #[inline(always)]
-        pub fn set_clk48sel(&mut self, val: super::vals::Ckmsel) {
+        pub fn set_clk48sel(&mut self, val: super::vals::Clk48sel) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
         }
         #[doc = "SDMMC1 clock source selection"]
@@ -4526,15 +4526,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Ckmsel {
+    pub enum Clk48sel {
         #[doc = "48MHz clock from PLL is selected"]
-        PLL = 0,
+        PLL1_Q = 0,
         #[doc = "48MHz clock from PLLSAI is selected"]
-        PLLSAI = 0x01,
+        PLLSAI1_P = 0x01,
     }
-    impl Ckmsel {
+    impl Clk48sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ckmsel {
+        pub const fn from_bits(val: u8) -> Clk48sel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -4542,16 +4542,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ckmsel {
+    impl From<u8> for Clk48sel {
         #[inline(always)]
-        fn from(val: u8) -> Ckmsel {
-            Ckmsel::from_bits(val)
+        fn from(val: u8) -> Clk48sel {
+            Clk48sel::from_bits(val)
         }
     }
-    impl From<Ckmsel> for u8 {
+    impl From<Clk48sel> for u8 {
         #[inline(always)]
-        fn from(val: Ckmsel) -> u8 {
-            Ckmsel::to_bits(val)
+        fn from(val: Clk48sel) -> u8 {
+            Clk48sel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4590,7 +4590,7 @@ pub mod vals {
         #[doc = "DSI-PHY used as DSI byte lane clock source (usual case)"]
         DSI_PHY = 0,
         #[doc = "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)"]
-        PLLR = 0x01,
+        PLL1_R = 0x01,
     }
     impl Dsisel {
         #[inline(always)]
@@ -4669,7 +4669,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Icsel {
         #[doc = "APB clock selected as I2C clock"]
-        APB = 0,
+        PCLK1 = 0,
         #[doc = "System clock selected as I2C clock"]
         SYS = 0x01,
         #[doc = "HSI clock selected as I2C clock"]
@@ -5832,9 +5832,9 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Saisel {
         #[doc = "SAI2 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ"]
-        PLLSAI = 0,
+        PLLSAI1_Q = 0,
         #[doc = "SAI2 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ"]
-        PLLI2S = 0x01,
+        PLLI2S1_Q = 0x01,
         #[doc = "SAI2 clock frequency = Alternate function input frequency"]
         AFIF = 0x02,
         #[doc = "SAI2 clock frequency = HSI or HSE"]

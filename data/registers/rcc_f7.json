@@ -2359,7 +2359,7 @@
         "description": "48MHz clock source selection",
         "bit_offset": 27,
         "bit_size": 1,
-        "enum": "CKMSEL"
+        "enum": "CLK48SEL"
       },
       {
         "name": "SDMMC1SEL",
@@ -2557,16 +2557,16 @@
       }
     ]
   },
-  "enum/CKMSEL": {
+  "enum/CLK48SEL": {
     "bit_size": 1,
     "variants": [
       {
-        "name": "PLL",
+        "name": "PLL1_Q",
         "description": "48MHz clock from PLL is selected",
         "value": 0
       },
       {
-        "name": "PLLSAI",
+        "name": "PLLSAI1_P",
         "description": "48MHz clock from PLLSAI is selected",
         "value": 1
       }
@@ -2596,7 +2596,7 @@
         "value": 0
       },
       {
-        "name": "PLLR",
+        "name": "PLL1_R",
         "description": "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)",
         "value": 1
       }
@@ -2656,7 +2656,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB",
+        "name": "PCLK1",
         "description": "APB clock selected as I2C clock",
         "value": 0
       },
@@ -5151,12 +5151,12 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PLLSAI",
+        "name": "PLLSAI1_Q",
         "description": "SAI2 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ",
         "value": 0
       },
       {
-        "name": "PLLI2S",
+        "name": "PLLI2S1_Q",
         "description": "SAI2 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ",
         "value": 1
       },

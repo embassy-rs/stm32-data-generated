@@ -1621,6 +1621,17 @@
                         "version": "v2",
                         "block": "ETH"
                     },
+                    "rcc": {
+                        "clock": "hclk1",
+                        "enable": {
+                            "register": "ahb1enr",
+                            "field": "eth1macen"
+                        },
+                        "reset": {
+                            "register": "ahb1rstr",
+                            "field": "eth1macrst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -9874,6 +9885,17 @@
                         "kind": "eth",
                         "version": "v2",
                         "block": "ETH"
+                    },
+                    "rcc": {
+                        "clock": "hclk1",
+                        "enable": {
+                            "register": "ahb1enr",
+                            "field": "eth1macen"
+                        },
+                        "reset": {
+                            "register": "ahb1rstr",
+                            "field": "eth1macrst"
+                        }
                     },
                     "pins": [
                         {

@@ -1193,7 +1193,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "APB",
+        "name": "PCLK1",
         "description": "APB clock selected as I2C clock",
         "value": 0
       },

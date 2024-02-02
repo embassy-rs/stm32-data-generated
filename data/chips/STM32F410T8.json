@@ -631,6 +631,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "fmpi2c1rst"
+                        },
+                        "mux": {
+                            "register": "dckcfgr2",
+                            "field": "fmpi2c1sel"
                         }
                     },
                     "pins": [
@@ -927,6 +931,10 @@
                         "reset": {
                             "register": "apb1rstr",
                             "field": "lptim1rst"
+                        },
+                        "mux": {
+                            "register": "dckcfgr2",
+                            "field": "lptim1sel"
                         },
                         "stop_mode": "Stop2"
                     },

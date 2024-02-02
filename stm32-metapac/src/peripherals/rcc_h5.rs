@@ -6139,8 +6139,8 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Octospisel {
-        #[doc = "rcc_hclk4 selected as kernel clock (default after reset)"]
-        HCLK4 = 0,
+        #[doc = "rcc_hclk selected as kernel clock (default after reset)"]
+        HCLK1 = 0,
         #[doc = "pll1_q_ck selected as kernel clock"]
         PLL1_Q = 0x01,
         #[doc = "pll2_r_ck selected as kernel clock"]
@@ -7422,8 +7422,8 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spi6sel {
-        #[doc = "rcc_pclk4 selected as peripheral clock"]
-        PCLK4 = 0,
+        #[doc = "rcc_pclk2 selected as peripheral clock"]
+        PCLK2 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]

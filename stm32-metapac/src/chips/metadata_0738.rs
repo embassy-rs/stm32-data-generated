@@ -1213,7 +1213,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1476396032,
         registers: Some(PeripheralRegisters {
             kind: "pwr",
-            version: "wb",
+            version: "wb55",
             block: "PWR",
             ir: &pwr::REGISTERS,
         }),
@@ -2773,7 +2773,7 @@ pub mod ipcc;
 pub mod iwdg;
 #[path = "../registers/lptim_v1.rs"]
 pub mod lptim;
-#[path = "../registers/pwr_wb.rs"]
+#[path = "../registers/pwr_wb55.rs"]
 pub mod pwr;
 #[path = "../registers/quadspi_v1.rs"]
 pub mod quadspi;

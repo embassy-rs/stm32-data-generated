@@ -380,7 +380,7 @@ pub mod ipcc;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v1.rs"]
 pub mod lptim;
-#[path = "../../peripherals/pwr_wb.rs"]
+#[path = "../../peripherals/pwr_wb55.rs"]
 pub mod pwr;
 #[path = "../../peripherals/quadspi_v1.rs"]
 pub mod quadspi;

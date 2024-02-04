@@ -34,7 +34,7 @@ pub(crate) static REGISTERS: IR = IR {
                 array: None,
                 byte_offset: 8,
                 inner: BlockItemInner::Register(Register {
-                    access: Access::Write,
+                    access: Access::ReadWrite,
                     bit_size: 32,
                     fieldset: Some("Str"),
                 }),

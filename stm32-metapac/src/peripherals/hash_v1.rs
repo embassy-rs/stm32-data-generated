@@ -26,7 +26,7 @@ impl Hash {
     }
     #[doc = "start register."]
     #[inline(always)]
-    pub const fn str(self) -> crate::common::Reg<regs::Str, crate::common::W> {
+    pub const fn str(self) -> crate::common::Reg<regs::Str, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(8usize) as _) }
     }
     #[doc = "digest registers."]

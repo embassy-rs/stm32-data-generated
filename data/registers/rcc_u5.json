@@ -2372,21 +2372,21 @@
         "description": "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 10,
         "bit_size": 2,
-        "enum": "ICSEL"
+        "enum": "I2CSEL"
       },
       {
         "name": "I2C2SEL",
         "description": "I2C2 kernel clock source selection\r These bits are used to select the I2C2 kernel clock source.\r Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 12,
         "bit_size": 2,
-        "enum": "ICSEL"
+        "enum": "I2CSEL"
       },
       {
         "name": "I2C4SEL",
         "description": "I2C4 kernel clock source selection\r These bits are used to select the I2C4 kernel clock source.\r Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK.",
         "bit_offset": 14,
         "bit_size": 2,
-        "enum": "ICSEL"
+        "enum": "I2CSEL"
       },
       {
         "name": "SPI2SEL",
@@ -2431,11 +2431,11 @@
         "enum": "ICLKSEL"
       },
       {
-        "name": "TIMICSEL",
-        "description": "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture\r When the TIMICSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMICSEL[1:0] value, MSI is either MSIK or MSIS.\r When TIMICSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r 0xx: HSI, MSIK and MSIS dividers disabled\r Note: The clock division must be disabled (TIMICSEL configured to 0xx) before selecting or changing a clock sources division.",
+        "name": "TIMI2CSEL",
+        "description": "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture\r When the TIMI2CSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMI2CSEL[1:0] value, MSI is either MSIK or MSIS.\r When TIMI2CSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r 0xx: HSI, MSIK and MSIS dividers disabled\r Note: The clock division must be disabled (TIMI2CSEL configured to 0xx) before selecting or changing a clock sources division.",
         "bit_offset": 29,
         "bit_size": 3,
-        "enum": "TIMICSEL"
+        "enum": "TIMI2CSEL"
       }
     ]
   },
@@ -2524,14 +2524,14 @@
         "description": "I2C5 kernel clock source selection\r These bits are used to select the I2C5 kernel clock source.\r The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
         "bit_offset": 24,
         "bit_size": 2,
-        "enum": "ICSEL"
+        "enum": "I2CSEL"
       },
       {
         "name": "I2C6SEL",
         "description": "I2C6 kernel clock source selection\r These bits are used to select the I2C6 kernel clock source.\r The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK.\r Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value.",
         "bit_offset": 26,
         "bit_size": 2,
-        "enum": "ICSEL"
+        "enum": "I2CSEL"
       },
       {
         "name": "OTGHSSEL",
@@ -2564,7 +2564,7 @@
         "description": "I2C3 kernel clock source selection\r These bits are used to select the I2C3 kernel clock source.\r Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK.",
         "bit_offset": 6,
         "bit_size": 2,
-        "enum": "ICSEL"
+        "enum": "I2CSEL"
       },
       {
         "name": "LPTIM34SEL",
@@ -3857,6 +3857,31 @@
       }
     ]
   },
+  "enum/I2CSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "HSI selected",
+        "value": 2
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected",
+        "value": 3
+      }
+    ]
+  },
   "enum/ICLKSEL": {
     "bit_size": 2,
     "variants": [
@@ -3878,31 +3903,6 @@
       {
         "name": "MSIK",
         "description": "MSIK clock selected",
-        "value": 3
-      }
-    ]
-  },
-  "enum/ICSEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "PCLK1 selected",
-        "value": 0
-      },
-      {
-        "name": "SYS",
-        "description": "SYSCLK selected",
-        "value": 1
-      },
-      {
-        "name": "HSI",
-        "description": "HSI selected",
-        "value": 2
-      },
-      {
-        "name": "MSIK",
-        "description": "MSIK selected",
         "value": 3
       }
     ]
@@ -7339,7 +7339,7 @@
       }
     ]
   },
-  "enum/TIMICSEL": {
+  "enum/TIMI2CSEL": {
     "bit_size": 3,
     "variants": [
       {

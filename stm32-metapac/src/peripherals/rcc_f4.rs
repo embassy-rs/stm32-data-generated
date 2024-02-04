@@ -4272,13 +4272,13 @@ pub mod regs {
     impl Dckcfgr2 {
         #[doc = "FMPI2C1 kernel clock source selection"]
         #[inline(always)]
-        pub const fn fmpi2c1sel(&self) -> super::vals::Fmpicsel {
+        pub const fn fmpi2c1sel(&self) -> super::vals::Fmpi2csel {
             let val = (self.0 >> 22usize) & 0x03;
-            super::vals::Fmpicsel::from_bits(val as u8)
+            super::vals::Fmpi2csel::from_bits(val as u8)
         }
         #[doc = "FMPI2C1 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_fmpi2c1sel(&mut self, val: super::vals::Fmpicsel) {
+        pub fn set_fmpi2c1sel(&mut self, val: super::vals::Fmpi2csel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
         #[doc = "HDMI CEC clock source selection"]
@@ -4798,7 +4798,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Fmpicsel {
+    pub enum Fmpi2csel {
         #[doc = "APB clock selected as I2C clock"]
         PCLK1 = 0,
         #[doc = "System clock selected as I2C clock"]
@@ -4807,9 +4807,9 @@ pub mod vals {
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Fmpicsel {
+    impl Fmpi2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fmpicsel {
+        pub const fn from_bits(val: u8) -> Fmpi2csel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -4817,16 +4817,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Fmpicsel {
+    impl From<u8> for Fmpi2csel {
         #[inline(always)]
-        fn from(val: u8) -> Fmpicsel {
-            Fmpicsel::from_bits(val)
+        fn from(val: u8) -> Fmpi2csel {
+            Fmpi2csel::from_bits(val)
         }
     }
-    impl From<Fmpicsel> for u8 {
+    impl From<Fmpi2csel> for u8 {
         #[inline(always)]
-        fn from(val: Fmpicsel) -> u8 {
-            Fmpicsel::to_bits(val)
+        fn from(val: Fmpi2csel) -> u8 {
+            Fmpi2csel::to_bits(val)
         }
     }
     #[repr(u8)]

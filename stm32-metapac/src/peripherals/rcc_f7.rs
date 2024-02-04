@@ -4101,46 +4101,46 @@ pub mod regs {
         }
         #[doc = "I2C1 clock source selection"]
         #[inline(always)]
-        pub const fn i2c1sel(&self) -> super::vals::Icsel {
+        pub const fn i2c1sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 16usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C1 clock source selection"]
         #[inline(always)]
-        pub fn set_i2c1sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c1sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "I2C2 clock source selection"]
         #[inline(always)]
-        pub const fn i2c2sel(&self) -> super::vals::Icsel {
+        pub const fn i2c2sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 18usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C2 clock source selection"]
         #[inline(always)]
-        pub fn set_i2c2sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c2sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
         #[doc = "I2C3 clock source selection"]
         #[inline(always)]
-        pub const fn i2c3sel(&self) -> super::vals::Icsel {
+        pub const fn i2c3sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C3 clock source selection"]
         #[inline(always)]
-        pub fn set_i2c3sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c3sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "I2C4 clock source selection"]
         #[inline(always)]
-        pub const fn i2c4sel(&self) -> super::vals::Icsel {
+        pub const fn i2c4sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 22usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C4 clock source selection"]
         #[inline(always)]
-        pub fn set_i2c4sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c4sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
         #[doc = "Low power timer 1 clock source selection"]
@@ -4667,7 +4667,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Icsel {
+    pub enum I2csel {
         #[doc = "APB clock selected as I2C clock"]
         PCLK1 = 0,
         #[doc = "System clock selected as I2C clock"]
@@ -4676,9 +4676,9 @@ pub mod vals {
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Icsel {
+    impl I2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Icsel {
+        pub const fn from_bits(val: u8) -> I2csel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -4686,16 +4686,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Icsel {
+    impl From<u8> for I2csel {
         #[inline(always)]
-        fn from(val: u8) -> Icsel {
-            Icsel::from_bits(val)
+        fn from(val: u8) -> I2csel {
+            I2csel::from_bits(val)
         }
     }
-    impl From<Icsel> for u8 {
+    impl From<I2csel> for u8 {
         #[inline(always)]
-        fn from(val: Icsel) -> u8 {
-            Icsel::to_bits(val)
+        fn from(val: I2csel) -> u8 {
+            I2csel::to_bits(val)
         }
     }
     #[repr(u8)]

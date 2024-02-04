@@ -2415,7 +2415,7 @@
         "description": "FMPI2C1 kernel clock source selection",
         "bit_offset": 22,
         "bit_size": 2,
-        "enum": "FMPICSEL"
+        "enum": "FMPI2CSEL"
       },
       {
         "name": "CECSEL",
@@ -2707,7 +2707,7 @@
       }
     ]
   },
-  "enum/FMPICSEL": {
+  "enum/FMPI2CSEL": {
     "bit_size": 2,
     "variants": [
       {

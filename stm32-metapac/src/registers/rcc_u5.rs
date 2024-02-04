@@ -4372,7 +4372,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4384,7 +4384,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4396,7 +4396,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4472,15 +4472,15 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "timicsel",
+                    name: "timi2csel",
                     description: Some(
-                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture\r When the TIMICSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMICSEL[1:0] value, MSI is either MSIK or MSIS.\r When TIMICSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r 0xx: HSI, MSIK and MSIS dividers disabled\r Note: The clock division must be disabled (TIMICSEL configured to 0xx) before selecting or changing a clock sources division.",
+                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture\r When the TIMI2CSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMI2CSEL[1:0] value, MSI is either MSIK or MSIS.\r When TIMI2CSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r 0xx: HSI, MSIK and MSIS dividers disabled\r Note: The clock division must be disabled (TIMI2CSEL configured to 0xx) before selecting or changing a clock sources division.",
                     ),
                     bit_offset: 29,
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Timicsel",
+                        "Timi2csel",
                     ),
                 },
             ],
@@ -4634,7 +4634,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4646,7 +4646,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4704,7 +4704,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -6847,6 +6847,41 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "I2csel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some(
+                        "PCLK1 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "MSIK",
+                    description: Some(
+                        "MSIK selected",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "Iclksel",
             description: None,
             bit_size: 2,
@@ -6876,41 +6911,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "MSIK",
                     description: Some(
                         "MSIK clock selected",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Icsel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some(
-                        "PCLK1 selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SYS",
-                    description: Some(
-                        "SYSCLK selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "HSI selected",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MSIK",
-                    description: Some(
-                        "MSIK selected",
                     ),
                     value: 3,
                 },
@@ -11330,7 +11330,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Timicsel",
+            name: "Timi2csel",
             description: None,
             bit_size: 3,
             variants: &[

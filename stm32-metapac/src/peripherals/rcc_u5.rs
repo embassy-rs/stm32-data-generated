@@ -4092,35 +4092,35 @@ pub mod regs {
         }
         #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub const fn i2c1sel(&self) -> super::vals::Icsel {
+        pub const fn i2c1sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 10usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub fn set_i2c1sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c1sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub const fn i2c2sel(&self) -> super::vals::Icsel {
+        pub const fn i2c2sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 12usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub fn set_i2c2sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c2sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub const fn i2c4sel(&self) -> super::vals::Icsel {
+        pub const fn i2c4sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 14usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub fn set_i2c4sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c4sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
         #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or MSIK."]
@@ -4189,17 +4189,17 @@ pub mod regs {
         pub fn set_iclksel(&mut self, val: super::vals::Iclksel) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
-        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMICSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMICSEL\\[1:0\\]
-value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. 0xx: HSI, MSIK and MSIS dividers disabled Note: The clock division must be disabled (TIMICSEL configured to 0xx) before selecting or changing a clock sources division."]
+        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMI2CSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMI2CSEL\\[1:0\\]
+value, MSI is either MSIK or MSIS. When TIMI2CSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. 0xx: HSI, MSIK and MSIS dividers disabled Note: The clock division must be disabled (TIMI2CSEL configured to 0xx) before selecting or changing a clock sources division."]
         #[inline(always)]
-        pub const fn timicsel(&self) -> super::vals::Timicsel {
+        pub const fn timi2csel(&self) -> super::vals::Timi2csel {
             let val = (self.0 >> 29usize) & 0x07;
-            super::vals::Timicsel::from_bits(val as u8)
+            super::vals::Timi2csel::from_bits(val as u8)
         }
-        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMICSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMICSEL\\[1:0\\]
-value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. 0xx: HSI, MSIK and MSIS dividers disabled Note: The clock division must be disabled (TIMICSEL configured to 0xx) before selecting or changing a clock sources division."]
+        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMI2CSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMI2CSEL\\[1:0\\]
+value, MSI is either MSIK or MSIS. When TIMI2CSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. 0xx: HSI, MSIK and MSIS dividers disabled Note: The clock division must be disabled (TIMI2CSEL configured to 0xx) before selecting or changing a clock sources division."]
         #[inline(always)]
-        pub fn set_timicsel(&mut self, val: super::vals::Timicsel) {
+        pub fn set_timi2csel(&mut self, val: super::vals::Timi2csel) {
             self.0 = (self.0 & !(0x07 << 29usize)) | (((val.to_bits() as u32) & 0x07) << 29usize);
         }
     }
@@ -4337,24 +4337,24 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         }
         #[doc = "I2C5 kernel clock source selection These bits are used to select the I2C5 kernel clock source. The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
-        pub const fn i2c5sel(&self) -> super::vals::Icsel {
+        pub const fn i2c5sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 24usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C5 kernel clock source selection These bits are used to select the I2C5 kernel clock source. The I2C5 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
-        pub fn set_i2c5sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c5sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
         #[doc = "I2C6 kernel clock source selection These bits are used to select the I2C6 kernel clock source. The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
-        pub const fn i2c6sel(&self) -> super::vals::Icsel {
+        pub const fn i2c6sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 26usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C6 kernel clock source selection These bits are used to select the I2C6 kernel clock source. The I2C6 is functional in Stop 0 and Stop 1 modes only when the kernel clock is HSI�or MSIK. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
         #[inline(always)]
-        pub fn set_i2c6sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c6sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
         #[doc = "OTG_HS PHY kernel clock source selection These bits are used to select the OTG_HS PHY kernel clock source. Note: This bitfield is only available on some devices in the STM32U5 Series. Refer to the device datasheet for availability of its associated peripheral. If not present, consider this bitfield as reserved and keep it at reset value."]
@@ -4404,13 +4404,13 @@ value, MSI is either MSIK or MSIS. When TIMICSEL2 is cleared, the HSI, MSIK and 
         }
         #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub const fn i2c3sel(&self) -> super::vals::Icsel {
+        pub const fn i2c3sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Note: The I2C3 is functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is HSI or MSIK."]
         #[inline(always)]
-        pub fn set_i2c3sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c3sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "LPTIM3 and LPTIM4 kernel clock source selection These bits are used to select the LPTIM3 and LPTIM4 kernel clock source. Note: The LPTIM3 and LPTIM4 are functional in Stop 0, Stop 1 and Stop 2 modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1 or MSIK with MSIKERON = 1."]
@@ -6654,6 +6654,40 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum I2csel {
+        #[doc = "PCLK1 selected"]
+        PCLK1 = 0,
+        #[doc = "SYSCLK selected"]
+        SYS = 0x01,
+        #[doc = "HSI selected"]
+        HSI = 0x02,
+        #[doc = "MSIK selected"]
+        MSIK = 0x03,
+    }
+    impl I2csel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> I2csel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for I2csel {
+        #[inline(always)]
+        fn from(val: u8) -> I2csel {
+            I2csel::from_bits(val)
+        }
+    }
+    impl From<I2csel> for u8 {
+        #[inline(always)]
+        fn from(val: I2csel) -> u8 {
+            I2csel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Iclksel {
         #[doc = "HSI48 clock selected"]
         HSI48 = 0,
@@ -6684,40 +6718,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Iclksel) -> u8 {
             Iclksel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Icsel {
-        #[doc = "PCLK1 selected"]
-        PCLK1 = 0,
-        #[doc = "SYSCLK selected"]
-        SYS = 0x01,
-        #[doc = "HSI selected"]
-        HSI = 0x02,
-        #[doc = "MSIK selected"]
-        MSIK = 0x03,
-    }
-    impl Icsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Icsel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Icsel {
-        #[inline(always)]
-        fn from(val: u8) -> Icsel {
-            Icsel::from_bits(val)
-        }
-    }
-    impl From<Icsel> for u8 {
-        #[inline(always)]
-        fn from(val: Icsel) -> u8 {
-            Icsel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -8589,7 +8589,7 @@ in RCC_ICSCR1"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Timicsel {
+    pub enum Timi2csel {
         #[doc = "No sources can be selected by TIM16, TIM17 and LPTIM2 as internal input capture"]
         DISABLE = 0,
         _RESERVED_1 = 0x01,
@@ -8604,9 +8604,9 @@ in RCC_ICSCR1"]
         #[doc = "HSI/256, MSIK/1024 and MSIK/4 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture"]
         HSI256_MSIK1024_MSIK4 = 0x07,
     }
-    impl Timicsel {
+    impl Timi2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Timicsel {
+        pub const fn from_bits(val: u8) -> Timi2csel {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -8614,16 +8614,16 @@ in RCC_ICSCR1"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Timicsel {
+    impl From<u8> for Timi2csel {
         #[inline(always)]
-        fn from(val: u8) -> Timicsel {
-            Timicsel::from_bits(val)
+        fn from(val: u8) -> Timi2csel {
+            Timi2csel::from_bits(val)
         }
     }
-    impl From<Timicsel> for u8 {
+    impl From<Timi2csel> for u8 {
         #[inline(always)]
-        fn from(val: Timicsel) -> u8 {
-            Timicsel::to_bits(val)
+        fn from(val: Timi2csel) -> u8 {
+            Timi2csel::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -3975,7 +3975,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "timicsel",
+                    name: "timi2csel",
                     description: Some(
                         "TIM12, TIM15 and LPTIM2 input capture source selection\r Set and reset by software.",
                     ),
@@ -3983,7 +3983,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Timicsel",
+                        "Timi2csel",
                     ),
                 },
             ],
@@ -4265,7 +4265,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4277,7 +4277,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4289,7 +4289,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4301,7 +4301,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
                 Field {
@@ -4313,7 +4313,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Icsel",
+                        "I2csel",
                     ),
                 },
             ],
@@ -5929,7 +5929,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Icsel",
+            name: "I2csel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -10572,7 +10572,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Timicsel",
+            name: "Timi2csel",
             description: None,
             bit_size: 1,
             variants: &[

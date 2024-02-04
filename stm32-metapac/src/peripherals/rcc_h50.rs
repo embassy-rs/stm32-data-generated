@@ -2056,13 +2056,13 @@ pub mod regs {
         }
         #[doc = "TIM2, TIM3 and LPTIM2 input capture source selection Set and reset by software."]
         #[inline(always)]
-        pub const fn timicsel(&self) -> super::vals::Timicsel {
+        pub const fn timi2csel(&self) -> super::vals::Timi2csel {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Timicsel::from_bits(val as u8)
+            super::vals::Timi2csel::from_bits(val as u8)
         }
         #[doc = "TIM2, TIM3 and LPTIM2 input capture source selection Set and reset by software."]
         #[inline(always)]
-        pub fn set_timicsel(&mut self, val: super::vals::Timicsel) {
+        pub fn set_timi2csel(&mut self, val: super::vals::Timi2csel) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -2191,46 +2191,46 @@ pub mod regs {
         }
         #[doc = "I2C1 kernel clock source selection"]
         #[inline(always)]
-        pub const fn i2c1sel(&self) -> super::vals::Icsel {
+        pub const fn i2c1sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 16usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C1 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_i2c1sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c1sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "I2C2 kernel clock source selection"]
         #[inline(always)]
-        pub const fn i2c2sel(&self) -> super::vals::Icsel {
+        pub const fn i2c2sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 18usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C2 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_i2c2sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c2sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
         #[doc = "I3C1 kernel clock source selection"]
         #[inline(always)]
-        pub const fn i3c1sel(&self) -> super::vals::Icsel {
+        pub const fn i3c1sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 24usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I3C1 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_i3c1sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i3c1sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
         #[doc = "I3C2 kernel clock source selection"]
         #[inline(always)]
-        pub const fn i3c2sel(&self) -> super::vals::Icsel {
+        pub const fn i3c2sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 26usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I3C2 kernel clock source selection"]
         #[inline(always)]
-        pub fn set_i3c2sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i3c2sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
     }
@@ -3673,7 +3673,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Icsel {
+    pub enum I2csel {
         #[doc = "rcc_pclk1 selected as peripheral clock"]
         PCLK1 = 0,
         #[doc = "pll3_r selected as peripheral clock"]
@@ -3683,9 +3683,9 @@ pub mod vals {
         #[doc = "csi_ker selected as peripheral clock"]
         CSI = 0x03,
     }
-    impl Icsel {
+    impl I2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Icsel {
+        pub const fn from_bits(val: u8) -> I2csel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -3693,16 +3693,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Icsel {
+    impl From<u8> for I2csel {
         #[inline(always)]
-        fn from(val: u8) -> Icsel {
-            Icsel::from_bits(val)
+        fn from(val: u8) -> I2csel {
+            I2csel::from_bits(val)
         }
     }
-    impl From<Icsel> for u8 {
+    impl From<I2csel> for u8 {
         #[inline(always)]
-        fn from(val: Icsel) -> u8 {
-            Icsel::to_bits(val)
+        fn from(val: I2csel) -> u8 {
+            I2csel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5168,15 +5168,15 @@ selected as clock source"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Timicsel {
+    pub enum Timi2csel {
         #[doc = "No internal clock available for timers input capture (default after reset)"]
         B_0X0 = 0,
         #[doc = "hsi_ker_ck/1024, hsi_ker_ck/8 and csi_ker_ck/128 selected for timers input capture"]
         B_0X1 = 0x01,
     }
-    impl Timicsel {
+    impl Timi2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Timicsel {
+        pub const fn from_bits(val: u8) -> Timi2csel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -5184,16 +5184,16 @@ selected as clock source"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Timicsel {
+    impl From<u8> for Timi2csel {
         #[inline(always)]
-        fn from(val: u8) -> Timicsel {
-            Timicsel::from_bits(val)
+        fn from(val: u8) -> Timi2csel {
+            Timi2csel::from_bits(val)
         }
     }
-    impl From<Timicsel> for u8 {
+    impl From<Timi2csel> for u8 {
         #[inline(always)]
-        fn from(val: Timicsel) -> u8 {
-            Timicsel::to_bits(val)
+        fn from(val: Timi2csel) -> u8 {
+            Timi2csel::to_bits(val)
         }
     }
     #[repr(u8)]

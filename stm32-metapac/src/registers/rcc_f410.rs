@@ -1531,7 +1531,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 22,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Fmpicsel"),
+                    enumm: Some("Fmpi2csel"),
                 },
                 Field {
                     name: "lptim1sel",
@@ -1644,7 +1644,7 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Fmpicsel",
+            name: "Fmpi2csel",
             description: None,
             bit_size: 2,
             variants: &[

@@ -1934,13 +1934,13 @@ pub mod regs {
         }
         #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
         #[inline(always)]
-        pub const fn i2c1sel(&self) -> super::vals::Icsel {
+        pub const fn i2c1sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 10usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
         #[inline(always)]
-        pub fn set_i2c1sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c1sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "Low-power timer 2 kernel clock source selection These bits are used to select the LPTIM2 kernel clock source. Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1."]
@@ -1976,15 +1976,15 @@ pub mod regs {
         pub fn set_systicksel(&mut self, val: super::vals::Systicksel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
-        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMICSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division."]
+        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMI2CSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMI2CSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMI2CSEL configured to 0) before selecting or changing a clock sources division."]
         #[inline(always)]
-        pub const fn timicsel(&self) -> super::vals::Timicsel {
+        pub const fn timi2csel(&self) -> super::vals::Timi2csel {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Timicsel::from_bits(val as u8)
+            super::vals::Timi2csel::from_bits(val as u8)
         }
-        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMICSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division."]
+        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMI2CSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMI2CSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMI2CSEL configured to 0) before selecting or changing a clock sources division."]
         #[inline(always)]
-        pub fn set_timicsel(&mut self, val: super::vals::Timicsel) {
+        pub fn set_timi2csel(&mut self, val: super::vals::Timi2csel) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -2046,13 +2046,13 @@ pub mod regs {
         }
         #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C3 is functional in Stop modes only when the kernel clock is HSI"]
         #[inline(always)]
-        pub const fn i2c3sel(&self) -> super::vals::Icsel {
+        pub const fn i2c3sel(&self) -> super::vals::I2csel {
             let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Icsel::from_bits(val as u8)
+            super::vals::I2csel::from_bits(val as u8)
         }
         #[doc = "I2C3 kernel clock source selection These bits are used to select the I2C3 kernel clock source. Access can be secured by GTZC_TZSC I2C3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C3 is functional in Stop modes only when the kernel clock is HSI"]
         #[inline(always)]
-        pub fn set_i2c3sel(&mut self, val: super::vals::Icsel) {
+        pub fn set_i2c3sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "LPTIM1 kernel clock source selection These bits are used to select the LPTIM1 kernel clock source. Access can be secured by GTZC_TZSC LPTIM1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The LPTIM1 is functional in Stop modes only when the kernel clock is LSI, LSE, HSI with HSIKERON = 1."]
@@ -3302,7 +3302,7 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Icsel {
+    pub enum I2csel {
         #[doc = "pclk1 selected"]
         PCLK1 = 0,
         #[doc = "SYSCLK selected"]
@@ -3311,9 +3311,9 @@ pub mod vals {
         HSI = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Icsel {
+    impl I2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Icsel {
+        pub const fn from_bits(val: u8) -> I2csel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -3321,16 +3321,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Icsel {
+    impl From<u8> for I2csel {
         #[inline(always)]
-        fn from(val: u8) -> Icsel {
-            Icsel::from_bits(val)
+        fn from(val: u8) -> I2csel {
+            I2csel::from_bits(val)
         }
     }
-    impl From<Icsel> for u8 {
+    impl From<I2csel> for u8 {
         #[inline(always)]
-        fn from(val: Icsel) -> u8 {
-            Icsel::to_bits(val)
+        fn from(val: I2csel) -> u8 {
+            I2csel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -3986,15 +3986,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Timicsel {
+    pub enum Timi2csel {
         #[doc = "HSI divider disabled"]
         HSI = 0,
         #[doc = "HSI/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture"]
         HSI_DIV_256 = 0x01,
     }
-    impl Timicsel {
+    impl Timi2csel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Timicsel {
+        pub const fn from_bits(val: u8) -> Timi2csel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -4002,16 +4002,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Timicsel {
+    impl From<u8> for Timi2csel {
         #[inline(always)]
-        fn from(val: u8) -> Timicsel {
-            Timicsel::from_bits(val)
+        fn from(val: u8) -> Timi2csel {
+            Timi2csel::from_bits(val)
         }
     }
-    impl From<Timicsel> for u8 {
+    impl From<Timi2csel> for u8 {
         #[inline(always)]
-        fn from(val: Timicsel) -> u8 {
-            Timicsel::to_bits(val)
+        fn from(val: Timi2csel) -> u8 {
+            Timi2csel::to_bits(val)
         }
     }
     #[repr(u8)]

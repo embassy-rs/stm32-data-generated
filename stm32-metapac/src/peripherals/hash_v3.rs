@@ -48,13 +48,13 @@ impl Hash {
     #[doc = "context swap registers."]
     #[inline(always)]
     pub const fn csr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
-        assert!(n < 54usize);
+        assert!(n < 103usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(248usize + n * 4usize) as _) }
     }
     #[doc = "HASH digest register."]
     #[inline(always)]
     pub const fn hr(self, n: usize) -> crate::common::Reg<u32, crate::common::R> {
-        assert!(n < 8usize);
+        assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(784usize + n * 4usize) as _) }
     }
 }

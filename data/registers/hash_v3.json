@@ -46,7 +46,7 @@
         "name": "CSR",
         "description": "context swap registers.",
         "array": {
-          "len": 54,
+          "len": 103,
           "stride": 4
         },
         "byte_offset": 248
@@ -55,7 +55,7 @@
         "name": "HR",
         "description": "HASH digest register.",
         "array": {
-          "len": 8,
+          "len": 16,
           "stride": 4
         },
         "byte_offset": 784,

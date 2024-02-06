@@ -75,7 +75,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "csr",
                 description: Some("context swap registers."),
-                array: Some(Array::Regular(RegularArray { len: 54, stride: 4 })),
+                array: Some(Array::Regular(RegularArray { len: 103, stride: 4 })),
                 byte_offset: 248,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
@@ -86,7 +86,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "hr",
                 description: Some("HASH digest register."),
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 4 })),
+                array: Some(Array::Regular(RegularArray { len: 16, stride: 4 })),
                 byte_offset: 784,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,

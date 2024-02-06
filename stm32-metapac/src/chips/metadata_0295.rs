@@ -135,7 +135,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "COMP1",
         address: 1073807872,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "v1",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -188,7 +193,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "COMP2",
         address: 1073807876,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "v1",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -3297,6 +3307,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../registers/comp_v1.rs"]
+pub mod comp;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/dac_v4.rs"]

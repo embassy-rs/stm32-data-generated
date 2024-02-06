@@ -427,6 +427,11 @@
                 {
                     "name": "COMP1",
                     "address": 1073807872,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "v2",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -475,6 +480,11 @@
                 {
                     "name": "COMP2",
                     "address": 1073807876,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "v2",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA12",
@@ -523,6 +533,11 @@
                 {
                     "name": "COMP3",
                     "address": 1073807880,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "v2",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PA0",
@@ -553,6 +568,11 @@
                 {
                     "name": "COMP4",
                     "address": 1073807884,
+                    "registers": {
+                        "kind": "comp",
+                        "version": "v2",
+                        "block": "COMP"
+                    },
                     "pins": [
                         {
                             "pin": "PB0",

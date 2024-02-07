@@ -3098,7 +3098,7 @@
                 },
                 {
                     "name": "OCTOSPI2",
-                    "address": 1879048192,
+                    "address": 1108157440,
                     "registers": {
                         "kind": "octospi",
                         "version": "v1",

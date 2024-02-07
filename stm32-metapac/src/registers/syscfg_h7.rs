@@ -259,6 +259,17 @@ pub(crate) static REGISTERS: IR = IR {
                     fieldset: Some("Ur17"),
                 }),
             },
+            BlockItem {
+                name: "ur18",
+                description: Some("SYSCFG user register 18"),
+                array: None,
+                byte_offset: 840,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Ur18"),
+                }),
+            },
         ],
     }],
     fieldsets: &[
@@ -676,6 +687,20 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "io_hslv",
                 description: Some("I/O high speed / low voltage"),
+                bit_offset: 0,
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Ur18",
+            extends: None,
+            description: Some("SYSCFG user register 18"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cpu_freq_boost",
+                description: Some("CPU maximum frequency boost enable"),
                 bit_offset: 0,
                 bit_size: 1,
                 array: None,

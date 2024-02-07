@@ -3961,7 +3961,19 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
             block: "OCTOSPI",
             ir: &octospi::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "hclk3",
+            enable: Some(PeripheralRccRegister {
+                register: "ahb3enr",
+                field: "octospi1en",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "ahb3rstr",
+                field: "octospi1rst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
@@ -3971,7 +3983,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     },
     Peripheral {
         name: "OCTOSPI2",
-        address: 1879048192,
+        address: 1375772672,
         registers: Some(PeripheralRegisters {
             kind: "octospi",
             version: "v1",

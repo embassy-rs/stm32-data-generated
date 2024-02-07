@@ -130,6 +130,11 @@ impl Syscfg {
     pub const fn ur17(self) -> crate::common::Reg<regs::Ur17, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(836usize) as _) }
     }
+    #[doc = "SYSCFG user register 18"]
+    #[inline(always)]
+    pub const fn ur18(self) -> crate::common::Reg<regs::Ur18, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(840usize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "SYSCFG compensation cell code register"]
@@ -743,6 +748,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ur17 {
             Ur17(0)
+        }
+    }
+    #[doc = "SYSCFG user register 18"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ur18(pub u32);
+    impl Ur18 {
+        #[doc = "CPU maximum frequency boost enable"]
+        #[inline(always)]
+        pub const fn cpu_freq_boost(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CPU maximum frequency boost enable"]
+        #[inline(always)]
+        pub fn set_cpu_freq_boost(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Ur18 {
+        #[inline(always)]
+        fn default() -> Ur18 {
+            Ur18(0)
         }
     }
     #[doc = "SYSCFG user register 2"]

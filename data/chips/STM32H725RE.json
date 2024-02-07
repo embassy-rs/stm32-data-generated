@@ -2582,6 +2582,17 @@
                         "version": "v1",
                         "block": "OCTOSPI"
                     },
+                    "rcc": {
+                        "clock": "hclk3",
+                        "enable": {
+                            "register": "ahb3enr",
+                            "field": "octospi1en"
+                        },
+                        "reset": {
+                            "register": "ahb3rstr",
+                            "field": "octospi1rst"
+                        }
+                    },
                     "interrupts": [
                         {
                             "signal": "GLOBAL",
@@ -2591,7 +2602,7 @@
                 },
                 {
                     "name": "OCTOSPI2",
-                    "address": 1879048192,
+                    "address": 1375772672,
                     "registers": {
                         "kind": "octospi",
                         "version": "v1",

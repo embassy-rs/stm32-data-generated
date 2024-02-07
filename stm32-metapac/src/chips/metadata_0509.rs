@@ -2,8 +2,13 @@
 pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "ADC",
-        address: 1073817352,
-        registers: None,
+        address: 1073816576,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "l0",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk2",
             enable: Some(PeripheralRccRegister {
@@ -2539,6 +2544,8 @@ pub(crate) static DMA_CHANNELS: &'static [DmaChannel] = &[
         dmamux_channel: None,
     },
 ];
+#[path = "../registers/adc_l0.rs"]
+pub mod adc;
 #[path = "../registers/aes_v1.rs"]
 pub mod aes;
 #[path = "../registers/bdma_v2.rs"]

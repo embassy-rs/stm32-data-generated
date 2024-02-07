@@ -313,7 +313,12 @@
             "peripherals": [
                 {
                     "name": "ADC",
-                    "address": 1073817352,
+                    "address": 1073816576,
+                    "registers": {
+                        "kind": "adc",
+                        "version": "l0",
+                        "block": "ADC"
+                    },
                     "rcc": {
                         "clock": "pclk2",
                         "enable": {

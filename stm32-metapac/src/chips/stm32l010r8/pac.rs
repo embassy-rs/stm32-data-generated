@@ -123,7 +123,7 @@ pub const LPTIM1: *mut () = 0x4000_7c00 as usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400 as usize as _) };
 pub const TIM21: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_0800 as usize as _) };
-pub const ADC: *mut () = 0x4001_2708 as usize as _;
+pub const ADC: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400 as usize as _) };
 pub const ADC_COMMON: *mut () = 0x4001_2708 as usize as _;
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4001_5800 as usize as _) };
@@ -146,6 +146,8 @@ pub use Interrupt as interrupt;
 pub fn GPIO(n: usize) -> gpio::Gpio {
     unsafe { gpio::Gpio::from_ptr((1342177280 + 1024 * n) as _) }
 }
+#[path = "../../peripherals/adc_l0.rs"]
+pub mod adc;
 #[path = "../../peripherals/bdma_v2.rs"]
 pub mod bdma;
 #[path = "../../peripherals/crc_v3.rs"]

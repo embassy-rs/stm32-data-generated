@@ -641,7 +641,7 @@ pub mod fmac;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
-#[path = "../../peripherals/hash_v2.rs"]
+#[path = "../../peripherals/hash_v4.rs"]
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;

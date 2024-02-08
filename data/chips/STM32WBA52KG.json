@@ -411,7 +411,7 @@
                     "address": 1108083712,
                     "registers": {
                         "kind": "hash",
-                        "version": "v3",
+                        "version": "v4",
                         "block": "HASH"
                     },
                     "rcc": {

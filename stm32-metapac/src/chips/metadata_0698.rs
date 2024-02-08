@@ -1019,7 +1019,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1108083712,
         registers: Some(PeripheralRegisters {
             kind: "hash",
-            version: "v2",
+            version: "v4",
             block: "HASH",
             ir: &hash::REGISTERS,
         }),
@@ -5459,7 +5459,7 @@ pub mod fmac;
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
-#[path = "../registers/hash_v2.rs"]
+#[path = "../registers/hash_v4.rs"]
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;

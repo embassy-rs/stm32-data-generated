@@ -1521,7 +1521,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073818624,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_ADV",
             ir: &timer::REGISTERS,
         }),
@@ -1699,8 +1699,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073824768,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1792,8 +1792,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073825792,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1875,7 +1875,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073741824,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_GP32",
             ir: &timer::REGISTERS,
         }),
@@ -2004,7 +2004,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073742848,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -2915,7 +2915,7 @@ pub mod rtc;
 pub mod spi;
 #[path = "../registers/syscfg_wba.rs"]
 pub mod syscfg;
-#[path = "../registers/timer_v1.rs"]
+#[path = "../registers/timer_v2.rs"]
 pub mod timer;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;

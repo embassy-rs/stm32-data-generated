@@ -1256,7 +1256,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1321,7 +1321,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1386,7 +1386,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP32",
+            block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1937,7 +1937,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {

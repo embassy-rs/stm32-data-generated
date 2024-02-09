@@ -272,7 +272,7 @@ mod _vectors {
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1fff_7a10 as usize as _) };
 pub const TIM5: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0c00 as usize as _) };
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000 as usize as _) };
-pub const LPTIM1: *mut () = 0x4000_2400 as usize as _;
+pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_2400 as usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800 as usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00 as usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000 as usize as _) };
@@ -289,8 +289,8 @@ pub const ADC_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_3800 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_3c00 as usize as _) };
-pub const TIM9: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4000 as usize as _) };
-pub const TIM11: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4800 as usize as _) };
+pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4001_4000 as usize as _) };
+pub const TIM11: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_4800 as usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0000 as usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0400 as usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0800 as usize as _) };
@@ -334,6 +334,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v1.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../../peripherals/pwr_f4.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_f410.rs"]

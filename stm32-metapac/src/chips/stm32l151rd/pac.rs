@@ -268,7 +268,7 @@ mod _vectors {
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1ff8_00d0 as usize as _) };
 pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x1ff8_00f8 as usize as _) };
-pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000 as usize as _) };
+pub const TIM2: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0000 as usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400 as usize as _) };
 pub const TIM4: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0800 as usize as _) };
 pub const TIM5: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0c00 as usize as _) };
@@ -296,9 +296,9 @@ pub const OPAMP2: *mut () = 0x4000_7c5d as usize as _;
 pub const OPAMP3: *mut () = 0x4000_7c5e as usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000 as usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400 as usize as _) };
-pub const TIM9: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_0800 as usize as _) };
-pub const TIM10: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_0c00 as usize as _) };
-pub const TIM11: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_1000 as usize as _) };
+pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4001_0800 as usize as _) };
+pub const TIM10: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_0c00 as usize as _) };
+pub const TIM11: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_1000 as usize as _) };
 pub const ADC: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400 as usize as _) };
 pub const ADC_COMMON: *mut () = 0x4001_2700 as usize as _;
 pub const SDIO: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4001_2c00 as usize as _) };

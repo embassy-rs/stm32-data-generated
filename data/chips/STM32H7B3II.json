@@ -3394,6 +3394,11 @@
                 {
                     "name": "LPTIM1",
                     "address": 1073751040,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -3463,6 +3468,11 @@
                 {
                     "name": "LPTIM2",
                     "address": 1476404224,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "pclk4",
                         "enable": {
@@ -3521,6 +3531,11 @@
                 {
                     "name": "LPTIM3",
                     "address": 1476405248,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "pclk4",
                         "enable": {
@@ -7017,7 +7032,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_2CH"
                     },
                     "rcc": {
                         "clock": "pclk1_tim",
@@ -7081,7 +7096,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH"
                     },
                     "rcc": {
                         "clock": "pclk1_tim",
@@ -7135,7 +7150,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH"
                     },
                     "rcc": {
                         "clock": "pclk1_tim",
@@ -7189,7 +7204,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_2CH_CMP"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",
@@ -7305,7 +7320,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH_CMP"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",
@@ -7391,7 +7406,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH_CMP"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",

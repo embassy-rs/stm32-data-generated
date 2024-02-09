@@ -1703,7 +1703,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 1073751040,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -3225,7 +3230,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -3276,7 +3281,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -3327,7 +3332,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -3385,7 +3390,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -3436,7 +3441,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -4309,7 +4314,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -5562,6 +5567,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../registers/iwdg_v1.rs"]
 pub mod iwdg;
+#[path = "../registers/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
 #[path = "../registers/pwr_f4.rs"]

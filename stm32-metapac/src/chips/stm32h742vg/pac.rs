@@ -614,10 +614,10 @@ pub const TIM4: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0800 a
 pub const TIM5: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0c00 as usize as _) };
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000 as usize as _) };
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400 as usize as _) };
-pub const TIM12: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_1800 as usize as _) };
-pub const TIM13: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_1c00 as usize as _) };
-pub const TIM14: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_2000 as usize as _) };
-pub const LPTIM1: *mut () = 0x4000_2400 as usize as _;
+pub const TIM12: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4000_1800 as usize as _) };
+pub const TIM13: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_1c00 as usize as _) };
+pub const TIM14: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_2000 as usize as _) };
+pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_2400 as usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800 as usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00 as usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400 as usize as _) };
@@ -645,9 +645,9 @@ pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_1000 as 
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_1400 as usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000 as usize as _) };
 pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3400 as usize as _) };
-pub const TIM15: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4000 as usize as _) };
-pub const TIM16: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4400 as usize as _) };
-pub const TIM17: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4001_4800 as usize as _) };
+pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000 as usize as _) };
+pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4400 as usize as _) };
+pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4800 as usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800 as usize as _) };
 pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5c00 as usize as _) };
 pub const SAI3: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_6000 as usize as _) };
@@ -677,10 +677,10 @@ pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x5800_0400
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x5800_0c00 as usize as _) };
 pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x5800_1400 as usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x5800_1c00 as usize as _) };
-pub const LPTIM2: *mut () = 0x5800_2400 as usize as _;
-pub const LPTIM3: *mut () = 0x5800_2800 as usize as _;
-pub const LPTIM4: *mut () = 0x5800_2c00 as usize as _;
-pub const LPTIM5: *mut () = 0x5800_3000 as usize as _;
+pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2400 as usize as _) };
+pub const LPTIM3: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2800 as usize as _) };
+pub const LPTIM4: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_2c00 as usize as _) };
+pub const LPTIM5: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x5800_3000 as usize as _) };
 pub const COMP1: *mut () = 0x5800_380c as usize as _;
 pub const COMP2: *mut () = 0x5800_3810 as usize as _;
 pub const VREFBUF: *mut () = 0x5800_3c00 as usize as _;
@@ -758,6 +758,8 @@ pub mod hrtim;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../../peripherals/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]

@@ -2237,7 +2237,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 1073773568,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -2330,7 +2335,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM2",
         address: 1073779712,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -4900,7 +4910,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_2CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -5032,7 +5042,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -5120,7 +5130,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "timer",
             version: "v1",
-            block: "TIM_GP16",
+            block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -7483,6 +7493,8 @@ pub mod hash;
 pub mod i2c;
 #[path = "../registers/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../registers/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../registers/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]

@@ -2955,7 +2955,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 1140868096,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk3",
             enable: Some(PeripheralRccRegister {
@@ -3096,7 +3101,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM2",
         address: 1073779712,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -3227,7 +3237,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM3",
         address: 1140869120,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk3",
             enable: Some(PeripheralRccRegister {
@@ -3373,7 +3388,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM4",
         address: 1140870144,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk3",
             enable: Some(PeripheralRccRegister {
@@ -3426,7 +3446,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM5",
         address: 1140871168,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk3",
             enable: Some(PeripheralRccRegister {
@@ -3562,7 +3587,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM6",
         address: 1140872192,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk3",
             enable: Some(PeripheralRccRegister {
@@ -6313,7 +6343,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073818624,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_ADV",
             ir: &timer::REGISTERS,
         }),
@@ -6600,8 +6630,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073747968,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -6658,8 +6688,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073748992,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -6716,8 +6746,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073750016,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -6774,8 +6804,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073823744,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_2CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -6929,8 +6959,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073824768,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -7041,8 +7071,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073825792,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "v2",
+            block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -7153,7 +7183,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073741824,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_GP32",
             ir: &timer::REGISTERS,
         }),
@@ -7337,7 +7367,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073742848,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -7525,7 +7555,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073743872,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -7694,7 +7724,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073744896,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_GP32",
             ir: &timer::REGISTERS,
         }),
@@ -7852,7 +7882,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073745920,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_BASIC",
             ir: &timer::REGISTERS,
         }),
@@ -7914,7 +7944,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073746944,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_BASIC",
             ir: &timer::REGISTERS,
         }),
@@ -7976,7 +8006,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073820672,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v2",
             block: "TIM_ADV",
             ir: &timer::REGISTERS,
         }),
@@ -10442,6 +10472,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../registers/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../registers/octospi_v2.rs"]
 pub mod octospi;
 #[path = "../registers/pwr_h5.rs"]
@@ -10458,7 +10490,7 @@ pub mod sdmmc;
 pub mod spi;
 #[path = "../registers/syscfg_h5.rs"]
 pub mod syscfg;
-#[path = "../registers/timer_v1.rs"]
+#[path = "../registers/timer_v2.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]
 pub mod ucpd;

@@ -2079,7 +2079,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",
@@ -2131,7 +2131,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",
@@ -2183,7 +2183,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_2CH"
                     },
                     "rcc": {
                         "clock": "pclk1_tim",
@@ -2235,7 +2235,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH"
                     },
                     "rcc": {
                         "clock": "pclk1_tim",
@@ -2287,7 +2287,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_1CH"
                     },
                     "rcc": {
                         "clock": "pclk1_tim",
@@ -2945,7 +2945,7 @@
                     "registers": {
                         "kind": "timer",
                         "version": "v1",
-                        "block": "TIM_GP16"
+                        "block": "TIM_2CH"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",

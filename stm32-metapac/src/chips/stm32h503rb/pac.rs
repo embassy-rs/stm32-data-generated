@@ -435,7 +435,7 @@ pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _
 pub const I3C1: *mut () = 0x4000_5c00 as usize as _;
 pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000 as usize as _) };
 pub const DTS: *mut () = 0x4000_8c00 as usize as _;
-pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
+pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400 as usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400 as usize as _) };
 pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00 as usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00 as usize as _) };
@@ -461,7 +461,7 @@ pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _)
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400 as usize as _) };
 pub const I3C2: *mut () = 0x4400_3000 as usize as _;
-pub const LPTIM1: *mut () = 0x4400_4400 as usize as _;
+pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4400 as usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800 as usize as _) };
 pub const TAMP: *mut () = 0x4400_7c00 as usize as _;
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800 as usize as _) };
@@ -500,6 +500,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../../peripherals/pwr_h50.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h50.rs"]
@@ -512,7 +514,7 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_h50.rs"]
 pub mod syscfg;
-#[path = "../../peripherals/timer_v1.rs"]
+#[path = "../../peripherals/timer_v2.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;

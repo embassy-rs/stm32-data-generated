@@ -712,7 +712,12 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 1073773568,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v1",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             clock: "pclk1",
             enable: Some(PeripheralRccRegister {
@@ -1073,7 +1078,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073741824,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "l0",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -1231,8 +1236,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073809408,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "l0",
+            block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1294,8 +1299,8 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073812480,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
-            block: "TIM_GP16",
+            version: "l0",
+            block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
@@ -1367,7 +1372,7 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         address: 1073745920,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "l0",
             block: "TIM_BASIC",
             ir: &timer::REGISTERS,
         }),
@@ -1827,6 +1832,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../registers/iwdg_v2.rs"]
 pub mod iwdg;
+#[path = "../registers/lptim_v1.rs"]
+pub mod lptim;
 #[path = "../registers/pwr_l0.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_l0.rs"]
@@ -1837,7 +1844,7 @@ pub mod rtc;
 pub mod spi;
 #[path = "../registers/syscfg_l0.rs"]
 pub mod syscfg;
-#[path = "../registers/timer_v1.rs"]
+#[path = "../registers/timer_l0.rs"]
 pub mod timer;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;

@@ -765,6 +765,11 @@
                 {
                     "name": "LPTIM1",
                     "address": 1073773568,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -1265,7 +1270,7 @@
                     "address": 1073741824,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
+                        "version": "l0",
                         "block": "TIM_GP16"
                     },
                     "rcc": {
@@ -1421,8 +1426,8 @@
                     "address": 1073809408,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
-                        "block": "TIM_GP16"
+                        "version": "l0",
+                        "block": "TIM_2CH"
                     },
                     "rcc": {
                         "clock": "pclk2_tim",

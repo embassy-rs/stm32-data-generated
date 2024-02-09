@@ -1125,6 +1125,11 @@
                 {
                     "name": "LPTIM1",
                     "address": 1140868096,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "pclk3",
                         "enable": {
@@ -1265,6 +1270,11 @@
                 {
                     "name": "LPTIM2",
                     "address": 1073779712,
+                    "registers": {
+                        "kind": "lptim",
+                        "version": "v1",
+                        "block": "LPTIM"
+                    },
                     "rcc": {
                         "clock": "pclk1",
                         "enable": {
@@ -2413,7 +2423,7 @@
                     "address": 1073818624,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "TIM_ADV"
                     },
                     "rcc": {
@@ -2679,7 +2689,7 @@
                     "address": 1073741824,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "TIM_GP32"
                     },
                     "rcc": {
@@ -2835,7 +2845,7 @@
                     "address": 1073742848,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "TIM_GP16"
                     },
                     "rcc": {
@@ -3016,7 +3026,7 @@
                     "address": 1073745920,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "TIM_BASIC"
                     },
                     "rcc": {
@@ -3070,7 +3080,7 @@
                     "address": 1073746944,
                     "registers": {
                         "kind": "timer",
-                        "version": "v1",
+                        "version": "v2",
                         "block": "TIM_BASIC"
                     },
                     "rcc": {

@@ -3089,6 +3089,17 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073772560,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1enr1",
+                            "field": "opampen"
+                        },
+                        "reset": {
+                            "register": "apb1rstr1",
+                            "field": "opamprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA6",

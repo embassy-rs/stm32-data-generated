@@ -2456,7 +2456,19 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "OPAMP2",
         address: 1073772560,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "pclk1",
+            enable: Some(PeripheralRccRegister {
+                register: "apb1enr1",
+                field: "opampen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "apb1rstr1",
+                field: "opamprst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA6",

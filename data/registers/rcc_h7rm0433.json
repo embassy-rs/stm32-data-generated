@@ -1368,7 +1368,7 @@
         "bit_size": 1
       },
       {
-        "name": "SWPEN",
+        "name": "SWPMIEN",
         "description": "SWPMI Peripheral Clocks Enable",
         "bit_offset": 2,
         "bit_size": 1
@@ -1415,7 +1415,7 @@
         "bit_size": 1
       },
       {
-        "name": "SWPLPEN",
+        "name": "SWPMILPEN",
         "description": "SWPMI Peripheral Clocks Enable During CSleep Mode",
         "bit_offset": 2,
         "bit_size": 1
@@ -1462,7 +1462,7 @@
         "bit_size": 1
       },
       {
-        "name": "SWPRST",
+        "name": "SWPMIRST",
         "description": "SWPMI block reset",
         "bit_offset": 2,
         "bit_size": 1
@@ -3278,7 +3278,7 @@
         "bit_size": 1
       },
       {
-        "name": "SWPEN",
+        "name": "SWPMIEN",
         "description": "SWPMI Peripheral Clocks Enable",
         "bit_offset": 2,
         "bit_size": 1
@@ -3313,7 +3313,7 @@
         "bit_size": 1
       },
       {
-        "name": "SWPLPEN",
+        "name": "SWPMILPEN",
         "description": "SWPMI Peripheral Clocks Enable During CSleep Mode",
         "bit_offset": 2,
         "bit_size": 1
@@ -4700,11 +4700,11 @@
         "enum": "FDCANSEL"
       },
       {
-        "name": "SWPSEL",
+        "name": "SWPMISEL",
         "description": "SWPMI kernel clock source selection",
         "bit_offset": 31,
         "bit_size": 1,
-        "enum": "SWPSEL"
+        "enum": "SWPMISEL"
       }
     ]
   },
@@ -8848,8 +8848,8 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "APB",
-        "description": "APB clock selected as peripheral clock",
+        "name": "PCLK2",
+        "description": "APB2 clock selected as peripheral clock",
         "value": 0
       },
       {
@@ -8954,11 +8954,11 @@
       }
     ]
   },
-  "enum/SWPSEL": {
+  "enum/SWPMISEL": {
     "bit_size": 1,
     "variants": [
       {
-        "name": "PCLK",
+        "name": "PCLK1",
         "description": "pclk selected as peripheral clock",
         "value": 0
       },

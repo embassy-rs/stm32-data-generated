@@ -523,6 +523,17 @@
                 {
                     "name": "COMP2",
                     "address": 1174426628,
+                    "rcc": {
+                        "clock": "pclk3",
+                        "enable": {
+                            "register": "apb3enr",
+                            "field": "compen"
+                        },
+                        "reset": {
+                            "register": "apb3rstr",
+                            "field": "comprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB11",
@@ -3909,6 +3920,10 @@
                         "reset": {
                             "register": "ahb2rstr2",
                             "field": "octospi1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "octospisel"
                         }
                     },
                     "interrupts": [
@@ -3942,6 +3957,10 @@
                         "reset": {
                             "register": "ahb2rstr2",
                             "field": "octospi2rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "octospisel"
                         }
                     },
                     "interrupts": [
@@ -4382,6 +4401,17 @@
                 {
                     "name": "OPAMP2",
                     "address": 1174425616,
+                    "rcc": {
+                        "clock": "pclk3",
+                        "enable": {
+                            "register": "apb3enr",
+                            "field": "opampen"
+                        },
+                        "reset": {
+                            "register": "apb3rstr",
+                            "field": "opamprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA6",
@@ -5512,6 +5542,10 @@
                         "reset": {
                             "register": "ahb2rstr1",
                             "field": "sdmmc1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [
@@ -5615,6 +5649,10 @@
                         "reset": {
                             "register": "ahb2rstr1",
                             "field": "sdmmc2rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [

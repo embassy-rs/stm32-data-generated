@@ -1762,6 +1762,10 @@
                         "reset": {
                             "register": "ahb2rstr2",
                             "field": "octospi1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "octospisel"
                         }
                     },
                     "pins": [

@@ -764,7 +764,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "apb1rstr2",
                 field: "fdcan1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "ccipr",
+                field: "fdcansel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[
@@ -2291,7 +2294,19 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "OPAMP2",
         address: 1073772560,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "pclk1",
+            enable: Some(PeripheralRccRegister {
+                register: "apb1enr1",
+                field: "opampen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "apb1rstr1",
+                field: "opamprst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA6",
@@ -2955,7 +2970,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "ahb2rstr",
                 field: "sdmmc1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "ccipr2",
+                field: "sdmmcsel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[

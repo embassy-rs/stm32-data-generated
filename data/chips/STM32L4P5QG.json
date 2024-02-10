@@ -1094,6 +1094,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "dfsdm1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "dfsdmsel"
                         }
                     },
                     "pins": [
@@ -3443,6 +3447,17 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073772560,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1enr1",
+                            "field": "opampen"
+                        },
+                        "reset": {
+                            "register": "apb1rstr1",
+                            "field": "opamprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PA6",
@@ -4232,6 +4247,10 @@
                         "reset": {
                             "register": "ahb2rstr",
                             "field": "sdmmc1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [
@@ -4330,6 +4349,10 @@
                         "reset": {
                             "register": "ahb2rstr",
                             "field": "sdmmc2rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [

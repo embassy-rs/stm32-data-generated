@@ -2108,13 +2108,13 @@ pub mod regs {
         }
         #[doc = "SWPMI Peripheral Clocks Enable"]
         #[inline(always)]
-        pub const fn swpen(&self) -> bool {
+        pub const fn swpmien(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "SWPMI Peripheral Clocks Enable"]
         #[inline(always)]
-        pub fn set_swpen(&mut self, val: bool) {
+        pub fn set_swpmien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "OPAMP peripheral clock enable"]
@@ -2197,13 +2197,13 @@ pub mod regs {
         }
         #[doc = "SWPMI Peripheral Clocks Enable During CSleep Mode"]
         #[inline(always)]
-        pub const fn swplpen(&self) -> bool {
+        pub const fn swpmilpen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "SWPMI Peripheral Clocks Enable During CSleep Mode"]
         #[inline(always)]
-        pub fn set_swplpen(&mut self, val: bool) {
+        pub fn set_swpmilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "OPAMP peripheral clock enable during CSleep mode"]
@@ -2286,13 +2286,13 @@ pub mod regs {
         }
         #[doc = "SWPMI block reset"]
         #[inline(always)]
-        pub const fn swprst(&self) -> bool {
+        pub const fn swpmirst(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "SWPMI block reset"]
         #[inline(always)]
-        pub fn set_swprst(&mut self, val: bool) {
+        pub fn set_swpmirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "OPAMP block reset"]
@@ -5674,13 +5674,13 @@ pub mod regs {
         }
         #[doc = "SWPMI Peripheral Clocks Enable"]
         #[inline(always)]
-        pub const fn swpen(&self) -> bool {
+        pub const fn swpmien(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "SWPMI Peripheral Clocks Enable"]
         #[inline(always)]
-        pub fn set_swpen(&mut self, val: bool) {
+        pub fn set_swpmien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "OPAMP peripheral clock enable"]
@@ -5741,13 +5741,13 @@ pub mod regs {
         }
         #[doc = "SWPMI Peripheral Clocks Enable During CSleep Mode"]
         #[inline(always)]
-        pub const fn swplpen(&self) -> bool {
+        pub const fn swpmilpen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[doc = "SWPMI Peripheral Clocks Enable During CSleep Mode"]
         #[inline(always)]
-        pub fn set_swplpen(&mut self, val: bool) {
+        pub fn set_swpmilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "OPAMP peripheral clock enable during CSleep mode"]
@@ -8278,13 +8278,13 @@ pub mod regs {
         }
         #[doc = "SWPMI kernel clock source selection"]
         #[inline(always)]
-        pub const fn swpsel(&self) -> super::vals::Swpsel {
+        pub const fn swpmisel(&self) -> super::vals::Swpmisel {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Swpsel::from_bits(val as u8)
+            super::vals::Swpmisel::from_bits(val as u8)
         }
         #[doc = "SWPMI kernel clock source selection"]
         #[inline(always)]
-        pub fn set_swpsel(&mut self, val: super::vals::Swpsel) {
+        pub fn set_swpmisel(&mut self, val: super::vals::Swpmisel) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -11058,8 +11058,8 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Spi45sel {
-        #[doc = "APB clock selected as peripheral clock"]
-        APB = 0,
+        #[doc = "APB2 clock selected as peripheral clock"]
+        PCLK2 = 0,
         #[doc = "pll2_q selected as peripheral clock"]
         PLL2_Q = 0x01,
         #[doc = "pll3_q selected as peripheral clock"]
@@ -11205,15 +11205,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Swpsel {
+    pub enum Swpmisel {
         #[doc = "pclk selected as peripheral clock"]
-        PCLK = 0,
+        PCLK1 = 0,
         #[doc = "hsi_ker selected as peripheral clock"]
         HSI = 0x01,
     }
-    impl Swpsel {
+    impl Swpmisel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Swpsel {
+        pub const fn from_bits(val: u8) -> Swpmisel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -11221,16 +11221,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Swpsel {
+    impl From<u8> for Swpmisel {
         #[inline(always)]
-        fn from(val: u8) -> Swpsel {
-            Swpsel::from_bits(val)
+        fn from(val: u8) -> Swpmisel {
+            Swpmisel::from_bits(val)
         }
     }
-    impl From<Swpsel> for u8 {
+    impl From<Swpmisel> for u8 {
         #[inline(always)]
-        fn from(val: Swpsel) -> u8 {
-            Swpsel::to_bits(val)
+        fn from(val: Swpmisel) -> u8 {
+            Swpmisel::to_bits(val)
         }
     }
     #[repr(u8)]

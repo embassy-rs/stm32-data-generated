@@ -1873,7 +1873,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "swpen",
+                    name: "swpmien",
                     description: Some("SWPMI Peripheral Clocks Enable"),
                     bit_offset: 2,
                     bit_size: 1,
@@ -1937,7 +1937,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "swplpen",
+                    name: "swpmilpen",
                     description: Some("SWPMI Peripheral Clocks Enable During CSleep Mode"),
                     bit_offset: 2,
                     bit_size: 1,
@@ -2001,7 +2001,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "swprst",
+                    name: "swpmirst",
                     description: Some("SWPMI block reset"),
                     bit_offset: 2,
                     bit_size: 1,
@@ -4319,12 +4319,12 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Fdcansel"),
                 },
                 Field {
-                    name: "swpsel",
+                    name: "swpmisel",
                     description: Some("SWPMI kernel clock source selection"),
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Swpsel"),
+                    enumm: Some("Swpmisel"),
                 },
             ],
         },
@@ -9282,8 +9282,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "APB",
-                    description: Some("APB clock selected as peripheral clock"),
+                    name: "HCLK2",
+                    description: Some("APB2 clock selected as peripheral clock"),
                     value: 0,
                 },
                 EnumVariant {
@@ -9395,12 +9395,12 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Swpsel",
+            name: "Swpmisel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PCLK",
+                    name: "PCLK1",
                     description: Some("pclk selected as peripheral clock"),
                     value: 0,
                 },

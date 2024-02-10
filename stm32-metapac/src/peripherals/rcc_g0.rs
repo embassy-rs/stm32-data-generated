@@ -1933,15 +1933,15 @@ pub mod regs {
         pub fn set_i2c1sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
-        #[doc = "I2S1 clock source selection"]
+        #[doc = "I2C2 or I2S1 clock source selection"]
         #[inline(always)]
-        pub const fn i2s2sel(&self) -> super::vals::I2c2i2s1sel {
+        pub const fn i2c2i2s1sel(&self) -> super::vals::I2c2i2s1sel {
             let val = (self.0 >> 14usize) & 0x03;
             super::vals::I2c2i2s1sel::from_bits(val as u8)
         }
-        #[doc = "I2S1 clock source selection"]
+        #[doc = "I2C2 or I2S1 clock source selection"]
         #[inline(always)]
-        pub fn set_i2s2sel(&mut self, val: super::vals::I2c2i2s1sel) {
+        pub fn set_i2c2i2s1sel(&mut self, val: super::vals::I2c2i2s1sel) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
         #[doc = "LPTIM1 clock source selection"]

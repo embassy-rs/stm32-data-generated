@@ -1576,8 +1576,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("I2c1sel"),
                 },
                 Field {
-                    name: "i2s2sel",
-                    description: Some("I2S1 clock source selection"),
+                    name: "i2c2i2s1sel",
+                    description: Some("I2C2 or I2S1 clock source selection"),
                     bit_offset: 14,
                     bit_size: 2,
                     array: None,

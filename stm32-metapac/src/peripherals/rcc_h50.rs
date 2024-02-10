@@ -2258,13 +2258,13 @@ pub mod regs {
         }
         #[doc = "DAC hold clock"]
         #[inline(always)]
-        pub const fn dacsel(&self) -> super::vals::Dacsel {
+        pub const fn dacholdsel(&self) -> super::vals::Dacholdsel {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Dacsel::from_bits(val as u8)
+            super::vals::Dacholdsel::from_bits(val as u8)
         }
         #[doc = "DAC hold clock"]
         #[inline(always)]
-        pub fn set_dacsel(&mut self, val: super::vals::Dacsel) {
+        pub fn set_dacholdsel(&mut self, val: super::vals::Dacholdsel) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "RNG kernel clock source selection"]
@@ -3495,15 +3495,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Dacsel {
+    pub enum Dacholdsel {
         #[doc = "dac_hold_ck selected as kernel clock (default after reset)"]
         DAC_HOLD = 0,
         #[doc = "dac_hold_ck selected as kernel clock"]
         DAC_HOLD_2 = 0x01,
     }
-    impl Dacsel {
+    impl Dacholdsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dacsel {
+        pub const fn from_bits(val: u8) -> Dacholdsel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -3511,16 +3511,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Dacsel {
+    impl From<u8> for Dacholdsel {
         #[inline(always)]
-        fn from(val: u8) -> Dacsel {
-            Dacsel::from_bits(val)
+        fn from(val: u8) -> Dacholdsel {
+            Dacholdsel::from_bits(val)
         }
     }
-    impl From<Dacsel> for u8 {
+    impl From<Dacholdsel> for u8 {
         #[inline(always)]
-        fn from(val: Dacsel) -> u8 {
-            Dacsel::to_bits(val)
+        fn from(val: Dacholdsel) -> u8 {
+            Dacholdsel::to_bits(val)
         }
     }
     #[repr(u8)]

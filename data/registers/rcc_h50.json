@@ -1344,11 +1344,11 @@
         "enum": "ADCDACSEL"
       },
       {
-        "name": "DACSEL",
+        "name": "DACHOLDSEL",
         "description": "DAC hold clock",
         "bit_offset": 3,
         "bit_size": 1,
-        "enum": "DACSEL"
+        "enum": "DACHOLDSEL"
       },
       {
         "name": "RNGSEL",
@@ -2046,7 +2046,7 @@
       }
     ]
   },
-  "enum/DACSEL": {
+  "enum/DACHOLDSEL": {
     "bit_size": 1,
     "variants": [
       {

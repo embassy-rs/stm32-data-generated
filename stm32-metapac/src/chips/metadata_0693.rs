@@ -1991,7 +1991,10 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
                 register: "ahb2rstr2",
                 field: "octospi1rst",
             }),
-            mux: None,
+            mux: Some(PeripheralRccRegister {
+                register: "ccipr2",
+                field: "octospisel",
+            }),
             stop_mode: StopMode::Stop1,
         }),
         pins: &[

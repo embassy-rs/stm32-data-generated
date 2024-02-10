@@ -2554,7 +2554,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "dacsel",
+                    name: "dacholdsel",
                     description: Some(
                         "DAC hold clock",
                     ),
@@ -2562,7 +2562,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Dacsel",
+                        "Dacholdsel",
                     ),
                 },
                 Field {
@@ -3744,7 +3744,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dacsel",
+            name: "Dacholdsel",
             description: None,
             bit_size: 1,
             variants: &[

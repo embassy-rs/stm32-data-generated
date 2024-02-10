@@ -63,6 +63,10 @@
                         "reset": {
                             "register": "ahb4rstr",
                             "field": "adc4rst"
+                        },
+                        "mux": {
+                            "register": "ccipr3",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [

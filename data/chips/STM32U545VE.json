@@ -2275,6 +2275,10 @@
                         "reset": {
                             "register": "ahb2rstr2",
                             "field": "octospi1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "octospisel"
                         }
                     },
                     "pins": [
@@ -3263,6 +3267,10 @@
                         "reset": {
                             "register": "ahb2rstr1",
                             "field": "sdmmc1rst"
+                        },
+                        "mux": {
+                            "register": "ccipr2",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [

@@ -531,6 +531,17 @@
                 {
                     "name": "COMP2",
                     "address": 1073773569,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1enr",
+                            "field": "compen"
+                        },
+                        "reset": {
+                            "register": "apb1rstr",
+                            "field": "comprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PB3",

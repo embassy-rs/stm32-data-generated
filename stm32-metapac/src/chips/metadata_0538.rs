@@ -220,7 +220,19 @@ pub(crate) static PERIPHERALS: &'static [Peripheral] = &[
         name: "COMP2",
         address: 1073773569,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            clock: "pclk1",
+            enable: Some(PeripheralRccRegister {
+                register: "apb1enr",
+                field: "compen",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "apb1rstr",
+                field: "comprst",
+            }),
+            mux: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PB3",

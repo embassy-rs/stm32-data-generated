@@ -393,6 +393,10 @@
                         "reset": {
                             "register": "ahb1rstr",
                             "field": "adc12rst"
+                        },
+                        "mux": {
+                            "register": "d3ccipr",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [
@@ -520,6 +524,10 @@
                         "reset": {
                             "register": "ahb1rstr",
                             "field": "adc12rst"
+                        },
+                        "mux": {
+                            "register": "d3ccipr",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [
@@ -635,6 +643,10 @@
                         "reset": {
                             "register": "ahb4rstr",
                             "field": "adc3rst"
+                        },
+                        "mux": {
+                            "register": "d3ccipr",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [
@@ -842,6 +854,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "cecrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "cecsel"
                         }
                     }
                 },
@@ -1305,6 +1321,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "dfsdm1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "dfsdm1sel"
                         }
                     },
                     "pins": [
@@ -2028,6 +2048,10 @@
                         "reset": {
                             "register": "apb1hrstr",
                             "field": "fdcanrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "fdcansel"
                         }
                     },
                     "pins": [
@@ -2109,6 +2133,10 @@
                         "reset": {
                             "register": "apb1hrstr",
                             "field": "fdcanrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "fdcansel"
                         }
                     },
                     "pins": [
@@ -3238,6 +3266,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "i2c1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "i2c1235sel"
                         }
                     },
                     "pins": [
@@ -3307,6 +3339,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "i2c2rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "i2c1235sel"
                         }
                     },
                     "pins": [
@@ -3396,6 +3432,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "i2c3rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "i2c1235sel"
                         }
                     },
                     "pins": [
@@ -3626,6 +3666,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "lptim1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "lptim1sel"
                         },
                         "stop_mode": "Stop2"
                     },
@@ -4487,6 +4531,17 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073778704,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1henr",
+                            "field": "opampen"
+                        },
+                        "reset": {
+                            "register": "apb1hrstr",
+                            "field": "opamprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PE7",
@@ -4786,6 +4841,10 @@
                         "reset": {
                             "register": "ahb2rstr",
                             "field": "rngrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "rngsel"
                         }
                     },
                     "interrupts": [
@@ -4888,6 +4947,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "sai1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "sai1sel"
                         }
                     },
                     "pins": [
@@ -5418,6 +5481,10 @@
                         "reset": {
                             "register": "ahb3rstr",
                             "field": "sdmmc1rst"
+                        },
+                        "mux": {
+                            "register": "d1ccipr",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [
@@ -5516,6 +5583,10 @@
                         "reset": {
                             "register": "ahb2rstr",
                             "field": "sdmmc2rst"
+                        },
+                        "mux": {
+                            "register": "d1ccipr",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [
@@ -5609,6 +5680,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "spi1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "spi123sel"
                         }
                     },
                     "pins": [
@@ -5774,6 +5849,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "spi2rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "spi123sel"
                         }
                     },
                     "pins": [
@@ -5999,6 +6078,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "spi3rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "spi123sel"
                         }
                     },
                     "pins": [
@@ -6414,6 +6497,21 @@
                 {
                     "name": "SWPMI1",
                     "address": 1073776640,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1henr",
+                            "field": "swpmien"
+                        },
+                        "reset": {
+                            "register": "apb1hrstr",
+                            "field": "swpmirst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "swpmisel"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PC6",
@@ -8153,6 +8251,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart4rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -8288,6 +8390,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart5rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -8373,6 +8479,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart7rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -8483,6 +8593,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart8rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -8567,6 +8681,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "usart1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart16910sel"
                         }
                     },
                     "pins": [
@@ -8662,6 +8780,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "usart2rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -8772,6 +8894,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "usart3rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -8897,6 +9023,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "usart6rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart16910sel"
                         }
                     },
                     "pins": [
@@ -10007,6 +10137,10 @@
                         "reset": {
                             "register": "ahb1rstr",
                             "field": "adc12rst"
+                        },
+                        "mux": {
+                            "register": "d3ccipr",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [
@@ -10134,6 +10268,10 @@
                         "reset": {
                             "register": "ahb1rstr",
                             "field": "adc12rst"
+                        },
+                        "mux": {
+                            "register": "d3ccipr",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [
@@ -10249,6 +10387,10 @@
                         "reset": {
                             "register": "ahb4rstr",
                             "field": "adc3rst"
+                        },
+                        "mux": {
+                            "register": "d3ccipr",
+                            "field": "adcsel"
                         }
                     },
                     "pins": [
@@ -10456,6 +10598,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "cecrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "cecsel"
                         }
                     }
                 },
@@ -10919,6 +11065,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "dfsdm1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "dfsdm1sel"
                         }
                     },
                     "pins": [
@@ -11642,6 +11792,10 @@
                         "reset": {
                             "register": "apb1hrstr",
                             "field": "fdcanrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "fdcansel"
                         }
                     },
                     "pins": [
@@ -11723,6 +11877,10 @@
                         "reset": {
                             "register": "apb1hrstr",
                             "field": "fdcanrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "fdcansel"
                         }
                     },
                     "pins": [
@@ -12852,6 +13010,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "i2c1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "i2c1235sel"
                         }
                     },
                     "pins": [
@@ -12921,6 +13083,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "i2c2rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "i2c1235sel"
                         }
                     },
                     "pins": [
@@ -13010,6 +13176,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "i2c3rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "i2c1235sel"
                         }
                     },
                     "pins": [
@@ -13240,6 +13410,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "lptim1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "lptim1sel"
                         },
                         "stop_mode": "Stop2"
                     },
@@ -14101,6 +14275,17 @@
                 {
                     "name": "OPAMP2",
                     "address": 1073778704,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1henr",
+                            "field": "opampen"
+                        },
+                        "reset": {
+                            "register": "apb1hrstr",
+                            "field": "opamprst"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PE7",
@@ -14400,6 +14585,10 @@
                         "reset": {
                             "register": "ahb2rstr",
                             "field": "rngrst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "rngsel"
                         }
                     },
                     "interrupts": [
@@ -14502,6 +14691,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "sai1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "sai1sel"
                         }
                     },
                     "pins": [
@@ -15032,6 +15225,10 @@
                         "reset": {
                             "register": "ahb3rstr",
                             "field": "sdmmc1rst"
+                        },
+                        "mux": {
+                            "register": "d1ccipr",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [
@@ -15130,6 +15327,10 @@
                         "reset": {
                             "register": "ahb2rstr",
                             "field": "sdmmc2rst"
+                        },
+                        "mux": {
+                            "register": "d1ccipr",
+                            "field": "sdmmcsel"
                         }
                     },
                     "pins": [
@@ -15223,6 +15424,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "spi1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "spi123sel"
                         }
                     },
                     "pins": [
@@ -15388,6 +15593,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "spi2rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "spi123sel"
                         }
                     },
                     "pins": [
@@ -15613,6 +15822,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "spi3rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "spi123sel"
                         }
                     },
                     "pins": [
@@ -16028,6 +16241,21 @@
                 {
                     "name": "SWPMI1",
                     "address": 1073776640,
+                    "rcc": {
+                        "clock": "pclk1",
+                        "enable": {
+                            "register": "apb1henr",
+                            "field": "swpmien"
+                        },
+                        "reset": {
+                            "register": "apb1hrstr",
+                            "field": "swpmirst"
+                        },
+                        "mux": {
+                            "register": "d2ccip1r",
+                            "field": "swpmisel"
+                        }
+                    },
                     "pins": [
                         {
                             "pin": "PC6",
@@ -17767,6 +17995,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart4rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -17902,6 +18134,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart5rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -17987,6 +18223,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart7rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -18097,6 +18337,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "uart8rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -18181,6 +18425,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "usart1rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart16910sel"
                         }
                     },
                     "pins": [
@@ -18276,6 +18524,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "usart2rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -18386,6 +18638,10 @@
                         "reset": {
                             "register": "apb1lrstr",
                             "field": "usart3rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart234578sel"
                         }
                     },
                     "pins": [
@@ -18511,6 +18767,10 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "usart6rst"
+                        },
+                        "mux": {
+                            "register": "d2ccip2r",
+                            "field": "usart16910sel"
                         }
                     },
                     "pins": [

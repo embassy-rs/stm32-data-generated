@@ -1028,7 +1028,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "f3",
+                        "version": "f3v2",
                         "block": "RCC"
                     },
                     "pins": [

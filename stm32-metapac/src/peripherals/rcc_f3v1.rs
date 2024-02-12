@@ -1361,21 +1361,21 @@ pub mod regs {
         #[doc = "PLL entry clock source"]
         #[inline(always)]
         pub const fn pllsrc(&self) -> super::vals::Pllsrc {
-            let val = (self.0 >> 15usize) & 0x03;
+            let val = (self.0 >> 16usize) & 0x01;
             super::vals::Pllsrc::from_bits(val as u8)
         }
         #[doc = "PLL entry clock source"]
         #[inline(always)]
         pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
-            self.0 = (self.0 & !(0x03 << 15usize)) | (((val.to_bits() as u32) & 0x03) << 15usize);
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
-        #[doc = "HSE divider for PLL entry"]
+        #[doc = "HSE divider for PLL entry. Note: This bit is the same as the LSB of PREDIV in CFGR2, for compatibility with other STM32 products."]
         #[inline(always)]
         pub const fn pllxtpre(&self) -> super::vals::Pllxtpre {
             let val = (self.0 >> 17usize) & 0x01;
             super::vals::Pllxtpre::from_bits(val as u8)
         }
-        #[doc = "HSE divider for PLL entry"]
+        #[doc = "HSE divider for PLL entry. Note: This bit is the same as the LSB of PREDIV in CFGR2, for compatibility with other STM32 products."]
         #[inline(always)]
         pub fn set_pllxtpre(&mut self, val: super::vals::Pllxtpre) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
@@ -1424,38 +1424,16 @@ pub mod regs {
         pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
-        #[doc = "SDADC prescaler"]
+        #[doc = "Microcontroller Clock Output Flag. Set and reset by hardware. It is reset by hardware when MCO field is written with a new value. It is set by hardware when the switch to the new MCO source is effective."]
         #[inline(always)]
-        pub const fn sdpre(&self) -> super::vals::Sdpre {
-            let val = (self.0 >> 27usize) & 0x1f;
-            super::vals::Sdpre::from_bits(val as u8)
+        pub const fn mcof(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
         }
-        #[doc = "SDADC prescaler"]
+        #[doc = "Microcontroller Clock Output Flag. Set and reset by hardware. It is reset by hardware when MCO field is written with a new value. It is set by hardware when the switch to the new MCO source is effective."]
         #[inline(always)]
-        pub fn set_sdpre(&mut self, val: super::vals::Sdpre) {
-            self.0 = (self.0 & !(0x1f << 27usize)) | (((val.to_bits() as u32) & 0x1f) << 27usize);
-        }
-        #[doc = "Microcontroller Clock Output Prescaler"]
-        #[inline(always)]
-        pub const fn mcopre(&self) -> super::vals::Mcopre {
-            let val = (self.0 >> 28usize) & 0x07;
-            super::vals::Mcopre::from_bits(val as u8)
-        }
-        #[doc = "Microcontroller Clock Output Prescaler"]
-        #[inline(always)]
-        pub fn set_mcopre(&mut self, val: super::vals::Mcopre) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
-        }
-        #[doc = "Do not divide PLL to MCO"]
-        #[inline(always)]
-        pub const fn pllmcodiv(&self) -> super::vals::Pllmcodiv {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Pllmcodiv::from_bits(val as u8)
-        }
-        #[doc = "Do not divide PLL to MCO"]
-        #[inline(always)]
-        pub fn set_pllmcodiv(&mut self, val: super::vals::Pllmcodiv) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_mcof(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
     }
     impl Default for Cfgr {
@@ -2467,48 +2445,6 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mcopre {
-        #[doc = "MCO is divided by 1"]
-        DIV1 = 0,
-        #[doc = "MCO is divided by 2"]
-        DIV2 = 0x01,
-        #[doc = "MCO is divided by 4"]
-        DIV4 = 0x02,
-        #[doc = "MCO is divided by 8"]
-        DIV8 = 0x03,
-        #[doc = "MCO is divided by 16"]
-        DIV16 = 0x04,
-        #[doc = "MCO is divided by 32"]
-        DIV32 = 0x05,
-        #[doc = "MCO is divided by 64"]
-        DIV64 = 0x06,
-        #[doc = "MCO is divided by 128"]
-        DIV128 = 0x07,
-    }
-    impl Mcopre {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mcopre {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mcopre {
-        #[inline(always)]
-        fn from(val: u8) -> Mcopre {
-            Mcopre::from_bits(val)
-        }
-    }
-    impl From<Mcopre> for u8 {
-        #[inline(always)]
-        fn from(val: Mcopre) -> u8 {
-            Mcopre::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
         NOMCO = 0,
@@ -2523,8 +2459,8 @@ pub mod vals {
         HSI = 0x05,
         #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
         HSE = 0x06,
-        #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLMCODIV)"]
-        PLL = 0x07,
+        #[doc = "PLL clock divided by 2"]
+        PLL_DIV_2 = 0x07,
     }
     impl Mcosel {
         #[inline(always)]
@@ -2546,36 +2482,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcosel) -> u8 {
             Mcosel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pllmcodiv {
-        #[doc = "PLL is divided by 2 for MCO"]
-        DIV2 = 0,
-        #[doc = "PLL is not divided for MCO"]
-        DIV1 = 0x01,
-    }
-    impl Pllmcodiv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllmcodiv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllmcodiv {
-        #[inline(always)]
-        fn from(val: u8) -> Pllmcodiv {
-            Pllmcodiv::from_bits(val)
-        }
-    }
-    impl From<Pllmcodiv> for u8 {
-        #[inline(always)]
-        fn from(val: Pllmcodiv) -> u8 {
-            Pllmcodiv::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2640,16 +2546,13 @@ pub mod vals {
     pub enum Pllsrc {
         #[doc = "HSI divided by 2 selected as PLL input clock"]
         HSI_DIV2 = 0,
-        #[doc = "HSI divided by PREDIV selected as PLL input clock"]
-        HSI_DIV_PREDIV = 0x01,
         #[doc = "HSE divided by PREDIV selected as PLL input clock"]
-        HSE_DIV_PREDIV = 0x02,
-        _RESERVED_3 = 0x03,
+        HSE_DIV_PREDIV = 0x01,
     }
     impl Pllsrc {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Pllsrc {
-            unsafe { core::mem::transmute(val & 0x03) }
+            unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -2827,80 +2730,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rtcsel) -> u8 {
             Rtcsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Sdpre {
-        #[doc = "SYSCLK divided by 2"]
-        DIV2 = 0,
-        _RESERVED_1 = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
-        _RESERVED_10 = 0x10,
-        #[doc = "SYSCLK divided by 4"]
-        DIV4 = 0x11,
-        #[doc = "SYSCLK divided by 6"]
-        DIV6 = 0x12,
-        #[doc = "SYSCLK divided by 8"]
-        DIV8 = 0x13,
-        #[doc = "SYSCLK divided by 10"]
-        DIV10 = 0x14,
-        #[doc = "SYSCLK divided by 12"]
-        DIV12 = 0x15,
-        #[doc = "SYSCLK divided by 14"]
-        DIV14 = 0x16,
-        #[doc = "SYSCLK divided by 16"]
-        DIV16 = 0x17,
-        #[doc = "SYSCLK divided by 20"]
-        DIV20 = 0x18,
-        #[doc = "SYSCLK divided by 24"]
-        DIV24 = 0x19,
-        #[doc = "SYSCLK divided by 28"]
-        DIV28 = 0x1a,
-        #[doc = "SYSCLK divided by 32"]
-        DIV32 = 0x1b,
-        #[doc = "SYSCLK divided by 36"]
-        DIV36 = 0x1c,
-        #[doc = "SYSCLK divided by 40"]
-        DIV40 = 0x1d,
-        #[doc = "SYSCLK divided by 44"]
-        DIV44 = 0x1e,
-        #[doc = "SYSCLK divided by 48"]
-        DIV48 = 0x1f,
-    }
-    impl Sdpre {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sdpre {
-            unsafe { core::mem::transmute(val & 0x1f) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sdpre {
-        #[inline(always)]
-        fn from(val: u8) -> Sdpre {
-            Sdpre::from_bits(val)
-        }
-    }
-    impl From<Sdpre> for u8 {
-        #[inline(always)]
-        fn from(val: Sdpre) -> u8 {
-            Sdpre::to_bits(val)
         }
     }
     #[repr(u8)]

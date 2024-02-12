@@ -1,166 +1,252 @@
 
 use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
-    blocks: &[Block {
-        name: "Rcc",
-        extends: None,
-        description: Some("Reset and clock control"),
-        items: &[
-            BlockItem {
-                name: "cr",
-                description: Some("Clock control register"),
-                array: None,
-                byte_offset: 0,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cr"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr",
-                description: Some("Clock configuration register (RCC_CFGR)"),
-                array: None,
-                byte_offset: 4,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr"),
-                }),
-            },
-            BlockItem {
-                name: "cir",
-                description: Some("Clock interrupt register (RCC_CIR)"),
-                array: None,
-                byte_offset: 8,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cir"),
-                }),
-            },
-            BlockItem {
-                name: "apb2rstr",
-                description: Some("APB2 peripheral reset register (RCC_APB2RSTR)"),
-                array: None,
-                byte_offset: 12,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2rstr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1rstr",
-                description: Some("APB1 peripheral reset register (RCC_APB1RSTR)"),
-                array: None,
-                byte_offset: 16,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1rstr"),
-                }),
-            },
-            BlockItem {
-                name: "ahbenr",
-                description: Some("AHB Peripheral Clock enable register (RCC_AHBENR)"),
-                array: None,
-                byte_offset: 20,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahbenr"),
-                }),
-            },
-            BlockItem {
-                name: "apb2enr",
-                description: Some("APB2 peripheral clock enable register (RCC_APB2ENR)"),
-                array: None,
-                byte_offset: 24,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb2enr"),
-                }),
-            },
-            BlockItem {
-                name: "apb1enr",
-                description: Some("APB1 peripheral clock enable register (RCC_APB1ENR)"),
-                array: None,
-                byte_offset: 28,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Apb1enr"),
-                }),
-            },
-            BlockItem {
-                name: "bdcr",
-                description: Some("Backup domain control register (RCC_BDCR)"),
-                array: None,
-                byte_offset: 32,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Bdcr"),
-                }),
-            },
-            BlockItem {
-                name: "csr",
-                description: Some("Control/status register (RCC_CSR)"),
-                array: None,
-                byte_offset: 36,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Csr"),
-                }),
-            },
-            BlockItem {
-                name: "ahbrstr",
-                description: Some("AHB peripheral reset register"),
-                array: None,
-                byte_offset: 40,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Ahbrstr"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr2",
-                description: Some("Clock configuration register 2"),
-                array: None,
-                byte_offset: 44,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr2"),
-                }),
-            },
-            BlockItem {
-                name: "cfgr3",
-                description: Some("Clock configuration register 3"),
-                array: None,
-                byte_offset: 48,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("Cfgr3"),
-                }),
-            },
-        ],
-    }],
+    blocks: &[
+        Block {
+            name: "Rcc",
+            extends: None,
+            description: Some(
+                "Reset and clock control",
+            ),
+            items: &[
+                BlockItem {
+                    name: "cr",
+                    description: Some(
+                        "Clock control register",
+                    ),
+                    array: None,
+                    byte_offset: 0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr",
+                    description: Some(
+                        "Clock configuration register (RCC_CFGR)",
+                    ),
+                    array: None,
+                    byte_offset: 4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cir",
+                    description: Some(
+                        "Clock interrupt register (RCC_CIR)",
+                    ),
+                    array: None,
+                    byte_offset: 8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2rstr",
+                    description: Some(
+                        "APB2 peripheral reset register (RCC_APB2RSTR)",
+                    ),
+                    array: None,
+                    byte_offset: 12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1rstr",
+                    description: Some(
+                        "APB1 peripheral reset register (RCC_APB1RSTR)",
+                    ),
+                    array: None,
+                    byte_offset: 16,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1rstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahbenr",
+                    description: Some(
+                        "AHB Peripheral Clock enable register (RCC_AHBENR)",
+                    ),
+                    array: None,
+                    byte_offset: 20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahbenr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb2enr",
+                    description: Some(
+                        "APB2 peripheral clock enable register (RCC_APB2ENR)",
+                    ),
+                    array: None,
+                    byte_offset: 24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb2enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "apb1enr",
+                    description: Some(
+                        "APB1 peripheral clock enable register (RCC_APB1ENR)",
+                    ),
+                    array: None,
+                    byte_offset: 28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Apb1enr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bdcr",
+                    description: Some(
+                        "Backup domain control register (RCC_BDCR)",
+                    ),
+                    array: None,
+                    byte_offset: 32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bdcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "csr",
+                    description: Some(
+                        "Control/status register (RCC_CSR)",
+                    ),
+                    array: None,
+                    byte_offset: 36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Csr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ahbrstr",
+                    description: Some(
+                        "AHB peripheral reset register",
+                    ),
+                    array: None,
+                    byte_offset: 40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ahbrstr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr2",
+                    description: Some(
+                        "Clock configuration register 2",
+                    ),
+                    array: None,
+                    byte_offset: 44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfgr3",
+                    description: Some(
+                        "Clock configuration register 3",
+                    ),
+                    array: None,
+                    byte_offset: 48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfgr3",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
     fieldsets: &[
         FieldSet {
             name: "Ahbenr",
             extends: None,
-            description: Some("AHB Peripheral Clock enable register (RCC_AHBENR)"),
+            description: Some(
+                "AHB Peripheral Clock enable register (RCC_AHBENR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dma1en",
-                    description: Some("DMA1 clock enable"),
+                    description: Some(
+                        "DMA1 clock enable",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -168,7 +254,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dma2en",
-                    description: Some("DMA2 clock enable"),
+                    description: Some(
+                        "DMA2 clock enable",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -176,7 +264,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sramen",
-                    description: Some("SRAM interface clock enable"),
+                    description: Some(
+                        "SRAM interface clock enable",
+                    ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
@@ -184,7 +274,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "flashen",
-                    description: Some("FLASH clock enable"),
+                    description: Some(
+                        "FLASH clock enable",
+                    ),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
@@ -192,7 +284,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "crcen",
-                    description: Some("CRC clock enable"),
+                    description: Some(
+                        "CRC clock enable",
+                    ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
@@ -200,7 +294,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpioaen",
-                    description: Some("I/O port A clock enable"),
+                    description: Some(
+                        "I/O port A clock enable",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -208,7 +304,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpioben",
-                    description: Some("I/O port B clock enable"),
+                    description: Some(
+                        "I/O port B clock enable",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -216,7 +314,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpiocen",
-                    description: Some("I/O port C clock enable"),
+                    description: Some(
+                        "I/O port C clock enable",
+                    ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
@@ -224,7 +324,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpioden",
-                    description: Some("I/O port D clock enable"),
+                    description: Some(
+                        "I/O port D clock enable",
+                    ),
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
@@ -232,7 +334,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpioeen",
-                    description: Some("I/O port E clock enable"),
+                    description: Some(
+                        "I/O port E clock enable",
+                    ),
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
@@ -240,7 +344,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpiofen",
-                    description: Some("I/O port F clock enable"),
+                    description: Some(
+                        "I/O port F clock enable",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
@@ -248,7 +354,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tscen",
-                    description: Some("Touch sensing controller clock enable"),
+                    description: Some(
+                        "Touch sensing controller clock enable",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -259,12 +367,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ahbrstr",
             extends: None,
-            description: Some("AHB peripheral reset register"),
+            description: Some(
+                "AHB peripheral reset register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "gpioarst",
-                    description: Some("I/O port A reset"),
+                    description: Some(
+                        "I/O port A reset",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -272,7 +384,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpiobrst",
-                    description: Some("I/O port B reset"),
+                    description: Some(
+                        "I/O port B reset",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -280,7 +394,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpiocrst",
-                    description: Some("I/O port C reset"),
+                    description: Some(
+                        "I/O port C reset",
+                    ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
@@ -288,7 +404,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpiodrst",
-                    description: Some("I/O port D reset"),
+                    description: Some(
+                        "I/O port D reset",
+                    ),
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
@@ -296,7 +414,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpioerst",
-                    description: Some("I/O port E reset"),
+                    description: Some(
+                        "I/O port E reset",
+                    ),
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
@@ -304,7 +424,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "gpiofrst",
-                    description: Some("I/O port F reset"),
+                    description: Some(
+                        "I/O port F reset",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
@@ -312,7 +434,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tscrst",
-                    description: Some("Touch sensing controller reset"),
+                    description: Some(
+                        "Touch sensing controller reset",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -323,12 +447,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1enr",
             extends: None,
-            description: Some("APB1 peripheral clock enable register (RCC_APB1ENR)"),
+            description: Some(
+                "APB1 peripheral clock enable register (RCC_APB1ENR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2en",
-                    description: Some("Timer 2 clock enable"),
+                    description: Some(
+                        "Timer 2 clock enable",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -336,7 +464,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim3en",
-                    description: Some("Timer 3 clock enable"),
+                    description: Some(
+                        "Timer 3 clock enable",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -344,7 +474,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim4en",
-                    description: Some("Timer 4 clock enable"),
+                    description: Some(
+                        "Timer 4 clock enable",
+                    ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
@@ -352,7 +484,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim5en",
-                    description: Some("Timer 5 clock enable"),
+                    description: Some(
+                        "Timer 5 clock enable",
+                    ),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
@@ -360,7 +494,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim6en",
-                    description: Some("Timer 6 clock enable"),
+                    description: Some(
+                        "Timer 6 clock enable",
+                    ),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
@@ -368,7 +504,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim7en",
-                    description: Some("Timer 7 clock enable"),
+                    description: Some(
+                        "Timer 7 clock enable",
+                    ),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
@@ -376,7 +514,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim12en",
-                    description: Some("Timer 12 clock enable"),
+                    description: Some(
+                        "Timer 12 clock enable",
+                    ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
@@ -384,7 +524,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim13en",
-                    description: Some("Timer 13 clock enable"),
+                    description: Some(
+                        "Timer 13 clock enable",
+                    ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
@@ -392,7 +534,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim14en",
-                    description: Some("Timer 14 clock enable"),
+                    description: Some(
+                        "Timer 14 clock enable",
+                    ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
@@ -400,7 +544,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim18en",
-                    description: Some("Timer 18 clock enable"),
+                    description: Some(
+                        "Timer 18 clock enable",
+                    ),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
@@ -408,7 +554,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "wwdgen",
-                    description: Some("Window watchdog clock enable"),
+                    description: Some(
+                        "Window watchdog clock enable",
+                    ),
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
@@ -416,7 +564,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "spi2en",
-                    description: Some("SPI 2 clock enable"),
+                    description: Some(
+                        "SPI 2 clock enable",
+                    ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
@@ -424,7 +574,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "spi3en",
-                    description: Some("SPI 3 clock enable"),
+                    description: Some(
+                        "SPI 3 clock enable",
+                    ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
@@ -432,7 +584,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usart2en",
-                    description: Some("USART 2 clock enable"),
+                    description: Some(
+                        "USART 2 clock enable",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -440,7 +594,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usart3en",
-                    description: Some("USART 3 clock enable"),
+                    description: Some(
+                        "USART 3 clock enable",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -448,7 +604,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "i2c1en",
-                    description: Some("I2C 1 clock enable"),
+                    description: Some(
+                        "I2C 1 clock enable",
+                    ),
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
@@ -456,7 +614,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "i2c2en",
-                    description: Some("I2C 2 clock enable"),
+                    description: Some(
+                        "I2C 2 clock enable",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
@@ -464,7 +624,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usben",
-                    description: Some("USB clock enable"),
+                    description: Some(
+                        "USB clock enable",
+                    ),
                     bit_offset: 23,
                     bit_size: 1,
                     array: None,
@@ -472,7 +634,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "canen",
-                    description: Some("CAN clock enable"),
+                    description: Some(
+                        "CAN clock enable",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
@@ -480,7 +644,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dac2en",
-                    description: Some("DAC2 interface clock enable"),
+                    description: Some(
+                        "DAC2 interface clock enable",
+                    ),
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
@@ -488,7 +654,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pwren",
-                    description: Some("Power interface clock enable"),
+                    description: Some(
+                        "Power interface clock enable",
+                    ),
                     bit_offset: 28,
                     bit_size: 1,
                     array: None,
@@ -496,7 +664,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dacen",
-                    description: Some("DAC interface clock enable"),
+                    description: Some(
+                        "DAC interface clock enable",
+                    ),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -504,7 +674,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "cecen",
-                    description: Some("HDMI CEC interface clock enable"),
+                    description: Some(
+                        "HDMI CEC interface clock enable",
+                    ),
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
@@ -515,12 +687,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb1rstr",
             extends: None,
-            description: Some("APB1 peripheral reset register (RCC_APB1RSTR)"),
+            description: Some(
+                "APB1 peripheral reset register (RCC_APB1RSTR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tim2rst",
-                    description: Some("Timer 2 reset"),
+                    description: Some(
+                        "Timer 2 reset",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -528,7 +704,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim3rst",
-                    description: Some("Timer 3 reset"),
+                    description: Some(
+                        "Timer 3 reset",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -536,7 +714,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim4rst",
-                    description: Some("Timer 14 reset"),
+                    description: Some(
+                        "Timer 14 reset",
+                    ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
@@ -544,7 +724,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim5rst",
-                    description: Some("Timer 5 reset"),
+                    description: Some(
+                        "Timer 5 reset",
+                    ),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
@@ -552,7 +734,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim6rst",
-                    description: Some("Timer 6 reset"),
+                    description: Some(
+                        "Timer 6 reset",
+                    ),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
@@ -560,7 +744,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim7rst",
-                    description: Some("Timer 7 reset"),
+                    description: Some(
+                        "Timer 7 reset",
+                    ),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
@@ -568,7 +754,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim12rst",
-                    description: Some("Timer 12 reset"),
+                    description: Some(
+                        "Timer 12 reset",
+                    ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
@@ -576,7 +764,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim13rst",
-                    description: Some("Timer 13 reset"),
+                    description: Some(
+                        "Timer 13 reset",
+                    ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
@@ -584,7 +774,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim14rst",
-                    description: Some("Timer 14 reset"),
+                    description: Some(
+                        "Timer 14 reset",
+                    ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
@@ -592,7 +784,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim18rst",
-                    description: Some("Timer 18 reset"),
+                    description: Some(
+                        "Timer 18 reset",
+                    ),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
@@ -600,7 +794,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "wwdgrst",
-                    description: Some("Window watchdog reset"),
+                    description: Some(
+                        "Window watchdog reset",
+                    ),
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
@@ -608,7 +804,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "spi2rst",
-                    description: Some("SPI2 reset"),
+                    description: Some(
+                        "SPI2 reset",
+                    ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
@@ -616,7 +814,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "spi3rst",
-                    description: Some("SPI3 reset"),
+                    description: Some(
+                        "SPI3 reset",
+                    ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
@@ -624,7 +824,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usart2rst",
-                    description: Some("USART 2 reset"),
+                    description: Some(
+                        "USART 2 reset",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -632,7 +834,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usart3rst",
-                    description: Some("USART3 reset"),
+                    description: Some(
+                        "USART3 reset",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -640,7 +844,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "i2c1rst",
-                    description: Some("I2C1 reset"),
+                    description: Some(
+                        "I2C1 reset",
+                    ),
                     bit_offset: 21,
                     bit_size: 1,
                     array: None,
@@ -648,7 +854,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "i2c2rst",
-                    description: Some("I2C2 reset"),
+                    description: Some(
+                        "I2C2 reset",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
@@ -656,7 +864,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usbrst",
-                    description: Some("USB reset"),
+                    description: Some(
+                        "USB reset",
+                    ),
                     bit_offset: 23,
                     bit_size: 1,
                     array: None,
@@ -664,7 +874,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "canrst",
-                    description: Some("CAN reset"),
+                    description: Some(
+                        "CAN reset",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
@@ -672,7 +884,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dac2rst",
-                    description: Some("DAC2 interface reset"),
+                    description: Some(
+                        "DAC2 interface reset",
+                    ),
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
@@ -680,7 +894,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pwrrst",
-                    description: Some("Power interface reset"),
+                    description: Some(
+                        "Power interface reset",
+                    ),
                     bit_offset: 28,
                     bit_size: 1,
                     array: None,
@@ -688,7 +904,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dacrst",
-                    description: Some("DAC interface reset"),
+                    description: Some(
+                        "DAC interface reset",
+                    ),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -696,7 +914,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "cecrst",
-                    description: Some("HDMI CEC reset"),
+                    description: Some(
+                        "HDMI CEC reset",
+                    ),
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
@@ -707,12 +927,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb2enr",
             extends: None,
-            description: Some("APB2 peripheral clock enable register (RCC_APB2ENR)"),
+            description: Some(
+                "APB2 peripheral clock enable register (RCC_APB2ENR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfgen",
-                    description: Some("SYSCFG clock enable"),
+                    description: Some(
+                        "SYSCFG clock enable",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -720,7 +944,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "adcen",
-                    description: Some("ADC 1 interface clock enable"),
+                    description: Some(
+                        "ADC 1 interface clock enable",
+                    ),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
@@ -728,7 +954,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "spi1en",
-                    description: Some("SPI 1 clock enable"),
+                    description: Some(
+                        "SPI 1 clock enable",
+                    ),
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
@@ -736,7 +964,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usart1en",
-                    description: Some("USART1 clock enable"),
+                    description: Some(
+                        "USART1 clock enable",
+                    ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
@@ -744,7 +974,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim15en",
-                    description: Some("TIM15 timer clock enable"),
+                    description: Some(
+                        "TIM15 timer clock enable",
+                    ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
@@ -752,7 +984,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim16en",
-                    description: Some("TIM16 timer clock enable"),
+                    description: Some(
+                        "TIM16 timer clock enable",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -760,7 +994,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim17en",
-                    description: Some("TIM17 timer clock enable"),
+                    description: Some(
+                        "TIM17 timer clock enable",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -768,7 +1004,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim19en",
-                    description: Some("TIM19 timer clock enable"),
+                    description: Some(
+                        "TIM19 timer clock enable",
+                    ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
@@ -776,7 +1014,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dbgmcuen",
-                    description: Some("MCU debug module clock enable"),
+                    description: Some(
+                        "MCU debug module clock enable",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
@@ -784,7 +1024,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sdadc1en",
-                    description: Some("SDADC1 (Sigma Delta ADC 1) clock enable"),
+                    description: Some(
+                        "SDADC1 (Sigma Delta ADC 1) clock enable",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -792,7 +1034,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sdadc2en",
-                    description: Some("SDADC2 (Sigma Delta ADC 2) clock enable"),
+                    description: Some(
+                        "SDADC2 (Sigma Delta ADC 2) clock enable",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
@@ -800,7 +1044,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sdadc3en",
-                    description: Some("SDADC3 (Sigma Delta ADC 3) clock enable"),
+                    description: Some(
+                        "SDADC3 (Sigma Delta ADC 3) clock enable",
+                    ),
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
@@ -811,12 +1057,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Apb2rstr",
             extends: None,
-            description: Some("APB2 peripheral reset register (RCC_APB2RSTR)"),
+            description: Some(
+                "APB2 peripheral reset register (RCC_APB2RSTR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syscfgrst",
-                    description: Some("SYSCFG and COMP reset"),
+                    description: Some(
+                        "SYSCFG and COMP reset",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -824,7 +1074,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "adcrst",
-                    description: Some("ADC interface reset"),
+                    description: Some(
+                        "ADC interface reset",
+                    ),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
@@ -832,7 +1084,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "spi1rst",
-                    description: Some("SPI 1 reset"),
+                    description: Some(
+                        "SPI 1 reset",
+                    ),
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
@@ -840,7 +1094,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "usart1rst",
-                    description: Some("USART1 reset"),
+                    description: Some(
+                        "USART1 reset",
+                    ),
                     bit_offset: 14,
                     bit_size: 1,
                     array: None,
@@ -848,7 +1104,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim15rst",
-                    description: Some("TIM15 timer reset"),
+                    description: Some(
+                        "TIM15 timer reset",
+                    ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
@@ -856,7 +1114,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim16rst",
-                    description: Some("TIM16 timer reset"),
+                    description: Some(
+                        "TIM16 timer reset",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -864,7 +1124,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim17rst",
-                    description: Some("TIM17 timer reset"),
+                    description: Some(
+                        "TIM17 timer reset",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -872,7 +1134,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "tim19rst",
-                    description: Some("TIM19 timer reset"),
+                    description: Some(
+                        "TIM19 timer reset",
+                    ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
@@ -880,7 +1144,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dbgmcurst",
-                    description: Some("MCU debug module clock enable"),
+                    description: Some(
+                        "MCU debug module clock enable",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
@@ -888,7 +1154,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sdadc1rst",
-                    description: Some("SDADC1 (Sigma delta ADC 1) reset"),
+                    description: Some(
+                        "SDADC1 (Sigma delta ADC 1) reset",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -896,7 +1164,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sdadc2rst",
-                    description: Some("SDADC2 (Sigma delta ADC 2) reset"),
+                    description: Some(
+                        "SDADC2 (Sigma delta ADC 2) reset",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
@@ -904,7 +1174,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sdadc3rst",
-                    description: Some("SDADC3 (Sigma delta ADC 3) reset"),
+                    description: Some(
+                        "SDADC3 (Sigma delta ADC 3) reset",
+                    ),
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
@@ -915,12 +1187,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bdcr",
             extends: None,
-            description: Some("Backup domain control register (RCC_BDCR)"),
+            description: Some(
+                "Backup domain control register (RCC_BDCR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lseon",
-                    description: Some("External Low Speed oscillator enable"),
+                    description: Some(
+                        "External Low Speed oscillator enable",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -928,7 +1204,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lserdy",
-                    description: Some("External Low Speed oscillator ready"),
+                    description: Some(
+                        "External Low Speed oscillator ready",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -936,7 +1214,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lsebyp",
-                    description: Some("External Low Speed oscillator bypass"),
+                    description: Some(
+                        "External Low Speed oscillator bypass",
+                    ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
@@ -944,23 +1224,33 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lsedrv",
-                    description: Some("LSE oscillator drive capability"),
+                    description: Some(
+                        "LSE oscillator drive capability",
+                    ),
                     bit_offset: 3,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Lsedrv"),
+                    enumm: Some(
+                        "Lsedrv",
+                    ),
                 },
                 Field {
                     name: "rtcsel",
-                    description: Some("RTC clock source selection"),
+                    description: Some(
+                        "RTC clock source selection",
+                    ),
                     bit_offset: 8,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Rtcsel"),
+                    enumm: Some(
+                        "Rtcsel",
+                    ),
                 },
                 Field {
                     name: "rtcen",
-                    description: Some("RTC clock enable"),
+                    description: Some(
+                        "RTC clock enable",
+                    ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
@@ -968,7 +1258,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "bdrst",
-                    description: Some("Backup domain software reset"),
+                    description: Some(
+                        "Backup domain software reset",
+                    ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
@@ -979,332 +1271,466 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cfgr",
             extends: None,
-            description: Some("Clock configuration register (RCC_CFGR)"),
+            description: Some(
+                "Clock configuration register (RCC_CFGR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "sw",
-                    description: Some("System clock Switch"),
+                    description: Some(
+                        "System clock Switch",
+                    ),
                     bit_offset: 0,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Sw"),
+                    enumm: Some(
+                        "Sw",
+                    ),
                 },
                 Field {
                     name: "sws",
-                    description: Some("System Clock Switch Status"),
+                    description: Some(
+                        "System Clock Switch Status",
+                    ),
                     bit_offset: 2,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Sw"),
+                    enumm: Some(
+                        "Sw",
+                    ),
                 },
                 Field {
                     name: "hpre",
-                    description: Some("AHB prescaler"),
+                    description: Some(
+                        "AHB prescaler",
+                    ),
                     bit_offset: 4,
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Hpre"),
+                    enumm: Some(
+                        "Hpre",
+                    ),
                 },
                 Field {
                     name: "ppre1",
-                    description: Some("APB Low speed prescaler (APB1)"),
+                    description: Some(
+                        "APB Low speed prescaler (APB1)",
+                    ),
                     bit_offset: 8,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Ppre"),
+                    enumm: Some(
+                        "Ppre",
+                    ),
                 },
                 Field {
                     name: "ppre2",
-                    description: Some("APB high speed prescaler (APB2)"),
+                    description: Some(
+                        "APB high speed prescaler (APB2)",
+                    ),
                     bit_offset: 11,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Ppre"),
+                    enumm: Some(
+                        "Ppre",
+                    ),
                 },
                 Field {
                     name: "adcpre",
-                    description: Some("ADC prescaler"),
+                    description: Some(
+                        "ADC prescaler",
+                    ),
                     bit_offset: 14,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Adcpre"),
+                    enumm: Some(
+                        "Adcpre",
+                    ),
                 },
                 Field {
                     name: "pllsrc",
-                    description: Some("PLL entry clock source"),
-                    bit_offset: 15,
-                    bit_size: 2,
+                    description: Some(
+                        "PLL entry clock source",
+                    ),
+                    bit_offset: 16,
+                    bit_size: 1,
                     array: None,
-                    enumm: Some("Pllsrc"),
+                    enumm: Some(
+                        "Pllsrc",
+                    ),
                 },
                 Field {
                     name: "pllxtpre",
-                    description: Some("HSE divider for PLL entry"),
+                    description: Some(
+                        "HSE divider for PLL entry. Note: This bit is the same as the LSB of PREDIV in CFGR2, for compatibility with other STM32 products.",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Pllxtpre"),
+                    enumm: Some(
+                        "Pllxtpre",
+                    ),
                 },
                 Field {
                     name: "pllmul",
-                    description: Some("PLL Multiplication Factor"),
+                    description: Some(
+                        "PLL Multiplication Factor",
+                    ),
                     bit_offset: 18,
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Pllmul"),
+                    enumm: Some(
+                        "Pllmul",
+                    ),
                 },
                 Field {
                     name: "usbpre",
-                    description: Some("USB prescaler"),
+                    description: Some(
+                        "USB prescaler",
+                    ),
                     bit_offset: 22,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Usbpre"),
+                    enumm: Some(
+                        "Usbpre",
+                    ),
                 },
                 Field {
                     name: "i2ssrc",
-                    description: Some("I2S external clock source selection"),
+                    description: Some(
+                        "I2S external clock source selection",
+                    ),
                     bit_offset: 23,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Issrc"),
+                    enumm: Some(
+                        "Issrc",
+                    ),
                 },
                 Field {
                     name: "mcosel",
-                    description: Some("Microcontroller clock output"),
+                    description: Some(
+                        "Microcontroller clock output",
+                    ),
                     bit_offset: 24,
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Mcosel"),
+                    enumm: Some(
+                        "Mcosel",
+                    ),
                 },
                 Field {
                     name: "sdpre",
-                    description: Some("SDADC prescaler"),
+                    description: Some(
+                        "SDADC prescaler",
+                    ),
                     bit_offset: 27,
                     bit_size: 5,
                     array: None,
-                    enumm: Some("Sdpre"),
-                },
-                Field {
-                    name: "mcopre",
-                    description: Some("Microcontroller Clock Output Prescaler"),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some("Mcopre"),
-                },
-                Field {
-                    name: "pllmcodiv",
-                    description: Some("Do not divide PLL to MCO"),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Pllmcodiv"),
+                    enumm: Some(
+                        "Sdpre",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Cfgr2",
             extends: None,
-            description: Some("Clock configuration register 2"),
+            description: Some(
+                "Clock configuration register 2",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "prediv",
-                    description: Some("PREDIV division factor"),
+                    description: Some(
+                        "PREDIV division factor",
+                    ),
                     bit_offset: 0,
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Prediv"),
+                    enumm: Some(
+                        "Prediv",
+                    ),
                 },
                 Field {
                     name: "adc12pres",
-                    description: Some("ADC1 and ADC2 prescaler"),
+                    description: Some(
+                        "ADC1 and ADC2 prescaler",
+                    ),
                     bit_offset: 4,
                     bit_size: 5,
                     array: None,
-                    enumm: Some("Adcpres"),
+                    enumm: Some(
+                        "Adcpres",
+                    ),
                 },
                 Field {
                     name: "adc1pres",
-                    description: Some("ADC1 prescaler"),
+                    description: Some(
+                        "ADC1 prescaler",
+                    ),
                     bit_offset: 4,
                     bit_size: 5,
                     array: None,
-                    enumm: Some("Adcpres"),
+                    enumm: Some(
+                        "Adcpres",
+                    ),
                 },
                 Field {
                     name: "adc34pres",
-                    description: Some("ADC3 and ADC4 prescaler"),
+                    description: Some(
+                        "ADC3 and ADC4 prescaler",
+                    ),
                     bit_offset: 9,
                     bit_size: 5,
                     array: None,
-                    enumm: Some("Adcpres"),
+                    enumm: Some(
+                        "Adcpres",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Cfgr3",
             extends: None,
-            description: Some("Clock configuration register 3"),
+            description: Some(
+                "Clock configuration register 3",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "usart1sw",
-                    description: Some("USART1 clock source selection"),
+                    description: Some(
+                        "USART1 clock source selection",
+                    ),
                     bit_offset: 0,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usartsw"),
+                    enumm: Some(
+                        "Usartsw",
+                    ),
                 },
                 Field {
                     name: "i2c1sw",
-                    description: Some("I2C1 clock source selection"),
+                    description: Some(
+                        "I2C1 clock source selection",
+                    ),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Icsw"),
+                    enumm: Some(
+                        "Icsw",
+                    ),
                 },
                 Field {
                     name: "i2c2sw",
-                    description: Some("I2C2 clock source selection"),
+                    description: Some(
+                        "I2C2 clock source selection",
+                    ),
                     bit_offset: 5,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Icsw"),
+                    enumm: Some(
+                        "Icsw",
+                    ),
                 },
                 Field {
                     name: "cecsw",
-                    description: Some("HDMI CEC clock source selection"),
+                    description: Some(
+                        "HDMI CEC clock source selection",
+                    ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Cecsw"),
+                    enumm: Some(
+                        "Cecsw",
+                    ),
                 },
                 Field {
                     name: "i2c3sw",
-                    description: Some("I2C3 clock source selection"),
+                    description: Some(
+                        "I2C3 clock source selection",
+                    ),
                     bit_offset: 6,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Icsw"),
+                    enumm: Some(
+                        "Icsw",
+                    ),
                 },
                 Field {
                     name: "tim1sw",
-                    description: Some("Timer1 clock source selection"),
+                    description: Some(
+                        "Timer1 clock source selection",
+                    ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "tim8sw",
-                    description: Some("Timer8 clock source selection"),
+                    description: Some(
+                        "Timer8 clock source selection",
+                    ),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "tim15sw",
-                    description: Some("Timer15 clock source selection"),
+                    description: Some(
+                        "Timer15 clock source selection",
+                    ),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "tim16sw",
-                    description: Some("Timer16 clock source selection"),
+                    description: Some(
+                        "Timer16 clock source selection",
+                    ),
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "hrtim1sw",
-                    description: Some("Hrtim1 clock source selection"),
+                    description: Some(
+                        "Hrtim1 clock source selection",
+                    ),
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "tim17sw",
-                    description: Some("Timer17 clock source selection"),
+                    description: Some(
+                        "Timer17 clock source selection",
+                    ),
                     bit_offset: 13,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "tim20sw",
-                    description: Some("Timer20 clock source selection"),
+                    description: Some(
+                        "Timer20 clock source selection",
+                    ),
                     bit_offset: 15,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "usart2sw",
-                    description: Some("USART2 clock source selection"),
+                    description: Some(
+                        "USART2 clock source selection",
+                    ),
                     bit_offset: 16,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usartsw"),
+                    enumm: Some(
+                        "Usartsw",
+                    ),
                 },
                 Field {
                     name: "usart3sw",
-                    description: Some("USART3 clock source selection"),
+                    description: Some(
+                        "USART3 clock source selection",
+                    ),
                     bit_offset: 18,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usartsw"),
+                    enumm: Some(
+                        "Usartsw",
+                    ),
                 },
                 Field {
                     name: "uart4sw",
-                    description: Some("UART4 clock source selection"),
+                    description: Some(
+                        "UART4 clock source selection",
+                    ),
                     bit_offset: 20,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usartsw"),
+                    enumm: Some(
+                        "Usartsw",
+                    ),
                 },
                 Field {
                     name: "uart5sw",
-                    description: Some("UART5 clock source selection"),
+                    description: Some(
+                        "UART5 clock source selection",
+                    ),
                     bit_offset: 22,
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Usartsw"),
+                    enumm: Some(
+                        "Usartsw",
+                    ),
                 },
                 Field {
                     name: "tim2sw",
-                    description: Some("Timer2 clock source selection"),
+                    description: Some(
+                        "Timer2 clock source selection",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
                 Field {
                     name: "tim34sw",
-                    description: Some("Timer34 clock source selection"),
+                    description: Some(
+                        "Timer34 clock source selection",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Timsw"),
+                    enumm: Some(
+                        "Timsw",
+                    ),
                 },
             ],
         },
         FieldSet {
             name: "Cir",
             extends: None,
-            description: Some("Clock interrupt register (RCC_CIR)"),
+            description: Some(
+                "Clock interrupt register (RCC_CIR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lsirdyf",
-                    description: Some("LSI Ready Interrupt flag"),
+                    description: Some(
+                        "LSI Ready Interrupt flag",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -1312,7 +1738,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lserdyf",
-                    description: Some("LSE Ready Interrupt flag"),
+                    description: Some(
+                        "LSE Ready Interrupt flag",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -1320,7 +1748,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsirdyf",
-                    description: Some("HSI Ready Interrupt flag"),
+                    description: Some(
+                        "HSI Ready Interrupt flag",
+                    ),
                     bit_offset: 2,
                     bit_size: 1,
                     array: None,
@@ -1328,7 +1758,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hserdyf",
-                    description: Some("HSE Ready Interrupt flag"),
+                    description: Some(
+                        "HSE Ready Interrupt flag",
+                    ),
                     bit_offset: 3,
                     bit_size: 1,
                     array: None,
@@ -1336,7 +1768,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllrdyf",
-                    description: Some("PLL Ready Interrupt flag"),
+                    description: Some(
+                        "PLL Ready Interrupt flag",
+                    ),
                     bit_offset: 4,
                     bit_size: 1,
                     array: None,
@@ -1344,7 +1778,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "cssf",
-                    description: Some("Clock Security System Interrupt flag"),
+                    description: Some(
+                        "Clock Security System Interrupt flag",
+                    ),
                     bit_offset: 7,
                     bit_size: 1,
                     array: None,
@@ -1352,7 +1788,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lsirdyie",
-                    description: Some("LSI Ready Interrupt Enable"),
+                    description: Some(
+                        "LSI Ready Interrupt Enable",
+                    ),
                     bit_offset: 8,
                     bit_size: 1,
                     array: None,
@@ -1360,7 +1798,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lserdyie",
-                    description: Some("LSE Ready Interrupt Enable"),
+                    description: Some(
+                        "LSE Ready Interrupt Enable",
+                    ),
                     bit_offset: 9,
                     bit_size: 1,
                     array: None,
@@ -1368,7 +1808,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsirdyie",
-                    description: Some("HSI Ready Interrupt Enable"),
+                    description: Some(
+                        "HSI Ready Interrupt Enable",
+                    ),
                     bit_offset: 10,
                     bit_size: 1,
                     array: None,
@@ -1376,7 +1818,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hserdyie",
-                    description: Some("HSE Ready Interrupt Enable"),
+                    description: Some(
+                        "HSE Ready Interrupt Enable",
+                    ),
                     bit_offset: 11,
                     bit_size: 1,
                     array: None,
@@ -1384,7 +1828,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllrdyie",
-                    description: Some("PLL Ready Interrupt Enable"),
+                    description: Some(
+                        "PLL Ready Interrupt Enable",
+                    ),
                     bit_offset: 12,
                     bit_size: 1,
                     array: None,
@@ -1392,7 +1838,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lsirdyc",
-                    description: Some("LSI Ready Interrupt Clear"),
+                    description: Some(
+                        "LSI Ready Interrupt Clear",
+                    ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
@@ -1400,7 +1848,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lserdyc",
-                    description: Some("LSE Ready Interrupt Clear"),
+                    description: Some(
+                        "LSE Ready Interrupt Clear",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -1408,7 +1858,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsirdyc",
-                    description: Some("HSI Ready Interrupt Clear"),
+                    description: Some(
+                        "HSI Ready Interrupt Clear",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -1416,7 +1868,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hserdyc",
-                    description: Some("HSE Ready Interrupt Clear"),
+                    description: Some(
+                        "HSE Ready Interrupt Clear",
+                    ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
@@ -1424,7 +1878,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllrdyc",
-                    description: Some("PLL Ready Interrupt Clear"),
+                    description: Some(
+                        "PLL Ready Interrupt Clear",
+                    ),
                     bit_offset: 20,
                     bit_size: 1,
                     array: None,
@@ -1432,7 +1888,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "cssc",
-                    description: Some("Clock security system interrupt clear"),
+                    description: Some(
+                        "Clock security system interrupt clear",
+                    ),
                     bit_offset: 23,
                     bit_size: 1,
                     array: None,
@@ -1443,12 +1901,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cr",
             extends: None,
-            description: Some("Clock control register"),
+            description: Some(
+                "Clock control register",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "hsion",
-                    description: Some("Internal High Speed clock enable"),
+                    description: Some(
+                        "Internal High Speed clock enable",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -1456,7 +1918,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsirdy",
-                    description: Some("Internal High Speed clock ready flag"),
+                    description: Some(
+                        "Internal High Speed clock ready flag",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -1464,7 +1928,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsitrim",
-                    description: Some("Internal High Speed clock trimming"),
+                    description: Some(
+                        "Internal High Speed clock trimming",
+                    ),
                     bit_offset: 3,
                     bit_size: 5,
                     array: None,
@@ -1472,7 +1938,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsical",
-                    description: Some("Internal High Speed clock Calibration"),
+                    description: Some(
+                        "Internal High Speed clock Calibration",
+                    ),
                     bit_offset: 8,
                     bit_size: 8,
                     array: None,
@@ -1480,7 +1948,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hseon",
-                    description: Some("External High Speed clock enable"),
+                    description: Some(
+                        "External High Speed clock enable",
+                    ),
                     bit_offset: 16,
                     bit_size: 1,
                     array: None,
@@ -1488,7 +1958,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hserdy",
-                    description: Some("External High Speed clock ready flag"),
+                    description: Some(
+                        "External High Speed clock ready flag",
+                    ),
                     bit_offset: 17,
                     bit_size: 1,
                     array: None,
@@ -1496,7 +1968,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "hsebyp",
-                    description: Some("External High Speed clock Bypass"),
+                    description: Some(
+                        "External High Speed clock Bypass",
+                    ),
                     bit_offset: 18,
                     bit_size: 1,
                     array: None,
@@ -1504,7 +1978,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "csson",
-                    description: Some("Clock Security System enable"),
+                    description: Some(
+                        "Clock Security System enable",
+                    ),
                     bit_offset: 19,
                     bit_size: 1,
                     array: None,
@@ -1512,7 +1988,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllon",
-                    description: Some("PLL enable"),
+                    description: Some(
+                        "PLL enable",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -1520,7 +1998,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pllrdy",
-                    description: Some("PLL clock ready flag"),
+                    description: Some(
+                        "PLL clock ready flag",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
@@ -1531,12 +2011,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("Control/status register (RCC_CSR)"),
+            description: Some(
+                "Control/status register (RCC_CSR)",
+            ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lsion",
-                    description: Some("Internal low speed oscillator enable"),
+                    description: Some(
+                        "Internal low speed oscillator enable",
+                    ),
                     bit_offset: 0,
                     bit_size: 1,
                     array: None,
@@ -1544,7 +2028,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lsirdy",
-                    description: Some("Internal low speed oscillator ready"),
+                    description: Some(
+                        "Internal low speed oscillator ready",
+                    ),
                     bit_offset: 1,
                     bit_size: 1,
                     array: None,
@@ -1552,7 +2038,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "v18pwrrstf",
-                    description: Some("Reset flag of the 1.8 V domain"),
+                    description: Some(
+                        "Reset flag of the 1.8 V domain",
+                    ),
                     bit_offset: 23,
                     bit_size: 1,
                     array: None,
@@ -1560,7 +2048,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "rmvf",
-                    description: Some("Remove reset flag"),
+                    description: Some(
+                        "Remove reset flag",
+                    ),
                     bit_offset: 24,
                     bit_size: 1,
                     array: None,
@@ -1568,7 +2058,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "oblrstf",
-                    description: Some("Option byte loader reset flag"),
+                    description: Some(
+                        "Option byte loader reset flag",
+                    ),
                     bit_offset: 25,
                     bit_size: 1,
                     array: None,
@@ -1576,7 +2068,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "pinrstf",
-                    description: Some("PIN reset flag"),
+                    description: Some(
+                        "PIN reset flag",
+                    ),
                     bit_offset: 26,
                     bit_size: 1,
                     array: None,
@@ -1584,7 +2078,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "porrstf",
-                    description: Some("POR/PDR reset flag"),
+                    description: Some(
+                        "POR/PDR reset flag",
+                    ),
                     bit_offset: 27,
                     bit_size: 1,
                     array: None,
@@ -1592,7 +2088,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "sftrstf",
-                    description: Some("Software reset flag"),
+                    description: Some(
+                        "Software reset flag",
+                    ),
                     bit_offset: 28,
                     bit_size: 1,
                     array: None,
@@ -1600,7 +2098,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "iwdgrstf",
-                    description: Some("Independent watchdog reset flag"),
+                    description: Some(
+                        "Independent watchdog reset flag",
+                    ),
                     bit_offset: 29,
                     bit_size: 1,
                     array: None,
@@ -1608,7 +2108,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "wwdgrstf",
-                    description: Some("Window watchdog reset flag"),
+                    description: Some(
+                        "Window watchdog reset flag",
+                    ),
                     bit_offset: 30,
                     bit_size: 1,
                     array: None,
@@ -1616,7 +2118,9 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "lpwrrstf",
-                    description: Some("Low-power reset flag"),
+                    description: Some(
+                        "Low-power reset flag",
+                    ),
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
@@ -1633,22 +2137,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("PCLK divided by 2"),
+                    description: Some(
+                        "PCLK divided by 2",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("PCLK divided by 4"),
+                    description: Some(
+                        "PCLK divided by 4",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "DIV6",
-                    description: Some("PCLK divided by 6"),
+                    description: Some(
+                        "PCLK divided by 6",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("PCLK divided by 8"),
+                    description: Some(
+                        "PCLK divided by 8",
+                    ),
                     value: 3,
                 },
             ],
@@ -1660,62 +2172,86 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("PLL clock not divided"),
+                    description: Some(
+                        "PLL clock not divided",
+                    ),
                     value: 16,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("PLL clock divided by 2"),
+                    description: Some(
+                        "PLL clock divided by 2",
+                    ),
                     value: 17,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("PLL clock divided by 4"),
+                    description: Some(
+                        "PLL clock divided by 4",
+                    ),
                     value: 18,
                 },
                 EnumVariant {
                     name: "DIV6",
-                    description: Some("PLL clock divided by 6"),
+                    description: Some(
+                        "PLL clock divided by 6",
+                    ),
                     value: 19,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("PLL clock divided by 8"),
+                    description: Some(
+                        "PLL clock divided by 8",
+                    ),
                     value: 20,
                 },
                 EnumVariant {
                     name: "DIV10",
-                    description: Some("PLL clock divided by 10"),
+                    description: Some(
+                        "PLL clock divided by 10",
+                    ),
                     value: 21,
                 },
                 EnumVariant {
                     name: "DIV12",
-                    description: Some("PLL clock divided by 12"),
+                    description: Some(
+                        "PLL clock divided by 12",
+                    ),
                     value: 22,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("PLL clock divided by 16"),
+                    description: Some(
+                        "PLL clock divided by 16",
+                    ),
                     value: 23,
                 },
                 EnumVariant {
                     name: "DIV32",
-                    description: Some("PLL clock divided by 32"),
+                    description: Some(
+                        "PLL clock divided by 32",
+                    ),
                     value: 24,
                 },
                 EnumVariant {
                     name: "DIV64",
-                    description: Some("PLL clock divided by 64"),
+                    description: Some(
+                        "PLL clock divided by 64",
+                    ),
                     value: 25,
                 },
                 EnumVariant {
                     name: "DIV128",
-                    description: Some("PLL clock divided by 128"),
+                    description: Some(
+                        "PLL clock divided by 128",
+                    ),
                     value: 26,
                 },
                 EnumVariant {
                     name: "DIV256",
-                    description: Some("PLL clock divided by 256"),
+                    description: Some(
+                        "PLL clock divided by 256",
+                    ),
                     value: 27,
                 },
             ],
@@ -1727,12 +2263,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI_DIV_244",
-                    description: Some("HSI clock divided by 244 selected as CEC clock source"),
+                    description: Some(
+                        "HSI clock divided by 244 selected as CEC clock source",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE clock selected as CEC clock source"),
+                    description: Some(
+                        "LSE clock selected as CEC clock source",
+                    ),
                     value: 1,
                 },
             ],
@@ -1744,47 +2284,65 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("SYSCLK not divided"),
+                    description: Some(
+                        "SYSCLK not divided",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("SYSCLK divided by 2"),
+                    description: Some(
+                        "SYSCLK divided by 2",
+                    ),
                     value: 8,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("SYSCLK divided by 4"),
+                    description: Some(
+                        "SYSCLK divided by 4",
+                    ),
                     value: 9,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("SYSCLK divided by 8"),
+                    description: Some(
+                        "SYSCLK divided by 8",
+                    ),
                     value: 10,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("SYSCLK divided by 16"),
+                    description: Some(
+                        "SYSCLK divided by 16",
+                    ),
                     value: 11,
                 },
                 EnumVariant {
                     name: "DIV64",
-                    description: Some("SYSCLK divided by 64"),
+                    description: Some(
+                        "SYSCLK divided by 64",
+                    ),
                     value: 12,
                 },
                 EnumVariant {
                     name: "DIV128",
-                    description: Some("SYSCLK divided by 128"),
+                    description: Some(
+                        "SYSCLK divided by 128",
+                    ),
                     value: 13,
                 },
                 EnumVariant {
                     name: "DIV256",
-                    description: Some("SYSCLK divided by 256"),
+                    description: Some(
+                        "SYSCLK divided by 256",
+                    ),
                     value: 14,
                 },
                 EnumVariant {
                     name: "DIV512",
-                    description: Some("SYSCLK divided by 512"),
+                    description: Some(
+                        "SYSCLK divided by 512",
+                    ),
                     value: 15,
                 },
             ],
@@ -1796,12 +2354,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI clock selected as I2C clock source"),
+                    description: Some(
+                        "HSI clock selected as I2C clock source",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SYS",
-                    description: Some("SYSCLK clock selected as I2C clock source"),
+                    description: Some(
+                        "SYSCLK clock selected as I2C clock source",
+                    ),
                     value: 1,
                 },
             ],
@@ -1813,12 +2375,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "SYS",
-                    description: Some("System clock used as I2S clock source"),
+                    description: Some(
+                        "System clock used as I2S clock source",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "CKIN",
-                    description: Some("External clock mapped on the I2S_CKIN pin used as I2S clock source"),
+                    description: Some(
+                        "External clock mapped on the I2S_CKIN pin used as I2S clock source",
+                    ),
                     value: 1,
                 },
             ],
@@ -1830,70 +2396,31 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "LOW",
-                    description: Some("Low driving capability"),
+                    description: Some(
+                        "Low driving capability",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "MEDIUMHIGH",
-                    description: Some("Medium high driving capability"),
+                    description: Some(
+                        "Medium high driving capability",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "MEDIUMLOW",
-                    description: Some("Medium low driving capability"),
+                    description: Some(
+                        "Medium low driving capability",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HIGH",
-                    description: Some("High driving capability"),
+                    description: Some(
+                        "High driving capability",
+                    ),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Mcopre",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some("MCO is divided by 1"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some("MCO is divided by 2"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some("MCO is divided by 4"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some("MCO is divided by 8"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some("MCO is divided by 16"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV32",
-                    description: Some("MCO is divided by 32"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV64",
-                    description: Some("MCO is divided by 64"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV128",
-                    description: Some("MCO is divided by 128"),
-                    value: 7,
                 },
             ],
         },
@@ -1904,55 +2431,52 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DISABLE",
-                    description: Some("MCO output disabled, no clock on MCO"),
+                    description: Some(
+                        "MCO output disabled, no clock on MCO",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("Internal low speed (LSI) oscillator clock selected"),
+                    description: Some(
+                        "Internal low speed (LSI) oscillator clock selected",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("External low speed (LSE) oscillator clock selected"),
+                    description: Some(
+                        "External low speed (LSE) oscillator clock selected",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "SYS",
-                    description: Some("System clock selected"),
+                    description: Some(
+                        "System clock selected",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("Internal RC 8 MHz (HSI) oscillator clock selected"),
+                    description: Some(
+                        "Internal RC 8 MHz (HSI) oscillator clock selected",
+                    ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("External 4-32 MHz (HSE) oscillator clock selected"),
+                    description: Some(
+                        "External 4-32 MHz (HSE) oscillator clock selected",
+                    ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "PLL",
-                    description: Some("PLL clock selected (divided by 1 or 2, depending en PLLMCODIV)"),
+                    name: "PLL_DIV_2",
+                    description: Some(
+                        "PLL clock divided by 2",
+                    ),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllmcodiv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some("PLL is divided by 2 for MCO"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some("PLL is not divided for MCO"),
-                    value: 1,
                 },
             ],
         },
@@ -1963,77 +2487,107 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "MUL2",
-                    description: Some("PLL input clock x2"),
+                    description: Some(
+                        "PLL input clock x2",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "MUL3",
-                    description: Some("PLL input clock x3"),
+                    description: Some(
+                        "PLL input clock x3",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "MUL4",
-                    description: Some("PLL input clock x4"),
+                    description: Some(
+                        "PLL input clock x4",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "MUL5",
-                    description: Some("PLL input clock x5"),
+                    description: Some(
+                        "PLL input clock x5",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "MUL6",
-                    description: Some("PLL input clock x6"),
+                    description: Some(
+                        "PLL input clock x6",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "MUL7",
-                    description: Some("PLL input clock x7"),
+                    description: Some(
+                        "PLL input clock x7",
+                    ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "MUL8",
-                    description: Some("PLL input clock x8"),
+                    description: Some(
+                        "PLL input clock x8",
+                    ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "MUL9",
-                    description: Some("PLL input clock x9"),
+                    description: Some(
+                        "PLL input clock x9",
+                    ),
                     value: 7,
                 },
                 EnumVariant {
                     name: "MUL10",
-                    description: Some("PLL input clock x10"),
+                    description: Some(
+                        "PLL input clock x10",
+                    ),
                     value: 8,
                 },
                 EnumVariant {
                     name: "MUL11",
-                    description: Some("PLL input clock x11"),
+                    description: Some(
+                        "PLL input clock x11",
+                    ),
                     value: 9,
                 },
                 EnumVariant {
                     name: "MUL12",
-                    description: Some("PLL input clock x12"),
+                    description: Some(
+                        "PLL input clock x12",
+                    ),
                     value: 10,
                 },
                 EnumVariant {
                     name: "MUL13",
-                    description: Some("PLL input clock x13"),
+                    description: Some(
+                        "PLL input clock x13",
+                    ),
                     value: 11,
                 },
                 EnumVariant {
                     name: "MUL14",
-                    description: Some("PLL input clock x14"),
+                    description: Some(
+                        "PLL input clock x14",
+                    ),
                     value: 12,
                 },
                 EnumVariant {
                     name: "MUL15",
-                    description: Some("PLL input clock x15"),
+                    description: Some(
+                        "PLL input clock x15",
+                    ),
                     value: 13,
                 },
                 EnumVariant {
                     name: "MUL16",
-                    description: Some("PLL input clock x16"),
+                    description: Some(
+                        "PLL input clock x16",
+                    ),
                     value: 14,
                 },
             ],
@@ -2041,22 +2595,21 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Pllsrc",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "HSI_DIV2",
-                    description: Some("HSI divided by 2 selected as PLL input clock"),
+                    description: Some(
+                        "HSI divided by 2 selected as PLL input clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI_DIV_PREDIV",
-                    description: Some("HSI divided by PREDIV selected as PLL input clock"),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "HSE_DIV_PREDIV",
-                    description: Some("HSE divided by PREDIV selected as PLL input clock"),
-                    value: 2,
+                    description: Some(
+                        "HSE divided by PREDIV selected as PLL input clock",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -2067,12 +2620,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("HSE clock not divided"),
+                    description: Some(
+                        "HSE clock not divided",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("HSE clock divided by 2"),
+                    description: Some(
+                        "HSE clock divided by 2",
+                    ),
                     value: 1,
                 },
             ],
@@ -2084,27 +2641,37 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("HCLK not divided"),
+                    description: Some(
+                        "HCLK not divided",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("HCLK divided by 2"),
+                    description: Some(
+                        "HCLK divided by 2",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("HCLK divided by 4"),
+                    description: Some(
+                        "HCLK divided by 4",
+                    ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("HCLK divided by 8"),
+                    description: Some(
+                        "HCLK divided by 8",
+                    ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("HCLK divided by 16"),
+                    description: Some(
+                        "HCLK divided by 16",
+                    ),
                     value: 7,
                 },
             ],
@@ -2116,82 +2683,114 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("PREDIV input clock not divided"),
+                    description: Some(
+                        "PREDIV input clock not divided",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("PREDIV input clock divided by 2"),
+                    description: Some(
+                        "PREDIV input clock divided by 2",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "DIV3",
-                    description: Some("PREDIV input clock divided by 3"),
+                    description: Some(
+                        "PREDIV input clock divided by 3",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("PREDIV input clock divided by 4"),
+                    description: Some(
+                        "PREDIV input clock divided by 4",
+                    ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "DIV5",
-                    description: Some("PREDIV input clock divided by 5"),
+                    description: Some(
+                        "PREDIV input clock divided by 5",
+                    ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "DIV6",
-                    description: Some("PREDIV input clock divided by 6"),
+                    description: Some(
+                        "PREDIV input clock divided by 6",
+                    ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "DIV7",
-                    description: Some("PREDIV input clock divided by 7"),
+                    description: Some(
+                        "PREDIV input clock divided by 7",
+                    ),
                     value: 6,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("PREDIV input clock divided by 8"),
+                    description: Some(
+                        "PREDIV input clock divided by 8",
+                    ),
                     value: 7,
                 },
                 EnumVariant {
                     name: "DIV9",
-                    description: Some("PREDIV input clock divided by 9"),
+                    description: Some(
+                        "PREDIV input clock divided by 9",
+                    ),
                     value: 8,
                 },
                 EnumVariant {
                     name: "DIV10",
-                    description: Some("PREDIV input clock divided by 10"),
+                    description: Some(
+                        "PREDIV input clock divided by 10",
+                    ),
                     value: 9,
                 },
                 EnumVariant {
                     name: "DIV11",
-                    description: Some("PREDIV input clock divided by 11"),
+                    description: Some(
+                        "PREDIV input clock divided by 11",
+                    ),
                     value: 10,
                 },
                 EnumVariant {
                     name: "DIV12",
-                    description: Some("PREDIV input clock divided by 12"),
+                    description: Some(
+                        "PREDIV input clock divided by 12",
+                    ),
                     value: 11,
                 },
                 EnumVariant {
                     name: "DIV13",
-                    description: Some("PREDIV input clock divided by 13"),
+                    description: Some(
+                        "PREDIV input clock divided by 13",
+                    ),
                     value: 12,
                 },
                 EnumVariant {
                     name: "DIV14",
-                    description: Some("PREDIV input clock divided by 14"),
+                    description: Some(
+                        "PREDIV input clock divided by 14",
+                    ),
                     value: 13,
                 },
                 EnumVariant {
                     name: "DIV15",
-                    description: Some("PREDIV input clock divided by 15"),
+                    description: Some(
+                        "PREDIV input clock divided by 15",
+                    ),
                     value: 14,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("PREDIV input clock divided by 16"),
+                    description: Some(
+                        "PREDIV input clock divided by 16",
+                    ),
                     value: 15,
                 },
             ],
@@ -2203,22 +2802,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DISABLE",
-                    description: Some("No clock"),
+                    description: Some(
+                        "No clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE oscillator clock used as RTC clock"),
+                    description: Some(
+                        "LSE oscillator clock used as RTC clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LSI",
-                    description: Some("LSI oscillator clock used as RTC clock"),
+                    description: Some(
+                        "LSI oscillator clock used as RTC clock",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE oscillator clock divided by a prescaler used as RTC clock"),
+                    description: Some(
+                        "HSE oscillator clock divided by a prescaler used as RTC clock",
+                    ),
                     value: 3,
                 },
             ],
@@ -2230,82 +2837,114 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV2",
-                    description: Some("SYSCLK divided by 2"),
+                    description: Some(
+                        "SYSCLK divided by 2",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV4",
-                    description: Some("SYSCLK divided by 4"),
+                    description: Some(
+                        "SYSCLK divided by 4",
+                    ),
                     value: 17,
                 },
                 EnumVariant {
                     name: "DIV6",
-                    description: Some("SYSCLK divided by 6"),
+                    description: Some(
+                        "SYSCLK divided by 6",
+                    ),
                     value: 18,
                 },
                 EnumVariant {
                     name: "DIV8",
-                    description: Some("SYSCLK divided by 8"),
+                    description: Some(
+                        "SYSCLK divided by 8",
+                    ),
                     value: 19,
                 },
                 EnumVariant {
                     name: "DIV10",
-                    description: Some("SYSCLK divided by 10"),
+                    description: Some(
+                        "SYSCLK divided by 10",
+                    ),
                     value: 20,
                 },
                 EnumVariant {
                     name: "DIV12",
-                    description: Some("SYSCLK divided by 12"),
+                    description: Some(
+                        "SYSCLK divided by 12",
+                    ),
                     value: 21,
                 },
                 EnumVariant {
                     name: "DIV14",
-                    description: Some("SYSCLK divided by 14"),
+                    description: Some(
+                        "SYSCLK divided by 14",
+                    ),
                     value: 22,
                 },
                 EnumVariant {
                     name: "DIV16",
-                    description: Some("SYSCLK divided by 16"),
+                    description: Some(
+                        "SYSCLK divided by 16",
+                    ),
                     value: 23,
                 },
                 EnumVariant {
                     name: "DIV20",
-                    description: Some("SYSCLK divided by 20"),
+                    description: Some(
+                        "SYSCLK divided by 20",
+                    ),
                     value: 24,
                 },
                 EnumVariant {
                     name: "DIV24",
-                    description: Some("SYSCLK divided by 24"),
+                    description: Some(
+                        "SYSCLK divided by 24",
+                    ),
                     value: 25,
                 },
                 EnumVariant {
                     name: "DIV28",
-                    description: Some("SYSCLK divided by 28"),
+                    description: Some(
+                        "SYSCLK divided by 28",
+                    ),
                     value: 26,
                 },
                 EnumVariant {
                     name: "DIV32",
-                    description: Some("SYSCLK divided by 32"),
+                    description: Some(
+                        "SYSCLK divided by 32",
+                    ),
                     value: 27,
                 },
                 EnumVariant {
                     name: "DIV36",
-                    description: Some("SYSCLK divided by 36"),
+                    description: Some(
+                        "SYSCLK divided by 36",
+                    ),
                     value: 28,
                 },
                 EnumVariant {
                     name: "DIV40",
-                    description: Some("SYSCLK divided by 40"),
+                    description: Some(
+                        "SYSCLK divided by 40",
+                    ),
                     value: 29,
                 },
                 EnumVariant {
                     name: "DIV44",
-                    description: Some("SYSCLK divided by 44"),
+                    description: Some(
+                        "SYSCLK divided by 44",
+                    ),
                     value: 30,
                 },
                 EnumVariant {
                     name: "DIV48",
-                    description: Some("SYSCLK divided by 48"),
+                    description: Some(
+                        "SYSCLK divided by 48",
+                    ),
                     value: 31,
                 },
             ],
@@ -2317,17 +2956,23 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI oscillator used as system clock"),
+                    description: Some(
+                        "HSI oscillator used as system clock",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "HSE",
-                    description: Some("HSE oscillator used as system clock"),
+                    description: Some(
+                        "HSE oscillator used as system clock",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "PLL1_P",
-                    description: Some("PLL used as system clock"),
+                    description: Some(
+                        "PLL used as system clock",
+                    ),
                     value: 2,
                 },
             ],
@@ -2339,12 +2984,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK2_TIM",
-                    description: Some("PCLK2 clock (doubled frequency when prescaled)"),
+                    description: Some(
+                        "PCLK2 clock (doubled frequency when prescaled)",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PLL1_P",
-                    description: Some("PLL vco output (running up to 144 MHz)"),
+                    description: Some(
+                        "PLL vco output (running up to 144 MHz)",
+                    ),
                     value: 1,
                 },
             ],
@@ -2356,22 +3005,30 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
-                    description: Some("PCLK selected as USART clock source"),
+                    description: Some(
+                        "PCLK selected as USART clock source",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SYS",
-                    description: Some("SYSCLK selected as USART clock source"),
+                    description: Some(
+                        "SYSCLK selected as USART clock source",
+                    ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LSE",
-                    description: Some("LSE selected as USART clock source"),
+                    description: Some(
+                        "LSE selected as USART clock source",
+                    ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "HSI",
-                    description: Some("HSI selected as USART clock source"),
+                    description: Some(
+                        "HSI selected as USART clock source",
+                    ),
                     value: 3,
                 },
             ],
@@ -2383,12 +3040,16 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "DIV1_5",
-                    description: Some("PLL clock is divided by 1.5"),
+                    description: Some(
+                        "PLL clock is divided by 1.5",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV1",
-                    description: Some("PLL clock is not divided"),
+                    description: Some(
+                        "PLL clock is not divided",
+                    ),
                     value: 1,
                 },
             ],

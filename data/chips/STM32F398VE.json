@@ -2279,7 +2279,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "f3",
+                        "version": "f3v3",
                         "block": "RCC"
                     },
                     "pins": [

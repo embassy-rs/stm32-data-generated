@@ -743,6 +743,17 @@ pub mod regs {
         pub fn set_io_hslv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[doc = "ITCM-RAM / AXI-SRAM size"]
+        #[inline(always)]
+        pub const fn tcm_axi_shared_cfg(&self) -> super::vals::ItcmAxiRamSize {
+            let val = (self.0 >> 16usize) & 0x03;
+            super::vals::ItcmAxiRamSize::from_bits(val as u8)
+        }
+        #[doc = "ITCM-RAM / AXI-SRAM size"]
+        #[inline(always)]
+        pub fn set_tcm_axi_shared_cfg(&mut self, val: super::vals::ItcmAxiRamSize) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
+        }
     }
     impl Default for Ur17 {
         #[inline(always)]
@@ -1021,6 +1032,42 @@ pub mod regs {
         #[inline(always)]
         fn default() -> Ur9 {
             Ur9(0)
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum ItcmAxiRamSize {
+        #[doc = "64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"]
+        ITCM64AXI320 = 0,
+        #[doc = "128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"]
+        ITCM128AXI320 = 0x01,
+        #[doc = "192 Kbyte ITCM-RAM / 192 Kbyte AXI-SRAM"]
+        ITCM192AXI192 = 0x02,
+        #[doc = "256 Kbyte ITCM-RAM / 128 Kbyte AXI-SRAM"]
+        ITCM256AXI128 = 0x03,
+    }
+    impl ItcmAxiRamSize {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> ItcmAxiRamSize {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for ItcmAxiRamSize {
+        #[inline(always)]
+        fn from(val: u8) -> ItcmAxiRamSize {
+            ItcmAxiRamSize::from_bits(val)
+        }
+    }
+    impl From<ItcmAxiRamSize> for u8 {
+        #[inline(always)]
+        fn from(val: ItcmAxiRamSize) -> u8 {
+            ItcmAxiRamSize::to_bits(val)
         }
     }
 }

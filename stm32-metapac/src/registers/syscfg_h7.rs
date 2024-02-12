@@ -684,14 +684,24 @@ pub(crate) static REGISTERS: IR = IR {
             extends: None,
             description: Some("SYSCFG user register 17"),
             bit_size: 32,
-            fields: &[Field {
-                name: "io_hslv",
-                description: Some("I/O high speed / low voltage"),
-                bit_offset: 0,
-                bit_size: 1,
-                array: None,
-                enumm: None,
-            }],
+            fields: &[
+                Field {
+                    name: "io_hslv",
+                    description: Some("I/O high speed / low voltage"),
+                    bit_offset: 0,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tcm_axi_shared_cfg",
+                    description: Some("ITCM-RAM / AXI-SRAM size"),
+                    bit_offset: 16,
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("ItcmAxiRamSize"),
+                },
+            ],
         },
         FieldSet {
             name: "Ur18",
@@ -880,5 +890,31 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[Enum {
+        name: "ItcmAxiRamSize",
+        description: None,
+        bit_size: 2,
+        variants: &[
+            EnumVariant {
+                name: "ITCM64AXI320",
+                description: Some("64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"),
+                value: 0,
+            },
+            EnumVariant {
+                name: "ITCM128AXI320",
+                description: Some("128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"),
+                value: 1,
+            },
+            EnumVariant {
+                name: "ITCM192AXI192",
+                description: Some("192 Kbyte ITCM-RAM / 192 Kbyte AXI-SRAM"),
+                value: 2,
+            },
+            EnumVariant {
+                name: "ITCM256AXI128",
+                description: Some("256 Kbyte ITCM-RAM / 128 Kbyte AXI-SRAM"),
+                value: 3,
+            },
+        ],
+    }],
 };

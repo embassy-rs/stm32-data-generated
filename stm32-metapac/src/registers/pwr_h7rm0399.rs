@@ -492,7 +492,9 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: 4,
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Sdlevel",
+                    ),
                 },
                 Field {
                     name: "vbe",
@@ -748,6 +750,33 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Sdlevel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "RESET",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "V1_8",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "V2_5",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "V2_5_ALT",
+                    description: None,
+                    value: 3,
+                },
+            ],
+        },
         Enum {
             name: "Vos",
             description: None,

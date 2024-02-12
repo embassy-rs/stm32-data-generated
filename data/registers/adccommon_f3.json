@@ -143,6 +143,16 @@
         "bit_size": 1
       },
       {
+        "name": "AWD_MST",
+        "description": "Analog watchdog flag of the master ADC",
+        "bit_offset": 7,
+        "bit_size": 1,
+        "array": {
+          "len": 3,
+          "stride": 1
+        }
+      },
+      {
         "name": "JQOVF_MST",
         "description": "Injected context queue overflow flag of the master ADC",
         "bit_offset": 10,
@@ -191,22 +201,6 @@
         "bit_size": 1
       },
       {
-        "name": "JQOVF_SLV",
-        "description": "Injected context queue overflow flag of the slave ADC",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "AWD_MST",
-        "description": "Analog watchdog flag of the master ADC",
-        "bit_offset": 7,
-        "bit_size": 1,
-        "array": {
-          "len": 3,
-          "stride": 1
-        }
-      },
-      {
         "name": "AWD_SLV",
         "description": "Analog watchdog flag of the slave ADC",
         "bit_offset": 23,
@@ -215,6 +209,12 @@
           "len": 3,
           "stride": 1
         }
+      },
+      {
+        "name": "JQOVF_SLV",
+        "description": "Injected context queue overflow flag of the slave ADC",
+        "bit_offset": 26,
+        "bit_size": 1
       }
     ]
   },

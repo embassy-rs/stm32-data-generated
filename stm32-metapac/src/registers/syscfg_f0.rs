@@ -94,7 +94,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pa11_pa12_rmp",
                     description: Some(
-                        "PA11 and PA12 remapping bit for small packages (28 and 20 pins)\n0: Pin pair PA9/PA10 mapped on the pins\n1: Pin pair PA11/PA12 mapped instead of PA9/PA10\n",
+                        "PA11 and PA12 remapping bit for small packages (28 and 20 pins)\n0: Pin pair PA9/PA10 mapped on the pins\n1: Pin pair PA11/PA12 mapped instead of PA9/PA10",
                     ),
                     bit_offset: 4,
                     bit_size: 1,
@@ -116,7 +116,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "adc_dma_rmp",
                     description: Some(
-                        "ADC DMA remapping bit\n0: ADC DMA request mapped on DMA channel 1\n1: ADC DMA request mapped on DMA channel 2\n",
+                        "ADC DMA remapping bit\n0: ADC DMA request mapped on DMA channel 1\n1: ADC DMA request mapped on DMA channel 2",
                     ),
                     bit_offset: 8,
                     bit_size: 1,
@@ -126,7 +126,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart1_tx_dma_rmp",
                     description: Some(
-                        "USART1_TX DMA remapping bit\n0: USART1_TX DMA request mapped on DMA channel 2\n1: USART1_TX DMA request mapped on DMA channel 4\n",
+                        "USART1_TX DMA remapping bit\n0: USART1_TX DMA request mapped on DMA channel 2\n1: USART1_TX DMA request mapped on DMA channel 4",
                     ),
                     bit_offset: 9,
                     bit_size: 1,
@@ -136,7 +136,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart1_rx_dma_rmp",
                     description: Some(
-                        "USART1_RX DMA request remapping bit\n0: USART1_RX DMA request mapped on DMA channel 3\n1: USART1_RX DMA request mapped on DMA channel 5\n",
+                        "USART1_RX DMA request remapping bit\n0: USART1_RX DMA request mapped on DMA channel 3\n1: USART1_RX DMA request mapped on DMA channel 5",
                     ),
                     bit_offset: 10,
                     bit_size: 1,
@@ -146,7 +146,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim16_dma_rmp",
                     description: Some(
-                        "TIM16 DMA request remapping bit\n0: TIM16_CH1 and TIM16_UP DMA request mapped on DMA channel 3\n1: TIM16_CH1 and TIM16_UP DMA request mapped on DMA channel 4\n",
+                        "TIM16 DMA request remapping bit\n0: TIM16_CH1 and TIM16_UP DMA request mapped on DMA channel 3\n1: TIM16_CH1 and TIM16_UP DMA request mapped on DMA channel 4",
                     ),
                     bit_offset: 11,
                     bit_size: 1,
@@ -156,7 +156,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim17_dma_rmp",
                     description: Some(
-                        "TIM17 DMA request remapping bit\n0: TIM17_CH1 and TIM17_UP DMA request mapped on DMA channel 1\n1: TIM17_CH1 and TIM17_UP DMA request mapped on DMA channel 2\n",
+                        "TIM17 DMA request remapping bit\n0: TIM17_CH1 and TIM17_UP DMA request mapped on DMA channel 1\n1: TIM17_CH1 and TIM17_UP DMA request mapped on DMA channel 2",
                     ),
                     bit_offset: 12,
                     bit_size: 1,
@@ -166,7 +166,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim16_dma_rmp2",
                     description: Some(
-                        "TIM16 alternate DMA request remapping bit\n0: TIM16 DMA request mapped according to TIM16_DMA_RMP bit\n1: TIM16_CH1 and TIM16_UP DMA request mapped on DMA channel 6\n",
+                        "TIM16 alternate DMA request remapping bit\n0: TIM16 DMA request mapped according to TIM16_DMA_RMP bit\n1: TIM16_CH1 and TIM16_UP DMA request mapped on DMA channel 6",
                     ),
                     bit_offset: 13,
                     bit_size: 1,
@@ -176,7 +176,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim17_dma_rmp2",
                     description: Some(
-                        "TIM17 alternate DMA request remapping bit\n0: TIM17 DMA request mapped according to TIM16_DMA_RMP bit\n1: TIM17_CH1 and TIM17_UP DMA request mapped on DMA channel 7\n",
+                        "TIM17 alternate DMA request remapping bit\n0: TIM17 DMA request mapped according to TIM16_DMA_RMP bit\n1: TIM17_CH1 and TIM17_UP DMA request mapped on DMA channel 7",
                     ),
                     bit_offset: 14,
                     bit_size: 1,
@@ -186,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb6_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM plus) driving capability activation bits.\n0: PB6 pin operate in standard mode\n1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed\n",
+                        "Fast Mode Plus (FM plus) driving capability activation bits.\n0: PB6 pin operate in standard mode\n1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed",
                     ),
                     bit_offset: 16,
                     bit_size: 1,
@@ -198,7 +198,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb7_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB7 pin operate in standard mode\n1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed\n",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB7 pin operate in standard mode\n1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
@@ -210,7 +210,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb8_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB8 pin operate in standard mode\n1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed\n",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB8 pin operate in standard mode\n1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed",
                     ),
                     bit_offset: 18,
                     bit_size: 1,
@@ -222,7 +222,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pb9_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB9 pin operate in standard mode\n1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed\n",
+                        "Fast Mode Plus (FM+) driving capability activation bits.\n0: PB9 pin operate in standard mode\n1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed",
                     ),
                     bit_offset: 19,
                     bit_size: 1,
@@ -234,7 +234,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1_fmp",
                     description: Some(
-                        "FM+ driving capability activation for I2C1\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C1 pins selected through selection bits in GPIOx_AFR registers\n",
+                        "FM+ driving capability activation for I2C1\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C1 pins selected through selection bits in GPIOx_AFR registers",
                     ),
                     bit_offset: 20,
                     bit_size: 1,
@@ -246,7 +246,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c2_fmp",
                     description: Some(
-                        "FM+ driving capability activation for I2C2\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C2 pins selected through selection bits in GPIOx_AFR registers\n",
+                        "FM+ driving capability activation for I2C2\n0: FM+ mode is controlled by I2C_Pxx_FMP bits only\n1: FM+ mode is enabled on all I2C2 pins selected through selection bits in GPIOx_AFR registers",
                     ),
                     bit_offset: 21,
                     bit_size: 1,
@@ -258,7 +258,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pa9_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits\n0: PA9 pin operate in standard mode\n1: I2C FM+ mode enabled on PA9 and the Speed control is bypassed\n",
+                        "Fast Mode Plus (FM+) driving capability activation bits\n0: PA9 pin operate in standard mode\n1: I2C FM+ mode enabled on PA9 and the Speed control is bypassed",
                     ),
                     bit_offset: 22,
                     bit_size: 1,
@@ -270,7 +270,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c_pa10_fmp",
                     description: Some(
-                        "Fast Mode Plus (FM+) driving capability activation bits\n0: PA10 pin operate in standard mode\n1: I2C FM+ mode enabled on PA10 and the Speed control is bypassed\n",
+                        "Fast Mode Plus (FM+) driving capability activation bits\n0: PA10 pin operate in standard mode\n1: I2C FM+ mode enabled on PA10 and the Speed control is bypassed",
                     ),
                     bit_offset: 23,
                     bit_size: 1,
@@ -282,7 +282,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "spi2_dma_rmp",
                     description: Some(
-                        "SPI2 DMA request remapping bit\n0: SPI2_RX and SPI2_TX DMA requests mapped on DMA channel 4 and 5 respectively\n1: SPI2_RX and SPI2_TX DMA requests mapped on DMA channel 6 and 7 respectively\n",
+                        "SPI2 DMA request remapping bit\n0: SPI2_RX and SPI2_TX DMA requests mapped on DMA channel 4 and 5 respectively\n1: SPI2_RX and SPI2_TX DMA requests mapped on DMA channel 6 and 7 respectively",
                     ),
                     bit_offset: 24,
                     bit_size: 1,
@@ -292,7 +292,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart2_dma_rmp",
                     description: Some(
-                        "USART2 DMA request remapping bit\n0: USART2_RX and USART2_TX DMA requests mapped on DMA channel 5 and 4 respectively\n1: USART2_RX and USART2_TX DMA requests mapped on DMA channel 6 and 7 respectively\n",
+                        "USART2 DMA request remapping bit\n0: USART2_RX and USART2_TX DMA requests mapped on DMA channel 5 and 4 respectively\n1: USART2_RX and USART2_TX DMA requests mapped on DMA channel 6 and 7 respectively",
                     ),
                     bit_offset: 25,
                     bit_size: 1,
@@ -302,7 +302,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "usart3_dma_rmp",
                     description: Some(
-                        "USART3 DMA request remapping bit\n0: USART3_RX and USART3_TX DMA requests mapped on DMA channel 6 and 7 respectively (or simply disabled on STM32F0x0)\n1: USART3_RX and USART3_TX DMA requests mapped on DMA channel 3 and 2 respectively\n",
+                        "USART3 DMA request remapping bit\n0: USART3_RX and USART3_TX DMA requests mapped on DMA channel 6 and 7 respectively (or simply disabled on STM32F0x0)\n1: USART3_RX and USART3_TX DMA requests mapped on DMA channel 3 and 2 respectively",
                     ),
                     bit_offset: 26,
                     bit_size: 1,
@@ -312,7 +312,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "i2c1_dma_rmp",
                     description: Some(
-                        "I2C1 DMA request remapping bit\n0: I2C1_RX and I2C1_TX DMA requests mapped on DMA channel 3 and 2 respectively\n1: I2C1_RX and I2C1_TX DMA requests mapped on DMA channel 7 and 6 respectively\n",
+                        "I2C1 DMA request remapping bit\n0: I2C1_RX and I2C1_TX DMA requests mapped on DMA channel 3 and 2 respectively\n1: I2C1_RX and I2C1_TX DMA requests mapped on DMA channel 7 and 6 respectively",
                     ),
                     bit_offset: 27,
                     bit_size: 1,
@@ -322,7 +322,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim1_dma_rmp",
                     description: Some(
-                        "TIM1 DMA request remapping bit\n0: TIM1_CH1, TIM1_CH2 and TIM1_CH3 DMA requests mapped on DMA channel 2, 3 and 4 respectively\n1: TIM1_CH1, TIM1_CH2 and TIM1_CH3 DMA requests mapped on DMA channel 6\n",
+                        "TIM1 DMA request remapping bit\n0: TIM1_CH1, TIM1_CH2 and TIM1_CH3 DMA requests mapped on DMA channel 2, 3 and 4 respectively\n1: TIM1_CH1, TIM1_CH2 and TIM1_CH3 DMA requests mapped on DMA channel 6",
                     ),
                     bit_offset: 28,
                     bit_size: 1,
@@ -332,7 +332,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim2_dma_rmp",
                     description: Some(
-                        "TIM2 DMA request remapping bit\n0: TIM2_CH2 and TIM2_CH4 DMA requests mapped on DMA channel 3 and 4 respectively\n1: TIM2_CH2 and TIM2_CH4 DMA requests mapped on DMA channel 7\n",
+                        "TIM2 DMA request remapping bit\n0: TIM2_CH2 and TIM2_CH4 DMA requests mapped on DMA channel 3 and 4 respectively\n1: TIM2_CH2 and TIM2_CH4 DMA requests mapped on DMA channel 7",
                     ),
                     bit_offset: 29,
                     bit_size: 1,
@@ -342,7 +342,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tim3_dma_rmp",
                     description: Some(
-                        "TIM3 DMA request remapping bit\n0: TIM3_CH1 and TIM3_TRIG DMA requests mapped on DMA channel 4\n1: TIM3_CH1 and TIM3_TRIG DMA requests mapped on DMA channel 6\n",
+                        "TIM3 DMA request remapping bit\n0: TIM3_CH1 and TIM3_TRIG DMA requests mapped on DMA channel 4\n1: TIM3_CH1 and TIM3_TRIG DMA requests mapped on DMA channel 6",
                     ),
                     bit_offset: 30,
                     bit_size: 1,

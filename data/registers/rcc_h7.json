@@ -9,16 +9,16 @@
         "fieldset": "CR"
       },
       {
-        "name": "ICSCR",
-        "description": "RCC Internal Clock Source Calibration Register",
-        "byte_offset": 4,
-        "fieldset": "ICSCR"
-      },
-      {
         "name": "HSICFGR",
         "description": "RCC HSI configuration register",
         "byte_offset": 4,
         "fieldset": "HSICFGR"
+      },
+      {
+        "name": "ICSCR",
+        "description": "RCC Internal Clock Source Calibration Register",
+        "byte_offset": 4,
+        "fieldset": "ICSCR"
       },
       {
         "name": "CRRCR",
@@ -834,14 +834,14 @@
         "bit_size": 1
       },
       {
-        "name": "QUADSPIEN",
-        "description": "QUADSPI and QUADSPI Delay Clock Enable",
+        "name": "OCTOSPI1EN",
+        "description": "OCTOSPI2 and OCTOSPI2 delay block enable",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
-        "name": "OCTOSPI1EN",
-        "description": "OCTOSPI2 and OCTOSPI2 delay block enable",
+        "name": "QUADSPIEN",
+        "description": "QUADSPI and QUADSPI Delay Clock Enable",
         "bit_offset": 14,
         "bit_size": 1
       },
@@ -935,14 +935,14 @@
         "bit_size": 1
       },
       {
-        "name": "QUADSPILPEN",
-        "description": "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode",
+        "name": "OCTOSPI1LPEN",
+        "description": "OCTOSPI1 and OCTOSPI1 delay block enable during CSleep Mode",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
-        "name": "OCTOSPI1LPEN",
-        "description": "OCTOSPI1 and OCTOSPI1 delay block enable during CSleep Mode",
+        "name": "QUADSPILPEN",
+        "description": "QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode",
         "bit_offset": 14,
         "bit_size": 1
       },
@@ -1030,14 +1030,14 @@
         "bit_size": 1
       },
       {
-        "name": "QUADSPIRST",
-        "description": "QUADSPI and QUADSPI delay block reset",
+        "name": "OCTOSPI1RST",
+        "description": "OCTOSPI1 and OCTOSPI1 delay block reset",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
-        "name": "OCTOSPI1RST",
-        "description": "OCTOSPI1 and OCTOSPI1 delay block reset",
+        "name": "QUADSPIRST",
+        "description": "QUADSPI and QUADSPI delay block reset",
         "bit_offset": 14,
         "bit_size": 1
       },
@@ -4611,15 +4611,15 @@
         "enum": "FMCSEL"
       },
       {
-        "name": "QUADSPISEL",
-        "description": "QUADSPI kernel clock source selection",
+        "name": "OCTOSPISEL",
+        "description": "OCTOSPI kernel clock source selection",
         "bit_offset": 4,
         "bit_size": 2,
         "enum": "FMCSEL"
       },
       {
-        "name": "OCTOSPISEL",
-        "description": "OCTOSPI kernel clock source selection",
+        "name": "QUADSPISEL",
+        "description": "QUADSPI kernel clock source selection",
         "bit_offset": 4,
         "bit_size": 2,
         "enum": "FMCSEL"

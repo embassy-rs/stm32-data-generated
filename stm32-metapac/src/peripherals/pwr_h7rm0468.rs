@@ -412,14 +412,14 @@ pub mod regs {
         }
         #[doc = "Step-down converter voltage output level selection"]
         #[inline(always)]
-        pub const fn sdlevel(&self) -> u8 {
+        pub const fn sdlevel(&self) -> super::vals::Sdlevel {
             let val = (self.0 >> 4usize) & 0x03;
-            val as u8
+            super::vals::Sdlevel::from_bits(val as u8)
         }
         #[doc = "Step-down converter voltage output level selection"]
         #[inline(always)]
-        pub fn set_sdlevel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        pub fn set_sdlevel(&mut self, val: super::vals::Sdlevel) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "VBAT charging enable"]
         #[inline(always)]
@@ -693,6 +693,36 @@ pub mod regs {
     }
 }
 pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Sdlevel {
+        RESET = 0,
+        V1_8 = 0x01,
+        V2_5 = 0x02,
+        V2_5_ALT = 0x03,
+    }
+    impl Sdlevel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sdlevel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sdlevel {
+        #[inline(always)]
+        fn from(val: u8) -> Sdlevel {
+            Sdlevel::from_bits(val)
+        }
+    }
+    impl From<Sdlevel> for u8 {
+        #[inline(always)]
+        fn from(val: Sdlevel) -> u8 {
+            Sdlevel::to_bits(val)
+        }
+    }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Vos {

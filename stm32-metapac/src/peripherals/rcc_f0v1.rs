@@ -1201,22 +1201,22 @@ pub mod regs {
         #[doc = "PLL input clock source"]
         #[inline(always)]
         pub const fn pllsrc(&self) -> super::vals::Pllsrc {
-            let val = (self.0 >> 15usize) & 0x03;
+            let val = (self.0 >> 16usize) & 0x01;
             super::vals::Pllsrc::from_bits(val as u8)
         }
         #[doc = "PLL input clock source"]
         #[inline(always)]
         pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
-            self.0 = (self.0 & !(0x03 << 15usize)) | (((val.to_bits() as u32) & 0x03) << 15usize);
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
-        #[doc = "HSE divider for PLL entry. Same bit as PREDIC\\[0\\]
+        #[doc = "HSE divider for PLL entry. Same bit as PREDIV\\[0\\]
 from CFGR2 register. Refer to it for its meaning"]
         #[inline(always)]
         pub const fn pllxtpre(&self) -> super::vals::Pllxtpre {
             let val = (self.0 >> 17usize) & 0x01;
             super::vals::Pllxtpre::from_bits(val as u8)
         }
-        #[doc = "HSE divider for PLL entry. Same bit as PREDIC\\[0\\]
+        #[doc = "HSE divider for PLL entry. Same bit as PREDIV\\[0\\]
 from CFGR2 register. Refer to it for its meaning"]
         #[inline(always)]
         pub fn set_pllxtpre(&mut self, val: super::vals::Pllxtpre) {
@@ -1243,28 +1243,6 @@ from CFGR2 register. Refer to it for its meaning"]
         #[inline(always)]
         pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
-        }
-        #[doc = "Microcontroller Clock Output Prescaler"]
-        #[inline(always)]
-        pub const fn mcopre(&self) -> super::vals::Mcopre {
-            let val = (self.0 >> 28usize) & 0x07;
-            super::vals::Mcopre::from_bits(val as u8)
-        }
-        #[doc = "Microcontroller Clock Output Prescaler"]
-        #[inline(always)]
-        pub fn set_mcopre(&mut self, val: super::vals::Mcopre) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
-        }
-        #[doc = "PLL clock not divided for MCO"]
-        #[inline(always)]
-        pub const fn pllmcodiv(&self) -> super::vals::Pllmcodiv {
-            let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Pllmcodiv::from_bits(val as u8)
-        }
-        #[doc = "PLL clock not divided for MCO"]
-        #[inline(always)]
-        pub fn set_pllmcodiv(&mut self, val: super::vals::Pllmcodiv) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Cfgr {
@@ -1456,17 +1434,6 @@ from CFGR2 register. Refer to it for its meaning"]
         pub fn set_hsi14rdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "HSI48 ready interrupt flag"]
-        #[inline(always)]
-        pub const fn hsi48rdyf(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 ready interrupt flag"]
-        #[inline(always)]
-        pub fn set_hsi48rdyf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
         #[doc = "Clock Security System Interrupt flag"]
         #[inline(always)]
         pub const fn cssf(&self) -> bool {
@@ -1544,17 +1511,6 @@ from CFGR2 register. Refer to it for its meaning"]
         pub fn set_hsi14rdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
-        #[doc = "HSI48 ready interrupt enable"]
-        #[inline(always)]
-        pub const fn hsi48rdyie(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 ready interrupt enable"]
-        #[inline(always)]
-        pub fn set_hsi48rdyie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
         #[doc = "LSI Ready Interrupt Clear"]
         #[inline(always)]
         pub const fn lsirdyc(&self) -> bool {
@@ -1620,17 +1576,6 @@ from CFGR2 register. Refer to it for its meaning"]
         #[inline(always)]
         pub fn set_hsi14rdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-        }
-        #[doc = "HSI48 Ready Interrupt Clear"]
-        #[inline(always)]
-        pub const fn hsi48rdyc(&self) -> bool {
-            let val = (self.0 >> 22usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 Ready Interrupt Clear"]
-        #[inline(always)]
-        pub fn set_hsi48rdyc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Clock security system interrupt clear"]
         #[inline(always)]
@@ -1831,39 +1776,6 @@ from CFGR2 register. Refer to it for its meaning"]
         #[inline(always)]
         pub fn set_hsi14cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
-        }
-        #[doc = "HSI48 clock enable"]
-        #[inline(always)]
-        pub const fn hsi48on(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 clock enable"]
-        #[inline(always)]
-        pub fn set_hsi48on(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-        }
-        #[doc = "HSI48 clock ready flag"]
-        #[inline(always)]
-        pub const fn hsi48rdy(&self) -> bool {
-            let val = (self.0 >> 17usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HSI48 clock ready flag"]
-        #[inline(always)]
-        pub fn set_hsi48rdy(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-        }
-        #[doc = "HSI48 factory clock calibration"]
-        #[inline(always)]
-        pub const fn hsi48cal(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0xff;
-            val as u8
-        }
-        #[doc = "HSI48 factory clock calibration"]
-        #[inline(always)]
-        pub fn set_hsi48cal(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
     impl Default for Cr2 {
@@ -2154,51 +2066,9 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Mcopre {
-        #[doc = "MCO is divided by 1"]
-        DIV1 = 0,
-        #[doc = "MCO is divided by 2"]
-        DIV2 = 0x01,
-        #[doc = "MCO is divided by 4"]
-        DIV4 = 0x02,
-        #[doc = "MCO is divided by 8"]
-        DIV8 = 0x03,
-        #[doc = "MCO is divided by 16"]
-        DIV16 = 0x04,
-        #[doc = "MCO is divided by 32"]
-        DIV32 = 0x05,
-        #[doc = "MCO is divided by 64"]
-        DIV64 = 0x06,
-        #[doc = "MCO is divided by 128"]
-        DIV128 = 0x07,
-    }
-    impl Mcopre {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mcopre {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mcopre {
-        #[inline(always)]
-        fn from(val: u8) -> Mcopre {
-            Mcopre::from_bits(val)
-        }
-    }
-    impl From<Mcopre> for u8 {
-        #[inline(always)]
-        fn from(val: Mcopre) -> u8 {
-            Mcopre::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
-        NOMCO = 0,
+        DISABLE = 0,
         #[doc = "Internal RC 14 MHz (HSI14) oscillator clock selected"]
         HSI14 = 0x01,
         #[doc = "Internal low speed (LSI) oscillator clock selected"]
@@ -2211,10 +2081,9 @@ pub mod vals {
         HSI = 0x05,
         #[doc = "External 4-32 MHz (HSE) oscillator clock selected"]
         HSE = 0x06,
-        #[doc = "PLL clock selected (divided by 1 or 2, depending en PLLMCODIV)"]
+        #[doc = "PLL clock selected divided by 2"]
         PLL = 0x07,
-        #[doc = "Internal RC 48 MHz (HSI48) oscillator clock selected"]
-        HSI48 = 0x08,
+        _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -2243,36 +2112,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcosel) -> u8 {
             Mcosel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Pllmcodiv {
-        #[doc = "PLL is divided by 2 for MCO"]
-        DIV2 = 0,
-        #[doc = "PLL is not divided for MCO"]
-        DIV1 = 0x01,
-    }
-    impl Pllmcodiv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllmcodiv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllmcodiv {
-        #[inline(always)]
-        fn from(val: u8) -> Pllmcodiv {
-            Pllmcodiv::from_bits(val)
-        }
-    }
-    impl From<Pllmcodiv> for u8 {
-        #[inline(always)]
-        fn from(val: Pllmcodiv) -> u8 {
-            Pllmcodiv::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2337,17 +2176,13 @@ pub mod vals {
     pub enum Pllsrc {
         #[doc = "HSI divided by 2 selected as PLL input clock"]
         HSI_DIV2 = 0,
-        #[doc = "NOT ALLOWED IN F0x0 - HSI divided by PREDIV selected as PLL input clock"]
-        HSI_DIV_PREDIV = 0x01,
         #[doc = "HSE divided by PREDIV selected as PLL input clock"]
-        HSE_DIV_PREDIV = 0x02,
-        #[doc = "NOT ALLOWED IN F0x0 - HSI48 divided by PREDIV selected as PLL input clock"]
-        HSI48_DIV_PREDIV = 0x03,
+        HSE_DIV_PREDIV = 0x01,
     }
     impl Pllsrc {
         #[inline(always)]
         pub const fn from_bits(val: u8) -> Pllsrc {
-            unsafe { core::mem::transmute(val & 0x03) }
+            unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
@@ -2536,8 +2371,7 @@ pub mod vals {
         HSE = 0x01,
         #[doc = "PLL used as system clock"]
         PLL1_P = 0x02,
-        #[doc = "HSI48 used as system clock (when avaiable)"]
-        HSI48 = 0x03,
+        _RESERVED_3 = 0x03,
     }
     impl Sw {
         #[inline(always)]
@@ -2598,8 +2432,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Usbsw {
-        #[doc = "NOT ALLOWED IN F0x0 - HSI48 selected as USB clock source"]
-        HSI48 = 0,
+        _RESERVED_0 = 0,
         #[doc = "PLL clock selected as USB clock source"]
         PLL1_P = 0x01,
     }

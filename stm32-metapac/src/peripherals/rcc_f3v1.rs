@@ -2447,7 +2447,7 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
-        NOMCO = 0,
+        DISABLE = 0,
         _RESERVED_1 = 0x01,
         #[doc = "Internal low speed (LSI) oscillator clock selected"]
         LSI = 0x02,

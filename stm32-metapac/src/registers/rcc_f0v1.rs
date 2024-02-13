@@ -1276,8 +1276,8 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "PLL input clock source",
                     ),
-                    bit_offset: 15,
-                    bit_size: 2,
+                    bit_offset: 16,
+                    bit_size: 1,
                     array: None,
                     enumm: Some(
                         "Pllsrc",
@@ -1286,7 +1286,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pllxtpre",
                     description: Some(
-                        "HSE divider for PLL entry. Same bit as PREDIC[0] from CFGR2 register. Refer to it for its meaning",
+                        "HSE divider for PLL entry. Same bit as PREDIV[0] from CFGR2 register. Refer to it for its meaning",
                     ),
                     bit_offset: 17,
                     bit_size: 1,
@@ -1317,30 +1317,6 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some(
                         "Mcosel",
-                    ),
-                },
-                Field {
-                    name: "mcopre",
-                    description: Some(
-                        "Microcontroller Clock Output Prescaler",
-                    ),
-                    bit_offset: 28,
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Mcopre",
-                    ),
-                },
-                Field {
-                    name: "pllmcodiv",
-                    description: Some(
-                        "PLL clock not divided for MCO",
-                    ),
-                    bit_offset: 31,
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Pllmcodiv",
                     ),
                 },
             ],
@@ -1528,16 +1504,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi48rdyf",
-                    description: Some(
-                        "HSI48 ready interrupt flag",
-                    ),
-                    bit_offset: 6,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "cssf",
                     description: Some(
                         "Clock Security System Interrupt flag",
@@ -1608,16 +1574,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsi48rdyie",
-                    description: Some(
-                        "HSI48 ready interrupt enable",
-                    ),
-                    bit_offset: 14,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "lsirdyc",
                     description: Some(
                         "LSI Ready Interrupt Clear",
@@ -1673,16 +1629,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "HSI 14 MHz Ready Interrupt Clear",
                     ),
                     bit_offset: 21,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsi48rdyc",
-                    description: Some(
-                        "HSI48 Ready Interrupt Clear",
-                    ),
-                    bit_offset: 22,
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1863,36 +1809,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "HSI14 clock calibration",
                     ),
                     bit_offset: 8,
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsi48on",
-                    description: Some(
-                        "HSI48 clock enable",
-                    ),
-                    bit_offset: 16,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsi48rdy",
-                    description: Some(
-                        "HSI48 clock ready flag",
-                    ),
-                    bit_offset: 17,
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsi48cal",
-                    description: Some(
-                        "HSI48 factory clock calibration",
-                    ),
-                    bit_offset: 24,
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2169,75 +2085,12 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Mcopre",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "MCO is divided by 1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "MCO is divided by 2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "MCO is divided by 4",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "MCO is divided by 8",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "MCO is divided by 16",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV32",
-                    description: Some(
-                        "MCO is divided by 32",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV64",
-                    description: Some(
-                        "MCO is divided by 64",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV128",
-                    description: Some(
-                        "MCO is divided by 128",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
             name: "Mcosel",
             description: None,
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOMCO",
+                    name: "DISABLE",
                     description: Some(
                         "MCO output disabled, no clock on MCO",
                     ),
@@ -2288,37 +2141,9 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PLL",
                     description: Some(
-                        "PLL clock selected (divided by 1 or 2, depending en PLLMCODIV)",
+                        "PLL clock selected divided by 2",
                     ),
                     value: 7,
-                },
-                EnumVariant {
-                    name: "HSI48",
-                    description: Some(
-                        "Internal RC 48 MHz (HSI48) oscillator clock selected",
-                    ),
-                    value: 8,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllmcodiv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "PLL is divided by 2 for MCO",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "PLL is not divided for MCO",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -2437,7 +2262,7 @@ pub(crate) static REGISTERS: IR = IR {
         Enum {
             name: "Pllsrc",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "HSI_DIV2",
@@ -2447,25 +2272,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSI_DIV_PREDIV",
-                    description: Some(
-                        "NOT ALLOWED IN F0x0 - HSI divided by PREDIV selected as PLL input clock",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "HSE_DIV_PREDIV",
                     description: Some(
                         "HSE divided by PREDIV selected as PLL input clock",
                     ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI48_DIV_PREDIV",
-                    description: Some(
-                        "NOT ALLOWED IN F0x0 - HSI48 divided by PREDIV selected as PLL input clock",
-                    ),
-                    value: 3,
+                    value: 1,
                 },
             ],
         },
@@ -2712,13 +2523,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 2,
                 },
-                EnumVariant {
-                    name: "HSI48",
-                    description: Some(
-                        "HSI48 used as system clock (when avaiable)",
-                    ),
-                    value: 3,
-                },
             ],
         },
         Enum {
@@ -2761,13 +2565,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[
-                EnumVariant {
-                    name: "HSI48",
-                    description: Some(
-                        "NOT ALLOWED IN F0x0 - HSI48 selected as USB clock source",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "PLL1_P",
                     description: Some(

@@ -1422,7 +1422,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOMCO",
+                    name: "DISABLE",
                     description: Some("MCO output disabled, no clock on MCO"),
                     value: 0,
                 },

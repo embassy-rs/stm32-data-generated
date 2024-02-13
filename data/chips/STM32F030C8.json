@@ -809,7 +809,7 @@
                     "address": 1073876992,
                     "registers": {
                         "kind": "rcc",
-                        "version": "f0",
+                        "version": "f0v2",
                         "block": "RCC"
                     },
                     "pins": [

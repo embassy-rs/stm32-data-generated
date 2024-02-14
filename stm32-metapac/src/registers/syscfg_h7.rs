@@ -901,7 +901,7 @@ pub(crate) static REGISTERS: IR = IR {
                 value: 0,
             },
             EnumVariant {
-                name: "ITCM128AXI320",
+                name: "ITCM128AXI256",
                 description: Some("128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"),
                 value: 1,
             },

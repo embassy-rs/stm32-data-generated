@@ -1042,7 +1042,7 @@ pub mod vals {
         #[doc = "64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"]
         ITCM64AXI320 = 0,
         #[doc = "128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"]
-        ITCM128AXI320 = 0x01,
+        ITCM128AXI256 = 0x01,
         #[doc = "192 Kbyte ITCM-RAM / 192 Kbyte AXI-SRAM"]
         ITCM192AXI192 = 0x02,
         #[doc = "256 Kbyte ITCM-RAM / 128 Kbyte AXI-SRAM"]

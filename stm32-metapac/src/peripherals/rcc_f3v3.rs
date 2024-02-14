@@ -1516,13 +1516,13 @@ pub mod regs {
     impl Cfgr3 {
         #[doc = "USART1 clock source selection"]
         #[inline(always)]
-        pub const fn usart1sw(&self) -> super::vals::Usartsw {
+        pub const fn usart1sw(&self) -> super::vals::Usart1sw {
             let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Usartsw::from_bits(val as u8)
+            super::vals::Usart1sw::from_bits(val as u8)
         }
         #[doc = "USART1 clock source selection"]
         #[inline(always)]
-        pub fn set_usart1sw(&mut self, val: super::vals::Usartsw) {
+        pub fn set_usart1sw(&mut self, val: super::vals::Usart1sw) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "I2C1 clock source selection"]
@@ -2879,6 +2879,40 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Timsw) -> u8 {
             Timsw::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum Usart1sw {
+        #[doc = "PCLK selected as USART clock source"]
+        PCLK2 = 0,
+        #[doc = "SYSCLK selected as USART clock source"]
+        SYS = 0x01,
+        #[doc = "LSE selected as USART clock source"]
+        LSE = 0x02,
+        #[doc = "HSI selected as USART clock source"]
+        HSI = 0x03,
+    }
+    impl Usart1sw {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Usart1sw {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Usart1sw {
+        #[inline(always)]
+        fn from(val: u8) -> Usart1sw {
+            Usart1sw::from_bits(val)
+        }
+    }
+    impl From<Usart1sw> for u8 {
+        #[inline(always)]
+        fn from(val: Usart1sw) -> u8 {
+            Usart1sw::to_bits(val)
         }
     }
     #[repr(u8)]

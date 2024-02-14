@@ -1384,7 +1384,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Usartsw",
+                        "Usart1sw",
                     ),
                 },
                 Field {
@@ -2630,6 +2630,41 @@ pub(crate) static REGISTERS: IR = IR {
                         "PLL used as system clock",
                     ),
                     value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Usart1sw",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK2",
+                    description: Some(
+                        "PCLK selected as USART clock source",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected as USART clock source",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "LSE selected as USART clock source",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected as USART clock source",
+                    ),
+                    value: 3,
                 },
             ],
         },

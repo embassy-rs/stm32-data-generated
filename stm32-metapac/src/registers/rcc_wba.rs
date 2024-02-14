@@ -2361,15 +2361,15 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "timi2csel",
+                    name: "timicsel",
                     description: Some(
-                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture \r When the TIMI2CSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. \r When TIMI2CSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The clock division must be disabled (TIMI2CSEL configured to 0) before selecting or changing a clock sources division.",
+                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture \r When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. \r When TIMICSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division.",
                     ),
                     bit_offset: 31,
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Timi2csel",
+                        "Timicsel",
                     ),
                 },
             ],
@@ -4231,7 +4231,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Timi2csel",
+            name: "Timicsel",
             description: None,
             bit_size: 1,
             variants: &[

@@ -1226,11 +1226,11 @@
         "enum": "USARTSEL"
       },
       {
-        "name": "TIMI2CSEL",
+        "name": "TIMICSEL",
         "description": "TIM2, TIM3 and LPTIM2 input capture source selection\r Set and reset by software.",
         "bit_offset": 31,
         "bit_size": 1,
-        "enum": "TIMI2CSEL"
+        "enum": "TIMICSEL"
       }
     ]
   },
@@ -5507,7 +5507,7 @@
       }
     ]
   },
-  "enum/TIMI2CSEL": {
+  "enum/TIMICSEL": {
     "bit_size": 1,
     "variants": [
       {

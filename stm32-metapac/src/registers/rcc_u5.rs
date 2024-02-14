@@ -4472,15 +4472,15 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "timi2csel",
+                    name: "timicsel",
                     description: Some(
-                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture\r When the TIMI2CSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMI2CSEL[1:0] value, MSI is either MSIK or MSIS.\r When TIMI2CSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r 0xx: HSI, MSIK and MSIS dividers disabled\r Note: The clock division must be disabled (TIMI2CSEL configured to 0xx) before selecting or changing a clock sources division.",
+                        "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture\r When the TIMICSEL2 bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected either to HSI/256, MSI/4 or MSI/1024. Depending on TIMICSEL[1:0] value, MSI is either MSIK or MSIS.\r When TIMICSEL2 is cleared, the HSI, MSIK and MSIS clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture.\r 0xx: HSI, MSIK and MSIS dividers disabled\r Note: The clock division must be disabled (TIMICSEL configured to 0xx) before selecting or changing a clock sources division.",
                     ),
                     bit_offset: 29,
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Timi2csel",
+                        "Timicsel",
                     ),
                 },
             ],
@@ -11330,7 +11330,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Timi2csel",
+            name: "Timicsel",
             description: None,
             bit_size: 3,
             variants: &[

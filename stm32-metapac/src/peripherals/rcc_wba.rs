@@ -1976,15 +1976,15 @@ pub mod regs {
         pub fn set_systicksel(&mut self, val: super::vals::Systicksel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
-        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMI2CSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMI2CSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMI2CSEL configured to 0) before selecting or changing a clock sources division."]
+        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMICSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division."]
         #[inline(always)]
-        pub const fn timi2csel(&self) -> super::vals::Timi2csel {
+        pub const fn timicsel(&self) -> super::vals::Timicsel {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Timi2csel::from_bits(val as u8)
+            super::vals::Timicsel::from_bits(val as u8)
         }
-        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMI2CSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMI2CSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMI2CSEL configured to 0) before selecting or changing a clock sources division."]
+        #[doc = "Clocks sources for TIM16,TIM17 and LPTIM2 internal input capture When the TIMICSEL bit is set, the TIM16, TIM17 and LPTIM2 internal input capture can be connected to HSI/256. When TIMICSEL is cleared, the HSI, clock sources cannot be selected as TIM16, TIM17 or LPTIM2 internal input capture. Access can be secured by GTZC_TZSC TIM16SEC, TIM17SEC, or LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The clock division must be disabled (TIMICSEL configured to 0) before selecting or changing a clock sources division."]
         #[inline(always)]
-        pub fn set_timi2csel(&mut self, val: super::vals::Timi2csel) {
+        pub fn set_timicsel(&mut self, val: super::vals::Timicsel) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -3986,15 +3986,15 @@ pub mod vals {
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Timi2csel {
+    pub enum Timicsel {
         #[doc = "HSI divider disabled"]
         HSI = 0,
         #[doc = "HSI/256 generated and can be selected by TIM16, TIM17 and LPTIM2 as internal input capture"]
         HSI_DIV_256 = 0x01,
     }
-    impl Timi2csel {
+    impl Timicsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Timi2csel {
+        pub const fn from_bits(val: u8) -> Timicsel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -4002,16 +4002,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Timi2csel {
+    impl From<u8> for Timicsel {
         #[inline(always)]
-        fn from(val: u8) -> Timi2csel {
-            Timi2csel::from_bits(val)
+        fn from(val: u8) -> Timicsel {
+            Timicsel::from_bits(val)
         }
     }
-    impl From<Timi2csel> for u8 {
+    impl From<Timicsel> for u8 {
         #[inline(always)]
-        fn from(val: Timi2csel) -> u8 {
-            Timi2csel::to_bits(val)
+        fn from(val: Timicsel) -> u8 {
+            Timicsel::to_bits(val)
         }
     }
     #[repr(u8)]

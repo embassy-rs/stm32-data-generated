@@ -2056,13 +2056,13 @@ pub mod regs {
         }
         #[doc = "TIM2, TIM3 and LPTIM2 input capture source selection Set and reset by software."]
         #[inline(always)]
-        pub const fn timi2csel(&self) -> super::vals::Timi2csel {
+        pub const fn timicsel(&self) -> super::vals::Timicsel {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::Timi2csel::from_bits(val as u8)
+            super::vals::Timicsel::from_bits(val as u8)
         }
         #[doc = "TIM2, TIM3 and LPTIM2 input capture source selection Set and reset by software."]
         #[inline(always)]
-        pub fn set_timi2csel(&mut self, val: super::vals::Timi2csel) {
+        pub fn set_timicsel(&mut self, val: super::vals::Timicsel) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -5168,15 +5168,15 @@ selected as clock source"]
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub enum Timi2csel {
+    pub enum Timicsel {
         #[doc = "No internal clock available for timers input capture (default after reset)"]
         B_0X0 = 0,
         #[doc = "hsi_ker_ck/1024, hsi_ker_ck/8 and csi_ker_ck/128 selected for timers input capture"]
         B_0X1 = 0x01,
     }
-    impl Timi2csel {
+    impl Timicsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Timi2csel {
+        pub const fn from_bits(val: u8) -> Timicsel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -5184,16 +5184,16 @@ selected as clock source"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Timi2csel {
+    impl From<u8> for Timicsel {
         #[inline(always)]
-        fn from(val: u8) -> Timi2csel {
-            Timi2csel::from_bits(val)
+        fn from(val: u8) -> Timicsel {
+            Timicsel::from_bits(val)
         }
     }
-    impl From<Timi2csel> for u8 {
+    impl From<Timicsel> for u8 {
         #[inline(always)]
-        fn from(val: Timi2csel) -> u8 {
-            Timi2csel::to_bits(val)
+        fn from(val: Timicsel) -> u8 {
+            Timicsel::to_bits(val)
         }
     }
     #[repr(u8)]

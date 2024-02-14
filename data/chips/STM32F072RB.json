@@ -324,10 +324,6 @@
                         "reset": {
                             "register": "apb2rstr",
                             "field": "adcrst"
-                        },
-                        "mux": {
-                            "register": "cfgr3",
-                            "field": "adcsw"
                         }
                     },
                     "pins": [
